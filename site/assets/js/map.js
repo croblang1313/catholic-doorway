@@ -61,11 +61,12 @@
     var line2 = [t['addr:city'], [t['addr:state'], t['addr:postcode']].filter(Boolean).join(' ')].filter(Boolean).join(', ');
     return [line1, line2].filter(Boolean).join(', ');
   }
-  function website(t) {
-    var w = t.website || t['contact:website'] || t.url || '';
+  function normWeb(w) {
+    w = (w || '').split(';')[0].trim();
     if (w && !/^https?:\/\//i.test(w)) w = 'https://' + w;
-    return /^https?:\/\//i.test(w) ? w : '';
+    return /^https?:\/\/[^\s]+$/i.test(w) ? w : '';
   }
+  function website(t) { return normWeb(t.website || t['contact:website'] || t.url); }
   function phone(t) { return (t.phone || t['contact:phone'] || '').split(';')[0].trim(); }
   function directions(lat, lon, name) {
     return isApple
@@ -97,6 +98,46 @@
         times: t.service_times || '', wheelchair: t.wheelchair
       };
     }).filter(Boolean);
+  }
+
+  /* ---------- Local church list (site/data/churches), refreshed weekly ---------- */
+  var DATA = '/data/churches/';
+  var indexP = null, cellCache = {};
+  var OSM_TYPES = { n: 'node', w: 'way', r: 'relation' };
+  function loadIndex() {
+    if (!indexP) indexP = fetch(DATA + 'index.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+    return indexP;
+  }
+  function fromCompact(a) {
+    var type = OSM_TYPES[a[7]] || 'node';
+    return { id: type + '/' + a[8], type: type, osmId: a[8], lat: a[0], lon: a[1], name: a[2] || 'Catholic church',
+      addr: a[3], phone: a[4], web: normWeb(a[5]), times: a[6] };
+  }
+  // Resolves to a list of churches inside the box, or null if the local list is unavailable.
+  function loadBox(s, w, n, e) {
+    return loadIndex().then(function (ix) {
+      if (!ix || !ix.cells) return null;
+      var have = {}, keys = [];
+      ix.cells.forEach(function (c) { have[c] = true; });
+      for (var la = Math.floor(s); la <= Math.floor(n); la++) {
+        for (var lo = Math.floor(w); lo <= Math.floor(e); lo++) {
+          var k = la + '_' + lo;
+          if (have[k]) keys.push(k);
+        }
+      }
+      return Promise.all(keys.map(function (k) {
+        if (!cellCache[k]) cellCache[k] = fetch(DATA + k + '.json').then(function (r) { return r.json(); }).catch(function () { return []; });
+        return cellCache[k];
+      })).then(function (arrs) {
+        var out = [];
+        arrs.forEach(function (arr) { arr.forEach(function (a) { if (a[0] >= s && a[0] <= n && a[1] >= w && a[1] <= e) out.push(fromCompact(a)); }); });
+        return out;
+      });
+    });
+  }
+  function boxAround(lat, lon, km) {
+    var dLat = km / 111, dLon = km / (111 * Math.max(0.2, Math.cos(lat * Math.PI / 180)));
+    return [lat - dLat, lon - dLon, lat + dLat, lon + dLon];
   }
 
   function render(list) {
@@ -148,28 +189,53 @@
     if (el) { el.classList.add('active'); if (scroll) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
   }
 
-  function searchAround(lat, lon, label, radius) {
-    radius = radius || 15000;
+  function showResults(list) {
+    render(list);
+    var pts = list.slice(0, 12).map(function (c) { return [c.lat, c.lon]; }).concat([origin]);
+    if (pts.length > 1) map.fitBounds(pts, { padding: [30, 30], maxZoom: 15 }); else map.setView(origin, 13);
+  }
+
+  function searchAround(lat, lon, label) {
     origin = [lat, lon];
     if (originMarker) map.removeLayer(originMarker);
     originMarker = L.circleMarker(origin, { radius: 7, color: '#a8802f', weight: 3, fillColor: '#fff', fillOpacity: 1 }).addTo(map).bindTooltip(label || 'You are here');
-    setStatus('Looking for churches near ' + (label || 'you') + '…');
+    setStatus('Looking for churches near ' + (label || 'you') + '\u2026');
+    var bx = boxAround(lat, lon, 80);
+    loadBox(bx[0], bx[1], bx[2], bx[3]).then(function (all) {
+      if (!all) return searchAroundLive(lat, lon, label);
+      all.forEach(function (c) { c.d = distKm(origin, [c.lat, c.lon]); });
+      // Widen the circle until there are a few churches to show.
+      var list = [];
+      [15, 30, 50, 80].some(function (km) { list = all.filter(function (c) { return c.d <= km; }); return list.length >= 5; });
+      if (!list.length) list = all;
+      showResults(list);
+    });
+  }
+
+  // Fallback: ask the public Overpass server directly (slow, used only if the local list is missing).
+  function searchAroundLive(lat, lon, label, radius) {
+    radius = radius || 15000;
     overpass(buildQuery('(around:' + radius + ',' + lat + ',' + lon + ')')).then(function (data) {
       var list = toChurches(data);
-      if (list.length < 3 && radius < 60000) return searchAround(lat, lon, label, radius * 2.5);
-      render(list);
-      var pts = list.slice(0, 12).map(function (c) { return [c.lat, c.lon]; }).concat([origin]);
-      if (pts.length > 1) map.fitBounds(pts, { padding: [30, 30], maxZoom: 15 }); else map.setView(origin, 13);
+      if (list.length < 3 && radius < 60000) return searchAroundLive(lat, lon, label, radius * 2.5);
+      showResults(list);
     }).catch(function () {
       setStatus('The church database is busy right now. Please try again in a minute.');
     });
   }
 
   function searchArea() {
-    if (map.getZoom() < 10) { setStatus('Zoom in a little closer to search this area.'); return; }
+    if (map.getZoom() < 9) { setStatus('Zoom in a little closer to search this area.'); return; }
     var b = map.getBounds();
-    origin = null;
-    setStatus('Looking for churches in this area…');
+    setStatus('Looking for churches in this area\u2026');
+    loadBox(b.getSouth(), b.getWest(), b.getNorth(), b.getEast()).then(function (list) {
+      if (!list) return searchAreaLive(b);
+      origin = [map.getCenter().lat, map.getCenter().lng];
+      render(list);
+    });
+  }
+
+  function searchAreaLive(b) {
     overpass(buildQuery('(' + [b.getSouth(), b.getWest(), b.getNorth(), b.getEast()].map(function (n) { return n.toFixed(5); }).join(',') + ')'))
       .then(function (data) { origin = [map.getCenter().lat, map.getCenter().lng]; render(toChurches(data)); })
       .catch(function () { setStatus('The church database is busy right now. Please try again in a minute.'); });
@@ -208,6 +274,7 @@
 
   document.getElementById('search-area').addEventListener('click', searchArea);
 
+  loadIndex(); // warm up the local church list
   var initial = new URLSearchParams(location.search).get('q');
   if (initial) { input.value = initial; geocode(initial); }
 })();
