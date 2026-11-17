@@ -60,10 +60,11 @@ def fetch(url, dest=None):
 
 
 def us_extracts():
-    """Every Geofabrik extract whose parent is 'us': the states, DC and territories."""
+    """Every Geofabrik extract directly under north-america/us/: the states, DC and territories."""
     idx = json.loads(fetch(INDEX_URL))
-    out = [(f["properties"]["id"], f["properties"]["urls"]["pbf"])
-           for f in idx["features"] if f["properties"].get("parent") == "us"]
+    state = re.compile(r"/north-america/us/[^/]+-latest\.osm\.pbf$")
+    out = sorted({(f["properties"]["id"], f["properties"]["urls"]["pbf"])
+                  for f in idx["features"] if state.search(f["properties"].get("urls", {}).get("pbf", ""))})
     if len(out) < 50:
         sys.exit(f"Geofabrik index lists only {len(out)} U.S. extracts; keeping old data.")
     return sorted(out)
