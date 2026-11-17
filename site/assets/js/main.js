@@ -1,0 +1,195 @@
+/* CatholicDoorway shared scripts: navigation, theme, today's date and season, filters. */
+(function () {
+  'use strict';
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  /* ---------- Mobile navigation ---------- */
+  var toggle = $('.nav-toggle'), nav = $('#site-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('open')) { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); toggle.focus(); }
+    });
+  }
+
+  /* ---------- Theme toggle ---------- */
+  var themeBtn = $('[data-theme-toggle]');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      var root = document.documentElement;
+      var cur = root.getAttribute('data-theme') ||
+        (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = cur === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('cd-theme', next); } catch (e) {}
+    });
+  }
+
+  /* ---------- Dates and the liturgical year ---------- */
+  function day(y, m, d) { return new Date(y, m, d); }
+  function addDays(dt, n) { var r = new Date(dt); r.setDate(r.getDate() + n); return r; }
+  function sameOrAfter(a, b) { return a.getTime() >= b.getTime(); }
+  function easter(y) { // Anonymous Gregorian algorithm
+    var a = y % 19, b = Math.floor(y / 100), c = y % 100, d = Math.floor(b / 4), e = b % 4,
+      f = Math.floor((b + 8) / 25), g = Math.floor((b - f + 1) / 3), h = (19 * a + b - d - g + 15) % 30,
+      i = Math.floor(c / 4), k = c % 4, l = (32 + 2 * e + 2 * i - h - k) % 7,
+      m = Math.floor((a + 11 * h + 22 * l) / 451), month = Math.floor((h + l - 7 * m + 114) / 31),
+      dd = ((h + l - 7 * m + 114) % 31) + 1;
+    return day(y, month - 1, dd);
+  }
+  function advent1(y) { var d = day(y, 10, 27); while (d.getDay() !== 0) d = addDays(d, 1); return d; }
+  function baptismOfLord(y) { // U.S. calendar: Epiphany is the Sunday from Jan 2 to 8
+    var ep = day(y, 0, 2); while (ep.getDay() !== 0) ep = addDays(ep, 1);
+    return ep.getDate() >= 7 ? addDays(ep, 1) : addDays(ep, 7);
+  }
+  var COLORS = { green: '#3f7a4a', violet: '#6a3f8a', white: '#f2ead6', red: '#a8322d' };
+
+  function season(t) {
+    var y = t.getFullYear(), e = easter(y), adv = advent1(y), bap = baptismOfLord(y);
+    var ash = addDays(e, -46), holyThu = addDays(e, -3), pent = addDays(e, 49);
+    var s;
+    if (sameOrAfter(t, day(y, 11, 25))) s = { name: 'Christmas', color: 'white', next: ['the Baptism of the Lord', baptismOfLord(y + 1)] };
+    else if (sameOrAfter(t, adv)) s = { name: 'Advent', color: 'violet', next: ['Christmas', day(y, 11, 25)] };
+    else if (sameOrAfter(t, addDays(pent, 1))) s = { name: 'Ordinary Time', color: 'green', next: ['Advent', adv] };
+    else if (sameOrAfter(t, e)) s = { name: 'Easter', color: 'white', next: ['Pentecost', pent] };
+    else if (sameOrAfter(t, holyThu)) s = { name: 'The Easter Triduum', color: 'red', next: ['Easter Sunday', e] };
+    else if (sameOrAfter(t, ash)) s = { name: 'Lent', color: 'violet', next: ['Easter', e] };
+    else if (sameOrAfter(t, addDays(bap, 1))) s = { name: 'Ordinary Time', color: 'green', next: ['Ash Wednesday', ash] };
+    else s = { name: 'Christmas', color: 'white', next: ['the Baptism of the Lord', bap] };
+    if (t.getTime() === pent.getTime()) { s.name = 'Pentecost Sunday'; s.color = 'red'; }
+    if (t.getTime() === e.getTime()) { s.name = 'Easter Sunday'; s.color = 'white'; }
+    if (t.getTime() === addDays(adv, -7).getTime()) { s.name = 'Christ the King'; s.color = 'white'; }
+    // Lectionary cycles: the liturgical year is named for the calendar year in which it ends.
+    var ly = sameOrAfter(t, adv) ? y + 1 : y;
+    s.sunday = ['C', 'A', 'B'][ly % 3];
+    s.weekday = ly % 2 ? 'I' : 'II';
+    return s;
+  }
+
+  var now = new Date();
+  var today = day(now.getFullYear(), now.getMonth(), now.getDate());
+  var longDate = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
+  function usccb(d) {
+    var mm = ('0' + (d.getMonth() + 1)).slice(-2), dd = ('0' + d.getDate()).slice(-2), yy = String(d.getFullYear()).slice(-2);
+    return 'https://bible.usccb.org/bible/readings/' + mm + dd + yy + '.cfm';
+  }
+  var s = season(today);
+
+  var dateEl = $('#today-date');
+  if (dateEl) dateEl.textContent = today.toLocaleDateString('en-US', longDate);
+  var seasonEl = $('#season');
+  if (seasonEl) seasonEl.innerHTML = '<span class="season-dot" style="background:' + COLORS[s.color] + '"></span>' + s.name;
+  var nextEl = $('#season-next');
+  if (nextEl && s.next) {
+    var days = Math.round((s.next[1] - today) / 86400000);
+    if (days > 0 && days <= 60) nextEl.textContent = (days === 1 ? 'Tomorrow is ' : days + ' days until ') + s.next[0] + (days === 1 ? '.' : ', ' + s.next[1].toLocaleDateString('en-US', { month: 'long', day: 'numeric' }) + '.');
+  }
+
+  $$('#readings-link, #readings-btn').forEach(function (a) { a.href = usccb(today); });
+  var tom = $('#readings-tomorrow'); if (tom) tom.href = usccb(addDays(today, 1));
+  var rd = $('#readings-date'); if (rd) rd.textContent = today.toLocaleDateString('en-US', longDate);
+  var cyc = $('#cycle-note'); if (cyc) cyc.textContent = 'This liturgical year: Sunday readings Year ' + s.sunday + ', weekday readings Year ' + s.weekday + '. Season: ' + s.name + '.';
+  var rform = $('#readings-form');
+  if (rform) {
+    var di = $('#readings-date-input');
+    di.value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+    rform.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var p = di.value.split('-');
+      if (p.length === 3) window.open(usccb(day(+p[0], +p[1] - 1, +p[2])), '_blank', 'noopener');
+    });
+  }
+
+  /* ---------- Rosary mysteries of the day ---------- */
+  var MYST = ['Glorious', 'Joyful', 'Sorrowful', 'Glorious', 'Luminous', 'Sorrowful', 'Joyful'];
+  var dow = today.getDay();
+  var mt = $('#mystery-title');
+  if (mt) { mt.textContent = 'The ' + MYST[dow] + ' Mysteries'; $('#mystery-sub').textContent = 'Today’s mysteries of the Rosary, with a step-by-step guide.'; }
+  $$('#mysteries [data-days]').forEach(function (c) {
+    if (c.getAttribute('data-days').split(',').indexOf(String(dow)) > -1) {
+      c.classList.add('today-mystery');
+      var h = c.querySelector('h4'); if (h) h.insertAdjacentHTML('beforeend', '<span class="badge">Today</span>');
+    }
+  });
+
+  /* ---------- Copy buttons on prayers ---------- */
+  $$('.prayer').forEach(function (p) {
+    var txt = p.querySelector('.text');
+    if (!txt || !navigator.clipboard) return;
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'copy-btn'; b.textContent = 'Copy prayer';
+    b.addEventListener('click', function () {
+      navigator.clipboard.writeText(p.querySelector('h3').textContent.trim() + '\n\n' + txt.innerText.trim()).then(function () {
+        b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy prayer'; }, 1800);
+      });
+    });
+    var tools = document.createElement('div'); tools.className = 'prayer-tools'; tools.appendChild(b);
+    p.appendChild(tools);
+  });
+
+  /* ---------- Filters ---------- */
+  function norm(x) { return (x || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+
+  // Saints
+  var grid = $('#saint-grid');
+  if (grid) {
+    var cards = $$('.saint', grid), q = $('#saint-search'), chips = $$('.chip[data-status]'), statusSel = 'all';
+    var count = $('#saint-count');
+    var apply = function () {
+      var term = norm(q.value), n = 0;
+      cards.forEach(function (c) {
+        var ok = (statusSel === 'all' || c.getAttribute('data-status') === statusSel) && (!term || norm(c.textContent).indexOf(term) > -1);
+        c.hidden = !ok; if (ok) n++;
+      });
+      count.textContent = n + (n === 1 ? ' person' : ' people') + ' shown';
+    };
+    q.addEventListener('input', apply);
+    chips.forEach(function (ch) {
+      ch.addEventListener('click', function () {
+        statusSel = ch.getAttribute('data-status');
+        chips.forEach(function (o) { o.setAttribute('aria-pressed', o === ch ? 'true' : 'false'); });
+        apply();
+      });
+    });
+    apply();
+  }
+
+  // Glossary
+  var gl = $('#glossary');
+  if (gl) {
+    var gq = $('#gloss-search'), gEmpty = $('#gloss-empty');
+    gq.addEventListener('input', function () {
+      var term = norm(gq.value), any = false;
+      $$('dt', gl).forEach(function (dt) {
+        var dd = dt.nextElementSibling;
+        var ok = !term || norm(dt.textContent + ' ' + dd.textContent).indexOf(term) > -1;
+        dt.hidden = dd.hidden = !ok; if (ok) any = true;
+      });
+      $$('.letter-head', gl).forEach(function (h) {
+        var el = h.nextElementSibling, vis = false;
+        while (el && !el.classList.contains('letter-head')) { if (el.tagName === 'DT' && !el.hidden) vis = true; el = el.nextElementSibling; }
+        h.hidden = !vis;
+      });
+      gEmpty.hidden = any;
+    });
+  }
+
+  // Dioceses
+  var dq = $('#dio-search');
+  if (dq) {
+    var rows = $$('#dio-table tbody tr'), dEmpty = $('#dio-empty');
+    dq.addEventListener('input', function () {
+      var term = norm(dq.value).trim(), n = 0;
+      rows.forEach(function (r) {
+        var text = norm(r.textContent);
+        var ok = !term || text.indexOf(term) > -1 || (term.length === 2 && text.indexOf('(' + term + ')') > -1);
+        r.hidden = !ok; if (ok) n++;
+      });
+      dEmpty.hidden = n > 0;
+    });
+  }
+})();

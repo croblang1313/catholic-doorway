@@ -1,0 +1,35 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker">Find a Church</p>
+    <h1>Find a Catholic Church Near You</h1>
+    <p class="lede">Search by city or ZIP code, or use your location. Tap a church for its address, phone, website and directions.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <form class="map-search" id="map-form" role="search" style="margin-top:1.5rem">
+    <label for="map-q" style="position:absolute;left:-999px">City, address or ZIP code</label>
+    <input class="search" id="map-q" type="search" placeholder="City, address or ZIP code" autocomplete="postal-code">
+    <button class="btn" type="submit">Search</button>
+    <button class="btn secondary" type="button" id="near-me">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="3.2" fill="currentColor"/><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3" stroke="currentColor" stroke-width="2"/></svg>
+      Near me
+    </button>
+  </form>
+
+  <div class="map-layout">
+    <div>
+      <div id="map" aria-label="Map of Catholic churches"></div>
+      <p class="small muted" style="margin-top:.6rem">Move the map, then tap <button type="button" class="copy-btn" id="search-area">Search this area</button></p>
+    </div>
+    <div>
+      <p class="status-msg" id="map-status" aria-live="polite">Search for a place to see nearby churches.</p>
+      <div class="results" id="results"></div>
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:2rem">
+    <p><strong>Please confirm Mass times with the parish.</strong> Schedules change for holidays, seasons and summer. A parish&rsquo;s own website or bulletin is the most reliable source. Where a listing shows times, they come from volunteers on OpenStreetMap and may be out of date.</p>
+  </div>
+  <p class="small muted">Church data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>. Missing a church, or see a wrong phone number? <a href="https://www.openstreetmap.org/">Anyone can fix it on OpenStreetMap</a>, and the fix will appear here.</p>
+</div>
