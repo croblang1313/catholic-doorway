@@ -453,3 +453,41 @@ body.companion-open { overflow: hidden; }
 .cal-date b { display: block; font: 600 1.6rem/1.1 var(--serif-display); color: var(--gold); }
 .cal-ev strong { font-family: var(--serif-display); font-size: 1.15rem; color: var(--navy); margin-right: .3rem; }
 .cal-ev p { margin: .25rem 0 0; font-size: .97rem; color: var(--ink-soft); }
+
+/* Interactive Rosary */
+.rosary-top { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin-bottom: 1rem; }
+.rosary-top select { flex: 1 1 220px; max-width: 22rem; }
+.rosary-grid { display: grid; gap: 1.2rem 2.5rem; grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 860px) { .rosary-grid { grid-template-columns: minmax(260px, 340px) 1fr; } }
+#rosary-svg { width: 100%; max-width: 300px; margin: 0 auto; display: block; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+@media (max-width: 859px) { #rosary-svg { max-width: 220px; } }
+#rosary-svg .chain { fill: none; stroke: var(--line); stroke-width: 1.5; }
+#rosary-svg .bead { fill: var(--surface); stroke: var(--gold); stroke-width: 1.5; transition: fill .2s, transform .2s; }
+#rosary-svg .bead.done { fill: var(--gold-soft); }
+#rosary-svg .bead.now { fill: var(--gold); stroke: var(--navy); stroke-width: 2.5; }
+#rosary-svg .center { stroke-width: 2; }
+#rosary-svg path.bead { fill: none; stroke: var(--navy); stroke-width: 4; stroke-linecap: round; }
+#rosary-svg path.bead.now { stroke: var(--gold); }
+#rosary-svg path.bead.done { fill: none; }
+.rosary-panel { min-width: 0; }
+.rs-progress { height: 4px; background: var(--line); border-radius: 4px; overflow: hidden; }
+.rs-progress span { display: block; height: 100%; background: var(--gold); transition: width .25s; }
+.rosary-step { min-height: 15rem; padding: 1rem 0; }
+.rs-where { font: 700 .8rem var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin: 0 0 .6rem; }
+.rs-mystery { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 8px; padding: .7rem 1rem; margin-bottom: 1rem; }
+.rs-mystery strong { display: block; font: 600 1.35rem var(--serif-display); color: var(--navy); }
+.rs-mystery p { margin: .35rem 0 0; font-size: 1rem; }
+.rs-num { font: 600 .8rem var(--sans); color: var(--ink-soft); }
+.rs-meta { font-size: .9rem !important; color: var(--ink-soft); }
+.rosary-step h3 { font-size: 1.6rem; margin: 0 0 .4rem; }
+.rs-note { font-style: italic; color: var(--ink-soft); margin: 0 0 .4rem; }
+.rs-text { font-size: 1.2rem; line-height: 1.65; margin: 0; }
+.rs-nav { display: flex; align-items: center; justify-content: space-between; gap: .8rem; }
+.rs-nav .btn { flex: 1; max-width: 12rem; min-height: 54px; }
+.rs-count { font: 600 .9rem var(--sans); color: var(--ink-soft); white-space: nowrap; }
+.rs-hint { text-align: center; margin-top: .8rem; }
+.rs-dots { display: flex; gap: .45rem; margin: 0 0 .8rem; flex-wrap: wrap; }
+.rs-dots span { width: 1.05rem; height: 1.05rem; border-radius: 50%; border: 1.5px solid var(--gold); background: var(--surface); }
+.rs-dots span.done { background: var(--gold-soft); }
+.rs-dots span.now { background: var(--gold); border-color: var(--navy); transform: scale(1.2); }
+@media (max-width: 859px) { #rosary-svg { max-width: 170px; } .rosary-step { min-height: 12rem; } }

@@ -1,0 +1,40 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/prayers">Prayers</a> &rsaquo; Pray the Rosary</p>
+    <h1>Pray the Rosary with us</h1>
+    <p class="lede">No beads? No problem. Tap through the Rosary one prayer at a time. The bead you&rsquo;re on lights up, each mystery comes with its Scripture passage, and your place is saved if you stop partway.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section">
+    <div class="rosary" id="rosary-app" hidden>
+      <div class="rosary-top">
+        <label for="rosary-set" class="small muted">Mysteries</label>
+        <select id="rosary-set" class="search"></select>
+        <button type="button" class="btn small secondary" id="rs-restart">Start over</button>
+      </div>
+      <div class="rosary-grid">
+        <svg id="rosary-svg" viewBox="0 0 300 420" role="img" aria-label="Rosary beads. The current bead is highlighted; tap to move to the next prayer."></svg>
+        <div class="rosary-panel">
+          <div class="rs-progress"><span id="rs-bar"></span></div>
+          <div id="rosary-step" class="rosary-step" aria-live="polite"></div>
+          <div class="rs-nav">
+            <button class="btn secondary" type="button" id="rs-back">&larr; Back</button>
+            <span id="rs-count" class="rs-count"></span>
+            <button class="btn" type="button" id="rs-next">Next &rarr;</button>
+          </div>
+          <p class="small muted rs-hint">Tip: tap the beads, swipe, or use your arrow keys to move along.</p>
+        </div>
+      </div>
+    </div>
+    <p id="rosary-nojs" class="muted">The interactive Rosary needs JavaScript. You can follow the <a href="/prayers#rosary">written guide</a> instead.</p>
+  </section>
+
+  <section class="section prose">
+    <h2>About the Rosary</h2>
+    <p>The Rosary is a prayer of meditation on the life of Jesus, seen through the eyes of his mother, Mary. While the lips pray familiar prayers, the heart and mind dwell on one of twenty events, called <strong>mysteries</strong>, from the Gospels. A full Rosary of five decades takes about 20 minutes.</p>
+    <p>Each day of the week has its own set of mysteries: Joyful on Mondays and Saturdays, Sorrowful on Tuesdays and Fridays, Glorious on Wednesdays and Sundays, and Luminous on Thursdays. This page picks today&rsquo;s set for you, but you can choose any set.</p>
+    <p>See all the prayers, and a written step-by-step guide, on our <a href="/prayers#rosary">Prayers page</a>.</p>
+  </section>
+</div>

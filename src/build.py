@@ -28,6 +28,8 @@ PAGES = [
      "Find Catholic churches near you on a free map built from OpenStreetMap, with address, phone, website and directions."),
     ("prayers", "Prayers", "Catholic Prayers and How to Pray the Rosary | CatholicDoorway",
      "Traditional Catholic prayers, from the Our Father and Hail Mary to the Memorare, plus a step-by-step guide to the Rosary."),
+    ("rosary", "Pray the Rosary", "Pray the Rosary Online, Bead by Bead | CatholicDoorway",
+     "An interactive Rosary: tap through each bead with the prayers, today's mysteries and their Scripture passages. Free, no app needed."),
     ("bible", "Bible & Readings", "The Bible and Today's Mass Readings | CatholicDoorway",
      "Today's Catholic Mass readings, how the Catholic Bible is arranged, and where to read it free online."),
     ("calendar", "Holy Days Calendar", "Catholic Holy Days of Obligation and Fasting Calendar | CatholicDoorway",
@@ -48,9 +50,10 @@ PAGES = [
      "About CatholicDoorway.com: a free, ad-free guide to the Catholic faith. Sources, data and corrections."),
     ("404", "Not found", "Page not found | CatholicDoorway", "This page could not be found."),
 ]
-NAV_EXCLUDE = {"about", "404", "popes", "dioceses", "find-a-church", "first-mass", "calendar"}
+NAV_EXCLUDE = {"about", "404", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary"}
 # Pages shown in a dropdown under a main menu item: parent slug -> [(slug, label)]
-SUBNAV = {"bible": [("bible", "Today’s readings and the Bible"), ("calendar", "Holy Days Calendar")],
+SUBNAV = {"prayers": [("prayers", "Catholic prayers"), ("rosary", "Pray the Rosary")],
+          "bible": [("bible", "Today’s readings and the Bible"), ("calendar", "Holy Days Calendar")],
           "start-here": [("start-here", "Becoming Catholic (OCIA)"), ("first-mass", "Your First Mass")],
           "structure": [("structure", "How the Church is organized"), ("popes", "All 267 Popes"),
                         ("dioceses", "U.S. Dioceses"), ("find-a-church", "Find a Church")]}
@@ -149,6 +152,7 @@ FOOT = """</main>
 """
 
 EXTRA = {
+    "rosary": ("", '<script src="/assets/js/rosary.js" defer></script>'),
     "find-a-church": (
         '<link rel="stylesheet" href="/assets/vendor/leaflet/leaflet.css">',
         '<script src="/assets/vendor/leaflet/leaflet.js"></script>\n<script src="/assets/js/map.js" defer></script>',
@@ -267,7 +271,7 @@ def version(rel):
 
 
 def bust(page):
-    for rel in ("/assets/css/style.css", "/assets/js/main.js", "/assets/js/map.js"):
+    for rel in ("/assets/css/style.css", "/assets/js/main.js", "/assets/js/map.js", "/assets/js/rosary.js"):
         page = page.replace(f'"{rel}"', f'"{rel}?v={version(rel)}"')
     return page
 
