@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Encuentra una iglesia católica cerca de ti | CatholicDoorway</title>
+<meta name="description" content="Busca iglesias católicas en Estados Unidos por ciudad o código postal: dirección, teléfono, sitio web y cómo llegar.">
+<link rel="canonical" href="https://catholicdoorway.com/es/buscar-iglesia">
+<link rel="alternate" hreflang="en" href="https://catholicdoorway.com/find-a-church">
+<link rel="alternate" hreflang="es" href="https://catholicdoorway.com/es/buscar-iglesia">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CatholicDoorway">
+<meta property="og:locale" content="es_US">
+<meta property="og:title" content="Encuentra una iglesia católica cerca de ti | CatholicDoorway">
+<meta property="og:description" content="Busca iglesias católicas en Estados Unidos por ciudad o código postal: dirección, teléfono, sitio web y cómo llegar.">
+<meta property="og:url" content="https://catholicdoorway.com/es/buscar-iglesia">
+<meta property="og:image" content="https://catholicdoorway.com/assets/img/og.png">
+<meta name="theme-color" content="#1d2b4f">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="/assets/css/style.css?v=05c8494f9f">
+<script>try{var t=localStorage.getItem('cd-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<link rel="stylesheet" href="/assets/vendor/leaflet/leaflet.css">
+</head>
+<body data-page="find-a-church">
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="/es/" aria-label="Inicio de CatholicDoorway"><svg viewBox="0 0 34 40" aria-hidden="true" focusable="false"><path d="M3 39V17C3 8.7 9.3 2 17 2s14 6.7 14 15v22" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8 39V18.5C8 13 12 8.5 17 8.5S26 13 26 18.5V39" fill="currentColor" opacity=".16"/><path d="M8 39V18.5C8 13 12 8.5 17 8.5S26 13 26 18.5V39" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M17 12v9M13.6 15.2h6.8" stroke="#a8802f" stroke-width="2" stroke-linecap="round"/><circle cx="22" cy="28" r="1.4" fill="#a8802f"/><path d="M1 39h32" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span class="brand-name">Catholic<span>Doorway</span></span></a>
+    <div class="header-tools">
+      <a class="lang-link" href="/find-a-church" hreflang="en" lang="en" aria-label="English"><span class="ll-long" aria-hidden="true">English</span><span class="ll-short" aria-hidden="true">en</span></a>
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="Cambiar a modo claro u oscuro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="nt-label">Menú</span></button>
+    </div>
+    <nav class="site-nav" id="site-nav" aria-label="Principal">
+      <ul>
+        <li><a href="/es/">Inicio</a></li>
+        <li><a href="/es/comenzar">Hacerse católico</a></li>
+        <li><a href="/es/primera-misa">Tu primera Misa</a></li>
+        <li><a href="/es/oraciones">Oraciones</a></li>
+        <li><a href="/es/rosario">Reza el Rosario</a></li>
+        <li><a href="/es/buscar-iglesia" aria-current="page">Buscar una iglesia</a></li>
+        <li><a href="/" lang="en" hreflang="en">Más en inglés</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker">Buscar una iglesia</p>
+    <h1>Encuentra una iglesia católica cerca de ti</h1>
+    <p class="lede">Busca por ciudad o código postal, o usa tu ubicación. Toca una iglesia para ver su dirección, teléfono, sitio web y cómo llegar.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <form class="map-search" id="map-form" role="search" style="margin-top:1.5rem">
+    <label for="map-q" style="position:absolute;left:-999px">Ciudad, dirección o código postal</label>
+    <input class="search" id="map-q" type="search" placeholder="Ciudad, dirección o código postal" autocomplete="postal-code">
+    <button class="btn" type="submit">Buscar</button>
+    <button class="btn secondary" type="button" id="near-me">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="3.2" fill="currentColor"/><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3" stroke="currentColor" stroke-width="2"/></svg>
+      Cerca de mí
+    </button>
+  </form>
+
+  <div class="map-layout">
+    <div>
+      <div id="map" aria-label="Mapa de iglesias católicas"></div>
+      <p class="small muted" style="margin-top:.6rem">Mueve el mapa y luego toca <button type="button" class="copy-btn" id="search-area">Buscar en esta zona</button></p>
+    </div>
+    <div>
+      <p class="status-msg" id="map-status" aria-live="polite">Busca un lugar para ver las iglesias cercanas.</p>
+      <div class="results" id="results"></div>
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:2rem">
+    <p><strong>Confirma los horarios de Misa con la parroquia.</strong> Los horarios cambian en días festivos, en ciertas temporadas y en verano. El sitio web o el boletín de la parroquia es la fuente más confiable. Muchas parroquias tienen Misa en español; el sitio web o la oficina parroquial te dirá cuándo. Los horarios que aparecen aquí vienen de voluntarios de OpenStreetMap y pueden no estar al día.</p>
+  </div>
+  <p class="small muted">Datos de las iglesias &copy; <a href="https://www.openstreetmap.org/copyright">colaboradores de OpenStreetMap</a>. ¿Falta una iglesia o hay un teléfono equivocado? <a href="https://www.openstreetmap.org/">Cualquiera puede corregirlo en OpenStreetMap</a>, y el cambio aparecerá aquí.</p>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-verse">&ldquo;Yo soy la puerta; el que entre por mí se salvará.&rdquo;</p>
+        <p class="small">Juan 10:9</p>
+      </div>
+      <div>
+        <h4>En español</h4>
+        <ul>
+          <li><a href="/es/comenzar">Cómo hacerse católico (OCIA)</a></li>
+          <li><a href="/es/primera-misa">Tu primera Misa</a></li>
+          <li><a href="/es/oraciones">Oraciones y el Rosario</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>En inglés</h4>
+        <ul>
+          <li><a href="/find-a-church" lang="en">Find a Church (mapa)</a></li>
+          <li><a href="/beliefs" lang="en">What Catholics Believe</a></li>
+          <li><a href="/saints" lang="en">Saints</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sobre el sitio</h4>
+        <ul>
+          <li><a href="/about" lang="en">About</a></li>
+          <li><a href="mailto:hello@catholicdoorway.com">Escríbenos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      CatholicDoorway es una guía gratuita e independiente, sin anuncios. No es un sitio oficial de la Iglesia Católica ni de ninguna diócesis. Para la enseñanza oficial de la Iglesia, consulta el <a href="https://www.vatican.va/archive/catechism_sp/index_sp.html">Catecismo de la Iglesia Católica</a>.
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js?v=cf58d58ed2" defer></script>
+<script src="/assets/vendor/leaflet/leaflet.js"></script>
+<script src="/assets/js/map.js?v=f03bd03ba0" defer></script>
+</body>
+</html>

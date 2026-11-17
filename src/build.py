@@ -69,7 +69,9 @@ ES_PAGES = [
     ("first-mass", "primera-misa", "Tu primera Misa", "Tu primera Misa, paso a paso | CatholicDoorway",
      "¿Vas a Misa por primera vez? Una guía paso a paso para tu teléfono: cuándo ponerse de pie, sentarse y arrodillarse, qué se responde y qué hacer en la Comunión."),
     ("prayers", "oraciones", "Oraciones", "Oraciones católicas y cómo rezar el Rosario | CatholicDoorway",
-     "Las oraciones católicas tradicionales en español: el Padre Nuestro, el Ave María, el Credo, la Salve y más, con una guía del Rosario."),
+     "Las oraciones católicas tradicionales en español: el Padre Nuestro, el Ave María, el Credo, la Salve y más, con una guía del Rosario."),    ("rosary", "rosario", "Reza el Rosario", "Reza el Rosario en línea, cuenta por cuenta | CatholicDoorway",
+     "Reza el Rosario paso a paso en tu teléfono: las cuentas se iluminan, cada misterio trae su pasaje bíblico y se guarda dónde vas."),    ("find-a-church", "buscar-iglesia", "Buscar una iglesia", "Encuentra una iglesia católica cerca de ti | CatholicDoorway",
+     "Busca iglesias católicas en Estados Unidos por ciudad o código postal: dirección, teléfono, sitio web y cómo llegar."),
 ]
 ES_TEXT = dict(lang="es", skip="Saltar al contenido", home="/es/", home_label="Inicio de CatholicDoorway",
                theme_label="Cambiar a modo claro u oscuro", menu_label="Menú", nav_label="Principal",

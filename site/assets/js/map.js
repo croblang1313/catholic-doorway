@@ -3,8 +3,10 @@
    No data is scraped from MassTimes.org or any other directory. */
 (function () {
   'use strict';
+  var ES = document.documentElement.lang === 'es';
+  var T = function (en, es) { return ES ? es : en; };
   if (typeof L === 'undefined') {
-    document.getElementById('map-status').textContent = 'The map could not load. Please check your connection and refresh.';
+    document.getElementById('map-status').textContent = T('The map could not load. Please check your connection and refresh.', 'No se pudo cargar el mapa. Revisa tu conexión y vuelve a cargar la página.');
     return;
   }
 
@@ -93,7 +95,7 @@
       var t = el.tags || {};
       return {
         id: el.type + '/' + el.id, type: el.type, osmId: el.id, lat: lat, lon: lon,
-        name: t.name || t['name:en'] || 'Catholic church',
+        name: t.name || t['name:en'] || T('Catholic church', 'Iglesia católica'),
         addr: address(t), phone: phone(t), web: website(t),
         times: t.service_times || '', wheelchair: t.wheelchair
       };
@@ -110,7 +112,7 @@
   }
   function fromCompact(a) {
     var type = OSM_TYPES[a[7]] || 'node';
-    return { id: type + '/' + a[8], type: type, osmId: a[8], lat: a[0], lon: a[1], name: a[2] || 'Catholic church',
+    return { id: type + '/' + a[8], type: type, osmId: a[8], lat: a[0], lon: a[1], name: a[2] || T('Catholic church', 'Iglesia católica'),
       addr: a[3], phone: a[4], web: normWeb(a[5]), times: a[6] };
   }
   // Resolves to a list of churches inside the box, or null if the local list is unavailable.
@@ -148,8 +150,8 @@
     shown.forEach(function (c) {
       var dir = directions(c.lat, c.lon, c.name);
       var popup = '<strong>' + esc(c.name) + '</strong>' + (c.addr ? '<br>' + esc(c.addr) : '') +
-        '<br><a href="' + esc(dir) + '" target="_blank" rel="noopener">Directions</a>' +
-        (c.web ? ' &middot; <a href="' + esc(c.web) + '" target="_blank" rel="noopener">Website</a>' : '');
+        '<br><a href="' + esc(dir) + '" target="_blank" rel="noopener">' + T('Directions', 'Cómo llegar') + '</a>' +
+        (c.web ? ' &middot; <a href="' + esc(c.web) + '" target="_blank" rel="noopener">' + T('Website', 'Sitio web') + '</a>' : '');
       var m = L.marker([c.lat, c.lon], { icon: icon, title: c.name }).bindPopup(popup).addTo(layer);
       m.on('click', function () { highlight(c.id, true); });
       markers[c.id] = m;
@@ -158,16 +160,16 @@
       card.className = 'card church';
       card.id = 'c-' + c.id.replace('/', '-');
       card.innerHTML =
-        (c.d != null ? '<span class="dist">' + fmtDist(c.d) + ' away</span>' : '') +
+        (c.d != null ? '<span class="dist">' + (ES ? 'a ' + fmtDist(c.d) : fmtDist(c.d) + ' away') + '</span>' : '') +
         '<h3><button type="button" class="linklike" style="all:unset;cursor:pointer">' + esc(c.name) + '</button></h3>' +
-        '<p class="addr">' + (c.addr ? esc(c.addr) : '<span class="muted">Address not listed</span>') + '</p>' +
-        (c.times ? '<div class="times"><strong>Listed service times:</strong> ' + esc(c.times) + '<br><span class="muted">From OpenStreetMap. Please confirm with the parish.</span></div>' : '') +
+        '<p class="addr">' + (c.addr ? esc(c.addr) : '<span class="muted">' + T('Address not listed', 'Dirección no disponible') + '</span>') + '</p>' +
+        (c.times ? '<div class="times"><strong>' + T('Listed service times:', 'Horarios publicados:') + '</strong> ' + esc(c.times) + '<br><span class="muted">' + T('From OpenStreetMap. Please confirm with the parish.', 'Según OpenStreetMap. Confírmalos con la parroquia.') + '</span></div>' : '') +
         '<div class="actions">' +
-          '<a class="btn small" href="' + esc(dir) + '" target="_blank" rel="noopener">Directions</a>' +
-          (c.phone ? '<a class="btn small secondary" href="tel:' + esc(c.phone.replace(/[^\d+]/g, '')) + '">Call ' + esc(c.phone) + '</a>' : '') +
-          (c.web ? '<a class="btn small secondary" href="' + esc(c.web) + '" target="_blank" rel="noopener">Website &amp; Mass times</a>' : '') +
+          '<a class="btn small" href="' + esc(dir) + '" target="_blank" rel="noopener">' + T('Directions', 'Cómo llegar') + '</a>' +
+          (c.phone ? '<a class="btn small secondary" href="tel:' + esc(c.phone.replace(/[^\d+]/g, '')) + '">' + T('Call ', 'Llamar al ') + esc(c.phone) + '</a>' : '') +
+          (c.web ? '<a class="btn small secondary" href="' + esc(c.web) + '" target="_blank" rel="noopener">' + T('Website &amp; Mass times', 'Sitio web y horarios de Misa') + '</a>' : '') +
         '</div>' +
-        '<p class="small muted" style="margin:.6rem 0 0"><a href="https://www.openstreetmap.org/edit?' + c.type + '=' + c.osmId + '" target="_blank" rel="noopener">Improve this listing</a></p>';
+        '<p class="small muted" style="margin:.6rem 0 0"><a href="https://www.openstreetmap.org/edit?' + c.type + '=' + c.osmId + '" target="_blank" rel="noopener">' + T('Improve this listing', 'Mejorar este dato') + '</a></p>';
       card.querySelector('h3 button').addEventListener('click', function () {
         map.setView([c.lat, c.lon], Math.max(map.getZoom(), 15));
         m.openPopup();
@@ -176,9 +178,11 @@
       resultsEl.appendChild(card);
     });
     if (!list.length) {
-      setStatus('No Catholic churches found here on OpenStreetMap. Try zooming out or searching a nearby town.');
+      setStatus(T('No Catholic churches found here on OpenStreetMap. Try zooming out or searching a nearby town.', 'No encontramos iglesias católicas aquí en OpenStreetMap. Aleja el mapa o busca un pueblo cercano.'));
     } else {
-      setStatus('Showing ' + shown.length + (list.length > shown.length ? ' of ' + list.length : '') + ' Catholic ' + (shown.length === 1 ? 'church' : 'churches') + (origin ? ', nearest first.' : '.'));
+      setStatus(ES
+        ? 'Mostrando ' + shown.length + (list.length > shown.length ? ' de ' + list.length : '') + (shown.length === 1 ? ' iglesia católica' : ' iglesias católicas') + (origin ? ', de la más cercana a la más lejana.' : '.')
+        : 'Showing ' + shown.length + (list.length > shown.length ? ' of ' + list.length : '') + ' Catholic ' + (shown.length === 1 ? 'church' : 'churches') + (origin ? ', nearest first.' : '.'));
     }
   }
 
@@ -198,8 +202,8 @@
   function searchAround(lat, lon, label) {
     origin = [lat, lon];
     if (originMarker) map.removeLayer(originMarker);
-    originMarker = L.circleMarker(origin, { radius: 7, color: '#a8802f', weight: 3, fillColor: '#fff', fillOpacity: 1 }).addTo(map).bindTooltip(label || 'You are here');
-    setStatus('Looking for churches near ' + (label || 'you') + '\u2026');
+    originMarker = L.circleMarker(origin, { radius: 7, color: '#a8802f', weight: 3, fillColor: '#fff', fillOpacity: 1 }).addTo(map).bindTooltip(label || T('You are here', 'Estás aquí'));
+    setStatus(ES ? 'Buscando iglesias cerca de ' + (label || 'ti') + '\u2026' : 'Looking for churches near ' + (label || 'you') + '\u2026');
     var bx = boxAround(lat, lon, 80);
     loadBox(bx[0], bx[1], bx[2], bx[3]).then(function (all) {
       if (!all) return searchAroundLive(lat, lon, label);
@@ -220,14 +224,14 @@
       if (list.length < 3 && radius < 60000) return searchAroundLive(lat, lon, label, radius * 2.5);
       showResults(list);
     }).catch(function () {
-      setStatus('The church database is busy right now. Please try again in a minute.');
+      setStatus(T('The church database is busy right now. Please try again in a minute.', 'La base de datos de iglesias está ocupada. Vuelve a intentarlo en un minuto.'));
     });
   }
 
   function searchArea() {
-    if (map.getZoom() < 9) { setStatus('Zoom in a little closer to search this area.'); return; }
+    if (map.getZoom() < 9) { setStatus(T('Zoom in a little closer to search this area.', 'Acerca un poco más el mapa para buscar en esta zona.')); return; }
     var b = map.getBounds();
-    setStatus('Looking for churches in this area\u2026');
+    setStatus(T('Looking for churches in this area\u2026', 'Buscando iglesias en esta zona\u2026'));
     loadBox(b.getSouth(), b.getWest(), b.getNorth(), b.getEast()).then(function (list) {
       if (!list) return searchAreaLive(b);
       origin = [map.getCenter().lat, map.getCenter().lng];
@@ -238,7 +242,7 @@
   function searchAreaLive(b) {
     overpass(buildQuery('(' + [b.getSouth(), b.getWest(), b.getNorth(), b.getEast()].map(function (n) { return n.toFixed(5); }).join(',') + ')'))
       .then(function (data) { origin = [map.getCenter().lat, map.getCenter().lng]; render(toChurches(data)); })
-      .catch(function () { setStatus('The church database is busy right now. Please try again in a minute.'); });
+      .catch(function () { setStatus(T('The church database is busy right now. Please try again in a minute.', 'La base de datos de iglesias está ocupada. Vuelve a intentarlo en un minuto.')); });
   }
 
   function geocode(q) {
@@ -247,11 +251,11 @@
     return fetch(url, { headers: { 'Accept-Language': 'en' } })
       .then(function (r) { return r.json(); })
       .then(function (res) {
-        if (!res.length) { setStatus('We couldn’t find that place. Try a city and state, or a ZIP code.'); return; }
+        if (!res.length) { setStatus(T('We couldn’t find that place. Try a city and state, or a ZIP code.', 'No encontramos ese lugar. Prueba con una ciudad y estado, o un código postal.')); return; }
         var name = res[0].display_name.split(',').slice(0, 2).join(',');
         searchAround(parseFloat(res[0].lat), parseFloat(res[0].lon), name);
       })
-      .catch(function () { setStatus('Search is unavailable right now. Please try again shortly.'); });
+      .catch(function () { setStatus(T('Search is unavailable right now. Please try again shortly.', 'La búsqueda no está disponible en este momento. Inténtalo de nuevo en un rato.')); });
   }
 
   form.addEventListener('submit', function (e) {
@@ -263,12 +267,12 @@
   });
 
   document.getElementById('near-me').addEventListener('click', function () {
-    if (!navigator.geolocation) { setStatus('Your browser can’t share location. Please type a city or ZIP code.'); return; }
-    setStatus('Finding your location…');
+    if (!navigator.geolocation) { setStatus(T('Your browser can’t share location. Please type a city or ZIP code.', 'Tu navegador no puede compartir tu ubicación. Escribe una ciudad o un código postal.')); return; }
+    setStatus(T('Finding your location…', 'Buscando tu ubicación…'));
     navigator.geolocation.getCurrentPosition(function (pos) {
-      searchAround(pos.coords.latitude, pos.coords.longitude, 'your location');
+      searchAround(pos.coords.latitude, pos.coords.longitude, T('your location', 'tu ubicación'));
     }, function () {
-      setStatus('We couldn’t get your location. Please type a city or ZIP code instead.');
+      setStatus(T('We couldn’t get your location. Please type a city or ZIP code instead.', 'No pudimos obtener tu ubicación. Escribe una ciudad o un código postal.'));
     }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 600000 });
   });
 

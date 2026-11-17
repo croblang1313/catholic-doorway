@@ -1,0 +1,35 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker">Buscar una iglesia</p>
+    <h1>Encuentra una iglesia católica cerca de ti</h1>
+    <p class="lede">Busca por ciudad o código postal, o usa tu ubicación. Toca una iglesia para ver su dirección, teléfono, sitio web y cómo llegar.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <form class="map-search" id="map-form" role="search" style="margin-top:1.5rem">
+    <label for="map-q" style="position:absolute;left:-999px">Ciudad, dirección o código postal</label>
+    <input class="search" id="map-q" type="search" placeholder="Ciudad, dirección o código postal" autocomplete="postal-code">
+    <button class="btn" type="submit">Buscar</button>
+    <button class="btn secondary" type="button" id="near-me">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="3.2" fill="currentColor"/><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3" stroke="currentColor" stroke-width="2"/></svg>
+      Cerca de mí
+    </button>
+  </form>
+
+  <div class="map-layout">
+    <div>
+      <div id="map" aria-label="Mapa de iglesias católicas"></div>
+      <p class="small muted" style="margin-top:.6rem">Mueve el mapa y luego toca <button type="button" class="copy-btn" id="search-area">Buscar en esta zona</button></p>
+    </div>
+    <div>
+      <p class="status-msg" id="map-status" aria-live="polite">Busca un lugar para ver las iglesias cercanas.</p>
+      <div class="results" id="results"></div>
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:2rem">
+    <p><strong>Confirma los horarios de Misa con la parroquia.</strong> Los horarios cambian en días festivos, en ciertas temporadas y en verano. El sitio web o el boletín de la parroquia es la fuente más confiable. Muchas parroquias tienen Misa en español; el sitio web o la oficina parroquial te dirá cuándo. Los horarios que aparecen aquí vienen de voluntarios de OpenStreetMap y pueden no estar al día.</p>
+  </div>
+  <p class="small muted">Datos de las iglesias &copy; <a href="https://www.openstreetmap.org/copyright">colaboradores de OpenStreetMap</a>. ¿Falta una iglesia o hay un teléfono equivocado? <a href="https://www.openstreetmap.org/">Cualquiera puede corregirlo en OpenStreetMap</a>, y el cambio aparecerá aquí.</p>
+</div>
