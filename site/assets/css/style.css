@@ -224,7 +224,7 @@ section { scroll-margin-top: 80px; }
 .steps > li::after { content: ""; position: absolute; left: 1.13rem; top: 2.5rem; bottom: .3rem; width: 2px; background: var(--line); }
 .steps > li:last-child::after { display: none; }
 .steps h3 { margin: .1rem 0 .3rem; font-size: 1.4rem; }
-.rite { display: inline-block; font: 600 .85rem var(--sans); background: var(--gold-soft); color: var(--navy); padding: .2rem .65rem; border-radius: 999px; margin: .2rem 0 .5rem; }
+.rite { display: inline-block; font: 600 .85rem var(--sans); background: var(--gold-soft); color: var(--navy); padding: .3rem .75rem; border-radius: 10px; margin: .2rem 0 .5rem; }
 
 .timeline-bar { display: grid; grid-template-columns: 3fr 4fr 1.2fr 1.5fr; gap: 3px; margin: 1.2rem 0 .4rem; font: 600 .82rem var(--sans); }
 .timeline-bar div { padding: .55rem .5rem; color: #fff; text-align: center; border-radius: 6px; }
