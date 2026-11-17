@@ -1,0 +1,57 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/es/comenzar">Hacerse católico</a> &rsaquo; Tu primera Misa</p>
+    <h1>Tu primera Misa, paso a paso</h1>
+    <p class="lede">¿Nunca has ido a Misa, o hace mucho que no vas? Esta guía te acompaña en los {{MASS_COUNT}} momentos de una Misa dominical: cuándo ponerse de pie, sentarse y arrodillarse, qué se responde y qué hacer en la Comunión.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section">
+    <div class="card companion-cta">
+      <div>
+        <p class="label">En la banca</p>
+        <h3>Úsala durante la Misa</h3>
+        <p>Se abre paso a paso, con letra grande y botones grandes de Atrás y Siguiente, para que la sigas en tu teléfono. La pantalla se mantiene encendida y se guarda dónde vas.</p>
+      </div>
+      <button class="btn" type="button" id="mass-start">Empezar la guía</button>
+    </div>
+    <ul class="pose-key" aria-label="Posturas">
+      <li><span class="pose pose-stand">De pie</span></li>
+      <li><span class="pose pose-sit">Sentados</span></li>
+      <li><span class="pose pose-kneel">De rodillas</span></li>
+      <li><span class="pose pose-any">Como prefieras</span></li>
+    </ul>
+    <p class="small muted">Las costumbres varían un poco de una parroquia a otra. Si tienes duda, haz lo que hacen los demás. Si te cuesta arrodillarte, siempre puedes quedarte sentado. Las respuestas del pueblo vienen del Misal Romano; los textos completos están en el misal o en la hoja de la Misa.</p>
+  </section>
+
+  <div class="mass-steps" id="mass-steps">
+{{MASS}}
+  </div>
+
+  <section class="section prose">
+    <h2>Otras cosas que conviene saber</h2>
+    <ul>
+      <li><strong>¿Cuánto dura la Misa?</strong> Alrededor de una hora los domingos y unos 30 minutos entre semana.</li>
+      <li><strong>¿Qué me pongo?</strong> Lo habitual es vestir como para una cena especial, pero ven como estés.</li>
+      <li><strong>¿Puedo llevar a los niños?</strong> Sí. Algunas iglesias tienen un cuarto para los más pequeños, pero la mayoría de las parroquias se alegran de oír a los niños.</li>
+      <li><strong>¿Tengo que dar dinero?</strong> No. La colecta sostiene a la parroquia. Los visitantes pueden pasar la canasta.</li>
+      <li><strong>¿Dónde encuentro horarios de Misa en español?</strong> Usa nuestro <a href="/find-a-church" lang="en">mapa de iglesias</a> y luego revisa el sitio web de la parroquia o llama.</li>
+    </ul>
+    <p><a class="btn secondary" href="/es/comenzar">¿Piensas en hacerte católico? Empieza aquí &rarr;</a></p>
+  </section>
+</div>
+
+<div class="companion" id="companion" hidden role="dialog" aria-modal="true" aria-label="Guía de la Misa">
+  <div class="companion-bar">
+    <span class="companion-part" id="comp-part"></span>
+    <button class="companion-close" type="button" id="comp-close" aria-label="Cerrar la guía">&times;</button>
+  </div>
+  <div class="companion-progress"><span id="comp-progress"></span></div>
+  <div class="companion-body" id="comp-body" aria-live="polite"></div>
+  <div class="companion-nav">
+    <button class="btn secondary" type="button" id="comp-back">&larr; Atrás</button>
+    <span class="companion-count" id="comp-count"></span>
+    <button class="btn" type="button" id="comp-next">Siguiente &rarr;</button>
+  </div>
+</div>

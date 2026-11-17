@@ -61,19 +61,38 @@ SUBNAV = {"beliefs": [("beliefs", "What Catholics believe"), ("questions", "Hone
           "structure": [("structure", "How the Church is organized"), ("popes", "All 267 Popes"),
                         ("dioceses", "U.S. Dioceses"), ("find-a-church", "Find a Church")]}
 
+ES_PAGES = [
+    ("index", "index", "Inicio", "CatholicDoorway en español: una guía gratuita de la fe católica",
+     "Una guía sencilla y gratuita de la fe católica: oraciones, cómo hacerse católico (OCIA), tu primera Misa, el Rosario y preguntas frecuentes."),
+    ("start-here", "comenzar", "Hacerse católico", "Cómo hacerse católico: OCIA paso a paso | CatholicDoorway",
+     "¿Te interesa la Iglesia Católica? Cómo funciona OCIA, sus cuatro etapas, cuánto dura, con quién hablar y qué esperar en tu primera Misa."),
+    ("first-mass", "primera-misa", "Tu primera Misa", "Tu primera Misa, paso a paso | CatholicDoorway",
+     "¿Vas a Misa por primera vez? Una guía paso a paso para tu teléfono: cuándo ponerse de pie, sentarse y arrodillarse, qué se responde y qué hacer en la Comunión."),
+    ("prayers", "oraciones", "Oraciones", "Oraciones católicas y cómo rezar el Rosario | CatholicDoorway",
+     "Las oraciones católicas tradicionales en español: el Padre Nuestro, el Ave María, el Credo, la Salve y más, con una guía del Rosario."),
+]
+ES_TEXT = dict(lang="es", skip="Saltar al contenido", home="/es/", home_label="Inicio de CatholicDoorway",
+               theme_label="Cambiar a modo claro u oscuro", menu_label="Menú", nav_label="Principal",
+               alt_lang="en", alt_label="English")
+EN_TEXT = dict(lang="en", skip="Skip to content", home="/", home_label="CatholicDoorway home",
+               theme_label="Switch light or dark mode", menu_label="Menu", nav_label="Main",
+               alt_lang="es", alt_label="Español")
+EN_TO_ES = {en: es for en, es, *_ in ES_PAGES}
+
 DOOR_SVG = '''<svg viewBox="0 0 34 40" aria-hidden="true" focusable="false"><path d="M3 39V17C3 8.7 9.3 2 17 2s14 6.7 14 15v22" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8 39V18.5C8 13 12 8.5 17 8.5S26 13 26 18.5V39" fill="currentColor" opacity=".16"/><path d="M8 39V18.5C8 13 12 8.5 17 8.5S26 13 26 18.5V39" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M17 12v9M13.6 15.2h6.8" stroke="#a8802f" stroke-width="2" stroke-linecap="round"/><circle cx="22" cy="28" r="1.4" fill="#a8802f"/><path d="M1 39h32" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>'''
 
 MENU_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
 THEME_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>'
 
 HEAD = """<!doctype html>
-<html lang="en">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{canonical}">
+{alternates}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="CatholicDoorway">
 <meta property="og:title" content="{title}">
@@ -90,15 +109,16 @@ HEAD = """<!doctype html>
 {extra_head}
 </head>
 <body data-page="{slug}">
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">{skip}</a>
 <header class="site-header">
   <div class="wrap header-row">
-    <a class="brand" href="/" aria-label="CatholicDoorway home">{door}<span class="brand-name">Catholic<span>Doorway</span></span></a>
+    <a class="brand" href="{home}" aria-label="{home_label}">{door}<span class="brand-name">Catholic<span>Doorway</span></span></a>
     <div class="header-tools">
-      <button class="theme-btn" type="button" data-theme-toggle aria-label="Switch light or dark mode">{theme}</button>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">{menu}Menu</button>
+      <a class="lang-link" href="{alt_href}" hreflang="{alt_lang}" lang="{alt_lang}" aria-label="{alt_label}"><span class="ll-long" aria-hidden="true">{alt_label}</span><span class="ll-short" aria-hidden="true">{alt_lang}</span></a>
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="{theme_label}">{theme}</button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">{menu}<span class="nt-label">{menu_label}</span></button>
     </div>
-    <nav class="site-nav" id="site-nav" aria-label="Main">
+    <nav class="site-nav" id="site-nav" aria-label="{nav_label}">
       <ul>
 {nav}
       </ul>
@@ -106,6 +126,49 @@ HEAD = """<!doctype html>
   </div>
 </header>
 <main id="main">
+"""
+
+FOOT_ES = """</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-verse">&ldquo;Yo soy la puerta; el que entre por mí se salvará.&rdquo;</p>
+        <p class="small">Juan 10:9</p>
+      </div>
+      <div>
+        <h4>En español</h4>
+        <ul>
+          <li><a href="/es/comenzar">Cómo hacerse católico (OCIA)</a></li>
+          <li><a href="/es/primera-misa">Tu primera Misa</a></li>
+          <li><a href="/es/oraciones">Oraciones y el Rosario</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>En inglés</h4>
+        <ul>
+          <li><a href="/find-a-church" lang="en">Find a Church (mapa)</a></li>
+          <li><a href="/beliefs" lang="en">What Catholics Believe</a></li>
+          <li><a href="/saints" lang="en">Saints</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sobre el sitio</h4>
+        <ul>
+          <li><a href="/about" lang="en">About</a></li>
+          <li><a href="mailto:hello@catholicdoorway.com">Escríbenos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      CatholicDoorway es una guía gratuita e independiente, sin anuncios. No es un sitio oficial de la Iglesia Católica ni de ninguna diócesis. Para la enseñanza oficial de la Iglesia, consulta el <a href="https://www.vatican.va/archive/catechism_sp/index_sp.html">Catecismo de la Iglesia Católica</a>.
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js" defer></script>
+{extra_foot}
+</body>
+</html>
 """
 
 FOOT = """</main>
@@ -246,8 +309,14 @@ def popes_html():
 POSE = {"stand": "Stand", "sit": "Sit", "kneel": "Kneel", "any": "As you wish"}
 
 
-def mass_html():
-    steps = json.loads((ROOT / "src" / "data" / "mass.json").read_text(encoding="utf-8"))
+POSE_ES = {"stand": "De pie", "sit": "Sentados", "kneel": "De rodillas", "any": "Como prefieras"}
+
+
+def mass_html(lang="en"):
+    name = "mass.json" if lang == "en" else f"mass_{lang}.json"
+    steps = json.loads((ROOT / "src" / "data" / name).read_text(encoding="utf-8"))
+    pose = POSE if lang == "en" else POSE_ES
+    everyone = ("All", "You", "Catholic") if lang == "en" else ("Todos", "Tú", "Quien comulga")
     out, part = [], None
     for i, st in enumerate(steps, 1):
         if st["part"] != part:
@@ -256,13 +325,13 @@ def mass_html():
         say = ""
         if st["say"]:
             rows = "".join(
-                f'<div class="say-row{" all" if who.startswith(("All", "You", "Catholic")) else ""}"><dt>{html.escape(who)}</dt><dd>{html.escape(line)}</dd></div>'
+                f'<div class="say-row{" all" if who.startswith(everyone) else ""}"><dt>{html.escape(who)}</dt><dd>{html.escape(line)}</dd></div>'
                 for who, line in st["say"])
             say = f'<dl class="say">{rows}</dl>'
         tip = f'<p class="mass-tip">{st["tip"]}</p>' if st["tip"] else ""
         out.append(
             f'    <section class="mass-step" id="step-{i}" data-part="{html.escape(part)}" data-step="{i}">'
-            f'<div class="mass-head"><span class="pose pose-{st["pose"]}">{POSE[st["pose"]]}</span>'
+            f'<div class="mass-head"><span class="pose pose-{st["pose"]}">{pose[st["pose"]]}</span>'
             f'<h3><span class="mass-no">{i}.</span> {html.escape(st["title"])}</h3></div>'
             f'<p>{html.escape(st["what"])}</p>{say}{tip}</section>')
     return "\n".join(out), len(steps)
@@ -320,14 +389,54 @@ def nav_html(current):
     return "\n".join(items)
 
 
+def es_nav(current):
+    items = []
+    for _, es, label, *_ in ES_PAGES:
+        href = "/es/" if es == "index" else f"/es/{es}"
+        cur = ' aria-current="page"' if es == current else ""
+        items.append(f'        <li><a href="{href}"{cur}>{label}</a></li>')
+    items.append('        <li><a href="/" lang="en" hreflang="en">Más en inglés</a></li>')
+    return "\n".join(items)
+
+
+def build_es():
+    out_dir = OUT / "es"
+    out_dir.mkdir(exist_ok=True)
+    for en, es, label, title, desc in ES_PAGES:
+        body = (PAGES_DIR / "es" / f"{es}.html").read_text(encoding="utf-8")
+        url = "/es/" if es == "index" else f"/es/{es}"
+        en_url = "/" if en == "index" else f"/{en}"
+        alternates = (f'<link rel="alternate" hreflang="en" href="{DOMAIN}{en_url}">\n'
+                      f'<link rel="alternate" hreflang="es" href="{DOMAIN}{url}">')
+        eh, ef = EXTRA.get(en, ("", ""))
+        page = HEAD.format(title=title, desc=desc, canonical=DOMAIN + url, domain=DOMAIN,
+                           slug=en, door=DOOR_SVG, menu=MENU_SVG, theme=THEME_SVG,
+                           nav=es_nav(es), extra_head=eh, alternates=alternates,
+                           alt_href=en_url, **ES_TEXT)
+        page = page.replace('<meta property="og:site_name" content="CatholicDoorway">',
+                            '<meta property="og:site_name" content="CatholicDoorway">\n<meta property="og:locale" content="es_US">')
+        body = body.replace("{{DOOR}}", DOOR_SVG)
+        if "{{MASS}}" in body:
+            ms, mn = mass_html("es")
+            body = body.replace("{{MASS}}", ms).replace("{{MASS_COUNT}}", str(mn))
+        page += body + FOOT_ES.format(extra_foot=ef)
+        (out_dir / f"{es}.html").write_text(bust(page), encoding="utf-8")
+        print("built es/" + es)
+
+
 def main():
     for slug, label, title, desc in PAGES:
         body = (PAGES_DIR / f"{slug}.html").read_text(encoding="utf-8")
         canonical = DOMAIN + ("/" if slug == "index" else f"/{slug}")
         eh, ef = EXTRA.get(slug, ("", ""))
+        es = EN_TO_ES.get(slug)
+        es_url = "/es/" if es in (None, "index") else f"/es/{es}"
+        alternates = (f'<link rel="alternate" hreflang="en" href="{canonical}">\n'
+                      f'<link rel="alternate" hreflang="es" href="{DOMAIN}{es_url}">') if es else ""
         page = HEAD.format(title=title, desc=desc, canonical=canonical, domain=DOMAIN,
                            slug=slug, door=DOOR_SVG, menu=MENU_SVG, theme=THEME_SVG,
-                           nav=nav_html(slug), extra_head=eh)
+                           nav=nav_html(slug), extra_head=eh, alternates=alternates,
+                           alt_href=es_url, **EN_TEXT)
         body = body.replace("{{DOOR}}", DOOR_SVG)
         if "{{SAINTS}}" in body:
             body = body.replace("{{SAINTS}}", saints_html())
@@ -347,10 +456,15 @@ def main():
         (OUT / f"{slug}.html").write_text(bust(page), encoding="utf-8")
         print("built", slug)
 
+    build_es()
+
     today = datetime.date.today().isoformat()
     urls = "\n".join(
         f"  <url><loc>{DOMAIN}{'/' if s == 'index' else '/' + s}</loc><lastmod>{today}</lastmod></url>"
         for s, *_ in PAGES if s != "404")
+    urls += "\n" + "\n".join(
+        f"  <url><loc>{DOMAIN}/es/{'' if es == 'index' else es}</loc><lastmod>{today}</lastmod></url>"
+        for _, es, *_ in ES_PAGES)
     (OUT / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n',
         encoding="utf-8")

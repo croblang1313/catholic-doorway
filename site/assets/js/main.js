@@ -29,6 +29,10 @@
     });
   }
 
+  /* ---------- Language ---------- */
+  var ES = document.documentElement.lang === 'es', LOC = ES ? 'es-US' : 'en-US';
+  var T = function (en, es) { return ES ? es : en; };
+
   /* ---------- Dates and the liturgical year ---------- */
   function day(y, m, d) { return new Date(y, m, d); }
   function addDays(dt, n) { var r = new Date(dt); r.setDate(r.getDate() + n); return r; }
@@ -67,6 +71,14 @@
     var ly = sameOrAfter(t, adv) ? y + 1 : y;
     s.sunday = ['C', 'A', 'B'][ly % 3];
     s.weekday = ly % 2 ? 'I' : 'II';
+    if (ES) {
+      var NAMES = { 'Christmas': 'Navidad', 'Advent': 'Adviento', 'Ordinary Time': 'Tiempo Ordinario', 'Easter': 'Pascua',
+        'The Easter Triduum': 'El Triduo Pascual', 'Lent': 'Cuaresma', 'Pentecost Sunday': 'Domingo de Pentecostés',
+        'Easter Sunday': 'Domingo de Pascua', 'Christ the King': 'Jesucristo, Rey del Universo',
+        'the Baptism of the Lord': 'el Bautismo del Señor', 'Pentecost': 'Pentecostés', 'Ash Wednesday': 'el Miércoles de Ceniza' };
+      s.name = NAMES[s.name] || s.name;
+      if (s.next) s.next[0] = NAMES[s.next[0]] || s.next[0];
+    }
     return s;
   }
 
@@ -80,13 +92,18 @@
   var s = season(today);
 
   var dateEl = $('#today-date');
-  if (dateEl) dateEl.textContent = today.toLocaleDateString('en-US', longDate);
+  if (dateEl) dateEl.textContent = today.toLocaleDateString(LOC, longDate);
   var seasonEl = $('#season');
   if (seasonEl) seasonEl.innerHTML = '<span class="season-dot" style="background:' + COLORS[s.color] + '"></span>' + s.name;
   var nextEl = $('#season-next');
   if (nextEl && s.next) {
     var days = Math.round((s.next[1] - today) / 86400000);
-    if (days > 0 && days <= 60) nextEl.textContent = (days === 1 ? 'Tomorrow is ' : days + ' days until ') + s.next[0] + (days === 1 ? '.' : ', ' + s.next[1].toLocaleDateString('en-US', { month: 'long', day: 'numeric' }) + '.');
+    if (days > 0 && days <= 60) {
+      var when = s.next[1].toLocaleDateString(LOC, { month: 'long', day: 'numeric' });
+      nextEl.textContent = ES
+        ? (days === 1 ? 'Mañana es ' + s.next[0] + '.' : 'Faltan ' + days + ' días para ' + s.next[0] + ' (' + when + ').')
+        : (days === 1 ? 'Tomorrow is ' + s.next[0] + '.' : days + ' days until ' + s.next[0] + ', ' + when + '.');
+    }
   }
 
   var tom = $('#readings-tomorrow'); if (tom) tom.href = usccb(addDays(today, 1));
@@ -96,7 +113,14 @@
   function iso(d) { return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
   function esc(x) { return String(x || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   var rcards = $$('[data-readings]');
-  if (rcards.length) {
+  if (rcards.length && ES) {
+    // Spanish: link to the USCCB's Spanish readings for today (no API needed).
+    var esUrl = 'https://bible.usccb.org/es/bible/lecturas/' + ('0' + (today.getMonth() + 1)).slice(-2) + ('0' + today.getDate()).slice(-2) + String(today.getFullYear()).slice(-2) + '.cfm';
+    rcards.forEach(function (c) {
+      $('.rd-read', c).href = esUrl;
+      $('.rd-title', c).textContent = today.toLocaleDateString(LOC, { weekday: 'long', day: 'numeric', month: 'long' });
+    });
+  } else if (rcards.length) {
     var audioUrl = 'https://bible.usccb.org/podcasts/audio/daily-mass-reading-podcast-' + MONTHS[today.getMonth()] + '-' + today.getDate() + '-' + today.getFullYear();
     rcards.forEach(function (c) {
       $('.rd-read', c).href = usccb(today);
@@ -104,7 +128,7 @@
     });
     var fallback = function () {
       rcards.forEach(function (c) {
-        $('.rd-title', c).textContent = today.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+        $('.rd-title', c).textContent = today.toLocaleDateString(LOC, { weekday: 'long', month: 'long', day: 'numeric' });
         $('.rd-list', c).innerHTML = '<li class="muted">Tap Read to see today&rsquo;s Scripture, or Listen to hear it.</li>';
       });
     };
@@ -142,7 +166,8 @@
   var MYST = ['Glorious', 'Joyful', 'Sorrowful', 'Glorious', 'Luminous', 'Sorrowful', 'Joyful'];
   var dow = today.getDay();
   var mt = $('#mystery-title');
-  if (mt) { mt.textContent = 'The ' + MYST[dow] + ' Mysteries'; $('#mystery-sub').textContent = 'Today’s mysteries of the Rosary, with a step-by-step guide.'; }
+  var MYST_ES = { Glorious: 'Gloriosos', Joyful: 'Gozosos', Sorrowful: 'Dolorosos', Luminous: 'Luminosos' };
+  if (mt) { mt.textContent = ES ? 'Misterios ' + MYST_ES[MYST[dow]] : 'The ' + MYST[dow] + ' Mysteries'; $('#mystery-sub').textContent = T('Today’s mysteries of the Rosary, with a step-by-step guide.', 'Los misterios del Rosario de hoy, con una guía paso a paso.'); }
   $$('#mysteries [data-days]').forEach(function (c) {
     if (c.getAttribute('data-days').split(',').indexOf(String(dow)) > -1) {
       c.classList.add('today-mystery');
@@ -155,10 +180,10 @@
     var txt = p.querySelector('.text');
     if (!txt || !navigator.clipboard) return;
     var b = document.createElement('button');
-    b.type = 'button'; b.className = 'copy-btn'; b.textContent = 'Copy prayer';
+    b.type = 'button'; b.className = 'copy-btn'; b.textContent = T('Copy prayer', 'Copiar oración');
     b.addEventListener('click', function () {
       navigator.clipboard.writeText(p.querySelector('h3').textContent.trim() + '\n\n' + txt.innerText.trim()).then(function () {
-        b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy prayer'; }, 1800);
+        b.textContent = T('Copied', 'Copiada'); setTimeout(function () { b.textContent = T('Copy prayer', 'Copiar oración'); }, 1800);
       });
     });
     var tools = document.createElement('div'); tools.className = 'prayer-tools'; tools.appendChild(b);
@@ -236,10 +261,10 @@
       $('#comp-body').appendChild(clone);
       $('#comp-body').scrollTop = 0;
       $('#comp-part').textContent = st.getAttribute('data-part');
-      $('#comp-count').textContent = (at + 1) + ' of ' + steps.length;
+      $('#comp-count').textContent = (at + 1) + T(' of ', ' de ') + steps.length;
       $('#comp-progress').style.width = ((at + 1) / steps.length * 100) + '%';
       $('#comp-back').disabled = at === 0;
-      $('#comp-next').innerHTML = at === steps.length - 1 ? 'Done' : 'Next &rarr;';
+      $('#comp-next').innerHTML = at === steps.length - 1 ? T('Done', 'Listo') : T('Next', 'Siguiente') + ' &rarr;';
       save();
     };
     var open = function () {
@@ -276,7 +301,7 @@
       if (Math.abs(dx) > 60) show(at + (dx < 0 ? 1 : -1));
     });
     document.addEventListener('visibilitychange', function () { if (!comp.hidden && !lock) keepAwake(); });
-    if (load() > 0) mStart.textContent = 'Continue where you left off';
+    if (load() > 0) mStart.textContent = T('Continue where you left off', 'Continuar donde te quedaste');
   }
 
   /* ---------- Holy days calendar ---------- */
@@ -296,10 +321,10 @@
       var out = '', month = '';
       list.forEach(function (e) {
         var d = new Date(e.date + 'T12:00:00');
-        var m = d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+        var m = d.toLocaleDateString(LOC, { month: 'long', year: 'numeric' });
         if (m !== month) { if (month) out += '</ol>'; month = m; out += '<h3 class="cal-month">' + m + '</h3><ol class="cal-month-list">'; }
         out += '<li class="cal-ev' + (e.date === todayIso ? ' today' : '') + '"><span class="cal-date"><b>' + d.getDate() + '</b>' +
-          d.toLocaleDateString('en-US', { weekday: 'short' }) + '</span><div><strong>' + escH(e.title) + '</strong> ' +
+          d.toLocaleDateString(LOC, { weekday: 'short' }) + '</span><div><strong>' + escH(e.title) + '</strong> ' +
           '<span class="kind kind-' + e.kind + '">' + LABEL[e.kind] + '</span>' + (e.note && e.note.indexOf(LABEL[e.kind]) !== 0 ? '<p>' + escH(e.note) + '</p>' : (e.note ? '<p>' + escH(e.note.replace(LABEL[e.kind] + ': ', '')) + '</p>' : '')) + '</div></li>';
       });
       calList.innerHTML = out + '</ol>';

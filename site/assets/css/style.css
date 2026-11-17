@@ -419,7 +419,7 @@ dl.glossary dt:target { background: var(--gold-soft); border-radius: 6px; paddin
 .companion-close { background: none; border: 0; font-size: 2rem; line-height: 1; color: var(--ink-soft); cursor: pointer; padding: 0 .3rem; min-width: 44px; min-height: 44px; }
 .companion-progress { height: 4px; background: var(--line); }
 .companion-progress span { display: block; height: 100%; background: var(--gold); transition: width .25s; }
-.companion-body { flex: 1; overflow-y: auto; padding: 1.4rem 16px 2rem; max-width: 40rem; width: 100%; margin: 0 auto; box-sizing: border-box; }
+.companion-body { flex: 1; min-height: 0; overflow-y: auto; padding: 1.4rem 16px 2rem; max-width: 40rem; width: 100%; margin: 0 auto; box-sizing: border-box; }
 .companion-body .pose { font-size: 1.05rem; padding: .5rem 1.1rem; }
 .companion-body h3 { font-size: 1.9rem; margin: .9rem 0 .5rem; }
 .companion-body p { font-size: 1.15rem; }
@@ -502,3 +502,29 @@ body.companion-open { overflow: hidden; }
 .qa-body { padding: 0 1.2rem 1.1rem; max-width: 70ch; }
 .qa-body p { margin: 0 0 .8rem; }
 .qa-refs { font: .88rem var(--sans); color: var(--ink-soft); margin-bottom: 0 !important; }
+
+/* Language switch */
+.lang-link { font: 600 .88rem var(--sans); color: var(--ink-soft); text-decoration: none; padding: .35rem .6rem; border: 1px solid var(--line); border-radius: 999px; white-space: nowrap; }
+.lang-link:hover { color: var(--navy); border-color: var(--gold); }
+@media (max-width: 420px) { .lang-link { padding: .3rem .45rem; font-size: .8rem; } }
+.lang-link .ll-short { display: none; text-transform: uppercase; }
+@media (max-width: 400px) { .lang-link .ll-long { display: none; } .lang-link .ll-short { display: inline; } }
+.companion-nav .btn, .rs-nav .btn { min-width: 0; padding-left: .7rem; padding-right: .7rem; }
+:lang(es) .mass-tip::before { content: "Consejo: "; }
+
+/* Phone header: keep brand, language, theme and menu on one line */
+.brand { min-width: 0; }
+.brand-name { white-space: nowrap; }
+@media (max-width: 520px) {
+  .header-row { gap: .5rem; }
+  .brand { gap: .4rem; }
+  .brand svg { width: 26px; height: 31px; }
+  .brand-name { font-size: 1.15rem; }
+  .header-tools { gap: .2rem; }
+  .nav-toggle { padding: .4rem .6rem; gap: .3rem; }
+}
+@media (max-width: 380px) {
+  .brand-name { font-size: 1.02rem; }
+  .nt-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
+.table-wrap, .table-scroll { max-width: 100%; overflow-x: auto; }
