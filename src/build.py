@@ -44,9 +44,10 @@ PAGES = [
      "About CatholicDoorway.com: a free, ad-free guide to the Catholic faith. Sources, data and corrections."),
     ("404", "Not found", "Page not found | CatholicDoorway", "This page could not be found."),
 ]
-NAV_EXCLUDE = {"about", "404", "popes"}
+NAV_EXCLUDE = {"about", "404", "popes", "dioceses"}
 # Pages shown in a dropdown under a main menu item: parent slug -> [(slug, label)]
-SUBNAV = {"structure": [("structure", "How the Church is organized"), ("popes", "All 267 Popes")]}
+SUBNAV = {"structure": [("structure", "How the Church is organized"), ("popes", "All 267 Popes"),
+                        ("dioceses", "U.S. Dioceses"), ("find-a-church", "Find a Church")]}
 
 DOOR_SVG = '''<svg viewBox="0 0 34 40" aria-hidden="true" focusable="false"><path d="M3 39V17C3 8.7 9.3 2 17 2s14 6.7 14 15v22" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8 39V18.5C8 13 12 8.5 17 8.5S26 13 26 18.5V39" fill="currentColor" opacity=".16"/><path d="M8 39V18.5C8 13 12 8.5 17 8.5S26 13 26 18.5V39" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M17 12v9M13.6 15.2h6.8" stroke="#a8802f" stroke-width="2" stroke-linecap="round"/><circle cx="22" cy="28" r="1.4" fill="#a8802f"/><path d="M1 39h32" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>'''
 
