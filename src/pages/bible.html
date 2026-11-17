@@ -9,16 +9,19 @@
 <div class="wrap">
   <section class="section">
     <div class="grid two">
-      <div class="card">
-        <p class="label">Today&rsquo;s Mass readings</p>
-        <h3 id="readings-date" style="margin-top:.2rem">Today</h3>
-        <p>The readings are published each day by the United States Conference of Catholic Bishops (USCCB) in the translation used at Mass in the U.S.</p>
-        <div class="btn-row" style="justify-content:flex-start">
-          <a class="btn" id="readings-btn" href="https://bible.usccb.org/daily-bible-reading">Read today&rsquo;s readings</a>
-          <a class="btn secondary" id="readings-tomorrow" href="https://bible.usccb.org/daily-bible-reading">Tomorrow&rsquo;s</a>
-        </div>
-        <p class="small muted" style="margin-top:1rem" id="cycle-note"></p>
+      <div class="card readings-card" data-readings="today" id="readings-main">
+      <p class="label">Daily Mass readings</p>
+      <h3 class="rd-title">Today&rsquo;s readings</h3>
+      <ul class="rd-list"><li class="muted">Loading today&rsquo;s readings&hellip;</li></ul>
+      <div class="rd-actions">
+        <a class="btn small rd-listen" href="https://bible.usccb.org/podcasts/audio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Listen</a>
+        <a class="btn small secondary rd-read" href="https://bible.usccb.org/daily-bible-reading" target="_blank" rel="noopener">Read</a>
+        <a class="btn small secondary" id="readings-tomorrow" href="https://bible.usccb.org/daily-bible-reading" target="_blank" rel="noopener">Tomorrow&rsquo;s</a>
+        <a class="btn small secondary rd-video" href="#" target="_blank" rel="noopener" hidden>Reflection video</a>
       </div>
+      <p class="small muted" id="cycle-note" style="margin:.8rem 0 0"></p>
+      <p class="small muted rd-credit">Audio and text from the U.S. Conference of Catholic Bishops.</p>
+    </div>
       <div class="card">
         <p class="label">Pick a date</p>
         <h3 style="margin-top:.2rem">Readings for any day</h3>

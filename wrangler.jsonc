@@ -1,10 +1,13 @@
 {
-  // Cloudflare Workers static-assets config. The site is plain files in ./site.
+  // Cloudflare Worker: static site in ./site plus a tiny readings API in worker/index.js.
   "name": "catholic-doorway",
+  "main": "worker/index.js",
   "compatibility_date": "2026-11-01",
   "assets": {
     "directory": "./site",
+    "binding": "ASSETS",
     "html_handling": "auto-trailing-slash",
-    "not_found_handling": "404-page"
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
   }
 }

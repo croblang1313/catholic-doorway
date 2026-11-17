@@ -89,9 +89,43 @@
     if (days > 0 && days <= 60) nextEl.textContent = (days === 1 ? 'Tomorrow is ' : days + ' days until ') + s.next[0] + (days === 1 ? '.' : ', ' + s.next[1].toLocaleDateString('en-US', { month: 'long', day: 'numeric' }) + '.');
   }
 
-  $$('#readings-link, #readings-btn').forEach(function (a) { a.href = usccb(today); });
   var tom = $('#readings-tomorrow'); if (tom) tom.href = usccb(addDays(today, 1));
-  var rd = $('#readings-date'); if (rd) rd.textContent = today.toLocaleDateString('en-US', longDate);
+
+  /* ---------- Daily readings card: titles, citations and links (no copied text) ---------- */
+  var MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+  function iso(d) { return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  function esc(x) { return String(x || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  var rcards = $$('[data-readings]');
+  if (rcards.length) {
+    var audioUrl = 'https://bible.usccb.org/podcasts/audio/daily-mass-reading-podcast-' + MONTHS[today.getMonth()] + '-' + today.getDate() + '-' + today.getFullYear();
+    rcards.forEach(function (c) {
+      $('.rd-read', c).href = usccb(today);
+      $('.rd-listen', c).href = audioUrl;
+    });
+    var fallback = function () {
+      rcards.forEach(function (c) {
+        $('.rd-title', c).textContent = today.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+        $('.rd-list', c).innerHTML = '<li class="muted">Tap Read to see today&rsquo;s Scripture, or Listen to hear it.</li>';
+      });
+    };
+    fetch('/api/readings?date=' + iso(today))
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d || !d.readings || !d.readings.length) return fallback();
+        rcards.forEach(function (c) {
+          $('.rd-title', c).textContent = d.title || 'Today’s readings';
+          $('.rd-list', c).innerHTML = d.readings.map(function (r) {
+            var cite = r.url ? '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.citation) + '</a>' : esc(r.citation);
+            return '<li><span class="rd-name">' + esc(r.name.replace(/^Responsorial /, '')) + '</span>' + cite + '</li>';
+          }).join('');
+          if (d.audio) $('.rd-listen', c).href = d.audio;
+          if (d.page && /^https:\/\/bible\.usccb\.org\//.test(d.page)) $('.rd-read', c).href = d.page;
+          var v = $('.rd-video', c);
+          if (v && d.video) { v.href = d.video; v.hidden = false; }
+        });
+      })
+      .catch(fallback);
+  }
   var cyc = $('#cycle-note'); if (cyc) cyc.textContent = 'This liturgical year: Sunday readings Year ' + s.sunday + ', weekday readings Year ' + s.weekday + '. Season: ' + s.name + '.';
   var rform = $('#readings-form');
   if (rform) {

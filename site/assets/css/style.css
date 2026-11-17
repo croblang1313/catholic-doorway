@@ -348,3 +348,14 @@ dl.glossary dt:target { background: var(--gold-soft); border-radius: 6px; paddin
 .cd-pin { background: none; border: 0; }
 [hidden] { display: none !important; }
 .section > h2:first-child { margin-top: .4em; }
+
+/* Daily readings card */
+.readings-card .rd-title { margin: .1rem 0 .5rem; font-size: 1.35rem; }
+.rd-list { list-style: none; padding: 0; margin: 0 0 .9rem; font-size: 1rem; }
+.rd-list li { display: flex; justify-content: space-between; gap: .8rem; padding: .3rem 0; border-bottom: 1px dashed var(--line); margin: 0; }
+.rd-list li:last-child { border-bottom: 0; }
+.rd-name { font: 600 .82rem var(--sans); letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); padding-top: .15rem; white-space: nowrap; }
+.rd-list a { text-align: right; }
+.rd-actions { display: flex; flex-wrap: wrap; gap: .45rem; }
+.rd-credit { margin: .7rem 0 0; font-size: .82rem; }
+@media (min-width: 760px) { .today { grid-template-columns: 1fr 1.45fr 1fr; } }
