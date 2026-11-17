@@ -279,6 +279,46 @@
     if (load() > 0) mStart.textContent = 'Continue where you left off';
   }
 
+  /* ---------- Holy days calendar ---------- */
+  var calList = $('#cal-list');
+  if (calList) {
+    var LABEL = { obligation: 'Holy Day of Obligation', fast: 'Fast and abstinence', abstinence: 'Abstinence', solemnity: 'Solemnity', feast: 'Feast' };
+    var calKind = 'all', calEvents = [];
+    var todayIso = (function (d) { return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); })(new Date());
+    var escH = function (x) { return String(x || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    var drawCal = function () {
+      var list = calEvents.filter(function (e) {
+        if (e.date < todayIso) return false;
+        if (calKind === 'fast') return e.kind === 'fast' || e.kind === 'abstinence';
+        return calKind === 'all' || e.kind === calKind;
+      });
+      if (!list.length) { calList.innerHTML = '<p class="muted">Nothing coming up in this view.</p>'; return; }
+      var out = '', month = '';
+      list.forEach(function (e) {
+        var d = new Date(e.date + 'T12:00:00');
+        var m = d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+        if (m !== month) { if (month) out += '</ol>'; month = m; out += '<h3 class="cal-month">' + m + '</h3><ol class="cal-month-list">'; }
+        out += '<li class="cal-ev' + (e.date === todayIso ? ' today' : '') + '"><span class="cal-date"><b>' + d.getDate() + '</b>' +
+          d.toLocaleDateString('en-US', { weekday: 'short' }) + '</span><div><strong>' + escH(e.title) + '</strong> ' +
+          '<span class="kind kind-' + e.kind + '">' + LABEL[e.kind] + '</span>' + (e.note && e.note.indexOf(LABEL[e.kind]) !== 0 ? '<p>' + escH(e.note) + '</p>' : (e.note ? '<p>' + escH(e.note.replace(LABEL[e.kind] + ': ', '')) + '</p>' : '')) + '</div></li>';
+      });
+      calList.innerHTML = out + '</ol>';
+    };
+    $$('.chip[data-kind]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        calKind = b.getAttribute('data-kind');
+        $$('.chip[data-kind]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        drawCal();
+      });
+    });
+    fetch('/api/calendar.json?year=' + new Date().getFullYear())
+      .then(function (r) { return r.json(); })
+      .then(function (d) { calEvents = d.events; drawCal(); })
+      .catch(function () { calList.innerHTML = '<p class="muted">The calendar could not load. Please try again in a moment.</p>'; });
+    // Android has no webcal handler; send Android users straight to Google Calendar.
+    if (/Android/i.test(navigator.userAgent)) { var ap = $('#sub-apple'); if (ap) ap.hidden = true; }
+  }
+
   /* ---------- Popes: search ---------- */
   var pq = $('#pope-search');
   if (pq) {

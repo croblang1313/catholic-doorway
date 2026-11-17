@@ -30,6 +30,8 @@ PAGES = [
      "Traditional Catholic prayers, from the Our Father and Hail Mary to the Memorare, plus a step-by-step guide to the Rosary."),
     ("bible", "Bible & Readings", "The Bible and Today's Mass Readings | CatholicDoorway",
      "Today's Catholic Mass readings, how the Catholic Bible is arranged, and where to read it free online."),
+    ("calendar", "Holy Days Calendar", "Catholic Holy Days of Obligation and Fasting Calendar | CatholicDoorway",
+     "Holy days of obligation, fasting days and major Catholic feasts for the U.S., with a free calendar you can add to your iPhone, Google or Outlook."),
     ("beliefs", "Beliefs", "What Catholics Believe | CatholicDoorway",
      "A plain-language overview of Catholic belief and practice: the Creed, the seven sacraments, Scripture and Tradition, Mary and the saints, and the moral life."),
     ("structure", "Church Structure", "How the Catholic Church Is Organized | CatholicDoorway",
@@ -46,9 +48,10 @@ PAGES = [
      "About CatholicDoorway.com: a free, ad-free guide to the Catholic faith. Sources, data and corrections."),
     ("404", "Not found", "Page not found | CatholicDoorway", "This page could not be found."),
 ]
-NAV_EXCLUDE = {"about", "404", "popes", "dioceses", "find-a-church", "first-mass"}
+NAV_EXCLUDE = {"about", "404", "popes", "dioceses", "find-a-church", "first-mass", "calendar"}
 # Pages shown in a dropdown under a main menu item: parent slug -> [(slug, label)]
-SUBNAV = {"start-here": [("start-here", "Becoming Catholic (OCIA)"), ("first-mass", "Your First Mass")],
+SUBNAV = {"bible": [("bible", "Today’s readings and the Bible"), ("calendar", "Holy Days Calendar")],
+          "start-here": [("start-here", "Becoming Catholic (OCIA)"), ("first-mass", "Your First Mass")],
           "structure": [("structure", "How the Church is organized"), ("popes", "All 267 Popes"),
                         ("dioceses", "U.S. Dioceses"), ("find-a-church", "Find a Church")]}
 
