@@ -1,17 +1,17 @@
 #ord	name	birth_name	start	end	birth	death	summary
 1	St. Peter		0033-01-01	0067-01-01		0065-01-01	A Galilean fisherman called by Jesus, who named him the rock on which he would build his Church. Leader of the Apostles, he preached in Jerusalem, Antioch and Rome, where he was crucified under Nero.
-2	St. Linus		0067-01-01	0079-01-01		0079-01-01	Named by early writers as Peter's first successor in Rome. He may be the Linus greeted by St. Paul in 2 Timothy 4:21.
-3	St. Anacletus		0079-01-01	0092-01-01		0090-01-01	Also called Cletus. One of the earliest bishops of Rome, remembered in the Roman Canon of the Mass. Tradition holds that he died a martyr.
-4	St. Clement I		0088-01-01	0099-01-01		0099-01-01	Author of the Letter of Clement to the Corinthians, one of the oldest Christian writings outside the New Testament, urging peace and order in that church.
-5	St. Evaristus		0099-01-01	0105-01-01		0105-01-01	An early bishop of Rome during the reign of Emperor Trajan. Little is known for certain about his life; tradition counts him a martyr.
-6	St. Alexander I		0107-01-01	0110-01-01		0116-01-01	Led the Roman church in the early 2nd century. Later tradition credits him with introducing the use of blessed water mixed with salt.
-7	St. Sixtus I		0115-01-01	0120-01-01		0126-01-01	An early 2nd-century bishop of Rome, remembered among the martyrs. He is often identified with the Sixtus named in early lists of Roman bishops.
-8	St. Telesphorus		0126-01-01	0130-01-01		0130-01-01	The first bishop of Rome after Peter whose martyrdom is attested by St. Irenaeus. Tradition links him to the custom of Christmas night Masses.
-9	St. Hyginus		0138-01-01	0140-01-01		0142-01-01	Led the Roman church as Gnostic teachers such as Valentinus and Cerdo arrived in Rome, challenging Christian teaching.
-10	St. Pius I		0140-01-01	0154-01-01		0150-01-01	Brother of Hermas, author of The Shepherd. During his time the heretic Marcion was expelled from the Roman church.
-11	St. Anicetus		0150-01-01	0160-01-01		0160-01-01	Welcomed St. Polycarp of Smyrna to Rome. The two disagreed over the date of Easter but parted in peace and charity.
-12	St. Soter		0168-04-19	0174-01-01		0175-01-01	Known for the generosity of the Roman church, which sent aid to Christians in need, praised in a letter by Dionysius of Corinth.
-13	St. Eleutherius		0175-01-01	0189-01-01		0185-01-01	Led the Church as the Montanist movement spread. St. Irenaeus wrote of him in his list of Roman bishops.
+2	St. Linus		0067-01-01	0076-01-01		0076-01-01	Named by early writers as Peter's first successor in Rome. He may be the Linus greeted by St. Paul in 2 Timothy 4:21.
+3	St. Anacletus		0076-01-01	0088-01-01		0088-01-01	Also called Cletus. One of the earliest bishops of Rome, remembered in the Roman Canon of the Mass. Tradition holds that he died a martyr.
+4	St. Clement I		0088-01-01	0097-01-01		0097-01-01	Author of the Letter of Clement to the Corinthians, one of the oldest Christian writings outside the New Testament, urging peace and order in that church.
+5	St. Evaristus		0097-01-01	0105-01-01		0105-01-01	An early bishop of Rome during the reign of Emperor Trajan. Little is known for certain about his life; tradition counts him a martyr.
+6	St. Alexander I		0105-01-01	0115-01-01		0115-01-01	Led the Roman church in the early 2nd century. Later tradition credits him with introducing the use of blessed water mixed with salt.
+7	St. Sixtus I		0115-01-01	0125-01-01		0125-01-01	An early 2nd-century bishop of Rome, remembered among the martyrs. He is often identified with the Sixtus named in early lists of Roman bishops.
+8	St. Telesphorus		0125-01-01	0136-01-01		0136-01-01	The first bishop of Rome after Peter whose martyrdom is attested by St. Irenaeus. Tradition links him to the custom of Christmas night Masses.
+9	St. Hyginus		0136-01-01	0140-01-01		0140-01-01	Led the Roman church as Gnostic teachers such as Valentinus and Cerdo arrived in Rome, challenging Christian teaching.
+10	St. Pius I		0140-01-01	0155-01-01		0155-01-01	Brother of Hermas, author of The Shepherd. During his time the heretic Marcion was expelled from the Roman church.
+11	St. Anicetus		0155-01-01	0166-01-01		0166-01-01	Welcomed St. Polycarp of Smyrna to Rome. The two disagreed over the date of Easter but parted in peace and charity.
+12	St. Soter		0166-01-01	0175-01-01		0175-01-01	Known for the generosity of the Roman church, which sent aid to Christians in need, praised in a letter by Dionysius of Corinth.
+13	St. Eleutherius		0175-01-01	0189-01-01		0189-01-01	Led the Church as the Montanist movement spread. St. Irenaeus wrote of him in his list of Roman bishops.
 14	St. Victor I		0189-01-01	0199-01-01		0199-07-27	The first bishop of Rome from North Africa. He pressed churches to celebrate Easter on Sunday, which became the universal practice.
 15	St. Zephyrinus		0199-01-01	0217-12-20		0217-12-20	Guided the Church through debates about the Trinity, assisted by his deacon Callixtus, who managed the Christian cemetery on the Appian Way.
 16	St. Callixtus I		0218-01-01	0222-01-01		0222-09-18	A former slave who rose to lead the Church. He taught that sinners who repent may be readmitted to communion, and he died a martyr.
@@ -129,8 +129,8 @@
 128	Marinus II		0942-11-09	0946-05-01		0946-05-01	Concentrated on the reform of clergy and monasteries.
 129	Agapetus II		0946-05-20	0955-11-08		0955-12-01	Supported monastic reform and the expansion of the Church in Germany and Scandinavia.
 130	John XII		0955-12-21	0964-05-14	0937-01-01	0964-05-19	Became pope as a teenager. He crowned Otto I emperor in 962, but his worldly life led Otto to have him deposed.
-131	Leo VIII		0964-06-28	0965-03-06		0965-03-01	A layman installed by Emperor Otto I. His status was disputed, but he is counted in the official list.
-132	Benedict V		0964-06-01	0964-06-28		0965-07-09	Elected by the Romans after John XII's death, he was deposed by Otto I and died in exile in Hamburg.
+131	Leo VIII		0963-12-06	0965-03-06		0965-03-06	A layman installed by Emperor Otto I in 963, after a synod declared John XII deposed. His status was disputed, but he is counted in the official list.
+132	Benedict V		0964-06-01	0964-06-28		0965-07-09	Elected by the Romans after John XII's death while Leo VIII was still claiming the office, he was deposed by Otto I and died in exile in Hamburg.
 133	John XIII		0965-10-11	0972-09-06		0972-09-11	Crowned Otto II co-emperor and established new dioceses, including Magdeburg as a center for missions to the Slavs.
 134	Benedict VI		0973-01-29	0974-06-01		0974-07-01	Murdered in prison by order of the Crescentii family.
 135	Benedict VII		0974-10-01	0983-07-10		0983-07-15	Restored order in Rome, opposed simony and supported monastic reform.

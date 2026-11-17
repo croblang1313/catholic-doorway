@@ -205,7 +205,7 @@ def popes_html():
             cents.append(c)
             out.append(f'    <h2 class="pope-cent" id="c{c}">{_ordinal(c)} century</h2>\n    <ol class="popes">')
         if n == 1:
-            reign, life = "c. 30s &ndash; c. 64/67", "Died c. 64/67"
+            reign, life = "c. 30s &ndash; 64 or 67", "Martyred in Rome, 64 or 67"
         else:
             a, b = _yr(start), _yr(end)
             reign = (f"since {a}" if not end else a if a == b else f"{a}&ndash;{b}")
