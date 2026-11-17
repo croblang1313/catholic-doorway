@@ -44,7 +44,7 @@ PAGES = [
      "About CatholicDoorway.com: a free, ad-free guide to the Catholic faith. Sources, data and corrections."),
     ("404", "Not found", "Page not found | CatholicDoorway", "This page could not be found."),
 ]
-NAV_EXCLUDE = {"about", "404", "popes", "dioceses"}
+NAV_EXCLUDE = {"about", "404", "popes", "dioceses", "find-a-church"}
 # Pages shown in a dropdown under a main menu item: parent slug -> [(slug, label)]
 SUBNAV = {"structure": [("structure", "How the Church is organized"), ("popes", "All 267 Popes"),
                         ("dioceses", "U.S. Dioceses"), ("find-a-church", "Find a Church")]}

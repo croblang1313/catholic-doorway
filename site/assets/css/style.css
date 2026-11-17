@@ -139,7 +139,8 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
   .nav-toggle { display: none; }
   .site-nav { display: block; }
   .site-nav ul { display: flex; gap: .1rem; flex-wrap: nowrap; white-space: nowrap; justify-content: flex-end; }
-  .site-nav a { border: 0; padding: .4rem .5rem; font-size: .93rem; border-radius: 8px; }
+  .site-nav a { border: 0; padding: .45rem .65rem; font-size: 1.06rem; border-radius: 8px; }
+  .site-nav .sub a { font-size: 1rem; }
   .site-nav a[aria-current="page"], .site-nav a.in-section { background: var(--gold-soft); color: var(--navy); }
   .site-nav .has-sub { position: relative; }
   .site-nav .has-sub > a::after { content: ""; display: inline-block; width: .38em; height: .38em; margin: 0 0 .2em .45em; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); opacity: .7; }
