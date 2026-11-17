@@ -537,7 +537,7 @@ body.companion-open { overflow: hidden; }
 @media (min-width: 1200px) {
   .brand svg { width: 30px; height: 36px; }
   .brand-name { font-size: 1.3rem; }
-  .site-nav a { font-size: .97rem; padding: .45rem .5rem; }
-  .lang-link .ll-long { display: none; }
-  .lang-link .ll-short { display: inline; }
+  .site-nav a { font-size: .97rem; padding: .45rem .42rem; }
+  .lang-link { padding: .3rem .55rem; font-size: .85rem; }
+  .header-tools { gap: .2rem; }
 }
