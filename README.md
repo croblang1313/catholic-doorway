@@ -25,11 +25,9 @@ python3 src/build.py
 
 and commit both `src/` and `site/`. (Styles and scripts in `site/assets/` are edited directly.)
 
-## Hosting (Cloudflare Pages)
+## Hosting (Cloudflare Workers)
 
-- Framework preset: **None**
-- Build command: *(leave empty)*
-- Build output directory: **site**
+The `catholic-doorway` Worker is connected to this repo in Cloudflare. Every push to `main` redeploys it. `wrangler.jsonc` tells it to serve the files in `site/` as static assets; no build step is needed.
 
 `site/_headers` sets security headers. `site/404.html` is the not-found page.
 
