@@ -86,8 +86,9 @@ def address(t):
 def compact(lat, lon, t, kind, oid):
     web = t.get("website") or t.get("contact:website") or t.get("url") or ""
     phone = (t.get("phone") or t.get("contact:phone") or "").split(";")[0].strip()
+    email = (t.get("email") or t.get("contact:email") or "").split(";")[0].strip()
     return [round(lat, 5), round(lon, 5), t.get("name") or t.get("name:en") or "",
-            address(t), phone, web, t.get("service_times", ""), kind, oid]
+            address(t), phone, web, t.get("service_times", ""), kind, oid, email]
 
 
 class Churches(osmium.SimpleHandler):

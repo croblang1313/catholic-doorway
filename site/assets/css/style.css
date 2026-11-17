@@ -541,3 +541,13 @@ body.companion-open { overflow: hidden; }
   .lang-link { padding: .3rem .55rem; font-size: .85rem; }
   .header-tools { gap: .2rem; }
 }
+
+/* OCIA help on church cards */
+.ocia { margin-top: .8rem; border-top: 1px solid var(--line); padding-top: .6rem; }
+.ocia summary { cursor: pointer; font: 600 .95rem var(--sans); color: var(--link); }
+.ocia[open] summary { margin-bottom: .4rem; }
+.ocia p { margin: .4rem 0; font-size: .98rem; }
+.ocia-say { font-style: italic; background: var(--bg-alt); border-left: 3px solid var(--gold); padding: .5rem .8rem; border-radius: 6px; }
+.ocia .actions { margin-top: .5rem; }
+.ocia-banner { display: none; }
+.ocia-mode .ocia-banner { display: block; }
