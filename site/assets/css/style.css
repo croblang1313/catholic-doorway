@@ -551,3 +551,25 @@ body.companion-open { overflow: hidden; }
 .ocia .actions { margin-top: .5rem; }
 .ocia-banner { display: none; }
 .ocia-mode .ocia-banner { display: block; }
+
+/* ---------- Background photo (quiet, behind everything) ----------
+   Light: nave of St. Paulus Cathedral, Münster (Dietmar Rabich, CC BY-SA 4.0).
+   Dark: Holy Spirit window, St. Peter's Basilica (Wilfredor, CC0).
+   Only the image for the active theme is downloaded. */
+:root { --veil: rgba(250, 246, 238, .87); --bg-photo: url("/assets/img/bg-nave.jpg"); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --veil: rgba(13, 16, 24, .84); --bg-photo: url("/assets/img/bg-window.jpg"); }
+}
+:root[data-theme="dark"] { --veil: rgba(13, 16, 24, .84); --bg-photo: url("/assets/img/bg-window.jpg"); }
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(var(--veil), var(--veil)), var(--bg-photo) center 35% / cover no-repeat, var(--bg);
+}
+/* Let the photo show a little more in the page headings */
+.page-head { background: linear-gradient(180deg, color-mix(in srgb, var(--bg-alt) 45%, transparent), color-mix(in srgb, var(--bg) 25%, transparent)); }
+.hero {
+  background:
+    radial-gradient(1200px 400px at 50% -10%, color-mix(in srgb, var(--gold) 18%, transparent), transparent 70%),
+    linear-gradient(180deg, color-mix(in srgb, var(--bg-alt) 45%, transparent), color-mix(in srgb, var(--bg) 25%, transparent));
+}
+@media print { body::before { display: none; } }
