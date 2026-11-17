@@ -24,6 +24,7 @@ import subprocess
 import sys
 import tempfile
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
@@ -111,8 +112,11 @@ class Churches(osmium.SimpleHandler):
         self.found.append(compact(lat, lon, t, "w" if a.from_way() else "r", a.orig_id()))
 
 
-def churches_in(url, tmp):
-    raw, small = Path(tmp) / "region.osm.pbf", Path(tmp) / "pow.osm.pbf"
+def churches_in(region, url, tmp):
+    """Download one extract, keep its places of worship, return the Catholic ones."""
+    work = Path(tmp) / region.replace("/", "_")
+    work.mkdir()
+    raw, small = work / "region.osm.pbf", work / "pow.osm.pbf"
     fetch(url, raw)
     subprocess.run(["osmium", "tags-filter", "--overwrite", "-o", str(small), str(raw),
                     "nwr/amenity=place_of_worship"], check=True, capture_output=True)
@@ -125,12 +129,15 @@ def churches_in(url, tmp):
 
 def main():
     cells, seen, failed = {}, set(), []
-    with tempfile.TemporaryDirectory() as tmp:
-        for region, url in us_extracts():
+    # Geofabrik serves each download slowly, so fetch a few states at once.
+    with tempfile.TemporaryDirectory() as tmp, ThreadPoolExecutor(max_workers=4) as pool:
+        jobs = {pool.submit(churches_in, region, url, tmp): region for region, url in us_extracts()}
+        for job in as_completed(jobs):
+            region = jobs[job]
             try:
-                found = churches_in(url, tmp)
+                found = job.result()
             except Exception as e:  # noqa: BLE001
-                print(f"{region}: failed ({e})", file=sys.stderr)
+                print(f"{region}: failed ({e})", file=sys.stderr, flush=True)
                 failed.append(region)
                 continue
             n = 0
