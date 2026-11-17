@@ -1,0 +1,65 @@
+[
+  {"id": "worship-mary", "q": "Do Catholics worship Mary?",
+   "a": ["No. Catholics worship God alone: Father, Son and Holy Spirit. Mary is honored, not worshiped, because God chose her to be the mother of Jesus. Scripture itself says that “all generations will call me blessed” (Luke 1:48).", "When Catholics pray the Hail Mary, they are asking Mary to pray for them, the way you might ask a friend to pray for you. Everything Catholics believe about Mary points back to her Son. The Church teaches that devotion to Mary “differs essentially” from the adoration given to God."],
+   "refs": [["Luke 1:26–48", "luke/1?26"], ["Catechism 971", 971]]},
+
+  {"id": "saints", "q": "Why do Catholics pray to saints?",
+   "a": ["Catholics believe that death does not break the bonds of love between members of Christ’s Body. The saints in heaven are alive in God (Mark 12:27), and Christians have always asked one another to pray for them (James 5:16).", "So asking a saint to pray for you is like asking a friend at church to pray for you, except that this friend is already with God. The saints don’t replace Jesus as the one mediator; they join their prayers to his. Revelation 5:8 pictures the prayers of God’s people rising before his throne."],
+   "refs": [["Hebrews 12:1", "hebrews/12?1"], ["Revelation 5:8", "revelation/5?8"], ["Catechism 956", 956]]},
+
+  {"id": "confession", "q": "Why confess sins to a priest instead of directly to God?",
+   "a": ["Catholics do confess directly to God, every day. But Jesus also gave his apostles a specific power: “Whose sins you forgive are forgiven them, and whose sins you retain are retained” (John 20:23). They could only use that power by hearing what needed forgiving.", "In Confession, the priest acts in the person of Christ. You hear out loud that you are forgiven, receive advice and grace to do better, and are reconciled with the whole Church your sin has wounded. Everything said is protected by the seal of confession, which a priest may never break, even to save his own life."],
+   "refs": [["John 20:21–23", "john/20?21"], ["James 5:16", "james/5?16"], ["Catechism 1441", 1441]], "glossary": "confession"},
+
+  {"id": "eucharist", "q": "Do Catholics really believe the bread and wine become Jesus?",
+   "a": ["Yes. Catholics believe that at Mass, by the power of the Holy Spirit and the words of Christ, the bread and wine truly become the Body and Blood of Jesus, though they still look and taste like bread and wine. This is called the Real Presence.", "This belief comes from Jesus’ own words: “This is my body” and “My flesh is true food” (John 6:55). When many followers left because the teaching was hard, Jesus did not call them back to say he was speaking symbolically. St. Paul warned that whoever eats unworthily “will have to answer for the body and blood of the Lord” (1 Corinthians 11:27). Christians have believed this since the earliest centuries."],
+   "refs": [["John 6:51–69", "john/6?51"], ["1 Corinthians 11:23–29", "1corinthians/11?23"], ["Catechism 1374", 1374]], "glossary": "real-presence"},
+
+  {"id": "pope", "q": "Why do Catholics have a Pope?",
+   "a": ["Jesus gave Simon a new name, Peter (“rock”), and said, “Upon this rock I will build my church… I will give you the keys to the kingdom of heaven” (Matthew 16:18–19). After the Resurrection he told Peter three times, “Feed my sheep” (John 21:15–17).", "Catholics believe this role of shepherd and source of unity did not end with Peter. It passed to those who led the church of Rome after him, in an unbroken line to Pope Leo XIV today. See <a href=\"/popes\">all 267 Popes in succession</a>."],
+   "refs": [["Matthew 16:13–19", "matthew/16?13"], ["John 21:15–17", "john/21?15"], ["Catechism 881", 881]]},
+
+  {"id": "infallible", "q": "Do Catholics believe the Pope can never be wrong?",
+   "a": ["No. Popes can sin, make mistakes, and hold mistaken personal opinions, and some have. “Infallibility” is much narrower: the belief that when the Pope solemnly defines a teaching on faith or morals for the whole Church, the Holy Spirit protects him from leading the Church into error.", "This has been used very rarely. The two clearest examples are the definitions of Mary’s Immaculate Conception (1854) and her Assumption into heaven (1950). The same protection applies when all the bishops, united with the Pope, teach something definitively."],
+   "refs": [["Luke 22:31–32", "luke/22?31"], ["Catechism 891", 891]], "glossary": "magisterium"},
+
+  {"id": "bible-books", "q": "Why does the Catholic Bible have more books?",
+   "a": ["The Catholic Old Testament includes seven books that most Protestant Bibles leave out: Tobit, Judith, 1 and 2 Maccabees, Wisdom, Sirach and Baruch, plus longer versions of Esther and Daniel.", "These books were part of the Septuagint, the Greek Old Testament used by the early Church and quoted throughout the New Testament. Church councils at Rome (382), Hippo (393) and Carthage (397) listed them as Scripture. In the 1500s the Protestant reformers moved them out, following the shorter Hebrew list; the Council of Trent reaffirmed the traditional canon. Catholics call these the deuterocanonical books."],
+   "refs": [["Catechism 120", 120]], "glossary": "deuterocanonical"},
+
+  {"id": "works", "q": "Do Catholics believe they can earn their way to heaven?",
+   "a": ["No. The Church teaches that salvation is a free gift of God’s grace that no one can earn. “By grace you have been saved through faith, and this is not from you; it is the gift of God” (Ephesians 2:8).", "Catholics also believe that real faith is alive and shows itself in love (Galatians 5:6). Good works don’t buy salvation; they are what grace does in a person who accepts it. As James puts it, “faith without works is dead” (James 2:26). In 1999 the Catholic Church and the Lutheran World Federation signed a joint declaration recognizing their deep agreement on this question."],
+   "refs": [["Ephesians 2:8–10", "ephesians/2?8"], ["James 2:14–26", "james/2?14"], ["Catechism 1996", 1996]], "glossary": "grace"},
+
+  {"id": "purgatory", "q": "What is purgatory?",
+   "a": ["Purgatory is not a second chance or a halfway hell. It is a final purification for people who die in God’s friendship but are not yet completely free of sin’s effects. Everyone in purgatory is saved and on their way to heaven.", "Scripture says nothing unclean will enter heaven (Revelation 21:27), and St. Paul describes a person who is saved “but only as through fire” (1 Corinthians 3:15). Jews and Christians have prayed for the dead since before Christ (2 Maccabees 12:46), which only makes sense if the dead can still be helped."],
+   "refs": [["1 Corinthians 3:11–15", "1corinthians/3?11"], ["2 Maccabees 12:43–46", "2maccabees/12?43"], ["Catechism 1030", 1030]], "glossary": "purgatory"},
+
+  {"id": "statues", "q": "Aren’t statues and images a form of idolatry?",
+   "a": ["Idolatry means worshiping something other than God. Catholics don’t worship statues, any more than people worship the photos of loved ones they keep at home. Images are reminders that point beyond themselves.", "God himself commanded images for worship: golden cherubim on the Ark of the Covenant (Exodus 25:18) and a bronze serpent that Jesus later compared to himself (Numbers 21:8; John 3:14). Above all, in Jesus the invisible God became visible (Colossians 1:15), so Christians have always been free to portray him and his friends."],
+   "refs": [["Exodus 25:17–22", "exodus/25?17"], ["Colossians 1:15", "colossians/1?15"], ["Catechism 2131", 2131]]},
+
+  {"id": "celibacy", "q": "Why can’t Catholic priests marry?",
+   "a": ["Priestly celibacy is a discipline, not a doctrine, so it could change. In fact, Eastern Catholic Churches ordain married men, and some married former Protestant ministers have become Catholic priests in the Latin Church.", "Latin-rite priests freely promise celibacy to imitate Jesus, who did not marry, and to be wholly available to God’s people. St. Paul praised this way of life: an unmarried person can be “anxious about the things of the Lord” (1 Corinthians 7:32). Jesus spoke of those who renounce marriage “for the sake of the kingdom of heaven” (Matthew 19:12)."],
+   "refs": [["Matthew 19:10–12", "matthew/19?10"], ["1 Corinthians 7:32–35", "1corinthians/7?32"], ["Catechism 1579", 1579]]},
+
+  {"id": "women-priests", "q": "Why are only men ordained priests?",
+   "a": ["The Church teaches that it has no authority to ordain women as priests, because it follows the example of Christ, who chose twelve men as his apostles, and the unbroken practice of the apostles and their successors. Pope St. John Paul II stated this definitively in 1994.", "This is not a judgment that women are less important. The Church’s greatest saint is a woman, Mary, and women serve the Church as religious sisters, teachers, theologians, chancellors, Doctors of the Church and leaders in countless ministries. The priesthood is understood as a sacramental sign of Christ the Bridegroom, not a career or a reward."],
+   "refs": [["Catechism 1577", 1577]]},
+
+  {"id": "scandals", "q": "How can I trust a Church that covered up abuse?",
+   "a": ["This is a serious question, and it deserves an honest answer. Some clergy committed terrible abuse, and some bishops failed to stop it and protected abusers. That was gravely wrong, and Popes and bishops have publicly asked forgiveness.", "Since 2002, U.S. dioceses have followed the Charter for the Protection of Children and Young People: reporting to civil authorities, background checks, safe-environment training, independent review boards and annual audits. Catholics don’t put their faith in the holiness of Church leaders but in Jesus Christ, who still works through his Church in spite of its sinners. If you or someone you know was harmed, every diocese has a victim assistance coordinator, and you can always contact the police."],
+   "refs": [["USCCB: Child and Youth Protection", "https://www.usccb.org/offices/child-and-youth-protection"]]},
+
+  {"id": "other-christians", "q": "Do Catholics think other Christians are going to hell?",
+   "a": ["No. The Church teaches that all who are validly baptized and believe in Christ are truly Christians and brothers and sisters in the Lord, even though they are not in full communion with the Catholic Church. Much of what is good in their communities, such as Scripture, prayer and grace, comes from Christ and leads toward unity.", "The Church also teaches that people who, through no fault of their own, do not know Christ or his Church, but sincerely seek God and try to do his will, can be saved. Judging any individual soul belongs to God alone."],
+   "refs": [["John 17:20–21", "john/17?20"], ["Catechism 818", 818], ["Catechism 847", 847]]},
+
+  {"id": "father", "q": "Jesus said to call no one “father.” Why do Catholics call priests Father?",
+   "a": ["In Matthew 23:9, Jesus was warning against pride and seeking titles, not banning the word. In the same passage he says to call no one “teacher,” yet Christians rightly call people teachers, and everyone calls their dad father.", "The New Testament itself uses the word for spiritual leaders. St. Paul wrote, “I became your father in Christ Jesus through the gospel” (1 Corinthians 4:15), and St. Stephen addressed the Jewish leaders as “brothers and fathers” (Acts 7:2). Catholics call priests Father because they care for people as spiritual fathers."],
+   "refs": [["Matthew 23:8–12", "matthew/23?8"], ["1 Corinthians 4:14–15", "1corinthians/4?14"]]},
+
+  {"id": "divorce", "q": "Can people who are divorced be Catholic?",
+   "a": ["Yes. Divorce on its own does not separate anyone from the Church, and divorced Catholics can receive Communion like anyone else. Divorced people are welcome at Mass and in OCIA.", "Because Catholics believe marriage is lifelong (Mark 10:9), remarriage after divorce is a question. If you are divorced and remarried, or hope to marry someone who is, a parish priest can explain the annulment process. It is a Church investigation of whether a valid marriage bond truly existed from the start. Many people find it brings healing. Talk with a priest; no one should stay away out of fear."],
+   "refs": [["Mark 10:2–12", "mark/10?2"], ["Catechism 1650", 1650]], "glossary": "annulment"}
+]

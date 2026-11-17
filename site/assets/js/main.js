@@ -319,6 +319,25 @@
     if (/Android/i.test(navigator.userAgent)) { var ap = $('#sub-apple'); if (ap) ap.hidden = true; }
   }
 
+  /* ---------- Honest questions: search, open all, open from link ---------- */
+  var qs = $('#qa-search');
+  if (qs) {
+    var qas = $$('.qa'), qEmpty = $('#qa-empty'), qt = $('#qa-toggle');
+    qs.addEventListener('input', function () {
+      var t = qs.value.trim().toLowerCase(), any = false;
+      qas.forEach(function (d) { var ok = !t || d.textContent.toLowerCase().indexOf(t) > -1; d.hidden = !ok; if (ok) any = true; if (t && ok) d.open = true; });
+      qEmpty.hidden = any;
+    });
+    qt.addEventListener('click', function () {
+      var open = qt.getAttribute('aria-pressed') !== 'true';
+      qas.forEach(function (d) { d.open = open; });
+      qt.setAttribute('aria-pressed', open ? 'true' : 'false');
+      qt.textContent = open ? 'Close all' : 'Open all';
+    });
+    var openHash = function () { var d = location.hash && document.getElementById(location.hash.slice(1)); if (d && d.tagName === 'DETAILS') { d.open = true; d.scrollIntoView(); } };
+    window.addEventListener('hashchange', openHash); openHash();
+  }
+
   /* ---------- Popes: search ---------- */
   var pq = $('#pope-search');
   if (pq) {

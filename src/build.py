@@ -36,6 +36,8 @@ PAGES = [
      "Holy days of obligation, fasting days and major Catholic feasts for the U.S., with a free calendar you can add to your iPhone, Google or Outlook."),
     ("beliefs", "Beliefs", "What Catholics Believe | CatholicDoorway",
      "A plain-language overview of Catholic belief and practice: the Creed, the seven sacraments, Scripture and Tradition, Mary and the saints, and the moral life."),
+    ("questions", "Honest Questions", "Honest Questions About the Catholic Church, Answered | CatholicDoorway",
+     "Short, kind, straight answers to the questions people ask about Catholics: Mary, saints, confession, the Pope, purgatory, the extra Bible books and more."),
     ("structure", "Church Structure", "How the Catholic Church Is Organized | CatholicDoorway",
      "How the Catholic Church is organized: the Pope, bishops, dioceses, parishes, priests and deacons, explained simply."),
     ("dioceses", "Dioceses", "U.S. Catholic Dioceses Directory | CatholicDoorway",
@@ -50,9 +52,10 @@ PAGES = [
      "About CatholicDoorway.com: a free, ad-free guide to the Catholic faith. Sources, data and corrections."),
     ("404", "Not found", "Page not found | CatholicDoorway", "This page could not be found."),
 ]
-NAV_EXCLUDE = {"about", "404", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary"}
+NAV_EXCLUDE = {"about", "404", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary", "questions"}
 # Pages shown in a dropdown under a main menu item: parent slug -> [(slug, label)]
-SUBNAV = {"prayers": [("prayers", "Catholic prayers"), ("rosary", "Pray the Rosary")],
+SUBNAV = {"beliefs": [("beliefs", "What Catholics believe"), ("questions", "Honest questions, answered")],
+          "prayers": [("prayers", "Catholic prayers"), ("rosary", "Pray the Rosary")],
           "bible": [("bible", "Today’s readings and the Bible"), ("calendar", "Holy Days Calendar")],
           "start-here": [("start-here", "Becoming Catholic (OCIA)"), ("first-mass", "Your First Mass")],
           "structure": [("structure", "How the Church is organized"), ("popes", "All 267 Popes"),
@@ -265,6 +268,28 @@ def mass_html():
     return "\n".join(out), len(steps)
 
 
+def questions_html():
+    data = json.loads((ROOT / "src" / "data" / "questions.json").read_text(encoding="utf-8"))
+    out, toc = [], []
+    for q in data:
+        refs = []
+        for label, target in q["refs"]:
+            if isinstance(target, int):
+                url = f"https://www.scborromeo.org/ccc/para/{target}.htm"
+            elif target.startswith("http"):
+                url = target
+            else:
+                url = f"https://bible.usccb.org/bible/{target}"
+            refs.append(f'<a href="{url}" target="_blank" rel="noopener">{html.escape(label)}</a>')
+        if q.get("glossary"):
+            refs.append(f'<a href="/glossary#{q["glossary"]}">Glossary</a>')
+        body = "".join(f"<p>{para}</p>" for para in q["a"])
+        out.append(f'    <details class="qa" id="{q["id"]}"><summary>{html.escape(q["q"])}</summary>'
+                   f'<div class="qa-body">{body}<p class="qa-refs">Read more: {" &middot; ".join(refs)}</p></div></details>')
+        toc.append(q["id"])
+    return "\n".join(out)
+
+
 def version(rel):
     """Short content hash so browsers fetch new CSS/JS as soon as it changes."""
     return hashlib.sha1((OUT / rel.lstrip("/")).read_bytes()).hexdigest()[:10]
@@ -312,6 +337,8 @@ def main():
         if "{{MASS}}" in body:
             ms, mn = mass_html()
             body = body.replace("{{MASS}}", ms).replace("{{MASS_COUNT}}", str(mn))
+        if "{{QUESTIONS}}" in body:
+            body = body.replace("{{QUESTIONS}}", questions_html())
         if "{{POPES}}" in body:
             pl, pj = popes_html()
             body = body.replace("{{POPES}}", pl).replace("{{CENTURIES}}", pj)

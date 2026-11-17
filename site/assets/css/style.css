@@ -491,3 +491,14 @@ body.companion-open { overflow: hidden; }
 .rs-dots span.done { background: var(--gold-soft); }
 .rs-dots span.now { background: var(--gold); border-color: var(--navy); transform: scale(1.2); }
 @media (max-width: 859px) { #rosary-svg { max-width: 170px; } .rosary-step { min-height: 12rem; } }
+
+/* Honest questions */
+.qa-list { display: grid; gap: .6rem; }
+.qa { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); scroll-margin-top: 90px; }
+.qa summary { cursor: pointer; list-style: none; padding: 1rem 3rem 1rem 1.2rem; font: 600 1.2rem/1.35 var(--serif-display); color: var(--navy); position: relative; }
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary::after { content: "+"; position: absolute; right: 1.1rem; top: .75rem; font: 400 1.6rem var(--sans); color: var(--gold); }
+.qa[open] summary::after { content: "\2212"; }
+.qa-body { padding: 0 1.2rem 1.1rem; max-width: 70ch; }
+.qa-body p { margin: 0 0 .8rem; }
+.qa-refs { font: .88rem var(--sans); color: var(--ink-soft); margin-bottom: 0 !important; }
