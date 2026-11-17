@@ -7,6 +7,7 @@ Run:  python3 src/build.py
 """
 from pathlib import Path
 import datetime
+import hashlib
 import html
 import json
 
@@ -176,6 +177,17 @@ def glossary_html():
     return "\n".join(out), alpha
 
 
+def version(rel):
+    """Short content hash so browsers fetch new CSS/JS as soon as it changes."""
+    return hashlib.sha1((OUT / rel.lstrip("/")).read_bytes()).hexdigest()[:10]
+
+
+def bust(page):
+    for rel in ("/assets/css/style.css", "/assets/js/main.js", "/assets/js/map.js"):
+        page = page.replace(f'"{rel}"', f'"{rel}?v={version(rel)}"')
+    return page
+
+
 def nav_html(current):
     items = []
     for slug, label, *_ in PAGES:
@@ -203,7 +215,7 @@ def main():
             body = body.replace("{{GLOSSARY}}", g).replace("{{ALPHA}}", a)
         page += body
         page += FOOT.format(extra_foot=ef)
-        (OUT / f"{slug}.html").write_text(page, encoding="utf-8")
+        (OUT / f"{slug}.html").write_text(bust(page), encoding="utf-8")
         print("built", slug)
 
     today = datetime.date.today().isoformat()
