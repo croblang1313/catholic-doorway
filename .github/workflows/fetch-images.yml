@@ -1,0 +1,44 @@
+name: Fetch image candidates
+
+# Manual helper: downloads freely licensed images (e.g. from Wikimedia Commons),
+# resizes them, and pushes them to the image-candidates branch for review.
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "Image URLs, separated by spaces"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and resize
+        env:
+          URLS: ${{ github.event.inputs.urls }}
+        run: |
+          mkdir -p candidates
+          i=0
+          for u in $URLS; do
+            i=$((i+1))
+            curl -sSL -A "CatholicDoorwayBot/1.0 (https://catholicdoorway.com)" "$u" -o "candidates/orig$i.jpg"
+            convert "candidates/orig$i.jpg" -auto-orient -resize 2400x2400\> -strip -quality 82 "candidates/c$i.jpg"
+            convert "candidates/orig$i.jpg" -auto-orient -resize 600x600\> -strip -quality 70 "candidates/p$i.jpg"
+            rm "candidates/orig$i.jpg"
+            echo "$i $u" >> candidates/list.txt
+          done
+          ls -la candidates
+      - name: Push to image-candidates branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan image-candidates
+          git rm -rq --cached .
+          git add candidates
+          git commit -qm "Image candidates"
+          git push -f origin image-candidates
