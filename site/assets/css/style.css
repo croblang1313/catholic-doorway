@@ -359,3 +359,17 @@ dl.glossary dt:target { background: var(--gold-soft); border-radius: 6px; paddin
 .rd-actions { display: flex; flex-wrap: wrap; gap: .45rem; }
 .rd-credit { margin: .7rem 0 0; font-size: .82rem; }
 @media (min-width: 760px) { .today { grid-template-columns: 1fr 1.45fr 1fr; } }
+
+/* Popes in succession */
+.pope-cent { font-size: 1.6rem; margin: 2.6rem 0 .6rem; padding-bottom: .4rem; border-bottom: 1px solid var(--line); scroll-margin-top: 90px; }
+.popes { list-style: none; margin: 0; padding: 0; display: grid; gap: .2rem; }
+.pope { display: grid; grid-template-columns: 3.2rem 1fr; gap: .9rem; padding: .9rem 0; border-bottom: 1px dashed var(--line); scroll-margin-top: 90px; }
+.pope:last-child { border-bottom: 0; }
+.pope-no { font: 600 1.5rem/1 var(--display, 'Cormorant Garamond', serif); color: var(--gold); text-align: right; padding-top: .15rem; }
+.pope h3 { font-size: 1.3rem; margin: 0; }
+.pope-bn { display: block; font: .88rem var(--sans); color: var(--ink-soft); }
+.pope-meta { display: flex; flex-wrap: wrap; gap: .2rem 1.2rem; font: 600 .86rem var(--sans); color: var(--ink-soft); margin: .3rem 0 0; }
+.pope p { margin: .35rem 0 0; font-size: 1rem; }
+.pope.current { background: var(--surface); border: 1px solid var(--gold); border-radius: 10px; padding: 1rem .9rem; }
+.see-all { display: inline-block; margin-top: .3rem; font: 600 .95rem var(--sans); }
+@media (max-width: 560px) { .pope { grid-template-columns: 2.4rem 1fr; gap: .6rem; } .pope-no { font-size: 1.25rem; } }

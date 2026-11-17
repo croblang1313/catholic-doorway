@@ -38,11 +38,13 @@ PAGES = [
      "Meet the saints, and learn the path to sainthood: Servant of God, Venerable, Blessed and Saint."),
     ("glossary", "Glossary", "Catholic Glossary: Terms Explained Simply | CatholicDoorway",
      "Plain-English definitions of Catholic words, from Advent to Vespers."),
+    ("popes", "Popes", "All 267 Popes in Succession, from St. Peter to Leo XIV | CatholicDoorway",
+     "Every Pope in order from St. Peter to Leo XIV: number in the line of succession, years as Pope, birth and death, and what each is remembered for."),
     ("about", "About", "About CatholicDoorway",
      "About CatholicDoorway.com: a free, ad-free guide to the Catholic faith. Sources, data and corrections."),
     ("404", "Not found", "Page not found | CatholicDoorway", "This page could not be found."),
 ]
-NAV_EXCLUDE = {"about", "404"}
+NAV_EXCLUDE = {"about", "404", "popes"}
 
 DOOR_SVG = '''<svg viewBox="0 0 34 40" aria-hidden="true" focusable="false"><path d="M3 39V17C3 8.7 9.3 2 17 2s14 6.7 14 15v22" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8 39V18.5C8 13 12 8.5 17 8.5S26 13 26 18.5V39" fill="currentColor" opacity=".16"/><path d="M8 39V18.5C8 13 12 8.5 17 8.5S26 13 26 18.5V39" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M17 12v9M13.6 15.2h6.8" stroke="#a8802f" stroke-width="2" stroke-linecap="round"/><circle cx="22" cy="28" r="1.4" fill="#a8802f"/><path d="M1 39h32" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>'''
 
@@ -177,6 +179,54 @@ def glossary_html():
     return "\n".join(out), alpha
 
 
+def _yr(d):
+    if not d:
+        return ""
+    y = str(int(d[:4]))
+    return ("c. " + y) if d.endswith("-01-01") else y
+
+
+def _ordinal(n):
+    return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
+
+
+def popes_html():
+    rows = [l.split("\t") for l in (ROOT / "src" / "data" / "popes.tsv").read_text(encoding="utf-8").splitlines()
+            if l and not l.startswith("#")]
+    e = html.escape
+    out, cents, cur = [], [], None
+    for ord_, name, bn, start, end, birth, death, summary in rows:
+        n = int(ord_)
+        c = (int(start[:4]) - 1) // 100 + 1
+        if c != cur:
+            if cur is not None:
+                out.append("    </ol>")
+            cur = c
+            cents.append(c)
+            out.append(f'    <h2 class="pope-cent" id="c{c}">{_ordinal(c)} century</h2>\n    <ol class="popes">')
+        if n == 1:
+            reign, life = "c. 30s &ndash; c. 64/67", "Died c. 64/67"
+        else:
+            a, b = _yr(start), _yr(end)
+            reign = (f"since {a}" if not end else a if a == b else f"{a}&ndash;{b}")
+            if not death:
+                life = f"Born {_yr(birth)}"
+            elif birth:
+                life = f"Lived {_yr(birth)}&ndash;{_yr(death)}"
+            else:
+                life = f"Died {_yr(death)}"
+        born = f'<span class="pope-bn">Born {e(bn)}</span>' if bn else ""
+        curcls = " current" if not end else ""
+        out.append(
+            f'      <li class="pope{curcls}" id="pope-{n}" value="{n}"><span class="pope-no" aria-hidden="true">{n}</span>'
+            f'<div><h3>{e(name)}</h3>{born}'
+            f'<p class="pope-meta"><span>Pope {reign}</span><span>{life}</span></p>'
+            f'<p>{e(summary)}</p></div></li>')
+    out.append("    </ol>")
+    jump = "\n".join(f'    <a href="#c{c}">{_ordinal(c)}</a>' for c in cents)
+    return "\n".join(out), jump
+
+
 def version(rel):
     """Short content hash so browsers fetch new CSS/JS as soon as it changes."""
     return hashlib.sha1((OUT / rel.lstrip("/")).read_bytes()).hexdigest()[:10]
@@ -213,6 +263,9 @@ def main():
         if "{{GLOSSARY}}" in body:
             g, a = glossary_html()
             body = body.replace("{{GLOSSARY}}", g).replace("{{ALPHA}}", a)
+        if "{{POPES}}" in body:
+            pl, pj = popes_html()
+            body = body.replace("{{POPES}}", pl).replace("{{CENTURIES}}", pj)
         page += body
         page += FOOT.format(extra_foot=ef)
         (OUT / f"{slug}.html").write_text(bust(page), encoding="utf-8")

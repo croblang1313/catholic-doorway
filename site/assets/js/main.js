@@ -213,6 +213,22 @@
   }
 
   // Dioceses
+  /* ---------- Popes: search ---------- */
+  var pq = $('#pope-search');
+  if (pq) {
+    var popes = $$('.pope'), heads = $$('.pope-cent'), pEmpty = $('#pope-empty');
+    popes.forEach(function (li) { li._t = (li.value + ' ' + li.textContent).toLowerCase(); });
+    pq.addEventListener('input', function () {
+      var t = pq.value.trim().toLowerCase(), any = false;
+      popes.forEach(function (li) { var ok = !t || li._t.indexOf(t) > -1; li.hidden = !ok; if (ok) any = true; });
+      heads.forEach(function (h) {
+        var ol = h.nextElementSibling;
+        h.hidden = ol.hidden = !$$('.pope', ol).some(function (li) { return !li.hidden; });
+      });
+      pEmpty.hidden = any;
+    });
+  }
+
   var dq = $('#dio-search');
   if (dq) {
     var rows = $$('#dio-table tbody tr'), dEmpty = $('#dio-empty');
