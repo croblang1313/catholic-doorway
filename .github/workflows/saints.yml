@@ -1,0 +1,43 @@
+name: Update saints list
+
+# Refreshes site/data/saints-directory.json from Wikidata every Tuesday,
+# picking up new beatifications, canonizations and decrees.
+on:
+  schedule:
+    - cron: "41 8 * * 2"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: saints
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Download saints from Wikidata
+        run: python3 scripts/fetch_saints.py
+      - name: Commit if changed
+        run: |
+          git add site/data/saints-directory.json
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update saints list from OpenStreetMap"
+          # Other commits may have landed during the long download; rebase and retry.
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push && exit 0
+            sleep $((i * 15))
+          done
+          exit 1
