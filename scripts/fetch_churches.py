@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
-"""Download Catholic churches in the U.S. from OpenStreetMap (Overpass API)
-and save them as small static JSON files the map can load directly.
+"""Build the U.S. Catholic church list from OpenStreetMap extracts and save it
+as small static JSON files the map can load directly.
+
+The public Overpass servers proved too busy to answer state-sized queries, so
+this downloads Geofabrik's per-state extracts instead (one at a time, deleting
+each after use), keeps only places of worship with `osmium tags-filter`, and
+reads the result with pyosmium.
 
 Output: site/data/churches/<lat>_<lon>.json, one file per 1x1 degree cell,
 plus site/data/churches/index.json listing the cells and the update date.
@@ -8,50 +13,65 @@ plus site/data/churches/index.json listing the cells and the update date.
 Each church is a compact list:
   [lat, lon, name, address, phone, website, service_times, osm_type, osm_id]
 
+Needs: the `osmium` command (apt: osmium-tool) and `pip install osmium`.
 Run by .github/workflows/churches.yml every week. Data (c) OpenStreetMap
 contributors, ODbL.
 """
 import json
 import math
+import re
+import subprocess
 import sys
+import tempfile
 import time
-import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+import osmium
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "site" / "data" / "churches"
-ENDPOINTS = [
-    "https://overpass-api.de/api/interpreter",
-    "https://overpass.kumi.systems/api/interpreter",
-    "https://overpass.private.coffee/api/interpreter",
-]
-DENOMS = ("^(catholic|roman_catholic|greek_catholic|ukrainian_greek_catholic|byzantine_catholic|"
-          "ruthenian_catholic|maronite|melkite|chaldean_catholic|armenian_catholic|syro-malabar|"
-          "syro_malabar|syro-malankara|syriac_catholic|coptic_catholic|ethiopian_catholic)$")
-REGIONS = ("AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH "
-           "NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY PR GU VI").split()
+INDEX_URL = "https://download.geofabrik.de/index-v1-nogeom.json"
 UA = "CatholicDoorway church list builder (https://catholicdoorway.com/about)"
+DENOMS = re.compile(
+    r"^(catholic|roman_catholic|greek_catholic|ukrainian_greek_catholic|byzantine_catholic|"
+    r"ruthenian_catholic|maronite|melkite|chaldean_catholic|armenian_catholic|syro-malabar|"
+    r"syro_malabar|syro-malankara|syriac_catholic|coptic_catholic|ethiopian_catholic)$")
 
 
-def query(region):
-    q = (f'[out:json][timeout:180];area["ISO3166-2"="US-{region}"]->.a;'
-         f'nwr["amenity"="place_of_worship"]["religion"="christian"]["denomination"~"{DENOMS}"](area.a);'
-         'out center tags;')
-    data = urllib.parse.urlencode({"data": q}).encode()
+def fetch(url, dest=None):
     last = None
-    for attempt in range(6):
-        url = ENDPOINTS[attempt % len(ENDPOINTS)]
+    for attempt in range(4):
         try:
-            req = urllib.request.Request(url, data=data, headers={"User-Agent": UA})
-            with urllib.request.urlopen(req, timeout=240) as r:
-                return json.load(r)["elements"]
+            req = urllib.request.Request(url, headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=600) as r:
+                if dest is None:
+                    return r.read()
+                with open(dest, "wb") as f:
+                    while chunk := r.read(1 << 20):
+                        f.write(chunk)
+                return dest
         except Exception as e:  # noqa: BLE001
             last = e
-            print(f"  {region}: {url} failed ({e}); retrying", file=sys.stderr)
-            time.sleep(15 * (attempt + 1))
-    raise RuntimeError(f"{region}: all attempts failed: {last}")
+            print(f"  {url} failed ({e}); retrying", file=sys.stderr)
+            time.sleep(20 * (attempt + 1))
+    raise RuntimeError(f"{url}: {last}")
+
+
+def us_extracts():
+    """Every Geofabrik extract whose parent is 'us': the states, DC and territories."""
+    idx = json.loads(fetch(INDEX_URL))
+    out = [(f["properties"]["id"], f["properties"]["urls"]["pbf"])
+           for f in idx["features"] if f["properties"].get("parent") == "us"]
+    if len(out) < 50:
+        sys.exit(f"Geofabrik index lists only {len(out)} U.S. extracts; keeping old data.")
+    return sorted(out)
+
+
+def is_catholic(t):
+    return (t.get("amenity") == "place_of_worship" and t.get("religion") == "christian"
+            and DENOMS.match(t.get("denomination", "")))
 
 
 def address(t):
@@ -61,41 +81,66 @@ def address(t):
     return ", ".join(x for x in [line1, line2] if x)
 
 
-def compact(el):
-    lat = el.get("lat", (el.get("center") or {}).get("lat"))
-    lon = el.get("lon", (el.get("center") or {}).get("lon"))
-    if lat is None or lon is None:
-        return None
-    t = el.get("tags", {})
+def compact(lat, lon, t, kind, oid):
     web = t.get("website") or t.get("contact:website") or t.get("url") or ""
     phone = (t.get("phone") or t.get("contact:phone") or "").split(";")[0].strip()
     return [round(lat, 5), round(lon, 5), t.get("name") or t.get("name:en") or "",
-            address(t), phone, web, t.get("service_times", ""), el["type"][0], el["id"]]
+            address(t), phone, web, t.get("service_times", ""), kind, oid]
+
+
+class Churches(osmium.SimpleHandler):
+    def __init__(self):
+        super().__init__()
+        self.found = []
+
+    def node(self, n):
+        t = dict(n.tags)
+        if is_catholic(t) and n.location.valid():
+            self.found.append(compact(n.location.lat, n.location.lon, t, "n", n.id))
+
+    def area(self, a):
+        t = dict(a.tags)
+        if not is_catholic(t):
+            return
+        pts = [(nd.lat, nd.lon) for ring in a.outer_rings() for nd in ring if nd.location.valid()]
+        if not pts:
+            return
+        lat = sum(p[0] for p in pts) / len(pts)
+        lon = sum(p[1] for p in pts) / len(pts)
+        self.found.append(compact(lat, lon, t, "w" if a.from_way() else "r", a.orig_id()))
+
+
+def churches_in(url, tmp):
+    raw, small = Path(tmp) / "region.osm.pbf", Path(tmp) / "pow.osm.pbf"
+    fetch(url, raw)
+    subprocess.run(["osmium", "tags-filter", "--overwrite", "-o", str(small), str(raw),
+                    "nwr/amenity=place_of_worship"], check=True, capture_output=True)
+    raw.unlink()
+    h = Churches()
+    h.apply_file(str(small), locations=True)
+    small.unlink()
+    return h.found
 
 
 def main():
     cells, seen, failed = {}, set(), []
-    for region in REGIONS:
-        try:
-            elements = query(region)
-        except RuntimeError as e:
-            print(e, file=sys.stderr)
-            failed.append(region)
-            continue
-        n = 0
-        for el in elements:
-            key = (el["type"], el["id"])
-            if key in seen:
+    with tempfile.TemporaryDirectory() as tmp:
+        for region, url in us_extracts():
+            try:
+                found = churches_in(url, tmp)
+            except Exception as e:  # noqa: BLE001
+                print(f"{region}: failed ({e})", file=sys.stderr)
+                failed.append(region)
                 continue
-            seen.add(key)
-            c = compact(el)
-            if not c:
-                continue
-            cell = f"{math.floor(c[0])}_{math.floor(c[1])}"
-            cells.setdefault(cell, []).append(c)
-            n += 1
-        print(f"{region}: {n} churches")
-        time.sleep(5)  # be polite to the shared Overpass servers
+            n = 0
+            for c in found:
+                key = (c[7], c[8])  # state extracts overlap at borders
+                if key in seen:
+                    continue
+                seen.add(key)
+                cells.setdefault(f"{math.floor(c[0])}_{math.floor(c[1])}", []).append(c)
+                n += 1
+            print(f"{region}: {n} churches", flush=True)
 
     if len(failed) > 5 or len(seen) < 5000:
         sys.exit(f"Too many failures ({failed}) or too few churches ({len(seen)}); keeping old data.")
