@@ -24,6 +24,24 @@ PAGES = [
      "New to the Catholic Church? How OCIA works, the four stages, how long it takes, who to contact, and what to expect at your first Mass."),
     ("first-mass", "Your First Mass", "Your First Mass: A Step-by-Step Guide | CatholicDoorway",
      "Going to Mass for the first time? A step-by-step companion for your phone: when to stand, sit and kneel, what people say, and what to do at Communion."),
+    ("how-to", "How-To Guides", "Catholic How-To Guides: Confession, Baptism, Marriage and More | CatholicDoorway",
+     "Plain, practical Catholic how-tos: going to Confession, joining a parish, baptizing a child, getting married, Last Rites, funerals and coming back to the Church."),
+    ("confession", "Confession", "How to Go to Confession: A Step-by-Step Guide | CatholicDoorway",
+     "How to go to Catholic Confession: when and where, how to prepare, exactly what to say, and what to do if it has been years."),
+    ("coming-back", "Coming Back", "Coming Back to the Catholic Church | CatholicDoorway",
+     "Been away from the Catholic Church? How to come back: Mass, talking with a priest, Confession, and special situations like marriage outside the Church."),
+    ("join-a-parish", "Join a Parish", "How to Join (Register at) a Catholic Parish | CatholicDoorway",
+     "Why and how to register at a Catholic parish in the U.S., and what it helps with: sponsor letters, baptisms, weddings and Catholic school."),
+    ("baptism", "Baptism", "How to Have Your Child Baptized Catholic | CatholicDoorway",
+     "How infant baptism works in a Catholic parish: when to call, the preparation class, godparent requirements, the ceremony and special situations."),
+    ("marriage", "Marriage", "How to Get Married in the Catholic Church | CatholicDoorway",
+     "Getting married in the Catholic Church: how far ahead to start, marriage preparation, documents, marrying a non-Catholic, previous marriages and convalidation."),
+    ("anointing", "Anointing of the Sick", "Anointing of the Sick and Last Rites: When to Call a Priest | CatholicDoorway",
+     "When and how to call a priest for Anointing of the Sick or Last Rites, what the sacraments are, and what to do if someone is dying now."),
+    ("funerals", "Funerals", "Planning a Catholic Funeral | CatholicDoorway",
+     "How to plan a Catholic funeral: the vigil, funeral Mass and committal, cremation rules, costs, and having a Mass offered for the deceased."),
+    ("baptism-certificate", "Baptism Records", "How to Get a Copy of Your Catholic Baptism Certificate | CatholicDoorway",
+     "How to request your Catholic baptism record with notations for a wedding or sponsor letter, including closed parishes and baptisms abroad."),
     ("find-a-church", "Find a Church", "Find a Catholic Church Near You | CatholicDoorway",
      "Find Catholic churches near you on a free map built from OpenStreetMap, with address, phone, website and directions."),
     ("prayers", "Prayers", "Catholic Prayers and How to Pray the Rosary | CatholicDoorway",
@@ -52,12 +70,13 @@ PAGES = [
      "About CatholicDoorway.com: a free, ad-free guide to the Catholic faith. Sources, data and corrections."),
     ("404", "Not found", "Page not found | CatholicDoorway", "This page could not be found."),
 ]
-NAV_EXCLUDE = {"about", "404", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary", "questions"}
+NAV_EXCLUDE = {"about", "404", "how-to", "confession", "coming-back", "join-a-parish", "baptism", "marriage", "anointing", "funerals", "baptism-certificate", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary", "questions"}
 # Pages shown in a dropdown under a main menu item: parent slug -> [(slug, label)]
 SUBNAV = {"beliefs": [("beliefs", "What Catholics believe"), ("questions", "Honest questions, answered")],
           "prayers": [("prayers", "Catholic prayers"), ("rosary", "Pray the Rosary")],
           "bible": [("bible", "Today’s readings and the Bible"), ("calendar", "Holy Days Calendar")],
-          "start-here": [("start-here", "Becoming Catholic (OCIA)"), ("first-mass", "Your First Mass")],
+          "start-here": [("start-here", "Becoming Catholic (OCIA)"), ("first-mass", "Your First Mass"),
+                         ("how-to", "How-To Guides"), ("confession", "How to go to Confession"), ("coming-back", "Coming back to the Church")],
           "structure": [("structure", "How the Church is organized"), ("popes", "All 267 Popes"),
                         ("dioceses", "U.S. Dioceses"), ("find-a-church", "Find a Church")]}
 
@@ -391,11 +410,25 @@ def nav_html(current):
     return "\n".join(items)
 
 
+ES_SUBNAV = {"comenzar": [("comenzar", "Hacerse católico (OCIA)"), ("primera-misa", "Tu primera Misa")],
+             "oraciones": [("oraciones", "Oraciones católicas"), ("rosario", "Reza el Rosario")]}
+ES_SUB_CHILDREN = {c for subs in ES_SUBNAV.values() for c, _ in subs} - set(ES_SUBNAV)
+
+
 def es_nav(current):
     items = []
     for _, es, label, *_ in ES_PAGES:
+        if es in ES_SUB_CHILDREN:
+            continue
         href = "/es/" if es == "index" else f"/es/{es}"
         cur = ' aria-current="page"' if es == current else ""
+        subs = ES_SUBNAV.get(es)
+        if subs:
+            if current in [c for c, _ in subs]:
+                cur = ' class="in-section"'
+            sub = "".join(f'<li><a href="/es/{c}"{" aria-current=\"page\"" if c == current else ""}>{l}</a></li>' for c, l in subs)
+            items.append(f'        <li class="has-sub"><a href="{href}"{cur}>{label}</a><ul class="sub">{sub}</ul></li>')
+            continue
         items.append(f'        <li><a href="{href}"{cur}>{label}</a></li>')
     items.append('        <li><a href="/" lang="en" hreflang="en">Más en inglés</a></li>')
     return "\n".join(items)
