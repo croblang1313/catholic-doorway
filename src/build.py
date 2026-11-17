@@ -22,6 +22,8 @@ PAGES = [
      "A free, simple guide to the Catholic faith: prayers, daily readings, how to become Catholic (OCIA), a church finder, saints, beliefs and a glossary."),
     ("start-here", "Start Here", "Start Here: Becoming Catholic (OCIA) | CatholicDoorway",
      "New to the Catholic Church? How OCIA works, the four stages, how long it takes, who to contact, and what to expect at your first Mass."),
+    ("first-mass", "Your First Mass", "Your First Mass: A Step-by-Step Guide | CatholicDoorway",
+     "Going to Mass for the first time? A step-by-step companion for your phone: when to stand, sit and kneel, what people say, and what to do at Communion."),
     ("find-a-church", "Find a Church", "Find a Catholic Church Near You | CatholicDoorway",
      "Find Catholic churches near you on a free map built from OpenStreetMap, with address, phone, website and directions."),
     ("prayers", "Prayers", "Catholic Prayers and How to Pray the Rosary | CatholicDoorway",
@@ -44,9 +46,10 @@ PAGES = [
      "About CatholicDoorway.com: a free, ad-free guide to the Catholic faith. Sources, data and corrections."),
     ("404", "Not found", "Page not found | CatholicDoorway", "This page could not be found."),
 ]
-NAV_EXCLUDE = {"about", "404", "popes", "dioceses", "find-a-church"}
+NAV_EXCLUDE = {"about", "404", "popes", "dioceses", "find-a-church", "first-mass"}
 # Pages shown in a dropdown under a main menu item: parent slug -> [(slug, label)]
-SUBNAV = {"structure": [("structure", "How the Church is organized"), ("popes", "All 267 Popes"),
+SUBNAV = {"start-here": [("start-here", "Becoming Catholic (OCIA)"), ("first-mass", "Your First Mass")],
+          "structure": [("structure", "How the Church is organized"), ("popes", "All 267 Popes"),
                         ("dioceses", "U.S. Dioceses"), ("find-a-church", "Find a Church")]}
 
 DOOR_SVG = '''<svg viewBox="0 0 34 40" aria-hidden="true" focusable="false"><path d="M3 39V17C3 8.7 9.3 2 17 2s14 6.7 14 15v22" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8 39V18.5C8 13 12 8.5 17 8.5S26 13 26 18.5V39" fill="currentColor" opacity=".16"/><path d="M8 39V18.5C8 13 12 8.5 17 8.5S26 13 26 18.5V39" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M17 12v9M13.6 15.2h6.8" stroke="#a8802f" stroke-width="2" stroke-linecap="round"/><circle cx="22" cy="28" r="1.4" fill="#a8802f"/><path d="M1 39h32" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>'''
@@ -230,6 +233,31 @@ def popes_html():
     return "\n".join(out), jump
 
 
+POSE = {"stand": "Stand", "sit": "Sit", "kneel": "Kneel", "any": "As you wish"}
+
+
+def mass_html():
+    steps = json.loads((ROOT / "src" / "data" / "mass.json").read_text(encoding="utf-8"))
+    out, part = [], None
+    for i, st in enumerate(steps, 1):
+        if st["part"] != part:
+            part = st["part"]
+            out.append(f'    <h2 class="mass-part">{html.escape(part)}</h2>')
+        say = ""
+        if st["say"]:
+            rows = "".join(
+                f'<div class="say-row{" all" if who.startswith(("All", "You", "Catholic")) else ""}"><dt>{html.escape(who)}</dt><dd>{html.escape(line)}</dd></div>'
+                for who, line in st["say"])
+            say = f'<dl class="say">{rows}</dl>'
+        tip = f'<p class="mass-tip">{st["tip"]}</p>' if st["tip"] else ""
+        out.append(
+            f'    <section class="mass-step" id="step-{i}" data-part="{html.escape(part)}" data-step="{i}">'
+            f'<div class="mass-head"><span class="pose pose-{st["pose"]}">{POSE[st["pose"]]}</span>'
+            f'<h3><span class="mass-no">{i}.</span> {html.escape(st["title"])}</h3></div>'
+            f'<p>{html.escape(st["what"])}</p>{say}{tip}</section>')
+    return "\n".join(out), len(steps)
+
+
 def version(rel):
     """Short content hash so browsers fetch new CSS/JS as soon as it changes."""
     return hashlib.sha1((OUT / rel.lstrip("/")).read_bytes()).hexdigest()[:10]
@@ -274,6 +302,9 @@ def main():
         if "{{GLOSSARY}}" in body:
             g, a = glossary_html()
             body = body.replace("{{GLOSSARY}}", g).replace("{{ALPHA}}", a)
+        if "{{MASS}}" in body:
+            ms, mn = mass_html()
+            body = body.replace("{{MASS}}", ms).replace("{{MASS_COUNT}}", str(mn))
         if "{{POPES}}" in body:
             pl, pj = popes_html()
             body = body.replace("{{POPES}}", pl).replace("{{CENTURIES}}", pj)

@@ -213,6 +213,72 @@
   }
 
   // Dioceses
+  /* ---------- First Mass companion: one step at a time, screen kept on, place saved ---------- */
+  var mStart = $('#mass-start'), comp = $('#companion');
+  if (mStart && comp) {
+    var steps = $$('.mass-step'), at = 0, lock = null, KEY = 'cd-mass-step';
+    var save = function () { try { localStorage.setItem(KEY, JSON.stringify({ i: at, t: Date.now() })); } catch (e) {} };
+    var load = function () {
+      try { var v = JSON.parse(localStorage.getItem(KEY)); if (v && Date.now() - v.t < 3 * 3600 * 1000) return v.i; } catch (e) {}
+      return 0;
+    };
+    var keepAwake = function () {
+      if (navigator.wakeLock && document.visibilityState === 'visible') {
+        navigator.wakeLock.request('screen').then(function (l) { lock = l; }).catch(function () {});
+      }
+    };
+    var show = function (i) {
+      at = Math.max(0, Math.min(steps.length - 1, i));
+      var st = steps[at], clone = st.cloneNode(true);
+      clone.removeAttribute('id');
+      var no = clone.querySelector('.mass-no'); if (no) no.remove();
+      $('#comp-body').innerHTML = '';
+      $('#comp-body').appendChild(clone);
+      $('#comp-body').scrollTop = 0;
+      $('#comp-part').textContent = st.getAttribute('data-part');
+      $('#comp-count').textContent = (at + 1) + ' of ' + steps.length;
+      $('#comp-progress').style.width = ((at + 1) / steps.length * 100) + '%';
+      $('#comp-back').disabled = at === 0;
+      $('#comp-next').innerHTML = at === steps.length - 1 ? 'Done' : 'Next &rarr;';
+      save();
+    };
+    var open = function () {
+      comp.hidden = false;
+      document.body.classList.add('companion-open');
+      show(load());
+      keepAwake();
+      $('#comp-next').focus();
+    };
+    var close = function () {
+      comp.hidden = true;
+      document.body.classList.remove('companion-open');
+      if (lock) { lock.release().catch(function () {}); lock = null; }
+      var st = steps[at]; if (st) st.scrollIntoView({ block: 'start' });
+      mStart.focus();
+    };
+    mStart.addEventListener('click', open);
+    $('#comp-close').addEventListener('click', close);
+    $('#comp-back').addEventListener('click', function () { show(at - 1); });
+    $('#comp-next').addEventListener('click', function () {
+      if (at === steps.length - 1) { try { localStorage.removeItem(KEY); } catch (e) {} at = 0; close(); } else show(at + 1);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (comp.hidden) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowRight') show(at + 1);
+      else if (e.key === 'ArrowLeft') show(at - 1);
+    });
+    var x0 = null;
+    comp.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    comp.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) > 60) show(at + (dx < 0 ? 1 : -1));
+    });
+    document.addEventListener('visibilitychange', function () { if (!comp.hidden && !lock) keepAwake(); });
+    if (load() > 0) mStart.textContent = 'Continue where you left off';
+  }
+
   /* ---------- Popes: search ---------- */
   var pq = $('#pope-search');
   if (pq) {

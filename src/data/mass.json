@@ -1,0 +1,151 @@
+[
+  {"part": "Before Mass", "title": "Arriving", "pose": "any",
+   "what": "Arrive ten minutes early and silence your phone. Many Catholics dip their fingers in the holy water at the door and make the Sign of the Cross, then bow or briefly kneel on the right knee (genuflect) toward the tabernacle before entering a pew.",
+   "say": [],
+   "tip": "None of this is required of visitors. Sitting quietly and taking it in is perfectly fine. Many people kneel and pray silently before Mass begins."},
+
+  {"part": "Introductory Rites", "title": "Entrance", "pose": "stand",
+   "what": "Everyone stands as the procession comes up the aisle: a cross, servers, readers, sometimes a deacon carrying the Book of the Gospels, and finally the priest. A hymn is usually sung.",
+   "say": [],
+   "tip": "Hymn numbers are often posted on a board at the front, or printed in a worship aid."},
+
+  {"part": "Introductory Rites", "title": "Sign of the Cross and greeting", "pose": "stand",
+   "what": "The priest begins with the Sign of the Cross, and everyone makes it with him: touch your forehead, chest, left shoulder, then right shoulder. Then he greets the people.",
+   "say": [["Priest", "In the name of the Father, and of the Son, and of the Holy Spirit."], ["All", "Amen."], ["Priest", "The Lord be with you."], ["All", "And with your spirit."]],
+   "tip": "“And with your spirit” is the response you will hear most often during Mass."},
+
+  {"part": "Introductory Rites", "title": "Asking for mercy", "pose": "stand",
+   "what": "Everyone pauses to call to mind their sins and ask for God’s mercy. Often the people pray a short prayer of confession together (the “I confess”), which is printed in the missal.",
+   "say": [["Priest or cantor", "Lord, have mercy."], ["All", "Lord, have mercy."], ["", "Christ, have mercy."], ["All", "Christ, have mercy."], ["", "Lord, have mercy."], ["All", "Lord, have mercy."]],
+   "tip": "Sometimes this is sung in Greek: “Kyrie, eleison” and “Christe, eleison.”"},
+
+  {"part": "Introductory Rites", "title": "Glory to God", "pose": "stand",
+   "what": "On Sundays (except during Advent and Lent) and on feast days, the congregation sings or says the ancient hymn “Glory to God in the highest.”",
+   "say": [],
+   "tip": "The words are in the missal or worship aid. It’s fine just to listen."},
+
+  {"part": "Introductory Rites", "title": "Opening prayer", "pose": "stand",
+   "what": "The priest says “Let us pray,” pauses for a moment of silence, then prays the day’s opening prayer (the Collect).",
+   "say": [["All", "Amen."]],
+   "tip": "“Amen” means “yes, so be it.” It’s how the people make the priest’s prayer their own."},
+
+  {"part": "Liturgy of the Word", "title": "First reading", "pose": "sit",
+   "what": "Everyone sits. A reader proclaims a passage, usually from the Old Testament (from the Acts of the Apostles during the Easter season).",
+   "say": [["Reader", "The word of the Lord."], ["All", "Thanks be to God."]],
+   "tip": "Today’s readings are on our <a href=\"/bible\">Bible &amp; Readings</a> page if you’d like to read along afterward."},
+
+  {"part": "Liturgy of the Word", "title": "Responsorial Psalm", "pose": "sit",
+   "what": "A cantor sings a psalm. The people repeat a short refrain after each verse.",
+   "say": [["All", "Repeat the refrain the cantor sings first."]],
+   "tip": "The refrain is usually printed in the worship aid or shown on a screen."},
+
+  {"part": "Liturgy of the Word", "title": "Second reading", "pose": "sit",
+   "what": "On Sundays and major feasts there is a second reading, usually from one of the New Testament letters.",
+   "say": [["Reader", "The word of the Lord."], ["All", "Thanks be to God."]],
+   "tip": "Weekday Masses skip this reading, so they are shorter, about 30 minutes."},
+
+  {"part": "Liturgy of the Word", "title": "Gospel acclamation", "pose": "stand",
+   "what": "Everyone stands to welcome the Gospel by singing “Alleluia.” During Lent, another acclamation replaces the Alleluia.",
+   "say": [["All", "Alleluia, alleluia, alleluia."]],
+   "tip": "Standing for the Gospel shows special honor to the words and deeds of Jesus."},
+
+  {"part": "Liturgy of the Word", "title": "The Gospel", "pose": "stand",
+   "what": "The priest or deacon reads from one of the four Gospels. As he announces it, Catholics trace a small cross with the thumb on the forehead, lips and heart, asking that God’s word be in their minds, on their lips and in their hearts.",
+   "say": [["Priest", "The Lord be with you."], ["All", "And with your spirit."], ["Priest", "A reading from the holy Gospel according to…"], ["All", "Glory to you, O Lord."], ["After the reading", "The Gospel of the Lord."], ["All", "Praise to you, Lord Jesus Christ."]],
+   "tip": ""},
+
+  {"part": "Liturgy of the Word", "title": "Homily", "pose": "sit",
+   "what": "Everyone sits while the priest or deacon preaches, explaining the readings and how to live them.",
+   "say": [],
+   "tip": "Homilies usually last 5 to 15 minutes."},
+
+  {"part": "Liturgy of the Word", "title": "The Creed", "pose": "stand",
+   "what": "On Sundays and solemnities, everyone stands and professes the faith together, usually with the Nicene Creed. At the words about Jesus becoming man (“and by the Holy Spirit was incarnate…”), everyone bows.",
+   "say": [["All", "The words are in the missal or worship aid."]],
+   "tip": "On Christmas and the Annunciation, people kneel at those words instead of bowing."},
+
+  {"part": "Liturgy of the Word", "title": "Prayers of the Faithful", "pose": "stand",
+   "what": "A deacon or reader offers short prayers for the Church, the world, people in need, the sick and the dead.",
+   "say": [["Reader", "Let us pray to the Lord."], ["All", "Lord, hear our prayer."]],
+   "tip": "The response is sometimes different. Listen to the first one and join in."},
+
+  {"part": "Liturgy of the Eucharist", "title": "Preparing the gifts", "pose": "sit",
+   "what": "Everyone sits. Bread and wine are brought to the altar, often carried up the aisle by members of the parish, and the altar is prepared. A collection is usually taken at this time.",
+   "say": [],
+   "tip": "Visitors are welcome to simply pass the basket along."},
+
+  {"part": "Liturgy of the Eucharist", "title": "“Pray, brethren”", "pose": "stand",
+   "what": "The priest invites everyone to pray that the sacrifice will be acceptable to God. The people stand and answer with a short prayer printed in the missal, then the priest prays over the gifts.",
+   "say": [["All", "Answer with the prayer in the missal; then “Amen.”"]],
+   "tip": ""},
+
+  {"part": "Liturgy of the Eucharist", "title": "“Lift up your hearts”", "pose": "stand",
+   "what": "The great prayer of thanksgiving begins with a dialogue between the priest and the people that Christians have used since the earliest centuries.",
+   "say": [["Priest", "The Lord be with you."], ["All", "And with your spirit."], ["Priest", "Lift up your hearts."], ["All", "We lift them up to the Lord."], ["Priest", "Let us give thanks to the Lord our God."], ["All", "It is right and just."]],
+   "tip": ""},
+
+  {"part": "Liturgy of the Eucharist", "title": "Holy, Holy, Holy", "pose": "stand",
+   "what": "The priest prays the Preface, praising God, and everyone joins in singing the “Holy, Holy, Holy” (Sanctus), echoing the angels’ song in Isaiah 6.",
+   "say": [["All", "Sing along from the worship aid."]],
+   "tip": "When it ends, everyone kneels."},
+
+  {"part": "Liturgy of the Eucharist", "title": "Eucharistic Prayer", "pose": "kneel",
+   "what": "This is the heart of the Mass. The priest repeats Jesus’ words at the Last Supper over the bread and wine. Catholics believe that at this moment they truly become the Body and Blood of Christ. The priest raises each one for all to see, and bells are often rung.",
+   "say": [],
+   "tip": "Many Catholics look at the Host as it is raised and silently pray, “My Lord and my God.” If you cannot kneel, sit forward quietly."},
+
+  {"part": "Liturgy of the Eucharist", "title": "The mystery of faith", "pose": "kneel",
+   "what": "The priest says “The mystery of faith,” and the people respond with a short acclamation about Christ’s death and Resurrection, printed in the missal.",
+   "say": [["All", "Answer with the acclamation in the missal."]],
+   "tip": ""},
+
+  {"part": "Liturgy of the Eucharist", "title": "The Great Amen", "pose": "kneel",
+   "what": "The Eucharistic Prayer ends with the priest lifting up the Body and Blood of Christ and praising the Father through Christ. The people answer with a sung “Amen,” often repeated.",
+   "say": [["All", "Amen."]],
+   "tip": "Then everyone stands."},
+
+  {"part": "Communion Rite", "title": "The Lord’s Prayer", "pose": "stand",
+   "what": "Everyone prays the Our Father together. In some parishes people hold hands or raise their hands; in others they fold them. Do whatever feels comfortable.",
+   "say": [["All", "Our Father, who art in heaven… but deliver us from evil."], ["", "Pause here while the priest prays alone."], ["All", "For the kingdom, the power and the glory are yours, now and for ever."]],
+   "tip": "Catholics don’t add “For thine is the kingdom” right after “deliver us from evil.” It comes a moment later, after the priest’s short prayer."},
+
+  {"part": "Communion Rite", "title": "Sign of peace", "pose": "stand",
+   "what": "The priest may invite everyone to offer one another a sign of peace. Shake hands, nod or wave to the people near you.",
+   "say": [["You", "Peace be with you."]],
+   "tip": "Keep it short and simple, just the people right around you."},
+
+  {"part": "Communion Rite", "title": "Lamb of God", "pose": "stand",
+   "what": "The priest breaks the consecrated Host while everyone sings the “Lamb of God.”",
+   "say": [["All", "Lamb of God, you take away the sins of the world: have mercy on us. (twice)"], ["All", "Lamb of God, you take away the sins of the world: grant us peace."]],
+   "tip": "Then everyone kneels."},
+
+  {"part": "Communion Rite", "title": "“Behold the Lamb of God”", "pose": "kneel",
+   "what": "The priest holds up the Host and invites the people to Communion. Everyone answers with the words of the Roman centurion in Matthew 8:8.",
+   "say": [["Priest", "Behold the Lamb of God…"], ["All", "Lord, I am not worthy that you should enter under my roof, but only say the word and my soul shall be healed."]],
+   "tip": ""},
+
+  {"part": "Communion Rite", "title": "Holy Communion", "pose": "any",
+   "what": "Catholics who are prepared go forward row by row. If you are not Catholic, you are welcome to stay in your pew and pray, letting others step past you. In many parishes you may also come forward with your arms crossed over your chest to receive a blessing.",
+   "say": [["Minister", "The Body of Christ."], ["Catholic receiving", "Amen."]],
+   "tip": "Why can’t everyone receive? Catholics believe Communion is truly Christ and a sign of full unity in the faith, so it is received by Catholics who are prepared. <a href=\"/start-here\">Becoming Catholic</a> is how that door opens."},
+
+  {"part": "Communion Rite", "title": "Quiet prayer", "pose": "kneel",
+   "what": "After Communion, people return to their pews and pray quietly, kneeling or sitting. A hymn is often sung.",
+   "say": [],
+   "tip": "A good moment to simply talk to God in your own words."},
+
+  {"part": "Communion Rite", "title": "Prayer after Communion", "pose": "stand",
+   "what": "The priest says “Let us pray” and everyone stands for a closing prayer. Parish announcements may follow.",
+   "say": [["All", "Amen."]],
+   "tip": ""},
+
+  {"part": "Concluding Rites", "title": "Blessing and dismissal", "pose": "stand",
+   "what": "The priest blesses everyone. Make the Sign of the Cross as he does. Then he or the deacon sends the people out.",
+   "say": [["Priest", "The Lord be with you."], ["All", "And with your spirit."], ["Priest", "…the Father, and the Son, and the Holy Spirit."], ["All", "Amen."], ["Priest or deacon", "Go forth, the Mass is ended."], ["All", "Thanks be to God."]],
+   "tip": ""},
+
+  {"part": "Concluding Rites", "title": "After Mass", "pose": "any",
+   "what": "A closing hymn is usually sung as the priest processes out. It’s polite to stay until he has left. Many people then kneel for a moment of prayer before leaving.",
+   "say": [],
+   "tip": "The priest often greets people at the door. Telling him “It was my first Mass” is a wonderful way to start a conversation. When you’re ready, see <a href=\"/start-here\">Start Here</a>."}
+]

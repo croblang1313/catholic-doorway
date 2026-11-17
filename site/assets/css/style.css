@@ -386,3 +386,47 @@ dl.glossary dt:target { background: var(--gold-soft); border-radius: 6px; paddin
 .pope.current { background: var(--surface); border: 1px solid var(--gold); border-radius: 10px; padding: 1rem .9rem; }
 .see-all { display: inline-block; margin-top: .3rem; font: 600 .95rem var(--sans); }
 @media (max-width: 560px) { .pope { grid-template-columns: 2.4rem 1fr; gap: .6rem; } .pope-no { font-size: 1.25rem; } }
+
+/* First Mass companion */
+.companion-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; }
+.companion-cta > div { flex: 1 1 320px; }
+.companion-cta h3 { margin: .1rem 0 .4rem; }
+.pose-key { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 1.2rem 0 .6rem; }
+.pose { display: inline-block; font: 700 .78rem var(--sans); letter-spacing: .08em; text-transform: uppercase; padding: .3rem .7rem; border-radius: 999px; white-space: nowrap; }
+.pose-stand { background: var(--navy); color: var(--bg); }
+.pose-sit { background: var(--gold-soft); color: var(--navy); }
+.pose-kneel { background: #6b4f8a; color: #fff; }
+.pose-any { background: transparent; color: var(--ink-soft); border: 1px solid var(--line); }
+.mass-part { font-size: 1.7rem; margin: 2.4rem 0 .4rem; padding-bottom: .4rem; border-bottom: 1px solid var(--line); }
+.mass-step { padding: 1.1rem 0; border-bottom: 1px dashed var(--line); scroll-margin-top: 90px; }
+.mass-head { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .8rem; }
+.mass-head h3 { margin: 0; font-size: 1.35rem; }
+.mass-no { color: var(--gold); }
+.mass-step > p { margin: .5rem 0 0; max-width: 68ch; }
+.say { margin: .8rem 0 0; padding: .7rem 1rem; background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 8px; max-width: 68ch; }
+.say-row { display: grid; grid-template-columns: 8.5rem 1fr; gap: .8rem; padding: .25rem 0; }
+.say dt { font: 600 .82rem var(--sans); color: var(--ink-soft); padding-top: .2rem; }
+.say dd { margin: 0; }
+.say-row.all dd { font-weight: 700; color: var(--navy); }
+.mass-tip { font-size: .95rem; color: var(--ink-soft); max-width: 68ch; }
+.mass-tip::before { content: "Tip: "; font: 700 .85rem var(--sans); color: var(--gold); }
+@media (max-width: 560px) { .say-row { grid-template-columns: 1fr; gap: 0; } .say-row + .say-row { margin-top: .3rem; } }
+
+.companion { position: fixed; inset: 0; z-index: 200; background: var(--bg); display: flex; flex-direction: column; }
+.companion[hidden] { display: none; }
+.companion-bar { display: flex; align-items: center; justify-content: space-between; padding: .8rem 16px; border-bottom: 1px solid var(--line); }
+.companion-part { font: 700 .8rem var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.companion-close { background: none; border: 0; font-size: 2rem; line-height: 1; color: var(--ink-soft); cursor: pointer; padding: 0 .3rem; min-width: 44px; min-height: 44px; }
+.companion-progress { height: 4px; background: var(--line); }
+.companion-progress span { display: block; height: 100%; background: var(--gold); transition: width .25s; }
+.companion-body { flex: 1; overflow-y: auto; padding: 1.4rem 16px 2rem; max-width: 40rem; width: 100%; margin: 0 auto; box-sizing: border-box; }
+.companion-body .pose { font-size: 1.05rem; padding: .5rem 1.1rem; }
+.companion-body h3 { font-size: 1.9rem; margin: .9rem 0 .5rem; }
+.companion-body p { font-size: 1.15rem; }
+.companion-body .say { font-size: 1.15rem; }
+.companion-body .say-row { grid-template-columns: 1fr; gap: 0; }
+.companion-body .say-row + .say-row { margin-top: .4rem; }
+.companion-nav { display: flex; align-items: center; justify-content: space-between; gap: .8rem; padding: .8rem 16px calc(.8rem + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); }
+.companion-nav .btn { flex: 1; max-width: 12rem; min-height: 56px; font-size: 1.05rem; }
+.companion-count { font: 600 .9rem var(--sans); color: var(--ink-soft); white-space: nowrap; }
+body.companion-open { overflow: hidden; }

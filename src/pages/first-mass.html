@@ -1,0 +1,57 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/start-here">Start Here</a> &rsaquo; Your First Mass</p>
+    <h1>Your first Mass, step by step</h1>
+    <p class="lede">Never been to Mass, or it&rsquo;s been a long time? This guide walks you through all {{MASS_COUNT}} moments of a Sunday Mass: when to stand, sit and kneel, what people say, and what to do at Communion.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section">
+    <div class="card companion-cta">
+      <div>
+        <p class="label">In the pew</p>
+        <h3>Use it during Mass</h3>
+        <p>Opens one step at a time in large print with big Back and Next buttons, so you can follow along on your phone. Your screen stays on and your place is saved.</p>
+      </div>
+      <button class="btn" type="button" id="mass-start">Start the companion</button>
+    </div>
+    <ul class="pose-key" aria-label="Posture key">
+      <li><span class="pose pose-stand">Stand</span></li>
+      <li><span class="pose pose-sit">Sit</span></li>
+      <li><span class="pose pose-kneel">Kneel</span></li>
+      <li><span class="pose pose-any">As you wish</span></li>
+    </ul>
+    <p class="small muted">Customs vary a little from parish to parish. When in doubt, follow the people around you. If kneeling is hard for you, sitting is always fine. The words people say come from the Roman Missal; the full texts are in the missal or worship aid in the pew.</p>
+  </section>
+
+  <div class="mass-steps" id="mass-steps">
+{{MASS}}
+  </div>
+
+  <section class="section prose">
+    <h2>A few more things to know</h2>
+    <ul>
+      <li><strong>How long is Mass?</strong> About an hour on Sundays, and about 30 minutes on weekdays.</li>
+      <li><strong>What should I wear?</strong> Something you&rsquo;d wear to a nice dinner is typical, but come as you are.</li>
+      <li><strong>Can I bring children?</strong> Yes. Many churches have a cry room, but most parishes are happy to hear little ones.</li>
+      <li><strong>Do I have to give money?</strong> No. The collection supports the parish. Visitors are welcome to let the basket pass.</li>
+      <li><strong>Where do I find Mass times?</strong> Use <a href="/find-a-church">Find a Church</a>, then check the parish website or call.</li>
+    </ul>
+    <p><a class="btn secondary" href="/start-here">Thinking about becoming Catholic? Start here &rarr;</a></p>
+  </section>
+</div>
+
+<div class="companion" id="companion" hidden role="dialog" aria-modal="true" aria-label="Mass companion">
+  <div class="companion-bar">
+    <span class="companion-part" id="comp-part"></span>
+    <button class="companion-close" type="button" id="comp-close" aria-label="Close companion">&times;</button>
+  </div>
+  <div class="companion-progress"><span id="comp-progress"></span></div>
+  <div class="companion-body" id="comp-body" aria-live="polite"></div>
+  <div class="companion-nav">
+    <button class="btn secondary" type="button" id="comp-back">&larr; Back</button>
+    <span class="companion-count" id="comp-count"></span>
+    <button class="btn" type="button" id="comp-next">Next &rarr;</button>
+  </div>
+</div>
