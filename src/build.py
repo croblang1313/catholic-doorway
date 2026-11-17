@@ -45,6 +45,8 @@ PAGES = [
     ("404", "Not found", "Page not found | CatholicDoorway", "This page could not be found."),
 ]
 NAV_EXCLUDE = {"about", "404", "popes"}
+# Pages shown in a dropdown under a main menu item: parent slug -> [(slug, label)]
+SUBNAV = {"structure": [("structure", "How the Church is organized"), ("popes", "All 267 Popes")]}
 
 DOOR_SVG = '''<svg viewBox="0 0 34 40" aria-hidden="true" focusable="false"><path d="M3 39V17C3 8.7 9.3 2 17 2s14 6.7 14 15v22" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8 39V18.5C8 13 12 8.5 17 8.5S26 13 26 18.5V39" fill="currentColor" opacity=".16"/><path d="M8 39V18.5C8 13 12 8.5 17 8.5S26 13 26 18.5V39" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M17 12v9M13.6 15.2h6.8" stroke="#a8802f" stroke-width="2" stroke-linecap="round"/><circle cx="22" cy="28" r="1.4" fill="#a8802f"/><path d="M1 39h32" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>'''
 
@@ -245,6 +247,14 @@ def nav_html(current):
             continue
         href = "/" if slug == "index" else f"/{slug}"
         cur = ' aria-current="page"' if slug == current else ""
+        subs = SUBNAV.get(slug)
+        if subs:
+            if current in [s for s, _ in subs]:
+                cur = ' class="in-section"'
+            sub = "".join(
+                f'<li><a href="/{s}"{" aria-current=\"page\"" if s == current else ""}>{l}</a></li>' for s, l in subs)
+            items.append(f'        <li class="has-sub"><a href="{href}"{cur}>{label}</a><ul class="sub">{sub}</ul></li>')
+            continue
         items.append(f'        <li><a href="{href}"{cur}>{label}</a></li>')
     return "\n".join(items)
 

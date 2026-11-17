@@ -140,13 +140,25 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
   .site-nav { display: block; }
   .site-nav ul { display: flex; gap: .1rem; flex-wrap: nowrap; white-space: nowrap; justify-content: flex-end; }
   .site-nav a { border: 0; padding: .4rem .5rem; font-size: .93rem; border-radius: 8px; }
-  .site-nav a[aria-current="page"] { background: var(--gold-soft); color: var(--navy); }
+  .site-nav a[aria-current="page"], .site-nav a.in-section { background: var(--gold-soft); color: var(--navy); }
+  .site-nav .has-sub { position: relative; }
+  .site-nav .has-sub > a::after { content: ""; display: inline-block; width: .38em; height: .38em; margin: 0 0 .2em .45em; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); opacity: .7; }
+  .site-nav .sub { display: none; position: absolute; top: 100%; left: 0; z-index: 30; min-width: 15rem; flex-direction: column; gap: 0; padding: .4rem; margin-top: .2rem; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
+  .site-nav .sub::before { content: ""; position: absolute; left: 0; right: 0; top: -.5rem; height: .5rem; }
+  .site-nav .has-sub:hover > .sub, .site-nav .has-sub:focus-within > .sub { display: flex; }
+  .site-nav .sub a { display: block; padding: .55rem .7rem; }
+  .site-nav .sub a[aria-current="page"] { background: var(--gold-soft); }
+}
+@media (max-width: 1199.98px) {
+  .site-nav .sub { list-style: none; margin: 0 0 .2rem; padding: 0 0 0 .9rem; border-left: 2px solid var(--gold-soft); }
+  .site-nav .sub li:first-child { display: none; }
+  .site-nav .sub a { font-size: .92em; }
 }
 .theme-btn { background: none; border: 0; color: var(--ink-soft); cursor: pointer; padding: .4rem; border-radius: 8px; display: inline-flex; }
 .theme-btn svg { width: 20px; height: 20px; }
 .header-tools { display: flex; align-items: center; gap: .35rem; }
 .header-tools, .theme-btn { flex: none; }
-@media (min-width: 1200px) { .header-tools { order: 3; } .site-nav { order: 2; margin-left: auto; } .site-nav li:first-child { display: none; } }
+@media (min-width: 1200px) { .header-tools { order: 3; } .site-nav { order: 2; margin-left: auto; } .site-nav > ul > li:first-child { display: none; } }
 
 /* ---------- Hero ---------- */
 .hero {
