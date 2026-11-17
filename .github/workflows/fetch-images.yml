@@ -18,19 +18,29 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
       - name: Download and resize
         env:
           URLS: ${{ github.event.inputs.urls }}
         run: |
+          pip install -q pillow
           mkdir -p candidates
           i=0
           for u in $URLS; do
             i=$((i+1))
-            curl -sSL -A "CatholicDoorwayBot/1.0 (https://catholicdoorway.com)" "$u" -o "candidates/orig$i.jpg"
-            convert "candidates/orig$i.jpg" -auto-orient -resize 2400x2400\> -strip -quality 82 "candidates/c$i.jpg"
-            convert "candidates/orig$i.jpg" -auto-orient -resize 600x600\> -strip -quality 70 "candidates/p$i.jpg"
+            curl -sSfL -A "CatholicDoorwayBot/1.0 (https://catholicdoorway.com)" "$u" -o "candidates/orig$i.jpg"
+            python3 -c "
+          import sys
+          from PIL import Image, ImageOps
+          im = ImageOps.exif_transpose(Image.open(sys.argv[1])).convert('RGB')
+          a = im.copy(); a.thumbnail((2400, 2400)); a.save(sys.argv[2], quality=82, optimize=True, progressive=True)
+          b = im.copy(); b.thumbnail((600, 600)); b.save(sys.argv[3], quality=70)
+          " "candidates/orig$i.jpg" "candidates/c$i.jpg" "candidates/p$i.jpg"
             rm "candidates/orig$i.jpg"
             echo "$i $u" >> candidates/list.txt
+            sleep 2
           done
           ls -la candidates
       - name: Push to image-candidates branch
