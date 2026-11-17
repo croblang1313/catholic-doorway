@@ -528,3 +528,16 @@ body.companion-open { overflow: hidden; }
   .nt-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 }
 .table-wrap, .table-scroll { max-width: 100%; overflow-x: auto; }
+
+/* Desktop header: never squeeze the logo; tighten the nav on mid-size screens */
+@media (min-width: 1200px) {
+  .brand { flex: none; }
+  .header-row { gap: .75rem; }
+}
+@media (min-width: 1200px) {
+  .brand svg { width: 30px; height: 36px; }
+  .brand-name { font-size: 1.3rem; }
+  .site-nav a { font-size: .97rem; padding: .45rem .5rem; }
+  .lang-link .ll-long { display: none; }
+  .lang-link .ll-short { display: inline; }
+}
