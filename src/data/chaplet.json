@@ -1,0 +1,35 @@
+{
+ "en": {
+  "ef": "Eternal Father, I offer you the Body and Blood, Soul and Divinity of your dearly beloved Son, our Lord Jesus Christ, in atonement for our sins and those of the whole world.",
+  "sake": "For the sake of his sorrowful Passion, have mercy on us and on the whole world.",
+  "holy": "Holy God, Holy Mighty One, Holy Immortal One, have mercy on us and on the whole world.",
+  "decade": "Decade", "large": "On the large bead", "small": "On each of the 10 small beads", "times10": "10 times", "times3": "3 times",
+  "steps": [
+   ["Begin", "The Sign of the Cross", "Hold the crucifix and make the Sign of the Cross: In the name of the Father, and of the Son, and of the Holy Spirit. Amen.", "If you like, add this short prayer: O Blood and Water, which gushed forth from the Heart of Jesus as a fount of mercy for us, I trust in you."],
+   ["Begin", "Our Father, Hail Mary and the Creed", "On the first three beads, pray one Our Father, one Hail Mary and the Apostles’ Creed.", "The words are on the <a href=\"/prayers\">Prayers</a> page."]
+  ],
+  "end": [["End", "Holy God", "After the fifth decade, pray three times:", ""], ["End", "Jesus, I trust in you", "Make the Sign of the Cross. Many people end simply with the words St. Faustina asked to be written under the image of Divine Mercy: Jesus, I trust in you.", "The chaplet takes about ten minutes. It is often prayed at 3 p.m., the hour Jesus died."]]
+ },
+ "es": {
+  "ef": "Padre Eterno, te ofrezco el Cuerpo y la Sangre, el Alma y la Divinidad de tu amadísimo Hijo, nuestro Señor Jesucristo, como propiciación de nuestros pecados y los del mundo entero.",
+  "sake": "Por su dolorosa Pasión, ten misericordia de nosotros y del mundo entero.",
+  "holy": "Santo Dios, Santo Fuerte, Santo Inmortal, ten piedad de nosotros y del mundo entero.",
+  "decade": "Decena", "large": "En la cuenta grande", "small": "En cada una de las 10 cuentas pequeñas", "times10": "10 veces", "times3": "3 veces",
+  "steps": [
+   ["Inicio", "La señal de la cruz", "Toma el crucifijo y haz la señal de la cruz: En el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén.", "Si quieres, añade esta breve oración: Oh Sangre y Agua que brotaste del Corazón de Jesús como fuente de misericordia para nosotros, en ti confío."],
+   ["Inicio", "Padre Nuestro, Ave María y Credo", "En las tres primeras cuentas, reza un Padre Nuestro, un Ave María y el Credo de los Apóstoles.", "Las palabras están en la página de <a href=\"/es/oraciones\">Oraciones</a>."]
+  ],
+  "end": [["Final", "Santo Dios", "Después de la quinta decena, reza tres veces:", ""], ["Final", "Jesús, en ti confío", "Haz la señal de la cruz. Muchos terminan sencillamente con las palabras que santa Faustina pidió escribir bajo la imagen de la Divina Misericordia: Jesús, en ti confío.", "La coronilla dura unos diez minutos. Se suele rezar a las 3 de la tarde, la hora en que murió Jesús."]]
+ },
+ "pt": {
+  "ef": "Eterno Pai, eu vos ofereço o Corpo e Sangue, Alma e Divindade de vosso diletíssimo Filho, Nosso Senhor Jesus Cristo, em expiação dos nossos pecados e dos do mundo inteiro.",
+  "sake": "Pela sua dolorosa Paixão, tende misericórdia de nós e do mundo inteiro.",
+  "holy": "Deus Santo, Deus Forte, Deus Imortal, tende piedade de nós e do mundo inteiro.",
+  "decade": "Dezena", "large": "Na conta grande", "small": "Em cada uma das 10 contas pequenas", "times10": "10 vezes", "times3": "3 vezes",
+  "steps": [
+   ["Início", "O sinal da cruz", "Segure o crucifixo e faça o sinal da cruz: Em nome do Pai, e do Filho, e do Espírito Santo. Amém.", "Se quiser, acrescente esta breve oração: Ó Sangue e Água que jorrastes do Coração de Jesus como fonte de misericórdia para nós, eu confio em vós."],
+   ["Início", "Pai-Nosso, Ave-Maria e Creio", "Nas três primeiras contas, reze um Pai-Nosso, uma Ave-Maria e o Creio dos Apóstolos.", "As palavras estão na página de <a href=\"/pt/oracoes\">Orações</a>."]
+  ],
+  "end": [["Final", "Deus Santo", "Depois da quinta dezena, reze três vezes:", ""], ["Final", "Jesus, eu confio em vós", "Faça o sinal da cruz. Muitos terminam simplesmente com as palavras que santa Faustina pediu que fossem escritas sob a imagem da Divina Misericórdia: Jesus, eu confio em vós.", "O terço dura uns dez minutos. Costuma ser rezado às 3 da tarde, a hora em que Jesus morreu."]]
+ }
+}

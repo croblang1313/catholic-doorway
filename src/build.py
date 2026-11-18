@@ -12,6 +12,10 @@ import html
 import json
 import re
 import urllib.parse
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import features  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES_DIR = ROOT / "src" / "pages"
@@ -44,12 +48,28 @@ PAGES = [
      "How to plan a Catholic funeral: the vigil, funeral Mass and committal, cremation rules, costs, and having a Mass offered for the deceased."),
     ("baptism-certificate", "Baptism Records", "How to Get a Copy of Your Catholic Baptism Certificate | CatholicDoorway",
      "How to request your Catholic baptism record with notations for a wedding or sponsor letter, including closed parishes and baptisms abroad."),
+    ("examination-of-conscience", "Examination of Conscience", "Examination of Conscience for Kids, Teens and Adults | CatholicDoorway",
+     "A Catholic examination of conscience before Confession, in versions for kids, teens and adults. Tick what applies and make a private list on your phone."),
+    ("ocia-listing", "List Your Parish's OCIA", "List Your Parish's OCIA Program | CatholicDoorway",
+     "Parish OCIA coordinators: add your contact so people exploring the Catholic faith near you know who to call. Free, reviewed before publishing."),
     ("find-a-church", "Find a Church", "Find a Catholic Church Near You | CatholicDoorway",
      "Find Catholic churches near you on a free map built from OpenStreetMap, with address, phone, website and directions."),
     ("prayers", "Prayers", "Catholic Prayers and How to Pray the Rosary | CatholicDoorway",
      "Traditional Catholic prayers, from the Our Father and Hail Mary to the Memorare, plus a step-by-step guide to the Rosary."),
     ("rosary", "Pray the Rosary", "Pray the Rosary Online, Bead by Bead | CatholicDoorway",
      "An interactive Rosary: tap through each bead with the prayers, today's mysteries and their Scripture passages. Free, no app needed."),
+    ("devotions", "Devotions", "Catholic Devotions and Prayer Reminders | CatholicDoorway",
+     "The best-loved Catholic devotions with the words to pray: the Rosary, Divine Mercy Chaplet, Stations of the Cross, novenas and the Angelus, with free calendar reminders."),
+    ("divine-mercy-chaplet", "Divine Mercy Chaplet", "How to Pray the Divine Mercy Chaplet, Step by Step | CatholicDoorway",
+     "Pray the Divine Mercy Chaplet bead by bead on your phone: the prayers for each decade, the 3 p.m. Hour of Mercy and the Divine Mercy Novena."),
+    ("stations-of-the-cross", "Stations of the Cross", "Stations of the Cross: Pray All 14 Stations | CatholicDoorway",
+     "Pray the Stations of the Cross with a short Scripture reference, reflection and prayer for each of the 14 stations, one station at a time on your phone."),
+    ("novenas", "Novenas", "Catholic Novenas and This Year's Dates | CatholicDoorway",
+     "How to pray a novena, with prayers and this year's dates for novenas to St. Joseph, the Holy Spirit, Divine Mercy, the Sacred Heart, Our Lady of Guadalupe and more."),
+    ("angelus", "The Angelus", "The Angelus and Regina Caeli Prayers | CatholicDoorway",
+     "The words of the Angelus, prayed at 6 a.m., noon and 6 p.m., and the Regina Caeli for the Easter season, with a free daily reminder."),
+    ("liturgy-of-the-hours", "Liturgy of the Hours", "Liturgy of the Hours: Today's Morning and Evening Prayer | CatholicDoorway",
+     "Pray today's Morning, Evening and Night Prayer of the Liturgy of the Hours, and learn how the Divine Office works and how to begin."),
     ("bible", "Bible & Readings", "The Bible and Today's Mass Readings | CatholicDoorway",
      "Today's Catholic Mass readings, how the Catholic Bible is arranged, and where to read it free online."),
     ("calendar", "Holy Days Calendar", "Catholic Holy Days of Obligation and Fasting Calendar | CatholicDoorway",
@@ -58,6 +78,8 @@ PAGES = [
      "A plain-language overview of Catholic belief and practice: the Creed, the seven sacraments, Scripture and Tradition, Mary and the saints, and the moral life."),
     ("questions", "Honest Questions", "Honest Questions About the Catholic Church, Answered | CatholicDoorway",
      "Short, kind, straight answers to the questions people ask about Catholics: Mary, saints, confession, the Pope, purgatory, the extra Bible books and more."),
+    ("church-documents", "Catechism & Documents", "Catechism of the Catholic Church and Major Church Documents | CatholicDoorway",
+     "Look up any paragraph of the Catechism, browse it by topic, and search the major encyclicals, apostolic letters and Vatican II documents, with links to the official texts."),
     ("structure", "Church Structure", "How the Catholic Church Is Organized | CatholicDoorway",
      "How the Catholic Church is organized: the Pope, bishops, dioceses, parishes, priests and deacons, explained simply."),
     ("dioceses", "Dioceses", "U.S. Catholic Dioceses Directory | CatholicDoorway",
@@ -74,13 +96,16 @@ PAGES = [
      "About CatholicDoorway.com: a free, ad-free guide to the Catholic faith. Sources, data and corrections."),
     ("404", "Not found", "Page not found | CatholicDoorway", "This page could not be found."),
 ]
-NAV_EXCLUDE = {"about", "404", "saints-directory", "how-to", "confession", "coming-back", "join-a-parish", "baptism", "marriage", "anointing", "funerals", "baptism-certificate", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary", "questions"}
+NAV_EXCLUDE = {"examination-of-conscience", "ocia-listing", "devotions", "divine-mercy-chaplet", "stations-of-the-cross", "novenas", "angelus", "liturgy-of-the-hours", "church-documents", "about", "404", "saints-directory", "how-to", "confession", "coming-back", "join-a-parish", "baptism", "marriage", "anointing", "funerals", "baptism-certificate", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary", "questions"}
 # Pages shown in a dropdown under a main menu item: parent slug -> [(slug, label)]
-SUBNAV = {"beliefs": [("beliefs", "What Catholics believe"), ("questions", "Honest questions, answered")],
-          "prayers": [("prayers", "Catholic prayers"), ("rosary", "Pray the Rosary")],
+SUBNAV = {"beliefs": [("beliefs", "What Catholics believe"), ("questions", "Honest questions, answered"),
+                      ("church-documents", "Catechism and Church documents")],
+          "prayers": [("prayers", "Catholic prayers"), ("rosary", "Pray the Rosary"), ("devotions", "Devotions and reminders"),
+                      ("liturgy-of-the-hours", "Liturgy of the Hours")],
           "bible": [("bible", "Today’s readings and the Bible"), ("calendar", "Holy Days Calendar")],
           "start-here": [("start-here", "Becoming Catholic (OCIA)"), ("first-mass", "Your First Mass"),
-                         ("how-to", "How-To Guides"), ("confession", "How to go to Confession"), ("coming-back", "Coming back to the Church")],
+                         ("how-to", "How-To Guides"), ("confession", "How to go to Confession"),
+                         ("examination-of-conscience", "Examination of conscience"), ("coming-back", "Coming back to the Church")],
           "saints": [("saints", "Meet the saints"), ("saints-directory", "Saints and causes directory")],
           "structure": [("structure", "How the Church is organized"), ("popes", "All 267 Popes"),
                         ("dioceses", "U.S. Dioceses"), ("find-a-church", "Find a Church")]}
@@ -110,6 +135,24 @@ ES_PAGES = [
      "Cómo preparar un funeral católico: la vigilia, la Misa de funeral y la sepultura, las normas sobre la cremación, los costos y las Misas por los difuntos."),
     ("baptism-certificate", "fe-de-bautismo", "Fe de bautismo", "Cómo pedir tu fe de bautismo católica | CatholicDoorway",
      "Cómo solicitar tu fe de bautismo con notas marginales para una boda o para ser padrino, incluso si la parroquia cerró o te bautizaron en otro país."),
+    ("examination-of-conscience", "examen-de-conciencia", "Examen de conciencia", "Examen de conciencia para niños, adolescentes y adultos | CatholicDoorway",
+     "Un examen de conciencia católico para antes de confesarse, en versiones para niños, adolescentes y adultos. Marca lo que aplique y haz una lista privada en tu teléfono."),
+    ("devotions", "devociones", "Devociones", "Devociones católicas y recordatorios de oración | CatholicDoorway",
+     "Las devociones católicas más queridas con sus oraciones: el Rosario, la Coronilla de la Divina Misericordia, el Vía Crucis, las novenas y el Ángelus, con recordatorios gratis en tu calendario."),
+    ("divine-mercy-chaplet", "coronilla-de-la-divina-misericordia", "Coronilla de la Divina Misericordia", "Cómo rezar la Coronilla de la Divina Misericordia, paso a paso | CatholicDoorway",
+     "Reza la Coronilla de la Divina Misericordia cuenta por cuenta en tu teléfono: las oraciones de cada decena, la Hora de la Misericordia y la novena."),
+    ("stations-of-the-cross", "via-crucis", "Vía Crucis", "Vía Crucis: reza las 14 estaciones | CatholicDoorway",
+     "Reza el Vía Crucis con una cita bíblica, una reflexión y una oración para cada una de las 14 estaciones, una a la vez en tu teléfono."),
+    ("novenas", "novenas", "Novenas", "Novenas católicas y sus fechas de este año | CatholicDoorway",
+     "Cómo rezar una novena, con oraciones y las fechas de este año de las novenas a San José, al Espíritu Santo, a la Divina Misericordia, al Sagrado Corazón, a la Virgen de Guadalupe y más."),
+    ("angelus", "angelus", "El Ángelus", "El Ángelus y el Regina Caeli | CatholicDoorway",
+     "Las palabras del Ángelus, que se reza a las 6 de la mañana, al mediodía y a las 6 de la tarde, y el Regina Caeli del tiempo de Pascua, con un recordatorio diario gratis."),
+    ("liturgy-of-the-hours", "liturgia-de-las-horas", "Liturgia de las Horas", "Liturgia de las Horas: Laudes y Vísperas de hoy | CatholicDoorway",
+     "Reza hoy Laudes, Vísperas y Completas de la Liturgia de las Horas, y aprende cómo funciona el Oficio Divino y cómo empezar."),
+    ("church-documents", "documentos-de-la-iglesia", "Catecismo y documentos", "El Catecismo de la Iglesia Católica y los grandes documentos de la Iglesia | CatholicDoorway",
+     "Busca cualquier número del Catecismo, recórrelo por temas y busca entre las grandes encíclicas, cartas apostólicas y documentos del Vaticano II, con enlaces a los textos oficiales."),
+    ("ocia-listing", "registrar-ocia", "Registra tu OCIA", "Registra el OCIA de tu parroquia | CatholicDoorway",
+     "Coordinadores de OCIA: añadan su contacto para que quienes se acercan a la fe católica cerca de ustedes sepan a quién llamar. Gratis y revisado antes de publicarse."),
     ("prayers", "oraciones", "Oraciones", "Oraciones católicas y cómo rezar el Rosario | CatholicDoorway",
      "Las oraciones católicas tradicionales en español: el Padre Nuestro, el Ave María, el Credo, la Salve y más, con una guía del Rosario."),
     ("rosary", "rosario", "Reza el Rosario", "Reza el Rosario en línea, cuenta por cuenta | CatholicDoorway",
@@ -155,6 +198,24 @@ PT_PAGES = [
      "Interessado na Igreja Católica? Como funciona a OCIA, suas quatro etapas, quanto tempo dura, com quem falar e o que esperar na sua primeira Missa."),
     ("first-mass", "primeira-missa", "Sua primeira Missa", "Sua primeira Missa, passo a passo | CatholicDoorway",
      "Vai à Missa pela primeira vez? Um guia passo a passo no seu celular: quando ficar de pé, sentar e ajoelhar, o que se responde e o que fazer na Comunhão."),
+    ("examination-of-conscience", "exame-de-consciencia", "Exame de consciência", "Exame de consciência para crianças, adolescentes e adultos | CatholicDoorway",
+     "Um exame de consciência católico para antes da Confissão, em versões para crianças, adolescentes e adultos. Marque o que se aplica e faça uma lista privada no celular."),
+    ("devotions", "devocoes", "Devoções", "Devoções católicas e lembretes de oração | CatholicDoorway",
+     "As devoções católicas mais queridas com as suas orações: o Rosário, o Terço da Misericórdia, a Via-Sacra, as novenas e o Angelus, com lembretes gratuitos no seu calendário."),
+    ("divine-mercy-chaplet", "terco-da-misericordia", "Terço da Misericórdia", "Como rezar o Terço da Misericórdia, passo a passo | CatholicDoorway",
+     "Reze o Terço da Misericórdia conta por conta no celular: as orações de cada dezena, a Hora da Misericórdia e a novena."),
+    ("stations-of-the-cross", "via-sacra", "Via-Sacra", "Via-Sacra: reze as 14 estações | CatholicDoorway",
+     "Reze a Via-Sacra com uma citação bíblica, uma reflexão e uma oração para cada uma das 14 estações, uma de cada vez no celular."),
+    ("novenas", "novenas", "Novenas", "Novenas católicas e as datas deste ano | CatholicDoorway",
+     "Como rezar uma novena, com orações e as datas deste ano das novenas a São José, ao Espírito Santo, à Divina Misericórdia, ao Sagrado Coração, a Nossa Senhora de Guadalupe e mais."),
+    ("angelus", "angelus", "O Angelus", "O Angelus e a Rainha do Céu (Regina Caeli) | CatholicDoorway",
+     "As palavras do Angelus, rezado às 6 da manhã, ao meio-dia e às 6 da tarde, e a Rainha do Céu do Tempo Pascal, com um lembrete diário gratuito."),
+    ("liturgy-of-the-hours", "liturgia-das-horas", "Liturgia das Horas", "Liturgia das Horas: Laudes e Vésperas de hoje | CatholicDoorway",
+     "Reze hoje as Laudes, as Vésperas e as Completas da Liturgia das Horas, e entenda como funciona o Ofício Divino e como começar."),
+    ("church-documents", "documentos-da-igreja", "Catecismo e documentos", "O Catecismo da Igreja Católica e os grandes documentos da Igreja | CatholicDoorway",
+     "Procure qualquer parágrafo do Catecismo, percorra-o por temas e pesquise as grandes encíclicas, cartas apostólicas e documentos do Vaticano II, com links para os textos oficiais."),
+    ("ocia-listing", "cadastrar-ocia", "Cadastre a sua OCIA", "Cadastre a OCIA da sua paróquia | CatholicDoorway",
+     "Coordenadores da OCIA: adicionem o seu contato para que quem está conhecendo a fé católica perto de vocês saiba para quem ligar. Gratuito e revisado antes de ser publicado."),
     ("prayers", "oracoes", "Orações", "Orações católicas e como rezar o Rosário | CatholicDoorway",
      "As orações católicas tradicionais em português: o Pai-Nosso, a Ave-Maria, o Creio, a Salve-Rainha e mais, com um guia do Rosário."),
     ("rosary", "rosario", "Reze o Rosário", "Reze o Rosário on-line, conta por conta | CatholicDoorway",
@@ -206,15 +267,17 @@ PT_TEXT = dict(lang="pt", skip="Pular para o conteúdo", home="/pt/", home_label
                theme_label="Mudar para o modo claro ou escuro", menu_label="Menu", nav_label="Principal")
 EN_TO_PT = {en: pt for en, pt, *_ in PT_PAGES}
 PT_SUBNAV = {"comecar": [("comecar", "Tornar-se católico (OCIA)"), ("primeira-missa", "Sua primeira Missa"), ("guias", "Guias práticos"),
-                         ("confissao", "Como se confessar"), ("voltar", "Voltar para a Igreja")],
-             "oracoes": [("oracoes", "Orações católicas"), ("rosario", "Reze o Rosário")],
+                         ("confissao", "Como se confessar"), ("exame-de-consciencia", "Exame de consciência"), ("voltar", "Voltar para a Igreja")],
+             "oracoes": [("oracoes", "Orações católicas"), ("rosario", "Reze o Rosário"), ("devocoes", "Devoções e lembretes"),
+                         ("liturgia-das-horas", "Liturgia das Horas")],
              "biblia": [("biblia", "As leituras de hoje e a Bíblia"), ("calendario", "Calendário de dias santos")],
-             "crencas": [("crencas", "No que os católicos acreditam"), ("perguntas", "Perguntas sinceras"), ("glossario", "Glossário")],
+             "crencas": [("crencas", "No que os católicos acreditam"), ("perguntas", "Perguntas sinceras"), ("glossario", "Glossário"),
+                         ("documentos-da-igreja", "O Catecismo e os documentos")],
              "santos": [("santos", "Conheça os santos"), ("diretorio-santos", "Diretório de santos e causas")],
              "estrutura": [("estrutura", "Como a Igreja é organizada"), ("papas", "Os 267 Papas"), ("dioceses", "As dioceses dos EUA"),
                            ("encontrar-igreja", "Encontrar uma igreja")]}
 # Portuguese pages reached from a hub page rather than the top menu
-PT_NAV_EXCLUDE = {"sobre", "inscrever-se-paroquia", "batismo", "matrimonio", "uncao", "funeral", "certidao-de-batismo"}
+PT_NAV_EXCLUDE = {"terco-da-misericordia", "via-sacra", "novenas", "angelus", "cadastrar-ocia", "sobre", "inscrever-se-paroquia", "batismo", "matrimonio", "uncao", "funeral", "certidao-de-batismo"}
 
 LANGS = [("en", "English", "home page"), ("es", "Español", "página de inicio"), ("pt", "Português", "página inicial")]
 LANG_HOME = {"en": "/", "es": "/es/", "pt": "/pt/"}
@@ -230,6 +293,36 @@ def lang_urls(en_slug):
     return {"en": "/" if en_slug == "index" else f"/{en_slug}",
             "es": None if es is None else ("/es/" if es == "index" else f"/es/{es}"),
             "pt": None if pt is None else ("/pt/" if pt == "index" else f"/pt/{pt}")}
+
+
+STATE_WORD = {"en": "Choose a state", "es": "Elige un estado", "pt": "Escolha um estado"}
+DIO_WORD = {"en": "Not sure / other", "es": "No sé / otra", "pt": "Não sei / outra"}
+
+
+def ocia_options(body, lang):
+    """State and diocese choices for the parish OCIA listing form."""
+    if "{{STATE_OPTIONS}}" not in body:
+        return body
+    dd = load_dioceses()["dioceses"]
+    tbl = STATE_NAME.get(lang, {})
+    states = sorted({s for d in dd for s in d.get("states", []) if s in ABBR}, key=lambda s: tbl.get(s, s))
+    so = f'<option value="">{STATE_WORD[lang]}</option>' + "".join(
+        f'<option value="{html.escape(s)}">{html.escape(tbl.get(s, s))}</option>' for s in states)
+    dios = sorted(dd, key=lambda d: dio_name(d["short"], lang))
+    do = f'<option value="">{DIO_WORD[lang]}</option>' + "".join(
+        f'<option value="{html.escape(d["short"])}">{html.escape(dio_name(d["short"], lang))}</option>' for d in dios)
+    return body.replace("{{STATE_OPTIONS}}", so).replace("{{DIOCESE_OPTIONS}}", do)
+
+
+def write_saint_days():
+    """Saint of the day: the U.S. General Roman Calendar's fixed dates, for the home and saints pages."""
+    rows = {}
+    for line in (ROOT / "src" / "data" / "saint_days.tsv").read_text(encoding="utf-8").splitlines():
+        if not line.strip() or line.startswith("#"):
+            continue
+        date, rank, en, es, pt = line.split("\t")
+        rows[date] = [rank, en, es, pt]
+    (OUT / "data" / "saint-days.json").write_text(json.dumps(rows, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
 def lang_menu(cur, urls):
@@ -436,7 +529,10 @@ FOOT = """</main>
 </html>
 """
 
+PRAY_JS = ("", '<script src="/assets/js/pray.js" defer></script>')
 EXTRA = {
+    "examination-of-conscience": PRAY_JS, "devotions": PRAY_JS, "novenas": PRAY_JS, "angelus": PRAY_JS,
+    "liturgy-of-the-hours": PRAY_JS, "church-documents": PRAY_JS, "ocia-listing": PRAY_JS,
     "rosary": ("", '<script src="/assets/js/rosary.js" defer></script>'),
     "saints-directory": ("", '<script src="/assets/js/saints-dir.js" defer></script>'),
     "find-a-church": (
@@ -1174,7 +1270,7 @@ def version(rel):
 
 
 def bust(page):
-    for rel in ("/assets/css/style.css", "/assets/js/main.js", "/assets/js/map.js", "/assets/js/rosary.js", "/assets/js/saints-dir.js"):
+    for rel in ("/assets/css/style.css", "/assets/js/main.js", "/assets/js/map.js", "/assets/js/rosary.js", "/assets/js/saints-dir.js", "/assets/js/pray.js"):
         page = page.replace(f'"{rel}"', f'"{rel}?v={version(rel)}"')
     return page
 
@@ -1199,16 +1295,18 @@ def nav_html(current):
 
 
 ES_SUBNAV = {"comenzar": [("comenzar", "Hacerse católico (OCIA)"), ("primera-misa", "Tu primera Misa"), ("guias", "Guías prácticas"),
-                          ("confesion", "Cómo confesarse"), ("volver", "Volver a la Iglesia")],
-             "oraciones": [("oraciones", "Oraciones católicas"), ("rosario", "Reza el Rosario")],
+                          ("confesion", "Cómo confesarse"), ("examen-de-conciencia", "Examen de conciencia"), ("volver", "Volver a la Iglesia")],
+             "oraciones": [("oraciones", "Oraciones católicas"), ("rosario", "Reza el Rosario"), ("devociones", "Devociones y recordatorios"),
+                           ("liturgia-de-las-horas", "Liturgia de las Horas")],
              "biblia": [("biblia", "Las lecturas de hoy y la Biblia"), ("calendario", "Calendario de días santos")],
-             "creencias": [("creencias", "Lo que creen los católicos"), ("preguntas", "Preguntas sinceras"), ("glosario", "Glosario")],
+             "creencias": [("creencias", "Lo que creen los católicos"), ("preguntas", "Preguntas sinceras"), ("glosario", "Glosario"),
+                           ("documentos-de-la-iglesia", "El Catecismo y los documentos")],
              "santos": [("santos", "Conoce a los santos"), ("directorio-santos", "Directorio de santos y causas")],
              "estructura": [("estructura", "Cómo se organiza la Iglesia"), ("papas", "Los 267 Papas"), ("diocesis", "Las diócesis de EE. UU."),
                             ("buscar-iglesia", "Buscar una iglesia")]}
 ES_SUB_CHILDREN = {c for subs in ES_SUBNAV.values() for c, _ in subs} - set(ES_SUBNAV)
 # Spanish pages reached from a hub page rather than the top menu
-ES_NAV_EXCLUDE = {"acerca", "inscribirse-parroquia", "bautismo", "matrimonio", "uncion", "funerales", "fe-de-bautismo"}
+ES_NAV_EXCLUDE = {"coronilla-de-la-divina-misericordia", "via-crucis", "novenas", "angelus", "registrar-ocia", "acerca", "inscribirse-parroquia", "bautismo", "matrimonio", "uncion", "funerales", "fe-de-bautismo"}
 
 
 def lang_nav(code, pages, subnav, exclude, current):
@@ -1252,6 +1350,8 @@ def build_lang(code, pages, text, foot, subnav, exclude):
         page = page.replace('<meta property="og:site_name" content="CatholicDoorway">',
                             f'<meta property="og:site_name" content="CatholicDoorway">\n<meta property="og:locale" content="{LOCALE[code]}">')
         body = body.replace("{{DOOR}}", DOOR_SVG)
+        body = features.render(body, code)
+        body = ocia_options(body, code)
         if "{{QUESTIONS}}" in body:
             body = body.replace("{{QUESTIONS}}", questions_html(code))
         if "{{SAINTS}}" in body:
@@ -1298,6 +1398,8 @@ def main():
                            nav=nav_html(slug), extra_head=eh, alternates=alternates_html(urls),
                            lang_menu=lang_menu("en", urls), **EN_TEXT)
         body = body.replace("{{DOOR}}", DOOR_SVG)
+        body = features.render(body, "en")
+        body = ocia_options(body, "en")
         if "{{SAINTS}}" in body:
             body = body.replace("{{SAINTS}}", saints_html())
         if "{{GLOSSARY}}" in body:
@@ -1331,13 +1433,16 @@ def main():
 
     write_sitemap(dio_slugs)
     write_llms(len(dio_slugs))
+    write_saint_days()
+    features.write_worker_data(ROOT)
 
 
 LLMS_GROUPS = [
-    ("Becoming Catholic and practical guides", ["start-here", "first-mass", "how-to", "confession", "coming-back", "join-a-parish",
-                                               "baptism", "marriage", "anointing", "funerals", "baptism-certificate"]),
-    ("Prayer, Scripture and the calendar", ["prayers", "rosary", "bible", "calendar"]),
-    ("What Catholics believe", ["beliefs", "questions", "glossary"]),
+    ("Becoming Catholic and practical guides", ["start-here", "first-mass", "how-to", "confession", "examination-of-conscience", "coming-back",
+                                               "join-a-parish", "baptism", "marriage", "anointing", "funerals", "baptism-certificate", "ocia-listing"]),
+    ("Prayer, Scripture and the calendar", ["prayers", "rosary", "devotions", "divine-mercy-chaplet", "stations-of-the-cross", "novenas", "angelus",
+                                            "liturgy-of-the-hours", "bible", "calendar"]),
+    ("What Catholics believe", ["beliefs", "questions", "church-documents", "glossary"]),
     ("Saints, Popes and Church structure", ["saints", "saints-directory", "popes", "structure", "dioceses", "find-a-church"]),
     ("About", ["about"]),
 ]
@@ -1366,6 +1471,8 @@ def write_llms(dio_count):
             f"- [Diocese pages]({DOMAIN}/dioceses): one page for each of {dio_count} U.S. dioceses, archdioceses and eparchies at /dioceses/<slug>.",
             f"- [Saints directory data]({DOMAIN}/data/saints-directory.json): JSON list of Saints, Blesseds, Venerables and Servants of God.",
             f"- [Holy days calendar]({DOMAIN}/api/calendar.json): JSON feed of U.S. holy days of obligation, fast days and major feasts (also .ics).",
+            f"- [Prayer reminders]({DOMAIN}/api/devotions.ics): iCalendar feed of Angelus, 3 p.m. Divine Mercy, Lenten Stations and novena reminders.",
+            f"- [Saint of the day]({DOMAIN}/data/saint-days.json): the fixed-date celebrations of the U.S. General Roman Calendar (MM-DD keys).",
             f"- [Sitemap]({DOMAIN}/sitemap.xml)", ""]
     (OUT / "llms.txt").write_text("\n".join(out), encoding="utf-8")
 

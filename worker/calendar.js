@@ -113,11 +113,11 @@ const KIND_LABEL = { obligation: "Holy Day of Obligation", fast: "Fast and absti
 const KIND_LABEL_ES = { obligation: "Día de precepto", fast: "Ayuno y abstinencia", abstinence: "Abstinencia", solemnity: "Solemnidad", feast: "Fiesta" };
 const KIND_LABEL_PT = { obligation: "Dia santo de guarda", fast: "Jejum e abstinência", abstinence: "Abstinência", solemnity: "Solenidade", feast: "Festa" };
 
-function icsEscape(s) {
+export function icsEscape(s) {
   return s.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n");
 }
 
-function fold(line) {
+export function fold(line) {
   // RFC 5545: lines over 75 octets are folded
   const out = [];
   let s = line;

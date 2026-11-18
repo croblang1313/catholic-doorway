@@ -1,0 +1,63 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/pt/comecar">Tornar-se católico</a> &rsaquo; Para paróquias</p>
+    <h1>Cadastre a OCIA da sua paróquia</h1>
+    <p class="lede">Quem está conhecendo a fé católica muitas vezes não sabe para quem ligar. Se você coordena ou ajuda na OCIA de uma paróquia nos Estados Unidos, adicione aqui o seu contato e nós o mostraremos a quem procura perto de você. É gratuito e leva três minutos.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section grid two">
+    <div class="card">
+      <h3>O que acontece depois</h3>
+      <ol class="prose">
+        <li>Você preenche o formulário abaixo.</li>
+        <li>Nós confirmamos com a sua paróquia, normalmente em uma semana, antes de publicar qualquer coisa.</li>
+        <li>O seu cadastro aparece nesta página e ajuda as pessoas a encontrar vocês pelo nosso guia para começar e pelo mapa de igrejas.</li>
+      </ol>
+      <p class="small muted">Para mudar ou retirar um cadastro a qualquer momento, escreva para <a href="mailto:hello@catholicdoorway.com">hello@catholicdoorway.com</a>.</p>
+    </div>
+    <div class="card">
+      <h3>Procurando a OCIA para você?</h3>
+      <p>Veja abaixo as paróquias que cadastraram a sua OCIA, ou procure qualquer paróquia perto de você no mapa e ligue para a secretaria. Qualquer paróquia pode ajudar você a começar.</p>
+      <a class="btn small secondary" href="/pt/encontrar-igreja?ocia=1">Encontrar uma paróquia perto</a>
+    </div>
+  </section>
+
+  <section class="section" id="form">
+    <h2>Formulário de cadastro da OCIA</h2>
+    <form class="card ocia-form" id="ocia-form" novalidate>
+      <div class="form-grid">
+        <label>Nome da paróquia <span class="req">*</span><input name="parish" required maxlength="120" autocomplete="organization"></label>
+        <label>Cidade <span class="req">*</span><input name="city" required maxlength="80" autocomplete="address-level2"></label>
+        <label>Estado <span class="req">*</span><select name="state" required>{{STATE_OPTIONS}}</select></label>
+        <label>Diocese<select name="diocese">{{DIOCESE_OPTIONS}}</select></label>
+        <label>Nome do contato <span class="req">*</span><input name="contact" required maxlength="80" autocomplete="name"></label>
+        <label>Função<input name="role" maxlength="60" placeholder="ex.: coordenadora da OCIA"></label>
+        <label>E-mail para publicar <span class="req">*</span><input name="email" type="email" required maxlength="120" autocomplete="email"></label>
+        <label>Telefone<input name="phone" type="tel" maxlength="40" autocomplete="tel"></label>
+        <label class="wide">Site da paróquia<input name="website" type="url" maxlength="200" placeholder="https://"></label>
+        <label class="wide">Quando a OCIA se reúne<input name="schedule" maxlength="300" placeholder="ex.: terças às 19h, de setembro até a Páscoa"></label>
+        <label class="wide">Como começar ou próxima data de início<input name="start" maxlength="120" placeholder="ex.: os encontros de acolhida começam em agosto; bem-vindos sempre"></label>
+      </div>
+      <fieldset class="lang-opts">
+        <legend>OCIA em</legend>
+        <label><input type="checkbox" name="langs" value="en"> Inglês</label>
+        <label><input type="checkbox" name="langs" value="es"> Espanhol</label>
+        <label><input type="checkbox" name="langs" value="pt" checked> Português</label>
+        <label><input type="checkbox" name="langs" value="other"> Outro</label>
+      </fieldset>
+      <label class="wide">Algo mais que as pessoas devam saber<textarea name="notes" maxlength="600" rows="3"></textarea></label>
+      <label class="hp" aria-hidden="true">Deixe isto vazio<input name="website2" tabindex="-1" autocomplete="off"></label>
+      <label class="consent"><input type="checkbox" name="consent" required> Sirvo nesta paróquia, e a paróquia concorda que este contato seja mostrado publicamente no CatholicDoorway.com. <span class="req">*</span></label>
+      <div class="btn-row"><button class="btn" type="submit">Enviar para revisão</button></div>
+      <p class="status-msg" id="ocia-msg" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <section class="section" id="listed">
+    <h2>Paróquias que cadastraram a sua OCIA</h2>
+    <div class="filters"><label>Estado <select id="ol-state"><option value="">Todos os estados</option></select></label></div>
+    <div id="ol-list" class="grid two"><p class="muted">Carregando&hellip;</p></div>
+  </section>
+</div>
