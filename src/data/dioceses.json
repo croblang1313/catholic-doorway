@@ -1,0 +1,5069 @@
+{
+ "updated": "2026-11-18",
+ "source": "Wikidata (CC0)",
+ "dioceses": [
+  {
+   "qid": "Q1365034",
+   "name": "Archdiocese of Mobile",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Alabama"
+   ],
+   "city": "Mobile",
+   "website": "http://www.mobilearchdiocese.org",
+   "cathedral": "Cathedral Basilica of the Immaculate Conception",
+   "ch": "mobi",
+   "gc": "mobi0",
+   "bishop": "Mark Steven Rivituso",
+   "bishop_since": "2025-07-01",
+   "lon": -88.0458,
+   "lat": 30.69,
+   "members": 87912,
+   "founded": 1825,
+   "slug": "archdiocese-of-mobile"
+  },
+  {
+   "qid": "Q867187",
+   "name": "Diocese of Birmingham in Alabama",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Alabama"
+   ],
+   "city": "Birmingham",
+   "website": "http://www.bhmdiocese.org/",
+   "cathedral": "Cathedral of Saint Paul",
+   "ch": "birm",
+   "gc": "birm1",
+   "bishop": "Steven J. Raica",
+   "bishop_since": "2020-03-25",
+   "lon": -86.8051,
+   "lat": 33.5168,
+   "members": 104125,
+   "founded": 1969,
+   "slug": "diocese-of-birmingham-in-alabama"
+  },
+  {
+   "qid": "Q1363988",
+   "name": "Archdiocese of Anchorage–Juneau",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Alaska"
+   ],
+   "city": "Anchorage",
+   "website": "https://aoaj.org/",
+   "cathedral": "Cathedral of the Holy Family",
+   "ch": "anch",
+   "gc": "anch0",
+   "bishop": "Andrew Eugene Bellisario",
+   "bishop_since": "2020-05-19",
+   "lon": -149.898,
+   "lat": 61.2174,
+   "members": 55297,
+   "founded": 1966,
+   "slug": "archdiocese-of-anchorage-juneau"
+  },
+  {
+   "qid": "Q868788",
+   "name": "Diocese of Fairbanks",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Alaska"
+   ],
+   "city": "Fairbanks",
+   "website": "http://www.cbna.info/",
+   "cathedral": "Cathedral of the Sacred Heart",
+   "ch": "fair",
+   "gc": "fair0",
+   "bishop": "Steven Maekawa",
+   "bishop_since": "2023-07-11",
+   "lon": -147.781,
+   "lat": 64.8364,
+   "members": 12300,
+   "founded": 1962,
+   "slug": "diocese-of-fairbanks"
+  },
+  {
+   "qid": "Q871345",
+   "name": "Diocese of Little Rock",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Arkansas"
+   ],
+   "city": "Little Rock",
+   "website": "http://www.dolr.org/",
+   "cathedral": "Cathedral of St. Andrew",
+   "ch": "litt",
+   "gc": "litt0",
+   "bishop": "Anthony Taylor",
+   "bishop_since": "2008-04-10",
+   "lon": -92.2722,
+   "lat": 34.7425,
+   "members": 157740,
+   "founded": 1843,
+   "slug": "diocese-of-little-rock"
+  },
+  {
+   "qid": "Q936952",
+   "name": "Archdiocese of San Francisco",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "California"
+   ],
+   "city": "San Francisco",
+   "website": "https://www.sfarchdiocese.org/",
+   "cathedral": "Cathedral of Saint Mary of the Assumption",
+   "ch": "snfr",
+   "gc": "zfra0",
+   "bishop": "Salvatore J. Cordileone",
+   "bishop_since": "2012-07-27",
+   "lon": -122.4253,
+   "lat": 37.7842,
+   "members": 441736,
+   "founded": 1853,
+   "slug": "archdiocese-of-san-francisco"
+  },
+  {
+   "qid": "Q1077548",
+   "name": "Armenian Catholic Eparchy of Our Lady of Nareg in the United States of America and Canada",
+   "types": [
+    "Catholic eparchy",
+    "armenian catholic eparchy"
+   ],
+   "states": [
+    "California"
+   ],
+   "city": "Glendale",
+   "website": "http://armenianeparchy.org/",
+   "cathedral": "St. Gregory the Illuminator Cathedral (Glendale, California)",
+   "ch": "glar",
+   "gc": "usaa0",
+   "bishop": "Mikaël Antoine Mouradian",
+   "bishop_since": "2011-05-21",
+   "lon": -118.2329,
+   "lat": 34.1653,
+   "members": 36000,
+   "founded": 1981,
+   "slug": "armenian-catholic-eparchy-of-our-lady-of-nareg-in-the-united-states-of-america-and-canada"
+  },
+  {
+   "qid": "Q1346605",
+   "name": "Chaldean Catholic Eparchy of Saint Peter The Apostle",
+   "types": [
+    "Catholic eparchy",
+    "Ecclesiastical circumscription immediately subject to the Holy See"
+   ],
+   "states": [
+    "California"
+   ],
+   "city": "San Diego",
+   "website": "https://www.stpeterdiocese.org/",
+   "cathedral": "St. Peter Chaldean Catholic Cathedral",
+   "ch": "sdch",
+   "gc": "zpet2",
+   "bishop": "Emmanuel Challita",
+   "bishop_since": "",
+   "lon": -116.9242,
+   "lat": 32.754,
+   "members": 70000,
+   "founded": 2002,
+   "slug": "chaldean-catholic-eparchy-of-saint-peter-the-apostle"
+  },
+  {
+   "qid": "Q868956",
+   "name": "Diocese of Fresno",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "California"
+   ],
+   "city": "Fresno",
+   "website": "http://www.dioceseoffresno.org/",
+   "cathedral": "St. John Cathedral",
+   "ch": "fres",
+   "gc": "fres0",
+   "bishop": "Joseph Vincent Brennan",
+   "bishop_since": "2019-03-05",
+   "lon": -119.783,
+   "lat": 36.7407,
+   "members": 1208350,
+   "founded": 1967,
+   "slug": "diocese-of-fresno"
+  },
+  {
+   "qid": "Q872544",
+   "name": "Diocese of Monterey in California",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "California"
+   ],
+   "city": "Monterey",
+   "website": "http://www.dioceseofmonterey.org/",
+   "cathedral": "Cathedral of San Carlos Borromeo",
+   "ch": "mont",
+   "gc": "mont6",
+   "bishop": "Ramon Bejarano",
+   "bishop_since": "2025-12-17",
+   "lon": -121.8905,
+   "lat": 36.5954,
+   "members": 211900,
+   "founded": 1967,
+   "slug": "diocese-of-monterey-in-california"
+  },
+  {
+   "qid": "Q1860877",
+   "name": "Diocese of Oakland",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "California"
+   ],
+   "city": "Oakland",
+   "website": "http://www.oakdiocese.org/",
+   "cathedral": "Cathedral of Christ the Light",
+   "ch": "oakl",
+   "gc": "oakl0",
+   "bishop": "Michael C. Barber",
+   "bishop_since": "2013-05-03",
+   "lon": -122.263,
+   "lat": 37.8105,
+   "members": 575500,
+   "founded": 1962,
+   "slug": "diocese-of-oakland"
+  },
+  {
+   "qid": "Q1859094",
+   "name": "Diocese of Orange in California",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "California"
+   ],
+   "city": "Orange",
+   "website": "http://www.rcbo.org/",
+   "cathedral": "Cathedral of the Holy Family",
+   "ch": "oran",
+   "gc": "oran2",
+   "bishop": "Kevin Vann",
+   "bishop_since": "2012-09-21",
+   "lon": -117.8531,
+   "lat": 33.7803,
+   "members": 1579000,
+   "founded": 1976,
+   "slug": "diocese-of-orange-in-california"
+  },
+  {
+   "qid": "Q781839",
+   "name": "Diocese of Sacramento",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "California"
+   ],
+   "city": "Sacramento",
+   "website": "http://www.diocese-sacramento.org/",
+   "cathedral": "Cathedral of the Blessed Sacrament",
+   "ch": "sacr",
+   "gc": "sacr0",
+   "bishop": "Jaime Soto",
+   "bishop_since": "2008-11-29",
+   "lon": -121.4919,
+   "lat": 38.5789,
+   "members": 1016193,
+   "founded": 1886,
+   "slug": "diocese-of-sacramento"
+  },
+  {
+   "qid": "Q875670",
+   "name": "Diocese of San Bernardino",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "California"
+   ],
+   "city": "California",
+   "website": "https://www.sbdiocese.org/",
+   "cathedral": "Our Lady of the Rosary Cathedral",
+   "ch": "snbe",
+   "gc": "zber0",
+   "bishop": "Alberto Rojas",
+   "bishop_since": "2020-12-28",
+   "lon": -117.289,
+   "lat": 34.1389,
+   "members": 1703846,
+   "founded": 1978,
+   "slug": "diocese-of-san-bernardino"
+  },
+  {
+   "qid": "Q875732",
+   "name": "Diocese of San Diego",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "California"
+   ],
+   "city": "San Diego",
+   "website": "http://www.diocese-sdiego.org/default.htm",
+   "cathedral": "St. Joseph Cathedral, San Diego",
+   "ch": "sndi",
+   "gc": "zdie1",
+   "bishop": "Michael Pham",
+   "bishop_since": "2025-05-22",
+   "lon": -117.162,
+   "lat": 32.7217,
+   "members": 1400677,
+   "founded": 1936,
+   "slug": "diocese-of-san-diego"
+  },
+  {
+   "qid": "Q875815",
+   "name": "Diocese of San José in California",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "California"
+   ],
+   "city": "San Jose",
+   "website": "http://www.dsj.org/",
+   "cathedral": "Cathedral Basilica of St. Joseph",
+   "ch": "snjo",
+   "gc": "zjos2",
+   "bishop": "Oscar Cantú",
+   "bishop_since": "2019-05-01",
+   "lon": -121.891,
+   "lat": 37.334,
+   "members": 633000,
+   "founded": 1981,
+   "slug": "diocese-of-san-jos-in-california"
+  },
+  {
+   "qid": "Q876114",
+   "name": "Diocese of Santa Rosa in California",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "California"
+   ],
+   "city": "Santa Rosa",
+   "website": "https://srdiocese.org/",
+   "cathedral": "Cathedral of Saint Eugene",
+   "ch": "snro",
+   "gc": "zros0",
+   "bishop": "Robert F. Vasa",
+   "bishop_since": "2011-06-30",
+   "lon": -122.688,
+   "lat": 38.4472,
+   "members": 184623,
+   "founded": 1962,
+   "slug": "diocese-of-santa-rosa-in-california"
+  },
+  {
+   "qid": "Q876809",
+   "name": "Diocese of Stockton",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "California"
+   ],
+   "city": "Stockton",
+   "website": "http://www.stocktondiocese.org/",
+   "cathedral": "Cathedral of the Annunciation",
+   "ch": "stoc",
+   "gc": "stoc1",
+   "bishop": "Myron Joseph Cotta",
+   "bishop_since": "2018-01-23",
+   "lon": -121.3,
+   "lat": 37.963,
+   "members": 253600,
+   "founded": 1962,
+   "slug": "diocese-of-stockton"
+  },
+  {
+   "qid": "Q1346589",
+   "name": "Maronite Catholic Eparchy of Our Lady of Lebanon of Los Angeles",
+   "types": [
+    "Catholic eparchy",
+    "Ecclesiastical circumscription immediately subject to the Holy See"
+   ],
+   "states": [
+    "California"
+   ],
+   "city": "Los Angeles",
+   "website": "http://www.usamaronite.org",
+   "cathedral": "Our Lady of Mt. Lebanon-St. Peter Cathedral",
+   "ch": "lama",
+   "gc": "olle0",
+   "bishop": "Abdallah Elias Zaidan",
+   "bishop_since": "2013-07-10",
+   "lon": -118.3776,
+   "lat": 34.0725,
+   "members": 47000,
+   "founded": 1994,
+   "slug": "maronite-catholic-eparchy-of-our-lady-of-lebanon-of-los-angeles"
+  },
+  {
+   "qid": "Q965508",
+   "name": "Roman Catholic Archdiocese of Los Angeles",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "California"
+   ],
+   "city": "Los Angeles",
+   "website": "http://www.la-archdiocese.org",
+   "cathedral": "Cathedral of Our Lady of the Angels",
+   "ch": "losa",
+   "gc": "losa1",
+   "bishop": "José Horacio Gómez",
+   "bishop_since": "2011-03-01",
+   "lon": -118.2458,
+   "lat": 34.0583,
+   "members": 4044742,
+   "founded": 1936,
+   "slug": "archdiocese-of-los-angeles"
+  },
+  {
+   "qid": "Q1364433",
+   "name": "Archdiocese of Denver",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Colorado"
+   ],
+   "city": "Denver",
+   "website": "http://www.archden.org",
+   "cathedral": "Cathedral Basilica of the Immaculate Conception",
+   "ch": "denv",
+   "gc": "denv0",
+   "bishop": "James Golka",
+   "bishop_since": "2026-02-07",
+   "lon": -104.982,
+   "lat": 39.7403,
+   "members": 604800,
+   "founded": 1868,
+   "slug": "archdiocese-of-denver"
+  },
+  {
+   "qid": "Q868105",
+   "name": "Diocese of Colorado Springs",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Colorado"
+   ],
+   "city": "Colorado Springs",
+   "website": "http://www.diocs.org",
+   "cathedral": "St. Mary's Cathedral",
+   "ch": "colo",
+   "gc": "colo2",
+   "bishop": "James Golka",
+   "bishop_since": "",
+   "lon": -104.8264,
+   "lat": 38.8364,
+   "members": 187645,
+   "founded": 1983,
+   "slug": "diocese-of-colorado-springs"
+  },
+  {
+   "qid": "Q874610",
+   "name": "Diocese of Pueblo",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Colorado"
+   ],
+   "city": "Pueblo",
+   "website": "http://www.dioceseofpueblo.org",
+   "cathedral": "Cathedral of the Sacred Heart",
+   "ch": "pueb",
+   "gc": "pueb1",
+   "bishop": "Stephen Jay Berg",
+   "bishop_since": "2014-01-15",
+   "lon": -104.612,
+   "lat": 38.277,
+   "members": 188135,
+   "founded": 1941,
+   "slug": "diocese-of-pueblo"
+  },
+  {
+   "qid": "Q1364608",
+   "name": "Archdiocese of Hartford",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Connecticut"
+   ],
+   "city": "Hartford",
+   "website": "http://www.archdioceseofhartford.org",
+   "cathedral": "Cathedral of St. Joseph",
+   "ch": "hart",
+   "gc": "hart0",
+   "bishop": "Christopher J. Coyne",
+   "bishop_since": "2024-05-01",
+   "lon": -72.693,
+   "lat": 41.7678,
+   "members": 738700,
+   "founded": 1843,
+   "slug": "archdiocese-of-hartford"
+  },
+  {
+   "qid": "Q280827",
+   "name": "Diocese of Bridgeport",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Connecticut"
+   ],
+   "city": "Bridgeport",
+   "website": "http://www.bridgeportdiocese.com",
+   "cathedral": "St. Augustine Cathedral",
+   "ch": "brid",
+   "gc": "brid0",
+   "bishop": "Frank Joseph Caggiano",
+   "bishop_since": "2013-07-31",
+   "lon": -73.1957,
+   "lat": 41.1802,
+   "members": 438664,
+   "founded": 1953,
+   "slug": "diocese-of-bridgeport"
+  },
+  {
+   "qid": "Q873188",
+   "name": "Diocese of Norwich",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Connecticut"
+   ],
+   "city": "Norwich",
+   "website": "http://www.norwichdiocese.org",
+   "cathedral": "Cathedral of Saint Patrick",
+   "ch": "norw",
+   "gc": "norw0",
+   "bishop": "Richard Francis Reidy",
+   "bishop_since": "2025-02-12",
+   "lon": -72.0778,
+   "lat": 41.5311,
+   "members": 230108,
+   "founded": 1953,
+   "slug": "diocese-of-norwich"
+  },
+  {
+   "qid": "Q1346684",
+   "name": "Ukrainian Catholic Eparchy of Stamford",
+   "types": [
+    "Greek-Catholic diocese"
+   ],
+   "states": [
+    "Connecticut"
+   ],
+   "city": "Stamford",
+   "website": "http://stamforddio.org",
+   "cathedral": "St. Vladimir's Cathedral",
+   "ch": "stuk",
+   "gc": "stam0",
+   "bishop": "Paul Patrick Chomnycky",
+   "bishop_since": "2006-01-03",
+   "lon": -73.5277,
+   "lat": 41.0616,
+   "members": 14960,
+   "founded": 1983,
+   "slug": "ukrainian-catholic-eparchy-of-stamford"
+  },
+  {
+   "qid": "Q878085",
+   "name": "Diocese of Wilmington",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Delaware"
+   ],
+   "city": "Wilmington",
+   "website": "http://cdow.org/",
+   "cathedral": "Cathedral of Saint Peter",
+   "ch": "wilm",
+   "gc": "wilm0",
+   "bishop": "William Koenig",
+   "bishop_since": "2021-04-30",
+   "lon": -75.5532,
+   "lat": 39.743,
+   "members": 245092,
+   "founded": 1868,
+   "slug": "diocese-of-wilmington"
+  },
+  {
+   "qid": "Q1365030",
+   "name": "Archdiocese of Miami",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Florida"
+   ],
+   "city": "Miami",
+   "website": "http://www.miamiarchdiocese.org/",
+   "cathedral": "Cathedral of Saint Mary",
+   "ch": "miam",
+   "gc": "miam0",
+   "bishop": "Thomas Wenski",
+   "bishop_since": "2010-04-20",
+   "lon": -80.2008,
+   "lat": 25.8517,
+   "members": 815900,
+   "founded": 1968,
+   "slug": "archdiocese-of-miami"
+  },
+  {
+   "qid": "Q426778",
+   "name": "Diocese of Orlando",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Florida"
+   ],
+   "city": "Orlando",
+   "website": "http://www.orlandodiocese.org",
+   "cathedral": "St. James Cathedral",
+   "ch": "orla",
+   "gc": "orla0",
+   "bishop": "John Gerard Noonan",
+   "bishop_since": "2010-10-23",
+   "lon": -81.3786,
+   "lat": 28.5451,
+   "members": 427900,
+   "founded": 1968,
+   "slug": "diocese-of-orlando"
+  },
+  {
+   "qid": "Q873818",
+   "name": "Diocese of Palm Beach",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Florida"
+   ],
+   "city": "Palm Beach",
+   "website": "https://www.diocesepb.org/",
+   "cathedral": "Cathedral of St. Ignatius of Loyola",
+   "ch": "palm",
+   "gc": "palm1",
+   "bishop": "Manuel de Jesus Rodriguez",
+   "bishop_since": "2025-12-19",
+   "lon": -80.1069,
+   "lat": 26.8231,
+   "members": 304700,
+   "founded": 1984,
+   "slug": "diocese-of-palm-beach"
+  },
+  {
+   "qid": "Q874098",
+   "name": "Diocese of Pensacola–Tallahassee",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Florida"
+   ],
+   "city": "Pensacola",
+   "website": "https://www.ptdiocese.org/",
+   "cathedral": "Cathedral of the Sacred Heart",
+   "ch": "pens",
+   "gc": "pens0",
+   "bishop": "William Wack",
+   "bishop_since": "2017-05-29",
+   "lon": -87.2041,
+   "lat": 30.4317,
+   "members": 67458,
+   "founded": 1975,
+   "slug": "diocese-of-pensacola-tallahassee"
+  },
+  {
+   "qid": "Q875471",
+   "name": "Diocese of Saint Petersburg in Florida",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Florida"
+   ],
+   "city": "St. Petersburg",
+   "website": "http://www.dioceseofstpete.org/",
+   "cathedral": "Cathedral of Saint Jude the Apostle",
+   "ch": "stpe",
+   "gc": "zpet0",
+   "bishop": "Gregory Parkes",
+   "bishop_since": "2016-11-28",
+   "lon": -82.7135,
+   "lat": 27.7775,
+   "members": 461209,
+   "founded": 1968,
+   "slug": "diocese-of-saint-petersburg-in-florida"
+  },
+  {
+   "qid": "Q875393",
+   "name": "Diocese of St. Augustine",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Florida"
+   ],
+   "city": "St. Augustine",
+   "website": "http://www.dosafl.com/",
+   "cathedral": "Cathedral Basilica of St. Augustine",
+   "ch": "stau",
+   "gc": "zaug0",
+   "bishop": "Erik Pohlmeier",
+   "bishop_since": "2022-05-24",
+   "lon": -81.3125,
+   "lat": 29.8928,
+   "members": 190000,
+   "founded": 1857,
+   "slug": "diocese-of-st-augustine"
+  },
+  {
+   "qid": "Q877791",
+   "name": "Diocese of Venice in Florida",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Florida"
+   ],
+   "city": "Venice",
+   "website": "http://www.dioceseofvenice.org/",
+   "cathedral": "Epiphany Cathedral",
+   "ch": "veni",
+   "gc": "veni0",
+   "bishop": "Emilio Biosca Agüero",
+   "bishop_since": "2026-05-13",
+   "lon": -82.449,
+   "lat": 27.101,
+   "members": 236895,
+   "founded": 1984,
+   "slug": "diocese-of-venice-in-florida"
+  },
+  {
+   "qid": "Q1364045",
+   "name": "Archdiocese of Atlanta",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Georgia"
+   ],
+   "city": "Atlanta",
+   "website": "http://www.archatl.com/",
+   "cathedral": "Cathedral of Christ the King",
+   "ch": "atla",
+   "gc": "atla0",
+   "bishop": "Gregory John Hartmayer",
+   "bishop_since": "2020-03-05",
+   "lon": -84.3872,
+   "lat": 33.8284,
+   "members": 1150000,
+   "founded": 1962,
+   "slug": "archdiocese-of-atlanta"
+  },
+  {
+   "qid": "Q876294",
+   "name": "Diocese of Savannah",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Georgia"
+   ],
+   "city": "Savannah",
+   "website": "http://diosav.org/",
+   "cathedral": "Cathedral of St. John the Baptist",
+   "ch": "sava",
+   "gc": "sava0",
+   "bishop": "Stephen D. Parkes",
+   "bishop_since": "2020-07-08",
+   "lon": -81.0914,
+   "lat": 32.0733,
+   "members": 77055,
+   "founded": 1850,
+   "slug": "diocese-of-savannah"
+  },
+  {
+   "qid": "Q11681149",
+   "name": "Diocese of Honolulu",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Hawaii"
+   ],
+   "city": "Honolulu",
+   "website": "http://www.catholichawaii.org",
+   "cathedral": "Cathedral Basilica of Our Lady of Peace",
+   "ch": "hono",
+   "gc": "hono0",
+   "lon": -157.8594,
+   "lat": 21.3107,
+   "members": 148960,
+   "founded": 1941,
+   "slug": "diocese-of-honolulu"
+  },
+  {
+   "qid": "Q867239",
+   "name": "Diocese of Boise",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Idaho"
+   ],
+   "city": "Boise",
+   "website": "http://www.catholicidaho.org/",
+   "cathedral": "Cathedral of St. John the Evangelist",
+   "ch": "bois",
+   "gc": "bois0",
+   "bishop": "Peter F. Christensen",
+   "bishop_since": "2014-11-04",
+   "lon": -116.1975,
+   "lat": 43.6217,
+   "members": 185232,
+   "founded": 1893,
+   "slug": "diocese-of-boise"
+  },
+  {
+   "qid": "Q1364344",
+   "name": "Archdiocese of Chicago",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Illinois"
+   ],
+   "city": "Chicago",
+   "website": "https://www.archchicago.org/",
+   "cathedral": "Holy Name Cathedral, Chicago",
+   "ch": "chic",
+   "gc": "chic0",
+   "bishop": "Blase Cupich",
+   "bishop_since": "2014-09-20",
+   "lon": -87.6275,
+   "lat": 41.8959,
+   "members": 2183000,
+   "founded": 1843,
+   "slug": "archdiocese-of-chicago"
+  },
+  {
+   "qid": "Q867099",
+   "name": "Diocese of Belleville",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Illinois"
+   ],
+   "city": "Belleville",
+   "website": "http://www.diobelle.org/",
+   "cathedral": "Cathedral of Saint Peter",
+   "ch": "bell",
+   "gc": "bell2",
+   "bishop": "Godfrey Mullen",
+   "bishop_since": "2026-03-13",
+   "lon": -89.9877,
+   "lat": 38.5103,
+   "members": 124280,
+   "founded": 1887,
+   "slug": "diocese-of-belleville"
+  },
+  {
+   "qid": "Q138892",
+   "name": "Diocese of Joliet in Illinois",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Illinois"
+   ],
+   "city": "Crest Hill",
+   "website": "https://diojoliet.org",
+   "cathedral": "Cathedral of St. Raymond Nonnatus",
+   "ch": "joli",
+   "gc": "joli0",
+   "bishop": "Brendan Cahill",
+   "bishop_since": "2026-09-17",
+   "lon": -88.101,
+   "lat": 41.5353,
+   "members": 628230,
+   "founded": 1948,
+   "slug": "diocese-of-joliet-in-illinois"
+  },
+  {
+   "qid": "Q677950",
+   "name": "Diocese of Peoria",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Illinois"
+   ],
+   "city": "Peoria",
+   "website": "http://www.cdop.org",
+   "cathedral": "Cathedral of Saint Mary of the Immaculate Conception",
+   "ch": "peor",
+   "gc": "peor0",
+   "bishop": "Louis Tylka",
+   "bishop_since": "2022-03-03",
+   "lon": -89.585,
+   "lat": 40.6986,
+   "members": 192140,
+   "founded": 1875,
+   "slug": "diocese-of-peoria"
+  },
+  {
+   "qid": "Q201616",
+   "name": "Diocese of Rockford",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Illinois"
+   ],
+   "city": "Rockford",
+   "website": "http://www.rockforddiocese.org/",
+   "cathedral": "Cathedral of Saint Peter",
+   "ch": "rock",
+   "gc": "rock0",
+   "bishop": "David John Malloy",
+   "bishop_since": "2012-03-20",
+   "lon": -89.0828,
+   "lat": 42.2851,
+   "members": 484150,
+   "founded": 1908,
+   "slug": "diocese-of-rockford"
+  },
+  {
+   "qid": "Q876724",
+   "name": "Diocese of Springfield in Illinois",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Illinois"
+   ],
+   "city": "Springfield",
+   "website": "http://www.dio.org",
+   "cathedral": "Cathedral of the Immaculate Conception",
+   "ch": "spil",
+   "gc": "spri0",
+   "bishop": "Thomas J. Paprocki",
+   "bishop_since": "2010-04-20",
+   "lon": -89.6487,
+   "lat": 39.7934,
+   "members": 134173,
+   "founded": 1853,
+   "slug": "diocese-of-springfield-in-illinois"
+  },
+  {
+   "qid": "Q420580",
+   "name": "St. Thomas Syro-Malabar Catholic Eparchy of Chicago",
+   "types": [
+    "Catholic eparchy",
+    "Ecclesiastical circumscription immediately subject to the Holy See"
+   ],
+   "states": [
+    "Illinois"
+   ],
+   "city": "Chicago",
+   "website": "http://www.stthomasdiocese.org/",
+   "cathedral": "Mar Thoma Shleeha Cathedral",
+   "ch": "chsm",
+   "gc": "ztho2",
+   "bishop": "Joy Alappat",
+   "bishop_since": "2022-07-03",
+   "lon": -87.894,
+   "lat": 41.888,
+   "members": 87000,
+   "founded": 2001,
+   "slug": "st-thomas-syro-malabar-catholic-eparchy-of-chicago"
+  },
+  {
+   "qid": "Q1346622",
+   "name": "Ukrainian Catholic Eparchy of Chicago",
+   "types": [
+    "Greek-Catholic diocese"
+   ],
+   "states": [
+    "Illinois"
+   ],
+   "city": "Chicago",
+   "website": "https://www.esn-cc.org/",
+   "cathedral": "St. Nicholas Cathedral",
+   "ch": "chuk",
+   "gc": "znic1",
+   "bishop": "Venedykt Aleksiichuk",
+   "bishop_since": "2017-04-20",
+   "lon": -87.6839,
+   "lat": 41.897,
+   "members": 12500,
+   "slug": "ukrainian-catholic-eparchy-of-chicago"
+  },
+  {
+   "qid": "Q567910",
+   "name": "Archdiocese of Indianapolis",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Indiana"
+   ],
+   "city": "Indianapolis",
+   "website": "http://www.archindy.org/",
+   "cathedral": "Saints Peter and Paul Cathedral",
+   "ch": "indi",
+   "gc": "indi0",
+   "bishop": "Charles C. Thompson",
+   "bishop_since": "2017-06-13",
+   "lon": -86.1573,
+   "lat": 39.7854,
+   "members": 252070,
+   "founded": 1834,
+   "slug": "archdiocese-of-indianapolis"
+  },
+  {
+   "qid": "Q868767",
+   "name": "Diocese of Evansville",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Indiana"
+   ],
+   "city": "Evansville",
+   "website": "http://www.evansville-diocese.org/",
+   "cathedral": "St. Benedict Cathedral",
+   "ch": "evan",
+   "gc": "evan0",
+   "bishop": "Joseph M. Siegel",
+   "bishop_since": "2017-10-18",
+   "lon": -87.5406,
+   "lat": 37.97,
+   "members": 75838,
+   "founded": 1944,
+   "slug": "diocese-of-evansville"
+  },
+  {
+   "qid": "Q868925",
+   "name": "Diocese of Fort Wayne–South Bend",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Indiana"
+   ],
+   "city": "Fort Wayne",
+   "website": "http://www.diocesefwsb.org/",
+   "cathedral": "Cathedral of the Immaculate Conception",
+   "ch": "fwsb",
+   "gc": "fort3",
+   "bishop": "Kevin C. Rhoades",
+   "bishop_since": "2009-11-14",
+   "lon": -85.1378,
+   "lat": 41.0757,
+   "members": 161200,
+   "founded": 1857,
+   "slug": "diocese-of-fort-wayne-south-bend"
+  },
+  {
+   "qid": "Q869059",
+   "name": "Diocese of Gary",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Indiana"
+   ],
+   "city": "Gary",
+   "website": "http://www.dcgary.org",
+   "cathedral": "Cathedral of the Holy Angels",
+   "ch": "gary",
+   "gc": "gary0",
+   "bishop": "Robert John McClory",
+   "bishop_since": "2019-11-26",
+   "lon": -87.3487,
+   "lat": 41.599,
+   "members": 168500,
+   "slug": "diocese-of-gary"
+  },
+  {
+   "qid": "Q870951",
+   "name": "Diocese of Lafayette in Indiana",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Indiana"
+   ],
+   "city": "Lafayette",
+   "website": "http://www.dol-in.org",
+   "cathedral": "Cathedral of Saint Mary of the Immaculate Conception",
+   "ch": "lain",
+   "gc": "lafa1",
+   "bishop": "Timothy Doherty",
+   "bishop_since": "2010-05-12",
+   "lon": -86.8839,
+   "lat": 40.4181,
+   "members": 116290,
+   "founded": 1944,
+   "slug": "diocese-of-lafayette-in-indiana"
+  },
+  {
+   "qid": "Q1364466",
+   "name": "Archdiocese of Dubuque",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Iowa"
+   ],
+   "city": "Dubuque",
+   "website": "http://www.arch.pvt.k12.ia.us/",
+   "cathedral": "St. Raphael's Cathedral",
+   "ch": "dubu",
+   "gc": "dubu0",
+   "bishop": "Michael Owen Jackels",
+   "bishop_since": "",
+   "lon": -90.6674,
+   "lat": 42.4948,
+   "members": 193360,
+   "founded": 1893,
+   "slug": "archdiocese-of-dubuque"
+  },
+  {
+   "qid": "Q868331",
+   "name": "Diocese of Davenport",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Iowa"
+   ],
+   "city": "Davenport",
+   "website": "http://www.davenportdiocese.org",
+   "cathedral": "Sacred Heart Cathedral",
+   "ch": "dave",
+   "gc": "dave0",
+   "bishop": "Dennis Walsh",
+   "bishop_since": "",
+   "lon": -90.5689,
+   "lat": 41.5303,
+   "members": 94563,
+   "founded": 1881,
+   "slug": "diocese-of-davenport"
+  },
+  {
+   "qid": "Q868364",
+   "name": "Diocese of Des Moines",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Iowa"
+   ],
+   "city": "Des Moines",
+   "website": "http://www.dmdiocese.org",
+   "cathedral": "St. Ambrose Cathedral",
+   "ch": "desm",
+   "gc": "desm0",
+   "bishop": "William M. Joensen",
+   "bishop_since": "",
+   "lon": -93.6256,
+   "lat": 41.5886,
+   "members": 110350,
+   "founded": 1911,
+   "slug": "diocese-of-des-moines"
+  },
+  {
+   "qid": "Q585685",
+   "name": "Diocese of Sioux City",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Iowa"
+   ],
+   "city": "Sioux City",
+   "website": "http://www.scdiocese.org",
+   "cathedral": "Cathedral of the Epiphany",
+   "ch": "siou",
+   "gc": "siou0",
+   "bishop": "John Edward Keehner",
+   "bishop_since": "2025-02-12",
+   "lon": -96.407,
+   "lat": 42.5009,
+   "members": 83759,
+   "founded": 1902,
+   "slug": "diocese-of-sioux-city"
+  },
+  {
+   "qid": "Q933960",
+   "name": "Archdiocese of Kansas City in Kansas",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Kansas"
+   ],
+   "city": "Kansas City",
+   "website": "http://www.archkck.org/",
+   "cathedral": "Cathedral of Saint Peter",
+   "ch": "kcks",
+   "gc": "kans0",
+   "bishop": "Shawn McKnight",
+   "bishop_since": "2025-04-08",
+   "lon": -94.645,
+   "lat": 39.1103,
+   "members": 190624,
+   "founded": 1877,
+   "slug": "archdiocese-of-kansas-city-in-kansas"
+  },
+  {
+   "qid": "Q868446",
+   "name": "Diocese of Dodge City",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Kansas"
+   ],
+   "city": "Dodge City",
+   "website": "http://www.dcdiocese.org/",
+   "cathedral": "Cathedral of Our Lady of Guadalupe",
+   "ch": "dodg",
+   "gc": "dodg0",
+   "bishop": "John Balthasar Brungardt",
+   "bishop_since": "2010-12-15",
+   "lon": -100.0339,
+   "lat": 37.793,
+   "members": 47859,
+   "founded": 1951,
+   "slug": "diocese-of-dodge-city"
+  },
+  {
+   "qid": "Q875566",
+   "name": "Diocese of Salina",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Kansas"
+   ],
+   "city": "Salina",
+   "website": "http://www.salinadiocese.org/",
+   "cathedral": "Sacred Heart Cathedral",
+   "ch": "sali",
+   "gc": "sali0",
+   "bishop": "Gerald Lee Vincke",
+   "bishop_since": "2018-06-13",
+   "lon": -97.612,
+   "lat": 38.841,
+   "members": 44369,
+   "founded": 1887,
+   "slug": "diocese-of-salina"
+  },
+  {
+   "qid": "Q878066",
+   "name": "Diocese of Wichita",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Kansas"
+   ],
+   "city": "Wichita",
+   "website": "http://www.cdowk.org/",
+   "cathedral": "Cathedral of the Immaculate Conception",
+   "ch": "wich",
+   "gc": "wich0",
+   "bishop": "Carl A. Kemme",
+   "bishop_since": "2014-02-20",
+   "lon": -97.3354,
+   "lat": 37.693,
+   "members": 112549,
+   "founded": 1887,
+   "slug": "diocese-of-wichita"
+  },
+  {
+   "qid": "Q1364874",
+   "name": "Archdiocese of Louisville",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Kentucky"
+   ],
+   "city": "Louisville",
+   "website": "http://www.archlou.org/",
+   "cathedral": "Cathedral of the Assumption",
+   "ch": "loui",
+   "gc": "loui0",
+   "bishop": "Shelton Fabre",
+   "bishop_since": "2022-02-08",
+   "lon": -85.7585,
+   "lat": 38.2518,
+   "members": 183831,
+   "founded": 1808,
+   "slug": "archdiocese-of-louisville"
+  },
+  {
+   "qid": "Q868192",
+   "name": "Diocese of Covington",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Kentucky"
+   ],
+   "city": "Covington",
+   "website": "https://covdio.org/",
+   "cathedral": "Cathedral Basilica of the Assumption",
+   "ch": "covi",
+   "gc": "covi0",
+   "bishop": "John Iffert",
+   "bishop_since": "2021-07-13",
+   "lon": -84.5081,
+   "lat": 39.0783,
+   "members": 91895,
+   "founded": 1853,
+   "slug": "diocese-of-covington"
+  },
+  {
+   "qid": "Q767272",
+   "name": "Diocese of Lexington",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Kentucky"
+   ],
+   "city": "Lexington",
+   "website": "http://www.cdlex.org/",
+   "cathedral": "Cathedral of Christ the King",
+   "ch": "lexi",
+   "gc": "lexi0",
+   "bishop": "John Stowe",
+   "bishop_since": "2015-03-12",
+   "lon": -84.487,
+   "lat": 38.022,
+   "members": 43400,
+   "founded": 1988,
+   "slug": "diocese-of-lexington"
+  },
+  {
+   "qid": "Q647118",
+   "name": "Diocese of Owensboro",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Kentucky"
+   ],
+   "city": "Owensboro",
+   "website": "http://www.rcdok.org/",
+   "cathedral": "St. Stephen's Cathedral",
+   "ch": "owen",
+   "gc": "owen0",
+   "bishop": "William Medley",
+   "bishop_since": "2009-12-15",
+   "lon": -87.1155,
+   "lat": 37.7698,
+   "members": 51780,
+   "founded": 1937,
+   "slug": "diocese-of-owensboro"
+  },
+  {
+   "qid": "Q640317",
+   "name": "Archdiocese of New Orleans",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Louisiana"
+   ],
+   "city": "New Orleans",
+   "website": "https://www.arch-no.org/",
+   "cathedral": "St. Louis Cathedral",
+   "ch": "newo",
+   "gc": "newo0",
+   "bishop": "James F. Checchio",
+   "bishop_since": "2026-02-11",
+   "lon": -90.0635,
+   "lat": 29.9579,
+   "members": 520411,
+   "founded": 1793,
+   "slug": "archdiocese-of-new-orleans"
+  },
+  {
+   "qid": "Q866795",
+   "name": "Diocese of Alexandria in Louisiana",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Louisiana"
+   ],
+   "city": "Alexandria",
+   "website": "http://www.diocesealex.org/",
+   "cathedral": "St. Francis Xavier Cathedral",
+   "ch": "alex",
+   "gc": "alex3",
+   "bishop": "Robert W. Marshall",
+   "bishop_since": "2020-04-21",
+   "lon": -92.4478,
+   "lat": 31.3123,
+   "members": 35199,
+   "founded": 1853,
+   "slug": "diocese-of-alexandria-in-louisiana"
+  },
+  {
+   "qid": "Q867038",
+   "name": "Diocese of Baton Rouge",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Louisiana"
+   ],
+   "city": "Baton Rouge",
+   "website": "http://www.diobr.org/",
+   "cathedral": "St. Joseph Cathedral",
+   "ch": "bato",
+   "gc": "bato0",
+   "bishop": "Michael Duca",
+   "bishop_since": "2018-06-26",
+   "lon": -91.1864,
+   "lat": 30.4517,
+   "members": 227052,
+   "founded": 1961,
+   "slug": "diocese-of-baton-rouge"
+  },
+  {
+   "qid": "Q869492",
+   "name": "Diocese of Houma–Thibodaux",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Louisiana"
+   ],
+   "city": "Houma",
+   "website": "https://www.htdiocese.org/",
+   "cathedral": "Cathedral of St. Francis de Sales",
+   "ch": "houm",
+   "gc": "houm0",
+   "bishop": "Simon Peter Engurait",
+   "bishop_since": "2025-06-05",
+   "lon": -90.7226,
+   "lat": 29.5953,
+   "members": 116160,
+   "founded": 1977,
+   "slug": "diocese-of-houma-thibodaux"
+  },
+  {
+   "qid": "Q870940",
+   "name": "Diocese of Lafayette in Louisiana",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Louisiana"
+   ],
+   "city": "Lafayette",
+   "website": "http://www.diolaf.org",
+   "cathedral": "St. John's Cathedral",
+   "ch": "lafa",
+   "gc": "lafa0",
+   "bishop": "John Douglas Deshotel",
+   "bishop_since": "2016-02-17",
+   "lon": -92.0239,
+   "lat": 30.2225,
+   "members": 341115,
+   "founded": 1918,
+   "slug": "diocese-of-lafayette-in-louisiana"
+  },
+  {
+   "qid": "Q870984",
+   "name": "Diocese of Lake Charles",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Louisiana"
+   ],
+   "city": "Lake Charles",
+   "website": "http://www.lcdiocese.org/",
+   "cathedral": "Cathedral of the Immaculate Conception",
+   "ch": "lake",
+   "gc": "lake0",
+   "bishop": "Glen Provost",
+   "bishop_since": "2007-03-06",
+   "lon": -93.2167,
+   "lat": 30.2264,
+   "members": 92250,
+   "founded": 1980,
+   "slug": "diocese-of-lake-charles"
+  },
+  {
+   "qid": "Q876471",
+   "name": "Diocese of Shreveport",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Louisiana"
+   ],
+   "city": "Shreveport",
+   "website": "https://www.dioshpt.org/",
+   "cathedral": "Cathedral of St. John Berchmans",
+   "ch": "shre",
+   "gc": "shre0",
+   "lon": -93.751,
+   "lat": 32.4975,
+   "members": 41505,
+   "founded": 1986,
+   "slug": "diocese-of-shreveport"
+  },
+  {
+   "qid": "Q874459",
+   "name": "Diocese of Portland",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Maine"
+   ],
+   "city": "Portland",
+   "website": "https://portlanddiocese.org/",
+   "cathedral": "Cathedral of the Immaculate Conception",
+   "ch": "pome",
+   "gc": "port2",
+   "bishop": "James T. Ruggieri",
+   "bishop_since": "2024-02-13",
+   "lon": -70.2547,
+   "lat": 43.6614,
+   "members": 200700,
+   "founded": 1853,
+   "slug": "diocese-of-portland"
+  },
+  {
+   "qid": "Q1364093",
+   "name": "Archdiocese of Baltimore",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Maryland"
+   ],
+   "city": "Baltimore",
+   "website": "https://www.archbalt.org/",
+   "cathedral": "Cathedral of Mary Our Queen",
+   "ch": "balt",
+   "gc": "balt0",
+   "bishop": "William E. Lori",
+   "bishop_since": "2012-03-20",
+   "lon": -76.6261,
+   "lat": 39.3586,
+   "members": 517015,
+   "founded": 1784,
+   "slug": "archdiocese-of-baltimore"
+  },
+  {
+   "qid": "Q1365883",
+   "name": "Archdiocese of Washington",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Maryland"
+   ],
+   "city": "Washington, D.C.",
+   "website": "https://adw.org/",
+   "cathedral": "Cathedral of St. Matthew the Apostle",
+   "ch": "wash",
+   "gc": "wash0",
+   "bishop": "Robert W. McElroy",
+   "bishop_since": "2025-01-06",
+   "lon": -77.04,
+   "lat": 38.9061,
+   "members": 655601,
+   "founded": 1947,
+   "slug": "archdiocese-of-washington"
+  },
+  {
+   "qid": "Q143028",
+   "name": "Archdiocese of Boston",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Massachusetts"
+   ],
+   "city": "Braintree",
+   "website": "http://www.BostonCatholic.org/",
+   "cathedral": "Cathedral of the Holy Cross",
+   "ch": "bost",
+   "gc": "bost0",
+   "bishop": "Seán Patrick O'Malley",
+   "bishop_since": "2003-07-01",
+   "lon": -71.0697,
+   "lat": 42.3406,
+   "members": 1946413,
+   "founded": 1808,
+   "slug": "archdiocese-of-boston"
+  },
+  {
+   "qid": "Q868817",
+   "name": "Diocese of Fall River",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Massachusetts"
+   ],
+   "city": "Fall River",
+   "website": "http://www.fallriverdiocese.org/",
+   "cathedral": "St. Mary's Cathedral and Rectory",
+   "ch": "fall",
+   "gc": "fall0",
+   "bishop": "Edgar Moreira da Cunha",
+   "bishop_since": "2014-07-03",
+   "lon": -71.1578,
+   "lat": 41.6986,
+   "members": 278863,
+   "founded": 1904,
+   "slug": "diocese-of-fall-river"
+  },
+  {
+   "qid": "Q876718",
+   "name": "Diocese of Springfield in Massachusetts",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Massachusetts"
+   ],
+   "city": "Springfield",
+   "website": "http://www.diospringfield.org",
+   "cathedral": "St. Michael's Cathedral",
+   "ch": "spma",
+   "gc": "spri1",
+   "bishop": "William Draper Byrne",
+   "bishop_since": "2020-10-14",
+   "lon": -72.5845,
+   "lat": 42.1042,
+   "members": 200900,
+   "founded": 1870,
+   "slug": "diocese-of-springfield-in-massachusetts"
+  },
+  {
+   "qid": "Q878113",
+   "name": "Diocese of Worcester",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Massachusetts"
+   ],
+   "city": "Worcester",
+   "website": "http://www.worcesterdiocese.org",
+   "cathedral": "Cathedral of Saint Paul",
+   "ch": "worc",
+   "gc": "worc0",
+   "bishop": "Robert Joseph McManus",
+   "bishop_since": "2004-03-09",
+   "lon": -71.8047,
+   "lat": 42.2618,
+   "members": 279749,
+   "founded": 1950,
+   "slug": "diocese-of-worcester"
+  },
+  {
+   "qid": "Q1346561",
+   "name": "Melkite Greek Catholic Eparchy of Newton",
+   "types": [
+    "Ecclesiastical circumscription immediately subject to the Holy See",
+    "Greek-Catholic diocese"
+   ],
+   "states": [
+    "Massachusetts"
+   ],
+   "city": "Boston",
+   "website": "http://www.melkite.org",
+   "cathedral": "Annunciation Melkite Catholic Cathedral",
+   "ch": "neme",
+   "gc": "newt0",
+   "bishop": "François Beyrouti",
+   "bishop_since": "2022-08-20",
+   "lon": -71.1344,
+   "lat": 42.2975,
+   "members": 22000,
+   "founded": 1966,
+   "slug": "melkite-greek-catholic-eparchy-of-newton"
+  },
+  {
+   "qid": "Q1364441",
+   "name": "Archdiocese of Detroit",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Michigan"
+   ],
+   "city": "Detroit",
+   "website": "http://www.aod.org/",
+   "cathedral": "Cathedral of the Most Blessed Sacrament",
+   "ch": "detr",
+   "gc": "detr0",
+   "bishop": "Edward Weisenburger",
+   "bishop_since": "2025-02-11",
+   "lon": -83.0853,
+   "lat": 42.3886,
+   "members": 1130271,
+   "founded": 1937,
+   "slug": "archdiocese-of-detroit"
+  },
+  {
+   "qid": "Q1077579",
+   "name": "Chaldean Catholic Eparchy of Saint Thomas the Apostle of Detroit",
+   "types": [
+    "Catholic eparchy",
+    "Ecclesiastical circumscription immediately subject to the Holy See"
+   ],
+   "states": [
+    "Michigan"
+   ],
+   "city": "Southfield",
+   "website": "https://chaldeanchurch.org/",
+   "cathedral": "Our Lady of Chaldeans Cathedral",
+   "ch": "dech",
+   "gc": "ztho1",
+   "bishop": "Francis Y. Kalabat",
+   "bishop_since": "2014-05-03",
+   "lon": -83.2799,
+   "lat": 42.4762,
+   "members": 180000,
+   "founded": 1982,
+   "slug": "chaldean-catholic-eparchy-of-saint-thomas-the-apostle-of-detroit"
+  },
+  {
+   "qid": "Q338407",
+   "name": "Diocese of Gaylord",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Michigan"
+   ],
+   "city": "Gaylord",
+   "website": "http://www.dioceseofgaylord.org/",
+   "cathedral": "St. Mary, Our Lady of Mount Carmel Cathedral",
+   "ch": "gayl",
+   "gc": "gayl0",
+   "bishop": "Jeffrey Walsh",
+   "bishop_since": "2021-12-21",
+   "lon": -84.6833,
+   "lat": 45.0336,
+   "members": 78300,
+   "founded": 1970,
+   "slug": "diocese-of-gaylord"
+  },
+  {
+   "qid": "Q869219",
+   "name": "Diocese of Grand Rapids",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Michigan"
+   ],
+   "city": "Grand Rapids",
+   "website": "http://www.dioceseofgrandrapids.org/",
+   "cathedral": "Cathedral of Saint Andrew",
+   "ch": "gran",
+   "gc": "gran5",
+   "bishop": "David John Walkowiak",
+   "bishop_since": "2013-04-18",
+   "lon": -85.6672,
+   "lat": 42.958,
+   "members": 193600,
+   "founded": 1882,
+   "slug": "diocese-of-grand-rapids"
+  },
+  {
+   "qid": "Q870222",
+   "name": "Diocese of Kalamazoo",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Michigan"
+   ],
+   "city": "Kalamazoo",
+   "website": "https://www.dioceseofkalamazoo.org/",
+   "cathedral": "Cathedral of Saint Augustine",
+   "ch": "kala",
+   "gc": "kala0",
+   "bishop": "Edward Lohse",
+   "bishop_since": "2023-05-23",
+   "lon": -85.5914,
+   "lat": 42.2917,
+   "members": 95831,
+   "founded": 1970,
+   "slug": "diocese-of-kalamazoo"
+  },
+  {
+   "qid": "Q606208",
+   "name": "Diocese of Lansing",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Michigan"
+   ],
+   "city": "Lansing",
+   "website": "http://www.dioceseoflansing.org/",
+   "cathedral": "St. Mary Cathedral",
+   "ch": "lans",
+   "gc": "lans0",
+   "bishop": "Earl Alfred Boyea, Jr.",
+   "bishop_since": "2008-02-27",
+   "lon": -84.5561,
+   "lat": 42.7356,
+   "members": 191240,
+   "founded": 1937,
+   "slug": "diocese-of-lansing"
+  },
+  {
+   "qid": "Q872042",
+   "name": "Diocese of Marquette",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Michigan"
+   ],
+   "city": "Marquette",
+   "website": "http://www.dioceseofmarquette.org/",
+   "cathedral": "St. Peter Cathedral",
+   "ch": "marq",
+   "gc": "marq0",
+   "bishop": "John Francis Doerfler",
+   "bishop_since": "2013-12-17",
+   "lon": -87.3989,
+   "lat": 46.5411,
+   "members": 66001,
+   "founded": 1853,
+   "slug": "diocese-of-marquette"
+  },
+  {
+   "qid": "Q661676",
+   "name": "Diocese of Saginaw",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Michigan"
+   ],
+   "city": "Saginaw",
+   "website": "http://www.saginaw.org",
+   "cathedral": "Cathedral of Mary of the Assumption",
+   "ch": "sagi",
+   "gc": "sagi0",
+   "bishop": "Robert Dwayne Gruss",
+   "bishop_since": "2019-05-24",
+   "lon": -83.9368,
+   "lat": 43.4255,
+   "members": 153260,
+   "founded": 1938,
+   "slug": "diocese-of-saginaw"
+  },
+  {
+   "qid": "Q1365460",
+   "name": "Archdiocese of Saint Paul and Minneapolis",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Minnesota"
+   ],
+   "city": "Minneapolis–Saint Paul",
+   "website": "http://www.archspm.org/",
+   "cathedral": "Cathedral of Saint Paul, National Shrine of the Apostle Paul",
+   "ch": "stpa",
+   "gc": "zpau1",
+   "bishop": "Bernard Hebda",
+   "bishop_since": "2016-03-24",
+   "lon": -93.1089,
+   "lat": 44.9469,
+   "members": 870490,
+   "founded": 1850,
+   "slug": "archdiocese-of-saint-paul-and-minneapolis"
+  },
+  {
+   "qid": "Q868213",
+   "name": "Diocese of Crookston",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Minnesota"
+   ],
+   "city": "Crookston",
+   "website": "http://www.crookston.org/",
+   "cathedral": "Cathedral of the Immaculate Conception",
+   "ch": "croo",
+   "gc": "croo0",
+   "bishop": "Andrew H. Cozzens",
+   "bishop_since": "2021-10-18",
+   "lon": -96.5902,
+   "lat": 47.775,
+   "members": 35014,
+   "founded": 1909,
+   "slug": "diocese-of-crookston"
+  },
+  {
+   "qid": "Q868526",
+   "name": "Diocese of Duluth",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Minnesota"
+   ],
+   "city": "Duluth",
+   "website": "http://www.dioceseduluth.org/",
+   "cathedral": "Cathedral of Our Lady of the Rosary",
+   "ch": "dulu",
+   "gc": "dulu0",
+   "bishop": "Daniel Felton",
+   "bishop_since": "2021-04-07",
+   "lon": -92.067,
+   "lat": 46.816,
+   "members": 47414,
+   "founded": 1889,
+   "slug": "diocese-of-duluth"
+  },
+  {
+   "qid": "Q734749",
+   "name": "Diocese of New Ulm",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Minnesota"
+   ],
+   "city": "New Ulm",
+   "website": "http://www.dnu.org/",
+   "cathedral": "Cathedral of the Holy Trinity",
+   "ch": "newu",
+   "gc": "newu0",
+   "bishop": "Chad Zielinski",
+   "bishop_since": "2022-07-12",
+   "lon": -94.4682,
+   "lat": 44.3181,
+   "members": 51838,
+   "founded": 1957,
+   "slug": "diocese-of-new-ulm"
+  },
+  {
+   "qid": "Q875410",
+   "name": "Diocese of Saint Cloud",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Minnesota"
+   ],
+   "city": "St. Cloud",
+   "website": "http://www.StCloudDiocese.org/",
+   "cathedral": "Cathedral of Saint Mary",
+   "ch": "stcl",
+   "gc": "zclo0",
+   "bishop": "Patrick Neary",
+   "bishop_since": "2022-12-15",
+   "lon": -94.1611,
+   "lat": 45.5586,
+   "members": 133215,
+   "founded": 1875,
+   "slug": "diocese-of-saint-cloud"
+  },
+  {
+   "qid": "Q878090",
+   "name": "Diocese of Winona–Rochester",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Minnesota"
+   ],
+   "city": "Winona",
+   "website": "http://www.dow.org/",
+   "cathedral": "Cathedral of the Sacred Heart",
+   "ch": "wino",
+   "gc": "wino0",
+   "bishop": "Robert Barron",
+   "bishop_since": "2022-06-02",
+   "lon": -91.6394,
+   "lat": 44.0483,
+   "founded": 1889,
+   "slug": "diocese-of-winona-rochester"
+  },
+  {
+   "qid": "Q867173",
+   "name": "Diocese of Biloxi",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Mississippi"
+   ],
+   "city": "Biloxi",
+   "website": "http://www.biloxidiocese.org/",
+   "cathedral": "Cathedral of the Nativity of the Blessed Virgin Mary",
+   "ch": "bilo",
+   "gc": "bilo0",
+   "bishop": "Louis Frederick Kihneman",
+   "bishop_since": "2016-12-16",
+   "lon": -88.8911,
+   "lat": 30.3969,
+   "members": 59643,
+   "founded": 1977,
+   "slug": "diocese-of-biloxi"
+  },
+  {
+   "qid": "Q533135",
+   "name": "Diocese of Jackson",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Mississippi"
+   ],
+   "city": "Jackson",
+   "website": "http://www.jacksondiocese.org/",
+   "cathedral": "Cathedral of St. Peter the Apostle",
+   "ch": "jack",
+   "gc": "jack0",
+   "bishop": "Joseph R. Kopacz",
+   "bishop_since": "2013-12-12",
+   "lon": -90.1842,
+   "lat": 32.3011,
+   "members": 43865,
+   "founded": 1826,
+   "slug": "diocese-of-jackson"
+  },
+  {
+   "qid": "Q1362849",
+   "name": "Archdiocese of St. Louis",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Missouri"
+   ],
+   "city": "St. Louis",
+   "website": "http://www.archstl.org/",
+   "cathedral": "Cathedral Basilica of Saint Louis",
+   "ch": "stlo",
+   "gc": "zlou0",
+   "bishop": "Mitchell T. Rozanski",
+   "bishop_since": "2020-06-10",
+   "lon": -90.2546,
+   "lat": 38.6425,
+   "members": 514178,
+   "founded": 1826,
+   "slug": "archdiocese-of-st-louis"
+  },
+  {
+   "qid": "Q575987",
+   "name": "Diocese of Jefferson City",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Missouri"
+   ],
+   "city": "Jefferson City",
+   "website": "http://www.diojeffcity.org",
+   "cathedral": "Cathedral of Saint Joseph",
+   "ch": "jeff",
+   "gc": "jeff0",
+   "bishop": "Ralph O'Donnell",
+   "bishop_since": "2025-08-19",
+   "lon": -92.2103,
+   "lat": 38.5917,
+   "members": 76755,
+   "founded": 1956,
+   "slug": "diocese-of-jefferson-city"
+  },
+  {
+   "qid": "Q870329",
+   "name": "Diocese of Kansas City–Saint Joseph",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Missouri"
+   ],
+   "city": "Kansas City",
+   "website": "https://kcsjcatholic.org/",
+   "cathedral": "Cathedral of St. Joseph",
+   "ch": "kcmo",
+   "gc": "kans1",
+   "bishop": "James Vann Johnston, Jr.",
+   "bishop_since": "2015-09-15",
+   "lon": -94.8483,
+   "lat": 39.7708,
+   "members": 130940,
+   "founded": 1880,
+   "slug": "diocese-of-kansas-city-saint-joseph"
+  },
+  {
+   "qid": "Q119608",
+   "name": "Diocese of Springfield–Cape Girardeau",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Missouri"
+   ],
+   "city": "Springfield",
+   "website": "http://home.catholicweb.com/diocspfdcape/index.cfm",
+   "cathedral": "St. Agnes Cathedral",
+   "ch": "spmo",
+   "gc": "spri2",
+   "bishop": "Edward M. Rice",
+   "bishop_since": "2016-04-26",
+   "lon": -93.29,
+   "lat": 37.2041,
+   "members": 64145,
+   "founded": 1956,
+   "slug": "diocese-of-springfield-cape-girardeau"
+  },
+  {
+   "qid": "Q45511",
+   "name": "Diocese of Great Falls–Billings",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Montana"
+   ],
+   "city": "Great Falls",
+   "website": "https://diocesegfb.org/",
+   "cathedral": "St. Ann's Cathedral",
+   "ch": "grea",
+   "gc": "grea0",
+   "bishop": "Jeffrey M. Fleming",
+   "bishop_since": "2023-08-22",
+   "lon": -111.2954,
+   "lat": 47.5087,
+   "members": 37400,
+   "founded": 1904,
+   "slug": "diocese-of-great-falls-billings"
+  },
+  {
+   "qid": "Q774257",
+   "name": "Diocese of Helena",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Montana"
+   ],
+   "city": "Helena",
+   "website": "http://www.diocesehelena.org/",
+   "cathedral": "Cathedral of Saint Helena",
+   "ch": "hele",
+   "gc": "hele0",
+   "bishop": "Austin Vetter",
+   "bishop_since": "2019-10-08",
+   "lon": -112.0336,
+   "lat": 46.5901,
+   "members": 45940,
+   "founded": 1884,
+   "slug": "diocese-of-helena"
+  },
+  {
+   "qid": "Q1232425",
+   "name": "Archdiocese of Omaha",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Nebraska"
+   ],
+   "city": "Omaha",
+   "website": "http://www.archomaha.org/",
+   "cathedral": "St. Cecilia Cathedral",
+   "ch": "omah",
+   "gc": "omah0",
+   "bishop": "Michael McGovern",
+   "bishop_since": "2025-03-31",
+   "lon": -95.9722,
+   "lat": 41.2664,
+   "members": 240184,
+   "founded": 1857,
+   "slug": "archdiocese-of-omaha"
+  },
+  {
+   "qid": "Q488992",
+   "name": "Diocese of Grand Island",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Nebraska"
+   ],
+   "city": "Grand Island",
+   "website": "https://gidiocese.org/",
+   "cathedral": "Cathedral of the Nativity of the Blessed Virgin Mary (Grand Island, Nebraska)",
+   "ch": "gris",
+   "gc": "gran4",
+   "bishop": "Joseph G. Hanefeldt",
+   "bishop_since": "2015-01-14",
+   "lon": -98.3422,
+   "lat": 40.9211,
+   "members": 58250,
+   "founded": 1912,
+   "slug": "diocese-of-grand-island"
+  },
+  {
+   "qid": "Q514274",
+   "name": "Diocese of Lincoln",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Nebraska"
+   ],
+   "city": "Lincoln",
+   "website": "http://www.dioceseoflincoln.org/",
+   "cathedral": "Cathedral of the Risen Christ",
+   "ch": "linc",
+   "gc": "linc0",
+   "bishop": "James D. Conley",
+   "bishop_since": "2012-09-14",
+   "lon": -96.67,
+   "lat": 40.7803,
+   "members": 97090,
+   "founded": 1887,
+   "slug": "diocese-of-lincoln"
+  },
+  {
+   "qid": "Q871082",
+   "name": "Archdiocese of Las Vegas",
+   "types": [
+    "Roman Catholic archdiocese"
+   ],
+   "states": [
+    "Nevada"
+   ],
+   "city": "Las Vegas",
+   "website": "https://lvcatholic.org/",
+   "cathedral": "Guardian Angel Cathedral",
+   "ch": "lasv",
+   "gc": "lasv0",
+   "bishop": "George Leo Thomas",
+   "bishop_since": "2018-02-28",
+   "lon": -115.164,
+   "lat": 36.1306,
+   "members": 574000,
+   "founded": 2023,
+   "slug": "archdiocese-of-las-vegas"
+  },
+  {
+   "qid": "Q971745",
+   "name": "Diocese of Reno",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Nevada"
+   ],
+   "city": "Reno",
+   "website": "http://www.catholicreno.org/",
+   "cathedral": "Saint Thomas Aquinas Cathedral",
+   "ch": "reno",
+   "gc": "reno0",
+   "bishop": "Daniel Henry Mueggenborg",
+   "bishop_since": "2021-07-20",
+   "lon": -119.817,
+   "lat": 39.5261,
+   "members": 106965,
+   "founded": 1931,
+   "slug": "diocese-of-reno"
+  },
+  {
+   "qid": "Q871882",
+   "name": "Diocese of Manchester",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "New Hampshire"
+   ],
+   "city": "Manchester",
+   "website": "https://www.catholicnh.org/",
+   "cathedral": "Cathedral of St. Joseph",
+   "ch": "manc",
+   "gc": "manc0",
+   "bishop": "Peter Anthony Libasci",
+   "bishop_since": "2011-09-19",
+   "lon": -71.4589,
+   "lat": 42.9933,
+   "members": 330160,
+   "founded": 1884,
+   "slug": "diocese-of-manchester"
+  },
+  {
+   "qid": "Q1365140",
+   "name": "Archdiocese of Newark",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "New Jersey"
+   ],
+   "city": "Newark",
+   "website": "http://www.rcan.org/",
+   "cathedral": "Cathedral Basilica of the Sacred Heart",
+   "ch": "newa",
+   "gc": "newa0",
+   "bishop": "Joseph William Tobin",
+   "bishop_since": "2016-11-07",
+   "lon": -74.1784,
+   "lat": 40.7549,
+   "members": 1501530,
+   "founded": 1853,
+   "slug": "archdiocese-of-newark"
+  },
+  {
+   "qid": "Q127479",
+   "name": "Byzantine Catholic Eparchy of Passaic",
+   "types": [
+    "Greek-Catholic diocese"
+   ],
+   "states": [
+    "New Jersey"
+   ],
+   "city": "Passaic",
+   "website": "http://eparchyofpassaic.com/",
+   "cathedral": "Cathedral of St. Michael the Archangel",
+   "ch": "psru",
+   "gc": "pass0",
+   "bishop": "Kurt Burnette",
+   "bishop_since": "2013-10-29",
+   "lon": -74.1174,
+   "lat": 40.865,
+   "members": 11303,
+   "founded": 1963,
+   "slug": "byzantine-catholic-eparchy-of-passaic"
+  },
+  {
+   "qid": "Q867588",
+   "name": "Diocese of Camden",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "New Jersey"
+   ],
+   "city": "Camden",
+   "website": "http://www.camdendiocese.org",
+   "cathedral": "Cathedral of the Immaculate Conception",
+   "ch": "camd",
+   "gc": "camd0",
+   "bishop": "Joseph Andrew Williams",
+   "bishop_since": "2025-03-17",
+   "lon": -75.1189,
+   "lat": 39.9447,
+   "members": 493101,
+   "founded": 1937,
+   "slug": "diocese-of-camden"
+  },
+  {
+   "qid": "Q646346",
+   "name": "Diocese of Metuchen",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "New Jersey"
+   ],
+   "city": "Metuchen",
+   "website": "https://diometuchen.org/",
+   "cathedral": "St. Francis of Assisi Cathedral",
+   "ch": "metu",
+   "gc": "metu0",
+   "bishop": "Michael Arsenio Saporito",
+   "bishop_since": "2026-09-15",
+   "lon": -74.3631,
+   "lat": 40.5455,
+   "members": 636728,
+   "founded": 1981,
+   "slug": "diocese-of-metuchen"
+  },
+  {
+   "qid": "Q164614",
+   "name": "Diocese of Paterson",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "New Jersey"
+   ],
+   "city": "Paterson",
+   "website": "http://www.patersondiocese.org/",
+   "cathedral": "Cathedral of St. John the Baptist",
+   "ch": "pate",
+   "gc": "pate0",
+   "bishop": "Kevin Sweeney",
+   "bishop_since": "2020-04-15",
+   "lon": -74.1725,
+   "lat": 40.9128,
+   "members": 433000,
+   "founded": 1937,
+   "slug": "diocese-of-paterson"
+  },
+  {
+   "qid": "Q877475",
+   "name": "Diocese of Trenton",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "New Jersey"
+   ],
+   "city": "Trenton",
+   "website": "http://www.dioceseoftrenton.org/",
+   "cathedral": "Cathedral of St. Mary of the Assumption",
+   "ch": "tren",
+   "gc": "tren1",
+   "bishop": "David M. O'Connell",
+   "bishop_since": "2010-12-01",
+   "lon": -74.7653,
+   "lat": 40.2225,
+   "members": 881125,
+   "founded": 1881,
+   "slug": "diocese-of-trenton"
+  },
+  {
+   "qid": "Q534749",
+   "name": "Syriac Catholic Eparchy of Our Lady of Deliverance in the United States",
+   "types": [
+    "Catholic eparchy",
+    "Ecclesiastical circumscription immediately subject to the Holy See"
+   ],
+   "states": [
+    "New Jersey"
+   ],
+   "city": "Newark",
+   "website": "http://www.SyriacCatholic.us",
+   "cathedral": "St. Joseph Cathedral",
+   "ch": "nesy",
+   "gc": "olde0",
+   "bishop": "Yousif Habash",
+   "bishop_since": "2010-04-12",
+   "lon": -74.1151,
+   "lat": 40.6644,
+   "members": 11857,
+   "founded": 1995,
+   "slug": "syriac-catholic-eparchy-of-our-lady-of-deliverance-in-the-united-states"
+  },
+  {
+   "qid": "Q1365503",
+   "name": "Archdiocese of Santa Fe",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "New Mexico"
+   ],
+   "city": "Santa Fe",
+   "website": "http://www.archdiosf.org/",
+   "cathedral": "Cathedral Basilica of Saint Francis of Assisi",
+   "ch": "snfe",
+   "gc": "zfez0",
+   "bishop": "John Charles Wester",
+   "bishop_since": "2015-04-27",
+   "lon": -105.936,
+   "lat": 35.6865,
+   "members": 327964,
+   "founded": 1875,
+   "slug": "archdiocese-of-santa-fe"
+  },
+  {
+   "qid": "Q869028",
+   "name": "Diocese of Gallup",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "New Mexico"
+   ],
+   "city": "Gallup",
+   "website": "https://dioceseofgallup.org/",
+   "cathedral": "Sacred Heart Cathedral",
+   "ch": "gall",
+   "gc": "gall2",
+   "bishop": "James S. Wall",
+   "bishop_since": "2009-02-05",
+   "lon": -108.736,
+   "lat": 35.5253,
+   "members": 65700,
+   "founded": 1939,
+   "slug": "diocese-of-gallup"
+  },
+  {
+   "qid": "Q871071",
+   "name": "Diocese of Las Cruces",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "New Mexico"
+   ],
+   "city": "Las Cruces",
+   "website": "http://www.dioceseoflascruces.org/",
+   "cathedral": "Cathedral of the Immaculate Heart of Mary",
+   "ch": "lasc",
+   "gc": "lasc0",
+   "bishop": "Peter Baldacchino",
+   "bishop_since": "2019-05-15",
+   "lon": -106.766,
+   "lat": 32.2993,
+   "members": 241900,
+   "founded": 1982,
+   "slug": "diocese-of-las-cruces"
+  },
+  {
+   "qid": "Q1365153",
+   "name": "Archdiocese of New York",
+   "types": [
+    "Diocese of the Catholic Church",
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "New York"
+   ],
+   "city": "New York City",
+   "website": "https://archny.org/",
+   "cathedral": "St. Patrick's Cathedral",
+   "ch": "newy",
+   "gc": "newy0",
+   "bishop": "Ronald Hicks",
+   "bishop_since": "2025-12-18",
+   "lon": -73.9764,
+   "lat": 40.7586,
+   "members": 2807298,
+   "founded": 1808,
+   "slug": "archdiocese-of-new-york"
+  },
+  {
+   "qid": "Q866789",
+   "name": "Diocese of Albany",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "New York"
+   ],
+   "city": "Albany",
+   "website": "http://www.rcda.org",
+   "cathedral": "Cathedral of the Immaculate Conception",
+   "ch": "albn",
+   "gc": "alba4",
+   "bishop": "Mark O'Connell",
+   "bishop_since": "2025-10-20",
+   "lon": -73.7597,
+   "lat": 42.6475,
+   "members": 300000,
+   "founded": 1847,
+   "slug": "diocese-of-albany"
+  },
+  {
+   "qid": "Q867353",
+   "name": "Diocese of Brooklyn",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "New York"
+   ],
+   "city": "Brooklyn",
+   "website": "https://dioceseofbrooklyn.org/",
+   "cathedral": "Cathedral Basilica of St. James",
+   "ch": "broo",
+   "gc": "broo0",
+   "bishop": "Robert J. Brennan",
+   "bishop_since": "2021-09-29",
+   "lon": -73.9867,
+   "lat": 40.6971,
+   "members": 1500000,
+   "founded": 1853,
+   "slug": "diocese-of-brooklyn"
+  },
+  {
+   "qid": "Q867424",
+   "name": "Diocese of Buffalo",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "New York"
+   ],
+   "city": "Buffalo",
+   "website": "https://www.buffalodiocese.org/",
+   "cathedral": "St. Joseph Cathedral in Buffalo",
+   "ch": "buff",
+   "gc": "buff0",
+   "bishop": "Michael William Fisher",
+   "bishop_since": "2020-12-01",
+   "lon": -78.8782,
+   "lat": 42.8828,
+   "members": 727125,
+   "founded": 1847,
+   "slug": "diocese-of-buffalo"
+  },
+  {
+   "qid": "Q873415",
+   "name": "Diocese of Ogdensburg",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "New York"
+   ],
+   "city": "Ogdensburg",
+   "website": "http://www.dioogdensburg.org",
+   "cathedral": "Cathedral of St. Mary",
+   "ch": "ogde",
+   "gc": "ogde0",
+   "bishop": "Terry R. LaValley",
+   "bishop_since": "2010-02-23",
+   "lon": -75.4856,
+   "lat": 44.6989,
+   "members": 86182,
+   "founded": 1872,
+   "slug": "diocese-of-ogdensburg"
+  },
+  {
+   "qid": "Q875042",
+   "name": "Diocese of Rochester",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "New York"
+   ],
+   "city": "Rochester",
+   "website": "http://www.dor.org",
+   "cathedral": "Sacred Heart Cathedral",
+   "ch": "roch",
+   "gc": "roch0",
+   "bishop": "John Bonnici",
+   "bishop_since": "2026-01-07",
+   "lon": -77.6327,
+   "lat": 43.1931,
+   "members": 372000,
+   "founded": 1868,
+   "slug": "diocese-of-rochester"
+  },
+  {
+   "qid": "Q257922",
+   "name": "Diocese of Rockville Centre",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "New York"
+   ],
+   "city": "Rockville Centre",
+   "website": "http://www.drvc.org",
+   "cathedral": "St. Agnes Cathedral",
+   "ch": "rcny",
+   "gc": "rock2",
+   "bishop": "John Oliver Barres",
+   "bishop_since": "2016-12-09",
+   "lon": -73.6463,
+   "lat": 40.6598,
+   "members": 1796000,
+   "founded": 1957,
+   "slug": "diocese-of-rockville-centre"
+  },
+  {
+   "qid": "Q876907",
+   "name": "Diocese of Syracuse",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "New York"
+   ],
+   "city": "Syracuse",
+   "website": "http://www.syrdio.org",
+   "cathedral": "Cathedral of the Immaculate Conception",
+   "ch": "syra",
+   "gc": "syra0",
+   "bishop": "Douglas Lucia",
+   "bishop_since": "2019-06-04",
+   "lon": -76.1497,
+   "lat": 43.047,
+   "members": 234724,
+   "founded": 1886,
+   "slug": "diocese-of-syracuse"
+  },
+  {
+   "qid": "Q1077570",
+   "name": "Eparchy of St. Maron of Brooklyn",
+   "types": [
+    "Catholic eparchy",
+    "Ecclesiastical circumscription immediately subject to the Holy See"
+   ],
+   "states": [
+    "New York"
+   ],
+   "city": "New York City",
+   "website": "http://www.stmaron.org/",
+   "cathedral": "Our Lady of Lebanon Maronite Cathedral",
+   "ch": "brma",
+   "gc": "zmar0",
+   "bishop": "Gregory John Mansour",
+   "bishop_since": "2004-01-10",
+   "lon": -73.9942,
+   "lat": 40.6942,
+   "members": 35000,
+   "slug": "eparchy-of-st-maron-of-brooklyn"
+  },
+  {
+   "qid": "Q867825",
+   "name": "Diocese of Charlotte",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "North Carolina"
+   ],
+   "city": "Charlotte",
+   "website": "http://charlottediocese.org/",
+   "cathedral": "Cathedral of Saint Patrick",
+   "ch": "chan",
+   "gc": "char1",
+   "bishop": "Michael Martin",
+   "bishop_since": "2024-04-09",
+   "lon": -80.8457,
+   "lat": 35.2054,
+   "members": 285655,
+   "founded": 1971,
+   "slug": "diocese-of-charlotte"
+  },
+  {
+   "qid": "Q874866",
+   "name": "Diocese of Raleigh",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "North Carolina"
+   ],
+   "city": "Raleigh",
+   "website": "http://www.dioceseofraleigh.org/",
+   "cathedral": "Sacred Heart Cathedral",
+   "ch": "rale",
+   "gc": "rale0",
+   "bishop": "Luis Rafael Zarama",
+   "bishop_since": "2017-07-05",
+   "lon": -78.6419,
+   "lat": 35.7808,
+   "members": 232588,
+   "founded": 1868,
+   "slug": "diocese-of-raleigh"
+  },
+  {
+   "qid": "Q867190",
+   "name": "Diocese of Bismarck",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "North Dakota"
+   ],
+   "city": "Bismarck",
+   "website": "http://bismarckdiocese.com/",
+   "cathedral": "Cathedral of the Holy Spirit",
+   "ch": "bism",
+   "gc": "bism0",
+   "bishop": "David Kagan",
+   "bishop_since": "2011-10-19",
+   "lon": -100.796,
+   "lat": 46.8099,
+   "members": 60342,
+   "founded": 1909,
+   "slug": "diocese-of-bismarck"
+  },
+  {
+   "qid": "Q186897",
+   "name": "Diocese of Fargo",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "North Dakota"
+   ],
+   "city": "Fargo",
+   "website": "http://www.fargodiocese.org/",
+   "cathedral": "Cathedral of St. Mary",
+   "ch": "farg",
+   "gc": "farg0",
+   "bishop": "John Folda",
+   "bishop_since": "2013-04-08",
+   "lon": -96.788,
+   "lat": 46.8824,
+   "members": 73434,
+   "founded": 1889,
+   "slug": "diocese-of-fargo"
+  },
+  {
+   "qid": "Q1364360",
+   "name": "Archdiocese of Cincinnati",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Ohio"
+   ],
+   "city": "Cincinnati",
+   "website": "https://catholicaoc.org/",
+   "cathedral": "Cathedral Basilica of St. Peter in Chains",
+   "ch": "cinc",
+   "gc": "cinc0",
+   "bishop": "Robert Gerald Casey",
+   "bishop_since": "2025-02-12",
+   "lon": -84.5189,
+   "lat": 39.1036,
+   "members": 451045,
+   "founded": 1850,
+   "slug": "archdiocese-of-cincinnati"
+  },
+  {
+   "qid": "Q1346598",
+   "name": "Byzantine Catholic Eparchy of Parma",
+   "types": [
+    "Greek-Catholic diocese"
+   ],
+   "states": [
+    "Ohio"
+   ],
+   "city": "Parma",
+   "website": "http://www.parma.org/",
+   "cathedral": "Cathedral of St. John the Baptist",
+   "ch": "paru",
+   "gc": "parm1",
+   "bishop": "Robert Mark Pipta",
+   "bishop_since": "2023-08-31",
+   "lon": -81.7236,
+   "lat": 41.4122,
+   "members": 9280,
+   "founded": 1969,
+   "slug": "byzantine-catholic-eparchy-of-parma"
+  },
+  {
+   "qid": "Q389865",
+   "name": "Diocese of Cleveland",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Ohio"
+   ],
+   "city": "Cleveland",
+   "website": "http://www.dioceseofcleveland.org",
+   "cathedral": "Cathedral of St. John the Evangelist",
+   "ch": "clev",
+   "gc": "clev0",
+   "bishop": "Edward Malesic",
+   "bishop_since": "2020-07-16",
+   "lon": -81.6884,
+   "lat": 41.5028,
+   "members": 674660,
+   "founded": 1847,
+   "slug": "diocese-of-cleveland"
+  },
+  {
+   "qid": "Q868108",
+   "name": "Diocese of Columbus",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Ohio"
+   ],
+   "city": "Columbus",
+   "website": "http://www.colsdioc.org",
+   "cathedral": "St. Joseph Cathedral",
+   "ch": "colu",
+   "gc": "colu0",
+   "bishop": "Earl K. Fernandes",
+   "bishop_since": "2022-04-02",
+   "lon": -82.9947,
+   "lat": 39.9633,
+   "members": 280878,
+   "founded": 1868,
+   "slug": "diocese-of-columbus"
+  },
+  {
+   "qid": "Q876762",
+   "name": "Diocese of Steubenville",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Ohio"
+   ],
+   "city": "Steubenville",
+   "website": "http://www.diosteub.org/index.cfm",
+   "cathedral": "Holy Name Cathedral",
+   "ch": "steu",
+   "gc": "steu0",
+   "lon": -80.6195,
+   "lat": 40.3555,
+   "members": 35232,
+   "founded": 1944,
+   "slug": "diocese-of-steubenville"
+  },
+  {
+   "qid": "Q877390",
+   "name": "Diocese of Toledo in America",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Ohio"
+   ],
+   "city": "Toledo",
+   "website": "http://www.toledodiocese.org",
+   "cathedral": "Rosary Cathedral",
+   "ch": "tole",
+   "gc": "tole1",
+   "bishop": "Daniel Edward Thomas",
+   "bishop_since": "2014-08-26",
+   "lon": -83.5561,
+   "lat": 41.6725,
+   "members": 328502,
+   "founded": 1910,
+   "slug": "diocese-of-toledo-in-america"
+  },
+  {
+   "qid": "Q878322",
+   "name": "Diocese of Youngstown",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Ohio"
+   ],
+   "city": "Youngstown",
+   "website": "https://doy.org/",
+   "cathedral": "St. Columba Cathedral",
+   "ch": "youn",
+   "gc": "youn0",
+   "bishop": "David Bonnar",
+   "bishop_since": "2020-11-17",
+   "lon": -80.651,
+   "lat": 41.1032,
+   "members": 173900,
+   "founded": 1943,
+   "slug": "diocese-of-youngstown"
+  },
+  {
+   "qid": "Q1346614",
+   "name": "Romanian Catholic Eparchy of St George's in Canton",
+   "types": [
+    "Greek-Catholic diocese"
+   ],
+   "states": [
+    "Ohio"
+   ],
+   "city": "Canton",
+   "website": "http://romaniancatholic.org/",
+   "cathedral": "St. George Cathedral",
+   "ch": "cnro",
+   "gc": "zgeo1",
+   "bishop": "John Michael Botean",
+   "bishop_since": "1996-03-29",
+   "lon": -81.3597,
+   "lat": 40.8458,
+   "members": 6200,
+   "founded": 1987,
+   "slug": "romanian-catholic-eparchy-of-st-georges-in-canton"
+  },
+  {
+   "qid": "Q1346620",
+   "name": "Ukrainian Catholic Eparchy of Saint Josaphat in Parma",
+   "types": [
+    "Greek-Catholic diocese"
+   ],
+   "states": [
+    "Ohio"
+   ],
+   "city": "Parma",
+   "website": "http://www.stjosaphateparchy.org/",
+   "cathedral": "St. Josaphat's Ukrainian Catholic Cathedral",
+   "ch": "pauk",
+   "gc": "zjos7",
+   "bishop": "Bohdan Danylo",
+   "bishop_since": "",
+   "lon": -81.7111,
+   "lat": 41.4067,
+   "members": 10701,
+   "founded": 1983,
+   "slug": "ukrainian-catholic-eparchy-of-saint-josaphat-in-parma"
+  },
+  {
+   "qid": "Q1365176",
+   "name": "Archdiocese of Oklahoma City",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Oklahoma"
+   ],
+   "city": "Oklahoma City",
+   "website": "http://ArchOKC.org/",
+   "cathedral": "Cathedral of Our Lady of Perpetual Help",
+   "ch": "okla",
+   "gc": "okla0",
+   "bishop": "Paul Stagg Coakley",
+   "bishop_since": "2010-12-16",
+   "lon": -97.5314,
+   "lat": 35.5026,
+   "members": 125000,
+   "founded": 1876,
+   "slug": "archdiocese-of-oklahoma-city"
+  },
+  {
+   "qid": "Q877594",
+   "name": "Roman Catholic Diocese of Tulsa",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Oklahoma"
+   ],
+   "city": "Tulsa",
+   "website": "http://www.dioceseoftulsa.org/",
+   "cathedral": "Holy Family Cathedral",
+   "ch": "tuls",
+   "gc": "tuls0",
+   "bishop": "David Konderla",
+   "bishop_since": "2016-05-13",
+   "lon": -95.99,
+   "lat": 36.1478,
+   "members": 60825,
+   "founded": 1972,
+   "slug": "diocese-of-tulsa"
+  },
+  {
+   "qid": "Q45525",
+   "name": "Archdiocese of Portland in Oregon",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Oregon"
+   ],
+   "city": "Portland",
+   "website": "http://www.archdpdx.org/",
+   "cathedral": "St. Mary's Cathedral",
+   "ch": "port",
+   "gc": "port1",
+   "bishop": "Alexander King Sample",
+   "bishop_since": "2013-01-29",
+   "lon": -122.689,
+   "lat": 45.5241,
+   "members": 467610,
+   "founded": 1843,
+   "slug": "archdiocese-of-portland-in-oregon"
+  },
+  {
+   "qid": "Q661625",
+   "name": "Diocese of Baker",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Oregon"
+   ],
+   "city": "Bend",
+   "website": "http://www.dioceseofbaker.org/",
+   "cathedral": "Cathedral of Saint Francis de Sales",
+   "ch": "bake",
+   "gc": "bake0",
+   "bishop": "Thomas Hennen",
+   "bishop_since": "2012-07-10",
+   "lon": -117.831,
+   "lat": 44.7794,
+   "members": 37000,
+   "founded": 1903,
+   "slug": "diocese-of-baker"
+  },
+  {
+   "qid": "Q1365314",
+   "name": "Archdiocese of Philadelphia",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Pennsylvania"
+   ],
+   "city": "Philadelphia",
+   "website": "https://archphila.org/",
+   "cathedral": "Cathedral Basilica of Saints Peter and Paul",
+   "ch": "phil",
+   "gc": "phil0",
+   "bishop": "Nelson J. Perez",
+   "bishop_since": "2020-01-23",
+   "lon": -75.1686,
+   "lat": 39.9575,
+   "members": 1437400,
+   "founded": 1875,
+   "slug": "archdiocese-of-philadelphia"
+  },
+  {
+   "qid": "Q1366055",
+   "name": "Byzantine Catholic Archeparchy of Pittsburgh",
+   "types": [
+    "Catholic Metropolitan Archieparchy"
+   ],
+   "states": [
+    "Pennsylvania"
+   ],
+   "city": "Pittsburgh",
+   "website": "http://www.archeparchy.org/",
+   "cathedral": "St. John the Baptist Byzantine Catholic Cathedral",
+   "ch": "piru",
+   "gc": "pitt0",
+   "bishop": "William C. Skurla",
+   "bishop_since": "2012-01-19",
+   "lon": -79.9153,
+   "lat": 40.3821,
+   "members": 57325,
+   "founded": 1924,
+   "slug": "byzantine-catholic-archeparchy-of-pittsburgh"
+  },
+  {
+   "qid": "Q866803",
+   "name": "Diocese of Allentown",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Pennsylvania"
+   ],
+   "city": "Allentown",
+   "website": "http://www.allentowndiocese.org",
+   "cathedral": "Cathedral of Saint Catharine of Siena",
+   "ch": "alle",
+   "gc": "alle0",
+   "bishop": "Alfred Andrew Schlert",
+   "bishop_since": "2017-06-27",
+   "lon": -75.4963,
+   "lat": 40.5989,
+   "members": 309540,
+   "founded": 1961,
+   "slug": "diocese-of-allentown"
+  },
+  {
+   "qid": "Q526146",
+   "name": "Diocese of Altoona–Johnstown",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Pennsylvania"
+   ],
+   "city": "Altoona",
+   "website": "http://www.ajdiocese.org",
+   "cathedral": "Cathedral of the Blessed Sacrament",
+   "ch": "alto",
+   "gc": "alto0",
+   "bishop": "Mark Leonard Bartchak",
+   "bishop_since": "2011-01-14",
+   "lon": -78.404,
+   "lat": 40.5158,
+   "members": 75468,
+   "founded": 1901,
+   "slug": "diocese-of-altoona-johnstown"
+  },
+  {
+   "qid": "Q868703",
+   "name": "Diocese of Erie",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Pennsylvania"
+   ],
+   "city": "Erie",
+   "website": "https://www.eriercd.org/",
+   "cathedral": "St. Peter Cathedral",
+   "ch": "erie",
+   "gc": "erie0",
+   "bishop": "Lawrence Thomas Persico",
+   "bishop_since": "2012-07-31",
+   "lon": -80.0869,
+   "lat": 42.1242,
+   "members": 198249,
+   "founded": 1853,
+   "slug": "diocese-of-erie"
+  },
+  {
+   "qid": "Q677036",
+   "name": "Diocese of Greensburg",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Pennsylvania"
+   ],
+   "city": "Greensburg",
+   "website": "http://www.dioceseofgreensburg.org",
+   "cathedral": "Cathedral of the Blessed Sacrament",
+   "ch": "grpa",
+   "gc": "gree1",
+   "bishop": "Larry Kulick",
+   "bishop_since": "2020-12-18",
+   "lon": -79.5461,
+   "lat": 40.3062,
+   "members": 133734,
+   "founded": 1951,
+   "slug": "diocese-of-greensburg"
+  },
+  {
+   "qid": "Q774171",
+   "name": "Diocese of Harrisburg",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Pennsylvania"
+   ],
+   "city": "Harrisburg",
+   "website": "http://www.hbgdiocese.org/",
+   "cathedral": "Cathedral of Saint Patrick",
+   "ch": "harr",
+   "gc": "harr0",
+   "bishop": "Timothy C. Senior",
+   "bishop_since": "2023-04-25",
+   "lon": -76.8864,
+   "lat": 40.2637,
+   "members": 247660,
+   "founded": 1868,
+   "slug": "diocese-of-harrisburg"
+  },
+  {
+   "qid": "Q599335",
+   "name": "Diocese of Pittsburgh",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Pennsylvania"
+   ],
+   "city": "Pittsburgh",
+   "website": "http://www.diopitt.org",
+   "cathedral": "Cathedral of Saint Paul",
+   "ch": "pitt",
+   "gc": "pitt1",
+   "bishop": "Mark Eckman",
+   "bishop_since": "2025-06-04",
+   "lon": -79.9498,
+   "lat": 40.4474,
+   "members": 630033,
+   "founded": 1843,
+   "slug": "diocese-of-pittsburgh"
+  },
+  {
+   "qid": "Q876314",
+   "name": "Roman Catholic Diocese of Scranton",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Pennsylvania"
+   ],
+   "city": "Scranton",
+   "website": "http://www.dioceseofscranton.org",
+   "cathedral": "St. Peter's Cathedral",
+   "ch": "scra",
+   "gc": "scra0",
+   "bishop": "Joseph Bambera",
+   "bishop_since": "2010-02-23",
+   "lon": -75.6639,
+   "lat": 41.4106,
+   "members": 276594,
+   "founded": 1868,
+   "slug": "diocese-of-scranton"
+  },
+  {
+   "qid": "Q1366058",
+   "name": "Ukrainian Catholic Archeparchy of Philadelphia",
+   "types": [
+    "Catholic Metropolitan Archieparchy"
+   ],
+   "states": [
+    "Pennsylvania"
+   ],
+   "city": "Philadelphia",
+   "website": "https://ukrcatholic.org/",
+   "cathedral": "Cathedral of the Immaculate Conception",
+   "ch": "phuk",
+   "gc": "phil1",
+   "bishop": "Borys Gudziak",
+   "bishop_since": "2019-02-18",
+   "lon": -75.1503,
+   "lat": 39.9664,
+   "members": 13141,
+   "founded": 1913,
+   "slug": "ukrainian-catholic-archeparchy-of-philadelphia"
+  },
+  {
+   "qid": "Q874598",
+   "name": "Diocese of Providence",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Rhode Island"
+   ],
+   "city": "Providence",
+   "website": "http://www.dioceseofprovidence.org",
+   "cathedral": "Cathedral of Saints Peter and Paul, Providence",
+   "ch": "prov",
+   "gc": "prov0",
+   "bishop": "Bruce Lewandowski",
+   "bishop_since": "2025-04-08",
+   "lon": -71.4169,
+   "lat": 41.8192,
+   "members": 623815,
+   "founded": 1872,
+   "slug": "diocese-of-providence"
+  },
+  {
+   "qid": "Q867824",
+   "name": "Diocese of Charleston",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "South Carolina"
+   ],
+   "city": "Charleston",
+   "website": "http://www.catholic-doc.org/",
+   "cathedral": "Cathedral of Saint John the Baptist",
+   "ch": "chas",
+   "gc": "char0",
+   "bishop": "Jacques Fabre",
+   "bishop_since": "2022-02-22",
+   "lon": -79.9345,
+   "lat": 32.7765,
+   "members": 196736,
+   "founded": 1820,
+   "slug": "diocese-of-charleston"
+  },
+  {
+   "qid": "Q874876",
+   "name": "Diocese of Rapid City",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "South Dakota"
+   ],
+   "city": "Rapid City",
+   "website": "http://www.rapidcitydiocese.org/",
+   "cathedral": "Cathedral of Our Lady of Perpetual Help",
+   "ch": "rapi",
+   "gc": "rapi0",
+   "bishop": "Scott Bullock",
+   "bishop_since": "2024-06-25",
+   "lon": -103.227,
+   "lat": 44.0597,
+   "members": 24240,
+   "founded": 1902,
+   "slug": "diocese-of-rapid-city"
+  },
+  {
+   "qid": "Q876580",
+   "name": "Diocese of Sioux Falls",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "South Dakota"
+   ],
+   "city": "Sioux Falls",
+   "website": "http://www.diocese-of-sioux-falls.org/",
+   "cathedral": "St. Joseph Cathedral",
+   "ch": "siof",
+   "gc": "siou1",
+   "bishop": "Donald Edward DeGrood",
+   "bishop_since": "2019-12-12",
+   "lon": -96.7345,
+   "lat": 43.5529,
+   "members": 114985,
+   "founded": 1889,
+   "slug": "diocese-of-sioux-falls"
+  },
+  {
+   "qid": "Q137731",
+   "name": "Diocese of Knoxville",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Tennessee"
+   ],
+   "city": "Knoxville",
+   "website": "http://www.dioceseofknoxville.org/",
+   "cathedral": "Sacred Heart Cathedral",
+   "ch": "knox",
+   "gc": "knox0",
+   "bishop": "James Mark Beckman",
+   "bishop_since": "2024-05-07",
+   "lon": -84.0,
+   "lat": 35.9261,
+   "members": 73420,
+   "founded": 1988,
+   "slug": "diocese-of-knoxville"
+  },
+  {
+   "qid": "Q872288",
+   "name": "Diocese of Memphis",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Tennessee"
+   ],
+   "city": "Memphis",
+   "website": "http://www.cdom.org/",
+   "cathedral": "Cathedral of the Immaculate Conception",
+   "ch": "memp",
+   "gc": "memp0",
+   "bishop": "David Talley",
+   "bishop_since": "2019-03-05",
+   "lon": -90.0053,
+   "lat": 35.1258,
+   "members": 60740,
+   "founded": 1970,
+   "slug": "diocese-of-memphis"
+  },
+  {
+   "qid": "Q872926",
+   "name": "Diocese of Nashville",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Tennessee"
+   ],
+   "city": "Nashville",
+   "website": "http://www.dioceseofnashville.com/",
+   "cathedral": "Cathedral of the Incarnation",
+   "ch": "nash",
+   "gc": "nash1",
+   "bishop": "Mark Spalding",
+   "bishop_since": "2017-11-21",
+   "lon": -86.7996,
+   "lat": 36.1508,
+   "members": 85600,
+   "founded": 1837,
+   "slug": "diocese-of-nashville"
+  },
+  {
+   "qid": "Q538791",
+   "name": "Archdiocese of Galveston–Houston",
+   "types": [
+    "Diocese of the Catholic Church",
+    "Roman Catholic metropolitan archdiocese",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Texas"
+   ],
+   "city": "Houston",
+   "website": "https://www.archgh.org/",
+   "cathedral": "St. Mary Cathedral Basilica",
+   "ch": "galv",
+   "gc": "galv0",
+   "bishop": "Joe S. Vasquez",
+   "bishop_since": "2025-01-20",
+   "lon": -94.7905,
+   "lat": 29.3041,
+   "members": 1804100,
+   "founded": 1847,
+   "slug": "archdiocese-of-galveston-houston"
+  },
+  {
+   "qid": "Q974950",
+   "name": "Archdiocese of San Antonio",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Texas"
+   ],
+   "website": "http://www.archsa.org/",
+   "cathedral": "Cathedral of San Fernando",
+   "ch": "snan",
+   "gc": "zant0",
+   "bishop": "Gustavo García-Siller",
+   "bishop_since": "2010-10-14",
+   "lon": -98.494,
+   "lat": 29.4245,
+   "members": 764244,
+   "founded": 1926,
+   "slug": "archdiocese-of-san-antonio"
+  },
+  {
+   "qid": "Q866821",
+   "name": "Diocese of Amarillo",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Texas"
+   ],
+   "city": "Amarillo",
+   "website": "https://www.amarillodiocese.org/",
+   "cathedral": "St. Mary’s Cathedral",
+   "ch": "amar",
+   "gc": "amar0",
+   "bishop": "Patrick Zurek",
+   "bishop_since": "",
+   "lon": -101.849,
+   "lat": 35.2028,
+   "members": 42092,
+   "founded": 1926,
+   "slug": "diocese-of-amarillo"
+  },
+  {
+   "qid": "Q866944",
+   "name": "Diocese of Austin",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Texas"
+   ],
+   "city": "Austin",
+   "website": "http://www.austindiocese.org",
+   "cathedral": "Cathedral of Saint Mary",
+   "ch": "aust",
+   "gc": "aust0",
+   "bishop": "Daniel E. Garcia",
+   "bishop_since": "2025-07-02",
+   "lon": -97.74,
+   "lat": 30.2711,
+   "members": 598292,
+   "founded": 1947,
+   "slug": "diocese-of-austin"
+  },
+  {
+   "qid": "Q652160",
+   "name": "Diocese of Beaumont",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Texas"
+   ],
+   "city": "Beaumont",
+   "website": "http://www.dioceseofbmt.org",
+   "cathedral": "Saint Anthony Cathedral Basilica",
+   "ch": "beau",
+   "gc": "beau0",
+   "bishop": "David Toups",
+   "bishop_since": "2020-06-09",
+   "lon": -94.1008,
+   "lat": 30.0777,
+   "members": 73348,
+   "founded": 1966,
+   "slug": "diocese-of-beaumont"
+  },
+  {
+   "qid": "Q867378",
+   "name": "Diocese of Brownsville",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Texas"
+   ],
+   "city": "Brownsville",
+   "website": "http://www.cdob.org/",
+   "cathedral": "Immaculate Conception Cathedral",
+   "ch": "brow",
+   "gc": "brow0",
+   "bishop": "Daniel E. Flores",
+   "bishop_since": "2009-12-09",
+   "lon": -97.4958,
+   "lat": 25.9019,
+   "members": 1154223,
+   "founded": 1965,
+   "slug": "diocese-of-brownsville"
+  },
+  {
+   "qid": "Q592670",
+   "name": "Diocese of Corpus Christi",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Texas"
+   ],
+   "city": "Corpus Christi",
+   "website": "http://www.diocesecc.org/",
+   "cathedral": "Corpus Christi Cathedral",
+   "ch": "corp",
+   "gc": "corp0",
+   "bishop": "Mario Alberto Avilés",
+   "bishop_since": "2025-12-01",
+   "lon": -97.3968,
+   "lat": 27.7945,
+   "members": 354946,
+   "founded": 1912,
+   "slug": "diocese-of-corpus-christi"
+  },
+  {
+   "qid": "Q868264",
+   "name": "Diocese of Dallas",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Texas"
+   ],
+   "city": "Dallas",
+   "website": "http://www.cathdal.org/",
+   "cathedral": "Cathedral Santuario de Guadalupe",
+   "ch": "dall",
+   "gc": "dall0",
+   "bishop": "Edward J. Burns",
+   "bishop_since": "2017-02-09",
+   "lon": -96.7979,
+   "lat": 32.7886,
+   "members": 1392000,
+   "founded": 1890,
+   "slug": "diocese-of-dallas"
+  },
+  {
+   "qid": "Q786105",
+   "name": "Diocese of El Paso",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Texas"
+   ],
+   "city": "El Paso",
+   "website": "https://www.elpasodiocese.org/",
+   "cathedral": "Cathedral Parish of Saint Patrick",
+   "ch": "elpa",
+   "gc": "elpa0",
+   "bishop": "Mark J. Seitz",
+   "bishop_since": "2013-05-06",
+   "lon": -106.493,
+   "lat": 31.7658,
+   "members": 720226,
+   "founded": 1914,
+   "slug": "diocese-of-el-paso"
+  },
+  {
+   "qid": "Q143954",
+   "name": "Diocese of Fort Worth",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Texas"
+   ],
+   "city": "Fort Worth",
+   "website": "https://fwdioc.org/",
+   "cathedral": "St. Patrick Cathedral in Fort Worth",
+   "ch": "fort",
+   "gc": "fort4",
+   "bishop": "Michael Fors Olson",
+   "bishop_since": "2013-11-19",
+   "lon": -97.3297,
+   "lat": 32.7492,
+   "members": 917200,
+   "founded": 1969,
+   "slug": "diocese-of-fort-worth"
+  },
+  {
+   "qid": "Q871078",
+   "name": "Diocese of Laredo",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Texas"
+   ],
+   "city": "Laredo",
+   "website": "http://www.dioceseoflaredo.org/",
+   "cathedral": "Cathedral of San Agustin",
+   "ch": "lare",
+   "gc": "lare0",
+   "bishop": "John Gomez",
+   "bishop_since": "2026-05-01",
+   "lon": -99.5052,
+   "lat": 27.5024,
+   "members": 348060,
+   "founded": 2000,
+   "slug": "diocese-of-laredo"
+  },
+  {
+   "qid": "Q871437",
+   "name": "Diocese of Lubbock",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Texas"
+   ],
+   "city": "Lubbock",
+   "website": "http://www.catholiclubbock.org/",
+   "cathedral": "Cathedral of Christ the King",
+   "ch": "lubb",
+   "gc": "lubb0",
+   "bishop": "Robert Milner Coerver",
+   "bishop_since": "2016-09-27",
+   "lon": -101.901,
+   "lat": 33.5447,
+   "members": 138800,
+   "founded": 1983,
+   "slug": "diocese-of-lubbock"
+  },
+  {
+   "qid": "Q875657",
+   "name": "Diocese of San Angelo",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Texas"
+   ],
+   "city": "San Angelo",
+   "website": "http://www.sanangelodiocese.org/",
+   "cathedral": "Sacred Heart Cathedral",
+   "ch": "sang",
+   "gc": "zang1",
+   "bishop": "Michael Sis",
+   "bishop_since": "2013-12-12",
+   "lon": -100.435,
+   "lat": 31.4631,
+   "members": 85252,
+   "founded": 1961,
+   "slug": "diocese-of-san-angelo"
+  },
+  {
+   "qid": "Q577608",
+   "name": "Diocese of Tyler",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Texas"
+   ],
+   "city": "Tyler",
+   "website": "https://www.dioceseoftyler.org/",
+   "cathedral": "Cathedral of the Immaculate Conception",
+   "ch": "tyle",
+   "gc": "tyle0",
+   "bishop": "Gregory Kelly",
+   "bishop_since": "2024-12-20",
+   "lon": -95.301,
+   "lat": 32.3461,
+   "members": 122541,
+   "founded": 1986,
+   "slug": "diocese-of-tyler"
+  },
+  {
+   "qid": "Q877863",
+   "name": "Diocese of Victoria in Texas",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Texas"
+   ],
+   "city": "Victoria",
+   "website": "http://www.victoriadiocese.org/",
+   "cathedral": "Cathedral of Our Lady of Victory",
+   "ch": "vict",
+   "gc": "vict1",
+   "lon": -96.9915,
+   "lat": 28.824,
+   "members": 104730,
+   "founded": 1982,
+   "slug": "diocese-of-victoria-in-texas"
+  },
+  {
+   "qid": "Q875617",
+   "name": "Diocese of Salt Lake City",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Utah"
+   ],
+   "city": "Salt Lake City",
+   "website": "https://www.dioslc.org/",
+   "cathedral": "Cathedral of the Madeleine",
+   "ch": "salt",
+   "gc": "salt1",
+   "bishop": "Oscar A. Solis",
+   "bishop_since": "2017-01-10",
+   "lon": -111.8817,
+   "lat": 40.7697,
+   "members": 305122,
+   "founded": 1887,
+   "slug": "diocese-of-salt-lake-city"
+  },
+  {
+   "qid": "Q867466",
+   "name": "Diocese of Burlington",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Vermont"
+   ],
+   "city": "Burlington",
+   "website": "http://www.vermontcatholic.org/",
+   "cathedral": "Cathedral of the Immaculate Conception",
+   "ch": "burl",
+   "gc": "burl0",
+   "bishop": "John McDermott",
+   "bishop_since": "2024-05-06",
+   "lon": -73.2149,
+   "lat": 44.4797,
+   "members": 116000,
+   "founded": 1853,
+   "slug": "diocese-of-burlington"
+  },
+  {
+   "qid": "Q874969",
+   "name": "Diocese of Richmond",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Virginia"
+   ],
+   "city": "Richmond",
+   "website": "http://www.richmonddiocese.org/",
+   "cathedral": "Cathedral of the Sacred Heart",
+   "ch": "rich",
+   "gc": "rich0",
+   "bishop": "Barry Christopher Knestout",
+   "bishop_since": "2017-12-05",
+   "lon": -77.4521,
+   "lat": 37.5474,
+   "members": 244700,
+   "founded": 1820,
+   "slug": "diocese-of-richmond"
+  },
+  {
+   "qid": "Q866914",
+   "name": "Roman Catholic Diocese of Arlington",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Virginia"
+   ],
+   "city": "Arlington County",
+   "website": "http://www.arlingtondiocese.org",
+   "cathedral": "Cathedral of Saint Thomas More",
+   "ch": "arli",
+   "gc": "arli0",
+   "bishop": "Michael Francis Burbidge",
+   "bishop_since": "2016-10-04",
+   "lon": -77.1034,
+   "lat": 38.8707,
+   "members": 463897,
+   "founded": 1974,
+   "slug": "diocese-of-arlington"
+  },
+  {
+   "qid": "Q1339105",
+   "name": "Archdiocese of Seattle",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Washington"
+   ],
+   "city": "Seattle",
+   "website": "https://archseattle.org/",
+   "cathedral": "St. James Cathedral",
+   "ch": "seat",
+   "gc": "seat0",
+   "bishop": "Paul D. Etienne",
+   "bishop_since": "2019-09-03",
+   "lon": -122.326,
+   "lat": 47.6077,
+   "members": 856000,
+   "founded": 1850,
+   "slug": "archdiocese-of-seattle"
+  },
+  {
+   "qid": "Q876708",
+   "name": "Diocese of Spokane",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Washington"
+   ],
+   "city": "Spokane",
+   "website": "http://www.dioceseofspokane.org/",
+   "cathedral": "Cathedral of Our Lady of Lourdes",
+   "ch": "spok",
+   "gc": "spok0",
+   "bishop": "Thomas Anthony Daly",
+   "bishop_since": "2015-03-12",
+   "lon": -117.428,
+   "lat": 47.6587,
+   "members": 110771,
+   "founded": 1913,
+   "slug": "diocese-of-spokane"
+  },
+  {
+   "qid": "Q738271",
+   "name": "Diocese of Yakima",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Washington"
+   ],
+   "city": "Yakima",
+   "website": "http://www.yakimadiocese.org/",
+   "cathedral": "St. Paul Cathedral",
+   "ch": "yaki",
+   "gc": "yaki0",
+   "bishop": "Joseph J. Tyson",
+   "bishop_since": "2011-04-12",
+   "lon": -120.526,
+   "lat": 46.5961,
+   "members": 179033,
+   "founded": 1951,
+   "slug": "diocese-of-yakima"
+  },
+  {
+   "qid": "Q572044",
+   "name": "Diocese of Wheeling–Charleston",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "West Virginia"
+   ],
+   "city": "Wheeling",
+   "website": "https://dwc.org/",
+   "cathedral": "Cathedral of Saint Joseph",
+   "ch": "whee",
+   "gc": "whee0",
+   "bishop": "Evelio Menjivar-Ayala",
+   "bishop_since": "2026-05-01",
+   "lon": -80.7199,
+   "lat": 40.0665,
+   "members": 111670,
+   "founded": 1850,
+   "slug": "diocese-of-wheeling-charleston"
+  },
+  {
+   "qid": "Q1365032",
+   "name": "Archdiocese of Milwaukee",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Wisconsin"
+   ],
+   "city": "Milwaukee",
+   "website": "http://www.archmil.org/",
+   "cathedral": "Cathedral of St. John the Evangelist",
+   "ch": "milw",
+   "gc": "milw0",
+   "bishop": "Jeffrey Grob",
+   "bishop_since": "2024-11-04",
+   "lon": -87.9041,
+   "lat": 43.0418,
+   "members": 696500,
+   "founded": 1843,
+   "slug": "archdiocese-of-milwaukee"
+  },
+  {
+   "qid": "Q869234",
+   "name": "Diocese of Green Bay",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Wisconsin"
+   ],
+   "city": "Green Bay",
+   "website": "http://www.gbdioc.org",
+   "cathedral": "Saint Francis Xavier Cathedral",
+   "ch": "gree",
+   "gc": "gree0",
+   "bishop": "David Ricken",
+   "bishop_since": "2008-07-09",
+   "lon": -88.0114,
+   "lat": 44.5114,
+   "members": 350700,
+   "founded": 1868,
+   "slug": "diocese-of-green-bay"
+  },
+  {
+   "qid": "Q870861",
+   "name": "Diocese of La Crosse",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Wisconsin"
+   ],
+   "city": "La Crosse",
+   "website": "http://www.dioceseoflacrosse.com/",
+   "cathedral": "Cathedral of Saint Joseph the Workman",
+   "ch": "lacr",
+   "gc": "lacr0",
+   "bishop": "Gerard William Battersby",
+   "bishop_since": "2024-03-19",
+   "lon": -91.2487,
+   "lat": 43.811,
+   "members": 164410,
+   "founded": 1868,
+   "slug": "diocese-of-la-crosse"
+  },
+  {
+   "qid": "Q871665",
+   "name": "Diocese of Madison",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Wisconsin"
+   ],
+   "city": "Madison",
+   "website": "http://www.madisondiocese.org",
+   "cathedral": "Saint Raphael's Cathedral",
+   "ch": "madi",
+   "gc": "madi0",
+   "bishop": "Donald J. Hying",
+   "bishop_since": "2019-04-25",
+   "lon": -89.3862,
+   "lat": 43.0723,
+   "members": 288000,
+   "founded": 1946,
+   "slug": "diocese-of-madison"
+  },
+  {
+   "qid": "Q876863",
+   "name": "Diocese of Superior",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Wisconsin"
+   ],
+   "city": "Superior",
+   "website": "http://www.catholicdos.org/",
+   "cathedral": "Cathedral of Christ the King",
+   "ch": "supe",
+   "gc": "supe0",
+   "bishop": "James Patrick Powers",
+   "bishop_since": "2015-12-15",
+   "lon": -92.0943,
+   "lat": 46.7206,
+   "members": 65235,
+   "founded": 1905,
+   "slug": "diocese-of-superior"
+  },
+  {
+   "qid": "Q867861",
+   "name": "Diocese of Cheyenne",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Wyoming"
+   ],
+   "city": "Cheyenne",
+   "website": "http://www.dioceseofcheyenne.org",
+   "cathedral": "St. Mary's Catholic Cathedral",
+   "ch": "chey",
+   "gc": "chey0",
+   "bishop": "Steven Biegler",
+   "bishop_since": "2017-03-16",
+   "lon": -104.8175,
+   "lat": 41.1375,
+   "members": 51701,
+   "founded": 1887,
+   "slug": "diocese-of-cheyenne"
+  },
+  {
+   "qid": "Q1346692",
+   "name": "Byzantine Catholic Eparchy of Phoenix",
+   "types": [
+    "Greek-Catholic diocese"
+   ],
+   "states": [],
+   "city": "Phoenix",
+   "website": "http://www.eparchyofphoenix.org/",
+   "cathedral": "St. Stephen Cathedral",
+   "ch": "hpmp",
+   "gc": "vann0",
+   "bishop": "Artur Bubnevych",
+   "bishop_since": "2024-11-08",
+   "lon": -112.0477,
+   "lat": 33.5568,
+   "members": 2261,
+   "founded": 1982,
+   "slug": "byzantine-catholic-eparchy-of-phoenix"
+  },
+  {
+   "qid": "Q105409892",
+   "name": "Diocese of New Orleans",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [],
+   "founded": 1826,
+   "slug": "diocese-of-new-orleans"
+  },
+  {
+   "qid": "Q874158",
+   "name": "Diocese of Phoenix",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [],
+   "city": "Phoenix",
+   "website": "https://dphx.org",
+   "cathedral": "Cathedral of Saints Simon and Jude",
+   "ch": "phoe",
+   "gc": "phoe0",
+   "bishop": "John Dolan",
+   "bishop_since": "2022-08-02",
+   "lon": -112.116,
+   "lat": 33.5298,
+   "members": 1225677,
+   "founded": 1969,
+   "slug": "diocese-of-phoenix"
+  },
+  {
+   "qid": "Q875495",
+   "name": "Diocese of Saint Thomas in the Virgin Islands",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [],
+   "city": "Charlotte Amalie",
+   "website": "https://www.catholicvi.com/",
+   "cathedral": "Cathedral of Saints Peter and Paul in Saint Thomas",
+   "ch": "stth",
+   "gc": "ztho0",
+   "bishop": "Jerome Feudjio",
+   "bishop_since": "2021-03-02",
+   "lon": -64.9368,
+   "lat": 18.341,
+   "members": 35350,
+   "founded": 1960,
+   "slug": "diocese-of-saint-thomas-in-the-virgin-islands"
+  },
+  {
+   "qid": "Q877560",
+   "name": "Diocese of Tucson",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [],
+   "city": "Tucson",
+   "website": "http://www.diocesetucson.org/",
+   "cathedral": "Cathedral of Saint Augustine",
+   "ch": "tucs",
+   "gc": "tucs0",
+   "bishop": "James Misko",
+   "bishop_since": "2025-12-22",
+   "lon": -110.971,
+   "lat": 32.2194,
+   "members": 393500,
+   "founded": 1897,
+   "slug": "diocese-of-tucson"
+  },
+  {
+   "qid": "Q1725662",
+   "name": "Roman Catholic Archdiocese for the Military Services",
+   "types": [
+    "military ordinariate"
+   ],
+   "states": [],
+   "city": "Edwin Cardinal O’Brien Pastoral Center",
+   "website": "http://www.milarch.org",
+   "ch": "mili",
+   "gc": "unit0",
+   "bishop": "Timothy P. Broglio",
+   "bishop_since": "2007-11-19",
+   "founded": 1984,
+   "slug": "archdiocese-for-the-military-services"
+  },
+  {
+   "qid": "Q1363947",
+   "name": "Roman Catholic Archdiocese of Agaña",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [],
+   "city": "Hagåtña",
+   "website": "https://www.aganaarch.org/",
+   "cathedral": "Dulce Nombre de Maria Cathedral Basilica",
+   "ch": "agan",
+   "gc": "agan0",
+   "bishop": "Ryan Pagente Jimenez",
+   "bishop_since": "2024-07-06",
+   "lon": 144.7524,
+   "lat": 13.4743,
+   "members": 149094,
+   "founded": 1984,
+   "slug": "archdiocese-of-aga-a"
+  },
+  {
+   "qid": "Q1365485",
+   "name": "Roman Catholic Archdiocese of San Juan de Puerto Rico",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [],
+   "city": "San Juan",
+   "website": "http://www.arqsj.org/",
+   "cathedral": "Cathedral of San Juan Bautista",
+   "ch": "sjpr",
+   "gc": "zjua1",
+   "bishop": "Eusebio Ramos Morales",
+   "bishop_since": "2026-08-06",
+   "lon": -66.1178,
+   "lat": 18.4658,
+   "members": 929000,
+   "founded": 1511,
+   "slug": "archdiocese-of-san-juan-de-puerto-rico"
+  },
+  {
+   "qid": "Q866897",
+   "name": "Roman Catholic Diocese of Arecibo",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [],
+   "city": "Arecibo",
+   "website": "http://www.diocesisdearecibo.org/",
+   "cathedral": "Catedral de San Felipe Apóstol",
+   "ch": "arec",
+   "gc": "arec0",
+   "bishop": "Alberto Arturo Figueroa Morales",
+   "bishop_since": "2022-09-14",
+   "lon": -66.7151,
+   "lat": 18.4722,
+   "members": 387000,
+   "founded": 1960,
+   "slug": "diocese-of-arecibo"
+  },
+  {
+   "qid": "Q867525",
+   "name": "Roman Catholic Diocese of Caguas",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [],
+   "city": "Caguas",
+   "website": "http://home.coqui.net/obicag",
+   "cathedral": "Cathedral Dulce Nombre de Jesús",
+   "ch": "cagu",
+   "gc": "cagu0",
+   "bishop": "Eusebio Ramos Morales",
+   "bishop_since": "",
+   "lon": -66.0343,
+   "lat": 18.2343,
+   "members": 410275,
+   "founded": 1964,
+   "slug": "diocese-of-caguas"
+  },
+  {
+   "qid": "Q867787",
+   "name": "Roman Catholic Diocese of Chalan Kanoa",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [],
+   "city": "Chalan Kanoa",
+   "website": "http://www.cnmicatholic.org",
+   "cathedral": "Our Lady of Mount Carmel Cathedral (Chalan Kanoa)",
+   "ch": "chak",
+   "gc": "chal0",
+   "bishop": "Romeo Duetao Convocar",
+   "bishop_since": "2024-11-25",
+   "lon": 145.7019,
+   "lat": 15.1511,
+   "members": 44700,
+   "founded": 1984,
+   "slug": "diocese-of-chalan-kanoa"
+  },
+  {
+   "qid": "Q868791",
+   "name": "Roman Catholic Diocese of Fajardo-Humacao",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [],
+   "city": "Fajardo",
+   "website": "http://www.diocesisdecaguaspr.org/",
+   "cathedral": "Cathedral of St. James",
+   "ch": "fahu",
+   "gc": "faja0",
+   "bishop": "Luis Miranda Rivera",
+   "bishop_since": "2020-05-16",
+   "lon": -65.6533,
+   "lat": 18.3269,
+   "members": 93506,
+   "founded": 2008,
+   "slug": "diocese-of-fajardo-humacao"
+  },
+  {
+   "qid": "Q872131",
+   "name": "Roman Catholic Diocese of Mayagüez",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [],
+   "city": "Mayagüez",
+   "website": "http://www.diocesisdemayaguez.org/",
+   "cathedral": "Cathedral of Mayagüez",
+   "ch": "maya",
+   "gc": "maya0",
+   "bishop": "Ángel Luis Rios Matos",
+   "bishop_since": "2020-05-09",
+   "lon": -67.1382,
+   "lat": 18.2011,
+   "members": 383000,
+   "founded": 1976,
+   "slug": "diocese-of-mayag-ez"
+  },
+  {
+   "qid": "Q874329",
+   "name": "Roman Catholic Diocese of Ponce",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [],
+   "city": "Ponce",
+   "website": "http://www.diocesisdeponce.org",
+   "cathedral": "Nuestra Señora de Guadalupe Cathedral",
+   "ch": "ponc",
+   "gc": "ponc0",
+   "bishop": "Geraldo Ramírez Torres",
+   "bishop_since": "2026-06-24",
+   "lon": -66.614,
+   "lat": 18.0118,
+   "members": 378792,
+   "founded": 1924,
+   "slug": "diocese-of-ponce"
+  },
+  {
+   "qid": "Q875649",
+   "name": "Roman Catholic Diocese of Samoa-Pago Pago",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [],
+   "city": "Pago Pago",
+   "website": "https://diocesesamoapagopago.com",
+   "cathedral": "Cathedral of the Holy Family in Pago Pago",
+   "ch": "samo",
+   "gc": "samo1",
+   "bishop": "Peter Brown",
+   "bishop_since": "",
+   "lon": -170.7358,
+   "lat": -14.3347,
+   "members": 12600,
+   "founded": 1982,
+   "slug": "diocese-of-samoa-pago-pago"
+  },
+  {
+   "qid": "Q620204",
+   "name": "Syro-Malankara Catholic Eparchy of St. Mary, Queen of Peace, of the United States of America and Canada",
+   "types": [
+    "Catholic eparchy"
+   ],
+   "states": [],
+   "website": "http://www.syromalankarausa.org/",
+   "cathedral": "St. Vincent de Paul Malankara Catholic Cathedral",
+   "ch": "smqp",
+   "gc": "smqp0",
+   "bishop": "Philippos Stephanos Thottathil",
+   "bishop_since": "2017-08-05",
+   "lon": -73.6966,
+   "lat": 40.71,
+   "members": 11600,
+   "founded": 2010,
+   "slug": "syro-malankara-catholic-eparchy-of-st-mary-queen-of-peace-of-the-united-states-of-america-and-canada"
+  }
+ ],
+ "holy_by_state": {
+  "Pennsylvania": [
+   {
+    "qid": "Q747050",
+    "name": "Alexis Toth",
+    "rank": 4,
+    "born": 1854,
+    "died": 1909
+   },
+   {
+    "qid": "Q558256",
+    "name": "John Neumann",
+    "rank": 4,
+    "born": 1811,
+    "died": 1860
+   },
+   {
+    "qid": "Q254227",
+    "name": "Katharine Drexel",
+    "rank": 4,
+    "born": 1858,
+    "died": 1955
+   },
+   {
+    "qid": "Q566764",
+    "name": "Nikolaj Velimirović",
+    "rank": 4,
+    "born": 1881,
+    "died": 1956
+   },
+   {
+    "qid": "Q5171155",
+    "name": "Cornelia Connelly",
+    "rank": 2,
+    "born": 1809,
+    "died": 1879
+   },
+   {
+    "qid": "Q704917",
+    "name": "Demetrius Augustine Gallitzin",
+    "rank": 1,
+    "born": 1770,
+    "died": 1840
+   },
+   {
+    "qid": "Q9283759",
+    "name": "John Hardon",
+    "rank": 1,
+    "born": 1914,
+    "died": 2000
+   }
+  ],
+  "Maryland": [
+   {
+    "qid": "Q312348",
+    "name": "Thurgood Marshall",
+    "rank": 4,
+    "born": 1908,
+    "died": 1993
+   },
+   {
+    "qid": "Q6779421",
+    "name": "Mary Elizabeth Lange",
+    "rank": 2,
+    "born": 1784,
+    "died": 1882
+   }
+  ],
+  "Louisiana": [
+   {
+    "qid": "Q75940",
+    "name": "Francis Xavier Seelos",
+    "rank": 3,
+    "born": 1819,
+    "died": 1867
+   },
+   {
+    "qid": "Q5716083",
+    "name": "Henriette DeLille",
+    "rank": 2,
+    "born": 1813,
+    "died": 1862
+   }
+  ],
+  "Hawaii": [
+   {
+    "qid": "Q232785",
+    "name": "Father Damien",
+    "rank": 4,
+    "born": 1840,
+    "died": 1889
+   },
+   {
+    "qid": "Q76680",
+    "name": "Marianne Cope",
+    "rank": 4,
+    "born": 1838,
+    "died": 1918
+   }
+  ],
+  "Missouri": [
+   {
+    "qid": "Q268064",
+    "name": "Rose Philippine Duchesne",
+    "rank": 4,
+    "born": 1769,
+    "died": 1852
+   },
+   {
+    "qid": "Q2841266",
+    "name": "Augustine Tolton",
+    "rank": 2,
+    "born": 1854,
+    "died": 1897
+   },
+   {
+    "qid": "Q51664373",
+    "name": "Julia Greeley",
+    "rank": 2,
+    "born": 1833,
+    "died": 1918
+   },
+   {
+    "qid": "Q139577779",
+    "name": "Theresia of the Holy Trinity",
+    "rank": 2,
+    "born": 1897,
+    "died": 1926
+   }
+  ],
+  "New York": [
+   {
+    "qid": "Q588832",
+    "name": "Isaac Jogues",
+    "rank": 4,
+    "born": 1607,
+    "died": 1646
+   },
+   {
+    "qid": "Q2626830",
+    "name": "Jean de Lalande",
+    "rank": 4,
+    "born": 1620,
+    "died": 1646
+   },
+   {
+    "qid": "Q7346",
+    "name": "John Coltrane",
+    "rank": 4,
+    "born": 1926,
+    "died": 1967
+   },
+   {
+    "qid": "Q609",
+    "name": "Kateri Tekakwitha",
+    "rank": 4,
+    "born": 1656,
+    "died": 1680
+   },
+   {
+    "qid": "Q1524650",
+    "name": "René Goupil",
+    "rank": 4,
+    "born": 1608,
+    "died": 1642
+   },
+   {
+    "qid": "Q954398",
+    "name": "Fulton J. Sheen",
+    "rank": 3,
+    "born": 1895,
+    "died": 1979
+   },
+   {
+    "qid": "Q1344779",
+    "name": "Terence Cooke",
+    "rank": 3,
+    "born": 1921,
+    "died": 1983
+   },
+   {
+    "qid": "Q4275204",
+    "name": "Mary Angeline Teresa McCrory",
+    "rank": 2,
+    "born": 1893,
+    "died": 1984
+   },
+   {
+    "qid": "Q6917390",
+    "name": "Mother Mary Alphonsa",
+    "rank": 2,
+    "born": 1851,
+    "died": 1926
+   },
+   {
+    "qid": "Q6990366",
+    "name": "Nelson Baker",
+    "rank": 2,
+    "born": 1841,
+    "died": 1936
+   },
+   {
+    "qid": "Q945051",
+    "name": "Pierre Toussaint",
+    "rank": 2,
+    "born": 1766,
+    "died": 1853
+   },
+   {
+    "qid": "Q106665985",
+    "name": "Teresa Fardella de Blasi",
+    "rank": 2,
+    "born": 1867,
+    "died": 1957
+   },
+   {
+    "qid": "Q150281",
+    "name": "Dorothy Day",
+    "rank": 1,
+    "born": 1897,
+    "died": 1980
+   },
+   {
+    "qid": "Q496206",
+    "name": "Francis Xavier Ford",
+    "rank": 1,
+    "born": 1892,
+    "died": 1952
+   },
+   {
+    "qid": "Q284948",
+    "name": "Isaac Thomas Hecker",
+    "rank": 1,
+    "born": 1819,
+    "died": 1888
+   }
+  ],
+  "Michigan": [
+   {
+    "qid": "Q669600",
+    "name": "Charles Garnier",
+    "rank": 4,
+    "born": 1606,
+    "died": 1649
+   },
+   {
+    "qid": "Q3048557",
+    "name": "Solanus Casey",
+    "rank": 3,
+    "born": 1870,
+    "died": 1957
+   },
+   {
+    "qid": "Q575492",
+    "name": "Frederic Baraga",
+    "rank": 2,
+    "born": 1797,
+    "died": 1868
+   },
+   {
+    "qid": "Q9283759",
+    "name": "John Hardon",
+    "rank": 1,
+    "born": 1914,
+    "died": 2000
+   }
+  ],
+  "Montana": [
+   {
+    "qid": "Q436655",
+    "name": "Black Elk",
+    "rank": 1,
+    "born": 1863,
+    "died": 1950
+   }
+  ],
+  "Indiana": [
+   {
+    "qid": "Q434579",
+    "name": "Théodore Guérin",
+    "rank": 4,
+    "born": 1798,
+    "died": 1856
+   }
+  ],
+  "Nebraska": [
+   {
+    "qid": "Q436655",
+    "name": "Black Elk",
+    "rank": 1,
+    "born": 1863,
+    "died": 1950
+   }
+  ],
+  "Ohio": [
+   {
+    "qid": "Q4160008",
+    "name": "Jayananda Dasa",
+    "rank": 4,
+    "born": 1939,
+    "died": 1977
+   },
+   {
+    "qid": "Q111239821",
+    "name": "Thomas Eleftherion",
+    "rank": 4,
+    "born": 1964,
+    "died": 2015
+   },
+   {
+    "qid": "Q2943912",
+    "name": "Celestina Bottego",
+    "rank": 2,
+    "born": 1895,
+    "died": 1980
+   },
+   {
+    "qid": "Q465318",
+    "name": "Dorothy Stang",
+    "rank": 1,
+    "born": 1931,
+    "died": 2005
+   }
+  ],
+  "Alaska": [
+   {
+    "qid": "Q2469151",
+    "name": "Herman of Alaska",
+    "rank": 4,
+    "born": 1756,
+    "died": 1837
+   },
+   {
+    "qid": "Q7086632",
+    "name": "Olga Michael",
+    "rank": 4,
+    "born": 1916,
+    "died": 1979
+   },
+   {
+    "qid": "Q2562095",
+    "name": "Peter the Aleut",
+    "rank": 4,
+    "born": 1800,
+    "died": 1815
+   }
+  ],
+  "Illinois": [
+   {
+    "qid": "Q238983",
+    "name": "Frances Xavier Cabrini",
+    "rank": 4,
+    "born": 1850,
+    "died": 1917
+   },
+   {
+    "qid": "Q954398",
+    "name": "Fulton J. Sheen",
+    "rank": 3,
+    "born": 1895,
+    "died": 1979
+   },
+   {
+    "qid": "Q2841266",
+    "name": "Augustine Tolton",
+    "rank": 2,
+    "born": 1854,
+    "died": 1897
+   },
+   {
+    "qid": "Q18031468",
+    "name": "Mary Theresa Dudzik",
+    "rank": 2,
+    "born": 1860,
+    "died": 1918
+   }
+  ],
+  "California": [
+   {
+    "qid": "Q4160008",
+    "name": "Jayananda Dasa",
+    "rank": 4,
+    "born": 1939,
+    "died": 1977
+   },
+   {
+    "qid": "Q522107",
+    "name": "Junípero Serra",
+    "rank": 4,
+    "born": 1713,
+    "died": 1784
+   },
+   {
+    "qid": "Q2562095",
+    "name": "Peter the Aleut",
+    "rank": 4,
+    "born": 1800,
+    "died": 1815
+   },
+   {
+    "qid": "Q18400083",
+    "name": "Sevastijan Dabović",
+    "rank": 4,
+    "born": 1863,
+    "died": 1940
+   },
+   {
+    "qid": "Q4735362",
+    "name": "Alphonse Gallegos",
+    "rank": 2,
+    "born": 1931,
+    "died": 1991
+   },
+   {
+    "qid": "Q743262",
+    "name": "Patrick Peyton",
+    "rank": 2,
+    "born": 1909,
+    "died": 1992
+   }
+  ],
+  "Kansas": [
+   {
+    "qid": "Q989327",
+    "name": "Emil Kapaun",
+    "rank": 2,
+    "born": 1916,
+    "died": 1951
+   }
+  ],
+  "Connecticut": [
+   {
+    "qid": "Q2664799",
+    "name": "Michael J. McGivney",
+    "rank": 3,
+    "born": 1852,
+    "died": 1890
+   }
+  ],
+  "Wisconsin": [
+   {
+    "qid": "Q3048557",
+    "name": "Solanus Casey",
+    "rank": 3,
+    "born": 1870,
+    "died": 1957
+   },
+   {
+    "qid": "Q6139760",
+    "name": "James Miller",
+    "rank": 2,
+    "born": 1944,
+    "died": 1982
+   },
+   {
+    "qid": "Q9029136",
+    "name": "Mario Hiriart",
+    "rank": 2,
+    "born": 1931,
+    "died": 1964
+   },
+   {
+    "qid": "Q113736932",
+    "name": "Adele Brice",
+    "rank": 1,
+    "born": 1831,
+    "died": 1896
+   }
+  ],
+  "Massachusetts": [
+   {
+    "qid": "Q6917390",
+    "name": "Mother Mary Alphonsa",
+    "rank": 2,
+    "born": 1851,
+    "died": 1926
+   },
+   {
+    "qid": "Q6285708",
+    "name": "Joseph Muzquiz",
+    "rank": 1,
+    "born": 1912,
+    "died": 1983
+   }
+  ],
+  "Oklahoma": [
+   {
+    "qid": "Q2377024",
+    "name": "Stanley Rother",
+    "rank": 3,
+    "born": 1935,
+    "died": 1981
+   }
+  ],
+  "New Jersey": [
+   {
+    "qid": "Q7702128",
+    "name": "Teresa Demjanovich",
+    "rank": 3,
+    "born": 1901,
+    "died": 1927
+   },
+   {
+    "qid": "Q2638523",
+    "name": "Jan Cieplak",
+    "rank": 1,
+    "born": 1857,
+    "died": 1926
+   }
+  ],
+  "Colorado": [
+   {
+    "qid": "Q51664373",
+    "name": "Julia Greeley",
+    "rank": 2,
+    "born": 1833,
+    "died": 1918
+   }
+  ],
+  "District of Columbia": [
+   {
+    "qid": "Q4734720",
+    "name": "Aloysius Schwartz",
+    "rank": 2,
+    "born": 1930,
+    "died": 1992
+   }
+  ],
+  "New Mexico": [
+   {
+    "qid": "Q12967680",
+    "name": "Manuel Morales",
+    "rank": 4,
+    "born": 1898,
+    "died": 1926
+   },
+   {
+    "qid": "Q4735362",
+    "name": "Alphonse Gallegos",
+    "rank": 2,
+    "born": 1931,
+    "died": 1991
+   }
+  ],
+  "North Carolina": [
+   {
+    "qid": "Q7346",
+    "name": "John Coltrane",
+    "rank": 4,
+    "born": 1926,
+    "died": 1967
+   }
+  ],
+  "Iowa": [
+   {
+    "qid": "Q5408329",
+    "name": "Eugenio Sanz-Orozco Mortera",
+    "rank": 3,
+    "born": 1880,
+    "died": 1936
+   }
+  ],
+  "Florida": [
+   {
+    "qid": "Q111239821",
+    "name": "Thomas Eleftherion",
+    "rank": 4,
+    "born": 1964,
+    "died": 2015
+   }
+  ]
+ }
+}
