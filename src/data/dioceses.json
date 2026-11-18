@@ -4715,15 +4715,6 @@
   }
  ],
  "holy_by_state": {
-  "Montana": [
-   {
-    "qid": "Q436655",
-    "name": "Black Elk",
-    "rank": 1,
-    "born": 1863,
-    "died": 1950
-   }
-  ],
   "New York": [
    {
     "qid": "Q588832",
@@ -4824,6 +4815,47 @@
     "died": 1888
    }
   ],
+  "Louisiana": [
+   {
+    "qid": "Q75940",
+    "name": "Francis Xavier Seelos",
+    "rank": 3,
+    "born": 1819,
+    "died": 1867
+   },
+   {
+    "qid": "Q5716083",
+    "name": "Henriette DeLille",
+    "rank": 2,
+    "born": 1813,
+    "died": 1862
+   }
+  ],
+  "Hawaii": [
+   {
+    "qid": "Q232785",
+    "name": "Father Damien",
+    "rank": 4,
+    "born": 1840,
+    "died": 1889
+   },
+   {
+    "qid": "Q76680",
+    "name": "Marianne Cope",
+    "rank": 4,
+    "born": 1838,
+    "died": 1918
+   }
+  ],
+  "Montana": [
+   {
+    "qid": "Q436655",
+    "name": "Black Elk",
+    "rank": 1,
+    "born": 1863,
+    "died": 1950
+   }
+  ],
   "Michigan": [
    {
     "qid": "Q669600",
@@ -4852,6 +4884,91 @@
     "rank": 1,
     "born": 1914,
     "died": 2000
+   }
+  ],
+  "Illinois": [
+   {
+    "qid": "Q238983",
+    "name": "Frances Xavier Cabrini",
+    "rank": 4,
+    "born": 1850,
+    "died": 1917
+   },
+   {
+    "qid": "Q954398",
+    "name": "Fulton J. Sheen",
+    "rank": 3,
+    "born": 1895,
+    "died": 1979
+   },
+   {
+    "qid": "Q2841266",
+    "name": "Augustine Tolton",
+    "rank": 2,
+    "born": 1854,
+    "died": 1897
+   },
+   {
+    "qid": "Q18031468",
+    "name": "Mary Theresa Dudzik",
+    "rank": 2,
+    "born": 1860,
+    "died": 1918
+   }
+  ],
+  "New Jersey": [
+   {
+    "qid": "Q7702128",
+    "name": "Teresa Demjanovich",
+    "rank": 3,
+    "born": 1901,
+    "died": 1927
+   },
+   {
+    "qid": "Q2638523",
+    "name": "Jan Cieplak",
+    "rank": 1,
+    "born": 1857,
+    "died": 1926
+   }
+  ],
+  "California": [
+   {
+    "qid": "Q522107",
+    "name": "Junípero Serra",
+    "rank": 4,
+    "born": 1713,
+    "died": 1784
+   },
+   {
+    "qid": "Q4735362",
+    "name": "Alphonse Gallegos",
+    "rank": 2,
+    "born": 1931,
+    "died": 1991
+   },
+   {
+    "qid": "Q743262",
+    "name": "Patrick Peyton",
+    "rank": 2,
+    "born": 1909,
+    "died": 1992
+   }
+  ],
+  "Maryland": [
+   {
+    "qid": "Q312348",
+    "name": "Thurgood Marshall",
+    "rank": 4,
+    "born": 1908,
+    "died": 1993
+   },
+   {
+    "qid": "Q6779421",
+    "name": "Mary Elizabeth Lange",
+    "rank": 2,
+    "born": 1784,
+    "died": 1882
    }
   ],
   "Pennsylvania": [
@@ -4909,38 +5026,6 @@
     "died": 1950
    }
   ],
-  "Louisiana": [
-   {
-    "qid": "Q75940",
-    "name": "Francis Xavier Seelos",
-    "rank": 3,
-    "born": 1819,
-    "died": 1867
-   },
-   {
-    "qid": "Q5716083",
-    "name": "Henriette DeLille",
-    "rank": 2,
-    "born": 1813,
-    "died": 1862
-   }
-  ],
-  "Hawaii": [
-   {
-    "qid": "Q232785",
-    "name": "Father Damien",
-    "rank": 4,
-    "born": 1840,
-    "died": 1889
-   },
-   {
-    "qid": "Q76680",
-    "name": "Marianne Cope",
-    "rank": 4,
-    "born": 1838,
-    "died": 1918
-   }
-  ],
   "Missouri": [
    {
     "qid": "Q268064",
@@ -4971,20 +5056,22 @@
     "died": 1926
    }
   ],
-  "Maryland": [
+  "Connecticut": [
    {
-    "qid": "Q312348",
-    "name": "Thurgood Marshall",
-    "rank": 4,
-    "born": 1908,
-    "died": 1993
-   },
+    "qid": "Q2664799",
+    "name": "Michael J. McGivney",
+    "rank": 3,
+    "born": 1852,
+    "died": 1890
+   }
+  ],
+  "Oklahoma": [
    {
-    "qid": "Q6779421",
-    "name": "Mary Elizabeth Lange",
-    "rank": 2,
-    "born": 1784,
-    "died": 1882
+    "qid": "Q2377024",
+    "name": "Stanley Rother",
+    "rank": 3,
+    "born": 1935,
+    "died": 1981
    }
   ],
   "Ohio": [
@@ -5003,52 +5090,22 @@
     "died": 2005
    }
   ],
-  "California": [
+  "Kansas": [
    {
-    "qid": "Q522107",
-    "name": "Junípero Serra",
-    "rank": 4,
-    "born": 1713,
-    "died": 1784
-   },
-   {
-    "qid": "Q4735362",
-    "name": "Alphonse Gallegos",
+    "qid": "Q989327",
+    "name": "Emil Kapaun",
     "rank": 2,
-    "born": 1931,
-    "died": 1991
-   },
-   {
-    "qid": "Q743262",
-    "name": "Patrick Peyton",
-    "rank": 2,
-    "born": 1909,
-    "died": 1992
+    "born": 1916,
+    "died": 1951
    }
   ],
-  "New Jersey": [
+  "Iowa": [
    {
-    "qid": "Q7702128",
-    "name": "Teresa Demjanovich",
+    "qid": "Q5408329",
+    "name": "Eugenio Sanz-Orozco Mortera",
     "rank": 3,
-    "born": 1901,
-    "died": 1927
-   },
-   {
-    "qid": "Q2638523",
-    "name": "Jan Cieplak",
-    "rank": 1,
-    "born": 1857,
-    "died": 1926
-   }
-  ],
-  "Connecticut": [
-   {
-    "qid": "Q2664799",
-    "name": "Michael J. McGivney",
-    "rank": 3,
-    "born": 1852,
-    "died": 1890
+    "born": 1880,
+    "died": 1936
    }
   ],
   "Wisconsin": [
@@ -5081,34 +5138,20 @@
     "died": 1896
    }
   ],
-  "Illinois": [
+  "Massachusetts": [
    {
-    "qid": "Q238983",
-    "name": "Frances Xavier Cabrini",
-    "rank": 4,
-    "born": 1850,
-    "died": 1917
-   },
-   {
-    "qid": "Q954398",
-    "name": "Fulton J. Sheen",
-    "rank": 3,
-    "born": 1895,
-    "died": 1979
-   },
-   {
-    "qid": "Q2841266",
-    "name": "Augustine Tolton",
+    "qid": "Q6917390",
+    "name": "Mother Mary Alphonsa",
     "rank": 2,
-    "born": 1854,
-    "died": 1897
+    "born": 1851,
+    "died": 1926
    },
    {
-    "qid": "Q18031468",
-    "name": "Mary Theresa Dudzik",
-    "rank": 2,
-    "born": 1860,
-    "died": 1918
+    "qid": "Q6285708",
+    "name": "Joseph Muzquiz",
+    "rank": 1,
+    "born": 1912,
+    "died": 1983
    }
   ],
   "District of Columbia": [
@@ -5136,15 +5179,6 @@
     "died": 1991
    }
   ],
-  "Iowa": [
-   {
-    "qid": "Q5408329",
-    "name": "Eugenio Sanz-Orozco Mortera",
-    "rank": 3,
-    "born": 1880,
-    "died": 1936
-   }
-  ],
   "Colorado": [
    {
     "qid": "Q51664373",
@@ -5153,41 +5187,6 @@
     "born": 1833,
     "died": 1918
    }
-  ],
-  "Kansas": [
-   {
-    "qid": "Q989327",
-    "name": "Emil Kapaun",
-    "rank": 2,
-    "born": 1916,
-    "died": 1951
-   }
-  ],
-  "Oklahoma": [
-   {
-    "qid": "Q2377024",
-    "name": "Stanley Rother",
-    "rank": 3,
-    "born": 1935,
-    "died": 1981
-   }
-  ],
-  "Massachusetts": [
-   {
-    "qid": "Q6917390",
-    "name": "Mother Mary Alphonsa",
-    "rank": 2,
-    "born": 1851,
-    "died": 1926
-   },
-   {
-    "qid": "Q6285708",
-    "name": "Joseph Muzquiz",
-    "rank": 1,
-    "born": 1912,
-    "died": 1983
-   }
-  ],
-  "North Carolina": []
+  ]
  }
 }
