@@ -1,0 +1,47 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/saints">Saints</a> &rsaquo; Directory</p>
+    <h1>Saints and causes directory</h1>
+    <p class="lede">Search thousands of Saints, Blesseds, Venerables and Servants of God. You can filter by country, century and status, or see who was most recently beatified or canonized.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section">
+    <div class="sd-controls" role="search">
+      <label for="sd-q" class="sr-only">Search the directory</label>
+      <input id="sd-q" class="search" type="search" placeholder="Search a name, place, order or patronage" autocomplete="off">
+      <div class="sd-selects">
+        <label><span>Status</span>
+          <select id="sd-status" class="search">
+            <option value="0">All statuses</option>
+            <option value="4">Saints</option>
+            <option value="3">Blesseds</option>
+            <option value="2">Venerables</option>
+            <option value="1">Servants of God</option>
+          </select>
+        </label>
+        <label><span>Country</span><select id="sd-country" class="search"><option value="">All countries</option></select></label>
+        <label><span>Century</span><select id="sd-century" class="search"><option value="">All centuries</option></select></label>
+        <label><span>Sort</span>
+          <select id="sd-sort" class="search">
+            <option value="name">A to Z</option>
+            <option value="recent">Most recent decree</option>
+            <option value="died">By date of death</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <p class="status-msg" id="sd-count" aria-live="polite">Loading the directory&hellip;</p>
+    <div id="sd-list" class="sd-list"></div>
+    <p style="text-align:center"><button class="btn secondary" type="button" id="sd-more" hidden>Show more</button></p>
+    <noscript><p>The directory needs JavaScript. You can browse a selection on our <a href="/saints">Saints page</a>.</p></noscript>
+  </section>
+
+  <section class="section prose">
+    <h2>About this list</h2>
+    <p>The steps on the road to sainthood are explained on our <a href="/saints">Saints page</a>. This directory comes from <a href="https://www.wikidata.org/">Wikidata</a>, a free database kept up by volunteers around the world. It is refreshed every week, so new beatifications and canonizations appear here soon after volunteers record the Vatican&rsquo;s decrees. Official announcements come from the <a href="https://www.causesanti.va/en.html">Dicastery for the Causes of Saints</a>.</p>
+    <p>Wikidata is very good but not perfect. Some people are missing, and some open causes are not yet recorded. Each entry links to its Wikidata page, where anyone can make a correction.</p>
+    <p class="small muted" id="sd-updated"></p>
+  </section>
+</div>

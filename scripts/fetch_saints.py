@@ -31,7 +31,7 @@ STATUS = {
     "Q869974": 1,    # Servant of God
 }
 GENERIC = {"Q43115", "Q12774503"}
-CATHOLIC = {"Q9592", "Q1841", "Q29296"}  # Catholic Church, Catholicism, Latin Church
+CATHOLIC = {"Q9592", "Q1841", "Q29296", "Q597526"}  # Catholic Church, Catholicism, Latin Church (two items)
 # Eastern Catholic churches are matched by label below.
 SCHISM_YEAR = 1054
 
@@ -155,7 +155,7 @@ def main():
     people = {k: v for k, v in people.items() if v.get("name") and not re.match(r"^Q\d+$", v["name"])}
 
     def catholic_religion(p):
-        return bool(p["rels"] & CATHOLIC) or any("Catholic" in r for r in p["relLabels"])
+        return bool(p["rels"] & CATHOLIC) or any("Catholic" in r or r == "Latin Church" for r in p["relLabels"])
 
     CATH_HINT = re.compile(r"catholic|\bpope\b|jesuit|francisc|dominican|benedictin|carmelit|augustinian|capuchin|cistercian|"
                            r"salesian|ursuline|redemptorist|passionist|vincentian|poor clare|beatified|canonized|blessed", re.I)
@@ -185,9 +185,6 @@ def main():
         out.append([pid, p["name"], p["es"] if p["es"] != p["name"] else "", p["desc"], p["rank"], p["when"] or 0,
                     p.get("born") or 0, p.get("died") or 0, p["ctry"], p["pat"], p["feast"], urllib.parse.unquote(wiki)])
 
-    for pid, p in people.items():
-        if re.search(r"Acutis|Seton|Tolton", p.get("name", "")):
-            print("DEBUG", pid, p["name"], p["rank"], p["generic_only"], sorted(p["rels"]), sorted(p["relLabels"]), p.get("died"), p.get("ctry"))
     out.sort(key=lambda r: r[1].lower())
     counts = {k: sum(1 for r in out if r[4] == v) for k, v in (("saints", 4), ("blessed", 3), ("venerable", 2), ("servants", 1))}
     print(f"Kept {len(out)} people {counts}; dropped {dropped}")

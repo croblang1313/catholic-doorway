@@ -62,6 +62,8 @@ PAGES = [
      "Find your Catholic diocese: the U.S. archdioceses and how to look up any diocese in the United States."),
     ("saints", "Saints", "Catholic Saints, Blesseds and Venerables | CatholicDoorway",
      "Meet the saints, and learn the path to sainthood: Servant of God, Venerable, Blessed and Saint."),
+    ("saints-directory", "Saints Directory", "Saints and Causes Directory: Saints, Blesseds, Venerables, Servants of God | CatholicDoorway",
+     "Search thousands of Catholic Saints, Blesseds, Venerables and Servants of God by name, country, century and patronage. Updated weekly."),
     ("glossary", "Glossary", "Catholic Glossary: Terms Explained Simply | CatholicDoorway",
      "Plain-English definitions of Catholic words, from Advent to Vespers."),
     ("popes", "Popes", "All 267 Popes in Succession, from St. Peter to Leo XIV | CatholicDoorway",
@@ -70,13 +72,14 @@ PAGES = [
      "About CatholicDoorway.com: a free, ad-free guide to the Catholic faith. Sources, data and corrections."),
     ("404", "Not found", "Page not found | CatholicDoorway", "This page could not be found."),
 ]
-NAV_EXCLUDE = {"about", "404", "how-to", "confession", "coming-back", "join-a-parish", "baptism", "marriage", "anointing", "funerals", "baptism-certificate", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary", "questions"}
+NAV_EXCLUDE = {"about", "404", "saints-directory", "how-to", "confession", "coming-back", "join-a-parish", "baptism", "marriage", "anointing", "funerals", "baptism-certificate", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary", "questions"}
 # Pages shown in a dropdown under a main menu item: parent slug -> [(slug, label)]
 SUBNAV = {"beliefs": [("beliefs", "What Catholics believe"), ("questions", "Honest questions, answered")],
           "prayers": [("prayers", "Catholic prayers"), ("rosary", "Pray the Rosary")],
           "bible": [("bible", "Today’s readings and the Bible"), ("calendar", "Holy Days Calendar")],
           "start-here": [("start-here", "Becoming Catholic (OCIA)"), ("first-mass", "Your First Mass"),
                          ("how-to", "How-To Guides"), ("confession", "How to go to Confession"), ("coming-back", "Coming back to the Church")],
+          "saints": [("saints", "Meet the saints"), ("saints-directory", "Saints and causes directory")],
           "structure": [("structure", "How the Church is organized"), ("popes", "All 267 Popes"),
                         ("dioceses", "U.S. Dioceses"), ("find-a-church", "Find a Church")]}
 
@@ -240,6 +243,7 @@ FOOT = """</main>
 
 EXTRA = {
     "rosary": ("", '<script src="/assets/js/rosary.js" defer></script>'),
+    "saints-directory": ("", '<script src="/assets/js/saints-dir.js" defer></script>'),
     "find-a-church": (
         '<link rel="stylesheet" href="/assets/vendor/leaflet/leaflet.css">',
         '<script src="/assets/vendor/leaflet/leaflet.js"></script>\n<script src="/assets/js/map.js" defer></script>',
@@ -386,7 +390,7 @@ def version(rel):
 
 
 def bust(page):
-    for rel in ("/assets/css/style.css", "/assets/js/main.js", "/assets/js/map.js", "/assets/js/rosary.js"):
+    for rel in ("/assets/css/style.css", "/assets/js/main.js", "/assets/js/map.js", "/assets/js/rosary.js", "/assets/js/saints-dir.js"):
         page = page.replace(f'"{rel}"', f'"{rel}?v={version(rel)}"')
     return page
 

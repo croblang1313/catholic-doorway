@@ -34,7 +34,7 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Update saints list from OpenStreetMap"
+          git commit -m "Update saints list from Wikidata"
           # Other commits may have landed during the long download; rebase and retry.
           for i in 1 2 3 4 5; do
             git pull --rebase origin main && git push && exit 0
