@@ -35,16 +35,22 @@ CATHOLIC = {"Q9592", "Q1841", "Q29296"}  # Catholic Church, Catholicism, Latin C
 # Eastern Catholic churches are matched by label below.
 SCHISM_YEAR = 1054
 
-QUERY = """
-SELECT ?p ?en ?es ?desc ?when ?born ?died
+STATUS_QUERY = """
+SELECT ?p ?when WHERE {
+  ?p p:P411 ?s . ?s ps:P411 wd:%s . ?p wdt:P31 wd:Q5 .
+  OPTIONAL { ?s pq:P585 ?when }
+}
+"""
+
+DETAIL_QUERY = """
+SELECT ?p ?en ?es ?desc ?born ?died
   (GROUP_CONCAT(DISTINCT ?ctryLabel; separator="|") AS ?ctry)
   (GROUP_CONCAT(DISTINCT ?patLabel; separator="|") AS ?pat)
   (GROUP_CONCAT(DISTINCT ?rel; separator="|") AS ?rels)
   (GROUP_CONCAT(DISTINCT ?relLabel; separator="|") AS ?relLabels)
   (SAMPLE(?feastLabel) AS ?feast) (SAMPLE(?wp) AS ?wiki)
 WHERE {
-  ?p p:P411 ?s . ?s ps:P411 wd:%s . ?p wdt:P31 wd:Q5 .
-  OPTIONAL { ?s pq:P585 ?when }
+  VALUES ?p { %s }
   OPTIONAL { ?p rdfs:label ?en FILTER(lang(?en) = "en") }
   OPTIONAL { ?p rdfs:label ?es FILTER(lang(?es) = "es") }
   OPTIONAL { ?p schema:description ?desc FILTER(lang(?desc) = "en") }
@@ -55,7 +61,7 @@ WHERE {
   OPTIONAL { ?p wdt:P841 ?f . ?f rdfs:label ?feastLabel FILTER(lang(?feastLabel) = "en") }
   OPTIONAL { ?wp schema:about ?p ; schema:isPartOf <https://en.wikipedia.org/> }
 }
-GROUP BY ?p ?en ?es ?desc ?when ?born ?died
+GROUP BY ?p ?en ?es ?desc ?born ?died
 """
 
 
@@ -87,26 +93,33 @@ def val(b, k):
 def main():
     people = {}
     for qid, rank in STATUS.items():
-        rows = sparql(QUERY % qid)
-        print(f"{qid}: {len(rows)} rows")
+        rows = sparql(STATUS_QUERY % qid)
+        print(f"{qid}: {len(rows)} people")
         for b in rows:
             pid = val(b, "p").rsplit("/", 1)[-1]
-            name = val(b, "en") or val(b, "es")
-            if not name or re.match(r"^Q\d+$", name):
-                continue
             p = people.setdefault(pid, {"rank": 0, "when": None, "generic_only": True, "rels": set(), "relLabels": set()})
-            p.update(name=name, es=val(b, "es"), desc=val(b, "desc"), born=year(val(b, "born")) or p.get("born"),
-                     died=year(val(b, "died")) or p.get("died"), ctry=val(b, "ctry") or p.get("ctry", ""),
-                     pat=val(b, "pat") or p.get("pat", ""), feast=val(b, "feast") or p.get("feast", ""),
-                     wiki=val(b, "wiki") or p.get("wiki", ""))
-            p["rels"].update(x.rsplit("/", 1)[-1] for x in val(b, "rels").split("|") if x)
-            p["relLabels"].update(x for x in val(b, "relLabels").split("|") if x)
             if qid not in GENERIC:
                 p["generic_only"] = False
             w = year(val(b, "when"))
             if rank > p["rank"] or (rank == p["rank"] and w and not p["when"]):
                 p["rank"], p["when"] = rank, w
-        time.sleep(3)
+        time.sleep(2)
+
+    ids = list(people)
+    for i in range(0, len(ids), 250):
+        chunk = ids[i:i + 250]
+        rows = sparql(DETAIL_QUERY % " ".join("wd:" + x for x in chunk))
+        for b in rows:
+            pid = val(b, "p").rsplit("/", 1)[-1]
+            p = people[pid]
+            p.update(name=val(b, "en") or val(b, "es") or p.get("name", ""), es=val(b, "es"), desc=val(b, "desc"),
+                     born=year(val(b, "born")) or p.get("born"), died=year(val(b, "died")) or p.get("died"),
+                     ctry=val(b, "ctry"), pat=val(b, "pat"), feast=val(b, "feast"), wiki=val(b, "wiki"))
+            p["rels"].update(x.rsplit("/", 1)[-1] for x in val(b, "rels").split("|") if x)
+            p["relLabels"].update(x for x in val(b, "relLabels").split("|") if x)
+        print(f"details {min(i + 250, len(ids))}/{len(ids)}")
+        time.sleep(1)
+    people = {k: v for k, v in people.items() if v.get("name") and not re.match(r"^Q\d+$", v["name"])}
 
     def catholic_religion(p):
         return bool(p["rels"] & CATHOLIC) or any("Catholic" in r for r in p["relLabels"])
