@@ -36,7 +36,7 @@ The `catholic-doorway` Worker is connected to this repo in Cloudflare. Every pus
 The OCIA listing form (`/ocia-listing`) saves submissions in Workers KV. Until this is set up, the form falls back to opening an email to hello@catholicdoorway.com, so nothing breaks.
 
 1. In Cloudflare, go to Storage & Databases > Workers KV and create a namespace (for example `ocia-listings`). Copy its ID.
-2. Add it to `wrangler.jsonc`: `"kv_namespaces": [{ "binding": "LISTINGS", "id": "<namespace id>" }]`.
+2. Add it to `wrangler.jsonc` under `kv_namespaces` with the binding `LISTINGS` (done: namespace `ocia_listings`).
 3. In the `catholic-doorway` Worker, go to Settings > Variables and Secrets and add a **Secret** named `ADMIN_TOKEN` with a long random password.
 4. Review submissions at `/api/ocia-admin` (enter that password). Approve, unpublish or delete there. Only approved listings appear on the site.
 
