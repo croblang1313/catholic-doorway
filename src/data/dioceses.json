@@ -69,7 +69,7 @@
    "members": 55297,
    "founded": 1966,
    "short": "Archdiocese of Anchorage–Juneau",
-   "slug": "archdiocese-of-anchorage-juneau"
+   "slug": "archdiocese-of-anchoragejuneau"
   },
   {
    "qid": "Q868788",
@@ -467,7 +467,7 @@
    "members": 633000,
    "founded": 1981,
    "short": "Diocese of San José in California",
-   "slug": "diocese-of-san-jos-in-california"
+   "slug": "diocese-of-san-jose-in-california"
   },
   {
    "qid": "Q876114",
@@ -836,7 +836,7 @@
    "members": 67458,
    "founded": 1975,
    "short": "Diocese of Pensacola–Tallahassee",
-   "slug": "diocese-of-pensacola-tallahassee"
+   "slug": "diocese-of-pensacolatallahassee"
   },
   {
    "qid": "Q875471",
@@ -974,7 +974,7 @@
    "members": 149094,
    "founded": 1984,
    "short": "Archdiocese of Agaña",
-   "slug": "archdiocese-of-aga-a"
+   "slug": "archdiocese-of-agana"
   },
   {
    "qid": "Q11681149",
@@ -1271,7 +1271,7 @@
    "members": 161200,
    "founded": 1857,
    "short": "Diocese of Fort Wayne–South Bend",
-   "slug": "diocese-of-fort-wayne-south-bend"
+   "slug": "diocese-of-fort-waynesouth-bend"
   },
   {
    "qid": "Q869059",
@@ -1684,7 +1684,7 @@
    "members": 116160,
    "founded": 1977,
    "short": "Diocese of Houma–Thibodaux",
-   "slug": "diocese-of-houma-thibodaux"
+   "slug": "diocese-of-houmathibodaux"
   },
   {
    "qid": "Q870940",
@@ -2258,7 +2258,7 @@
    "lat": 44.0483,
    "founded": 1889,
    "short": "Diocese of Winona–Rochester",
-   "slug": "diocese-of-winona-rochester"
+   "slug": "diocese-of-winonarochester"
   },
   {
    "qid": "Q867173",
@@ -2375,7 +2375,7 @@
    "members": 130940,
    "founded": 1880,
    "short": "Diocese of Kansas City–Saint Joseph",
-   "slug": "diocese-of-kansas-city-saint-joseph"
+   "slug": "diocese-of-kansas-citysaint-joseph"
   },
   {
    "qid": "Q119608",
@@ -2399,7 +2399,7 @@
    "members": 64145,
    "founded": 1956,
    "short": "Diocese of Springfield–Cape Girardeau",
-   "slug": "diocese-of-springfield-cape-girardeau"
+   "slug": "diocese-of-springfieldcape-girardeau"
   },
   {
    "qid": "Q45511",
@@ -2422,7 +2422,7 @@
    "members": 37400,
    "founded": 1904,
    "short": "Diocese of Great Falls–Billings",
-   "slug": "diocese-of-great-falls-billings"
+   "slug": "diocese-of-great-fallsbillings"
   },
   {
    "qid": "Q774257",
@@ -3535,7 +3535,7 @@
    "members": 75468,
    "founded": 1901,
    "short": "Diocese of Altoona–Johnstown",
-   "slug": "diocese-of-altoona-johnstown"
+   "slug": "diocese-of-altoonajohnstown"
   },
   {
    "qid": "Q868703",
@@ -3788,7 +3788,7 @@
    "members": 383000,
    "founded": 1976,
    "short": "Diocese of Mayagüez",
-   "slug": "diocese-of-mayag-ez"
+   "slug": "diocese-of-mayaguez"
   },
   {
    "qid": "Q874329",
@@ -3997,7 +3997,7 @@
    "members": 1804100,
    "founded": 1847,
    "short": "Archdiocese of Galveston–Houston",
-   "slug": "archdiocese-of-galveston-houston"
+   "slug": "archdiocese-of-galvestonhouston"
   },
   {
    "qid": "Q974950",
@@ -4536,7 +4536,7 @@
    "members": 111670,
    "founded": 1850,
    "short": "Diocese of Wheeling–Charleston",
-   "slug": "diocese-of-wheeling-charleston"
+   "slug": "diocese-of-wheelingcharleston"
   },
   {
    "qid": "Q1365032",
@@ -4738,13 +4738,6 @@
     "rank": 4,
     "born": 1620,
     "died": 1646
-   },
-   {
-    "qid": "Q7346",
-    "name": "John Coltrane",
-    "rank": 4,
-    "born": 1926,
-    "died": 1967
    },
    {
     "qid": "Q609",
@@ -5195,14 +5188,6 @@
     "died": 1983
    }
   ],
-  "North Carolina": [
-   {
-    "qid": "Q7346",
-    "name": "John Coltrane",
-    "rank": 4,
-    "born": 1926,
-    "died": 1967
-   }
-  ]
+  "North Carolina": []
  }
 }

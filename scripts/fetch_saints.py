@@ -34,6 +34,8 @@ GENERIC = {"Q43115", "Q12774503"}
 CATHOLIC = {"Q9592", "Q1841", "Q29296", "Q597526"}  # Catholic Church, Catholicism, Latin Church (two items)
 # Eastern Catholic churches are matched by label below.
 SCHISM_YEAR = 1054
+# Wikidata lists these as plain "saints", but they were canonized by other churches.
+NOT_CATHOLIC = {"Q7346"}  # John Coltrane (African Orthodox Church)
 
 STATUS_QUERY = """
 SELECT ?p ?when WHERE {
@@ -167,6 +169,9 @@ def main():
 
     out, dropped = [], {"other religion": 0, "uncertain": 0}
     for pid, p in people.items():
+        if pid in NOT_CATHOLIC:
+            dropped["other religion"] += 1
+            continue
         p["ctry"] = norm_countries(p.get("ctry", ""))
         cath = catholic_religion(p)
         desc = p.get("desc", "")

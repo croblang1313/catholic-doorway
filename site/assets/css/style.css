@@ -588,3 +588,9 @@ body::before {
 .sd-links { font: .88rem var(--sans); margin: .6rem 0 0; }
 .sd-controls > *, .sd-selects label { min-width: 0; }
 .sd-controls .search { width: 100%; max-width: 100%; box-sizing: border-box; }
+
+/* Diocese pages: holy people of the state */
+.holy-list { list-style: none; padding: 0; margin: 1rem 0; display: grid; gap: .5rem 1.5rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.holy-list li { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem .5rem; }
+.holy-list .status { margin: 0; }
+#dio-table td:first-child a { font-weight: 600; }

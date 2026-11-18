@@ -31,53 +31,22 @@
   </section>
 
   <section class="section">
-    <h2>U.S. archdioceses</h2>
-    <p class="prose">The United States has 33 Latin Church archdioceses. Each leads a <a href="/structure#local">province</a> of nearby dioceses, so if you&rsquo;re not sure which diocese you&rsquo;re in, the archdiocese for your region can point you there.</p>
+    <h2>Every U.S. diocese</h2>
+    <p class="prose">There are {{DIOCESE_COUNT}} Catholic dioceses, archdioceses and Eastern Catholic eparchies in the United States and its territories. An archdiocese leads a <a href="/structure#local">province</a> of nearby dioceses. Tap any name for its bishop, cathedral, website, how to start OCIA there, and the holy men and women of that state.</p>
     <div class="filters">
-      <label for="dio-search" style="position:absolute;left:-999px">Search archdioceses by name or state</label>
-      <input id="dio-search" class="search" type="search" placeholder="Search by city or state, e.g. Texas or TX" data-filter-target="#dio-table tbody tr">
+      <label for="dio-search" style="position:absolute;left:-999px">Search dioceses by city, state or bishop</label>
+      <input id="dio-search" class="search" type="search" placeholder="Search by city, state or bishop, e.g. Texas" data-filter-target="#dio-table tbody tr">
     </div>
     <div class="table-wrap">
       <table id="dio-table">
-        <thead><tr><th scope="col">Archdiocese</th><th scope="col">State</th><th scope="col">Website</th></tr></thead>
+        <thead><tr><th scope="col">Diocese</th><th scope="col">Where</th><th scope="col">Led by</th></tr></thead>
         <tbody>
-          <tr><td>Anchorage-Juneau</td><td>Alaska (AK)</td><td><a href="https://www.aoaj.org/">aoaj.org</a></td></tr>
-          <tr><td>Atlanta</td><td>Georgia (GA)</td><td><a href="https://archatl.com/">archatl.com</a></td></tr>
-          <tr><td>Baltimore</td><td>Maryland (MD)</td><td><a href="https://www.archbalt.org/">archbalt.org</a></td></tr>
-          <tr><td>Boston</td><td>Massachusetts (MA)</td><td><a href="https://www.bostoncatholic.org/">bostoncatholic.org</a></td></tr>
-          <tr><td>Chicago</td><td>Illinois (IL)</td><td><a href="https://www.archchicago.org/">archchicago.org</a></td></tr>
-          <tr><td>Cincinnati</td><td>Ohio (OH)</td><td><a href="https://www.catholicaoc.org/">catholicaoc.org</a></td></tr>
-          <tr><td>Denver</td><td>Colorado (CO)</td><td><a href="https://archden.org/">archden.org</a></td></tr>
-          <tr><td>Detroit</td><td>Michigan (MI)</td><td><a href="https://www.aod.org/">aod.org</a></td></tr>
-          <tr><td>Dubuque</td><td>Iowa (IA)</td><td><a href="https://www.dbqarch.org/">dbqarch.org</a></td></tr>
-          <tr><td>Galveston-Houston</td><td>Texas (TX)</td><td><a href="https://www.archgh.org/">archgh.org</a></td></tr>
-          <tr><td>Hartford</td><td>Connecticut (CT)</td><td><a href="https://www.archdioceseofhartford.org/">archdioceseofhartford.org</a></td></tr>
-          <tr><td>Indianapolis</td><td>Indiana (IN)</td><td><a href="https://www.archindy.org/">archindy.org</a></td></tr>
-          <tr><td>Kansas City in Kansas</td><td>Kansas (KS)</td><td><a href="https://www.archkck.org/">archkck.org</a></td></tr>
-          <tr><td>Las Vegas</td><td>Nevada (NV)</td><td><a href="https://www.dolv.org/">dolv.org</a></td></tr>
-          <tr><td>Los Angeles</td><td>California (CA)</td><td><a href="https://lacatholics.org/">lacatholics.org</a></td></tr>
-          <tr><td>Louisville</td><td>Kentucky (KY)</td><td><a href="https://www.archlou.org/">archlou.org</a></td></tr>
-          <tr><td>Miami</td><td>Florida (FL)</td><td><a href="https://www.miamiarch.org/">miamiarch.org</a></td></tr>
-          <tr><td>Milwaukee</td><td>Wisconsin (WI)</td><td><a href="https://www.archmil.org/">archmil.org</a></td></tr>
-          <tr><td>Mobile</td><td>Alabama (AL)</td><td><a href="https://www.mobarch.org/">mobarch.org</a></td></tr>
-          <tr><td>New Orleans</td><td>Louisiana (LA)</td><td><a href="https://nolacatholic.org/">nolacatholic.org</a></td></tr>
-          <tr><td>New York</td><td>New York (NY)</td><td><a href="https://archny.org/">archny.org</a></td></tr>
-          <tr><td>Newark</td><td>New Jersey (NJ)</td><td><a href="https://www.rcan.org/">rcan.org</a></td></tr>
-          <tr><td>Oklahoma City</td><td>Oklahoma (OK)</td><td><a href="https://archokc.org/">archokc.org</a></td></tr>
-          <tr><td>Omaha</td><td>Nebraska (NE)</td><td><a href="https://archomaha.org/">archomaha.org</a></td></tr>
-          <tr><td>Philadelphia</td><td>Pennsylvania (PA)</td><td><a href="https://archphila.org/">archphila.org</a></td></tr>
-          <tr><td>Portland in Oregon</td><td>Oregon (OR)</td><td><a href="https://archdpdx.org/">archdpdx.org</a></td></tr>
-          <tr><td>St. Louis</td><td>Missouri (MO)</td><td><a href="https://www.archstl.org/">archstl.org</a></td></tr>
-          <tr><td>St. Paul and Minneapolis</td><td>Minnesota (MN)</td><td><a href="https://www.archspm.org/">archspm.org</a></td></tr>
-          <tr><td>San Antonio</td><td>Texas (TX)</td><td><a href="https://www.archsa.org/">archsa.org</a></td></tr>
-          <tr><td>San Francisco</td><td>California (CA)</td><td><a href="https://sfarch.org/">sfarch.org</a></td></tr>
-          <tr><td>Santa Fe</td><td>New Mexico (NM)</td><td><a href="https://www.archdiosf.org/">archdiosf.org</a></td></tr>
-          <tr><td>Seattle</td><td>Washington (WA)</td><td><a href="https://archseattle.org/">archseattle.org</a></td></tr>
-          <tr><td>Washington</td><td>District of Columbia (DC) and Maryland (MD)</td><td><a href="https://adw.org/">adw.org</a></td></tr>
+{{DIOCESES}}
         </tbody>
       </table>
     </div>
-    <p class="small muted" id="dio-empty" hidden>No archdiocese matches that search. Try the <a href="https://www.usccb.org/about/bishops-and-dioceses">full USCCB list</a>.</p>
+    <p class="small muted" id="dio-empty" hidden>No diocese matches that search. Try the <a href="https://www.usccb.org/about/bishops-and-dioceses">full USCCB list</a>.</p>
+    <p class="small muted">From <a href="https://www.wikidata.org/">Wikidata</a>, updated {{DIOCESE_UPDATED}} and refreshed weekly. Always confirm details on the diocese&rsquo;s own website.</p>
   </section>
 
   <section class="section">

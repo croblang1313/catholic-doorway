@@ -7,6 +7,7 @@ import json
 import re
 import sys
 import time
+import unicodedata
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -79,7 +80,7 @@ def v(b, k):
 
 
 def slugify(name):
-    s = name.lower()
+    s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower()
     s = re.sub(r"^(roman catholic |catholic )", "", s)
     s = s.replace("–", "-").replace("’", "").replace("'", "")
     s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")

@@ -10,6 +10,8 @@ import datetime
 import hashlib
 import html
 import json
+import re
+import urllib.parse
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES_DIR = ROOT / "src" / "pages"
@@ -59,7 +61,7 @@ PAGES = [
     ("structure", "Church Structure", "How the Catholic Church Is Organized | CatholicDoorway",
      "How the Catholic Church is organized: the Pope, bishops, dioceses, parishes, priests and deacons, explained simply."),
     ("dioceses", "Dioceses", "U.S. Catholic Dioceses Directory | CatholicDoorway",
-     "Find your Catholic diocese: the U.S. archdioceses and how to look up any diocese in the United States."),
+     "Every Catholic diocese, archdiocese and eparchy in the United States: its bishop, cathedral, website, OCIA help and local saints."),
     ("saints", "Saints", "Catholic Saints, Blesseds and Venerables | CatholicDoorway",
      "Meet the saints, and learn the path to sainthood: Servant of God, Venerable, Blessed and Saint."),
     ("saints-directory", "Saints Directory", "Saints and Causes Directory: Saints, Blesseds, Venerables, Servants of God | CatholicDoorway",
@@ -384,6 +386,164 @@ def questions_html():
     return "\n".join(out)
 
 
+# ---------- Diocese directory (data: src/data/dioceses.json from Wikidata) ----------
+MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+RANK_LABEL = {4: "Saint", 3: "Blessed", 2: "Venerable", 1: "Servant of God"}
+RANK_CLS = {4: "s-saint", 3: "s-blessed", 2: "s-venerable", 1: "s-servant"}
+
+
+def load_dioceses():
+    f = ROOT / "src" / "data" / "dioceses.json"
+    return json.loads(f.read_text(encoding="utf-8"))
+
+
+def dio_kind(d):
+    n = d["short"].lower()
+    if "military" in n:
+        return "nationwide"
+    if "eparchy" in n:
+        return "eastern"
+    return "latin"
+
+
+def dio_leader(d):
+    n = d["short"].lower()
+    return "Archbishop" if n.startswith(("archdiocese", "archeparchy")) or " archeparchy" in n else "Bishop"
+
+
+ABBR = dict(zip("Alabama Alaska Arizona Arkansas California Colorado Connecticut Delaware Florida Georgia Hawaii Idaho Illinois Indiana Iowa Kansas Kentucky Louisiana Maine Maryland Massachusetts Michigan Minnesota Mississippi Missouri Montana Nebraska Nevada New_Hampshire New_Jersey New_Mexico New_York North_Carolina North_Dakota Ohio Oklahoma Oregon Pennsylvania Rhode_Island South_Carolina South_Dakota Tennessee Texas Utah Vermont Virginia Washington West_Virginia Wisconsin Wyoming District_of_Columbia Puerto_Rico Guam".replace("_", "~").split(),
+    "AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC PR GU".split()))
+ABBR = {k.replace("~", " "): v for k, v in ABBR.items()}
+
+
+def dio_place(d):
+    st = ", ".join(f"{x} ({ABBR[x]})" if x in ABBR else x for x in d["states"])
+    if dio_kind(d) == "eastern":
+        return "Eastern Catholic, nationwide" + (f" (based in {d['city']}, {st})" if d.get("city") and st else "")
+    if dio_kind(d) == "nationwide":
+        return "Nationwide"
+    return st or "United States"
+
+
+def dio_rows(data):
+    order = {"latin": 0, "eastern": 1, "nationwide": 2}
+    ds = sorted(data["dioceses"], key=lambda d: (order[dio_kind(d)], d["states"][0] if d["states"] else "~", d["short"]))
+    rows = []
+    for d in ds:
+        lead = html.escape(d.get("bishop", "")) or '<span class="muted">Vacant or not recorded</span>'
+        rows.append(f'          <tr><td><a href="/dioceses/{d["slug"]}">{html.escape(d["short"])}</a></td>'
+                    f'<td>{html.escape(dio_place(d))}</td><td>{lead}</td></tr>')
+    return "\n".join(rows), len(ds)
+
+
+def _domain(url):
+    return re.sub(r"^https?://(www\.)?", "", url or "").split("/")[0]
+
+
+def _since(x):
+    m = re.match(r"(\d{4})-(\d{2})", x or "")
+    return f"{MONTHS[int(m.group(2)) - 1]} {m.group(1)}" if m else ""
+
+
+def diocese_body(d, data):
+    e = html.escape
+    kind = dio_kind(d)
+    st = d["states"][0] if d["states"] else ""
+    city = d.get("city", "")
+    where = ", ".join(x for x in (city, st) if x)
+    what = {"latin": "archdiocese" if d["short"].startswith("Archdiocese") else "diocese",
+            "eastern": "Eastern Catholic eparchy", "nationwide": "nationwide jurisdiction"}[kind]
+    lede = f"A Catholic {what}" + (f" based in {e(where)}" if where else "") + (f", founded in {d['founded']}" if d.get("founded") else "") + "."
+    if kind == "eastern":
+        lede += " Eparchies serve Eastern Catholics across a wide region, alongside the local Latin Church dioceses."
+    lead = dio_leader(d)
+    church = "eparchy" if kind == "eastern" else ("archdiocese" if d["short"].startswith("Archdiocese") else "diocese")
+    out = ['<div class="page-head">\n  <div class="wrap">',
+           f'    <p class="kicker"><a href="/dioceses">Dioceses</a> &rsaquo; {e(st or "United States")}</p>',
+           f'    <h1>{e(d["short"])}</h1>',
+           f'    <p class="lede">{lede}</p>',
+           '  </div>\n</div>\n\n<div class="wrap">\n  <section class="section">\n    <div class="grid two">']
+    if d.get("bishop"):
+        since = _since(d.get("bishop_since"))
+        out.append('      <div class="card">\n        <h3>Who leads it</h3>'
+                   f'\n        <p><strong>{e(d["bishop"])}</strong>{", since " + since if since else ""}.</p>'
+                   f'\n        <p class="small muted">From Wikidata. If a new {lead.lower()} was named recently, the {church} website will have it first.</p>\n      </div>')
+    if d.get("website"):
+        out.append('      <div class="card">\n        <h3>Official website</h3>'
+                   '\n        <p>News, Mass times, schools, Catholic Charities, marriage preparation and contacts for every office.</p>'
+                   f'\n        <div class="btn-row" style="justify-content:flex-start"><a class="btn" href="{e(d["website"])}" rel="noopener">{e(_domain(d["website"]))}</a></div>\n      </div>')
+    if d.get("cathedral"):
+        mp = (f' <a href="https://www.openstreetmap.org/?mlat={d["lat"]}&amp;mlon={d["lon"]}#map=17/{d["lat"]}/{d["lon"]}" rel="noopener">See it on a map</a>.'
+              if d.get("lat") else "")
+        town = f", {e(city)}" if city and city not in d["cathedral"] else ""
+        out.append('      <div class="card">\n        <h3>Cathedral</h3>'
+                   f'\n        <p><strong>{e(d["cathedral"])}</strong>{town}. The cathedral is the {lead.lower()}&rsquo;s own church and the mother church of the {church}.{mp}</p>\n      </div>')
+    q = urllib.parse.quote(where or d["short"])
+    dom = _domain(d.get("website"))
+    near = f" near {e(city)}" if city and kind == "latin" else ""
+    ocia = (f'\n          <a class="btn secondary" href="https://duckduckgo.com/?q={urllib.parse.quote("OCIA site:" + dom)}" rel="noopener">Search its website for OCIA</a>'
+            if dom else "")
+    out.append('      <div class="card">\n        <h3>Thinking of becoming Catholic?</h3>'
+               '\n        <p>OCIA happens in parishes. Pick a parish near you, then call or email and ask when the next OCIA group starts. '
+               f'The {church}&rsquo;s Office of Worship (sometimes called Evangelization or Christian Initiation) can help if a parish doesn&rsquo;t answer. <a href="/start-here">How OCIA works</a>.</p>'
+               f'\n        <div class="btn-row" style="justify-content:flex-start">\n          <a class="btn" href="/find-a-church?ocia=1&amp;q={q}">Find parishes{near}</a>{ocia}\n        </div>\n      </div>')
+    if d.get("members"):
+        out.append('      <div class="card">\n        <h3>Size</h3>'
+                   f'\n        <p>About <strong>{d["members"]:,}</strong> Catholics, according to the most recent figure in Wikidata.</p>\n      </div>')
+    out.append("    </div>\n  </section>")
+
+    holy = data["holy_by_state"].get(st, []) if kind == "latin" and st else []
+    if holy:
+        items = []
+        for p in holy:
+            yrs = f' <span class="small muted">({p["born"]}&ndash;{p["died"]})</span>' if p["born"] and p["died"] else ""
+            items.append(f'<li><a href="/saints-directory?q={urllib.parse.quote(p["name"])}">{e(p["name"])}</a> '
+                         f'<span class="status {RANK_CLS[p["rank"]]}">{RANK_LABEL[p["rank"]]}</span>{yrs}</li>')
+        out.append(f'\n  <section class="section">\n    <h2>Holy men and women of {e(st)}</h2>'
+                   f'\n    <p class="prose">Saints, Blesseds, Venerables and Servants of God who were born or died in {e(st)}. Some causes are led by this diocese; others by a neighboring diocese or a religious order.</p>'
+                   f'\n    <ul class="holy-list">\n      ' + "\n      ".join(items) + '\n    </ul>'
+                   '\n    <p class="small muted">Wikidata does not record every cause yet. <a href="/saints-directory">Search the full directory</a>.</p>\n  </section>')
+
+    others = sorted((o for o in data["dioceses"] if o is not d and st and st in o["states"] and dio_kind(o) == "latin"),
+                    key=lambda o: o["short"]) if kind == "latin" else []
+    if others:
+        links = " &middot; ".join(f'<a href="/dioceses/{o["slug"]}">{e(o["short"])}</a>' for o in others)
+        out.append(f'\n  <section class="section">\n    <h2>Other dioceses in {e(st)}</h2>\n    <p>{links}</p>\n  </section>')
+
+    refs = []
+    if d.get("ch"):
+        refs.append(f'<a href="https://www.catholic-hierarchy.org/diocese/d{e(d["ch"])}.html" rel="noopener">Catholic-Hierarchy</a>')
+    if d.get("gc"):
+        refs.append(f'<a href="https://gcatholic.org/dioceses/diocese/{e(d["gc"])}.htm" rel="noopener">GCatholic</a>')
+    out.append('\n  <section class="section">'
+               f'\n    <p class="small muted">History, parishes and statistics: {" &middot; ".join(refs) or "see the " + church + " website"}. '
+               f'The details on this page come from <a href="https://www.wikidata.org/wiki/{d["qid"]}" rel="noopener">Wikidata</a> (updated {data["updated"]}), where anyone can correct them. <a href="/dioceses">All U.S. dioceses</a>.</p>'
+               '\n  </section>\n</div>\n')
+    return "\n".join(out)
+
+
+def build_dioceses(data):
+    out_dir = OUT / "dioceses"
+    out_dir.mkdir(exist_ok=True)
+    keep = set()
+    for d in data["dioceses"]:
+        title = f'{d["short"]}: Bishop, Cathedral, OCIA and Parishes | CatholicDoorway'
+        st = ", ".join(d["states"])
+        desc = (f'{d["short"]}{" (" + st + ")" if st else ""}: who leads it, its cathedral and website, '
+                'how to find a parish and OCIA, and the holy men and women of the area.')
+        page = HEAD.format(title=html.escape(title), desc=html.escape(desc), canonical=f"{DOMAIN}/dioceses/{d['slug']}",
+                           domain=DOMAIN, slug="dioceses", door=DOOR_SVG, menu=MENU_SVG, theme=THEME_SVG,
+                           nav=nav_html("dioceses"), extra_head="", alternates="", alt_href="/es/", **EN_TEXT)
+        page += diocese_body(d, data) + FOOT.format(extra_foot="")
+        (out_dir / f"{d['slug']}.html").write_text(bust(page), encoding="utf-8")
+        keep.add(f"{d['slug']}.html")
+    for old in out_dir.glob("*.html"):
+        if old.name not in keep:
+            old.unlink()
+    print(f"built {len(keep)} diocese pages")
+    return sorted(d["slug"] for d in data["dioceses"])
+
+
 def version(rel):
     """Short content hash so browsers fetch new CSS/JS as soon as it changes."""
     return hashlib.sha1((OUT / rel.lstrip("/")).read_bytes()).hexdigest()[:10]
@@ -464,6 +624,7 @@ def build_es():
 
 
 def main():
+    dio_data = load_dioceses()
     for slug, label, title, desc in PAGES:
         body = (PAGES_DIR / f"{slug}.html").read_text(encoding="utf-8")
         canonical = DOMAIN + ("/" if slug == "index" else f"/{slug}")
@@ -487,6 +648,9 @@ def main():
             body = body.replace("{{MASS}}", ms).replace("{{MASS_COUNT}}", str(mn))
         if "{{QUESTIONS}}" in body:
             body = body.replace("{{QUESTIONS}}", questions_html())
+        if "{{DIOCESES}}" in body:
+            rows, n = dio_rows(dio_data)
+            body = body.replace("{{DIOCESES}}", rows).replace("{{DIOCESE_COUNT}}", str(n)).replace("{{DIOCESE_UPDATED}}", dio_data["updated"])
         if "{{POPES}}" in body:
             pl, pj = popes_html()
             body = body.replace("{{POPES}}", pl).replace("{{CENTURIES}}", pj)
@@ -496,6 +660,7 @@ def main():
         print("built", slug)
 
     build_es()
+    dio_slugs = build_dioceses(dio_data)
 
     today = datetime.date.today().isoformat()
     urls = "\n".join(
@@ -504,6 +669,7 @@ def main():
     urls += "\n" + "\n".join(
         f"  <url><loc>{DOMAIN}/es/{'' if es == 'index' else es}</loc><lastmod>{today}</lastmod></url>"
         for _, es, *_ in ES_PAGES)
+    urls += "\n" + "\n".join(f"  <url><loc>{DOMAIN}/dioceses/{s}</loc><lastmod>{today}</lastmod></url>" for s in dio_slugs)
     (OUT / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n',
         encoding="utf-8")
