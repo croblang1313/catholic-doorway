@@ -3,8 +3,42 @@
    No data is scraped from MassTimes.org or any other directory. */
 (function () {
   'use strict';
-  var ES = document.documentElement.lang === 'es';
-  var T = function (en, es) { return ES ? es : en; };
+  var LG = document.documentElement.lang, ES = LG === 'es', PT = LG === 'pt';
+  // Portuguese strings, keyed by the Spanish text so each T(en, es) call picks them up.
+  var PTX = {
+    'No se pudo cargar el mapa. Revisa tu conexión y vuelve a cargar la página.': 'Não foi possível carregar o mapa. Verifique sua conexão e recarregue a página.',
+    'Iglesia católica': 'Igreja católica',
+    'Interés en hacerme católico (OCIA)': 'Interesse em me tornar católico (OCIA)',
+    'Llamar a la parroquia': 'Ligar para a paróquia',
+    'Enviar un correo': 'Enviar um e-mail',
+    'Sitio web de la parroquia': 'Site da paróquia',
+    '¿Quieres hacerte católico? Pregunta por OCIA': 'Quer se tornar católico? Pergunte sobre a OCIA',
+    'Cada parroquia puede ponerte en contacto con su grupo de OCIA. Llama o escribe y di algo así:': 'Toda paróquia pode colocar você em contato com o seu grupo de OCIA. Ligue ou escreva e diga algo assim:',
+    'Esta iglesia no tiene teléfono ni sitio web en la lista. Prueba otra parroquia cercana o ': 'Esta igreja não tem telefone nem site na lista. Tente uma paróquia próxima ou ',
+    'comunícate con tu diócesis': 'entre em contato com a sua diocese',
+    'En el sitio web, busca “OCIA”, “RICA” o “Hacerse católico”. ': 'No site, procure por “OCIA”, “RICA”, “Catecumenato” ou “Tornar-se católico”. ',
+    'Cómo funciona OCIA': 'Como funciona a OCIA',
+    'Cómo llegar': 'Como chegar',
+    'Sitio web': 'Site',
+    'Dirección no disponible': 'Endereço não informado',
+    'Horarios publicados:': 'Horários informados:',
+    'Según OpenStreetMap. Confírmalos con la parroquia.': 'Segundo o OpenStreetMap. Confirme com a paróquia.',
+    'Llamar al ': 'Ligar para ',
+    'Sitio web y horarios de Misa': 'Site e horários de Missa',
+    'Mejorar este dato': 'Melhorar este cadastro',
+    'No encontramos iglesias católicas aquí en OpenStreetMap. Aleja el mapa o busca un pueblo cercano.': 'Não encontramos igrejas católicas aqui no OpenStreetMap. Afaste o mapa ou pesquise uma cidade próxima.',
+    'Estás aquí': 'Você está aqui',
+    'La base de datos de iglesias está ocupada. Vuelve a intentarlo en un minuto.': 'A base de dados de igrejas está ocupada. Tente de novo em um minuto.',
+    'Acerca un poco más el mapa para buscar en esta zona.': 'Aproxime um pouco mais o mapa para pesquisar nesta área.',
+    'Buscando iglesias en esta zona\u2026': 'Procurando igrejas nesta área\u2026',
+    'No encontramos ese lugar. Prueba con una ciudad y estado, o un código postal.': 'Não encontramos esse lugar. Tente uma cidade e estado, ou um CEP (ZIP code).',
+    'La búsqueda no está disponible en este momento. Inténtalo de nuevo en un rato.': 'A pesquisa não está disponível agora. Tente de novo daqui a pouco.',
+    'Tu navegador no puede compartir tu ubicación. Escribe una ciudad o un código postal.': 'Seu navegador não pode compartilhar sua localização. Digite uma cidade ou um ZIP code.',
+    'Buscando tu ubicación…': 'Procurando sua localização…',
+    'tu ubicación': 'sua localização',
+    'No pudimos obtener tu ubicación. Escribe una ciudad o un código postal.': 'Não conseguimos obter sua localização. Digite uma cidade ou um ZIP code.'
+  };
+  var T = function (en, es, pt) { return PT ? (pt !== undefined ? pt : (PTX[es] || en)) : ES ? es : en; };
   var OCIA = /[?&]ocia=1/.test(location.search);
   if (OCIA) document.documentElement.classList.add('ocia-mode');
   if (typeof L === 'undefined') {
@@ -148,18 +182,20 @@
   function ociaBox(c) {
     var subj = T('Interested in becoming Catholic (OCIA)', 'Interés en hacerme católico (OCIA)');
     var body = T('Hello,\n\nI found ' + c.name + ' on CatholicDoorway.com. I am interested in learning more about becoming Catholic. Could you please put me in touch with the person who leads OCIA, and let me know when the next group begins?\n\nThank you,\n',
-                 'Hola:\n\nEncontré ' + c.name + ' en CatholicDoorway.com. Me interesa saber más sobre cómo hacerme católico. ¿Me podrían poner en contacto con la persona que dirige OCIA y decirme cuándo empieza el próximo grupo? ¿Hay un grupo en español?\n\nGracias,\n');
+                 'Hola:\n\nEncontré ' + c.name + ' en CatholicDoorway.com. Me interesa saber más sobre cómo hacerme católico. ¿Me podrían poner en contacto con la persona que dirige OCIA y decirme cuándo empieza el próximo grupo? ¿Hay un grupo en español?\n\nGracias,\n',
+                 'Olá,\n\nEncontrei ' + c.name + ' no CatholicDoorway.com. Tenho interesse em saber mais sobre como me tornar católico. Vocês poderiam me colocar em contato com a pessoa que coordena a OCIA e me dizer quando começa o próximo grupo? Há algum grupo ou atendimento em português?\n\nObrigado,\n');
     var btns = '';
     if (c.phone) btns += '<a class="btn small" href="tel:' + esc(c.phone.replace(/[^\d+]/g, '')) + '">' + T('Call the parish', 'Llamar a la parroquia') + '</a>';
     if (c.email) btns += '<a class="btn small' + (c.phone ? ' secondary' : '') + '" href="mailto:' + esc(c.email) + '?subject=' + encodeURIComponent(subj) + '&amp;body=' + encodeURIComponent(body) + '">' + T('Email an inquiry', 'Enviar un correo') + '</a>';
     if (c.web) btns += '<a class="btn small secondary" href="' + esc(c.web) + '" target="_blank" rel="noopener">' + T('Parish website', 'Sitio web de la parroquia') + '</a>';
     var say = T('“Hi, my name is ____. I’m interested in becoming Catholic. Could I speak with whoever leads OCIA, and find out when the next group starts?”',
-                '“Hola, me llamo ____. Me interesa hacerme católico. ¿Puedo hablar con la persona que dirige OCIA y saber cuándo empieza el próximo grupo?”');
+                '“Hola, me llamo ____. Me interesa hacerme católico. ¿Puedo hablar con la persona que dirige OCIA y saber cuándo empieza el próximo grupo?”',
+                '“Olá, meu nome é ____. Tenho interesse em me tornar católico. Posso falar com a pessoa que coordena a OCIA e saber quando começa o próximo grupo?”');
     return '<details class="ocia"' + (OCIA ? ' open' : '') + '><summary>' + T('Becoming Catholic? Ask about OCIA', '¿Quieres hacerte católico? Pregunta por OCIA') + '</summary>' +
       '<p>' + T('Every parish can connect you with its OCIA group. Call or write and say something like:', 'Cada parroquia puede ponerte en contacto con su grupo de OCIA. Llama o escribe y di algo así:') + '</p>' +
       '<p class="ocia-say">' + say + '</p>' +
-      (btns ? '<div class="actions">' + btns + '</div>' : '<p class="muted">' + T('No phone or website is listed for this church. Try a nearby parish, or ', 'Esta iglesia no tiene teléfono ni sitio web en la lista. Prueba otra parroquia cercana o ') + '<a href="' + T('/dioceses', '/es/diocesis') + '">' + T('contact your diocese', 'comunícate con tu diócesis') + '</a>.</p>') +
-      '<p class="small muted">' + T('On the website, look for “OCIA,” “RCIA” or “Becoming Catholic.” ', 'En el sitio web, busca “OCIA”, “RICA” o “Hacerse católico”. ') + '<a href="' + (ES ? '/es/comenzar' : '/start-here') + '">' + T('How OCIA works', 'Cómo funciona OCIA') + '</a></p>' +
+      (btns ? '<div class="actions">' + btns + '</div>' : '<p class="muted">' + T('No phone or website is listed for this church. Try a nearby parish, or ', 'Esta iglesia no tiene teléfono ni sitio web en la lista. Prueba otra parroquia cercana o ') + '<a href="' + T('/dioceses', '/es/diocesis', '/dioceses') + '">' + T('contact your diocese', 'comunícate con tu diócesis') + '</a>.</p>') +
+      '<p class="small muted">' + T('On the website, look for “OCIA,” “RCIA” or “Becoming Catholic.” ', 'En el sitio web, busca “OCIA”, “RICA” o “Hacerse católico”. ') + '<a href="' + (ES ? '/es/comenzar' : PT ? '/pt/comecar' : '/start-here') + '">' + T('How OCIA works', 'Cómo funciona OCIA') + '</a></p>' +
       '</details>';
   }
 
@@ -181,7 +217,7 @@
       card.className = 'card church';
       card.id = 'c-' + c.id.replace('/', '-');
       card.innerHTML =
-        (c.d != null ? '<span class="dist">' + (ES ? 'a ' + fmtDist(c.d) : fmtDist(c.d) + ' away') + '</span>' : '') +
+        (c.d != null ? '<span class="dist">' + (ES ? 'a ' + fmtDist(c.d) : PT ? 'a ' + fmtDist(c.d) : fmtDist(c.d) + ' away') + '</span>' : '') +
         '<h3><button type="button" class="linklike" style="all:unset;cursor:pointer">' + esc(c.name) + '</button></h3>' +
         '<p class="addr">' + (c.addr ? esc(c.addr) : '<span class="muted">' + T('Address not listed', 'Dirección no disponible') + '</span>') + '</p>' +
         (c.times ? '<div class="times"><strong>' + T('Listed service times:', 'Horarios publicados:') + '</strong> ' + esc(c.times) + '<br><span class="muted">' + T('From OpenStreetMap. Please confirm with the parish.', 'Según OpenStreetMap. Confírmalos con la parroquia.') + '</span></div>' : '') +
@@ -202,7 +238,9 @@
     if (!list.length) {
       setStatus(T('No Catholic churches found here on OpenStreetMap. Try zooming out or searching a nearby town.', 'No encontramos iglesias católicas aquí en OpenStreetMap. Aleja el mapa o busca un pueblo cercano.'));
     } else {
-      setStatus(ES
+      setStatus(PT
+        ? 'Mostrando ' + shown.length + (list.length > shown.length ? ' de ' + list.length : '') + (shown.length === 1 ? ' igreja católica' : ' igrejas católicas') + (origin ? ', da mais próxima à mais distante.' : '.')
+        : ES
         ? 'Mostrando ' + shown.length + (list.length > shown.length ? ' de ' + list.length : '') + (shown.length === 1 ? ' iglesia católica' : ' iglesias católicas') + (origin ? ', de la más cercana a la más lejana.' : '.')
         : 'Showing ' + shown.length + (list.length > shown.length ? ' of ' + list.length : '') + ' Catholic ' + (shown.length === 1 ? 'church' : 'churches') + (origin ? ', nearest first.' : '.'));
     }
@@ -225,7 +263,7 @@
     origin = [lat, lon];
     if (originMarker) map.removeLayer(originMarker);
     originMarker = L.circleMarker(origin, { radius: 7, color: '#a8802f', weight: 3, fillColor: '#fff', fillOpacity: 1 }).addTo(map).bindTooltip(label || T('You are here', 'Estás aquí'));
-    setStatus(ES ? 'Buscando iglesias cerca de ' + (label || 'ti') + '\u2026' : 'Looking for churches near ' + (label || 'you') + '\u2026');
+    setStatus(PT ? 'Procurando igrejas perto de ' + (label || 'você') + '\u2026' : ES ? 'Buscando iglesias cerca de ' + (label || 'ti') + '\u2026' : 'Looking for churches near ' + (label || 'you') + '\u2026');
     var bx = boxAround(lat, lon, 80);
     loadBox(bx[0], bx[1], bx[2], bx[3]).then(function (all) {
       if (!all) return searchAroundLive(lat, lon, label);

@@ -1,0 +1,41 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/pt/oracoes">Orações</a> &rsaquo; Reze o Rosário</p>
+    <h1>Reze o Rosário conosco</h1>
+    <p class="lede">Não tem um terço à mão? Não tem problema. Avance pelo Rosário uma oração de cada vez. A conta em que você está se acende, cada mistério traz a sua passagem da Bíblia e, se você parar no meio, o lugar fica guardado.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section">
+    <div class="rosary" id="rosary-app" hidden>
+      <div class="rosary-top">
+        <label for="rosary-set" class="small muted">Mistérios</label>
+        <select id="rosary-set" class="search"></select>
+        <button type="button" class="btn small secondary" id="rs-latin" aria-pressed="false">Rezar em latim</button>
+        <button type="button" class="btn small secondary" id="rs-restart">Recomeçar</button>
+      </div>
+      <div class="rosary-grid">
+        <svg id="rosary-svg" viewBox="0 0 300 420" role="img" aria-label="As contas do terço. A conta atual está destacada; toque nela para passar à próxima oração."></svg>
+        <div class="rosary-panel">
+          <div class="rs-progress"><span id="rs-bar"></span></div>
+          <div id="rosary-step" class="rosary-step" aria-live="polite"></div>
+          <div class="rs-nav">
+            <button class="btn secondary" type="button" id="rs-back">&larr; Voltar</button>
+            <span id="rs-count" class="rs-count"></span>
+            <button class="btn" type="button" id="rs-next">Próximo &rarr;</button>
+          </div>
+          <p class="small muted rs-hint">Dica: toque nas contas, deslize o dedo ou use as setas do teclado para avançar.</p>
+        </div>
+      </div>
+    </div>
+    <p id="rosary-nojs" class="muted">O Rosário interativo precisa de JavaScript. Você pode seguir o <a href="/pt/oracoes#rosario">guia escrito</a>.</p>
+  </section>
+
+  <section class="section prose">
+    <h2>Sobre o Rosário</h2>
+    <p>O Rosário é uma oração de meditação sobre a vida de Jesus, vista com os olhos de sua mãe, Maria. Enquanto os lábios rezam orações conhecidas, o coração e a mente contemplam um dos vinte acontecimentos do Evangelho, chamados <strong>mistérios</strong>. Um terço de cinco dezenas leva cerca de 20 minutos.</p>
+    <p>Cada dia da semana tem os seus mistérios: os Gozosos às segundas e sábados, os Dolorosos às terças e sextas, os Gloriosos às quartas e domingos, e os Luminosos às quintas. Esta página escolhe os de hoje, mas você pode escolher os que quiser.</p>
+    <p>Quer rezar em latim? Toque em &ldquo;Rezar em latim&rdquo; para ver cada oração em latim, com o português logo abaixo. As leituras bíblicas abrem na Bíblia em inglês dos bispos dos Estados Unidos. Todas as orações e um guia escrito estão na nossa página de <a href="/pt/oracoes#rosario">Orações</a>.</p>
+  </section>
+</div>

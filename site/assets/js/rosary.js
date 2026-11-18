@@ -44,8 +44,8 @@
   };
 
   /* ---- Spanish ---- */
-  var ES = document.documentElement.lang === 'es';
-  var T = function (en, es) { return ES ? es : en; };
+  var LG = document.documentElement.lang, ES = LG === 'es', PT = LG === 'pt';
+  var T = function (en, es, pt) { return PT ? (pt !== undefined ? pt : en) : ES ? es : en; };
   if (ES) {
     P = {
       sign: { t: 'La Señal de la Cruz', x: 'En el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén.' },
@@ -85,28 +85,103 @@
         ['La Coronación de María', 'Apocalipsis 12, 1', 'La confianza en la intercesión de María', 'María es coronada Reina del cielo y de la tierra.', 'Revelation 12:1']] }
     };
   }
+  if (PT) {
+    P = {
+      sign: { t: 'O Sinal da Cruz', x: 'Em nome do Pai, e do Filho, e do Espírito Santo. Amém.' },
+      creed: { t: 'O Creio (Símbolo dos Apóstolos)', x: 'Creio em Deus Pai todo-poderoso, Criador do céu e da terra.\nE em Jesus Cristo, seu único Filho, nosso Senhor, que foi concebido pelo poder do Espírito Santo; nasceu da Virgem Maria; padeceu sob Pôncio Pilatos, foi crucificado, morto e sepultado; desceu à mansão dos mortos; ressuscitou ao terceiro dia; subiu aos céus; está sentado à direita de Deus Pai todo-poderoso, donde há de vir a julgar os vivos e os mortos.\nCreio no Espírito Santo, na santa Igreja Católica, na comunhão dos santos, na remissão dos pecados, na ressurreição da carne, na vida eterna. Amém.' },
+      our: { t: 'Pai-Nosso', x: 'Pai nosso, que estais nos céus, santificado seja o vosso nome; venha a nós o vosso reino; seja feita a vossa vontade, assim na terra como no céu. O pão nosso de cada dia nos dai hoje; perdoai-nos as nossas ofensas, assim como nós perdoamos a quem nos tem ofendido; e não nos deixeis cair em tentação, mas livrai-nos do mal. Amém.' },
+      hail: { t: 'Ave-Maria', x: 'Ave, Maria, cheia de graça, o Senhor é convosco; bendita sois vós entre as mulheres, e bendito é o fruto do vosso ventre, Jesus.\nSanta Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora de nossa morte. Amém.' },
+      glory: { t: 'Glória', x: 'Glória ao Pai, e ao Filho, e ao Espírito Santo. Como era no princípio, agora e sempre. Amém.' },
+      fatima: { t: 'A oração de Fátima', x: 'Ó meu Jesus, perdoai-nos, livrai-nos do fogo do inferno, levai as almas todas para o céu e socorrei principalmente as que mais precisarem.' },
+      queen: { t: 'Salve-Rainha', x: 'Salve, Rainha, Mãe de misericórdia, vida, doçura e esperança nossa, salve! A vós bradamos, os degredados filhos de Eva. A vós suspiramos, gemendo e chorando neste vale de lágrimas. Eia, pois, advogada nossa, esses vossos olhos misericordiosos a nós volvei. E depois deste desterro, mostrai-nos Jesus, bendito fruto do vosso ventre. Ó clemente, ó piedosa, ó doce sempre Virgem Maria.\nV. Rogai por nós, santa Mãe de Deus.\nR. Para que sejamos dignos das promessas de Cristo. Amém.' },
+      close: { t: 'Oração final', x: 'Oremos. Ó Deus, cujo Filho Unigênito, por sua vida, morte e ressurreição, nos alcançou o prêmio da salvação eterna, concedei-nos que, meditando estes mistérios do santíssimo Rosário da Bem-aventurada Virgem Maria, imitemos o que contêm e alcancemos o que prometem. Pelo mesmo Cristo, nosso Senhor. Amém.' }
+    };
+    SETS = {
+      joyful: { name: 'Mistérios Gozosos', short: 'Gozoso', days: 'Segundas e sábados', m: [
+        ['A Anunciação', 'Lucas 1,26-38', 'A humildade', 'O anjo Gabriel anuncia a Maria que ela será a mãe do Filho de Deus, e ela diz sim.', 'Luke 1:26'],
+        ['A Visitação', 'Lucas 1,39-56', 'O amor ao próximo', 'Maria vai às pressas ajudar sua prima Isabel, e o menino salta de alegria em seu ventre.', 'Luke 1:39'],
+        ['O Nascimento de Jesus', 'Lucas 2,1-20', 'A pobreza de espírito', 'Jesus nasce num estábulo em Belém e é deitado numa manjedoura.', 'Luke 2:1'],
+        ['A Apresentação no Templo', 'Lucas 2,22-38', 'A obediência', 'Maria e José apresentam o menino Jesus a Deus, e Simeão reconhece o Salvador.', 'Luke 2:22'],
+        ['A Perda e o Encontro de Jesus no Templo', 'Lucas 2,41-52', 'A alegria de encontrar Jesus', 'Depois de três dias de procura, Maria e José encontram Jesus no Templo, na casa de seu Pai.', 'Luke 2:41']] },
+      luminous: { name: 'Mistérios Luminosos', short: 'Luminoso', days: 'Quintas-feiras', m: [
+        ['O Batismo de Jesus', 'Mateus 3,13-17', 'A abertura ao Espírito Santo', 'A voz do Pai diz: “Este é o meu Filho amado”, enquanto o Espírito desce como uma pomba.', 'Matthew 3:13'],
+        ['As Bodas de Caná', 'João 2,1-11', 'A Jesus por Maria', 'A pedido de Maria, Jesus transforma a água em vinho, o seu primeiro sinal.', 'John 2:1'],
+        ['O Anúncio do Reino de Deus', 'Marcos 1,14-15', 'A conversão', 'Jesus chama todos a se converterem e a crerem no Evangelho.', 'Mark 1:14'],
+        ['A Transfiguração', 'Lucas 9,28-36', 'O desejo de santidade', 'No monte, Jesus resplandece de glória diante de Pedro, Tiago e João.', 'Luke 9:28'],
+        ['A Instituição da Eucaristia', 'Lucas 22,14-20', 'O amor à Eucaristia', 'Na Última Ceia, Jesus nos dá o seu Corpo e o seu Sangue sob as espécies do pão e do vinho.', 'Luke 22:14']] },
+      sorrowful: { name: 'Mistérios Dolorosos', short: 'Doloroso', days: 'Terças e sextas', m: [
+        ['A Agonia de Jesus no Horto', 'Mateus 26,36-46', 'A dor dos pecados', 'No Getsêmani, Jesus reza: “Não seja feita a minha vontade, mas a tua”.', 'Matthew 26:36'],
+        ['A Flagelação de Jesus', 'João 19,1', 'A pureza', 'Jesus é amarrado e açoitado pelos soldados.', 'John 19:1'],
+        ['A Coroação de Espinhos', 'Mateus 27,27-31', 'A coragem', 'Os soldados zombam de Jesus como rei e colocam em sua cabeça uma coroa de espinhos.', 'Matthew 27:27'],
+        ['Jesus Carrega a Cruz', 'Lucas 23,26-32', 'A paciência', 'Jesus leva a sua cruz até o Calvário, ajudado por Simão de Cirene.', 'Luke 23:26'],
+        ['A Crucifixão e Morte de Jesus', 'Lucas 23,33-46', 'A perseverança', 'Jesus morre na cruz, perdoando os que o crucificaram.', 'Luke 23:33']] },
+      glorious: { name: 'Mistérios Gloriosos', short: 'Glorioso', days: 'Quartas e domingos', m: [
+        ['A Ressurreição de Jesus', 'Lucas 24,1-12', 'A fé', 'Ao terceiro dia, o túmulo está vazio: Jesus ressuscitou.', 'Luke 24:1'],
+        ['A Ascensão de Jesus', 'Atos 1,6-11', 'A esperança', 'Jesus volta para o Pai e promete enviar o Espírito Santo.', 'Acts 1:6'],
+        ['A Vinda do Espírito Santo', 'Atos 2,1-4', 'O amor a Deus', 'Em Pentecostes, o Espírito desce sobre Maria e os Apóstolos como línguas de fogo.', 'Acts 2:1'],
+        ['A Assunção de Maria', 'Apocalipse 12,1', 'A graça de uma boa morte', 'No fim de sua vida, Maria é levada de corpo e alma ao céu.', 'Revelation 12:1'],
+        ['A Coroação de Maria', 'Apocalipse 12,1', 'A confiança na intercessão de Maria', 'Maria é coroada Rainha do céu e da terra.', 'Revelation 12:1']] }
+    };
+  }
+  /* ---- Latin (optional) ---- */
+  var LA = {
+      "sign": {
+          "t": "Signum Crucis",
+          "x": "In nómine Patris, et Fílii, et Spíritus Sancti. Amen."
+      },
+      "creed": {
+          "t": "Symbolum Apostolorum",
+          "x": "Credo in Deum, Patrem omnipoténtem,\nCreatórem caeli et terrae.\nEt in Iesum Christum, Fílium eius únicum, Dóminum nostrum,\nqui concéptus est de Spíritu Sancto,\nnatus ex María Vírgine,\npassus sub Póntio Piláto,\ncrucifíxus, mórtuus, et sepúltus,\ndescéndit ad ínferos,\ntértia die resurréxit a mórtuis,\nascéndit ad caelos,\nsedet ad déxteram Dei Patris omnipoténtis,\ninde ventúrus est iudicáre vivos et mórtuos.\nCredo in Spíritum Sanctum,\nsanctam Ecclésiam cathólicam,\nsanctórum communiónem,\nremissiónem peccatórum,\ncarnis resurrectiónem,\nvitam aetérnam. Amen."
+      },
+      "our": {
+          "t": "Pater Noster",
+          "x": "Pater noster, qui es in caelis,\nsanctificétur nomen tuum.\nAdvéniat regnum tuum.\nFiat volúntas tua, sicut in caelo et in terra.\nPanem nostrum cotidiánum da nobis hódie,\net dimítte nobis débita nostra,\nsicut et nos dimíttimus debitóribus nostris.\nEt ne nos indúcas in tentatiónem,\nsed líbera nos a malo. Amen."
+      },
+      "hail": {
+          "t": "Ave Maria",
+          "x": "Ave María, grátia plena, Dóminus tecum.\nBenedícta tu in muliéribus,\net benedíctus fructus ventris tui, Iesus.\nSancta María, Mater Dei,\nora pro nobis peccatóribus,\nnunc et in hora mortis nostrae. Amen."
+      },
+      "glory": {
+          "t": "Gloria Patri",
+          "x": "Glória Patri, et Fílio, et Spirítui Sancto.\nSicut erat in princípio, et nunc, et semper,\net in sáecula saeculórum. Amen."
+      },
+      "fatima": {
+          "t": "Oratio Fatimae",
+          "x": "Dómine Iesu, dimítte nobis débita nostra,\nsalva nos ab igne inferióri,\nperduc in caelum omnes ánimas,\npraesértim eas, quae misericórdiae tuae máxime índigent. Amen."
+      },
+      "queen": {
+          "t": "Salve Regina",
+          "x": "Salve, Regína, Mater misericórdiae,\nvita, dulcédo, et spes nostra, salve.\nAd te clamámus, éxsules fílii Evae.\nAd te suspirámus, geméntes et flentes\nin hac lacrimárum valle.\nEia ergo, advocáta nostra,\nillos tuos misericórdes óculos ad nos convérte.\nEt Iesum, benedíctum fructum ventris tui,\nnobis post hoc exsílium osténde.\nO clemens, O pia, O dulcis Virgo María.\nV. Ora pro nobis, sancta Dei Génetrix.\nR. Ut digni efficiámur promissiónibus Christi."
+      },
+      "close": {
+          "t": "Orémus",
+          "x": "Orémus. Deus, cuius Unigénitus per vitam, mortem et resurrectiónem suam nobis salútis aetérnae praémia comparávit: concéde, quaésumus, ut haec mystéria sacratíssimo beátae Maríae Vírginis Rosário recoléntes, et imitémur quod cóntinent, et quod promíttunt assequámur. Per eúndem Christum Dóminum nostrum. Amen."
+      }
+  };
+  var latin = false;
+  try { latin = localStorage.getItem('cd-rosary-latin') === '1'; } catch (e) {}
   var BY_DAY = ['glorious', 'joyful', 'sorrowful', 'glorious', 'luminous', 'sorrowful', 'joyful'];
 
   /* ---- Steps: each is one prayer on one bead ---- */
   function buildSteps() {
     var s = [];
-    s.push({ bead: 'cross', p: 'sign', label: T('Begin at the crucifix', 'Empieza en el crucifijo') });
-    s.push({ bead: 'cross', p: 'creed', label: T('On the crucifix', 'En el crucifijo') });
-    s.push({ bead: 'p1', p: 'our', label: T('First large bead', 'Primera cuenta grande') });
-    for (var i = 1; i <= 3; i++) s.push({ bead: 'ps' + i, p: 'hail', k: i, label: T('Hail Mary ' + i + ' of 3', 'Avemaría ' + i + ' de 3'), note: ES ? ['Por el aumento de la fe', 'Por el aumento de la esperanza', 'Por el aumento de la caridad'][i - 1] : ['For an increase of faith', 'For an increase of hope', 'For an increase of charity'][i - 1] });
-    s.push({ bead: 'p2', p: 'glory', label: T('Before the next large bead', 'Antes de la siguiente cuenta grande') });
+    s.push({ bead: 'cross', p: 'sign', label: T('Begin at the crucifix', 'Empieza en el crucifijo', 'Comece no crucifixo') });
+    s.push({ bead: 'cross', p: 'creed', label: T('On the crucifix', 'En el crucifijo', 'No crucifixo') });
+    s.push({ bead: 'p1', p: 'our', label: T('First large bead', 'Primera cuenta grande', 'Primeira conta grande') });
+    for (var i = 1; i <= 3; i++) s.push({ bead: 'ps' + i, p: 'hail', k: i, label: T('Hail Mary ' + i + ' of 3', 'Avemaría ' + i + ' de 3', 'Ave-Maria ' + i + ' de 3'), note: PT ? ['Pelo aumento da fé', 'Pelo aumento da esperança', 'Pelo aumento da caridade'][i - 1] : ES ? ['Por el aumento de la fe', 'Por el aumento de la esperanza', 'Por el aumento de la caridad'][i - 1] : ['For an increase of faith', 'For an increase of hope', 'For an increase of charity'][i - 1] });
+    s.push({ bead: 'p2', p: 'glory', label: T('Before the next large bead', 'Antes de la siguiente cuenta grande', 'Antes da próxima conta grande') });
     for (var d = 1; d <= 5; d++) {
       var big = d === 1 ? 'p2' : 'L' + (d - 1);
-      s.push({ bead: big, p: 'mystery', d: d, label: T('Decade ' + d + ': announce the mystery', 'Decena ' + d + ': anuncia el misterio') });
-      s.push({ bead: big, p: 'our', d: d, label: T('Decade ', 'Decena ') + d });
-      for (var h = 1; h <= 10; h++) s.push({ bead: 'd' + d + '_' + h, p: 'hail', d: d, k: h, label: T('Decade ' + d + ' · Hail Mary ' + h + ' of 10', 'Decena ' + d + ' · Avemaría ' + h + ' de 10') });
+      s.push({ bead: big, p: 'mystery', d: d, label: T('Decade ' + d + ': announce the mystery', 'Decena ' + d + ': anuncia el misterio', 'Dezena ' + d + ': anuncie o mistério') });
+      s.push({ bead: big, p: 'our', d: d, label: T('Decade ', 'Decena ', 'Dezena ') + d });
+      for (var h = 1; h <= 10; h++) s.push({ bead: 'd' + d + '_' + h, p: 'hail', d: d, k: h, label: T('Decade ' + d + ' · Hail Mary ' + h + ' of 10', 'Decena ' + d + ' · Avemaría ' + h + ' de 10', 'Dezena ' + d + ' · Ave-Maria ' + h + ' de 10') });
       var after = d < 5 ? 'L' + d : 'center';
-      s.push({ bead: after, p: 'glory', d: d, label: T('End of decade ', 'Fin de la decena ') + d });
-      s.push({ bead: after, p: 'fatima', d: d, label: T('End of decade ' + d + ' (optional)', 'Fin de la decena ' + d + ' (opcional)') });
+      s.push({ bead: after, p: 'glory', d: d, label: T('End of decade ', 'Fin de la decena ', 'Fim da dezena ') + d });
+      s.push({ bead: after, p: 'fatima', d: d, label: T('End of decade ' + d + ' (optional)', 'Fin de la decena ' + d + ' (opcional)', 'Fim da dezena ' + d + ' (opcional)') });
     }
-    s.push({ bead: 'center', p: 'queen', label: T('Closing prayers', 'Oraciones finales') });
-    s.push({ bead: 'center', p: 'close', label: T('Closing prayers', 'Oraciones finales') });
-    s.push({ bead: 'cross', p: 'sign', label: T('Finish at the crucifix', 'Termina en el crucifijo') });
+    s.push({ bead: 'center', p: 'queen', label: T('Closing prayers', 'Oraciones finales', 'Orações finais') });
+    s.push({ bead: 'center', p: 'close', label: T('Closing prayers', 'Oraciones finales', 'Orações finais') });
+    s.push({ bead: 'cross', p: 'sign', label: T('Finish at the crucifix', 'Termina en el crucifijo', 'Termine no crucifixo') });
     return s;
   }
   var STEPS = buildSteps();
@@ -166,7 +241,7 @@
   var picker = $('#rosary-set');
   Object.keys(SETS).forEach(function (k) {
     var o = document.createElement('option');
-    o.value = k; o.textContent = SETS[k].name + (k === BY_DAY[new Date().getDay()] ? T(' (today)', ' (hoy)') : '');
+    o.value = k; o.textContent = SETS[k].name + (k === BY_DAY[new Date().getDay()] ? T(' (today)', ' (hoy)', ' (hoje)') : '');
     picker.appendChild(o);
   });
   picker.value = set;
@@ -184,27 +259,32 @@
     var html = '<p class="rs-where">' + esc(st.label) + '</p>';
     if (st.d) {
       var m = S.m[st.d - 1];
-      html += '<div class="rs-mystery"><span class="rs-num">' + (ES ? ['Primer', 'Segundo', 'Tercer', 'Cuarto', 'Quinto'][st.d - 1] + ' Misterio ' + S.short : ['First', 'Second', 'Third', 'Fourth', 'Fifth'][st.d - 1] + ' ' + S.name.replace(' Mysteries', '') + ' Mystery') + '</span>' +
+      html += '<div class="rs-mystery"><span class="rs-num">' + (PT ? ['Primeiro', 'Segundo', 'Terceiro', 'Quarto', 'Quinto'][st.d - 1] + ' Mistério ' + S.short : ES ? ['Primer', 'Segundo', 'Tercer', 'Cuarto', 'Quinto'][st.d - 1] + ' Misterio ' + S.short : ['First', 'Second', 'Third', 'Fourth', 'Fifth'][st.d - 1] + ' ' + S.name.replace(' Mysteries', '') + ' Mystery') + '</span>' +
         '<strong>' + esc(m[0]) + '</strong>' +
-        (st.p === 'mystery' ? '<p>' + esc(m[3]) + '</p><p class="rs-meta">' + T('Read', 'Lee') + ': <a href="https://bible.usccb.org/bible/' + bibleSlug(m[4] || m[1]) + '" target="_blank" rel="noopener"' + (ES ? ' hreflang="en"' : '') + '>' + esc(m[1]) + '</a> &middot; ' + T('Fruit of the mystery', 'Fruto del misterio') + ': ' + esc(m[2]) + '</p>' : '') +
+        (st.p === 'mystery' ? '<p>' + esc(m[3]) + '</p><p class="rs-meta">' + T('Read', 'Lee', 'Leia') + ': <a href="https://bible.usccb.org/bible/' + bibleSlug(m[4] || m[1]) + '" target="_blank" rel="noopener"' + (ES || PT ? ' hreflang="en"' : '') + '>' + esc(m[1]) + '</a> &middot; ' + T('Fruit of the mystery', 'Fruto del misterio', 'Fruto do mistério') + ': ' + esc(m[2]) + '</p>' : '') +
         '</div>';
     }
     if (st.p === 'mystery') {
-      html += '<p class="rs-text">' + T('Announce the mystery, and picture the scene as you pray this decade.', 'Anuncia el misterio e imagina la escena mientras rezas esta decena.') + '</p>';
+      html += '<p class="rs-text">' + T('Announce the mystery, and picture the scene as you pray this decade.', 'Anuncia el misterio e imagina la escena mientras rezas esta decena.', 'Anuncie o mistério e imagine a cena enquanto reza esta dezena.') + '</p>';
     } else {
       var p = P[st.p];
       if (st.p === 'hail') {
         var n = st.d ? 10 : 3, k = st.k, dots = '';
         for (var q = 1; q <= n; q++) dots += '<span class="' + (q < k ? 'done' : q === k ? 'now' : '') + '"></span>';
-        html += '<div class="rs-dots" aria-label="' + T('Hail Mary ', 'Avemaría ') + k + T(' of ', ' de ') + n + '">' + dots + '</div>';
+        html += '<div class="rs-dots" aria-label="' + T('Hail Mary ', 'Avemaría ', 'Ave-Maria ') + k + T(' of ', ' de ', ' de ') + n + '">' + dots + '</div>';
       }
-      html += '<h3>' + esc(p.t) + '</h3>' + (st.note ? '<p class="rs-note">' + esc(st.note) + '</p>' : '') + '<p class="rs-text">' + esc(p.x).replace(/\n/g, '<br>') + '</p>';
+      if (latin && LA[st.p]) {
+        html += '<h3><span lang="la">' + esc(LA[st.p].t) + '</span> <span class="small muted">(' + esc(p.t) + ')</span></h3>' + (st.note ? '<p class="rs-note">' + esc(st.note) + '</p>' : '') +
+          '<p class="rs-text" lang="la">' + esc(LA[st.p].x).replace(/\n/g, '<br>') + '</p><p class="rs-trans">' + esc(p.x) + '</p>';
+      } else {
+        html += '<h3>' + esc(p.t) + '</h3>' + (st.note ? '<p class="rs-note">' + esc(st.note) + '</p>' : '') + '<p class="rs-text">' + esc(p.x).replace(/\n/g, '<br>') + '</p>';
+      }
     }
     $('#rosary-step').innerHTML = html;
     $('#rs-count').textContent = (at + 1) + ' / ' + STEPS.length;
     $('#rs-bar').style.width = ((at + 1) / STEPS.length * 100) + '%';
     $('#rs-back').disabled = at === 0;
-    $('#rs-next').innerHTML = at === STEPS.length - 1 ? T('Amen. Start over', 'Amén. Empezar de nuevo') : T('Next', 'Siguiente') + ' &rarr;';
+    $('#rs-next').innerHTML = at === STEPS.length - 1 ? T('Amen. Start over', 'Amén. Empezar de nuevo', 'Amém. Recomeçar') : T('Next', 'Siguiente', 'Próximo') + ' &rarr;';
     save();
   }
 
@@ -227,6 +307,16 @@
   $('#rs-next').addEventListener('click', next);
   $('#rs-back').addEventListener('click', back);
   $('#rs-restart').addEventListener('click', function () { show(0); });
+  var latBtn = $('#rs-latin');
+  if (latBtn) {
+    latBtn.setAttribute('aria-pressed', latin ? 'true' : 'false');
+    latBtn.addEventListener('click', function () {
+      latin = !latin;
+      latBtn.setAttribute('aria-pressed', latin ? 'true' : 'false');
+      try { localStorage.setItem('cd-rosary-latin', latin ? '1' : '0'); } catch (e) {}
+      show(at);
+    });
+  }
   svg.addEventListener('click', next);
   document.addEventListener('keydown', function (e) {
     if (e.target.tagName === 'SELECT') return;

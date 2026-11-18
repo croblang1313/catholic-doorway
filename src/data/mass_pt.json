@@ -1,0 +1,151 @@
+[
+  {"part": "Antes da Missa", "title": "Ao chegar", "pose": "any",
+   "what": "Chegue uns dez minutos antes e silencie o celular. Muitos católicos molham os dedos na água benta da entrada e fazem o Sinal da Cruz; depois fazem uma reverência ou dobram o joelho direito até o chão (genuflexão) em direção ao sacrário antes de entrar no banco.",
+   "say": [],
+   "tip": "Nada disso é pedido aos visitantes. Sentar em silêncio e observar está ótimo. Muitas pessoas se ajoelham e rezam em silêncio antes de a Missa começar."},
+
+  {"part": "Ritos iniciais", "title": "A entrada", "pose": "stand",
+   "what": "Todos ficam de pé enquanto a procissão percorre o corredor: uma cruz, os coroinhas, os leitores, às vezes um diácono com o Evangeliário e, por último, o padre. Normalmente se canta um canto de entrada.",
+   "say": [],
+   "tip": "Os números dos cantos costumam estar num quadro na frente ou no folheto da Missa."},
+
+  {"part": "Ritos iniciais", "title": "O Sinal da Cruz e a saudação", "pose": "stand",
+   "what": "O padre começa com o Sinal da Cruz, e todos se benzem com ele: toque a testa, o peito, o ombro esquerdo e depois o direito. Em seguida ele saúda o povo.",
+   "say": [["Padre", "Em nome do Pai, e do Filho, e do Espírito Santo."], ["Todos", "Amém."], ["Padre", "O Senhor esteja convosco."], ["Todos", "Ele está no meio de nós."]],
+   "tip": "As respostas deste guia seguem o Missal do Brasil. Em comunidades de Portugal ou dos Açores, algumas respostas podem ser um pouco diferentes; siga o folheto da Missa."},
+
+  {"part": "Ritos iniciais", "title": "Pedir misericórdia", "pose": "stand",
+   "what": "Todos fazem uma pausa para reconhecer os seus pecados e pedir a misericórdia de Deus. Muitas vezes o povo reza junto uma breve oração de confissão (o «Confesso a Deus»), que está no folheto.",
+   "say": [["Padre ou cantor", "Senhor, tende piedade de nós."], ["Todos", "Senhor, tende piedade de nós."], ["", "Cristo, tende piedade de nós."], ["Todos", "Cristo, tende piedade de nós."], ["", "Senhor, tende piedade de nós."], ["Todos", "Senhor, tende piedade de nós."]],
+   "tip": "Às vezes se canta em grego: «Kyrie, eleison» e «Christe, eleison»."},
+
+  {"part": "Ritos iniciais", "title": "Glória a Deus", "pose": "stand",
+   "what": "Aos domingos (menos no Advento e na Quaresma) e nas festas, a assembleia canta ou reza o antigo hino «Glória a Deus nas alturas».",
+   "say": [],
+   "tip": "A letra está no folheto da Missa. Tudo bem só escutar."},
+
+  {"part": "Ritos iniciais", "title": "A oração do dia", "pose": "stand",
+   "what": "O padre diz «Oremos», faz um momento de silêncio e reza a oração do dia (a coleta).",
+   "say": [["Todos", "Amém."]],
+   "tip": "«Amém» quer dizer «assim é, assim seja». É o jeito de o povo fazer sua a oração do padre."},
+
+  {"part": "Liturgia da Palavra", "title": "Primeira leitura", "pose": "sit",
+   "what": "Todos se sentam. Um leitor proclama um trecho, normalmente do Antigo Testamento (dos Atos dos Apóstolos no Tempo Pascal).",
+   "say": [["Leitor", "Palavra do Senhor."], ["Todos", "Graças a Deus."]],
+   "tip": "Você pode ler as leituras do dia em português na <a href=\"https://liturgiadiaria.cnbb.org.br/\">liturgia diária da CNBB</a>. Nos Estados Unidos, algumas leituras de domingo podem ser diferentes."},
+
+  {"part": "Liturgia da Palavra", "title": "Salmo responsorial", "pose": "sit",
+   "what": "Um salmista canta um salmo. O povo repete um breve refrão depois de cada estrofe.",
+   "say": [["Todos", "Repita o refrão que o salmista canta primeiro."]],
+   "tip": "O refrão costuma estar no folheto ou na tela."},
+
+  {"part": "Liturgia da Palavra", "title": "Segunda leitura", "pose": "sit",
+   "what": "Aos domingos e nas festas importantes há uma segunda leitura, normalmente de uma das cartas do Novo Testamento.",
+   "say": [["Leitor", "Palavra do Senhor."], ["Todos", "Graças a Deus."]],
+   "tip": "As Missas durante a semana não têm esta leitura, por isso são mais curtas, cerca de 30 minutos."},
+
+  {"part": "Liturgia da Palavra", "title": "Aclamação ao Evangelho", "pose": "stand",
+   "what": "Todos ficam de pé para receber o Evangelho cantando «Aleluia». Na Quaresma, canta-se outra aclamação no lugar do Aleluia.",
+   "say": [["Todos", "Aleluia, aleluia, aleluia."]],
+   "tip": "Ficar de pé para o Evangelho honra de modo especial as palavras e as obras de Jesus."},
+
+  {"part": "Liturgia da Palavra", "title": "O Evangelho", "pose": "stand",
+   "what": "O padre ou o diácono lê um dos quatro Evangelhos. Quando ele o anuncia, os católicos fazem com o polegar uma pequena cruz na testa, nos lábios e no peito, pedindo que a Palavra de Deus esteja na mente, nos lábios e no coração.",
+   "say": [["Padre", "O Senhor esteja convosco."], ["Todos", "Ele está no meio de nós."], ["Padre", "Proclamação do Evangelho de Jesus Cristo segundo…"], ["Todos", "Glória a vós, Senhor."], ["No fim", "Palavra da Salvação."], ["Todos", "Glória a vós, Senhor."]],
+   "tip": ""},
+
+  {"part": "Liturgia da Palavra", "title": "A homilia", "pose": "sit",
+   "what": "Todos se sentam enquanto o padre ou o diácono prega, explicando as leituras e como vivê-las.",
+   "say": [],
+   "tip": "A homilia costuma durar de 5 a 15 minutos."},
+
+  {"part": "Liturgia da Palavra", "title": "O Creio", "pose": "stand",
+   "what": "Aos domingos e solenidades, todos ficam de pé e professam juntos a fé, normalmente com o Credo Niceno-Constantinopolitano. Nas palavras sobre Jesus feito homem («e se encarnou pelo Espírito Santo…»), todos inclinam a cabeça.",
+   "say": [["Todos", "A letra está no folheto da Missa."]],
+   "tip": "No Natal e na Anunciação, nessas palavras todos se ajoelham em vez de se inclinar."},
+
+  {"part": "Liturgia da Palavra", "title": "Oração dos fiéis", "pose": "stand",
+   "what": "Um diácono ou um leitor apresenta breves preces pela Igreja, pelo mundo, pelos necessitados, pelos doentes e pelos falecidos.",
+   "say": [["Leitor", "Rezemos ao Senhor."], ["Todos", "Senhor, escutai a nossa prece."]],
+   "tip": "Às vezes a resposta é outra. Escute a primeira e acompanhe."},
+
+  {"part": "Liturgia Eucarística", "title": "Apresentação das oferendas", "pose": "sit",
+   "what": "Todos se sentam. O pão e o vinho são levados ao altar, muitas vezes por membros da comunidade, e o altar é preparado. Normalmente a coleta é feita neste momento.",
+   "say": [],
+   "tip": "Os visitantes podem simplesmente passar a cesta adiante."},
+
+  {"part": "Liturgia Eucarística", "title": "«Orai, irmãos e irmãs»", "pose": "stand",
+   "what": "O padre convida todos a rezar para que o sacrifício seja aceito por Deus. O povo fica de pé e responde com uma breve oração que está no folheto; depois o padre reza sobre as oferendas.",
+   "say": [["Todos", "Responda com a oração do folheto; depois «Amém»."]],
+   "tip": ""},
+
+  {"part": "Liturgia Eucarística", "title": "«Corações ao alto»", "pose": "stand",
+   "what": "A grande oração de ação de graças começa com um diálogo entre o padre e o povo que os cristãos usam desde os primeiros séculos.",
+   "say": [["Padre", "O Senhor esteja convosco."], ["Todos", "Ele está no meio de nós."], ["Padre", "Corações ao alto."], ["Todos", "O nosso coração está em Deus."], ["Padre", "Demos graças ao Senhor, nosso Deus."], ["Todos", "É nosso dever e nossa salvação."]],
+   "tip": ""},
+
+  {"part": "Liturgia Eucarística", "title": "Santo, Santo, Santo", "pose": "stand",
+   "what": "O padre reza o Prefácio, louvando a Deus, e todos se unem para cantar o «Santo» (Sanctus), que repete o canto dos anjos em Isaías 6.",
+   "say": [["Todos", "Cante acompanhando o folheto da Missa."]],
+   "tip": "Ao terminar, todos se ajoelham."},
+
+  {"part": "Liturgia Eucarística", "title": "A Oração Eucarística", "pose": "kneel",
+   "what": "É o coração da Missa. O padre repete as palavras de Jesus na Última Ceia sobre o pão e o vinho. Os católicos creem que nesse momento eles se tornam verdadeiramente o Corpo e o Sangue de Cristo. O padre eleva cada um para que todos vejam, e muitas vezes tocam-se sinos.",
+   "say": [],
+   "tip": "Muitos católicos olham para a Hóstia quando ela é elevada e rezam em silêncio: «Meu Senhor e meu Deus». Se você não puder se ajoelhar, fique sentado em silêncio."},
+
+  {"part": "Liturgia Eucarística", "title": "O mistério da fé", "pose": "kneel",
+   "what": "O padre diz «Mistério da fé!», e o povo responde com uma breve aclamação sobre a morte e a ressurreição de Cristo, que está no folheto.",
+   "say": [["Todos", "Responda com a aclamação do folheto."]],
+   "tip": ""},
+
+  {"part": "Liturgia Eucarística", "title": "O grande Amém", "pose": "kneel",
+   "what": "A Oração Eucarística termina com o padre elevando o Corpo e o Sangue de Cristo e louvando o Pai por Cristo. O povo responde com um «Amém» cantado, muitas vezes repetido.",
+   "say": [["Todos", "Amém."]],
+   "tip": "Depois todos ficam de pé."},
+
+  {"part": "Rito da Comunhão", "title": "O Pai-Nosso", "pose": "stand",
+   "what": "Todos rezam juntos o Pai-Nosso. Em algumas paróquias as pessoas dão as mãos ou as levantam; em outras as juntam. Faça o que for confortável.",
+   "say": [["Todos", "Pai nosso, que estais nos céus… mas livrai-nos do mal."], ["", "Pausa enquanto o padre reza sozinho."], ["Todos", "Vosso é o reino, o poder e a glória para sempre!"]],
+   "tip": "O «Vosso é o reino…» não é dito logo depois de «livrai-nos do mal», mas um momento depois, após a breve oração do padre."},
+
+  {"part": "Rito da Comunhão", "title": "O abraço da paz", "pose": "stand",
+   "what": "O padre pode convidar todos a se saudarem na paz. Dê a mão, acene com a cabeça ou com a mão para quem está perto.",
+   "say": [["Padre", "A paz do Senhor esteja sempre convosco."], ["Todos", "O amor de Cristo nos uniu."], ["Você", "A paz de Cristo."]],
+   "tip": "Seja breve e simples, só com as pessoas ao seu redor."},
+
+  {"part": "Rito da Comunhão", "title": "Cordeiro de Deus", "pose": "stand",
+   "what": "O padre parte a Hóstia consagrada enquanto todos cantam o «Cordeiro de Deus».",
+   "say": [["Todos", "Cordeiro de Deus, que tirais o pecado do mundo, tende piedade de nós. (duas vezes)"], ["Todos", "Cordeiro de Deus, que tirais o pecado do mundo, dai-nos a paz."]],
+   "tip": "Depois todos se ajoelham."},
+
+  {"part": "Rito da Comunhão", "title": "«Eis o Cordeiro de Deus»", "pose": "kneel",
+   "what": "O padre mostra a Hóstia e convida o povo à Comunhão. Todos respondem com as palavras do centurião romano em Mateus 8,8.",
+   "say": [["Padre", "Felizes os convidados para a Ceia do Senhor. Eis o Cordeiro de Deus…"], ["Todos", "Senhor, eu não sou digno de que entreis em minha morada, mas dizei uma palavra e serei salvo."]],
+   "tip": ""},
+
+  {"part": "Rito da Comunhão", "title": "A Sagrada Comunhão", "pose": "any",
+   "what": "Os católicos que estão preparados vão à frente, fila por fila. Se você não é católico, fique no seu banco e reze, deixando os outros passarem. Em muitas paróquias você também pode ir à frente com os braços cruzados sobre o peito para receber uma bênção.",
+   "say": [["Ministro", "O Corpo de Cristo."], ["Quem comunga", "Amém."]],
+   "tip": "Por que nem todos comungam? Os católicos creem que a Comunhão é verdadeiramente Cristo e um sinal de plena unidade na fé, por isso ela é recebida pelos católicos que estão preparados. <a href=\"/pt/comecar\">Tornar-se católico</a> é o caminho que abre essa porta."},
+
+  {"part": "Rito da Comunhão", "title": "Oração em silêncio", "pose": "kneel",
+   "what": "Depois de comungar, as pessoas voltam ao seu lugar e rezam em silêncio, de joelhos ou sentadas. Muitas vezes se canta um canto.",
+   "say": [],
+   "tip": "É um bom momento para falar com Deus com as suas próprias palavras."},
+
+  {"part": "Rito da Comunhão", "title": "Oração depois da Comunhão", "pose": "stand",
+   "what": "O padre diz «Oremos» e todos ficam de pé para uma oração final. Depois pode haver avisos da paróquia.",
+   "say": [["Todos", "Amém."]],
+   "tip": ""},
+
+  {"part": "Ritos finais", "title": "Bênção e despedida", "pose": "stand",
+   "what": "O padre abençoa a todos. Faça o Sinal da Cruz enquanto ele abençoa. Depois ele ou o diácono despede o povo.",
+   "say": [["Padre", "O Senhor esteja convosco."], ["Todos", "Ele está no meio de nós."], ["Padre", "…Pai, e Filho, e Espírito Santo."], ["Todos", "Amém."], ["Padre ou diácono", "Ide em paz, e o Senhor vos acompanhe."], ["Todos", "Graças a Deus."]],
+   "tip": ""},
+
+  {"part": "Ritos finais", "title": "Depois da Missa", "pose": "any",
+   "what": "Normalmente se canta um canto final enquanto o padre sai em procissão. É gentil ficar até ele sair. Muitos se ajoelham um momento para rezar antes de ir embora.",
+   "say": [],
+   "tip": "O padre costuma cumprimentar as pessoas na porta. Dizer a ele «Foi a minha primeira Missa» é um jeito maravilhoso de começar uma conversa. Quando estiver pronto, visite <a href=\"/pt/comecar\">Tornar-se católico</a>."}
+]

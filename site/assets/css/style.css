@@ -504,13 +504,21 @@ body.companion-open { overflow: hidden; }
 .qa-refs { font: .88rem var(--sans); color: var(--ink-soft); margin-bottom: 0 !important; }
 
 /* Language switch */
-.lang-link { font: 600 .88rem var(--sans); color: var(--ink-soft); text-decoration: none; padding: .35rem .6rem; border: 1px solid var(--line); border-radius: 999px; white-space: nowrap; }
-.lang-link:hover { color: var(--navy); border-color: var(--gold); }
-@media (max-width: 420px) { .lang-link { padding: .3rem .45rem; font-size: .8rem; } }
-.lang-link .ll-short { display: none; text-transform: uppercase; }
-@media (max-width: 400px) { .lang-link .ll-long { display: none; } .lang-link .ll-short { display: inline; } }
+.lang-menu { position: relative; }
+.lang-menu summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: .3rem; font: 600 .85rem var(--sans); color: var(--ink-soft); padding: .3rem .55rem; border: 1px solid var(--line); border-radius: 999px; white-space: nowrap; }
+.lang-menu summary::-webkit-details-marker { display: none; }
+.lang-menu summary svg { width: 17px; height: 17px; }
+.lang-menu summary:hover, .lang-menu[open] summary { color: var(--navy); border-color: var(--gold); }
+.lang-menu .lm-list { position: absolute; right: 0; top: calc(100% + .35rem); z-index: 60; list-style: none; margin: 0; padding: .35rem; min-width: 11rem; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
+.lang-menu .lm-list a { display: block; padding: .5rem .7rem; border-radius: 7px; color: var(--ink); text-decoration: none; font: 500 1rem var(--sans); }
+.lang-menu .lm-list a:hover { background: var(--surface); color: var(--navy); }
+.lang-menu .lm-list a[aria-current] { font-weight: 700; color: var(--navy); }
+.lang-menu .lm-list a[aria-current]::after { content: " \2713"; color: var(--gold); }
+.lang-menu .lm-note { font-size: .8rem; color: var(--ink-soft); font-weight: 400; }
+@media (max-width: 420px) { .lang-menu summary { padding: .28rem .42rem; font-size: .8rem; gap: .2rem; } .lang-menu summary svg { width: 15px; height: 15px; } }
 .companion-nav .btn, .rs-nav .btn { min-width: 0; padding-left: .7rem; padding-right: .7rem; }
 :lang(es) .mass-tip::before { content: "Consejo: "; }
+:lang(pt) .mass-tip::before { content: "Dica: "; }
 
 /* Phone header: keep brand, language, theme and menu on one line */
 .brand { min-width: 0; }
@@ -538,7 +546,6 @@ body.companion-open { overflow: hidden; }
   .brand svg { width: 30px; height: 36px; }
   .brand-name { font-size: 1.3rem; }
   .site-nav a { font-size: .97rem; padding: .45rem .42rem; }
-  .lang-link { padding: .3rem .55rem; font-size: .85rem; }
   .header-tools { gap: .2rem; }
 }
 
@@ -594,3 +601,14 @@ body::before {
 .holy-list li { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem .5rem; }
 .holy-list .status { margin: 0; }
 #dio-table td:first-child a { font-weight: 600; }
+
+/* Latin prayers, side by side */
+.latin-list { display: grid; gap: 1rem; margin-top: 1rem; }
+.latin-prayer h3 { margin-top: 0; }
+.latin-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.latin-cols .text { white-space: pre-line; margin: 0; font-size: 1.08rem; line-height: 1.7; }
+.latin-cols [lang="la"] { font-style: italic; }
+.latin-label { font: 700 .75rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin: 0 0 .3rem; }
+@media (max-width: 640px) { .latin-cols { grid-template-columns: 1fr; gap: .8rem; } }
+.rs-trans { font-size: .92rem; color: var(--ink-soft); white-space: pre-line; border-top: 1px solid var(--line); padding-top: .6rem; margin-top: .6rem; }
+#rs-latin[aria-pressed="true"] { background: var(--navy); color: var(--bg); border-color: var(--navy); }

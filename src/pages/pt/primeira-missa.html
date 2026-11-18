@@ -1,0 +1,57 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/pt/comecar">Tornar-se católico</a> &rsaquo; Sua primeira Missa</p>
+    <h1>Sua primeira Missa, passo a passo</h1>
+    <p class="lede">Nunca foi à Missa, ou faz muito tempo que não vai? Este guia acompanha você nos {{MASS_COUNT}} momentos de uma Missa de domingo: quando ficar de pé, sentar e ajoelhar, o que se responde e o que fazer na Comunhão.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section">
+    <div class="card companion-cta">
+      <div>
+        <p class="label">No banco da igreja</p>
+        <h3>Use durante a Missa</h3>
+        <p>Abre passo a passo, com letra grande e botões grandes de Voltar e Próximo, para você acompanhar no celular. A tela fica acesa e o lugar onde você parou fica guardado.</p>
+      </div>
+      <button class="btn" type="button" id="mass-start">Começar o guia</button>
+    </div>
+    <ul class="pose-key" aria-label="Posições">
+      <li><span class="pose pose-stand">De pé</span></li>
+      <li><span class="pose pose-sit">Sentados</span></li>
+      <li><span class="pose pose-kneel">De joelhos</span></li>
+      <li><span class="pose pose-any">Como preferir</span></li>
+    </ul>
+    <p class="small muted">Os costumes variam um pouco de uma paróquia para outra. Na dúvida, faça o que os outros fazem. Se for difícil se ajoelhar, você sempre pode ficar sentado. As respostas do povo seguem o Missal Romano usado no Brasil; os textos completos estão no folheto da Missa. A maioria das Missas nos Estados Unidos é em inglês, e a <a href="/first-mass" lang="en" hreflang="en">versão em inglês deste guia</a> traz as respostas em inglês.</p>
+  </section>
+
+  <div class="mass-steps" id="mass-steps">
+{{MASS}}
+  </div>
+
+  <section class="section prose">
+    <h2>Outras coisas que é bom saber</h2>
+    <ul>
+      <li><strong>Quanto tempo dura a Missa?</strong> Cerca de uma hora aos domingos e uns 30 minutos durante a semana.</li>
+      <li><strong>Que roupa eu uso?</strong> O habitual é se vestir como para um jantar especial, mas venha como estiver.</li>
+      <li><strong>Posso levar as crianças?</strong> Sim. Algumas igrejas têm uma sala para os pequenos, mas a maioria das paróquias fica feliz em ouvir as crianças.</li>
+      <li><strong>Preciso dar dinheiro?</strong> Não. A coleta sustenta a paróquia. Os visitantes podem passar a cesta adiante.</li>
+      <li><strong>Onde encontro Missa em português?</strong> Use o nosso <a href="/pt/encontrar-igreja">mapa de igrejas</a> e depois veja o site da paróquia ou ligue. Muitas comunidades brasileiras e portuguesas nos Estados Unidos têm Missa em português pelo menos uma vez por semana.</li>
+    </ul>
+    <p><a class="btn secondary" href="/pt/comecar">Pensando em se tornar católico? Comece aqui &rarr;</a></p>
+  </section>
+</div>
+
+<div class="companion" id="companion" hidden role="dialog" aria-modal="true" aria-label="Guia da Missa">
+  <div class="companion-bar">
+    <span class="companion-part" id="comp-part"></span>
+    <button class="companion-close" type="button" id="comp-close" aria-label="Fechar o guia">&times;</button>
+  </div>
+  <div class="companion-progress"><span id="comp-progress"></span></div>
+  <div class="companion-body" id="comp-body" aria-live="polite"></div>
+  <div class="companion-nav">
+    <button class="btn secondary" type="button" id="comp-back">&larr; Voltar</button>
+    <span class="companion-count" id="comp-count"></span>
+    <button class="btn" type="button" id="comp-next">Próximo &rarr;</button>
+  </div>
+</div>

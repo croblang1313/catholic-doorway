@@ -143,6 +143,69 @@ EN_TEXT = dict(lang="en", skip="Skip to content", home="/", home_label="Catholic
                alt_lang="es", alt_label="Español")
 EN_TO_ES = {en: es for en, es, *_ in ES_PAGES}
 
+# Portuguese: the core pages for newcomers. en_slug, pt_slug, nav label, <title>, meta description
+PT_PAGES = [
+    ("index", "index", "Início", "CatholicDoorway em português: um guia gratuito da fé católica",
+     "Um guia simples e gratuito da fé católica: orações, como se tornar católico (OCIA), sua primeira Missa, o Rosário e uma busca de igrejas nos Estados Unidos."),
+    ("start-here", "comecar", "Tornar-se católico", "Como se tornar católico: a OCIA passo a passo | CatholicDoorway",
+     "Interessado na Igreja Católica? Como funciona a OCIA, suas quatro etapas, quanto tempo dura, com quem falar e o que esperar na sua primeira Missa."),
+    ("first-mass", "primeira-missa", "Sua primeira Missa", "Sua primeira Missa, passo a passo | CatholicDoorway",
+     "Vai à Missa pela primeira vez? Um guia passo a passo no seu celular: quando ficar de pé, sentar e ajoelhar, o que se responde e o que fazer na Comunhão."),
+    ("prayers", "oracoes", "Orações", "Orações católicas e como rezar o Rosário | CatholicDoorway",
+     "As orações católicas tradicionais em português: o Pai-Nosso, a Ave-Maria, o Creio, a Salve-Rainha e mais, com um guia do Rosário."),
+    ("rosary", "rosario", "Reze o Rosário", "Reze o Rosário on-line, conta por conta | CatholicDoorway",
+     "Reze o Rosário passo a passo no seu celular: as contas se acendem, cada mistério traz sua passagem bíblica e o lugar onde você parou fica guardado."),
+    ("beliefs", "crencas", "Crenças", "No que os católicos acreditam | CatholicDoorway",
+     "Um resumo simples da fé e da prática católica: o Credo, os sete sacramentos, a Escritura e a Tradição, Maria e os santos, e a vida moral."),
+    ("find-a-church", "encontrar-igreja", "Encontrar uma igreja", "Encontre uma igreja católica perto de você | CatholicDoorway",
+     "Procure igrejas católicas nos Estados Unidos por cidade ou ZIP code: endereço, telefone, site e como chegar."),
+]
+PT_TEXT = dict(lang="pt", skip="Pular para o conteúdo", home="/pt/", home_label="Início do CatholicDoorway",
+               theme_label="Mudar para o modo claro ou escuro", menu_label="Menu", nav_label="Principal")
+EN_TO_PT = {en: pt for en, pt, *_ in PT_PAGES}
+PT_SUBNAV = {"comecar": [("comecar", "Tornar-se católico (OCIA)"), ("primeira-missa", "Sua primeira Missa")],
+             "oracoes": [("oracoes", "Orações católicas"), ("rosario", "Reze o Rosário")]}
+PT_NAV_EXCLUDE = set()
+
+LANGS = [("en", "English", "home page"), ("es", "Español", "página de inicio"), ("pt", "Português", "página inicial")]
+LANG_HOME = {"en": "/", "es": "/es/", "pt": "/pt/"}
+LANG_WORD = {"en": "Language", "es": "Idioma", "pt": "Idioma"}
+GLOBE_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>'
+
+
+def lang_urls(en_slug):
+    """The URL of this page in each language, or None where it has no translation yet."""
+    if en_slug is None:
+        return {"en": None, "es": None, "pt": None}
+    es, pt = EN_TO_ES.get(en_slug), EN_TO_PT.get(en_slug)
+    return {"en": "/" if en_slug == "index" else f"/{en_slug}",
+            "es": None if es is None else ("/es/" if es == "index" else f"/es/{es}"),
+            "pt": None if pt is None else ("/pt/" if pt == "index" else f"/pt/{pt}")}
+
+
+def lang_menu(cur, urls):
+    items = []
+    for code, name, home_word in LANGS:
+        href = urls.get(code)
+        note = ""
+        if href is None:
+            href, note = LANG_HOME[code], f' <span class="lm-note">({home_word})</span>'
+        here = ' aria-current="true"' if code == cur else ""
+        items.append(f'<li><a href="{href}" hreflang="{code}" lang="{code}" data-lang="{code}"{here}>{name}{note}</a></li>')
+    cur_name = dict((c, n) for c, n, _ in LANGS)[cur]
+    return (f'<details class="lang-menu"><summary aria-label="{LANG_WORD[cur]}: {cur_name}">{GLOBE_SVG}'
+            f'<span class="lm-code">{cur.upper()}</span></summary><ul class="lm-list">{"".join(items)}</ul></details>')
+
+
+def alternates_html(urls):
+    have = [(c, u) for c, u in urls.items() if u]
+    if len(have) < 2:
+        return ""
+    out = [f'<link rel="alternate" hreflang="{c}" href="{DOMAIN}{u}">' for c, u in have]
+    if urls.get("en"):
+        out.append(f'<link rel="alternate" hreflang="x-default" href="{DOMAIN}{urls["en"]}">')
+    return "\n".join(out)
+
 DOOR_SVG = '''<svg viewBox="0 0 34 40" aria-hidden="true" focusable="false"><path d="M3 39V17C3 8.7 9.3 2 17 2s14 6.7 14 15v22" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8 39V18.5C8 13 12 8.5 17 8.5S26 13 26 18.5V39" fill="currentColor" opacity=".16"/><path d="M8 39V18.5C8 13 12 8.5 17 8.5S26 13 26 18.5V39" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M17 12v9M13.6 15.2h6.8" stroke="#a8802f" stroke-width="2" stroke-linecap="round"/><circle cx="22" cy="28" r="1.4" fill="#a8802f"/><path d="M1 39h32" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>'''
 
 MENU_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
@@ -178,7 +241,7 @@ HEAD = """<!doctype html>
   <div class="wrap header-row">
     <a class="brand" href="{home}" aria-label="{home_label}">{door}<span class="brand-name">Catholic<span>Doorway</span></span></a>
     <div class="header-tools">
-      <a class="lang-link" href="{alt_href}" hreflang="{alt_lang}" lang="{alt_lang}" aria-label="{alt_label}"><span class="ll-long" aria-hidden="true">{alt_label}</span><span class="ll-short" aria-hidden="true">{alt_lang}</span></a>
+      {lang_menu}
       <button class="theme-btn" type="button" data-theme-toggle aria-label="{theme_label}">{theme}</button>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">{menu}<span class="nt-label">{menu_label}</span></button>
     </div>
@@ -209,11 +272,11 @@ FOOT_ES = """</main>
         </ul>
       </div>
       <div>
-        <h4>En inglés</h4>
+        <h4>Aprender</h4>
         <ul>
-          <li><a href="/find-a-church" lang="en">Find a Church (mapa)</a></li>
-          <li><a href="/beliefs" lang="en">What Catholics Believe</a></li>
-          <li><a href="/saints" lang="en">Saints</a></li>
+          <li><a href="/es/buscar-iglesia">Buscar una iglesia</a></li>
+          <li><a href="/es/creencias">Lo que creemos</a></li>
+          <li><a href="/es/santos">Santos</a></li>
         </ul>
       </div>
       <div>
@@ -226,6 +289,48 @@ FOOT_ES = """</main>
     </div>
     <div class="footer-base">
       CatholicDoorway es una guía gratuita e independiente, sin anuncios. No es un sitio oficial de la Iglesia Católica ni de ninguna diócesis. Para la enseñanza oficial de la Iglesia, consulta el <a href="https://www.vatican.va/archive/catechism_sp/index_sp.html">Catecismo de la Iglesia Católica</a>.
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js" defer></script>
+{extra_foot}
+</body>
+</html>
+"""
+
+FOOT_PT = """</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-verse">&ldquo;Eu sou a porta; se alguém entrar por mim, será salvo.&rdquo;</p>
+        <p class="small">João 10,9</p>
+      </div>
+      <div>
+        <h4>Em português</h4>
+        <ul>
+          <li><a href="/pt/comecar">Como se tornar católico (OCIA)</a></li>
+          <li><a href="/pt/primeira-missa">Sua primeira Missa</a></li>
+          <li><a href="/pt/oracoes">Orações e o Rosário</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aprender</h4>
+        <ul>
+          <li><a href="/pt/encontrar-igreja">Encontrar uma igreja</a></li>
+          <li><a href="/pt/crencas">No que acreditamos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sobre o site</h4>
+        <ul>
+          <li><a href="/about" lang="en">About</a></li>
+          <li><a href="mailto:hello@catholicdoorway.com">Escreva para nós</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      O CatholicDoorway é um guia gratuito e independente, sem anúncios. Não é um site oficial da Igreja Católica nem de nenhuma diocese. Para o ensinamento oficial da Igreja, consulte o <a href="https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html">Catecismo da Igreja Católica</a>.
     </div>
   </div>
 </footer>
@@ -424,13 +529,43 @@ POSE = {"stand": "Stand", "sit": "Sit", "kneel": "Kneel", "any": "As you wish"}
 
 
 POSE_ES = {"stand": "De pie", "sit": "Sentados", "kneel": "De rodillas", "any": "Como prefieras"}
+POSE_PT = {"stand": "De pé", "sit": "Sentados", "kneel": "De joelhos", "any": "Como preferir"}
+
+
+LATIN_TEXT = {
+    "en": ("Pray in Latin", "Latin is the Church&rsquo;s own language, and these are the words Catholics everywhere have prayed for centuries. You will still hear them at many parishes, in sung Masses and at Benediction. Latin is on the left, English on the right.",
+           "How to say it", "Church Latin sounds a lot like Italian. Say every vowel; <em>ae</em> sounds like &ldquo;eh&rdquo;. <em>C</em> before e or i sounds like &ldquo;ch&rdquo; (<em>caelis</em>: CHEH-lees), <em>g</em> before e or i is soft as in &ldquo;gem&rdquo;, and <em>gn</em> sounds like &ldquo;ny&rdquo; (<em>regnum</em>: REH-nyoom). The accent marks show which syllable to stress.", "Latin"),
+    "es": ("Reza en latín", "El latín es la lengua propia de la Iglesia, y estas son las palabras que los católicos de todo el mundo han rezado durante siglos. Todavía se oyen en muchas parroquias, en las Misas cantadas y en la Bendición con el Santísimo. El latín está a la izquierda y el español a la derecha.",
+           "Cómo se pronuncia", "El latín de la Iglesia suena muy parecido al italiano. Pronuncia todas las vocales; <em>ae</em> suena como &ldquo;e&rdquo;. La <em>c</em> antes de e o i suena como &ldquo;ch&rdquo; (<em>caelis</em>: CHE-lis), la <em>g</em> antes de e o i suena como la <em>y</em> de &ldquo;yema&rdquo;, y <em>gn</em> suena como &ldquo;ñ&rdquo; (<em>regnum</em>: RE-ñum). Los acentos indican qué sílaba se pronuncia con más fuerza.", "Latín"),
+    "pt": ("Reze em latim", "O latim é a língua própria da Igreja, e estas são as palavras que os católicos do mundo inteiro rezam há séculos. Você ainda as ouve em muitas paróquias, nas Missas cantadas e na Bênção do Santíssimo. O latim está à esquerda e o português à direita.",
+           "Como pronunciar", "O latim da Igreja soa muito parecido com o italiano. Pronuncie todas as vogais; <em>ae</em> soa como &ldquo;é&rdquo;. O <em>c</em> antes de e ou i soa como &ldquo;tch&rdquo; (<em>caelis</em>: TCHÉ-lis), o <em>g</em> antes de e ou i soa como &ldquo;dj&rdquo;, e <em>gn</em> soa como &ldquo;nh&rdquo; (<em>regnum</em>: RÉ-nhum). Os acentos mostram a sílaba tônica.", "Latim"),
+}
+LANG_LABEL = {"en": "English", "es": "Español", "pt": "Português"}
+
+
+def latin_html(lang="en"):
+    data = json.loads((ROOT / "src" / "data" / "latin.json").read_text(encoding="utf-8"))
+    head, lede, how_h, how, la_word = LATIN_TEXT[lang]
+    cards = []
+    for pr in data:
+        cards.append(
+            f'      <article class="card latin-prayer" id="{pr["id"]}">\n'
+            f'        <h3><span lang="la">{html.escape(pr["la_title"])}</span> <span class="muted small">({html.escape(pr["title"][lang])})</span></h3>\n'
+            f'        <div class="latin-cols">\n'
+            f'          <div><p class="latin-label">{la_word}</p><p class="text" lang="la">{html.escape(pr["la"])}</p></div>\n'
+            f'          <div><p class="latin-label">{LANG_LABEL[lang]}</p><p class="text">{html.escape(pr[lang])}</p></div>\n'
+            f'        </div>\n      </article>')
+    return (f'  <section class="section" id="latin">\n    <h2>{head}</h2>\n    <p class="muted prose">{lede}</p>\n'
+            f'    <div class="note prose"><p><strong>{how_h}.</strong> {how}</p></div>\n'
+            f'    <div class="latin-list">\n' + "\n".join(cards) + '\n    </div>\n  </section>')
 
 
 def mass_html(lang="en"):
     name = "mass.json" if lang == "en" else f"mass_{lang}.json"
     steps = json.loads((ROOT / "src" / "data" / name).read_text(encoding="utf-8"))
-    pose = POSE if lang == "en" else POSE_ES
-    everyone = ("All", "You", "Catholic") if lang == "en" else ("Todos", "Tú", "Quien comulga")
+    pose = {"en": POSE, "es": POSE_ES, "pt": POSE_PT}[lang]
+    everyone = {"en": ("All", "You", "Catholic"), "es": ("Todos", "Tú", "Quien comulga"),
+                "pt": ("Todos", "Você", "Quem comunga")}[lang]
     out, part = [], None
     for i, st in enumerate(steps, 1):
         if st["part"] != part:
@@ -652,7 +787,8 @@ def build_dioceses(data):
                 'how to find a parish and OCIA, and the holy men and women of the area.')
         page = HEAD.format(title=html.escape(title), desc=html.escape(desc), canonical=f"{DOMAIN}/dioceses/{d['slug']}",
                            domain=DOMAIN, slug="dioceses", door=DOOR_SVG, menu=MENU_SVG, theme=THEME_SVG,
-                           nav=nav_html("dioceses"), extra_head="", alternates="", alt_href="/es/", **EN_TEXT)
+                           nav=nav_html("dioceses"), extra_head="", alternates="",
+                           lang_menu=lang_menu("en", {"en": f"/dioceses/{d['slug']}", "es": None, "pt": None}), **EN_TEXT)
         page += diocese_body(d, data) + FOOT.format(extra_foot="")
         (out_dir / f"{d['slug']}.html").write_text(bust(page), encoding="utf-8")
         keep.add(f"{d['slug']}.html")
@@ -705,61 +841,77 @@ ES_SUB_CHILDREN = {c for subs in ES_SUBNAV.values() for c, _ in subs} - set(ES_S
 ES_NAV_EXCLUDE = {"inscribirse-parroquia", "bautismo", "matrimonio", "uncion", "funerales", "fe-de-bautismo"}
 
 
-def es_nav(current):
+def lang_nav(code, pages, subnav, exclude, current):
+    children = {c for subs in subnav.values() for c, _ in subs} - set(subnav)
     items = []
-    for _, es, label, *_ in ES_PAGES:
-        if es in ES_SUB_CHILDREN or es in ES_NAV_EXCLUDE:
+    for _, sl, label, *_ in pages:
+        if sl in children or sl in exclude:
             continue
-        href = "/es/" if es == "index" else f"/es/{es}"
-        cur = ' aria-current="page"' if es == current else ""
-        subs = ES_SUBNAV.get(es)
+        href = f"/{code}/" if sl == "index" else f"/{code}/{sl}"
+        cur = ' aria-current="page"' if sl == current else ""
+        subs = subnav.get(sl)
         if subs:
             if current in [c for c, _ in subs]:
                 cur = ' class="in-section"'
-            sub = "".join(f'<li><a href="/es/{c}"{" aria-current=\"page\"" if c == current else ""}>{l}</a></li>' for c, l in subs)
+            sub = "".join(f'<li><a href="/{code}/{c}"{" aria-current=\"page\"" if c == current else ""}>{l}</a></li>' for c, l in subs)
             items.append(f'        <li class="has-sub"><a href="{href}"{cur}>{label}</a><ul class="sub">{sub}</ul></li>')
             continue
         items.append(f'        <li><a href="{href}"{cur}>{label}</a></li>')
     return "\n".join(items)
 
 
-def build_es():
-    out_dir = OUT / "es"
+def es_nav(current):
+    return lang_nav("es", ES_PAGES, ES_SUBNAV, ES_NAV_EXCLUDE, current)
+
+
+LOCALE = {"es": "es_US", "pt": "pt_BR"}
+
+
+def build_lang(code, pages, text, foot, subnav, exclude):
+    out_dir = OUT / code
     out_dir.mkdir(exist_ok=True)
-    for en, es, label, title, desc in ES_PAGES:
-        body = (PAGES_DIR / "es" / f"{es}.html").read_text(encoding="utf-8")
-        url = "/es/" if es == "index" else f"/es/{es}"
-        en_url = "/" if en == "index" else f"/{en}"
-        alternates = (f'<link rel="alternate" hreflang="en" href="{DOMAIN}{en_url}">\n'
-                      f'<link rel="alternate" hreflang="es" href="{DOMAIN}{url}">')
+    for en, sl, label, title, desc in pages:
+        body = (PAGES_DIR / code / f"{sl}.html").read_text(encoding="utf-8")
+        url = f"/{code}/" if sl == "index" else f"/{code}/{sl}"
+        urls = lang_urls(en)
         eh, ef = EXTRA.get(en, ("", ""))
         page = HEAD.format(title=title, desc=desc, canonical=DOMAIN + url, domain=DOMAIN,
                            slug=en, door=DOOR_SVG, menu=MENU_SVG, theme=THEME_SVG,
-                           nav=es_nav(es), extra_head=eh, alternates=alternates,
-                           alt_href=en_url, **ES_TEXT)
+                           nav=lang_nav(code, pages, subnav, exclude, sl), extra_head=eh,
+                           alternates=alternates_html(urls), lang_menu=lang_menu(code, urls), **text)
         page = page.replace('<meta property="og:site_name" content="CatholicDoorway">',
-                            '<meta property="og:site_name" content="CatholicDoorway">\n<meta property="og:locale" content="es_US">')
+                            f'<meta property="og:site_name" content="CatholicDoorway">\n<meta property="og:locale" content="{LOCALE[code]}">')
         body = body.replace("{{DOOR}}", DOOR_SVG)
         if "{{QUESTIONS}}" in body:
-            body = body.replace("{{QUESTIONS}}", questions_html("es"))
+            body = body.replace("{{QUESTIONS}}", questions_html(code))
         if "{{SAINTS}}" in body:
-            body = body.replace("{{SAINTS}}", saints_html("es"))
+            body = body.replace("{{SAINTS}}", saints_html(code))
         if "{{DIOCESES}}" in body:
             dd = load_dioceses()
-            rows, n = dio_rows(dd, "es")
+            rows, n = dio_rows(dd, code)
             body = body.replace("{{DIOCESES}}", rows).replace("{{DIOCESE_COUNT}}", str(n)).replace("{{DIOCESE_UPDATED}}", dd["updated"])
         if "{{POPES}}" in body:
-            pl, pj = popes_html("es")
+            pl, pj = popes_html(code)
             body = body.replace("{{POPES}}", pl).replace("{{CENTURIES}}", pj)
         if "{{GLOSSARY}}" in body:
-            g, a = glossary_html("es")
+            g, a = glossary_html(code)
             body = body.replace("{{GLOSSARY}}", g).replace("{{ALPHA}}", a)
+        if "{{LATIN}}" in body:
+            body = body.replace("{{LATIN}}", latin_html(code))
         if "{{MASS}}" in body:
-            ms, mn = mass_html("es")
+            ms, mn = mass_html(code)
             body = body.replace("{{MASS}}", ms).replace("{{MASS_COUNT}}", str(mn))
-        page += body + FOOT_ES.format(extra_foot=ef)
-        (out_dir / f"{es}.html").write_text(bust(page), encoding="utf-8")
-        print("built es/" + es)
+        page += body + foot.format(extra_foot=ef)
+        (out_dir / f"{sl}.html").write_text(bust(page), encoding="utf-8")
+        print(f"built {code}/{sl}")
+
+
+def build_es():
+    build_lang("es", ES_PAGES, ES_TEXT, FOOT_ES, ES_SUBNAV, ES_NAV_EXCLUDE)
+
+
+def build_pt():
+    build_lang("pt", PT_PAGES, PT_TEXT, FOOT_PT, PT_SUBNAV, PT_NAV_EXCLUDE)
 
 
 def main():
@@ -768,20 +920,19 @@ def main():
         body = (PAGES_DIR / f"{slug}.html").read_text(encoding="utf-8")
         canonical = DOMAIN + ("/" if slug == "index" else f"/{slug}")
         eh, ef = EXTRA.get(slug, ("", ""))
-        es = EN_TO_ES.get(slug)
-        es_url = "/es/" if es in (None, "index") else f"/es/{es}"
-        alternates = (f'<link rel="alternate" hreflang="en" href="{canonical}">\n'
-                      f'<link rel="alternate" hreflang="es" href="{DOMAIN}{es_url}">') if es else ""
+        urls = lang_urls(None if slug == "404" else slug)
         page = HEAD.format(title=title, desc=desc, canonical=canonical, domain=DOMAIN,
                            slug=slug, door=DOOR_SVG, menu=MENU_SVG, theme=THEME_SVG,
-                           nav=nav_html(slug), extra_head=eh, alternates=alternates,
-                           alt_href=es_url, **EN_TEXT)
+                           nav=nav_html(slug), extra_head=eh, alternates=alternates_html(urls),
+                           lang_menu=lang_menu("en", urls), **EN_TEXT)
         body = body.replace("{{DOOR}}", DOOR_SVG)
         if "{{SAINTS}}" in body:
             body = body.replace("{{SAINTS}}", saints_html())
         if "{{GLOSSARY}}" in body:
             g, a = glossary_html()
             body = body.replace("{{GLOSSARY}}", g).replace("{{ALPHA}}", a)
+        if "{{LATIN}}" in body:
+            body = body.replace("{{LATIN}}", latin_html())
         if "{{MASS}}" in body:
             ms, mn = mass_html()
             body = body.replace("{{MASS}}", ms).replace("{{MASS_COUNT}}", str(mn))
@@ -799,6 +950,7 @@ def main():
         print("built", slug)
 
     build_es()
+    build_pt()
     dio_slugs = build_dioceses(dio_data)
 
     today = datetime.date.today().isoformat()
@@ -808,6 +960,9 @@ def main():
     urls += "\n" + "\n".join(
         f"  <url><loc>{DOMAIN}/es/{'' if es == 'index' else es}</loc><lastmod>{today}</lastmod></url>"
         for _, es, *_ in ES_PAGES)
+    urls += "\n" + "\n".join(
+        f"  <url><loc>{DOMAIN}/pt/{'' if pt == 'index' else pt}</loc><lastmod>{today}</lastmod></url>"
+        for _, pt, *_ in PT_PAGES)
     urls += "\n" + "\n".join(f"  <url><loc>{DOMAIN}/dioceses/{s}</loc><lastmod>{today}</lastmod></url>" for s in dio_slugs)
     (OUT / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n',
