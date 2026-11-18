@@ -191,7 +191,8 @@
       })
       .catch(fallback);
   }
-  var cyc = $('#cycle-note'); if (cyc) cyc.textContent = ES ? 'Este año litúrgico: lecturas dominicales del Ciclo ' + s.sunday + ', lecturas de entre semana del año ' + s.weekday + '. Tiempo litúrgico: ' + s.name + '.'
+  var cyc = $('#cycle-note'); if (cyc) cyc.textContent = PT ? 'Neste ano litúrgico: leituras de domingo do Ano ' + s.sunday + ', leituras dos dias de semana do ano ' + s.weekday + '. Tempo litúrgico: ' + s.name + '.'
+    : ES ? 'Este año litúrgico: lecturas dominicales del Ciclo ' + s.sunday + ', lecturas de entre semana del año ' + s.weekday + '. Tiempo litúrgico: ' + s.name + '.'
     : 'This liturgical year: Sunday readings Year ' + s.sunday + ', weekday readings Year ' + s.weekday + '. Season: ' + s.name + '.';
   var rform = $('#readings-form');
   if (rform) {
@@ -249,7 +250,7 @@
         var ok = (statusSel === 'all' || c.getAttribute('data-status') === statusSel) && (!term || norm(c.textContent).indexOf(term) > -1);
         c.hidden = !ok; if (ok) n++;
       });
-      count.textContent = ES ? (n === 1 ? '1 persona' : n + ' personas') : n + (n === 1 ? ' person' : ' people') + ' shown';
+      count.textContent = PT ? (n === 1 ? '1 pessoa' : n + ' pessoas') : ES ? (n === 1 ? '1 persona' : n + ' personas') : n + (n === 1 ? ' person' : ' people') + ' shown';
     };
     q.addEventListener('input', apply);
     chips.forEach(function (ch) {
@@ -352,7 +353,8 @@
   /* ---------- Holy days calendar ---------- */
   var calList = $('#cal-list');
   if (calList) {
-    var LABEL = ES ? { obligation: 'Día de precepto', fast: 'Ayuno y abstinencia', abstinence: 'Abstinencia', solemnity: 'Solemnidad', feast: 'Fiesta' }
+    var LABEL = PT ? { obligation: 'Dia santo de guarda', fast: 'Jejum e abstinência', abstinence: 'Abstinência', solemnity: 'Solenidade', feast: 'Festa' }
+      : ES ? { obligation: 'Día de precepto', fast: 'Ayuno y abstinencia', abstinence: 'Abstinencia', solemnity: 'Solemnidad', feast: 'Fiesta' }
       : { obligation: 'Holy Day of Obligation', fast: 'Fast and abstinence', abstinence: 'Abstinence', solemnity: 'Solemnity', feast: 'Feast' };
     var calKind = 'all', calEvents = [];
     var todayIso = (function (d) { return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); })(new Date());
@@ -363,7 +365,7 @@
         if (calKind === 'fast') return e.kind === 'fast' || e.kind === 'abstinence';
         return calKind === 'all' || e.kind === calKind;
       });
-      if (!list.length) { calList.innerHTML = '<p class="muted">' + T('Nothing coming up in this view.', 'No hay nada próximo en esta vista.') + '</p>'; return; }
+      if (!list.length) { calList.innerHTML = '<p class="muted">' + T('Nothing coming up in this view.', 'No hay nada próximo en esta vista.', 'Nada nos próximos dias nesta visualização.') + '</p>'; return; }
       var out = '', month = '';
       list.forEach(function (e) {
         var d = new Date(e.date + 'T12:00:00');
@@ -382,10 +384,10 @@
         drawCal();
       });
     });
-    fetch('/api/calendar.json?year=' + new Date().getFullYear() + (ES ? '&lang=es' : ''))
+    fetch('/api/calendar.json?year=' + new Date().getFullYear() + (ES ? '&lang=es' : PT ? '&lang=pt' : ''))
       .then(function (r) { return r.json(); })
       .then(function (d) { calEvents = d.events; drawCal(); })
-      .catch(function () { calList.innerHTML = '<p class="muted">' + T('The calendar could not load. Please try again in a moment.', 'No se pudo cargar el calendario. Inténtalo de nuevo en un momento.') + '</p>'; });
+      .catch(function () { calList.innerHTML = '<p class="muted">' + T('The calendar could not load. Please try again in a moment.', 'No se pudo cargar el calendario. Inténtalo de nuevo en un momento.', 'Não foi possível carregar o calendário. Tente de novo daqui a pouco.') + '</p>'; });
     // Android has no webcal handler; send Android users straight to Google Calendar.
     if (/Android/i.test(navigator.userAgent)) { var ap = $('#sub-apple'); if (ap) ap.hidden = true; }
   }
@@ -403,7 +405,7 @@
       var open = qt.getAttribute('aria-pressed') !== 'true';
       qas.forEach(function (d) { d.open = open; });
       qt.setAttribute('aria-pressed', open ? 'true' : 'false');
-      qt.textContent = open ? T('Close all', 'Cerrar todas') : T('Open all', 'Abrir todas');
+      qt.textContent = open ? T('Close all', 'Cerrar todas', 'Fechar todas') : T('Open all', 'Abrir todas', 'Abrir todas');
     });
     var openHash = function () { var d = location.hash && document.getElementById(location.hash.slice(1)); if (d && d.tagName === 'DETAILS') { d.open = true; d.scrollIntoView(); } };
     window.addEventListener('hashchange', openHash); openHash();

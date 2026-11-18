@@ -163,13 +163,58 @@ PT_PAGES = [
      "Um resumo simples da fé e da prática católica: o Credo, os sete sacramentos, a Escritura e a Tradição, Maria e os santos, e a vida moral."),
     ("find-a-church", "encontrar-igreja", "Encontrar uma igreja", "Encontre uma igreja católica perto de você | CatholicDoorway",
      "Procure igrejas católicas nos Estados Unidos por cidade ou ZIP code: endereço, telefone, site e como chegar."),
+    ("how-to", "guias", "Guias práticos", "Guias católicos práticos: Confissão, Batismo, Matrimônio e mais | CatholicDoorway",
+     "Guias católicos simples e práticos: confessar-se, inscrever-se numa paróquia, batizar um filho, casar na Igreja, a Unção dos Enfermos, funerais e voltar para a Igreja."),
+    ("confession", "confissao", "Confissão", "Como se confessar: guia passo a passo | CatholicDoorway",
+     "Como fazer uma boa confissão: quando e onde, como se preparar, o que dizer exatamente e o que fazer se faz muitos anos."),
+    ("coming-back", "voltar", "Voltar para a Igreja", "Voltar para a Igreja Católica | CatholicDoorway",
+     "Afastou-se da Igreja? Como voltar: a Missa, conversar com um padre, a Confissão e casos especiais, como um casamento fora da Igreja."),
+    ("join-a-parish", "inscrever-se-paroquia", "Inscrever-se numa paróquia", "Como se inscrever numa paróquia católica nos EUA | CatholicDoorway",
+     "Por que e como se inscrever numa paróquia católica nos Estados Unidos, e em que isso ajuda: cartas para padrinhos, batizados, casamentos e escola católica."),
+    ("baptism", "batismo", "Batismo", "Como batizar o seu filho na Igreja Católica | CatholicDoorway",
+     "Como funciona o Batismo de um bebê numa paróquia católica: quando ligar, a preparação, os requisitos dos padrinhos, a cerimônia e os casos especiais."),
+    ("marriage", "matrimonio", "Matrimônio", "Como casar na Igreja Católica | CatholicDoorway",
+     "Casar na Igreja: com quanta antecedência começar, a preparação, os documentos, casar com alguém não católico, casamentos anteriores e convalidação."),
+    ("anointing", "uncao", "Unção dos Enfermos", "A Unção dos Enfermos e os últimos sacramentos | CatholicDoorway",
+     "Quando e como chamar um padre para a Unção dos Enfermos ou os últimos sacramentos, o que são e o que fazer se alguém está morrendo agora."),
+    ("funerals", "funeral", "Funeral", "Como preparar um funeral católico | CatholicDoorway",
+     "Como preparar um funeral católico: o velório, a Missa de exéquias e o sepultamento, as normas sobre a cremação, os custos e as Missas pelos falecidos."),
+    ("baptism-certificate", "certidao-de-batismo", "Certidão de batismo", "Como pedir a sua certidão de batismo católica | CatholicDoorway",
+     "Como pedir a sua certidão de batismo com as anotações para um casamento ou para ser padrinho, mesmo se a paróquia fechou ou você foi batizado no Brasil ou em Portugal."),
+    ("bible", "biblia", "Bíblia", "A Bíblia e as leituras da Missa de hoje | CatholicDoorway",
+     "As leituras da Missa de hoje em português, como a Bíblia católica é organizada e por onde começar a ler."),
+    ("calendar", "calendario", "Calendário", "Dias santos de guarda e de jejum: calendário católico | CatholicDoorway",
+     "Os dias santos de guarda, os dias de jejum e as festas principais nos Estados Unidos, com um calendário gratuito em português para o seu iPhone, Google ou Outlook."),
+    ("questions", "perguntas", "Perguntas sinceras", "Perguntas sinceras sobre a Igreja Católica, respondidas | CatholicDoorway",
+     "Respostas breves, gentis e claras ao que as pessoas perguntam sobre os católicos: Maria, os santos, a confissão, o Papa, o purgatório e mais."),
+    ("glossary", "glossario", "Glossário", "Glossário católico: palavras explicadas | CatholicDoorway",
+     "Definições simples das palavras católicas, de Absolvição a Vaticano."),
+    ("structure", "estrutura", "A Igreja", "Como a Igreja Católica é organizada | CatholicDoorway",
+     "Como a Igreja Católica é organizada: o Papa, os bispos, as dioceses, as paróquias, os padres e os diáconos, explicado com simplicidade."),
+    ("popes", "papas", "Os Papas", "Os 267 Papas, de São Pedro a Leão XIV | CatholicDoorway",
+     "Todos os Papas em ordem, de São Pedro a Leão XIV: o lugar de cada um na sucessão, os anos de pontificado e o motivo pelo qual é lembrado."),
+    ("dioceses", "dioceses", "Dioceses", "As dioceses católicas dos Estados Unidos | CatholicDoorway",
+     "Todas as dioceses, arquidioceses e eparquias católicas dos Estados Unidos: o bispo, a catedral, o site e ajuda para começar a OCIA."),
+    ("saints", "santos", "Santos", "Santos, Beatos e Veneráveis católicos | CatholicDoorway",
+     "Conheça os santos e o caminho para a santidade: Servo de Deus, Venerável, Beato e Santo."),
+    ("saints-directory", "diretorio-santos", "Diretório de santos", "Diretório de santos e causas: Santos, Beatos, Veneráveis e Servos de Deus | CatholicDoorway",
+     "Pesquise entre milhares de Santos, Beatos, Veneráveis e Servos de Deus por nome, país, século e padroado. Atualizado toda semana."),
+    ("about", "sobre", "Sobre o site", "Sobre o CatholicDoorway",
+     "Sobre o CatholicDoorway.com: um guia gratuito e sem anúncios da fé católica. Fontes, dados, privacidade e correções."),
 ]
 PT_TEXT = dict(lang="pt", skip="Pular para o conteúdo", home="/pt/", home_label="Início do CatholicDoorway",
                theme_label="Mudar para o modo claro ou escuro", menu_label="Menu", nav_label="Principal")
 EN_TO_PT = {en: pt for en, pt, *_ in PT_PAGES}
-PT_SUBNAV = {"comecar": [("comecar", "Tornar-se católico (OCIA)"), ("primeira-missa", "Sua primeira Missa")],
-             "oracoes": [("oracoes", "Orações católicas"), ("rosario", "Reze o Rosário")]}
-PT_NAV_EXCLUDE = set()
+PT_SUBNAV = {"comecar": [("comecar", "Tornar-se católico (OCIA)"), ("primeira-missa", "Sua primeira Missa"), ("guias", "Guias práticos"),
+                         ("confissao", "Como se confessar"), ("voltar", "Voltar para a Igreja")],
+             "oracoes": [("oracoes", "Orações católicas"), ("rosario", "Reze o Rosário")],
+             "biblia": [("biblia", "As leituras de hoje e a Bíblia"), ("calendario", "Calendário de dias santos")],
+             "crencas": [("crencas", "No que os católicos acreditam"), ("perguntas", "Perguntas sinceras"), ("glossario", "Glossário")],
+             "santos": [("santos", "Conheça os santos"), ("diretorio-santos", "Diretório de santos e causas")],
+             "estrutura": [("estrutura", "Como a Igreja é organizada"), ("papas", "Os 267 Papas"), ("dioceses", "As dioceses dos EUA"),
+                           ("encontrar-igreja", "Encontrar uma igreja")]}
+# Portuguese pages reached from a hub page rather than the top menu
+PT_NAV_EXCLUDE = {"sobre", "inscrever-se-paroquia", "batismo", "matrimonio", "uncao", "funeral", "certidao-de-batismo"}
 
 LANGS = [("en", "English", "home page"), ("es", "Español", "página de inicio"), ("pt", "Português", "página inicial")]
 LANG_HOME = {"en": "/", "es": "/es/", "pt": "/pt/"}
@@ -323,12 +368,13 @@ FOOT_PT = """</main>
         <ul>
           <li><a href="/pt/encontrar-igreja">Encontrar uma igreja</a></li>
           <li><a href="/pt/crencas">No que acreditamos</a></li>
+          <li><a href="/pt/santos">Santos</a></li>
         </ul>
       </div>
       <div>
         <h4>Sobre o site</h4>
         <ul>
-          <li><a href="/about" lang="en">About</a></li>
+          <li><a href="/pt/sobre">Sobre o site</a></li>
           <li><a href="mailto:hello@catholicdoorway.com">Escreva para nós</a></li>
         </ul>
       </div>
@@ -407,14 +453,21 @@ STATUS_LABEL_ES = {"saint": ("Santo", "Santa"), "blessed": ("Beato", "Beata"), "
                    "servant": ("Siervo de Dios", "Sierva de Dios")}
 
 
+STATUS_LABEL_PT = {"saint": ("Santo", "Santa"), "blessed": ("Beato", "Beata"), "venerable": ("Venerável", "Venerável"),
+                   "servant": ("Servo de Deus", "Serva de Deus")}
+
+
 def saints_html(lang="en"):
     es = lang == "es"
-    data = json.loads((ROOT / "src" / "data" / ("saints_es.json" if es else "saints.json")).read_text(encoding="utf-8"))
+    data = json.loads((ROOT / "src" / "data" / ("saints.json" if lang == "en" else f"saints_{lang}.json")).read_text(encoding="utf-8"))
     out = []
     for p in data:
         e = html.escape
-        feast = f" &middot; {'Fiesta' if es else 'Feast'}: {e(p['feast'])}" if p.get("feast") else ""
-        if es:
+        fw = {"en": "Feast", "es": "Fiesta", "pt": "Festa"}[lang]
+        feast = f" &middot; {fw}: {e(p['feast'])}" if p.get("feast") else ""
+        if lang == "pt":
+            label = STATUS_LABEL_PT[p["status"]][1 if p.get("fem") else 0]
+        elif es:
             fem = p["name"].startswith(("Santa ", "Beata ", "Sierva ")) or p["name"].startswith("Venerable") and p["name"].split()[1] in ("Mary", "Henriette")
             label = STATUS_LABEL_ES[p["status"]][1 if fem else 0]
         else:
@@ -430,7 +483,7 @@ def saints_html(lang="en"):
 def glossary_html(lang="en"):
     import unicodedata
     fold = lambda t: unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode().lower()
-    data = json.loads((ROOT / "src" / "data" / ("glossary_es.json" if lang == "es" else "glossary.json")).read_text(encoding="utf-8"))
+    data = json.loads((ROOT / "src" / "data" / ("glossary.json" if lang == "en" else f"glossary_{lang}.json")).read_text(encoding="utf-8"))
     data.sort(key=lambda t: fold(t[1]))
     out, letters, cur = [], [], None
     for slug, term, definition in data:
@@ -485,12 +538,45 @@ def pope_name_es(n):
     return pre + n
 
 
+POPE_PT = {"Peter": "Pedro", "Linus": "Lino", "Anacletus": "Anacleto", "Clement": "Clemente", "Evaristus": "Evaristo",
+           "Alexander": "Alexandre", "Sixtus": "Sisto", "Telesphorus": "Telésforo", "Hyginus": "Higino", "Pius": "Pio",
+           "Anicetus": "Aniceto", "Soter": "Sotero", "Eleutherius": "Eleutério", "Victor": "Vítor", "Zephyrinus": "Zeferino",
+           "Callixtus": "Calisto", "Urban": "Urbano", "Pontian": "Ponciano", "Anterus": "Antero", "Fabian": "Fabiano",
+           "Cornelius": "Cornélio", "Lucius": "Lúcio", "Stephen": "Estêvão", "Dionysius": "Dionísio", "Felix": "Félix",
+           "Eutychian": "Eutiquiano", "Caius": "Caio", "Marcellinus": "Marcelino", "Marcellus": "Marcelo", "Eusebius": "Eusébio",
+           "Miltiades": "Melquíades", "Sylvester": "Silvestre", "Mark": "Marcos", "Julius": "Júlio", "Liberius": "Libério",
+           "Damasus": "Dâmaso", "Siricius": "Sirício", "Anastasius": "Anastácio", "Innocent": "Inocêncio", "Zosimus": "Zósimo",
+           "Boniface": "Bonifácio", "Celestine": "Celestino", "Leo": "Leão", "Hilarius": "Hilário", "Simplicius": "Simplício",
+           "Gelasius": "Gelásio", "Symmachus": "Símaco", "John": "João", "Agapetus": "Agapito", "Silverius": "Silvério",
+           "Vigilius": "Vigílio", "Pelagius": "Pelágio", "Benedict": "Bento", "Gregory": "Gregório", "Sabinian": "Sabiniano",
+           "Adeodatus": "Adeodato", "Honorius": "Honório", "Severinus": "Severino", "Theodore": "Teodoro", "Martin": "Martinho",
+           "Eugene": "Eugênio", "Vitalian": "Vitaliano", "Donus": "Dono", "Agatho": "Agatão", "Conon": "Cónon", "Sergius": "Sérgio",
+           "Sisinnius": "Sisínio", "Constantine": "Constantino", "Zachary": "Zacarias", "Paul": "Paulo", "Adrian": "Adriano",
+           "Paschal": "Pascoal", "Valentine": "Valentino", "Nicholas": "Nicolau", "Marinus": "Marino", "Formosus": "Formoso",
+           "Romanus": "Romano", "Lando": "Lando", "Francis": "Francisco", "Hormisdas": "Hormisdas"}
+
+
+def pope_name_pt(n):
+    n = n.replace("(the Great)", "Magno").replace("(1st time)", "(primeira vez)").replace("(2nd time)", "(segunda vez)").replace("(3rd time)", "(terceira vez)")
+    pre = ""
+    for a in ("St. ", "Bl. ", "Ven. "):
+        if n.startswith(a):
+            pre, n = a, n[len(a):]
+    n = " ".join(POPE_PT.get(w, w) for w in n.split(" "))
+    if pre == "St. ":
+        pre = "Santo " if n[0] in "AEIOUÁÉÍÓÚH" else "São "
+    elif pre:
+        pre = {"Bl. ": "Beato ", "Ven. ": "Venerável "}[pre]
+    return pre + n
+
+
 def popes_html(lang="en"):
     es = lang == "es"
+    pt = lang == "pt"
     rows = [l.split("\t") for l in (ROOT / "src" / "data" / "popes.tsv").read_text(encoding="utf-8").splitlines()
             if l and not l.startswith("#")]
-    if es:
-        tr = dict(l.split("\t", 1) for l in (ROOT / "src" / "data" / "popes_es.tsv").read_text(encoding="utf-8").splitlines() if l)
+    if lang != "en":
+        tr = dict(l.split("\t", 1) for l in (ROOT / "src" / "data" / f"popes_{lang}.tsv").read_text(encoding="utf-8").splitlines() if l)
     e = html.escape
     yr = (lambda d: _yr(d).replace("c. ", "h. ")) if es else _yr
     out, cents, cur = [], [], None
@@ -498,34 +584,39 @@ def popes_html(lang="en"):
         n = int(ord_)
         if es:
             name, summary = pope_name_es(name), tr[ord_]
+        elif pt:
+            name, summary = pope_name_pt(name), tr[ord_]
         c = (int(start[:4]) - 1) // 100 + 1
         if c != cur:
             if cur is not None:
                 out.append("    </ol>")
             cur = c
             cents.append(c)
-            head = f"Siglo {ROMAN[c]}" if es else f"{_ordinal(c)} century"
+            head = f"Siglo {ROMAN[c]}" if es else f"Século {ROMAN[c]}" if pt else f"{_ordinal(c)} century"
             out.append(f'    <h2 class="pope-cent" id="c{c}">{head}</h2>\n    <ol class="popes">')
+        W = {"en": ("since", "Born", "Lived", "Died", "Born", "Pope"), "es": ("desde", "Nació en", "Vivió", "Murió en", "Nombre de pila:", "Papa"),
+             "pt": ("desde", "Nasceu em", "Viveu", "Morreu em", "Nome de batismo:", "Papa")}[lang]
         if n == 1:
-            reign, life = ("h. años 30 &ndash; 64 o 67", "Mártir en Roma, 64 o 67") if es else ("c. 30s &ndash; 64 or 67", "Martyred in Rome, 64 or 67")
+            reign, life = {"es": ("h. años 30 &ndash; 64 o 67", "Mártir en Roma, 64 o 67"),
+                           "pt": ("c. anos 30 &ndash; 64 ou 67", "Mártir em Roma, 64 ou 67")}.get(lang, ("c. 30s &ndash; 64 or 67", "Martyred in Rome, 64 or 67"))
         else:
             a, b = yr(start), yr(end)
-            reign = (f"{'desde' if es else 'since'} {a}" if not end else a if a == b else f"{a}&ndash;{b}")
+            reign = (f"{W[0]} {a}" if not end else a if a == b else f"{a}&ndash;{b}")
             if not death:
-                life = f"{'Nació en' if es else 'Born'} {yr(birth)}"
+                life = f"{W[1]} {yr(birth)}"
             elif birth:
-                life = f"{'Vivió' if es else 'Lived'} {yr(birth)}&ndash;{yr(death)}"
+                life = f"{W[2]} {yr(birth)}&ndash;{yr(death)}"
             else:
-                life = f"{'Murió en' if es else 'Died'} {yr(death)}"
-        born = f'<span class="pope-bn">{"Nombre de pila:" if es else "Born"} {e(bn)}</span>' if bn else ""
+                life = f"{W[3]} {yr(death)}"
+        born = f'<span class="pope-bn">{W[4]} {e(bn)}</span>' if bn else ""
         curcls = " current" if not end else ""
         out.append(
             f'      <li class="pope{curcls}" id="pope-{n}" value="{n}"><span class="pope-no" aria-hidden="true">{n}</span>'
             f'<div><h3>{e(name)}</h3>{born}'
-            f'<p class="pope-meta"><span>{"Papa" if es else "Pope"} {reign}</span><span>{life}</span></p>'
+            f'<p class="pope-meta"><span>{W[5]} {reign}</span><span>{life}</span></p>'
             f'<p>{e(summary)}</p></div></li>')
     out.append("    </ol>")
-    jump = "\n".join(f'    <a href="#c{c}">{ROMAN[c] if es else _ordinal(c)}</a>' for c in cents)
+    jump = "\n".join(f'    <a href="#c{c}">{ROMAN[c] if lang != "en" else _ordinal(c)}</a>' for c in cents)
     return "\n".join(out), jump
 
 
@@ -590,16 +681,20 @@ def mass_html(lang="en"):
     return "\n".join(out), len(steps)
 
 
+CCC_URL = {"es": "https://www.vatican.va/archive/catechism_sp/index_sp.html",
+           "pt": "https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html"}
+
+
 def questions_html(lang="en"):
-    es = lang == "es"
-    data = json.loads((ROOT / "src" / "data" / ("questions_es.json" if es else "questions.json")).read_text(encoding="utf-8"))
+    es = lang != "en"  # Spanish and Portuguese share the same layout
+    data = json.loads((ROOT / "src" / "data" / ("questions.json" if lang == "en" else f"questions_{lang}.json")).read_text(encoding="utf-8"))
     out = []
     for q in data:
         refs = []
         for ref in q["refs"]:
-            if isinstance(ref, str):  # Spanish: a plain citation
+            if isinstance(ref, str):  # Spanish/Portuguese: a plain citation
                 if ref.startswith("Catecismo"):
-                    refs.append(f'<a href="https://www.vatican.va/archive/catechism_sp/index_sp.html" target="_blank" rel="noopener">{html.escape(ref)}</a>')
+                    refs.append(f'<a href="{CCC_URL[lang]}" target="_blank" rel="noopener">{html.escape(ref)}</a>')
                 else:
                     refs.append(html.escape(ref))
                 continue
@@ -612,11 +707,12 @@ def questions_html(lang="en"):
                 url = f"https://bible.usccb.org/bible/{target}"
             refs.append(f'<a href="{url}" target="_blank" rel="noopener">{html.escape(label)}</a>')
         if q.get("glossary"):
-            refs.append(f'<a href="{"/es/glosario" if es else "/glossary"}#{q["glossary"]}">{"Glosario" if es else "Glossary"}</a>')
+            g = {"en": ("/glossary", "Glossary"), "es": ("/es/glosario", "Glosario"), "pt": ("/pt/glossario", "Glossário")}[lang]
+            refs.append(f'<a href="{g[0]}#{q["glossary"]}">{g[1]}</a>')
         body = "".join(f"<p>{para}</p>" for para in q["a"])
         summary = q["q"] if es else html.escape(q["q"])
         out.append(f'    <details class="qa" id="{q["id"]}"><summary>{summary}</summary>'
-                   f'<div class="qa-body">{body}<p class="qa-refs">{"Para leer más" if es else "Read more"}: {" &middot; ".join(refs)}</p></div></details>')
+                   f'<div class="qa-body">{body}<p class="qa-refs">{ {"en": "Read more", "es": "Para leer más", "pt": "Para ler mais"}[lang] }: {" &middot; ".join(refs)}</p></div></details>')
     return "\n".join(out)
 
 
@@ -736,7 +832,7 @@ def dio_name_es(n):
 
 
 DIO_BASE = {"en": "/dioceses", "es": "/es/diocesis", "pt": "/pt/dioceses"}
-DIO_LANGS = ("en", "es")
+DIO_LANGS = ("en", "es", "pt")
 
 
 def dio_rows(data, lang="en"):

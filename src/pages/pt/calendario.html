@@ -1,0 +1,46 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker">Calendário de dias santos</p>
+    <h1>Dias santos de guarda, de jejum e festas</h1>
+    <p class="lede">Não perca um dia santo de guarda nem esqueça que é sexta-feira da Quaresma. Adicione o calendário da Igreja ao seu celular uma única vez, e ele se atualiza sozinho todo ano.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section">
+    <div class="card subscribe">
+      <div>
+        <p class="label">Adicione ao seu calendário</p>
+        <h3>Um toque, e ele se atualiza sozinho</h3>
+        <p>Inclui os dias santos de guarda, a Quarta-feira de Cinzas e a Sexta-feira Santa, as sextas-feiras da Quaresma e as festas principais, segundo as normas dos Estados Unidos. Os nomes aparecem em português.</p>
+      </div>
+      <div class="btn-row sub-btns">
+        <a class="btn" id="sub-apple" href="webcal://catholicdoorway.com/api/calendar.ics?lang=pt">iPhone / Calendário da Apple</a>
+        <a class="btn secondary" id="sub-google" href="https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fcatholicdoorway.com%2Fapi%2Fcalendar.ics%3Flang%3Dpt" target="_blank" rel="noopener">Google Agenda</a>
+        <a class="btn secondary" id="sub-outlook" href="https://outlook.live.com/calendar/0/addfromweb?url=https%3A%2F%2Fcatholicdoorway.com%2Fapi%2Fcalendar.ics%3Flang%3Dpt&amp;name=Dias%20santos%20cat%C3%B3licos" target="_blank" rel="noopener">Outlook</a>
+      </div>
+      <p class="small muted" style="flex-basis:100%;margin:0">No Android, use o botão do Google Agenda. Outros aplicativos: <a href="/api/calendar.ics?lang=pt" download="dias-santos-catolicos.ics">baixe o arquivo .ics</a> ou copie este endereço: <code>https://catholicdoorway.com/api/calendar.ics?lang=pt</code></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 style="margin-top:0">Próximos dias</h2>
+    <div class="filters" role="group" aria-label="Mostrar">
+      <button class="chip" type="button" data-kind="all" aria-pressed="true">Tudo</button>
+      <button class="chip" type="button" data-kind="obligation" aria-pressed="false">Dias santos de guarda</button>
+      <button class="chip" type="button" data-kind="fast" aria-pressed="false">Jejum e abstinência</button>
+    </div>
+    <div id="cal-list" class="cal-list"><p class="muted">Carregando o calendário&hellip;</p></div>
+  </section>
+
+  <section class="section prose">
+    <h2>O que cada um significa</h2>
+    <ul>
+      <li><span class="kind kind-obligation">Dia santo de guarda</span> Os católicos vão à Missa, como num domingo. A Missa da tarde do dia anterior também vale.</li>
+      <li><span class="kind kind-fast">Jejum e abstinência</span> Os católicos de 18 a 59 anos fazem uma refeição completa e duas menores que, somadas, não chegam a uma refeição completa; todos a partir dos 14 anos não comem carne.</li>
+      <li><span class="kind kind-abstinence">Abstinência</span> Os católicos a partir dos 14 anos não comem carne (peixe pode) nas sextas-feiras da Quaresma.</li>
+      <li><span class="kind kind-solemnity">Solenidade</span> A festa de maior grau. <span class="kind kind-feast">Festa</span> Dias importantes do ano da Igreja.</li>
+    </ul>
+    <p>Quem está doente, grávida ou tem um problema de saúde que o jejum pioraria está dispensado. Algumas províncias dos Estados Unidos (Boston, Hartford, Nova York, Newark, Omaha e Filadélfia) celebram a Ascensão na quinta-feira em vez do domingo. Este calendário segue as normas dos Estados Unidos, que são um pouco diferentes das do Brasil e de Portugal. Na dúvida, veja o boletim da sua paróquia ou a sua diocese. Veja também <a href="/pt/glossario#advent">Advento</a> e <a href="/pt/glossario#lent">Quaresma</a> no glossário.</p>
+  </section>
+</div>

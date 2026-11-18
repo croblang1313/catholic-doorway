@@ -1,0 +1,436 @@
+[
+ {
+  "name": "São José",
+  "status": "saint",
+  "years": "século I",
+  "feast": "19 de março",
+  "tags": "padroeiro da Igreja universal, dos pais e dos trabalhadores",
+  "bio": "Esposo de Maria e pai adotivo de Jesus. Um carpinteiro silencioso e fiel que protegeu a Sagrada Família."
+ },
+ {
+  "name": "São Pedro",
+  "status": "saint",
+  "years": "m. c. 64",
+  "feast": "29 de junho",
+  "tags": "apóstolo, primeiro papa",
+  "bio": "Um pescador que Jesus chamou para ser a \"pedra\" da sua Igreja. Chefe dos Apóstolos e primeiro Bispo de Roma, morreu mártir em Roma."
+ },
+ {
+  "name": "São Paulo",
+  "status": "saint",
+  "years": "m. c. 64-67",
+  "feast": "29 de junho",
+  "tags": "apóstolo, missionário",
+  "bio": "Perseguia os cristãos; encontrou o Cristo ressuscitado e se tornou o grande missionário dos pagãos. As suas cartas ocupam boa parte do Novo Testamento."
+ },
+ {
+  "name": "São Patrício",
+  "status": "saint",
+  "years": "século V",
+  "feast": "17 de março",
+  "tags": "Irlanda, missionário",
+  "bio": "Sequestrado na adolescência e escravizado na Irlanda, conseguiu fugir, tornou-se padre e voltou para levar o Evangelho ao povo irlandês."
+ },
+ {
+  "name": "Santo Agostinho de Hipona",
+  "status": "saint",
+  "years": "354-430",
+  "feast": "28 de agosto",
+  "tags": "Doutor da Igreja, bispo, convertido",
+  "bio": "Depois de uma juventude inquieta, converteu-se graças às orações da sua mãe, Santa Mônica. As suas Confissões são um dos livros mais lidos da história."
+ },
+ {
+  "name": "São Bento de Núrsia",
+  "status": "saint",
+  "years": "c. 480-547",
+  "feast": "11 de julho",
+  "tags": "monges, padroeiro da Europa",
+  "bio": "Escreveu a Regra que moldou a vida monástica do Ocidente em torno da oração e do trabalho: ora et labora."
+ },
+ {
+  "name": "São Francisco de Assis",
+  "status": "saint",
+  "years": "1181/82-1226",
+  "feast": "4 de outubro",
+  "tags": "pobreza, criação, paz",
+  "bio": "Um jovem rico que deixou tudo para seguir Cristo na pobreza. Fundador dos franciscanos e amante de todas as criaturas de Deus. Canonizado em 1228."
+ },
+ {
+  "name": "Santa Clara de Assis",
+  "status": "saint",
+  "years": "1194-1253",
+  "feast": "11 de agosto",
+  "tags": "contemplativa, fundadora",
+  "bio": "Amiga e seguidora de São Francisco, fundou as Clarissas, uma comunidade de religiosas contemplativas.",
+  "fem": true
+ },
+ {
+  "name": "Santo Tomás de Aquino",
+  "status": "saint",
+  "years": "1225-1274",
+  "feast": "28 de janeiro",
+  "tags": "Doutor da Igreja, estudantes, teólogo",
+  "bio": "Frade dominicano e grande teólogo da Igreja, autor da Suma Teológica. Canonizado em 1323."
+ },
+ {
+  "name": "Santa Catarina de Sena",
+  "status": "saint",
+  "years": "1347-1380",
+  "feast": "29 de abril",
+  "tags": "Doutora da Igreja, mística, padroeira da Europa",
+  "bio": "Uma leiga e mística que cuidou dos doentes e pediu com coragem ao Papa que voltasse para Roma. Canonizada em 1461.",
+  "fem": true
+ },
+ {
+  "name": "Santa Joana d'Arc",
+  "status": "saint",
+  "years": "1412-1431",
+  "feast": "30 de maio",
+  "tags": "França, soldados, mártir",
+  "bio": "Uma jovem camponesa que, guiada por vozes do céu, liderou o exército francês antes de morrer na fogueira aos 19 anos. Canonizada em 1920.",
+  "fem": true
+ },
+ {
+  "name": "Santo Inácio de Loyola",
+  "status": "saint",
+  "years": "1491-1556",
+  "feast": "31 de julho",
+  "tags": "jesuítas, exercícios espirituais",
+  "bio": "Um soldado ferido que encontrou Deus durante a recuperação e fundou a Companhia de Jesus (os jesuítas). Canonizado em 1622."
+ },
+ {
+  "name": "Santa Teresa de Ávila",
+  "status": "saint",
+  "years": "1515-1582",
+  "feast": "15 de outubro",
+  "tags": "Doutora da Igreja, oração, mística",
+  "bio": "Reformadora do Carmelo e uma das grandes mestras de oração, autora do Castelo Interior. Canonizada em 1622.",
+  "fem": true
+ },
+ {
+  "name": "São Juan Diego",
+  "status": "saint",
+  "years": "1474-1548",
+  "feast": "9 de dezembro",
+  "tags": "México, Nossa Senhora de Guadalupe",
+  "bio": "Um indígena mexicano a quem Nossa Senhora de Guadalupe apareceu em 1531, deixando a sua imagem no manto dele. Canonizado em 2002."
+ },
+ {
+  "name": "Santa Rosa de Lima",
+  "status": "saint",
+  "years": "1586-1617",
+  "feast": "23 de agosto",
+  "tags": "América, Peru",
+  "bio": "Uma jovem leiga peruana de profunda oração e penitência que serviu os pobres. A primeira santa canonizada das Américas (1671).",
+  "fem": true
+ },
+ {
+  "name": "São Martinho de Porres",
+  "status": "saint",
+  "years": "1579-1639",
+  "feast": "3 de novembro",
+  "tags": "Peru, harmonia racial, justiça social",
+  "bio": "Filho de um nobre espanhol e de uma mulher liberta da escravidão, este irmão dominicano de Lima cuidou de doentes e pobres de todas as raças. Canonizado em 1962."
+ },
+ {
+  "name": "Santa Kateri Tekakwitha",
+  "status": "saint",
+  "years": "1656-1680",
+  "feast": "14 de julho",
+  "tags": "América do Norte, povos indígenas, ecologia",
+  "bio": "Uma mulher mohawk-algonquina que abraçou a fé apesar da oposição. A primeira santa indígena da América do Norte, canonizada em 2012.",
+  "fem": true
+ },
+ {
+  "name": "São Junípero Serra",
+  "status": "saint",
+  "years": "1713-1784",
+  "feast": "1º de julho",
+  "tags": "Califórnia, missionário",
+  "bio": "Missionário franciscano que fundou as nove primeiras missões da Califórnia. Canonizado em 2015."
+ },
+ {
+  "name": "Santa Isabel Ana Seton",
+  "status": "saint",
+  "years": "1774-1821",
+  "feast": "4 de janeiro",
+  "tags": "Estados Unidos, escolas católicas, viúvas",
+  "bio": "Esposa e mãe de Nova York, viúva jovem, que se tornou católica e fundou as Irmãs da Caridade. A primeira santa nascida nos Estados Unidos, canonizada em 1975.",
+  "fem": true
+ },
+ {
+  "name": "São João Neumann",
+  "status": "saint",
+  "years": "1811-1860",
+  "feast": "5 de janeiro",
+  "tags": "Estados Unidos, bispo, escolas católicas",
+  "bio": "Imigrante da Boêmia que se tornou Bispo de Filadélfia e criou o primeiro sistema diocesano de escolas católicas dos Estados Unidos. Canonizado em 1977."
+ },
+ {
+  "name": "São Damião de Molokai",
+  "status": "saint",
+  "years": "1840-1889",
+  "feast": "10 de maio",
+  "tags": "Havaí, doentes, hanseníase",
+  "bio": "Padre belga que serviu na colônia de hansenianos de Molokai, no Havaí, e morreu da mesma doença. Canonizado em 2009."
+ },
+ {
+  "name": "Santa Mariana Cope",
+  "status": "saint",
+  "years": "1838-1918",
+  "feast": "23 de janeiro",
+  "tags": "Havaí, doentes, enfermeiras",
+  "bio": "Religiosa franciscana de Nova York que cuidou de doentes de hanseníase em Molokai durante 30 anos. Canonizada em 2012.",
+  "fem": true
+ },
+ {
+  "name": "Santa Francisca Xavier Cabrini",
+  "status": "saint",
+  "years": "1850-1917",
+  "feast": "13 de novembro",
+  "tags": "imigrantes, Estados Unidos",
+  "bio": "Missionária italiana que fundou escolas, orfanatos e hospitais para imigrantes nas Américas. A primeira cidadã americana canonizada (1946).",
+  "fem": true
+ },
+ {
+  "name": "Santa Catarina Drexel",
+  "status": "saint",
+  "years": "1858-1955",
+  "feast": "3 de março",
+  "tags": "Estados Unidos, justiça racial, educação",
+  "bio": "Uma herdeira de Filadélfia que dedicou a sua fortuna e a sua vida ao serviço das comunidades afro-americanas e indígenas. Canonizada em 2000.",
+  "fem": true
+ },
+ {
+  "name": "Santa Teresinha do Menino Jesus",
+  "status": "saint",
+  "years": "1873-1897",
+  "feast": "1º de outubro",
+  "tags": "Doutora da Igreja, missões, a pequena via",
+  "bio": "Monja carmelita francesa de Lisieux que ensinou a \"pequena via\" de fazer as coisas pequenas com grande amor. Morreu aos 24 anos. Canonizada em 1925.",
+  "fem": true
+ },
+ {
+  "name": "Santa Josefina Bakhita",
+  "status": "saint",
+  "years": "c. 1869-1947",
+  "feast": "8 de fevereiro",
+  "tags": "Sudão, vítimas do tráfico de pessoas",
+  "bio": "Sequestrada e escravizada ainda menina no Sudão, encontrou a liberdade e a fé na Itália e se tornou religiosa canossiana. Canonizada em 2000.",
+  "fem": true
+ },
+ {
+  "name": "São Maximiliano Kolbe",
+  "status": "saint",
+  "years": "1894-1941",
+  "feast": "14 de agosto",
+  "tags": "mártir, Auschwitz",
+  "bio": "Padre franciscano polonês que ofereceu a sua vida no lugar de um desconhecido em Auschwitz. Canonizado em 1982."
+ },
+ {
+  "name": "Santa Faustina Kowalska",
+  "status": "saint",
+  "years": "1905-1938",
+  "feast": "5 de outubro",
+  "tags": "Divina Misericórdia, Polônia",
+  "bio": "Freira polonesa cujo diário das visões de Jesus difundiu a devoção à Divina Misericórdia. Canonizada em 2000.",
+  "fem": true
+ },
+ {
+  "name": "São Pio de Pietrelcina (Padre Pio)",
+  "status": "saint",
+  "years": "1887-1968",
+  "feast": "23 de setembro",
+  "tags": "Itália, confissão, estigmas",
+  "bio": "Frade capuchinho famoso pelas longas horas no confessionário, pela oração profunda e pelos estigmas. Canonizado em 2002."
+ },
+ {
+  "name": "Santa Gianna Beretta Molla",
+  "status": "saint",
+  "years": "1922-1962",
+  "feast": "28 de abril",
+  "tags": "mães, médicos, nascituros",
+  "bio": "Pediatra, esposa e mãe italiana que escolheu salvar a vida da filha que esperava, à custa da própria. Canonizada em 2004.",
+  "fem": true
+ },
+ {
+  "name": "Santa Teresa de Calcutá",
+  "status": "saint",
+  "years": "1910-1997",
+  "feast": "5 de setembro",
+  "tags": "os pobres, Índia",
+  "bio": "Fundadora das Missionárias da Caridade, que serviram os mais pobres dos pobres em Calcutá e no mundo inteiro. Canonizada em 2016.",
+  "fem": true
+ },
+ {
+  "name": "Santo Óscar Romero",
+  "status": "saint",
+  "years": "1917-1980",
+  "feast": "24 de março",
+  "tags": "El Salvador, mártir, os pobres",
+  "bio": "Arcebispo de San Salvador que levantou a voz pelos pobres e foi assassinado enquanto celebrava a Missa. Canonizado em 2018."
+ },
+ {
+  "name": "São João Paulo II",
+  "status": "saint",
+  "years": "1920-2005",
+  "feast": "22 de outubro",
+  "tags": "papa, jovens, Polônia",
+  "bio": "Papa polonês por quase 27 anos, que percorreu o mundo, ajudou a derrubar o comunismo na Europa e criou a Jornada Mundial da Juventude. Canonizado em 2014."
+ },
+ {
+  "name": "São John Henry Newman",
+  "status": "saint",
+  "years": "1801-1890",
+  "feast": "9 de outubro",
+  "tags": "Inglaterra, convertido, estudiosos",
+  "bio": "Padre anglicano e professor de Oxford que se tornou católico e chegou a cardeal. Canonizado em 2019."
+ },
+ {
+  "name": "São Pier Giorgio Frassati",
+  "status": "saint",
+  "years": "1901-1925",
+  "feast": "4 de julho",
+  "tags": "jovens adultos, montanhistas, os pobres",
+  "bio": "Estudante e montanhista italiano que serviu em silêncio os pobres de Turim. Canonizado em 7 de setembro de 2025."
+ },
+ {
+  "name": "São Carlo Acutis",
+  "status": "saint",
+  "years": "1991-2006",
+  "feast": "12 de outubro",
+  "tags": "adolescentes, internet, a Eucaristia",
+  "bio": "Adolescente italiano, gênio da informática, que criou um site sobre os milagres eucarísticos. Morreu de leucemia aos 15 anos. Canonizado em 7 de setembro de 2025."
+ },
+ {
+  "name": "Beato Miguel Pro",
+  "status": "blessed",
+  "years": "1891-1927",
+  "feast": "23 de novembro",
+  "tags": "México, mártir, jesuíta",
+  "bio": "Jesuíta mexicano que exerceu o ministério em segredo durante a perseguição e foi fuzilado gritando \"Viva Cristo Rei!\". Beatificado em 1988."
+ },
+ {
+  "name": "Beato Franz Jägerstätter",
+  "status": "blessed",
+  "years": "1907-1943",
+  "feast": "21 de maio",
+  "tags": "Áustria, consciência, mártir",
+  "bio": "Camponês, esposo e pai austríaco executado por se recusar a lutar pelos nazistas. Beatificado em 2007."
+ },
+ {
+  "name": "Beata Chiara Badano",
+  "status": "blessed",
+  "years": "1971-1990",
+  "feast": "29 de outubro",
+  "tags": "adolescentes, doentes, Focolares",
+  "bio": "Adolescente italiana que enfrentou um câncer nos ossos com uma alegria radiante, oferecendo o seu sofrimento a Jesus. Beatificada em 2010.",
+  "fem": true
+ },
+ {
+  "name": "Beato Solanus Casey",
+  "status": "blessed",
+  "years": "1870-1957",
+  "feast": "30 de julho",
+  "tags": "Estados Unidos, Detroit, doentes",
+  "bio": "Frade capuchinho que serviu como humilde porteiro em Detroit, onde milhares de pessoas o procuravam por seus conselhos e orações. Beatificado em 2017."
+ },
+ {
+  "name": "Beato Stanley Rother",
+  "status": "blessed",
+  "years": "1935-1981",
+  "feast": "28 de julho",
+  "tags": "Estados Unidos, Oklahoma, Guatemala, mártir",
+  "bio": "Padre de Oklahoma que serviu o povo de Santiago Atitlán, na Guatemala, e foi assassinado lá. O primeiro mártir nascido nos Estados Unidos a ser beatificado (2017)."
+ },
+ {
+  "name": "Beato Michael McGivney",
+  "status": "blessed",
+  "years": "1852-1890",
+  "feast": "13 de agosto",
+  "tags": "Estados Unidos, Cavaleiros de Colombo, pais de família",
+  "bio": "Pároco de Connecticut que fundou os Cavaleiros de Colombo para apoiar as famílias católicas. Beatificado em 2020."
+ },
+ {
+  "name": "Venerável Pierre Toussaint",
+  "status": "venerable",
+  "years": "1766-1853",
+  "tags": "Estados Unidos, Nova York, Haiti",
+  "bio": "Nascido escravizado no Haiti, tornou-se um famoso cabeleireiro de Nova York e um generoso benfeitor dos pobres e dos órfãos. Declarado Venerável em 1996."
+ },
+ {
+  "name": "Venerável Mary Elizabeth Lange",
+  "status": "venerable",
+  "years": "c. 1784-1882",
+  "tags": "Estados Unidos, Baltimore, educação",
+  "bio": "Fundou em Baltimore as Irmãs Oblatas da Providência, a primeira comunidade estável de religiosas católicas afro-americanas. Declarada Venerável em 2023.",
+  "fem": true
+ },
+ {
+  "name": "Venerável Henriette Delille",
+  "status": "venerable",
+  "years": "1812-1862",
+  "tags": "Estados Unidos, Nova Orleans",
+  "bio": "Mulher negra livre de Nova Orleans que fundou as Irmãs da Sagrada Família para servir os escravizados, os pobres e os idosos. Declarada Venerável em 2010.",
+  "fem": true
+ },
+ {
+  "name": "Venerável Augustus Tolton",
+  "status": "venerable",
+  "years": "1854-1897",
+  "tags": "Estados Unidos, Chicago, padres",
+  "bio": "Nascido escravizado no Missouri, foi o primeiro padre abertamente afro-americano dos Estados Unidos, depois de estudar em Roma. Declarado Venerável em 2019."
+ },
+ {
+  "name": "Venerável Fulton J. Sheen",
+  "status": "venerable",
+  "years": "1895-1979",
+  "tags": "Estados Unidos, televisão, evangelização",
+  "bio": "Arcebispo e pregador de televisão, ganhador de um Emmy, cujos programas levaram a fé a milhões de americanos. Declarado Venerável em 2012."
+ },
+ {
+  "name": "Venerável Patrick Peyton",
+  "status": "venerable",
+  "years": "1909-1992",
+  "tags": "oração em família, o Rosário",
+  "bio": "Padre nascido na Irlanda, famoso pelo lema \"A família que reza unida permanece unida\". Declarado Venerável em 2017."
+ },
+ {
+  "name": "Venerável Jérôme Lejeune",
+  "status": "venerable",
+  "years": "1926-1994",
+  "tags": "França, cientistas, síndrome de Down",
+  "bio": "Geneticista francês que descobriu a causa da síndrome de Down e defendeu a dignidade de toda vida humana. Declarado Venerável em 2021."
+ },
+ {
+  "name": "Serva de Deus Julia Greeley",
+  "status": "servant",
+  "years": "c. 1833-1918",
+  "tags": "Estados Unidos, Denver, os pobres",
+  "bio": "Nascida escravizada, tornou-se uma figura querida de Denver, que à noite levava num carrinho vermelho comida e roupa para os pobres. Causa aberta em 2016.",
+  "fem": true
+ },
+ {
+  "name": "Servo de Deus Nicholas Black Elk",
+  "status": "servant",
+  "years": "c. 1863-1950",
+  "tags": "Estados Unidos, lakota, catequistas",
+  "bio": "Homem sagrado lakota que se tornou católico e serviu por décadas como catequista entre o seu povo. Causa aberta em 2017."
+ },
+ {
+  "name": "Serva de Deus Dorothy Day",
+  "status": "servant",
+  "years": "1897-1980",
+  "tags": "Estados Unidos, Nova York, os pobres, convertidos",
+  "bio": "Jornalista e convertida que cofundou o movimento Catholic Worker e as suas casas de acolhida. Causa aberta em 2000.",
+  "fem": true
+ },
+ {
+  "name": "Serva de Deus Thea Bowman",
+  "status": "servant",
+  "years": "1937-1990",
+  "tags": "Estados Unidos, Mississippi, música, evangelização",
+  "bio": "Religiosa franciscana, professora e cantora que partilhou com toda a Igreja os dons da cultura católica afro-americana. Causa aberta em 2018.",
+  "fem": true
+ }
+]

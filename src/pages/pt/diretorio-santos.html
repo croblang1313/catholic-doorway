@@ -1,0 +1,47 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/pt/santos">Santos</a> &rsaquo; Diretório</p>
+    <h1>Diretório de santos e causas</h1>
+    <p class="lede">Pesquise entre milhares de Santos, Beatos, Veneráveis e Servos de Deus. Você pode filtrar por país, século e grau, ou ver quem foi beatificado ou canonizado mais recentemente.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section">
+    <div class="sd-controls" role="search">
+      <label for="sd-q" class="sr-only">Pesquisar no diretório</label>
+      <input id="sd-q" class="search" type="search" placeholder="Pesquise um nome, um lugar, uma ordem ou um padroado" autocomplete="off">
+      <div class="sd-selects">
+        <label><span>Grau</span>
+          <select id="sd-status" class="search">
+            <option value="0">Todos</option>
+            <option value="4">Santos</option>
+            <option value="3">Beatos</option>
+            <option value="2">Veneráveis</option>
+            <option value="1">Servos de Deus</option>
+          </select>
+        </label>
+        <label><span>País</span><select id="sd-country" class="search"><option value="">Todos os países</option></select></label>
+        <label><span>Século</span><select id="sd-century" class="search"><option value="">Todos os séculos</option></select></label>
+        <label><span>Ordem</span>
+          <select id="sd-sort" class="search">
+            <option value="name">De A a Z</option>
+            <option value="recent">Decreto mais recente</option>
+            <option value="died">Por data de morte</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <p class="status-msg" id="sd-count" aria-live="polite">Carregando o diretório&hellip;</p>
+    <div id="sd-list" class="sd-list"></div>
+    <p style="text-align:center"><button class="btn secondary" type="button" id="sd-more" hidden>Ver mais</button></p>
+    <noscript><p>O diretório precisa de JavaScript. Você pode ver uma seleção na nossa <a href="/pt/santos">página de Santos</a>.</p></noscript>
+  </section>
+
+  <section class="section prose">
+    <h2>Sobre esta lista</h2>
+    <p>Os passos do caminho para a santidade são explicados na nossa <a href="/pt/santos">página de Santos</a>. Este diretório vem do <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page?uselang=pt-br">Wikidata</a>, um banco de dados livre mantido por voluntários do mundo inteiro. Ele é atualizado toda semana, então as novas beatificações e canonizações aparecem aqui pouco depois que os voluntários registram os decretos do Vaticano. Os anúncios oficiais são publicados pelo <a href="https://www.causesanti.va/">Dicastério para as Causas dos Santos</a>.</p>
+    <p>Mostramos o nome, a descrição e os padroados em português quando o Wikidata os tem; se não, eles aparecem em inglês. O Wikidata é muito bom, mas não perfeito: faltam algumas pessoas e algumas causas abertas ainda não estão registradas. Cada ficha leva à sua página no Wikidata, onde qualquer pessoa pode corrigi-la.</p>
+    <p class="small muted" id="sd-updated"></p>
+  </section>
+</div>

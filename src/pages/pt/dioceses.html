@@ -1,0 +1,72 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/pt/estrutura">A Igreja</a> &rsaquo; Dioceses</p>
+    <h1>Encontre a sua diocese</h1>
+    <p class="lede">Toda paróquia pertence a uma diocese, uma Igreja local guiada por um bispo. A sua diocese pode ajudar com a OCIA, a preparação para o matrimônio, as escolas católicas e muito mais.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section">
+    <div class="grid two">
+      <div class="card">
+        <h3>Em que diocese eu estou?</h3>
+        <p>Nos Estados Unidos, as dioceses costumam seguir os limites dos condados. O jeito mais rápido de saber qual é a sua é procurar a paróquia mais próxima: o site dela vai dizer a que diocese pertence.</p>
+        <div class="btn-row" style="justify-content:flex-start">
+          <a class="btn" href="/pt/encontrar-igreja">Encontrar uma paróquia</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Como uma diocese pode ajudar</h3>
+        <ul style="margin:0">
+          <li>Encontrar um grupo da OCIA</li>
+          <li>A preparação para o matrimônio e as perguntas sobre nulidade</li>
+          <li>As escolas católicas e a pastoral da juventude</li>
+          <li>A Cáritas (Catholic Charities) e os serviços sociais</li>
+          <li>Ambientes seguros e denúncia de abusos</li>
+        </ul>
+        <p class="small muted" style="margin:.6rem 0 0">Algumas dioceses com muitos brasileiros e portugueses, como Boston, Newark e Miami, têm uma pastoral ou capelania de língua portuguesa. Procure no site da sua diocese.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Todas as dioceses dos Estados Unidos</h2>
+    <p class="prose">Nos Estados Unidos e nos seus territórios há {{DIOCESE_COUNT}} dioceses, arquidioceses e eparquias católicas orientais. Uma arquidiocese encabeça uma <a href="/pt/estrutura#local">província</a> de dioceses vizinhas. Toque em qualquer nome para ver o bispo, a catedral, o site, como começar a OCIA ali e os santos daquele estado.</p>
+    <div class="filters">
+      <label for="dio-search" style="position:absolute;left:-999px">Pesquisar dioceses por cidade, estado ou bispo</label>
+      <input id="dio-search" class="search" type="search" placeholder="Pesquise por cidade, estado ou bispo, por exemplo: Texas" data-filter-target="#dio-table tbody tr">
+    </div>
+    <div class="table-wrap">
+      <table id="dio-table">
+        <thead><tr><th scope="col">Diocese</th><th scope="col">Onde</th><th scope="col">Guiada por</th></tr></thead>
+        <tbody>
+{{DIOCESES}}
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted" id="dio-empty" hidden>Nenhuma diocese corresponde a essa pesquisa.</p>
+    <p class="small muted">Dados do <a href="https://www.wikidata.org/">Wikidata</a>, atualizados em {{DIOCESE_UPDATED}} e renovados toda semana. Confirme sempre os dados no site da diocese.</p>
+  </section>
+
+  <section class="section">
+    <h2>Outras jurisdições dos Estados Unidos</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Serviços Militares</h3>
+        <p>A Arquidiocese para os Serviços Militares atende os católicos das forças armadas, dos hospitais de veteranos e do serviço do governo no exterior.</p>
+        <a href="https://www.milarch.org/">milarch.org</a>
+      </div>
+      <div class="card">
+        <h3>O Ordinariato Pessoal</h3>
+        <p>O Ordinariato Pessoal da Cátedra de São Pedro acolhe na Igreja Católica antigos anglicanos e episcopais, mantendo elementos da sua tradição.</p>
+        <a href="https://ordinariate.net/">ordinariate.net</a>
+      </div>
+      <div class="card">
+        <h3>Igrejas católicas orientais</h3>
+        <p>Os católicos orientais dos Estados Unidos têm as suas próprias eparquias: ucranianas, bizantinas, maronitas, melquitas, caldeias, siro-malabares e outras. Elas aparecem no fim da lista acima.</p>
+      </div>
+    </div>
+    <p class="small muted" style="margin-top:1.2rem">Fora dos Estados Unidos? Todas as dioceses do mundo estão no <a href="https://www.gcatholic.org/dioceses/">GCatholic</a> e no <a href="https://www.catholic-hierarchy.org/">Catholic-Hierarchy</a>. No Brasil, veja também a <a href="https://www.cnbb.org.br/">CNBB</a>.</p>
+  </section>
+</div>

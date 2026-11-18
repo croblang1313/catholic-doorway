@@ -36,68 +36,70 @@ function adventStart(y) {
 
 export function eventsFor(y, lang = "en") {
   const E = easter(y), ev = [];
-  const t = (en, es) => (lang === "es" ? es : en);
+  const t = (en, es, pt) => (lang === "pt" ? pt : lang === "es" ? es : en);
   const push = (dt, title, kind, note) => ev.push({ date: iso(dt), title, kind, note: note || "" });
-  const HDO = t("Holy Day of Obligation: Catholics attend Mass.", "Día de precepto: los católicos van a Misa.");
+  const HDO = t("Holy Day of Obligation: Catholics attend Mass.", "Día de precepto: los católicos van a Misa.", "Dia santo de guarda: os católicos vão à Missa.");
   const satMon = (dt) => dow(dt) === 6 || dow(dt) === 1;
   const notThisYear = (dt) => t("Solemnity. Not a day of obligation this year because it falls on a " + (dow(dt) === 6 ? "Saturday." : "Monday."),
-    "Solemnidad. Este año no es día de precepto porque cae en " + (dow(dt) === 6 ? "sábado." : "lunes."));
+    "Solemnidad. Este año no es día de precepto porque cae en " + (dow(dt) === 6 ? "sábado." : "lunes."),
+    "Solenidade. Este ano não é dia santo de guarda porque cai " + (dow(dt) === 6 ? "num sábado." : "numa segunda-feira."));
 
   // Jan 1
   const jan1 = utc(y, 1, 1);
-  push(jan1, t("Mary, the Holy Mother of God", "Santa María, Madre de Dios"), satMon(jan1) ? "solemnity" : "obligation", satMon(jan1) ? notThisYear(jan1) : HDO);
+  push(jan1, t("Mary, the Holy Mother of God", "Santa María, Madre de Dios", "Santa Maria, Mãe de Deus"), satMon(jan1) ? "solemnity" : "obligation", satMon(jan1) ? notThisYear(jan1) : HDO);
   // Epiphany: Sunday Jan 2-8
   let ep = utc(y, 1, 2); while (dow(ep) !== 0) ep = add(ep, 1);
-  push(ep, t("The Epiphany of the Lord", "La Epifanía del Señor"), "feast", t("The Magi visit the child Jesus.", "Los Magos visitan al Niño Jesús."));
+  push(ep, t("The Epiphany of the Lord", "La Epifanía del Señor", "A Epifania do Senhor"), "feast", t("The Magi visit the child Jesus.", "Los Magos visitan al Niño Jesús.", "Os Magos visitam o Menino Jesus."));
   // Baptism of the Lord: Sunday after Epiphany, or Monday if Epiphany is Jan 7 or 8
-  push(ep.getUTCDate() >= 7 ? add(ep, 1) : add(ep, 7), t("The Baptism of the Lord", "El Bautismo del Señor"), "feast", t("Christmas season ends.", "Termina el tiempo de Navidad."));
+  push(ep.getUTCDate() >= 7 ? add(ep, 1) : add(ep, 7), t("The Baptism of the Lord", "El Bautismo del Señor", "O Batismo do Senhor"), "feast", t("Christmas season ends.", "Termina el tiempo de Navidad.", "Termina o tempo do Natal."));
   // Lent and Easter
   const ash = add(E, -46);
-  push(ash, t("Ash Wednesday", "Miércoles de Ceniza"), "fast", t("Lent begins. Day of fasting and abstinence from meat.", "Comienza la Cuaresma. Día de ayuno y abstinencia de carne."));
-  for (let f = add(ash, 2); f < add(E, -2); f = add(f, 7)) push(f, t("Friday of Lent", "Viernes de Cuaresma"), "abstinence", t("Abstinence from meat (ages 14 and up).", "Abstinencia de carne (a partir de los 14 años)."));
+  push(ash, t("Ash Wednesday", "Miércoles de Ceniza", "Quarta-feira de Cinzas"), "fast", t("Lent begins. Day of fasting and abstinence from meat.", "Comienza la Cuaresma. Día de ayuno y abstinencia de carne.", "Começa a Quaresma. Dia de jejum e abstinência de carne."));
+  for (let f = add(ash, 2); f < add(E, -2); f = add(f, 7)) push(f, t("Friday of Lent", "Viernes de Cuaresma", "Sexta-feira da Quaresma"), "abstinence", t("Abstinence from meat (ages 14 and up).", "Abstinencia de carne (a partir de los 14 años).", "Abstinência de carne (a partir dos 14 anos)."));
   // St. Joseph (Mar 19) and the Annunciation (Mar 25), with transfers
   const palm = add(E, -7);
   let jos = utc(y, 3, 19);
   if (jos >= palm && jos <= E) jos = add(palm, -1);
   else if (dow(jos) === 0) jos = add(jos, 1);
-  push(jos, t("St. Joseph, Spouse of the Blessed Virgin Mary", "San José, Esposo de la Virgen María"), "solemnity", "");
+  push(jos, t("St. Joseph, Spouse of the Blessed Virgin Mary", "San José, Esposo de la Virgen María", "São José, Esposo da Virgem Maria"), "solemnity", "");
   let ann = utc(y, 3, 25);
   if (ann >= palm && ann <= add(E, 7)) ann = add(E, 8);
   else if (dow(ann) === 0) ann = add(ann, 1);
-  push(ann, t("The Annunciation of the Lord", "La Anunciación del Señor"), "solemnity", t("The angel Gabriel announces to Mary that she will bear the Son of God.", "El ángel Gabriel anuncia a María que será la madre del Hijo de Dios."));
-  push(palm, t("Palm Sunday of the Passion of the Lord", "Domingo de Ramos de la Pasión del Señor"), "feast", t("Holy Week begins.", "Comienza la Semana Santa."));
-  push(add(E, -3), t("Holy Thursday", "Jueves Santo"), "feast", t("Evening Mass of the Lord's Supper.", "Misa vespertina de la Cena del Señor."));
-  push(add(E, -2), t("Good Friday", "Viernes Santo"), "fast", t("The Lord's Passion. Day of fasting and abstinence from meat.", "La Pasión del Señor. Día de ayuno y abstinencia de carne."));
-  push(add(E, -1), t("Holy Saturday: Easter Vigil", "Sábado Santo: Vigilia Pascual"), "feast", t("The Easter Vigil is celebrated after nightfall.", "La Vigilia Pascual se celebra después del anochecer."));
-  push(E, t("Easter Sunday", "Domingo de Pascua"), "solemnity", t("The Resurrection of the Lord.", "La Resurrección del Señor."));
-  push(add(E, 7), t("Divine Mercy Sunday", "Domingo de la Divina Misericordia"), "feast", t("Second Sunday of Easter.", "Segundo Domingo de Pascua."));
-  push(add(E, 42), t("The Ascension of the Lord", "La Ascensión del Señor"), "obligation",
+  push(ann, t("The Annunciation of the Lord", "La Anunciación del Señor", "A Anunciação do Senhor"), "solemnity", t("The angel Gabriel announces to Mary that she will bear the Son of God.", "El ángel Gabriel anuncia a María que será la madre del Hijo de Dios.", "O anjo Gabriel anuncia a Maria que ela será a mãe do Filho de Deus."));
+  push(palm, t("Palm Sunday of the Passion of the Lord", "Domingo de Ramos de la Pasión del Señor", "Domingo de Ramos e da Paixão do Senhor"), "feast", t("Holy Week begins.", "Comienza la Semana Santa.", "Começa a Semana Santa."));
+  push(add(E, -3), t("Holy Thursday", "Jueves Santo", "Quinta-feira Santa"), "feast", t("Evening Mass of the Lord's Supper.", "Misa vespertina de la Cena del Señor.", "Missa vespertina da Ceia do Senhor."));
+  push(add(E, -2), t("Good Friday", "Viernes Santo", "Sexta-feira Santa"), "fast", t("The Lord's Passion. Day of fasting and abstinence from meat.", "La Pasión del Señor. Día de ayuno y abstinencia de carne.", "A Paixão do Senhor. Dia de jejum e abstinência de carne."));
+  push(add(E, -1), t("Holy Saturday: Easter Vigil", "Sábado Santo: Vigilia Pascual", "Sábado Santo: Vigília Pascal"), "feast", t("The Easter Vigil is celebrated after nightfall.", "La Vigilia Pascual se celebra después del anochecer.", "A Vigília Pascal é celebrada depois do anoitecer."));
+  push(E, t("Easter Sunday", "Domingo de Pascua", "Domingo de Páscoa"), "solemnity", t("The Resurrection of the Lord.", "La Resurrección del Señor.", "A Ressurreição do Senhor."));
+  push(add(E, 7), t("Divine Mercy Sunday", "Domingo de la Divina Misericordia", "Domingo da Divina Misericórdia"), "feast", t("Second Sunday of Easter.", "Segundo Domingo de Pascua.", "Segundo Domingo da Páscoa."));
+  push(add(E, 42), t("The Ascension of the Lord", "La Ascensión del Señor", "A Ascensão do Senhor"), "obligation",
     t("Holy Day of Obligation, celebrated on this Sunday in most of the U.S. The ecclesiastical provinces of Boston, Hartford, New York, Newark, Omaha and Philadelphia keep it on Thursday, " + iso(add(E, 39)) + ".",
-      "Día de precepto; en la mayor parte de Estados Unidos se celebra este domingo. Las provincias eclesiásticas de Boston, Hartford, Nueva York, Newark, Omaha y Filadelfia la celebran el jueves " + iso(add(E, 39)) + "."));
-  push(add(E, 49), t("Pentecost Sunday", "Domingo de Pentecostés"), "solemnity", t("The Holy Spirit descends on the Apostles; the Easter season ends.", "El Espíritu Santo desciende sobre los Apóstoles; termina el tiempo de Pascua."));
-  push(add(E, 56), t("The Most Holy Trinity", "La Santísima Trinidad"), "solemnity", "");
-  push(add(E, 63), t("The Most Holy Body and Blood of Christ (Corpus Christi)", "El Santísimo Cuerpo y Sangre de Cristo (Corpus Christi)"), "solemnity", "");
-  push(add(E, 68), t("The Most Sacred Heart of Jesus", "El Sagrado Corazón de Jesús"), "solemnity", "");
+      "Día de precepto; en la mayor parte de Estados Unidos se celebra este domingo. Las provincias eclesiásticas de Boston, Hartford, Nueva York, Newark, Omaha y Filadelfia la celebran el jueves " + iso(add(E, 39)) + ".",
+      "Dia santo de guarda; na maior parte dos Estados Unidos é celebrada neste domingo. As províncias eclesiásticas de Boston, Hartford, Nova York, Newark, Omaha e Filadélfia a celebram na quinta-feira, " + iso(add(E, 39)) + "."));
+  push(add(E, 49), t("Pentecost Sunday", "Domingo de Pentecostés", "Domingo de Pentecostes"), "solemnity", t("The Holy Spirit descends on the Apostles; the Easter season ends.", "El Espíritu Santo desciende sobre los Apóstoles; termina el tiempo de Pascua.", "O Espírito Santo desce sobre os Apóstolos; termina o Tempo Pascal."));
+  push(add(E, 56), t("The Most Holy Trinity", "La Santísima Trinidad", "A Santíssima Trindade"), "solemnity", "");
+  push(add(E, 63), t("The Most Holy Body and Blood of Christ (Corpus Christi)", "El Santísimo Cuerpo y Sangre de Cristo (Corpus Christi)", "O Santíssimo Corpo e Sangue de Cristo (Corpus Christi)"), "solemnity", "");
+  push(add(E, 68), t("The Most Sacred Heart of Jesus", "El Sagrado Corazón de Jesús", "O Sagrado Coração de Jesus"), "solemnity", "");
   // Fixed summer and autumn days
-  push(utc(y, 6, 29), t("Sts. Peter and Paul, Apostles", "San Pedro y San Pablo, Apóstoles"), "solemnity", "");
+  push(utc(y, 6, 29), t("Sts. Peter and Paul, Apostles", "San Pedro y San Pablo, Apóstoles", "São Pedro e São Paulo, Apóstolos"), "solemnity", "");
   const aug15 = utc(y, 8, 15);
-  push(aug15, t("The Assumption of the Blessed Virgin Mary", "La Asunción de la Virgen María"), satMon(aug15) ? "solemnity" : "obligation", satMon(aug15) ? notThisYear(aug15) : HDO);
+  push(aug15, t("The Assumption of the Blessed Virgin Mary", "La Asunción de la Virgen María", "A Assunção de Nossa Senhora"), satMon(aug15) ? "solemnity" : "obligation", satMon(aug15) ? notThisYear(aug15) : HDO);
   const nov1 = utc(y, 11, 1);
-  push(nov1, t("All Saints", "Todos los Santos"), satMon(nov1) ? "solemnity" : "obligation", satMon(nov1) ? notThisYear(nov1) : HDO);
-  push(utc(y, 11, 2), t("All Souls' Day", "Día de los Fieles Difuntos"), "feast", t("Commemoration of all the faithful departed.", "Conmemoración de todos los fieles difuntos."));
+  push(nov1, t("All Saints", "Todos los Santos", "Todos os Santos"), satMon(nov1) ? "solemnity" : "obligation", satMon(nov1) ? notThisYear(nov1) : HDO);
+  push(utc(y, 11, 2), t("All Souls' Day", "Día de los Fieles Difuntos", "Dia de Finados"), "feast", t("Commemoration of all the faithful departed.", "Conmemoración de todos los fieles difuntos.", "Comemoração de todos os fiéis defuntos."));
   const adv = adventStart(y);
-  push(add(adv, -7), t("Our Lord Jesus Christ, King of the Universe", "Nuestro Señor Jesucristo, Rey del Universo"), "solemnity", t("The last Sunday of the Church year.", "El último domingo del año litúrgico."));
-  push(adv, t("First Sunday of Advent", "Primer Domingo de Adviento"), "feast", t("A new Church year begins.", "Comienza un nuevo año litúrgico."));
+  push(add(adv, -7), t("Our Lord Jesus Christ, King of the Universe", "Nuestro Señor Jesucristo, Rey del Universo", "Nosso Senhor Jesus Cristo, Rei do Universo"), "solemnity", t("The last Sunday of the Church year.", "El último domingo del año litúrgico.", "O último domingo do ano litúrgico."));
+  push(adv, t("First Sunday of Advent", "Primer Domingo de Adviento", "Primeiro Domingo do Advento"), "feast", t("A new Church year begins.", "Comienza un nuevo año litúrgico.", "Começa um novo ano litúrgico."));
   const dec8 = utc(y, 12, 8);
-  const ic = t("The Immaculate Conception of the Blessed Virgin Mary", "La Inmaculada Concepción de la Virgen María");
-  if (dow(dec8) === 0) push(add(dec8, 1), ic, "solemnity", t("Moved from Sunday, December 8. Not a day of obligation this year.", "Trasladada del domingo 8 de diciembre. Este año no es día de precepto."));
-  else push(dec8, ic, "obligation", HDO + t(" Patronal feast of the United States.", " Fiesta patronal de Estados Unidos."));
-  push(utc(y, 12, 12), t("Our Lady of Guadalupe", "Nuestra Señora de Guadalupe"), "feast", t("Patroness of the Americas.", "Patrona de América."));
-  push(utc(y, 12, 24), t("Christmas Eve", "Nochebuena"), "feast", t("Vigil Masses are celebrated in the evening.", "Las Misas de vigilia se celebran por la tarde y la noche."));
-  push(utc(y, 12, 25), t("The Nativity of the Lord (Christmas)", "La Natividad del Señor (Navidad)"), "obligation", HDO);
+  const ic = t("The Immaculate Conception of the Blessed Virgin Mary", "La Inmaculada Concepción de la Virgen María", "A Imaculada Conceição da Virgem Maria");
+  if (dow(dec8) === 0) push(add(dec8, 1), ic, "solemnity", t("Moved from Sunday, December 8. Not a day of obligation this year.", "Trasladada del domingo 8 de diciembre. Este año no es día de precepto.", "Transferida do domingo, 8 de dezembro. Este ano não é dia santo de guarda."));
+  else push(dec8, ic, "obligation", HDO + t(" Patronal feast of the United States.", " Fiesta patronal de Estados Unidos.", " Festa da padroeira dos Estados Unidos."));
+  push(utc(y, 12, 12), t("Our Lady of Guadalupe", "Nuestra Señora de Guadalupe", "Nossa Senhora de Guadalupe"), "feast", t("Patroness of the Americas.", "Patrona de América.", "Padroeira da América."));
+  push(utc(y, 12, 24), t("Christmas Eve", "Nochebuena", "Véspera de Natal"), "feast", t("Vigil Masses are celebrated in the evening.", "Las Misas de vigilia se celebran por la tarde y la noche.", "As Missas da vigília são celebradas à tarde e à noite."));
+  push(utc(y, 12, 25), t("The Nativity of the Lord (Christmas)", "La Natividad del Señor (Navidad)", "O Natal do Senhor"), "obligation", HDO);
   // Holy Family: Sunday in the Christmas octave, or Dec 30 if there is none
   const xd = dow(utc(y, 12, 25));
-  push(xd === 0 ? utc(y, 12, 30) : add(utc(y, 12, 25), 7 - xd), t("The Holy Family of Jesus, Mary and Joseph", "La Sagrada Familia de Jesús, María y José"), "feast", "");
+  push(xd === 0 ? utc(y, 12, 30) : add(utc(y, 12, 25), 7 - xd), t("The Holy Family of Jesus, Mary and Joseph", "La Sagrada Familia de Jesús, María y José", "A Sagrada Família de Jesus, Maria e José"), "feast", "");
   return ev.sort((a, b) => a.date.localeCompare(b.date));
 }
 
@@ -109,6 +111,7 @@ function range(fromYear, toYear, lang) {
 
 const KIND_LABEL = { obligation: "Holy Day of Obligation", fast: "Fast and abstinence", abstinence: "Abstinence", solemnity: "Solemnity", feast: "Feast" };
 const KIND_LABEL_ES = { obligation: "Día de precepto", fast: "Ayuno y abstinencia", abstinence: "Abstinencia", solemnity: "Solemnidad", feast: "Fiesta" };
+const KIND_LABEL_PT = { obligation: "Dia santo de guarda", fast: "Jejum e abstinência", abstinence: "Abstinência", solemnity: "Solenidade", feast: "Festa" };
 
 function icsEscape(s) {
   return s.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n");
@@ -129,20 +132,21 @@ function fold(line) {
 }
 
 export function ics(events, stamp, lang = "en") {
-  const es = lang === "es", K = es ? KIND_LABEL_ES : KIND_LABEL;
+  const es = lang === "es", pt = lang === "pt", K = pt ? KIND_LABEL_PT : es ? KIND_LABEL_ES : KIND_LABEL;
   const lines = [
     "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//CatholicDoorway//Holy Days//EN", "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
-    es ? "X-WR-CALNAME:Días santos católicos (EE. UU.)" : "X-WR-CALNAME:Catholic Holy Days (U.S.)",
-    fold(es ? "X-WR-CALDESC:Días de precepto\\, días de ayuno y fiestas principales. De CatholicDoorway.com"
+    pt ? "X-WR-CALNAME:Dias santos católicos (EUA)" : es ? "X-WR-CALNAME:Días santos católicos (EE. UU.)" : "X-WR-CALNAME:Catholic Holy Days (U.S.)",
+    fold(pt ? "X-WR-CALDESC:Dias santos de guarda\\, dias de jejum e festas principais. Do CatholicDoorway.com"
+      : es ? "X-WR-CALDESC:Días de precepto\\, días de ayuno y fiestas principales. De CatholicDoorway.com"
       : "X-WR-CALDESC:Holy days of obligation\\, fasting days and major feasts. From CatholicDoorway.com"),
     "REFRESH-INTERVAL;VALUE=DURATION:P7D", "X-PUBLISHED-TTL:P7D",
   ];
   for (const e of events) {
     const d = e.date.replace(/-/g, "");
     const next = iso(add(new Date(e.date + "T00:00:00Z"), 1)).replace(/-/g, "");
-    const slug = (es ? "es-" : "") + e.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    const slug = (es ? "es-" : pt ? "pt-" : "") + e.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
     const title = e.kind === "obligation" ? `${e.title} (${K.obligation})` : e.kind === "fast" ? `${e.title} (${K.fast})` : e.title;
-    const desc = [e.note.startsWith(K[e.kind]) ? "" : K[e.kind], e.note, es ? "https://catholicdoorway.com/es/calendario" : "https://catholicdoorway.com/calendar"].filter(Boolean).join("\n");
+    const desc = [e.note.startsWith(K[e.kind]) ? "" : K[e.kind], e.note, pt ? "https://catholicdoorway.com/pt/calendario" : es ? "https://catholicdoorway.com/es/calendario" : "https://catholicdoorway.com/calendar"].filter(Boolean).join("\n");
     lines.push("BEGIN:VEVENT", fold(`UID:${d}-${slug}@catholicdoorway.com`), `DTSTAMP:${stamp}`,
       `DTSTART;VALUE=DATE:${d}`, `DTEND;VALUE=DATE:${next}`, fold(`SUMMARY:${icsEscape(title)}`),
       fold(`DESCRIPTION:${icsEscape(desc)}`), "TRANSP:TRANSPARENT", "END:VEVENT");
@@ -153,7 +157,7 @@ export function ics(events, stamp, lang = "en") {
 
 export function calendar(url, now = new Date()) {
   const y = now.getUTCFullYear();
-  const lang = url.searchParams.get("lang") === "es" ? "es" : "en";
+  const q = url.searchParams.get("lang"), lang = q === "es" || q === "pt" ? q : "en";
   if (url.pathname.endsWith(".json")) {
     const from = parseInt(url.searchParams.get("year") || y, 10);
     const yr = Number.isFinite(from) && from > 1582 && from < 4000 ? from : y;
@@ -165,7 +169,7 @@ export function calendar(url, now = new Date()) {
   return new Response(ics(range(y - 1, y + 2, lang), stamp, lang), {
     headers: {
       "Content-Type": "text/calendar; charset=utf-8",
-      "Content-Disposition": `inline; filename="${lang === "es" ? "dias-santos-catolicos" : "catholic-holy-days"}.ics"`,
+      "Content-Disposition": `inline; filename="${lang === "es" ? "dias-santos-catolicos" : lang === "pt" ? "dias-santos-catolicos-pt" : "catholic-holy-days"}.ics"`,
       "Cache-Control": "public, max-age=86400",
     },
   });
