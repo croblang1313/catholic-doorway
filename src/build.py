@@ -775,7 +775,7 @@ DIO_TXT = {
     "en": dict(
         what={"diocese": "diocese", "archdiocese": "archdiocese", "eastern": "Eastern Catholic eparchy", "nationwide": "nationwide jurisdiction"},
         church={"diocese": "diocese", "archdiocese": "archdiocese", "eparchy": "eparchy"},
-        lede_a="A Catholic {what}", based=" based in {w}", founded=", founded in {y}",
+        lede_a="A Catholic {what}", lede_east="An Eastern Catholic eparchy", based=" based in {w}", founded=", founded in {y}",
         eastern_note=" Eparchies serve Eastern Catholics across a wide region, alongside the local Latin Church dioceses.",
         crumb="Dioceses", us="United States",
         leader={"Archbishop": "archbishop", "Bishop": "bishop"},
@@ -804,7 +804,7 @@ DIO_TXT = {
     "es": dict(
         what={"diocese": "diócesis", "archdiocese": "arquidiócesis", "eastern": "eparquía católica oriental", "nationwide": "jurisdicción para todo el país"},
         church={"diocese": "la diócesis", "archdiocese": "la arquidiócesis", "eparchy": "la eparquía"},
-        lede_a="Una {what} católica", based=" con sede en {w}", founded=", fundada en {y}",
+        lede_a="Una {what} católica", lede_east="Una eparquía católica oriental", based=" con sede en {w}", founded=", fundada en {y}",
         eastern_note=" Las eparquías atienden a los católicos orientales de una región amplia, junto a las diócesis latinas del lugar.",
         crumb="Diócesis", us="Estados Unidos",
         leader={"Archbishop": "el arzobispo", "Bishop": "el obispo"},
@@ -833,7 +833,7 @@ DIO_TXT = {
     "pt": dict(
         what={"diocese": "diocese", "archdiocese": "arquidiocese", "eastern": "eparquia católica oriental", "nationwide": "jurisdição para todo o país"},
         church={"diocese": "a diocese", "archdiocese": "a arquidiocese", "eparchy": "a eparquia"},
-        lede_a="Uma {what} católica", based=" com sede em {w}", founded=", fundada em {y}",
+        lede_a="Uma {what} católica", lede_east="Uma eparquia católica oriental", based=" com sede em {w}", founded=", fundada em {y}",
         eastern_note=" As eparquias atendem os católicos orientais de uma região ampla, ao lado das dioceses latinas do lugar.",
         crumb="Dioceses", us="Estados Unidos",
         leader={"Archbishop": "o arcebispo", "Bishop": "o bispo"},
@@ -880,10 +880,8 @@ def diocese_body(d, data, lang="en"):
     wkey = {"latin": "archdiocese" if arch else "diocese", "eastern": "eastern", "nationwide": "nationwide"}[kind]
     if kind == "nationwide":
         wkey = "archdiocese"
-    lede = L["lede_a"].format(what=L["what"][wkey]) + (L["based"].format(w=e(where)) if where else "") + \
+    lede = (L["lede_east"] if kind == "eastern" else L["lede_a"].format(what=L["what"][wkey])) + (L["based"].format(w=e(where)) if where else "") + \
         (L["founded"].format(y=d["founded"]) if d.get("founded") else "") + "."
-    if lang == "en":
-        lede = lede.replace("A Catholic archdiocese", "A Catholic archdiocese")
     if kind == "eastern":
         lede += L["eastern_note"]
     lead = dio_leader(d)
