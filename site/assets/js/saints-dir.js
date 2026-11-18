@@ -4,6 +4,7 @@
   var list = document.getElementById('sd-list');
   if (!list) return;
   var $ = function (id) { return document.getElementById(id); };
+  var feastOnly = '';
   var q = $('sd-q'), st = $('sd-status'), ct = $('sd-country'), cy = $('sd-century'), so = $('sd-sort'), more = $('sd-more'), count = $('sd-count');
   var LG = document.documentElement.lang, ES = LG === 'es', PT = LG === 'pt';
   function T(en, es, pt) { return PT ? pt : ES ? es : en; }
@@ -122,6 +123,9 @@
       if (params.get('q')) q.value = params.get('q');
       if (params.get('status')) st.value = params.get('status');
       if (params.get('sort')) so.value = params.get('sort');
+      feastOnly = params.get('feast') || '';
+      var fb = document.getElementById('sd-feast-note');
+      if (feastOnly && fb) { fb.hidden = false; fb.querySelector('b').textContent = feast(feastOnly); }
       run();
     }).catch(function () { list.classList.add('ready'); count.textContent = T('The directory could not load. Please refresh the page.', 'No se pudo cargar el directorio. Vuelve a cargar la página.', 'Não foi possível carregar o diretório. Recarregue a página.'); });
   }
@@ -129,6 +133,7 @@
   function run() {
     var terms = fold(q.value).trim().split(/\s+/).filter(Boolean), s = +st.value, c = ct.value, ce = +cy.value || 0;
     filtered = people.filter(function (p) {
+      if (feastOnly && p.feast !== feastOnly) return false;
       if (s && p.rank !== s) return false;
       if (c && p.countries.indexOf(c) < 0) return false;
       if (ce && p.cent !== ce) return false;

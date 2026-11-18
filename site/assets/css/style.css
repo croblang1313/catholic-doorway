@@ -618,3 +618,86 @@ body::before {
 @media (max-width: 640px) { .latin-cols { grid-template-columns: 1fr; gap: .8rem; } }
 .rs-trans { font-size: .92rem; color: var(--ink-soft); white-space: pre-line; border-top: 1px solid var(--line); padding-top: .6rem; margin-top: .6rem; }
 #rs-latin[aria-pressed="true"] { background: var(--navy); color: var(--bg); border-color: var(--navy); }
+
+/* ---------- Saint of the day ---------- */
+@media (min-width: 760px) { .today.four { grid-template-columns: 1fr 1.45fr 1fr; } }
+@media (min-width: 1000px) { .today.four { grid-template-columns: 1fr 1.4fr 1fr 1fr; } }
+.saint-today .sod-name { font: 600 1.25rem var(--serif); margin: .1rem 0 .3rem; color: var(--ink); }
+.saint-today .sod-sub { font-size: .95rem; color: var(--ink-soft); margin: 0; }
+.saint-today.wide { margin: 1.4rem 0; border-left: 3px solid var(--gold); }
+.saint-today .sod-more { display: inline-block; margin-top: .5rem; font: 600 .95rem var(--sans); }
+
+/* ---------- Examination of conscience ---------- */
+.exam-cta { margin: 1rem 0; }
+.exam-tabs { margin: 1rem 0 1.4rem; }
+.exam-group { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: .9rem 1.1rem 1rem; margin: 0 0 1rem; }
+.exam-group legend { font: 700 1rem var(--sans); color: var(--navy); padding: 0 .4rem; }
+.exam-group ul { list-style: none; margin: 0; padding: 0; }
+.exam-group li { margin: 0; border-bottom: 1px dashed var(--line); }
+.exam-group li:last-child { border-bottom: 0; }
+.exam-group label { display: flex; gap: .7rem; align-items: flex-start; padding: .55rem 0; cursor: pointer; line-height: 1.45; }
+.exam-group input { margin-top: .3rem; width: 1.15rem; height: 1.15rem; flex: none; accent-color: var(--gold); }
+.exam-actions { position: sticky; bottom: 0; background: var(--bg); padding: .7rem 0; border-top: 1px solid var(--line); z-index: 5; }
+.exam-list { margin: 1.2rem 0; }
+.exam-list ul { margin: .4rem 0 0; padding-left: 1.2rem; }
+.exam-list li { margin: .3rem 0; }
+
+/* ---------- Devotions, novenas, Angelus, Hours ---------- */
+.coming-up ul { list-style: none; margin: .4rem 0 0; padding: 0; }
+.coming-up li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .3rem .8rem; padding: .45rem 0; border-bottom: 1px dashed var(--line); margin: 0; }
+.coming-up li:last-child { border-bottom: 0; }
+.rem-opts { display: grid; gap: .3rem; margin: .6rem 0 1rem; }
+.rem-opts label, .lang-opts label, .consent { display: flex; gap: .6rem; align-items: flex-start; cursor: pointer; line-height: 1.45; }
+.rem-opts input, .lang-opts input, .consent input { margin-top: .3rem; accent-color: var(--gold); flex: none; }
+.novena-days { padding-left: 1.4rem; }
+.novena-days li { margin: .25rem 0; }
+.novena-days li.today-day { font-weight: 700; color: var(--navy); background: var(--bg-alt); border-radius: 6px; padding: .1rem .4rem; margin-left: -.4rem; }
+.novena.today-mystery { border-color: var(--gold); border-width: 2px; }
+.angelus-now, .hours-now { border-left: 3px solid var(--gold); margin: 1.2rem 0; }
+.hours-list { list-style: none; margin: .6rem 0 0; padding: 0; display: grid; gap: .5rem; }
+.hours-list li { margin: 0; }
+.hours-list a.current { font-weight: 700; }
+.times { font-size: .95rem; color: var(--ink-soft); }
+.step-sub { margin: .3rem 0 0; }
+
+/* ---------- Church documents and Catechism ---------- */
+.ccc-lookup .search { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; margin: .5rem 0 .3rem; padding: 0; border: 0; background: none; border-radius: 0; min-height: 0; }
+.ccc-lookup input { font: 1rem var(--sans); padding: .7rem 1rem; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); width: 9rem; min-height: 48px; }
+.ccc-topics { columns: 2 16rem; column-gap: 2rem; padding-left: 1.1rem; margin: .8rem 0 0; }
+.ccc-topics li { break-inside: avoid; margin: .25rem 0; }
+.doc-list { display: grid; gap: .8rem; margin: 1rem 0; }
+.doc-list .doc { padding: 1rem 1.2rem; }
+.doc-list .doc h3 { margin: .1rem 0 .2rem; font-size: 1.2rem; }
+.doc-list .doc p { margin: .3rem 0 0; }
+.doc-kind { font: 700 .75rem var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+.doc-latin { font-style: italic; color: var(--ink-soft); font-size: .95rem; }
+.doc-topic { display: inline-block; font: 600 .78rem var(--sans); background: var(--bg-alt); color: var(--ink-soft); border-radius: 999px; padding: .15rem .6rem; margin: .4rem .3rem 0 0; }
+#doc-topic { font: 1rem var(--sans); padding: .7rem 1rem; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); min-height: 48px; max-width: 100%; }
+
+/* ---------- OCIA self-listing form ---------- */
+.ocia-form { margin: 1.2rem 0; }
+.form-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 700px) { .form-grid { grid-template-columns: 1fr 1fr; } .form-grid label.wide, .form-grid .wide { grid-column: 1 / -1; } }
+.form-grid label, .ocia-form > label.wide { display: block; font: 600 .95rem var(--sans); }
+.form-grid label > input, .form-grid label > select, .ocia-form > label.wide > textarea { display: block; margin-top: .35rem; }
+.ocia-form > label.wide { margin: 1rem 0 0; }
+.form-grid input, .form-grid select, .form-grid textarea, .ocia-form textarea { font: 1rem var(--sans); padding: .65rem .8rem; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); min-height: 46px; width: 100%; box-sizing: border-box; }
+.form-grid textarea, .ocia-form textarea { min-height: 6rem; resize: vertical; }
+.form-grid fieldset, .ocia-form fieldset { border: 1px solid var(--line); border-radius: 10px; padding: .6rem .9rem; margin: 0; }
+.form-grid legend, .ocia-form legend { font: 600 .95rem var(--sans); padding: 0 .3rem; }
+.lang-opts { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; margin: 1rem 0 0 !important; font: 400 1rem var(--sans); }
+.lang-opts input { width: auto; min-height: 0; }
+.req { margin-left: .15rem; }
+.consent { font: 400 .95rem var(--sans); margin: 1rem 0; }
+.consent input { width: 1.1rem; height: 1.1rem; }
+#ol-state { font: 1rem var(--sans); padding: .5rem .8rem; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); min-height: 44px; }
+.req { color: var(--lit-red); }
+[aria-invalid="true"] { border-color: var(--lit-red) !important; box-shadow: 0 0 0 1px var(--lit-red); }
+.status-msg.error { color: var(--lit-red); }
+.hp { position: absolute !important; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+#ol-list .church { margin: 0 0 .7rem; }
+
+@media print {
+  .exam-tabs, .exam-panel, .exam-actions, .exam-cta { display: none !important; }
+  .exam-list { display: block !important; border: 0; padding: 0; }
+}

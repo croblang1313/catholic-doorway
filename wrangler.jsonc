@@ -9,5 +9,9 @@
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page",
     "run_worker_first": ["/api/*"]
-  }
+  },
+  // Parish OCIA listings (worker/ocia.js). ADMIN_TOKEN is a secret set in the Cloudflare dashboard.
+  "kv_namespaces": [
+    { "binding": "LISTINGS", "id": "620302b821b94992896465fb08f6aa43" }
+  ]
 }

@@ -221,6 +221,34 @@
     }
   });
 
+  /* ---------- Saint of the day (U.S. General Roman Calendar, fixed dates) ---------- */
+  var sods = $$('[data-sod]');
+  if (sods.length) {
+    var EN_MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var key = ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+    var dir = (ES ? '/es/directorio-santos' : PT ? '/pt/diretorio-santos' : '/saints-directory') + '?feast=' + encodeURIComponent(EN_MONTHS[today.getMonth()] + ' ' + today.getDate());
+    var RANK = { S: T('Solemnity', 'Solemnidad', 'Solenidade'), F: T('Feast', 'Fiesta', 'Festa'), M: T('Memorial', 'Memoria', 'Memória'),
+      O: T('Optional memorial', 'Memoria libre', 'Memória facultativa'), D: '' };
+    fetch('/data/saint-days.json').then(function (r) { return r.json(); }).then(function (all) {
+      var e = all[key], name, sub;
+      if (e) {
+        name = e[ES ? 2 : PT ? 3 : 1];
+        sub = [RANK[e[0]], today.toLocaleDateString(LOC, { month: 'long', day: 'numeric' })].filter(Boolean).join(' · ');
+        if (dow === 0 && e[0] !== 'S' && e[0] !== 'D') sub += '. ' + T('On Sundays the Mass is of the Sunday.', 'En domingo la Misa es la del domingo.', 'No domingo a Missa é a do domingo.');
+      } else {
+        name = T('Saints remembered today', 'Santos que se recuerdan hoy', 'Santos lembrados hoje');
+        sub = T('No saint on the U.S. calendar today, but many are remembered around the world.', 'Hoy no hay un santo en el calendario de EE. UU., pero en el mundo se recuerda a muchos.', 'Hoje não há um santo no calendário dos EUA, mas muitos são lembrados no mundo todo.');
+      }
+      sods.forEach(function (c) {
+        $('.sod-name', c).textContent = name;
+        $('.sod-sub', c).textContent = sub;
+        if (c.tagName === 'A') c.href = dir;
+        var more = $('.sod-more', c);
+        if (more) { more.href = dir; more.textContent = T('See every saint and blessed remembered today →', 'Ver todos los santos y beatos que se recuerdan hoy →', 'Ver todos os santos e beatos lembrados hoje →'); more.hidden = false; }
+      });
+    }).catch(function () {});
+  }
+
   /* ---------- Copy buttons on prayers ---------- */
   $$('.prayer').forEach(function (p) {
     var txt = p.querySelector('.text');
@@ -287,7 +315,7 @@
   /* ---------- First Mass companion: one step at a time, screen kept on, place saved ---------- */
   var mStart = $('#mass-start'), comp = $('#companion');
   if (mStart && comp) {
-    var steps = $$('.mass-step'), at = 0, lock = null, KEY = 'cd-mass-step';
+    var steps = $$('.mass-step'), at = 0, lock = null, KEY = mStart.getAttribute('data-key') || 'cd-mass-step';
     var save = function () { try { localStorage.setItem(KEY, JSON.stringify({ i: at, t: Date.now() })); } catch (e) {} };
     var load = function () {
       try { var v = JSON.parse(localStorage.getItem(KEY)); if (v && Date.now() - v.t < 3 * 3600 * 1000) return v.i; } catch (e) {}

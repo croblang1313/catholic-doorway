@@ -1,0 +1,45 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/pt/crencas">Crenças</a> &rsaquo; O Catecismo e os documentos da Igreja</p>
+    <h1>O Catecismo e os documentos da Igreja</h1>
+    <p class="lede">Onde encontrar o que a Igreja realmente ensina, com as suas próprias palavras. Procure qualquer parágrafo do Catecismo, percorra-o por temas ou pesquise os grandes documentos dos Papas e do Concílio Vaticano II. Cada link abre o texto oficial no site do Vaticano.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section" id="ccc">
+    <h2>O Catecismo da Igreja Católica</h2>
+    <p class="prose">Publicado por São João Paulo II em 1992, o Catecismo é o resumo completo da fé católica em 2.865 parágrafos numerados. Quando alguém cita &ldquo;CIC 1324&rdquo;, refere-se ao parágrafo 1324. Tem quatro partes: o que cremos (o Credo), como celebramos (os sacramentos), como vivemos (a vida moral e os Dez Mandamentos) e como rezamos (o Pai-Nosso).</p>
+    <div class="grid two">
+      <form class="card ccc-lookup" id="ccc-form" data-map="{{CCC_MAP}}">
+        <h3>Procurar um parágrafo</h3>
+        <label for="ccc-num">Número do parágrafo (de 1 a 2865)</label>
+        <div class="search">
+          <input id="ccc-num" type="number" inputmode="numeric" min="1" max="2865" placeholder="ex.: 1324" required>
+          <button class="btn" type="submit">Abrir</button>
+        </div>
+        <p class="small muted" id="ccc-msg">Abre a página do Catecismo do Vaticano que contém esse parágrafo.</p>
+      </form>
+      <div class="card">
+        <h3>É novo no Catecismo?</h3>
+        <p>Comece pelo <a href="https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_po.html" target="_blank" rel="noopener">Compêndio</a>, o Catecismo em perguntas e respostas curtas, ou pelas nossas páginas simples <a href="/pt/crencas">No que os católicos acreditam</a> e <a href="/pt/perguntas">Perguntas sinceras</a>. Para jovens, muitas paróquias usam o <em>YOUCAT</em>, um catecismo jovem.</p>
+      </div>
+    </div>
+    <h3>Procurar por tema</h3>
+    <ul class="ccc-topics">
+{{CCC_TOPICS}}
+    </ul>
+  </section>
+
+  <section class="section" id="documents">
+    <h2>Grandes documentos da Igreja</h2>
+    <p class="prose">Os Papas ensinam por meio de <strong>encíclicas</strong> (cartas a toda a Igreja), <strong>exortações apostólicas</strong> (muitas vezes depois de uma reunião de bispos chamada sínodo) e <strong>cartas apostólicas</strong>. O <strong>Concílio Vaticano II</strong> (1962&ndash;1965) reuniu os bispos do mundo e produziu dezesseis documentos que moldam a vida católica de hoje. Os documentos costumam ser conhecidos pelas primeiras palavras em latim, como <em>Lumen Gentium</em>, &ldquo;Luz dos povos&rdquo;.</p>
+    <div class="search">
+      <label class="sr-only" for="doc-search">Pesquisar documentos</label>
+      <input id="doc-search" type="search" placeholder="Pesquise, ex.: Eucaristia, trabalho, família, Laudato">
+    </div>
+{{DOCUMENTS}}
+    <p class="muted" id="doc-empty" hidden>Nenhum documento corresponde. Tente outra palavra.</p>
+    <p class="small muted">Todos os documentos do Vaticano podem ser lidos gratuitamente em <a href="https://www.vatican.va/content/vatican/pt.html" target="_blank" rel="noopener">vatican.va</a>. Os documentos não têm todos o mesmo peso: o Credo e os dogmas definidos pela Igreja estão no centro, e todo o resto é lido à sua luz.</p>
+  </section>
+</div>

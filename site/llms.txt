@@ -10,6 +10,7 @@ Content follows the teaching of the Catholic Church and cites the Catechism of t
 - [Your First Mass: A Step-by-Step Guide](https://catholicdoorway.com/first-mass): Going to Mass for the first time? A step-by-step companion for your phone: when to stand, sit and kneel, what people say, and what to do at Communion.
 - [Catholic How-To Guides: Confession, Baptism, Marriage and More](https://catholicdoorway.com/how-to): Plain, practical Catholic how-tos: going to Confession, joining a parish, baptizing a child, getting married, Last Rites, funerals and coming back to the Church.
 - [How to Go to Confession: A Step-by-Step Guide](https://catholicdoorway.com/confession): How to go to Catholic Confession: when and where, how to prepare, exactly what to say, and what to do if it has been years.
+- [Examination of Conscience for Kids, Teens and Adults](https://catholicdoorway.com/examination-of-conscience): A Catholic examination of conscience before Confession, in versions for kids, teens and adults. Tick what applies and make a private list on your phone.
 - [Coming Back to the Catholic Church](https://catholicdoorway.com/coming-back): Been away from the Catholic Church? How to come back: Mass, talking with a priest, Confession, and special situations like marriage outside the Church.
 - [How to Join (Register at) a Catholic Parish](https://catholicdoorway.com/join-a-parish): Why and how to register at a Catholic parish in the U.S., and what it helps with: sponsor letters, baptisms, weddings and Catholic school.
 - [How to Have Your Child Baptized Catholic](https://catholicdoorway.com/baptism): How infant baptism works in a Catholic parish: when to call, the preparation class, godparent requirements, the ceremony and special situations.
@@ -17,11 +18,18 @@ Content follows the teaching of the Catholic Church and cites the Catechism of t
 - [Anointing of the Sick and Last Rites: When to Call a Priest](https://catholicdoorway.com/anointing): When and how to call a priest for Anointing of the Sick or Last Rites, what the sacraments are, and what to do if someone is dying now.
 - [Planning a Catholic Funeral](https://catholicdoorway.com/funerals): How to plan a Catholic funeral: the vigil, funeral Mass and committal, cremation rules, costs, and having a Mass offered for the deceased.
 - [How to Get a Copy of Your Catholic Baptism Certificate](https://catholicdoorway.com/baptism-certificate): How to request your Catholic baptism record with notations for a wedding or sponsor letter, including closed parishes and baptisms abroad.
+- [List Your Parish's OCIA Program](https://catholicdoorway.com/ocia-listing): Parish OCIA coordinators: add your contact so people exploring the Catholic faith near you know who to call. Free, reviewed before publishing.
 
 ## Prayer, Scripture and the calendar
 
 - [Catholic Prayers and How to Pray the Rosary](https://catholicdoorway.com/prayers): Traditional Catholic prayers, from the Our Father and Hail Mary to the Memorare, plus a step-by-step guide to the Rosary.
 - [Pray the Rosary Online, Bead by Bead](https://catholicdoorway.com/rosary): An interactive Rosary: tap through each bead with the prayers, today's mysteries and their Scripture passages. Free, no app needed.
+- [Catholic Devotions and Prayer Reminders](https://catholicdoorway.com/devotions): The best-loved Catholic devotions with the words to pray: the Rosary, Divine Mercy Chaplet, Stations of the Cross, novenas and the Angelus, with free calendar reminders.
+- [How to Pray the Divine Mercy Chaplet, Step by Step](https://catholicdoorway.com/divine-mercy-chaplet): Pray the Divine Mercy Chaplet bead by bead on your phone: the prayers for each decade, the 3 p.m. Hour of Mercy and the Divine Mercy Novena.
+- [Stations of the Cross: Pray All 14 Stations](https://catholicdoorway.com/stations-of-the-cross): Pray the Stations of the Cross with a short Scripture reference, reflection and prayer for each of the 14 stations, one station at a time on your phone.
+- [Catholic Novenas and This Year's Dates](https://catholicdoorway.com/novenas): How to pray a novena, with prayers and this year's dates for novenas to St. Joseph, the Holy Spirit, Divine Mercy, the Sacred Heart, Our Lady of Guadalupe and more.
+- [The Angelus and Regina Caeli Prayers](https://catholicdoorway.com/angelus): The words of the Angelus, prayed at 6 a.m., noon and 6 p.m., and the Regina Caeli for the Easter season, with a free daily reminder.
+- [Liturgy of the Hours: Today's Morning and Evening Prayer](https://catholicdoorway.com/liturgy-of-the-hours): Pray today's Morning, Evening and Night Prayer of the Liturgy of the Hours, and learn how the Divine Office works and how to begin.
 - [The Bible and Today's Mass Readings](https://catholicdoorway.com/bible): Today's Catholic Mass readings, how the Catholic Bible is arranged, and where to read it free online.
 - [Catholic Holy Days of Obligation and Fasting Calendar](https://catholicdoorway.com/calendar): Holy days of obligation, fasting days and major Catholic feasts for the U.S., with a free calendar you can add to your iPhone, Google or Outlook.
 
@@ -29,6 +37,7 @@ Content follows the teaching of the Catholic Church and cites the Catechism of t
 
 - [What Catholics Believe](https://catholicdoorway.com/beliefs): A plain-language overview of Catholic belief and practice: the Creed, the seven sacraments, Scripture and Tradition, Mary and the saints, and the moral life.
 - [Honest Questions About the Catholic Church, Answered](https://catholicdoorway.com/questions): Short, kind, straight answers to the questions people ask about Catholics: Mary, saints, confession, the Pope, purgatory, the extra Bible books and more.
+- [Catechism of the Catholic Church and Major Church Documents](https://catholicdoorway.com/church-documents): Look up any paragraph of the Catechism, browse it by topic, and search the major encyclicals, apostolic letters and Vatican II documents, with links to the official texts.
 - [Catholic Glossary: Terms Explained Simply](https://catholicdoorway.com/glossary): Plain-English definitions of Catholic words, from Advent to Vespers.
 
 ## Saints, Popes and Church structure
@@ -54,4 +63,6 @@ Content follows the teaching of the Catholic Church and cites the Catechism of t
 - [Diocese pages](https://catholicdoorway.com/dioceses): one page for each of 204 U.S. dioceses, archdioceses and eparchies at /dioceses/<slug>.
 - [Saints directory data](https://catholicdoorway.com/data/saints-directory.json): JSON list of Saints, Blesseds, Venerables and Servants of God.
 - [Holy days calendar](https://catholicdoorway.com/api/calendar.json): JSON feed of U.S. holy days of obligation, fast days and major feasts (also .ics).
+- [Prayer reminders](https://catholicdoorway.com/api/devotions.ics): iCalendar feed of Angelus, 3 p.m. Divine Mercy, Lenten Stations and novena reminders.
+- [Saint of the day](https://catholicdoorway.com/data/saint-days.json): the fixed-date celebrations of the U.S. General Roman Calendar (MM-DD keys).
 - [Sitemap](https://catholicdoorway.com/sitemap.xml)

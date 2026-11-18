@@ -1,0 +1,45 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/beliefs">Beliefs</a> &rsaquo; Catechism and Church documents</p>
+    <h1>The Catechism and Church documents</h1>
+    <p class="lede">Where to find what the Church actually teaches, in her own words. Look up any paragraph of the Catechism, browse it by topic, or search the major documents of the Popes and the Second Vatican Council. Every link opens the official text on the Vatican&rsquo;s website.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section" id="ccc">
+    <h2>The Catechism of the Catholic Church</h2>
+    <p class="prose">Published by St. John Paul II in 1992, the Catechism is the full summary of Catholic belief in 2,865 numbered paragraphs. When people cite &ldquo;CCC 1324,&rdquo; they mean paragraph 1324. It has four parts: what we believe (the Creed), how we worship (the sacraments), how we live (the moral life and the Ten Commandments), and how we pray (the Our Father).</p>
+    <div class="grid two">
+      <form class="card ccc-lookup" id="ccc-form" data-map="{{CCC_MAP}}">
+        <h3>Look up a paragraph</h3>
+        <label for="ccc-num">Paragraph number (1 to 2865)</label>
+        <div class="search">
+          <input id="ccc-num" type="number" inputmode="numeric" min="1" max="2865" placeholder="e.g. 1324" required>
+          <button class="btn" type="submit">Open</button>
+        </div>
+        <p class="small muted" id="ccc-msg">Opens the page of the Vatican&rsquo;s Catechism that contains that paragraph.</p>
+      </form>
+      <div class="card">
+        <h3>New to the Catechism?</h3>
+        <p>Start with the <a href="https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html" target="_blank" rel="noopener">Compendium</a>, the Catechism in short questions and answers, or with our plain-language <a href="/beliefs">What Catholics Believe</a> and <a href="/questions">Honest Questions</a>. For teens, many parishes use <em>YOUCAT</em>, a youth catechism. In the U.S., the bishops also publish the <em>United States Catholic Catechism for Adults</em>.</p>
+      </div>
+    </div>
+    <h3>Find a topic</h3>
+    <ul class="ccc-topics">
+{{CCC_TOPICS}}
+    </ul>
+  </section>
+
+  <section class="section" id="documents">
+    <h2>Major Church documents</h2>
+    <p class="prose">The Popes teach through <strong>encyclicals</strong> (letters to the whole Church), <strong>apostolic exhortations</strong> (often after a meeting of bishops called a synod) and <strong>apostolic letters</strong>. The <strong>Second Vatican Council</strong> (1962&ndash;1965) gathered the world&rsquo;s bishops and produced sixteen documents that shape Catholic life today. Documents are usually known by their first words in Latin, such as <em>Lumen Gentium</em>, &ldquo;Light of the Nations.&rdquo;</p>
+    <div class="search">
+      <label class="sr-only" for="doc-search">Search documents</label>
+      <input id="doc-search" type="search" placeholder="Search, e.g. Eucharist, work, family, Laudato">
+    </div>
+{{DOCUMENTS}}
+    <p class="muted" id="doc-empty" hidden>No documents match. Try another word.</p>
+    <p class="small muted">All Vatican documents are free to read at <a href="https://www.vatican.va/" target="_blank" rel="noopener">vatican.va</a>. Teaching documents differ in weight: the Creed and the dogmas defined by the Church are at the center, and everything else is read in their light.</p>
+  </section>
+</div>

@@ -1,0 +1,63 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/start-here">Start Here</a> &rsaquo; For parishes</p>
+    <h1>List your parish&rsquo;s OCIA</h1>
+    <p class="lede">People exploring the Catholic faith often do not know who to call. If you coordinate or help with OCIA at a U.S. parish, add your contact here and we will show it to people searching near you. It is free and takes three minutes.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section grid two">
+    <div class="card">
+      <h3>What happens next</h3>
+      <ol class="prose">
+        <li>You fill in the form below.</li>
+        <li>We check it with your parish, usually within a week, before anything is published.</li>
+        <li>Your listing appears on this page and helps people find you from our <a href="/start-here">Start Here</a> guide and church map.</li>
+      </ol>
+      <p class="small muted">To change or remove a listing at any time, email <a href="mailto:hello@catholicdoorway.com">hello@catholicdoorway.com</a>.</p>
+    </div>
+    <div class="card">
+      <h3>Looking for OCIA yourself?</h3>
+      <p>Browse the parishes that have listed their OCIA below, or find any parish near you on the map and call the office. Every parish can help you get started.</p>
+      <a class="btn small secondary" href="/find-a-church?ocia=1">Find a parish near me</a>
+    </div>
+  </section>
+
+  <section class="section" id="form">
+    <h2>Parish OCIA listing form</h2>
+    <form class="card ocia-form" id="ocia-form" novalidate>
+      <div class="form-grid">
+        <label>Parish name <span class="req">*</span><input name="parish" required maxlength="120" autocomplete="organization"></label>
+        <label>City <span class="req">*</span><input name="city" required maxlength="80" autocomplete="address-level2"></label>
+        <label>State <span class="req">*</span><select name="state" required>{{STATE_OPTIONS}}</select></label>
+        <label>Diocese<select name="diocese">{{DIOCESE_OPTIONS}}</select></label>
+        <label>Contact name <span class="req">*</span><input name="contact" required maxlength="80" autocomplete="name"></label>
+        <label>Role<input name="role" maxlength="60" placeholder="e.g. OCIA coordinator"></label>
+        <label>Email to publish <span class="req">*</span><input name="email" type="email" required maxlength="120" autocomplete="email"></label>
+        <label>Phone<input name="phone" type="tel" maxlength="40" autocomplete="tel"></label>
+        <label class="wide">Parish website<input name="website" type="url" maxlength="200" placeholder="https://"></label>
+        <label class="wide">When OCIA meets<input name="schedule" maxlength="300" placeholder="e.g. Tuesdays 7 p.m., September to Easter"></label>
+        <label class="wide">How to start or next start date<input name="start" maxlength="120" placeholder="e.g. Inquiry sessions begin in August; welcome anytime"></label>
+      </div>
+      <fieldset class="lang-opts">
+        <legend>OCIA offered in</legend>
+        <label><input type="checkbox" name="langs" value="en" checked> English</label>
+        <label><input type="checkbox" name="langs" value="es"> Spanish</label>
+        <label><input type="checkbox" name="langs" value="pt"> Portuguese</label>
+        <label><input type="checkbox" name="langs" value="other"> Other</label>
+      </fieldset>
+      <label class="wide">Anything else people should know<textarea name="notes" maxlength="600" rows="3"></textarea></label>
+      <label class="hp" aria-hidden="true">Leave this empty<input name="website2" tabindex="-1" autocomplete="off"></label>
+      <label class="consent"><input type="checkbox" name="consent" required> I serve at this parish, and the parish agrees to have this contact shown publicly on CatholicDoorway.com. <span class="req">*</span></label>
+      <div class="btn-row"><button class="btn" type="submit">Send for review</button></div>
+      <p class="status-msg" id="ocia-msg" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <section class="section" id="listed">
+    <h2>Parishes that have listed their OCIA</h2>
+    <div class="filters"><label>State <select id="ol-state"><option value="">All states</option></select></label></div>
+    <div id="ol-list" class="grid two"><p class="muted">Loading&hellip;</p></div>
+  </section>
+</div>
