@@ -134,6 +134,10 @@ ES_PAGES = [
      "Conoce a los santos y el camino a la santidad: Siervo de Dios, Venerable, Beato y Santo."),
     ("find-a-church", "buscar-iglesia", "Buscar una iglesia", "Encuentra una iglesia católica cerca de ti | CatholicDoorway",
      "Busca iglesias católicas en Estados Unidos por ciudad o código postal: dirección, teléfono, sitio web y cómo llegar."),
+    ("saints-directory", "directorio-santos", "Directorio de santos", "Directorio de santos y causas: Santos, Beatos, Venerables y Siervos de Dios | CatholicDoorway",
+     "Busca entre miles de Santos, Beatos, Venerables y Siervos de Dios por nombre, país, siglo y patronazgo. Se actualiza cada semana."),
+    ("about", "acerca", "Acerca del sitio", "Acerca de CatholicDoorway",
+     "Acerca de CatholicDoorway.com: una guía gratuita y sin anuncios de la fe católica. Fuentes, datos, privacidad y correcciones."),
 ]
 ES_TEXT = dict(lang="es", skip="Saltar al contenido", home="/es/", home_label="Inicio de CatholicDoorway",
                theme_label="Cambiar a modo claro u oscuro", menu_label="Menú", nav_label="Principal",
@@ -282,7 +286,7 @@ FOOT_ES = """</main>
       <div>
         <h4>Sobre el sitio</h4>
         <ul>
-          <li><a href="/about" lang="en">About</a></li>
+          <li><a href="/es/acerca">Acerca del sitio</a></li>
           <li><a href="mailto:hello@catholicdoorway.com">Escríbenos</a></li>
         </ul>
       </div>
@@ -656,25 +660,83 @@ ES_STATE = {"New York": "Nueva York", "New Jersey": "Nueva Jersey", "New Mexico"
 
 
 def dio_place(d, lang="en"):
-    es = lang == "es"
-    name = (lambda x: ES_STATE.get(x, x)) if es else (lambda x: x)
+    tbl = STATE_NAME.get(lang, {})
+    name = lambda x: tbl.get(x, x)
     st = ", ".join(f"{name(x)} ({ABBR[x]})" if x in ABBR else name(x) for x in d["states"])
+    W = {"en": ("Eastern Catholic, nationwide", "based in", "Nationwide", "United States"),
+         "es": ("Católica oriental, todo el país", "sede en", "Todo el país", "Estados Unidos"),
+         "pt": ("Católica oriental, todo o país", "sede em", "Todo o país", "Estados Unidos")}[lang]
     if dio_kind(d) == "eastern":
-        base = "Católica oriental, todo el país" if es else "Eastern Catholic, nationwide"
+        base = W[0]
         if d.get("city") and st:
-            base += f" ({'sede en' if es else 'based in'} {d['city']}, {', '.join(name(x) for x in d['states'])})"
+            base += f" ({W[1]} {d['city']}, {', '.join(name(x) for x in d['states'])})"
         return base
     if dio_kind(d) == "nationwide":
-        return "Todo el país" if es else "Nationwide"
-    return st or ("Estados Unidos" if es else "United States")
+        return W[2]
+    return st or W[3]
+
+
+PT_STATE = {"New York": "Nova York", "New Jersey": "Nova Jersey", "New Mexico": "Novo México", "New Hampshire": "Nova Hampshire",
+            "North Carolina": "Carolina do Norte", "South Carolina": "Carolina do Sul", "North Dakota": "Dakota do Norte",
+            "South Dakota": "Dakota do Sul", "Pennsylvania": "Pensilvânia", "Hawaii": "Havaí", "Louisiana": "Luisiana",
+            "Missouri": "Missouri", "Mississippi": "Mississippi", "West Virginia": "Virgínia Ocidental", "Virginia": "Virgínia",
+            "District of Columbia": "Distrito de Colúmbia", "California": "Califórnia", "Florida": "Flórida", "Georgia": "Geórgia",
+            "Arizona": "Arizona", "Oregon": "Oregon", "Northern Mariana Islands": "Ilhas Marianas do Norte",
+            "American Samoa": "Samoa Americana", "U.S. Virgin Islands": "Ilhas Virgens Americanas", "Puerto Rico": "Porto Rico"}
+STATE_NAME = {"es": ES_STATE, "pt": PT_STATE}
+
+# Eastern Catholic eparchies and the military archdiocese: Spanish, Portuguese
+EP_NAMES = {
+    "Byzantine Catholic Eparchy of Phoenix": ("Eparquía bizantina católica de Phoenix", "Eparquia Bizantina Católica de Phoenix"),
+    "Armenian Catholic Eparchy of Our Lady of Nareg in the United States of America and Canada": (
+        "Eparquía armenia católica de Nuestra Señora de Narek en Estados Unidos y Canadá", "Eparquia Armênia Católica de Nossa Senhora de Narek nos Estados Unidos e no Canadá"),
+    "Chaldean Catholic Eparchy of Saint Peter The Apostle": ("Eparquía caldea católica de San Pedro Apóstol", "Eparquia Caldeia Católica de São Pedro Apóstolo"),
+    "Maronite Catholic Eparchy of Our Lady of Lebanon of Los Angeles": ("Eparquía maronita de Nuestra Señora del Líbano de Los Ángeles", "Eparquia Maronita de Nossa Senhora do Líbano de Los Angeles"),
+    "Ukrainian Catholic Eparchy of Stamford": ("Eparquía greco-católica ucraniana de Stamford", "Eparquia Greco-Católica Ucraniana de Stamford"),
+    "St. Thomas Syro-Malabar Catholic Eparchy of Chicago": ("Eparquía siro-malabar de Santo Tomás de Chicago", "Eparquia Siro-Malabar de São Tomé de Chicago"),
+    "Ukrainian Catholic Eparchy of Chicago": ("Eparquía greco-católica ucraniana de Chicago", "Eparquia Greco-Católica Ucraniana de Chicago"),
+    "Melkite Greek Catholic Eparchy of Newton": ("Eparquía greco-melquita católica de Newton", "Eparquia Greco-Melquita Católica de Newton"),
+    "Chaldean Catholic Eparchy of Saint Thomas the Apostle of Detroit": ("Eparquía caldea católica de Santo Tomás Apóstol de Detroit", "Eparquia Caldeia Católica de São Tomé Apóstolo de Detroit"),
+    "Byzantine Catholic Eparchy of Passaic": ("Eparquía bizantina católica de Passaic", "Eparquia Bizantina Católica de Passaic"),
+    "Syriac Catholic Eparchy of Our Lady of Deliverance in the United States": ("Eparquía siro-católica de Nuestra Señora de la Liberación en Estados Unidos", "Eparquia Siro-Católica de Nossa Senhora da Libertação nos Estados Unidos"),
+    "Eparchy of St. Maron of Brooklyn": ("Eparquía maronita de San Marón de Brooklyn", "Eparquia Maronita de São Marão de Brooklyn"),
+    "Byzantine Catholic Eparchy of Parma": ("Eparquía bizantina católica de Parma", "Eparquia Bizantina Católica de Parma"),
+    "Romanian Catholic Eparchy of St George's in Canton": ("Eparquía greco-católica rumana de San Jorge en Canton", "Eparquia Greco-Católica Romena de São Jorge em Canton"),
+    "Ukrainian Catholic Eparchy of Saint Josaphat in Parma": ("Eparquía greco-católica ucraniana de San Josafat en Parma", "Eparquia Greco-Católica Ucraniana de São Josafá em Parma"),
+    "Byzantine Catholic Archeparchy of Pittsburgh": ("Archieparquía bizantina católica de Pittsburgh", "Arquieparquia Bizantina Católica de Pittsburgh"),
+    "Ukrainian Catholic Archeparchy of Philadelphia": ("Archieparquía greco-católica ucraniana de Filadelfia", "Arquieparquia Greco-Católica Ucraniana da Filadélfia"),
+    "Archdiocese for the Military Services": ("Arquidiócesis para los Servicios Militares", "Arquidiocese para os Serviços Militares"),
+    "Syro-Malankara Catholic Eparchy of St. Mary, Queen of Peace, of the United States of America and Canada": (
+        "Eparquía siro-malankar de Santa María, Reina de la Paz, de Estados Unidos y Canadá", "Eparquia Siro-Malancar de Santa Maria, Rainha da Paz, dos Estados Unidos e do Canadá"),
+}
+
+
+def dio_name(n, lang="en"):
+    if lang == "en":
+        return n
+    if n in EP_NAMES:
+        return EP_NAMES[n][0 if lang == "es" else 1]
+    pairs = ((("Archdiocese of", "Arquidiócesis de"), ("Diocese of", "Diócesis de")) if lang == "es"
+             else (("Archdiocese of", "Arquidiocese de"), ("Diocese of", "Diocese de")))
+    for x, y in pairs:
+        if n.startswith(x):
+            n = y + n[len(x):]
+            break
+    es = lang == "es"
+    n = n.replace(" in America", " en América" if es else " na América").replace(" in the Virgin Islands", ", Islas Vírgenes" if es else ", Ilhas Virgens")
+    n = n.replace("Saint Paul and Minneapolis", "Saint Paul y Minneapolis" if es else "Saint Paul e Minneapolis")
+    m = re.search(r" in ([A-Z][a-z]+)$", n)
+    if m:
+        n = n[:m.start()] + ", " + STATE_NAME[lang].get(m.group(1), m.group(1))
+    return n
 
 
 def dio_name_es(n):
-    for a, b in (("Archdiocese for the", "Arquidiócesis para los"), ("Archdiocese of", "Arquidiócesis de"), ("Diocese of", "Diócesis de")):
-        if n.startswith(a):
-            n = b + n[len(a):]
-            break
-    return n.replace("Military Services", "Servicios Militares").replace(" in California", ", California").replace(" in Florida", ", Florida")
+    return dio_name(n, "es")
+
+
+DIO_BASE = {"en": "/dioceses", "es": "/es/diocesis", "pt": "/pt/dioceses"}
+DIO_LANGS = ("en", "es")
 
 
 def dio_rows(data, lang="en"):
@@ -683,9 +745,10 @@ def dio_rows(data, lang="en"):
     ds = sorted(data["dioceses"], key=lambda d: (order[dio_kind(d)], d["states"][0] if d["states"] else "~", d["short"]))
     rows = []
     for d in ds:
-        lead = html.escape(d.get("bishop", "")) or f'<span class="muted">{"Vacante o sin dato" if es else "Vacant or not recorded"}</span>'
-        nm = dio_name_es(d["short"]) if es else d["short"]
-        rows.append(f'          <tr><td><a href="/dioceses/{d["slug"]}">{html.escape(nm)}</a></td>'
+        vac = {"en": "Vacant or not recorded", "es": "Vacante o sin dato", "pt": "Vacante ou sem dado"}[lang]
+        lead = html.escape(d.get("bishop", "")) or f'<span class="muted">{vac}</span>'
+        nm = dio_name(d["short"], lang)
+        rows.append(f'          <tr><td><a href="{DIO_BASE[lang]}/{d["slug"]}">{html.escape(nm)}</a></td>'
                     f'<td>{html.escape(dio_place(d, lang))}</td><td>{lead}</td></tr>')
     return "\n".join(rows), len(ds)
 
@@ -694,56 +757,186 @@ def _domain(url):
     return re.sub(r"^https?://(www\.)?", "", url or "").split("/")[0]
 
 
-def _since(x):
+MESES = {"es": ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
+         "pt": ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]}
+
+
+def _since(x, lang="en"):
     m = re.match(r"(\d{4})-(\d{2})", x or "")
-    return f"{MONTHS[int(m.group(2)) - 1]} {m.group(1)}" if m else ""
+    if not m:
+        return ""
+    if lang == "en":
+        return f"{MONTHS[int(m.group(2)) - 1]} {m.group(1)}"
+    return f"{MESES[lang][int(m.group(2)) - 1]} de {m.group(1)}"
 
 
-def diocese_body(d, data):
+# Words for the diocese pages. {c} is the church word (diocese, archdiocese, eparchy), {l} the leader word.
+DIO_TXT = {
+    "en": dict(
+        what={"diocese": "diocese", "archdiocese": "archdiocese", "eastern": "Eastern Catholic eparchy", "nationwide": "nationwide jurisdiction"},
+        church={"diocese": "diocese", "archdiocese": "archdiocese", "eparchy": "eparchy"},
+        lede_a="A Catholic {what}", based=" based in {w}", founded=", founded in {y}",
+        eastern_note=" Eparchies serve Eastern Catholics across a wide region, alongside the local Latin Church dioceses.",
+        crumb="Dioceses", us="United States",
+        leader={"Archbishop": "archbishop", "Bishop": "bishop"},
+        who="Who leads it", since=", since {s}",
+        who_note="From Wikidata. If a new {l} was named recently, the {c} website will have it first.",
+        site="Official website", site_p="News, Mass times, schools, Catholic Charities, marriage preparation and contacts for every office.",
+        site_lang="",
+        cath="Cathedral", on_map="See it on a map",
+        cath_p="The cathedral is the {l}&rsquo;s own church and the mother church of the {c}.",
+        ocia_h="Thinking of becoming Catholic?",
+        ocia_p="OCIA happens in parishes. Pick a parish near you, then call or email and ask when the next OCIA group starts. "
+               "The {c}&rsquo;s Office of Worship (sometimes called Evangelization or Christian Initiation) can help if a parish doesn&rsquo;t answer.",
+        ocia_link="How OCIA works", start="/start-here", find="/find-a-church", find_btn="Find parishes", near=" near {city}",
+        search_btn="Search its website for OCIA", ocia_q="OCIA",
+        size="Size", size_p="About <strong>{n}</strong> Catholics, according to the most recent figure in Wikidata.",
+        holy_h="Holy men and women of {st}",
+        holy_p="Saints, Blesseds, Venerables and Servants of God who were born or died in {st}. Some causes are led by this diocese; others by a neighboring diocese or a religious order.",
+        sd="/saints-directory", holy_more="Wikidata does not record every cause yet. <a href=\"{sd}\">Search the full directory</a>.",
+        others="Other dioceses in {st}",
+        refs="History, parishes and statistics: {r}.", refs_none="see the {c} website",
+        src="The details on this page come from <a href=\"https://www.wikidata.org/wiki/{q}\" rel=\"noopener\">Wikidata</a> (updated {u}), where anyone can correct them.",
+        all="All U.S. dioceses",
+        title="{n}: Bishop, Cathedral, OCIA and Parishes | CatholicDoorway",
+        desc="{n}{st}: who leads it, its cathedral and website, how to find a parish and OCIA, and the holy men and women of the area.",
+        rank={4: "Saint", 3: "Blessed", 2: "Venerable", 1: "Servant of God"}),
+    "es": dict(
+        what={"diocese": "diócesis", "archdiocese": "arquidiócesis", "eastern": "eparquía católica oriental", "nationwide": "jurisdicción para todo el país"},
+        church={"diocese": "la diócesis", "archdiocese": "la arquidiócesis", "eparchy": "la eparquía"},
+        lede_a="Una {what} católica", based=" con sede en {w}", founded=", fundada en {y}",
+        eastern_note=" Las eparquías atienden a los católicos orientales de una región amplia, junto a las diócesis latinas del lugar.",
+        crumb="Diócesis", us="Estados Unidos",
+        leader={"Archbishop": "el arzobispo", "Bishop": "el obispo"},
+        who="Quién la dirige", since=", desde {s}",
+        who_note="Dato de Wikidata. Si hace poco se nombró a un nuevo {l2}, el sitio web de {c} lo tendrá primero.",
+        site="Sitio web oficial", site_p="Noticias, horarios de Misa, escuelas, Caridades Católicas, preparación matrimonial y los contactos de cada oficina.",
+        site_lang=" Muchas diócesis tienen una sección en español o un ministerio hispano.",
+        cath="Catedral", on_map="Verla en un mapa",
+        cath_p="La catedral es la iglesia propia de{l3} y la iglesia madre de {c}.",
+        ocia_h="¿Piensas hacerte católico?",
+        ocia_p="OCIA se hace en las parroquias. Elige una parroquia cerca de ti y llama o escribe para preguntar cuándo empieza el próximo grupo. "
+               "Si la parroquia no responde, la Oficina de Culto de {c} (a veces llamada de Evangelización, de Iniciación Cristiana o del Ministerio Hispano) puede ayudarte.",
+        ocia_link="Cómo funciona OCIA", start="/es/comenzar", find="/es/buscar-iglesia", find_btn="Buscar parroquias", near=" cerca de {city}",
+        search_btn="Buscar OCIA en su sitio web", ocia_q="OCIA español",
+        size="Tamaño", size_p="Unos <strong>{n}</strong> católicos, según la cifra más reciente de Wikidata.",
+        holy_h="Hombres y mujeres santos de {st}",
+        holy_p="Santos, Beatos, Venerables y Siervos de Dios que nacieron o murieron en {st}. Algunas causas las lleva esta diócesis; otras, una diócesis vecina o una orden religiosa.",
+        sd="/es/directorio-santos", holy_more="Wikidata todavía no registra todas las causas. <a href=\"{sd}\">Busca en el directorio completo</a>.",
+        others="Otras diócesis de {st}",
+        refs="Historia, parroquias y estadísticas: {r}.", refs_none="consulta el sitio web de {c}",
+        src="Los datos de esta página vienen de <a href=\"https://www.wikidata.org/wiki/{q}?uselang=es\" rel=\"noopener\">Wikidata</a> (actualizado el {u}), donde cualquiera puede corregirlos.",
+        all="Todas las diócesis de EE. UU.",
+        title="{n}: obispo, catedral, OCIA y parroquias | CatholicDoorway",
+        desc="{n}{st}: quién la dirige, su catedral y su sitio web, cómo encontrar una parroquia y OCIA, y los santos de la región.",
+        rank={4: "Santo", 3: "Beato", 2: "Venerable", 1: "Siervo de Dios"}),
+    "pt": dict(
+        what={"diocese": "diocese", "archdiocese": "arquidiocese", "eastern": "eparquia católica oriental", "nationwide": "jurisdição para todo o país"},
+        church={"diocese": "a diocese", "archdiocese": "a arquidiocese", "eparchy": "a eparquia"},
+        lede_a="Uma {what} católica", based=" com sede em {w}", founded=", fundada em {y}",
+        eastern_note=" As eparquias atendem os católicos orientais de uma região ampla, ao lado das dioceses latinas do lugar.",
+        crumb="Dioceses", us="Estados Unidos",
+        leader={"Archbishop": "o arcebispo", "Bishop": "o bispo"},
+        who="Quem a dirige", since=", desde {s}",
+        who_note="Dado do Wikidata. Se um novo {l2} foi nomeado há pouco, o site d{c} terá a notícia primeiro.",
+        site="Site oficial", site_p="Notícias, horários de Missa, escolas, Cáritas (Catholic Charities), preparação para o matrimônio e os contatos de cada setor.",
+        site_lang=" Algumas dioceses têm uma pastoral ou comunidade de língua portuguesa.",
+        cath="Catedral", on_map="Ver no mapa",
+        cath_p="A catedral é a igreja própria d{l3} e a igreja-mãe d{c}.",
+        ocia_h="Pensando em se tornar católico?",
+        ocia_p="A OCIA acontece nas paróquias. Escolha uma paróquia perto de você e ligue ou escreva para perguntar quando começa o próximo grupo. "
+               "Se a paróquia não responder, o setor de liturgia d{c} (às vezes chamado de Evangelização, Iniciação Cristã ou Pastoral dos Imigrantes) pode ajudar.",
+        ocia_link="Como funciona a OCIA", start="/pt/comecar", find="/pt/encontrar-igreja", find_btn="Procurar paróquias", near=" perto de {city}",
+        search_btn="Procurar a OCIA no site", ocia_q="OCIA",
+        size="Tamanho", size_p="Cerca de <strong>{n}</strong> católicos, segundo o número mais recente do Wikidata.",
+        holy_h="Homens e mulheres santos de {st}",
+        holy_p="Santos, Beatos, Veneráveis e Servos de Deus que nasceram ou morreram em {st}. Algumas causas são conduzidas por esta diocese; outras, por uma diocese vizinha ou por uma ordem religiosa.",
+        sd="/pt/diretorio-santos", holy_more="O Wikidata ainda não registra todas as causas. <a href=\"{sd}\">Pesquise no diretório completo</a>.",
+        others="Outras dioceses em {st}",
+        refs="História, paróquias e estatísticas: {r}.", refs_none="veja o site d{c}",
+        src="Os dados desta página vêm do <a href=\"https://www.wikidata.org/wiki/{q}?uselang=pt-br\" rel=\"noopener\">Wikidata</a> (atualizado em {u}), onde qualquer pessoa pode corrigi-los.",
+        all="Todas as dioceses dos EUA",
+        title="{n}: bispo, catedral, OCIA e paróquias | CatholicDoorway",
+        desc="{n}{st}: quem a dirige, sua catedral e seu site, como encontrar uma paróquia e a OCIA, e os santos da região.",
+        rank={4: "Santo", 3: "Beato", 2: "Venerável", 1: "Servo de Deus"}),
+}
+
+
+def _num(n, lang):
+    s = f"{n:,}"
+    return s.replace(",", ".") if lang == "pt" else s
+
+
+def diocese_body(d, data, lang="en"):
     e = html.escape
+    L = DIO_TXT[lang]
+    stn = lambda x: STATE_NAME.get(lang, {}).get(x, x)
     kind = dio_kind(d)
     st = d["states"][0] if d["states"] else ""
+    st_l = stn(st)
     city = d.get("city", "")
-    where = ", ".join(x for x in (city, st) if x)
-    what = {"latin": "archdiocese" if d["short"].startswith("Archdiocese") else "diocese",
-            "eastern": "Eastern Catholic eparchy", "nationwide": "nationwide jurisdiction"}[kind]
-    lede = f"A Catholic {what}" + (f" based in {e(where)}" if where else "") + (f", founded in {d['founded']}" if d.get("founded") else "") + "."
+    where = ", ".join(x for x in (city, st_l) if x)
+    arch = d["short"].startswith("Archdiocese")
+    wkey = {"latin": "archdiocese" if arch else "diocese", "eastern": "eastern", "nationwide": "nationwide"}[kind]
+    if kind == "nationwide":
+        wkey = "archdiocese"
+    lede = L["lede_a"].format(what=L["what"][wkey]) + (L["based"].format(w=e(where)) if where else "") + \
+        (L["founded"].format(y=d["founded"]) if d.get("founded") else "") + "."
+    if lang == "en":
+        lede = lede.replace("A Catholic archdiocese", "A Catholic archdiocese")
     if kind == "eastern":
-        lede += " Eparchies serve Eastern Catholics across a wide region, alongside the local Latin Church dioceses."
+        lede += L["eastern_note"]
     lead = dio_leader(d)
-    church = "eparchy" if kind == "eastern" else ("archdiocese" if d["short"].startswith("Archdiocese") else "diocese")
+    ckey = "eparchy" if kind == "eastern" else ("archdiocese" if arch else "diocese")
+    church = L["church"][ckey]
+    lword = L["leader"][lead]
+    # Spanish/Portuguese contractions: "de + el obispo" -> "del obispo", "d + o bispo" -> "do bispo"
+    if lang == "es":
+        l2, l3 = lword.split(" ", 1)[1], "l " + lword.split(" ", 1)[1]
+        c_of = church
+    elif lang == "pt":
+        l2, l3 = lword.split(" ", 1)[1], lword
+        c_of = church
+    else:
+        l2 = l3 = lword
+        c_of = church
+    if lang == "es" and kind == "eastern":
+        l2 = {"Archbishop": "arzobispo (archieparca)", "Bishop": "obispo (eparca)"}[lead]
+    if lang == "pt" and kind == "eastern":
+        l2 = {"Archbishop": "arcebispo (arquieparca)", "Bishop": "bispo (eparca)"}[lead]
+    name = dio_name(d["short"], lang)
+    base = DIO_BASE[lang]
     out = ['<div class="page-head">\n  <div class="wrap">',
-           f'    <p class="kicker"><a href="/dioceses">Dioceses</a> &rsaquo; {e(st or "United States")}</p>',
-           f'    <h1>{e(d["short"])}</h1>',
+           f'    <p class="kicker"><a href="{base}">{L["crumb"]}</a> &rsaquo; {e(st_l or L["us"])}</p>',
+           f'    <h1>{e(name)}</h1>',
            f'    <p class="lede">{lede}</p>',
            '  </div>\n</div>\n\n<div class="wrap">\n  <section class="section">\n    <div class="grid two">']
     if d.get("bishop"):
-        since = _since(d.get("bishop_since"))
-        out.append('      <div class="card">\n        <h3>Who leads it</h3>'
-                   f'\n        <p><strong>{e(d["bishop"])}</strong>{", since " + since if since else ""}.</p>'
-                   f'\n        <p class="small muted">From Wikidata. If a new {lead.lower()} was named recently, the {church} website will have it first.</p>\n      </div>')
+        since = _since(d.get("bishop_since"), lang)
+        out.append(f'      <div class="card">\n        <h3>{L["who"]}</h3>'
+                   f'\n        <p><strong>{e(d["bishop"])}</strong>{L["since"].format(s=since) if since else ""}.</p>'
+                   f'\n        <p class="small muted">{L["who_note"].format(l=l2, l2=l2, c=c_of)}</p>\n      </div>')
     if d.get("website"):
-        out.append('      <div class="card">\n        <h3>Official website</h3>'
-                   '\n        <p>News, Mass times, schools, Catholic Charities, marriage preparation and contacts for every office.</p>'
+        out.append(f'      <div class="card">\n        <h3>{L["site"]}</h3>'
+                   f'\n        <p>{L["site_p"]}{L["site_lang"] if kind == "latin" else ""}</p>'
                    f'\n        <div class="btn-row" style="justify-content:flex-start"><a class="btn" href="{e(d["website"])}" rel="noopener">{e(_domain(d["website"]))}</a></div>\n      </div>')
     if d.get("cathedral"):
-        mp = (f' <a href="https://www.openstreetmap.org/?mlat={d["lat"]}&amp;mlon={d["lon"]}#map=17/{d["lat"]}/{d["lon"]}" rel="noopener">See it on a map</a>.'
+        mp = (f' <a href="https://www.openstreetmap.org/?mlat={d["lat"]}&amp;mlon={d["lon"]}#map=17/{d["lat"]}/{d["lon"]}" rel="noopener">{L["on_map"]}</a>.'
               if d.get("lat") else "")
         town = f", {e(city)}" if city and city not in d["cathedral"] else ""
-        out.append('      <div class="card">\n        <h3>Cathedral</h3>'
-                   f'\n        <p><strong>{e(d["cathedral"])}</strong>{town}. The cathedral is the {lead.lower()}&rsquo;s own church and the mother church of the {church}.{mp}</p>\n      </div>')
-    q = urllib.parse.quote(where or d["short"])
+        out.append(f'      <div class="card">\n        <h3>{L["cath"]}</h3>'
+                   f'\n        <p><strong>{e(d["cathedral"])}</strong>{town}. {L["cath_p"].format(l=l3, l3=l3, c=c_of)}{mp}</p>\n      </div>')
+    q = urllib.parse.quote(", ".join(x for x in (city, st) if x) or d["short"])
     dom = _domain(d.get("website"))
-    near = f" near {e(city)}" if city and kind == "latin" else ""
-    ocia = (f'\n          <a class="btn secondary" href="https://duckduckgo.com/?q={urllib.parse.quote("OCIA site:" + dom)}" rel="noopener">Search its website for OCIA</a>'
+    near = L["near"].format(city=e(city)) if city and kind == "latin" else ""
+    ocia = (f'\n          <a class="btn secondary" href="https://duckduckgo.com/?q={urllib.parse.quote(L["ocia_q"] + " site:" + dom)}" rel="noopener">{L["search_btn"]}</a>'
             if dom else "")
-    out.append('      <div class="card">\n        <h3>Thinking of becoming Catholic?</h3>'
-               '\n        <p>OCIA happens in parishes. Pick a parish near you, then call or email and ask when the next OCIA group starts. '
-               f'The {church}&rsquo;s Office of Worship (sometimes called Evangelization or Christian Initiation) can help if a parish doesn&rsquo;t answer. <a href="/start-here">How OCIA works</a>.</p>'
-               f'\n        <div class="btn-row" style="justify-content:flex-start">\n          <a class="btn" href="/find-a-church?ocia=1&amp;q={q}">Find parishes{near}</a>{ocia}\n        </div>\n      </div>')
+    out.append(f'      <div class="card">\n        <h3>{L["ocia_h"]}</h3>'
+               f'\n        <p>{L["ocia_p"].format(c=c_of)} <a href="{L["start"]}">{L["ocia_link"]}</a>.</p>'
+               f'\n        <div class="btn-row" style="justify-content:flex-start">\n          <a class="btn" href="{L["find"]}?ocia=1&amp;q={q}">{L["find_btn"]}{near}</a>{ocia}\n        </div>\n      </div>')
     if d.get("members"):
-        out.append('      <div class="card">\n        <h3>Size</h3>'
-                   f'\n        <p>About <strong>{d["members"]:,}</strong> Catholics, according to the most recent figure in Wikidata.</p>\n      </div>')
+        out.append(f'      <div class="card">\n        <h3>{L["size"]}</h3>'
+                   f'\n        <p>{L["size_p"].format(n=_num(d["members"], lang))}</p>\n      </div>')
     out.append("    </div>\n  </section>")
 
     holy = data["holy_by_state"].get(st, []) if kind == "latin" and st else []
@@ -751,18 +944,18 @@ def diocese_body(d, data):
         items = []
         for p in holy:
             yrs = f' <span class="small muted">({p["born"]}&ndash;{p["died"]})</span>' if p["born"] and p["died"] else ""
-            items.append(f'<li><a href="/saints-directory?q={urllib.parse.quote(p["name"])}">{e(p["name"])}</a> '
-                         f'<span class="status {RANK_CLS[p["rank"]]}">{RANK_LABEL[p["rank"]]}</span>{yrs}</li>')
-        out.append(f'\n  <section class="section">\n    <h2>Holy men and women of {e(st)}</h2>'
-                   f'\n    <p class="prose">Saints, Blesseds, Venerables and Servants of God who were born or died in {e(st)}. Some causes are led by this diocese; others by a neighboring diocese or a religious order.</p>'
+            items.append(f'<li><a href="{L["sd"]}?q={urllib.parse.quote(p["name"])}">{e(p["name"])}</a> '
+                         f'<span class="status {RANK_CLS[p["rank"]]}">{L["rank"][p["rank"]]}</span>{yrs}</li>')
+        out.append(f'\n  <section class="section">\n    <h2>{L["holy_h"].format(st=e(st_l))}</h2>'
+                   f'\n    <p class="prose">{L["holy_p"].format(st=e(st_l))}</p>'
                    f'\n    <ul class="holy-list">\n      ' + "\n      ".join(items) + '\n    </ul>'
-                   '\n    <p class="small muted">Wikidata does not record every cause yet. <a href="/saints-directory">Search the full directory</a>.</p>\n  </section>')
+                   f'\n    <p class="small muted">{L["holy_more"].format(sd=L["sd"])}</p>\n  </section>')
 
     others = sorted((o for o in data["dioceses"] if o is not d and st and st in o["states"] and dio_kind(o) == "latin"),
                     key=lambda o: o["short"]) if kind == "latin" else []
     if others:
-        links = " &middot; ".join(f'<a href="/dioceses/{o["slug"]}">{e(o["short"])}</a>' for o in others)
-        out.append(f'\n  <section class="section">\n    <h2>Other dioceses in {e(st)}</h2>\n    <p>{links}</p>\n  </section>')
+        links = " &middot; ".join(f'<a href="{base}/{o["slug"]}">{e(dio_name(o["short"], lang))}</a>' for o in others)
+        out.append(f'\n  <section class="section">\n    <h2>{L["others"].format(st=e(st_l))}</h2>\n    <p>{links}</p>\n  </section>')
 
     refs = []
     if d.get("ch"):
@@ -770,32 +963,45 @@ def diocese_body(d, data):
     if d.get("gc"):
         refs.append(f'<a href="https://gcatholic.org/dioceses/diocese/{e(d["gc"])}.htm" rel="noopener">GCatholic</a>')
     out.append('\n  <section class="section">'
-               f'\n    <p class="small muted">History, parishes and statistics: {" &middot; ".join(refs) or "see the " + church + " website"}. '
-               f'The details on this page come from <a href="https://www.wikidata.org/wiki/{d["qid"]}" rel="noopener">Wikidata</a> (updated {data["updated"]}), where anyone can correct them. <a href="/dioceses">All U.S. dioceses</a>.</p>'
+               f'\n    <p class="small muted">{L["refs"].format(r=" &middot; ".join(refs) or L["refs_none"].format(c=c_of))} '
+               f'{L["src"].format(q=d["qid"], u=data["updated"])} <a href="{base}">{L["all"]}</a>.</p>'
                '\n  </section>\n</div>\n')
     return "\n".join(out)
 
 
 def build_dioceses(data):
-    out_dir = OUT / "dioceses"
-    out_dir.mkdir(exist_ok=True)
-    keep = set()
-    for d in data["dioceses"]:
-        title = f'{d["short"]}: Bishop, Cathedral, OCIA and Parishes | CatholicDoorway'
-        st = ", ".join(d["states"])
-        desc = (f'{d["short"]}{" (" + st + ")" if st else ""}: who leads it, its cathedral and website, '
-                'how to find a parish and OCIA, and the holy men and women of the area.')
-        page = HEAD.format(title=html.escape(title), desc=html.escape(desc), canonical=f"{DOMAIN}/dioceses/{d['slug']}",
-                           domain=DOMAIN, slug="dioceses", door=DOOR_SVG, menu=MENU_SVG, theme=THEME_SVG,
-                           nav=nav_html("dioceses"), extra_head="", alternates="",
-                           lang_menu=lang_menu("en", {"en": f"/dioceses/{d['slug']}", "es": None, "pt": None}), **EN_TEXT)
-        page += diocese_body(d, data) + FOOT.format(extra_foot="")
-        (out_dir / f"{d['slug']}.html").write_text(bust(page), encoding="utf-8")
-        keep.add(f"{d['slug']}.html")
-    for old in out_dir.glob("*.html"):
-        if old.name not in keep:
-            old.unlink()
-    print(f"built {len(keep)} diocese pages")
+    keep_all = {}
+    for lang, text, foot in (("en", EN_TEXT, FOOT), ("es", ES_TEXT, FOOT_ES), ("pt", PT_TEXT, FOOT_PT)):
+        if lang not in DIO_LANGS:
+            continue
+        base = DIO_BASE[lang]
+        out_dir = OUT / base.strip("/")
+        out_dir.mkdir(parents=True, exist_ok=True)
+        L = DIO_TXT[lang]
+        nav = {"en": lambda: nav_html("dioceses"),
+               "es": lambda: lang_nav("es", ES_PAGES, ES_SUBNAV, ES_NAV_EXCLUDE, "diocesis"),
+               "pt": lambda: lang_nav("pt", PT_PAGES, PT_SUBNAV, PT_NAV_EXCLUDE, "dioceses")}[lang]()
+        keep = set()
+        for d in data["dioceses"]:
+            nm = dio_name(d["short"], lang)
+            st = ", ".join(STATE_NAME.get(lang, {}).get(x, x) for x in d["states"])
+            title = L["title"].format(n=nm)
+            desc = L["desc"].format(n=nm, st=f" ({st})" if st else "")
+            urls = {c: (f"{DIO_BASE[c]}/{d['slug']}" if c in DIO_LANGS else None) for c in ("en", "es", "pt")}
+            page = HEAD.format(title=html.escape(title), desc=html.escape(desc), canonical=f"{DOMAIN}{base}/{d['slug']}",
+                               domain=DOMAIN, slug="dioceses", door=DOOR_SVG, menu=MENU_SVG, theme=THEME_SVG,
+                               nav=nav, extra_head="", alternates=alternates_html(urls),
+                               lang_menu=lang_menu(lang, urls), **text)
+            if lang != "en":
+                page = page.replace('<meta property="og:site_name" content="CatholicDoorway">',
+                                    f'<meta property="og:site_name" content="CatholicDoorway">\n<meta property="og:locale" content="{LOCALE[lang]}">')
+            page += diocese_body(d, data, lang) + foot.format(extra_foot="")
+            (out_dir / f"{d['slug']}.html").write_text(bust(page), encoding="utf-8")
+            keep.add(f"{d['slug']}.html")
+        for old in out_dir.glob("*.html"):
+            if old.name not in keep:
+                old.unlink()
+        print(f"built {len(keep)} diocese pages ({lang})")
     return sorted(d["slug"] for d in data["dioceses"])
 
 
@@ -834,11 +1040,12 @@ ES_SUBNAV = {"comenzar": [("comenzar", "Hacerse católico (OCIA)"), ("primera-mi
              "oraciones": [("oraciones", "Oraciones católicas"), ("rosario", "Reza el Rosario")],
              "biblia": [("biblia", "Las lecturas de hoy y la Biblia"), ("calendario", "Calendario de días santos")],
              "creencias": [("creencias", "Lo que creen los católicos"), ("preguntas", "Preguntas sinceras"), ("glosario", "Glosario")],
+             "santos": [("santos", "Conoce a los santos"), ("directorio-santos", "Directorio de santos y causas")],
              "estructura": [("estructura", "Cómo se organiza la Iglesia"), ("papas", "Los 267 Papas"), ("diocesis", "Las diócesis de EE. UU."),
                             ("buscar-iglesia", "Buscar una iglesia")]}
 ES_SUB_CHILDREN = {c for subs in ES_SUBNAV.values() for c, _ in subs} - set(ES_SUBNAV)
 # Spanish pages reached from a hub page rather than the top menu
-ES_NAV_EXCLUDE = {"inscribirse-parroquia", "bautismo", "matrimonio", "uncion", "funerales", "fe-de-bautismo"}
+ES_NAV_EXCLUDE = {"acerca", "inscribirse-parroquia", "bautismo", "matrimonio", "uncion", "funerales", "fe-de-bautismo"}
 
 
 def lang_nav(code, pages, subnav, exclude, current):
@@ -963,7 +1170,7 @@ def main():
     urls += "\n" + "\n".join(
         f"  <url><loc>{DOMAIN}/pt/{'' if pt == 'index' else pt}</loc><lastmod>{today}</lastmod></url>"
         for _, pt, *_ in PT_PAGES)
-    urls += "\n" + "\n".join(f"  <url><loc>{DOMAIN}/dioceses/{s}</loc><lastmod>{today}</lastmod></url>" for s in dio_slugs)
+    urls += "\n" + "\n".join(f"  <url><loc>{DOMAIN}{b}/{s}</loc><lastmod>{today}</lastmod></url>" for b in (DIO_BASE[c] for c in DIO_LANGS) for s in dio_slugs)
     (OUT / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n',
         encoding="utf-8")

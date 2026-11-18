@@ -45,25 +45,38 @@ SELECT ?p ?when WHERE {
 """
 
 DETAIL_QUERY = """
-SELECT ?p ?en ?es ?desc ?born ?died
+SELECT ?p ?en ?es ?pt ?desc ?born ?died
   (GROUP_CONCAT(DISTINCT ?ctryLabel; separator="|") AS ?ctry)
   (GROUP_CONCAT(DISTINCT ?patLabel; separator="|") AS ?pat)
   (GROUP_CONCAT(DISTINCT ?rel; separator="|") AS ?rels)
   (GROUP_CONCAT(DISTINCT ?relLabel; separator="|") AS ?relLabels)
-  (SAMPLE(?feastLabel) AS ?feast) (SAMPLE(?wp) AS ?wiki)
+  (SAMPLE(?feastLabel) AS ?feast) (SAMPLE(?wp) AS ?wiki) (SAMPLE(?sx) AS ?sex)
 WHERE {
   VALUES ?p { %s }
   OPTIONAL { ?p rdfs:label ?en FILTER(lang(?en) = "en") }
   OPTIONAL { ?p rdfs:label ?es FILTER(lang(?es) = "es") }
+  OPTIONAL { ?p rdfs:label ?pt FILTER(lang(?pt) = "pt") }
   OPTIONAL { ?p schema:description ?desc FILTER(lang(?desc) = "en") }
   OPTIONAL { ?p wdt:P569 ?born } OPTIONAL { ?p wdt:P570 ?died }
+  OPTIONAL { ?p wdt:P21 ?sx }
   OPTIONAL { ?p wdt:P27 ?c . ?c rdfs:label ?ctryLabel FILTER(lang(?ctryLabel) = "en") }
   OPTIONAL { ?pa wdt:P417 ?p . ?pa rdfs:label ?patLabel FILTER(lang(?patLabel) = "en") }
   OPTIONAL { ?p wdt:P140 ?rel . OPTIONAL { ?rel rdfs:label ?relLabel FILTER(lang(?relLabel) = "en") } }
   OPTIONAL { ?p wdt:P841 ?f . ?f rdfs:label ?feastLabel FILTER(lang(?feastLabel) = "en") }
   OPTIONAL { ?wp schema:about ?p ; schema:isPartOf <https://en.wikipedia.org/> }
 }
-GROUP BY ?p ?en ?es ?desc ?born ?died
+GROUP BY ?p ?en ?es ?pt ?desc ?born ?died
+"""
+
+# Spanish and Portuguese descriptions and patronages, one row per label (kept light so Wikidata doesn't time out).
+LOCAL_QUERY = """
+SELECT ?p ?k ?lg ?l WHERE {
+  VALUES ?p { %s }
+  { ?p schema:description ?l . BIND("d" AS ?k) }
+  UNION { ?pa wdt:P417 ?p . ?pa rdfs:label ?l . BIND("p" AS ?k) }
+  FILTER(lang(?l) IN ("es", "pt", "pt-br"))
+  BIND(lang(?l) AS ?lg)
+}
 """
 
 
@@ -147,11 +160,24 @@ def main():
         for b in rows:
             pid = val(b, "p").rsplit("/", 1)[-1]
             p = people[pid]
-            p.update(name=val(b, "en") or val(b, "es") or p.get("name", ""), es=val(b, "es"), desc=val(b, "desc"),
+            p.update(name=val(b, "en") or val(b, "es") or p.get("name", ""), es=val(b, "es"), pt=val(b, "pt"), desc=val(b, "desc"),
                      born=year(val(b, "born")) or p.get("born"), died=year(val(b, "died")) or p.get("died"),
-                     ctry=val(b, "ctry"), pat=val(b, "pat"), feast=val(b, "feast"), wiki=val(b, "wiki"))
+                     ctry=val(b, "ctry"), pat=val(b, "pat"), feast=val(b, "feast"), wiki=val(b, "wiki"),
+                     female=val(b, "sex").endswith(("/Q6581072", "/Q1052281")))
             p["rels"].update(x.rsplit("/", 1)[-1] for x in val(b, "rels").split("|") if x)
             p["relLabels"].update(x for x in val(b, "relLabels").split("|") if x)
+        time.sleep(1)
+        for b in sparql(LOCAL_QUERY % " ".join("wd:" + x for x in chunk)):
+            p = people[val(b, "p").rsplit("/", 1)[-1]]
+            lg, k, l = val(b, "lg"), val(b, "k"), val(b, "l")
+            loc = p.setdefault("loc", {})
+            if k == "d":
+                if lg != "pt-br" or "d_pt" not in loc:
+                    loc["d_" + lg[:2]] = l
+            else:
+                lst = loc.setdefault("p_" + lg[:2], [])
+                if l not in lst:
+                    lst.append(l)
         print(f"details {min(i + 250, len(ids))}/{len(ids)}")
         time.sleep(1)
     people = {k: v for k, v in people.items() if v.get("name") and not re.match(r"^Q\d+$", v["name"])}
@@ -186,9 +212,13 @@ def main():
             if (d is None or d >= SCHISM_YEAR) and not (CATH_HINT.search(desc) or lands & CATH_LANDS or p["when"]):
                 dropped["uncertain"] += 1
                 continue
+        loc = p.get("loc", {})
         wiki = p["wiki"].rsplit("/wiki/", 1)[-1] if p["wiki"] else ""
         out.append([pid, p["name"], p["es"] if p["es"] != p["name"] else "", p["desc"], p["rank"], p["when"] or 0,
-                    p.get("born") or 0, p.get("died") or 0, p["ctry"], p["pat"], p["feast"], urllib.parse.unquote(wiki)])
+                    p.get("born") or 0, p.get("died") or 0, p["ctry"], p["pat"], p["feast"], urllib.parse.unquote(wiki),
+                    p.get("pt", "") if p.get("pt") != p["name"] else "",
+                    loc.get("d_es", ""), loc.get("d_pt", ""), "|".join(loc.get("p_es", [])), "|".join(loc.get("p_pt", [])),
+                    "f" if p.get("female") else ""])
 
     out.sort(key=lambda r: r[1].lower())
     counts = {k: sum(1 for r in out if r[4] == v) for k, v in (("saints", 4), ("blessed", 3), ("venerable", 2), ("servants", 1))}
@@ -198,7 +228,8 @@ def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     data = {"updated": datetime.now(timezone.utc).strftime("%Y-%m-%d"), "counts": counts,
             "license": "Data from Wikidata (CC0).",
-            "fields": ["qid", "name", "name_es", "desc", "status", "status_year", "born", "died", "countries", "patron_of", "feast", "enwiki"],
+            "fields": ["qid", "name", "name_es", "desc", "status", "status_year", "born", "died", "countries", "patron_of", "feast", "enwiki",
+                       "name_pt", "desc_es", "desc_pt", "patron_of_es", "patron_of_pt", "female"],
             "people": out}
     OUT.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"Wrote {OUT} ({OUT.stat().st_size // 1024} KB)")
