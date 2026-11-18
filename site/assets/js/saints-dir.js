@@ -6,17 +6,21 @@
   var $ = function (id) { return document.getElementById(id); };
   var feastOnly = '';
   var q = $('sd-q'), st = $('sd-status'), ct = $('sd-country'), cy = $('sd-century'), so = $('sd-sort'), more = $('sd-more'), count = $('sd-count');
-  var LG = document.documentElement.lang, ES = LG === 'es', PT = LG === 'pt';
-  function T(en, es, pt) { return PT ? pt : ES ? es : en; }
-  var LABEL = PT ? { 4: 'Santo', 3: 'Beato', 2: 'Venerável', 1: 'Servo de Deus' } : ES ? { 4: 'Santo', 3: 'Beato', 2: 'Venerable', 1: 'Siervo de Dios' }
+  var LG = document.documentElement.lang, ES = LG === 'es', PT = LG === 'pt', TL = LG === 'tl';
+  // Filipino (Tagalog) strings, keyed by the English text. Names and descriptions stay in English (Wikidata has few Tagalog labels).
+  var TLX = { ' BC': ' BK', 'Died ': 'Namatay noong ', 'Born ': 'Isinilang noong ', 'The directory could not load. Please refresh the page.': 'Hindi ma-load ang direktoryo. Paki-refresh ang pahina.',
+    'No one matches. Try fewer words or a different filter.': 'Walang tumugma. Subukan ang mas kaunting salita o ibang filter.', 'Feast: ': 'Kapistahan: ', 'Patron of ': 'Patron ng ',
+    ' and more': ' at iba pa', 'Read more': 'Basahin pa (sa Ingles)', 'Correct this entry': 'Itama ang entry na ito', 'Show more (': 'Ipakita pa (', ' left)': ' natitira)' };
+  function T(en, es, pt) { return TL ? (TLX[en] !== undefined ? TLX[en] : en) : PT ? pt : ES ? es : en; }
+  var LABEL = TL ? { 4: 'Santo', 3: 'Beato', 2: 'Benerable', 1: 'Lingkod ng Diyos' } : PT ? { 4: 'Santo', 3: 'Beato', 2: 'Venerável', 1: 'Servo de Deus' } : ES ? { 4: 'Santo', 3: 'Beato', 2: 'Venerable', 1: 'Siervo de Dios' }
     : { 4: 'Saint', 3: 'Blessed', 2: 'Venerable', 1: 'Servant of God' };
   // Feminine forms for women (Wikidata sex or gender).
-  var LABEL_F = PT ? { 4: 'Santa', 3: 'Beata', 2: 'Venerável', 1: 'Serva de Deus' } : ES ? { 4: 'Santa', 3: 'Beata', 2: 'Venerable', 1: 'Sierva de Dios' } : LABEL;
-  var DECREE_F = PT ? { 4: 'Canonizada em', 3: 'Beatificada em', 2: 'Declarada Venerável em' } : ES ? { 4: 'Canonizada en', 3: 'Beatificada en', 2: 'Declarada Venerable en' } : null;
+  var LABEL_F = TL ? { 4: 'Santa', 3: 'Beata', 2: 'Benerable', 1: 'Lingkod ng Diyos' } : PT ? { 4: 'Santa', 3: 'Beata', 2: 'Venerável', 1: 'Serva de Deus' } : ES ? { 4: 'Santa', 3: 'Beata', 2: 'Venerable', 1: 'Sierva de Dios' } : LABEL;
+  var DECREE_F = TL ? null : PT ? { 4: 'Canonizada em', 3: 'Beatificada em', 2: 'Declarada Venerável em' } : ES ? { 4: 'Canonizada en', 3: 'Beatificada en', 2: 'Declarada Venerable en' } : null;
   var CLS = { 4: 's-saint', 3: 's-blessed', 2: 's-venerable', 1: 's-servant' };
-  var DECREE = PT ? { 4: 'Canonizado em', 3: 'Beatificado em', 2: 'Declarado Venerável em' } : ES ? { 4: 'Canonizado en', 3: 'Beatificado en', 2: 'Declarado Venerable en' }
+  var DECREE = TL ? { 4: 'Kinanonisa noong', 3: 'Binatipika noong', 2: 'Idineklarang Benerable noong' } : PT ? { 4: 'Canonizado em', 3: 'Beatificado em', 2: 'Declarado Venerável em' } : ES ? { 4: 'Canonizado en', 3: 'Beatificado en', 2: 'Declarado Venerable en' }
     : { 4: 'Canonized in', 3: 'Beatified in', 2: 'Declared Venerable in' };
-  var LOC = PT ? 'pt-BR' : ES ? 'es-US' : 'en-US';
+  var LOC = PT ? 'pt-BR' : ES ? 'es-US' : TL ? 'fil-PH' : 'en-US';
   function num(n) { return n.toLocaleString(LOC); }
   // Country names: [Spanish, Portuguese]. Filter values stay in English.
   var C = { 'Spain': ['España', 'Espanha'], 'France': ['Francia', 'França'], 'Italy': ['Italia', 'Itália'], 'Roman Empire': ['Imperio romano', 'Império Romano'],
@@ -53,8 +57,9 @@
   var MES = PT ? ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
     : ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
   function feast(f) {
-    if (!f || !(ES || PT)) return f;
+    if (!f || !(ES || PT || TL)) return f;
     var m = /^([A-Z][a-z]+) (\d{1,2})$/.exec(f), i = m ? MONTHS.indexOf(m[1]) : -1;
+    if (TL) return i < 0 ? f : ['Enero', 'Pebrero', 'Marso', 'Abril', 'Mayo', 'Hunyo', 'Hulyo', 'Agosto', 'Setyembre', 'Oktubre', 'Nobyembre', 'Disyembre'][i] + ' ' + m[2];
     return i < 0 ? f : m[2] + ' de ' + MES[i];
   }
   function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
@@ -111,10 +116,12 @@
         opts.forEach(function (o) { ct.appendChild(o); });
       }
       Object.keys(cents).map(Number).sort(function (a, b) { return a - b; }).forEach(function (c) {
-        var o = document.createElement('option'); o.value = c; o.textContent = T(ord(c) + ' century', 'Siglo ' + roman(c), 'Século ' + roman(c)); cy.appendChild(o);
+        var o = document.createElement('option'); o.value = c; o.textContent = TL ? 'Ika-' + c + ' siglo' : T(ord(c) + ' century', 'Siglo ' + roman(c), 'Século ' + roman(c)); cy.appendChild(o);
       });
       var n = d.counts || {};
-      $('sd-updated').textContent = PT
+      $('sd-updated').textContent = TL
+        ? 'Na-update noong ' + d.updated + ': ' + num(n.saints || 0) + ' Santo, ' + num(n.blessed || 0) + ' Beato, ' + num(n.venerable || 0) + ' Benerable at ' + num(n.servants || 0) + ' Lingkod ng Diyos. Datos mula sa Wikidata (CC0).'
+        : PT
         ? 'Atualizado em ' + d.updated + ': ' + num(n.saints || 0) + ' Santos, ' + num(n.blessed || 0) + ' Beatos, ' + num(n.venerable || 0) + ' Veneráveis e ' + num(n.servants || 0) + ' Servos de Deus. Dados do Wikidata (CC0).'
         : ES
         ? 'Actualizado el ' + d.updated + ': ' + num(n.saints || 0) + ' Santos, ' + num(n.blessed || 0) + ' Beatos, ' + num(n.venerable || 0) + ' Venerables y ' + num(n.servants || 0) + ' Siervos de Dios. Datos de Wikidata (CC0).'
@@ -146,9 +153,9 @@
     list.innerHTML = ''; shown = 0; list.classList.add('ready');
     var one = filtered.length === 1, rec = so.value === 'recent';
     count.textContent = filtered.length
-      ? num(filtered.length) + T((one ? ' person' : ' people') + (rec ? ' with a recorded decree date, newest first.' : '.'),
+      ? num(filtered.length) + (TL ? (one ? ' tao' : ' na tao') + (rec ? ' na may nakatalang petsa ng dekreto, pinakabago muna.' : '.') : T((one ? ' person' : ' people') + (rec ? ' with a recorded decree date, newest first.' : '.'),
           (one ? ' persona' : ' personas') + (rec ? ' con fecha de decreto registrada, de la más reciente a la más antigua.' : '.'),
-          (one ? ' pessoa' : ' pessoas') + (rec ? ' com data de decreto registrada, da mais recente para a mais antiga.' : '.'))
+          (one ? ' pessoa' : ' pessoas') + (rec ? ' com data de decreto registrada, da mais recente para a mais antiga.' : '.')))
       : T('No one matches. Try fewer words or a different filter.', 'Nadie coincide. Prueba con menos palabras u otro filtro.', 'Ninguém corresponde. Tente menos palavras ou outro filtro.');
     page();
   }

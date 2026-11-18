@@ -4,9 +4,46 @@
   'use strict';
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
-  var LG = document.documentElement.lang, ES = LG === 'es', PT = LG === 'pt', LOC = ES ? 'es-US' : PT ? 'pt-BR' : 'en-US';
-  var T = function (en, es, pt) { return PT ? pt : ES ? es : en; };
-  var P = ES ? '/es' : PT ? '/pt' : '';
+  var LG = document.documentElement.lang, ES = LG === 'es', PT = LG === 'pt', TL = LG === 'tl', LOC = ES ? 'es-US' : PT ? 'pt-BR' : TL ? 'fil-PH' : 'en-US';
+  // Filipino (Tagalog) strings, keyed by the English text.
+  var TLX = {
+    "today is day ": "ngayon ang ika-",
+    " of 9": " na araw sa 9",
+    "begins ": "magsisimula sa ",
+    "/stations-of-the-cross": "/daan-ng-krus",
+    "Stations of the Cross": "Daan ng Krus",
+    "today (Friday of Lent)": "ngayon (Biyernes ng Kuwaresma)",
+    "prayed instead of the Angelus until Pentecost": "dinarasal sa halip na Orasyon hanggang Pentekostes",
+    "Catholic prayer reminders": "Mga paalala sa pagdarasal",
+    "Regina Caeli (Easter season)": "Regina Caeli (Panahon ng Pagkabuhay)",
+    "The Angelus": "Ang Orasyon",
+    "noon": "tanghali",
+    "6 a.m.": "ika-6 ng umaga",
+    "6 p.m.": "ika-6 ng gabi",
+    "Next: tomorrow at 6 a.m.": "Susunod: bukas, ika-6 ng umaga.",
+    "Good morning": "Magandang umaga",
+    "This evening": "Ngayong gabi",
+    "Before you sleep": "Bago matulog",
+    "Please enter a number from 1 to 2865.": "Pakilagay ang bilang mula 1 hanggang 2865.",
+    "Please fill in the fields marked *.": "Pakipunan ang mga patlang na may markang *.",
+    "Please tick the box to confirm the parish agrees.": "Pakimarkahan ang kahon upang kumpirmahing pumapayag ang parokya.",
+    "Sending…": "Ipinapadala…",
+    "Thank you! We received your listing and will check it with your parish before it appears here.": "Salamat! Natanggap namin ang iyong listing at susuriin namin ito kasama ang iyong parokya bago ito lumabas dito.",
+    "Online listings open soon. For now, please send it by email:": "Malapit nang magbukas ang online na listing. Sa ngayon, pakipadala ito sa email:",
+    "Too many tries. Please wait an hour and try again.": "Napakaraming subok. Maghintay ng isang oras at subukang muli.",
+    "Please check the highlighted fields.": "Pakitingnan ang mga naka-highlight na patlang.",
+    "Something went wrong. You can also email it to": "May nangyaring mali. Maaari mo rin itong i-email sa",
+    "English": "Ingles",
+    "Spanish": "Espanyol",
+    "Portuguese": "Portuges",
+    "Other languages": "Iba pang wika",
+    "No parishes listed here yet. Find any parish on the ": "Wala pang nakalistang parokya rito. Hanapin ang anumang parokya sa ",
+    "/find-a-church?ocia=1": "/hanapin-ang-simbahan?ocia=1",
+    "map": "mapa",
+    "Website": "Website"
+  };
+  var T = function (en, es, pt) { return TL ? (TLX[en] !== undefined ? TLX[en] : en) : PT ? pt : ES ? es : en; };
+  var P = ES ? '/es' : PT ? '/pt' : TL ? '/tl' : '';
   var esc = function (x) { return String(x == null ? '' : x).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
   var DAY = 86400000;
   function day(y, m, d) { return new Date(y, m, d); }
@@ -65,7 +102,7 @@
     var s = nextNovena(n.getAttribute('data-start')), end = add(s, 8), lab = $('.novena-when', n);
     var dn = Math.round((today - s) / DAY) + 1;
     if (dn >= 1 && dn <= 9) {
-      lab.textContent = T('Today is day ' + dn + ' of 9', 'Hoy es el día ' + dn + ' de 9', 'Hoje é o dia ' + dn + ' de 9');
+      lab.textContent = TL ? 'Ngayon ang ika-' + dn + ' na araw sa 9' : T('Today is day ' + dn + ' of 9', 'Hoy es el día ' + dn + ' de 9', 'Hoje é o dia ' + dn + ' de 9');
       n.classList.add('today-mystery');
       var li = $$('.novena-days li', n)[dn - 1]; if (li) li.classList.add('today-day');
     } else {
@@ -79,11 +116,11 @@
   /* ---------- Devotions: coming up ---------- */
   var cl = $('#coming-list');
   if (cl) {
-    fetch(P + '/novenas').then(function (r) { return r.text(); }).then(function (h) {
+    fetch(P + (TL ? '/mga-nobena' : '/novenas')).then(function (r) { return r.text(); }).then(function (h) {
       var doc = new DOMParser().parseFromString(h, 'text/html'), items = [];
       $$('.novena[data-start]', doc).forEach(function (n) {
         var s = nextNovena(n.getAttribute('data-start')), dn = Math.round((today - s) / DAY) + 1, title = $('h3', n).textContent;
-        var href = P + '/novenas#' + n.id;
+        var href = P + (TL ? '/mga-nobena#' : '/novenas#') + n.id;
         if (dn >= 1 && dn <= 9) items.push([0, '<a href="' + href + '">' + esc(title) + '</a>: ' + T('today is day ', 'hoy es el día ', 'hoje é o dia ') + dn + T(' of 9', ' de 9', ' de 9')]);
         else if (dn < 1 && dn > -15) items.push([1 - dn, '<a href="' + href + '">' + esc(title) + '</a> ' + T('begins ', 'empieza el ', 'começa em ') + fmt(s)]);
       });
@@ -92,7 +129,7 @@
         var fri = add(today, (5 - today.getDay() + 7) % 7);
         if (fri < e) items.push([Math.round((fri - today) / DAY), '<a href="' + P + T('/stations-of-the-cross', '/via-crucis', '/via-sacra') + '">' + T('Stations of the Cross', 'Vía Crucis', 'Via-Sacra') + '</a>, ' + (fri.getTime() === today.getTime() ? T('today (Friday of Lent)', 'hoy (viernes de Cuaresma)', 'hoje (sexta-feira da Quaresma)') : fmt(fri, { weekday: 'long', month: 'long', day: 'numeric' }))]);
       }
-      if (isEaster(today)) items.push([0, '<a href="' + P + '/angelus">Regina Caeli</a>: ' + T('prayed instead of the Angelus until Pentecost', 'se reza en lugar del Ángelus hasta Pentecostés', 'rezada no lugar do Angelus até Pentecostes')]);
+      if (isEaster(today)) items.push([0, '<a href="' + P + (TL ? '/orasyon' : '/angelus') + '">Regina Caeli</a>: ' + T('prayed instead of the Angelus until Pentecost', 'se reza en lugar del Ángelus hasta Pentecostés', 'rezada no lugar do Angelus até Pentecostes')]);
       if (!items.length) return;
       items.sort(function (a, b) { return a[0] - b[0]; });
       cl.innerHTML = items.slice(0, 4).map(function (x) { return '<li>' + x[1] + '</li>'; }).join('');
@@ -127,7 +164,7 @@
     var label = function (t) { return t === 12 ? T('noon', 'el mediodía', 'meio-dia') : t === 6 ? T('6 a.m.', 'las 6 de la mañana', '6 da manhã') : T('6 p.m.', 'las 6 de la tarde', '6 da tarde'); };
     $('#an-next').textContent = next === null
       ? T('Next: tomorrow at 6 a.m.', 'La próxima vez: mañana a las 6 de la mañana.', 'Próxima vez: amanhã às 6 da manhã.')
-      : T('Next: today at ' + label(next) + '.', 'La próxima vez: hoy a ' + label(next) + '.', 'Próxima vez: hoje ' + (next === 12 ? 'ao ' : 'às ') + label(next) + '.');
+      : TL ? 'Susunod: ngayon, ' + label(next) + '.' : T('Next: today at ' + label(next) + '.', 'La próxima vez: hoy a ' + label(next) + '.', 'Próxima vez: hoje ' + (next === 12 ? 'ao ' : 'às ') + label(next) + '.');
     var rc = $('#regina-caeli'), ag = $('#angelus');
     if (easterTime && rc && ag) { rc.classList.add('today-mystery'); rc.parentNode.insertBefore(rc, ag); }
     else if (ag) ag.classList.add('today-mystery');
@@ -141,7 +178,7 @@
     var hr = now.getHours();
     var want = hr < 11 ? 0 : hr < 20 ? 1 : 2, btns = $$('[data-hour]', hn);
     btns.forEach(function (b, i) {
-      if (LG === 'en') b.href = 'https://universalis.com/' + ymd + '/' + b.getAttribute('data-hour') + '.htm';
+      if (LG === 'en' || TL) b.href = 'https://universalis.com/' + ymd + '/' + b.getAttribute('data-hour') + '.htm';
       b.classList.toggle('secondary', i !== want);
     });
     $('#hn-label').textContent = [T('Good morning', 'Buenos días', 'Bom dia'), T('This evening', 'Esta tarde', 'Esta tarde'), T('Before you sleep', 'Antes de dormir', 'Antes de dormir')][want];
@@ -231,7 +268,7 @@
     });
 
     var ol = $('#ol-list'), ost = $('#ol-state'), rows = [];
-    var LN = { en: T('English', 'Inglés', 'Inglês'), es: T('Spanish', 'Español', 'Espanhol'), pt: T('Portuguese', 'Portugués', 'Português'), other: T('Other languages', 'Otros idiomas', 'Outros idiomas') };
+    var LN = { en: T('English', 'Inglés', 'Inglês'), es: T('Spanish', 'Español', 'Espanhol'), pt: T('Portuguese', 'Portugués', 'Português'), tl: T('Tagalog', 'Tagalo', 'Tagalo'), other: T('Other languages', 'Otros idiomas', 'Outros idiomas') };
     var draw = function () {
       var st = ost.value, list = rows.filter(function (r) { return !st || r.state === st; });
       if (!list.length) { ol.innerHTML = '<p class="muted">' + T('No parishes listed here yet. Find any parish on the ', 'Todavía no hay parroquias registradas aquí. Busca cualquier parroquia en el ', 'Ainda não há paróquias cadastradas aqui. Procure qualquer paróquia no ') + '<a href="' + P + T('/find-a-church?ocia=1', '/buscar-iglesia?ocia=1', '/encontrar-igreja?ocia=1') + '">' + T('map', 'mapa', 'mapa') + '</a>.</p>'; return; }

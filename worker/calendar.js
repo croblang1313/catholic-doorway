@@ -34,13 +34,66 @@ function adventStart(y) {
   return add(xmas, -(dow(xmas) || 7) - 21);
 }
 
+// Filipino (Tagalog) titles and notes, keyed by the English text.
+const TLX = {
+  "Holy Day of Obligation: Catholics attend Mass.": "Pistang pangilin: nagsisimba ang mga Katoliko.",
+  "Mary, the Holy Mother of God": "Santa Maria, Ina ng Diyos",
+  "The Epiphany of the Lord": "Ang Pagpapakita ng Panginoon (Tatlong Hari)",
+  "The Magi visit the child Jesus.": "Dinalaw ng mga Pantas ang Sanggol na si Hesus.",
+  "The Baptism of the Lord": "Ang Pagbibinyag sa Panginoon",
+  "Christmas season ends.": "Nagtatapos ang Panahon ng Pasko.",
+  "Ash Wednesday": "Miyerkoles ng Abo",
+  "Lent begins. Day of fasting and abstinence from meat.": "Nagsisimula ang Kuwaresma. Araw ng pag-aayuno at pangingilin sa karne.",
+  "Friday of Lent": "Biyernes ng Kuwaresma",
+  "Abstinence from meat (ages 14 and up).": "Pangingilin sa karne (14 taong gulang pataas).",
+  "St. Joseph, Spouse of the Blessed Virgin Mary": "San Jose, Esposo ng Mahal na Birheng Maria",
+  "The Annunciation of the Lord": "Ang Pagbati ng Anghel sa Panginoon",
+  "The angel Gabriel announces to Mary that she will bear the Son of God.": "Ibinalita ng anghel Gabriel kay Maria na siya ang magiging ina ng Anak ng Diyos.",
+  "Palm Sunday of the Passion of the Lord": "Linggo ng Palaspas ng Pagpapakasakit ng Panginoon",
+  "Holy Week begins.": "Nagsisimula ang Semana Santa.",
+  "Holy Thursday": "Huwebes Santo",
+  "Evening Mass of the Lord's Supper.": "Misa ng Huling Hapunan ng Panginoon sa gabi.",
+  "Good Friday": "Biyernes Santo",
+  "The Lord's Passion. Day of fasting and abstinence from meat.": "Ang Pagpapakasakit ng Panginoon. Araw ng pag-aayuno at pangingilin sa karne.",
+  "Holy Saturday: Easter Vigil": "Sabado de Gloria: Bihilya ng Pasko ng Pagkabuhay",
+  "The Easter Vigil is celebrated after nightfall.": "Ipinagdiriwang ang Bihilya ng Pasko ng Pagkabuhay pagsapit ng gabi.",
+  "Easter Sunday": "Linggo ng Pagkabuhay",
+  "The Resurrection of the Lord.": "Ang Muling Pagkabuhay ng Panginoon.",
+  "Divine Mercy Sunday": "Linggo ng Banal na Awa",
+  "Second Sunday of Easter.": "Ikalawang Linggo ng Pagkabuhay.",
+  "The Ascension of the Lord": "Ang Pag-akyat sa Langit ng Panginoon",
+  "Pentecost Sunday": "Linggo ng Pentekostes",
+  "The Holy Spirit descends on the Apostles; the Easter season ends.": "Bumaba ang Espiritu Santo sa mga Apostol; nagtatapos ang Panahon ng Pagkabuhay.",
+  "The Most Holy Trinity": "Ang Kabanal-banalang Santatlo",
+  "The Most Holy Body and Blood of Christ (Corpus Christi)": "Ang Kabanal-banalang Katawan at Dugo ni Kristo (Corpus Christi)",
+  "The Most Sacred Heart of Jesus": "Ang Kamahal-mahalang Puso ni Hesus",
+  "Sts. Peter and Paul, Apostles": "San Pedro at San Pablo, mga Apostol",
+  "The Assumption of the Blessed Virgin Mary": "Ang Pag-akyat sa Langit ng Mahal na Birheng Maria",
+  "All Saints": "Todos los Santos (Araw ng mga Santo)",
+  "All Souls' Day": "Araw ng mga Kaluluwa",
+  "Commemoration of all the faithful departed.": "Paggunita sa lahat ng mga yumaong mananampalataya.",
+  "Our Lord Jesus Christ, King of the Universe": "Ang Panginoong Hesukristo, Hari ng Sanlibutan",
+  "The last Sunday of the Church year.": "Ang huling Linggo ng taon ng Simbahan.",
+  "First Sunday of Advent": "Unang Linggo ng Adbiyento",
+  "A new Church year begins.": "Nagsisimula ang bagong taon ng Simbahan.",
+  "The Immaculate Conception of the Blessed Virgin Mary": "Ang Kalinis-linisang Paglilihi sa Mahal na Birheng Maria",
+  "Moved from Sunday, December 8. Not a day of obligation this year.": "Inilipat mula sa Linggo, Disyembre 8. Hindi pistang pangilin ngayong taon.",
+  " Patronal feast of the United States.": " Kapistahan ng patrona ng Estados Unidos.",
+  "Our Lady of Guadalupe": "Mahal na Birhen ng Guadalupe",
+  "Patroness of the Americas.": "Patrona ng Amerika.",
+  "Christmas Eve": "Bisperas ng Pasko",
+  "Vigil Masses are celebrated in the evening.": "Ipinagdiriwang sa gabi ang mga Misa ng bihilya.",
+  "The Nativity of the Lord (Christmas)": "Ang Pagsilang ng Panginoon (Pasko)",
+  "The Holy Family of Jesus, Mary and Joseph": "Ang Banal na Mag-anak nina Hesus, Maria at Jose"
+};
+
 export function eventsFor(y, lang = "en") {
   const E = easter(y), ev = [];
-  const t = (en, es, pt) => (lang === "pt" ? pt : lang === "es" ? es : en);
+  const t = (en, es, pt) => (lang === "tl" ? (TLX[en] ?? en) : lang === "pt" ? pt : lang === "es" ? es : en);
   const push = (dt, title, kind, note) => ev.push({ date: iso(dt), title, kind, note: note || "" });
   const HDO = t("Holy Day of Obligation: Catholics attend Mass.", "Día de precepto: los católicos van a Misa.", "Dia santo de guarda: os católicos vão à Missa.");
   const satMon = (dt) => dow(dt) === 6 || dow(dt) === 1;
-  const notThisYear = (dt) => t("Solemnity. Not a day of obligation this year because it falls on a " + (dow(dt) === 6 ? "Saturday." : "Monday."),
+  const notThisYear = (dt) => lang === "tl" ? "Dakilang Kapistahan. Hindi pistang pangilin ngayong taon dahil natapat sa " + (dow(dt) === 6 ? "Sabado." : "Lunes.") : t("Solemnity. Not a day of obligation this year because it falls on a " + (dow(dt) === 6 ? "Saturday." : "Monday."),
     "Solemnidad. Este año no es día de precepto porque cae en " + (dow(dt) === 6 ? "sábado." : "lunes."),
     "Solenidade. Este ano não é dia santo de guarda porque cai " + (dow(dt) === 6 ? "num sábado." : "numa segunda-feira."));
 
@@ -73,7 +126,7 @@ export function eventsFor(y, lang = "en") {
   push(E, t("Easter Sunday", "Domingo de Pascua", "Domingo de Páscoa"), "solemnity", t("The Resurrection of the Lord.", "La Resurrección del Señor.", "A Ressurreição do Senhor."));
   push(add(E, 7), t("Divine Mercy Sunday", "Domingo de la Divina Misericordia", "Domingo da Divina Misericórdia"), "feast", t("Second Sunday of Easter.", "Segundo Domingo de Pascua.", "Segundo Domingo da Páscoa."));
   push(add(E, 42), t("The Ascension of the Lord", "La Ascensión del Señor", "A Ascensão do Senhor"), "obligation",
-    t("Holy Day of Obligation, celebrated on this Sunday in most of the U.S. The ecclesiastical provinces of Boston, Hartford, New York, Newark, Omaha and Philadelphia keep it on Thursday, " + iso(add(E, 39)) + ".",
+    lang === "tl" ? "Pistang pangilin, ipinagdiriwang sa Linggong ito sa karamihan ng Estados Unidos. Sa mga lalawigang eklesiyastiko ng Boston, Hartford, New York, Newark, Omaha at Philadelphia, ipinagdiriwang ito sa Huwebes, " + iso(add(E, 39)) + "." : t("Holy Day of Obligation, celebrated on this Sunday in most of the U.S. The ecclesiastical provinces of Boston, Hartford, New York, Newark, Omaha and Philadelphia keep it on Thursday, " + iso(add(E, 39)) + ".",
       "Día de precepto; en la mayor parte de Estados Unidos se celebra este domingo. Las provincias eclesiásticas de Boston, Hartford, Nueva York, Newark, Omaha y Filadelfia la celebran el jueves " + iso(add(E, 39)) + ".",
       "Dia santo de guarda; na maior parte dos Estados Unidos é celebrada neste domingo. As províncias eclesiásticas de Boston, Hartford, Nova York, Newark, Omaha e Filadélfia a celebram na quinta-feira, " + iso(add(E, 39)) + "."));
   push(add(E, 49), t("Pentecost Sunday", "Domingo de Pentecostés", "Domingo de Pentecostes"), "solemnity", t("The Holy Spirit descends on the Apostles; the Easter season ends.", "El Espíritu Santo desciende sobre los Apóstoles; termina el tiempo de Pascua.", "O Espírito Santo desce sobre os Apóstolos; termina o Tempo Pascal."));
@@ -111,6 +164,7 @@ function range(fromYear, toYear, lang) {
 
 const KIND_LABEL = { obligation: "Holy Day of Obligation", fast: "Fast and abstinence", abstinence: "Abstinence", solemnity: "Solemnity", feast: "Feast" };
 const KIND_LABEL_ES = { obligation: "Día de precepto", fast: "Ayuno y abstinencia", abstinence: "Abstinencia", solemnity: "Solemnidad", feast: "Fiesta" };
+const KIND_LABEL_TL = { obligation: "Pistang pangilin", fast: "Ayuno at pangingilin", abstinence: "Pangingilin", solemnity: "Dakilang Kapistahan", feast: "Kapistahan" };
 const KIND_LABEL_PT = { obligation: "Dia santo de guarda", fast: "Jejum e abstinência", abstinence: "Abstinência", solemnity: "Solenidade", feast: "Festa" };
 
 export function icsEscape(s) {
@@ -132,11 +186,12 @@ export function fold(line) {
 }
 
 export function ics(events, stamp, lang = "en") {
-  const es = lang === "es", pt = lang === "pt", K = pt ? KIND_LABEL_PT : es ? KIND_LABEL_ES : KIND_LABEL;
+  const es = lang === "es", pt = lang === "pt", tl = lang === "tl", K = tl ? KIND_LABEL_TL : pt ? KIND_LABEL_PT : es ? KIND_LABEL_ES : KIND_LABEL;
   const lines = [
     "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//CatholicDoorway//Holy Days//EN", "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
-    pt ? "X-WR-CALNAME:Dias santos católicos (EUA)" : es ? "X-WR-CALNAME:Días santos católicos (EE. UU.)" : "X-WR-CALNAME:Catholic Holy Days (U.S.)",
-    fold(pt ? "X-WR-CALDESC:Dias santos de guarda\\, dias de jejum e festas principais. Do CatholicDoorway.com"
+    tl ? "X-WR-CALNAME:Mga pistang pangilin (Estados Unidos)" : pt ? "X-WR-CALNAME:Dias santos católicos (EUA)" : es ? "X-WR-CALNAME:Días santos católicos (EE. UU.)" : "X-WR-CALNAME:Catholic Holy Days (U.S.)",
+    fold(tl ? "X-WR-CALDESC:Mga pistang pangilin\\, araw ng pag-aayuno at pangunahing kapistahan. Mula sa CatholicDoorway.com"
+      : pt ? "X-WR-CALDESC:Dias santos de guarda\\, dias de jejum e festas principais. Do CatholicDoorway.com"
       : es ? "X-WR-CALDESC:Días de precepto\\, días de ayuno y fiestas principales. De CatholicDoorway.com"
       : "X-WR-CALDESC:Holy days of obligation\\, fasting days and major feasts. From CatholicDoorway.com"),
     "REFRESH-INTERVAL;VALUE=DURATION:P7D", "X-PUBLISHED-TTL:P7D",
@@ -144,9 +199,9 @@ export function ics(events, stamp, lang = "en") {
   for (const e of events) {
     const d = e.date.replace(/-/g, "");
     const next = iso(add(new Date(e.date + "T00:00:00Z"), 1)).replace(/-/g, "");
-    const slug = (es ? "es-" : pt ? "pt-" : "") + e.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    const slug = (es ? "es-" : pt ? "pt-" : tl ? "tl-" : "") + e.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
     const title = e.kind === "obligation" ? `${e.title} (${K.obligation})` : e.kind === "fast" ? `${e.title} (${K.fast})` : e.title;
-    const desc = [e.note.startsWith(K[e.kind]) ? "" : K[e.kind], e.note, pt ? "https://catholicdoorway.com/pt/calendario" : es ? "https://catholicdoorway.com/es/calendario" : "https://catholicdoorway.com/calendar"].filter(Boolean).join("\n");
+    const desc = [e.note.startsWith(K[e.kind]) ? "" : K[e.kind], e.note, tl ? "https://catholicdoorway.com/tl/kalendaryo" : pt ? "https://catholicdoorway.com/pt/calendario" : es ? "https://catholicdoorway.com/es/calendario" : "https://catholicdoorway.com/calendar"].filter(Boolean).join("\n");
     lines.push("BEGIN:VEVENT", fold(`UID:${d}-${slug}@catholicdoorway.com`), `DTSTAMP:${stamp}`,
       `DTSTART;VALUE=DATE:${d}`, `DTEND;VALUE=DATE:${next}`, fold(`SUMMARY:${icsEscape(title)}`),
       fold(`DESCRIPTION:${icsEscape(desc)}`), "TRANSP:TRANSPARENT", "END:VEVENT");
@@ -157,7 +212,7 @@ export function ics(events, stamp, lang = "en") {
 
 export function calendar(url, now = new Date()) {
   const y = now.getUTCFullYear();
-  const q = url.searchParams.get("lang"), lang = q === "es" || q === "pt" ? q : "en";
+  const q = url.searchParams.get("lang"), lang = q === "es" || q === "pt" || q === "tl" ? q : "en";
   if (url.pathname.endsWith(".json")) {
     const from = parseInt(url.searchParams.get("year") || y, 10);
     const yr = Number.isFinite(from) && from > 1582 && from < 4000 ? from : y;
@@ -169,7 +224,7 @@ export function calendar(url, now = new Date()) {
   return new Response(ics(range(y - 1, y + 2, lang), stamp, lang), {
     headers: {
       "Content-Type": "text/calendar; charset=utf-8",
-      "Content-Disposition": `inline; filename="${lang === "es" ? "dias-santos-catolicos" : lang === "pt" ? "dias-santos-catolicos-pt" : "catholic-holy-days"}.ics"`,
+      "Content-Disposition": `inline; filename="${lang === "es" ? "dias-santos-catolicos" : lang === "pt" ? "dias-santos-catolicos-pt" : lang === "tl" ? "mga-pistang-pangilin" : "catholic-holy-days"}.ics"`,
       "Cache-Control": "public, max-age=86400",
     },
   });

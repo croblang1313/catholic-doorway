@@ -30,8 +30,22 @@
   }
 
   /* ---------- Language ---------- */
-  var LG = document.documentElement.lang, ES = LG === 'es', PT = LG === 'pt', LOC = ES ? 'es-US' : PT ? 'pt-BR' : 'en-US';
-  var T = function (en, es, pt) { return PT ? (pt !== undefined ? pt : en) : ES ? es : en; };
+  var LG = document.documentElement.lang, ES = LG === 'es', PT = LG === 'pt', TL = LG === 'tl', LOC = ES ? 'es-US' : PT ? 'pt-BR' : TL ? 'fil-PH' : 'en-US';
+  // Filipino (Tagalog): strings keyed by the English text.
+  var TLX = {
+    'Today’s mysteries of the Rosary, with a step-by-step guide.': 'Ang mga misteryo ng Rosaryo ngayon, may hakbang-hakbang na gabay.',
+    'Today': 'Ngayon', 'Solemnity': 'Dakilang Kapistahan', 'Feast': 'Kapistahan', 'Memorial': 'Paggunita',
+    'Optional memorial': 'Opsiyonal na paggunita', 'On Sundays the Mass is of the Sunday.': 'Tuwing Linggo, ang Misa ay sa Linggo.',
+    'Saints remembered today': 'Mga santong inaalala ngayon',
+    'No saint on the U.S. calendar today, but many are remembered around the world.': 'Walang santo sa kalendaryo ng Estados Unidos ngayon, ngunit marami ang inaalala sa buong mundo.',
+    'See every saint and blessed remembered today →': 'Tingnan ang bawat santo at beatong inaalala ngayon →',
+    'Copy prayer': 'Kopyahin ang dasal', 'Copied': 'Nakopya na', ' of ': ' sa ', 'Done': 'Tapos na', 'Next': 'Susunod',
+    'Continue where you left off': 'Ituloy kung saan ka huminto',
+    'Nothing coming up in this view.': 'Walang paparating sa view na ito.',
+    'The calendar could not load. Please try again in a moment.': 'Hindi ma-load ang kalendaryo. Pakisubukang muli mamaya.',
+    'Close all': 'Isara lahat', 'Open all': 'Buksan lahat'
+  };
+  var T = function (en, es, pt) { return TL ? (TLX[en] !== undefined ? TLX[en] : en) : PT ? (pt !== undefined ? pt : en) : ES ? es : en; };
 
   /* Language menu: remember the visitor's choice, and send them to it when they arrive from elsewhere. */
   var langMenu = $('.lang-menu');
@@ -109,6 +123,14 @@
       s.name = NOMES[s.name] || s.name;
       if (s.next) s.next[0] = PARA[s.next[0]] || s.next[0];
     }
+    if (TL) {
+      var PANGALAN = { 'Christmas': 'Panahon ng Pasko', 'Advent': 'Adbiyento', 'Ordinary Time': 'Karaniwang Panahon', 'Easter': 'Panahon ng Pagkabuhay',
+        'The Easter Triduum': 'Ang Tatlong Araw ng Pasko ng Pagkabuhay', 'Lent': 'Kuwaresma', 'Pentecost Sunday': 'Linggo ng Pentekostes',
+        'Easter Sunday': 'Linggo ng Pagkabuhay', 'Christ the King': 'Kristong Hari ng Sanlibutan',
+        'the Baptism of the Lord': 'ang Pagbibinyag sa Panginoon', 'Pentecost': 'Pentekostes', 'Ash Wednesday': 'Miyerkoles ng Abo' };
+      s.name = PANGALAN[s.name] || s.name;
+      if (s.next) s.next[0] = PANGALAN[s.next[0]] || s.next[0];
+    }
     return s;
   }
 
@@ -133,7 +155,9 @@
     var days = Math.round((s.next[1] - today) / 86400000);
     if (days > 0 && days <= 60) {
       var when = s.next[1].toLocaleDateString(LOC, { month: 'long', day: 'numeric' });
-      nextEl.textContent = PT
+      nextEl.textContent = TL
+        ? (days === 1 ? 'Bukas ay ' + s.next[0] + '.' : days + ' araw na lang bago ang ' + s.next[0] + ' (' + when + ').')
+        : PT
         ? (days === 1 ? 'Amanhã é ' + s.next[0] + '.' : 'Faltam ' + days + ' dias para ' + s.next[0] + ' (' + when + ').')
         : ES
         ? (days === 1 ? 'Mañana es ' + s.next[0] + '.' : 'Faltan ' + days + ' días para ' + s.next[0] + ' (' + when + ').')
@@ -170,7 +194,7 @@
     var fallback = function () {
       rcards.forEach(function (c) {
         $('.rd-title', c).textContent = today.toLocaleDateString(LOC, { weekday: 'long', month: 'long', day: 'numeric' });
-        $('.rd-list', c).innerHTML = '<li class="muted">Tap Read to see today&rsquo;s Scripture, or Listen to hear it.</li>';
+        $('.rd-list', c).innerHTML = TL ? '<li class="muted">Pindutin ang Basahin upang makita ang Kasulatan ngayon, o Pakinggan upang marinig ito (sa Ingles).</li>' : '<li class="muted">Tap Read to see today&rsquo;s Scripture, or Listen to hear it.</li>';
       });
     };
     fetch('/api/readings?date=' + iso(today))
@@ -178,10 +202,12 @@
       .then(function (d) {
         if (!d || !d.readings || !d.readings.length) return fallback();
         rcards.forEach(function (c) {
-          $('.rd-title', c).textContent = d.title || 'Today’s readings';
+          $('.rd-title', c).textContent = TL ? today.toLocaleDateString(LOC, { weekday: 'long', month: 'long', day: 'numeric' }) : d.title || 'Today’s readings';
           $('.rd-list', c).innerHTML = d.readings.map(function (r) {
+            var nm = r.name.replace(/^Responsorial /, '');
+            if (TL) nm = nm.replace(/^Reading (\d)/, 'Pagbasa $1').replace(/^Reading I+$/, function (x) { return 'Pagbasa ' + (x.length - 8); }).replace(/^Psalm$/, 'Salmo').replace(/^Gospel$/, 'Ebanghelyo').replace(/^Alleluia$/, 'Aleluya').replace(/^Sequence$/, 'Sekwensiya');
             var cite = r.url ? '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.citation) + '</a>' : esc(r.citation);
-            return '<li><span class="rd-name">' + esc(r.name.replace(/^Responsorial /, '')) + '</span>' + cite + '</li>';
+            return '<li><span class="rd-name">' + esc(nm) + '</span>' + cite + '</li>';
           }).join('');
           if (d.audio) $('.rd-listen', c).href = d.audio;
           if (d.page && /^https:\/\/bible\.usccb\.org\//.test(d.page)) $('.rd-read', c).href = d.page;
@@ -191,7 +217,8 @@
       })
       .catch(fallback);
   }
-  var cyc = $('#cycle-note'); if (cyc) cyc.textContent = PT ? 'Neste ano litúrgico: leituras de domingo do Ano ' + s.sunday + ', leituras dos dias de semana do ano ' + s.weekday + '. Tempo litúrgico: ' + s.name + '.'
+  var cyc = $('#cycle-note'); if (cyc) cyc.textContent = TL ? 'Ngayong taong liturhiko: mga pagbasa tuwing Linggo, Taon ' + s.sunday + '; mga pagbasa sa karaniwang araw, Taon ' + s.weekday + '. Panahon: ' + s.name + '.'
+    : PT ? 'Neste ano litúrgico: leituras de domingo do Ano ' + s.sunday + ', leituras dos dias de semana do ano ' + s.weekday + '. Tempo litúrgico: ' + s.name + '.'
     : ES ? 'Este año litúrgico: lecturas dominicales del Ciclo ' + s.sunday + ', lecturas de entre semana del año ' + s.weekday + '. Tiempo litúrgico: ' + s.name + '.'
     : 'This liturgical year: Sunday readings Year ' + s.sunday + ', weekday readings Year ' + s.weekday + '. Season: ' + s.name + '.';
   var rform = $('#readings-form');
@@ -213,7 +240,8 @@
   var dow = today.getDay();
   var mt = $('#mystery-title');
   var MYST_ES = { Glorious: 'Gloriosos', Joyful: 'Gozosos', Sorrowful: 'Dolorosos', Luminous: 'Luminosos' };
-  if (mt) { mt.textContent = PT ? 'Mistérios ' + MYST_ES[MYST[dow]] : ES ? 'Misterios ' + MYST_ES[MYST[dow]] : 'The ' + MYST[dow] + ' Mysteries'; $('#mystery-sub').textContent = T('Today’s mysteries of the Rosary, with a step-by-step guide.', 'Los misterios del Rosario de hoy, con una guía paso a paso.', 'Os mistérios do Rosário de hoje, com um guia passo a passo.'); }
+  var MYST_TL = { Glorious: 'Luwalhati', Joyful: 'Tuwa', Sorrowful: 'Hapis', Luminous: 'Liwanag' };
+  if (mt) { mt.textContent = TL ? 'Mga Misteryo ng ' + MYST_TL[MYST[dow]] : PT ? 'Mistérios ' + MYST_ES[MYST[dow]] : ES ? 'Misterios ' + MYST_ES[MYST[dow]] : 'The ' + MYST[dow] + ' Mysteries'; $('#mystery-sub').textContent = T('Today’s mysteries of the Rosary, with a step-by-step guide.', 'Los misterios del Rosario de hoy, con una guía paso a paso.', 'Os mistérios do Rosário de hoje, com um guia passo a passo.'); }
   $$('#mysteries [data-days]').forEach(function (c) {
     if (c.getAttribute('data-days').split(',').indexOf(String(dow)) > -1) {
       c.classList.add('today-mystery');
@@ -226,13 +254,13 @@
   if (sods.length) {
     var EN_MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     var key = ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
-    var dir = (ES ? '/es/directorio-santos' : PT ? '/pt/diretorio-santos' : '/saints-directory') + '?feast=' + encodeURIComponent(EN_MONTHS[today.getMonth()] + ' ' + today.getDate());
+    var dir = (ES ? '/es/directorio-santos' : PT ? '/pt/diretorio-santos' : TL ? '/tl/direktoryo-ng-mga-santo' : '/saints-directory') + '?feast=' + encodeURIComponent(EN_MONTHS[today.getMonth()] + ' ' + today.getDate());
     var RANK = { S: T('Solemnity', 'Solemnidad', 'Solenidade'), F: T('Feast', 'Fiesta', 'Festa'), M: T('Memorial', 'Memoria', 'Memória'),
       O: T('Optional memorial', 'Memoria libre', 'Memória facultativa'), D: '' };
     fetch('/data/saint-days.json').then(function (r) { return r.json(); }).then(function (all) {
       var e = all[key], name, sub;
       if (e) {
-        name = e[ES ? 2 : PT ? 3 : 1];
+        name = e[ES ? 2 : PT ? 3 : TL ? 4 : 1] || e[1];
         sub = [RANK[e[0]], today.toLocaleDateString(LOC, { month: 'long', day: 'numeric' })].filter(Boolean).join(' · ');
         if (dow === 0 && e[0] !== 'S' && e[0] !== 'D') sub += '. ' + T('On Sundays the Mass is of the Sunday.', 'En domingo la Misa es la del domingo.', 'No domingo a Missa é a do domingo.');
       } else {
@@ -278,7 +306,7 @@
         var ok = (statusSel === 'all' || c.getAttribute('data-status') === statusSel) && (!term || norm(c.textContent).indexOf(term) > -1);
         c.hidden = !ok; if (ok) n++;
       });
-      count.textContent = PT ? (n === 1 ? '1 pessoa' : n + ' pessoas') : ES ? (n === 1 ? '1 persona' : n + ' personas') : n + (n === 1 ? ' person' : ' people') + ' shown';
+      count.textContent = TL ? (n === 1 ? '1 tao' : n + ' na tao') : PT ? (n === 1 ? '1 pessoa' : n + ' pessoas') : ES ? (n === 1 ? '1 persona' : n + ' personas') : n + (n === 1 ? ' person' : ' people') + ' shown';
     };
     q.addEventListener('input', apply);
     chips.forEach(function (ch) {
@@ -381,7 +409,8 @@
   /* ---------- Holy days calendar ---------- */
   var calList = $('#cal-list');
   if (calList) {
-    var LABEL = PT ? { obligation: 'Dia santo de guarda', fast: 'Jejum e abstinência', abstinence: 'Abstinência', solemnity: 'Solenidade', feast: 'Festa' }
+    var LABEL = TL ? { obligation: 'Pistang pangilin', fast: 'Ayuno at pangingilin', abstinence: 'Pangingilin', solemnity: 'Dakilang Kapistahan', feast: 'Kapistahan' }
+      : PT ? { obligation: 'Dia santo de guarda', fast: 'Jejum e abstinência', abstinence: 'Abstinência', solemnity: 'Solenidade', feast: 'Festa' }
       : ES ? { obligation: 'Día de precepto', fast: 'Ayuno y abstinencia', abstinence: 'Abstinencia', solemnity: 'Solemnidad', feast: 'Fiesta' }
       : { obligation: 'Holy Day of Obligation', fast: 'Fast and abstinence', abstinence: 'Abstinence', solemnity: 'Solemnity', feast: 'Feast' };
     var calKind = 'all', calEvents = [];
@@ -412,7 +441,7 @@
         drawCal();
       });
     });
-    fetch('/api/calendar.json?year=' + new Date().getFullYear() + (ES ? '&lang=es' : PT ? '&lang=pt' : ''))
+    fetch('/api/calendar.json?year=' + new Date().getFullYear() + (ES ? '&lang=es' : PT ? '&lang=pt' : TL ? '&lang=tl' : ''))
       .then(function (r) { return r.json(); })
       .then(function (d) { calEvents = d.events; drawCal(); })
       .catch(function () { calList.innerHTML = '<p class="muted">' + T('The calendar could not load. Please try again in a moment.', 'No se pudo cargar el calendario. Inténtalo de nuevo en un momento.', 'Não foi possível carregar o calendário. Tente de novo daqui a pouco.') + '</p>'; });
