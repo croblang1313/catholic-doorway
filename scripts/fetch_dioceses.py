@@ -40,17 +40,25 @@ GROUP BY ?d ?name ?hqLabel ?state ?stateLabel ?state2 ?state2Label ?web ?bishopL
 
 # Catholic holy people born or died in a U.S. state.
 STATUS_RANK = {"Q3464126": 4, "Q123110154": 4, "Q18344276": 4, "Q43115": 4, "Q2369287": 3, "Q51619": 2, "Q12774503": 2, "Q869974": 1}
+# Pass 1: holy people born or died at a U.S. place. Pass 2: which state each place is in.
 HOLY = """
-SELECT ?p ?pLabel ?st ?stateLabel ?born ?died WHERE {
+SELECT ?p ?pLabel ?st ?pl ?born ?died WHERE {
   VALUES ?st { %s }
-  ?p wdt:P411 ?st ; wdt:P31 wd:Q5 .
+  ?p wdt:P411 ?st .
   { ?p wdt:P19 ?pl } UNION { ?p wdt:P20 ?pl }
-  ?pl wdt:P131* ?state . ?state wdt:P31 wd:Q35657 .
+  ?pl wdt:P17 wd:Q30 .
   OPTIONAL { ?p wdt:P569 ?born } OPTIONAL { ?p wdt:P570 ?died }
   FILTER NOT EXISTS { ?p wdt:P140 ?r . FILTER(?r IN (wd:Q35032, wd:Q60995, wd:Q178169, wd:Q23540, wd:Q682443, wd:Q75809)) }
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 }
 """ % " ".join("wd:" + k for k in STATUS_RANK)
+PLACE_STATE = """
+SELECT ?pl ?stateLabel WHERE {
+  VALUES ?pl { %s }
+  ?pl wdt:P131* ?state . ?state wdt:P31 wd:Q35657 .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+"""
 
 
 def sparql(q, tries=4):
@@ -112,9 +120,17 @@ def main():
 
     holy = sparql(HOLY)
     print(f"{len(holy)} holy-people rows")
+    places = sorted({v(b, "pl").rsplit("/", 1)[-1] for b in holy})
+    state_of = {}
+    for i in range(0, len(places), 300):
+        for b in sparql(PLACE_STATE % " ".join("wd:" + q for q in places[i:i + 300])):
+            state_of[v(b, "pl").rsplit("/", 1)[-1]] = v(b, "stateLabel")
+    for q in places:
+        state_of.setdefault(q, "")
     by_state = {}
     for b in holy:
-        st = v(b, "stateLabel")
+        pl = v(b, "pl").rsplit("/", 1)[-1]
+        st = state_of[pl] or ("District of Columbia" if pl == "Q61" else "")
         pid = v(b, "p").rsplit("/", 1)[-1]
         rank = STATUS_RANK.get(v(b, "st").rsplit("/", 1)[-1], 0)
         name = v(b, "pLabel")
