@@ -425,6 +425,7 @@ FOOT_ES = """</main>
         <h4>Sobre el sitio</h4>
         <ul>
           <li><a href="/es/acerca">Acerca del sitio</a></li>
+          <li><a href="/es/registrar-ocia">Registra el OCIA de tu parroquia</a></li>
           <li><a href="mailto:hello@catholicdoorway.com">Escríbenos</a></li>
         </ul>
       </div>
@@ -468,6 +469,7 @@ FOOT_PT = """</main>
         <h4>Sobre o site</h4>
         <ul>
           <li><a href="/pt/sobre">Sobre o site</a></li>
+          <li><a href="/pt/cadastrar-ocia">Cadastre a OCIA da sua paróquia</a></li>
           <li><a href="mailto:hello@catholicdoorway.com">Escreva para nós</a></li>
         </ul>
       </div>
@@ -514,6 +516,7 @@ FOOT = """</main>
         <ul>
           <li><a href="/about">About this site</a></li>
           <li><a href="/dioceses">Diocese directory</a></li>
+          <li><a href="/ocia-listing">List your parish&rsquo;s OCIA</a></li>
           <li><a href="/about#corrections">Send a correction</a></li>
         </ul>
       </div>
