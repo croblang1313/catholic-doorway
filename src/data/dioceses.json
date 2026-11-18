@@ -22,6 +22,7 @@
    "lat": 30.69,
    "members": 87912,
    "founded": 1825,
+   "short": "Archdiocese of Mobile",
    "slug": "archdiocese-of-mobile"
   },
   {
@@ -44,6 +45,7 @@
    "lat": 33.5168,
    "members": 104125,
    "founded": 1969,
+   "short": "Diocese of Birmingham in Alabama",
    "slug": "diocese-of-birmingham-in-alabama"
   },
   {
@@ -66,6 +68,7 @@
    "lat": 61.2174,
    "members": 55297,
    "founded": 1966,
+   "short": "Archdiocese of Anchorage–Juneau",
    "slug": "archdiocese-of-anchorage-juneau"
   },
   {
@@ -88,7 +91,102 @@
    "lat": 64.8364,
    "members": 12300,
    "founded": 1962,
+   "short": "Diocese of Fairbanks",
    "slug": "diocese-of-fairbanks"
+  },
+  {
+   "qid": "Q875649",
+   "name": "Roman Catholic Diocese of Samoa-Pago Pago",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "American Samoa"
+   ],
+   "city": "Pago Pago",
+   "website": "https://diocesesamoapagopago.com",
+   "cathedral": "Cathedral of the Holy Family in Pago Pago",
+   "ch": "samo",
+   "gc": "samo1",
+   "bishop": "Peter Brown",
+   "bishop_since": "",
+   "lon": -170.7358,
+   "lat": -14.3347,
+   "members": 12600,
+   "founded": 1982,
+   "short": "Diocese of Samoa-Pago Pago",
+   "slug": "diocese-of-samoa-pago-pago"
+  },
+  {
+   "qid": "Q1346692",
+   "name": "Byzantine Catholic Eparchy of Phoenix",
+   "types": [
+    "Greek-Catholic diocese"
+   ],
+   "states": [
+    "Arizona"
+   ],
+   "city": "Phoenix",
+   "website": "http://www.eparchyofphoenix.org/",
+   "cathedral": "St. Stephen Cathedral",
+   "ch": "hpmp",
+   "gc": "vann0",
+   "bishop": "Artur Bubnevych",
+   "bishop_since": "2024-11-08",
+   "lon": -112.0477,
+   "lat": 33.5568,
+   "members": 2261,
+   "founded": 1982,
+   "short": "Byzantine Catholic Eparchy of Phoenix",
+   "slug": "byzantine-catholic-eparchy-of-phoenix"
+  },
+  {
+   "qid": "Q874158",
+   "name": "Diocese of Phoenix",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Arizona"
+   ],
+   "city": "Phoenix",
+   "website": "https://dphx.org",
+   "cathedral": "Cathedral of Saints Simon and Jude",
+   "ch": "phoe",
+   "gc": "phoe0",
+   "bishop": "John Dolan",
+   "bishop_since": "2022-08-02",
+   "lon": -112.116,
+   "lat": 33.5298,
+   "members": 1225677,
+   "founded": 1969,
+   "short": "Diocese of Phoenix",
+   "slug": "diocese-of-phoenix"
+  },
+  {
+   "qid": "Q877560",
+   "name": "Diocese of Tucson",
+   "types": [
+    "Diocese of the Catholic Church",
+    "suffragan diocese"
+   ],
+   "states": [
+    "Arizona"
+   ],
+   "city": "Tucson",
+   "website": "http://www.diocesetucson.org/",
+   "cathedral": "Cathedral of Saint Augustine",
+   "ch": "tucs",
+   "gc": "tucs0",
+   "bishop": "James Misko",
+   "bishop_since": "2025-12-22",
+   "lon": -110.971,
+   "lat": 32.2194,
+   "members": 393500,
+   "founded": 1897,
+   "short": "Diocese of Tucson",
+   "slug": "diocese-of-tucson"
   },
   {
    "qid": "Q871345",
@@ -110,6 +208,7 @@
    "lat": 34.7425,
    "members": 157740,
    "founded": 1843,
+   "short": "Diocese of Little Rock",
    "slug": "diocese-of-little-rock"
   },
   {
@@ -132,6 +231,7 @@
    "lat": 37.7842,
    "members": 441736,
    "founded": 1853,
+   "short": "Archdiocese of San Francisco",
    "slug": "archdiocese-of-san-francisco"
   },
   {
@@ -155,6 +255,7 @@
    "lat": 34.1653,
    "members": 36000,
    "founded": 1981,
+   "short": "Armenian Catholic Eparchy of Our Lady of Nareg in the United States of America and Canada",
    "slug": "armenian-catholic-eparchy-of-our-lady-of-nareg-in-the-united-states-of-america-and-canada"
   },
   {
@@ -178,6 +279,7 @@
    "lat": 32.754,
    "members": 70000,
    "founded": 2002,
+   "short": "Chaldean Catholic Eparchy of Saint Peter The Apostle",
    "slug": "chaldean-catholic-eparchy-of-saint-peter-the-apostle"
   },
   {
@@ -201,6 +303,7 @@
    "lat": 36.7407,
    "members": 1208350,
    "founded": 1967,
+   "short": "Diocese of Fresno",
    "slug": "diocese-of-fresno"
   },
   {
@@ -224,6 +327,7 @@
    "lat": 36.5954,
    "members": 211900,
    "founded": 1967,
+   "short": "Diocese of Monterey in California",
    "slug": "diocese-of-monterey-in-california"
   },
   {
@@ -246,6 +350,7 @@
    "lat": 37.8105,
    "members": 575500,
    "founded": 1962,
+   "short": "Diocese of Oakland",
    "slug": "diocese-of-oakland"
   },
   {
@@ -269,6 +374,7 @@
    "lat": 33.7803,
    "members": 1579000,
    "founded": 1976,
+   "short": "Diocese of Orange in California",
    "slug": "diocese-of-orange-in-california"
   },
   {
@@ -291,6 +397,7 @@
    "lat": 38.5789,
    "members": 1016193,
    "founded": 1886,
+   "short": "Diocese of Sacramento",
    "slug": "diocese-of-sacramento"
   },
   {
@@ -313,6 +420,7 @@
    "lat": 34.1389,
    "members": 1703846,
    "founded": 1978,
+   "short": "Diocese of San Bernardino",
    "slug": "diocese-of-san-bernardino"
   },
   {
@@ -335,6 +443,7 @@
    "lat": 32.7217,
    "members": 1400677,
    "founded": 1936,
+   "short": "Diocese of San Diego",
    "slug": "diocese-of-san-diego"
   },
   {
@@ -357,6 +466,7 @@
    "lat": 37.334,
    "members": 633000,
    "founded": 1981,
+   "short": "Diocese of San José in California",
    "slug": "diocese-of-san-jos-in-california"
   },
   {
@@ -379,6 +489,7 @@
    "lat": 38.4472,
    "members": 184623,
    "founded": 1962,
+   "short": "Diocese of Santa Rosa in California",
    "slug": "diocese-of-santa-rosa-in-california"
   },
   {
@@ -401,6 +512,7 @@
    "lat": 37.963,
    "members": 253600,
    "founded": 1962,
+   "short": "Diocese of Stockton",
    "slug": "diocese-of-stockton"
   },
   {
@@ -424,6 +536,7 @@
    "lat": 34.0725,
    "members": 47000,
    "founded": 1994,
+   "short": "Maronite Catholic Eparchy of Our Lady of Lebanon of Los Angeles",
    "slug": "maronite-catholic-eparchy-of-our-lady-of-lebanon-of-los-angeles"
   },
   {
@@ -446,6 +559,7 @@
    "lat": 34.0583,
    "members": 4044742,
    "founded": 1936,
+   "short": "Archdiocese of Los Angeles",
    "slug": "archdiocese-of-los-angeles"
   },
   {
@@ -468,6 +582,7 @@
    "lat": 39.7403,
    "members": 604800,
    "founded": 1868,
+   "short": "Archdiocese of Denver",
    "slug": "archdiocese-of-denver"
   },
   {
@@ -490,6 +605,7 @@
    "lat": 38.8364,
    "members": 187645,
    "founded": 1983,
+   "short": "Diocese of Colorado Springs",
    "slug": "diocese-of-colorado-springs"
   },
   {
@@ -512,6 +628,7 @@
    "lat": 38.277,
    "members": 188135,
    "founded": 1941,
+   "short": "Diocese of Pueblo",
    "slug": "diocese-of-pueblo"
   },
   {
@@ -534,6 +651,7 @@
    "lat": 41.7678,
    "members": 738700,
    "founded": 1843,
+   "short": "Archdiocese of Hartford",
    "slug": "archdiocese-of-hartford"
   },
   {
@@ -556,6 +674,7 @@
    "lat": 41.1802,
    "members": 438664,
    "founded": 1953,
+   "short": "Diocese of Bridgeport",
    "slug": "diocese-of-bridgeport"
   },
   {
@@ -578,6 +697,7 @@
    "lat": 41.5311,
    "members": 230108,
    "founded": 1953,
+   "short": "Diocese of Norwich",
    "slug": "diocese-of-norwich"
   },
   {
@@ -600,6 +720,7 @@
    "lat": 41.0616,
    "members": 14960,
    "founded": 1983,
+   "short": "Ukrainian Catholic Eparchy of Stamford",
    "slug": "ukrainian-catholic-eparchy-of-stamford"
   },
   {
@@ -622,6 +743,7 @@
    "lat": 39.743,
    "members": 245092,
    "founded": 1868,
+   "short": "Diocese of Wilmington",
    "slug": "diocese-of-wilmington"
   },
   {
@@ -644,6 +766,7 @@
    "lat": 25.8517,
    "members": 815900,
    "founded": 1968,
+   "short": "Archdiocese of Miami",
    "slug": "archdiocese-of-miami"
   },
   {
@@ -666,6 +789,7 @@
    "lat": 28.5451,
    "members": 427900,
    "founded": 1968,
+   "short": "Diocese of Orlando",
    "slug": "diocese-of-orlando"
   },
   {
@@ -688,6 +812,7 @@
    "lat": 26.8231,
    "members": 304700,
    "founded": 1984,
+   "short": "Diocese of Palm Beach",
    "slug": "diocese-of-palm-beach"
   },
   {
@@ -710,6 +835,7 @@
    "lat": 30.4317,
    "members": 67458,
    "founded": 1975,
+   "short": "Diocese of Pensacola–Tallahassee",
    "slug": "diocese-of-pensacola-tallahassee"
   },
   {
@@ -732,6 +858,7 @@
    "lat": 27.7775,
    "members": 461209,
    "founded": 1968,
+   "short": "Diocese of Saint Petersburg in Florida",
    "slug": "diocese-of-saint-petersburg-in-florida"
   },
   {
@@ -754,6 +881,7 @@
    "lat": 29.8928,
    "members": 190000,
    "founded": 1857,
+   "short": "Diocese of St. Augustine",
    "slug": "diocese-of-st-augustine"
   },
   {
@@ -776,6 +904,7 @@
    "lat": 27.101,
    "members": 236895,
    "founded": 1984,
+   "short": "Diocese of Venice in Florida",
    "slug": "diocese-of-venice-in-florida"
   },
   {
@@ -798,6 +927,7 @@
    "lat": 33.8284,
    "members": 1150000,
    "founded": 1962,
+   "short": "Archdiocese of Atlanta",
    "slug": "archdiocese-of-atlanta"
   },
   {
@@ -820,7 +950,31 @@
    "lat": 32.0733,
    "members": 77055,
    "founded": 1850,
+   "short": "Diocese of Savannah",
    "slug": "diocese-of-savannah"
+  },
+  {
+   "qid": "Q1363947",
+   "name": "Roman Catholic Archdiocese of Agaña",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Guam"
+   ],
+   "city": "Hagåtña",
+   "website": "https://www.aganaarch.org/",
+   "cathedral": "Dulce Nombre de Maria Cathedral Basilica",
+   "ch": "agan",
+   "gc": "agan0",
+   "bishop": "Ryan Pagente Jimenez",
+   "bishop_since": "2024-07-06",
+   "lon": 144.7524,
+   "lat": 13.4743,
+   "members": 149094,
+   "founded": 1984,
+   "short": "Archdiocese of Agaña",
+   "slug": "archdiocese-of-aga-a"
   },
   {
    "qid": "Q11681149",
@@ -840,6 +994,7 @@
    "lat": 21.3107,
    "members": 148960,
    "founded": 1941,
+   "short": "Diocese of Honolulu",
    "slug": "diocese-of-honolulu"
   },
   {
@@ -862,6 +1017,7 @@
    "lat": 43.6217,
    "members": 185232,
    "founded": 1893,
+   "short": "Diocese of Boise",
    "slug": "diocese-of-boise"
   },
   {
@@ -884,6 +1040,7 @@
    "lat": 41.8959,
    "members": 2183000,
    "founded": 1843,
+   "short": "Archdiocese of Chicago",
    "slug": "archdiocese-of-chicago"
   },
   {
@@ -906,6 +1063,7 @@
    "lat": 38.5103,
    "members": 124280,
    "founded": 1887,
+   "short": "Diocese of Belleville",
    "slug": "diocese-of-belleville"
   },
   {
@@ -928,6 +1086,7 @@
    "lat": 41.5353,
    "members": 628230,
    "founded": 1948,
+   "short": "Diocese of Joliet in Illinois",
    "slug": "diocese-of-joliet-in-illinois"
   },
   {
@@ -950,6 +1109,7 @@
    "lat": 40.6986,
    "members": 192140,
    "founded": 1875,
+   "short": "Diocese of Peoria",
    "slug": "diocese-of-peoria"
   },
   {
@@ -972,6 +1132,7 @@
    "lat": 42.2851,
    "members": 484150,
    "founded": 1908,
+   "short": "Diocese of Rockford",
    "slug": "diocese-of-rockford"
   },
   {
@@ -994,6 +1155,7 @@
    "lat": 39.7934,
    "members": 134173,
    "founded": 1853,
+   "short": "Diocese of Springfield in Illinois",
    "slug": "diocese-of-springfield-in-illinois"
   },
   {
@@ -1017,6 +1179,7 @@
    "lat": 41.888,
    "members": 87000,
    "founded": 2001,
+   "short": "St. Thomas Syro-Malabar Catholic Eparchy of Chicago",
    "slug": "st-thomas-syro-malabar-catholic-eparchy-of-chicago"
   },
   {
@@ -1038,6 +1201,7 @@
    "lon": -87.6839,
    "lat": 41.897,
    "members": 12500,
+   "short": "Ukrainian Catholic Eparchy of Chicago",
    "slug": "ukrainian-catholic-eparchy-of-chicago"
   },
   {
@@ -1060,6 +1224,7 @@
    "lat": 39.7854,
    "members": 252070,
    "founded": 1834,
+   "short": "Archdiocese of Indianapolis",
    "slug": "archdiocese-of-indianapolis"
   },
   {
@@ -1082,6 +1247,7 @@
    "lat": 37.97,
    "members": 75838,
    "founded": 1944,
+   "short": "Diocese of Evansville",
    "slug": "diocese-of-evansville"
   },
   {
@@ -1104,6 +1270,7 @@
    "lat": 41.0757,
    "members": 161200,
    "founded": 1857,
+   "short": "Diocese of Fort Wayne–South Bend",
    "slug": "diocese-of-fort-wayne-south-bend"
   },
   {
@@ -1125,6 +1292,7 @@
    "lon": -87.3487,
    "lat": 41.599,
    "members": 168500,
+   "short": "Diocese of Gary",
    "slug": "diocese-of-gary"
   },
   {
@@ -1147,6 +1315,7 @@
    "lat": 40.4181,
    "members": 116290,
    "founded": 1944,
+   "short": "Diocese of Lafayette in Indiana",
    "slug": "diocese-of-lafayette-in-indiana"
   },
   {
@@ -1169,6 +1338,7 @@
    "lat": 42.4948,
    "members": 193360,
    "founded": 1893,
+   "short": "Archdiocese of Dubuque",
    "slug": "archdiocese-of-dubuque"
   },
   {
@@ -1191,6 +1361,7 @@
    "lat": 41.5303,
    "members": 94563,
    "founded": 1881,
+   "short": "Diocese of Davenport",
    "slug": "diocese-of-davenport"
   },
   {
@@ -1213,6 +1384,7 @@
    "lat": 41.5886,
    "members": 110350,
    "founded": 1911,
+   "short": "Diocese of Des Moines",
    "slug": "diocese-of-des-moines"
   },
   {
@@ -1235,6 +1407,7 @@
    "lat": 42.5009,
    "members": 83759,
    "founded": 1902,
+   "short": "Diocese of Sioux City",
    "slug": "diocese-of-sioux-city"
   },
   {
@@ -1257,6 +1430,7 @@
    "lat": 39.1103,
    "members": 190624,
    "founded": 1877,
+   "short": "Archdiocese of Kansas City in Kansas",
    "slug": "archdiocese-of-kansas-city-in-kansas"
   },
   {
@@ -1279,6 +1453,7 @@
    "lat": 37.793,
    "members": 47859,
    "founded": 1951,
+   "short": "Diocese of Dodge City",
    "slug": "diocese-of-dodge-city"
   },
   {
@@ -1301,6 +1476,7 @@
    "lat": 38.841,
    "members": 44369,
    "founded": 1887,
+   "short": "Diocese of Salina",
    "slug": "diocese-of-salina"
   },
   {
@@ -1323,6 +1499,7 @@
    "lat": 37.693,
    "members": 112549,
    "founded": 1887,
+   "short": "Diocese of Wichita",
    "slug": "diocese-of-wichita"
   },
   {
@@ -1345,6 +1522,7 @@
    "lat": 38.2518,
    "members": 183831,
    "founded": 1808,
+   "short": "Archdiocese of Louisville",
    "slug": "archdiocese-of-louisville"
   },
   {
@@ -1367,6 +1545,7 @@
    "lat": 39.0783,
    "members": 91895,
    "founded": 1853,
+   "short": "Diocese of Covington",
    "slug": "diocese-of-covington"
   },
   {
@@ -1389,6 +1568,7 @@
    "lat": 38.022,
    "members": 43400,
    "founded": 1988,
+   "short": "Diocese of Lexington",
    "slug": "diocese-of-lexington"
   },
   {
@@ -1411,6 +1591,7 @@
    "lat": 37.7698,
    "members": 51780,
    "founded": 1937,
+   "short": "Diocese of Owensboro",
    "slug": "diocese-of-owensboro"
   },
   {
@@ -1433,6 +1614,7 @@
    "lat": 29.9579,
    "members": 520411,
    "founded": 1793,
+   "short": "Archdiocese of New Orleans",
    "slug": "archdiocese-of-new-orleans"
   },
   {
@@ -1455,6 +1637,7 @@
    "lat": 31.3123,
    "members": 35199,
    "founded": 1853,
+   "short": "Diocese of Alexandria in Louisiana",
    "slug": "diocese-of-alexandria-in-louisiana"
   },
   {
@@ -1477,6 +1660,7 @@
    "lat": 30.4517,
    "members": 227052,
    "founded": 1961,
+   "short": "Diocese of Baton Rouge",
    "slug": "diocese-of-baton-rouge"
   },
   {
@@ -1499,6 +1683,7 @@
    "lat": 29.5953,
    "members": 116160,
    "founded": 1977,
+   "short": "Diocese of Houma–Thibodaux",
    "slug": "diocese-of-houma-thibodaux"
   },
   {
@@ -1521,6 +1706,7 @@
    "lat": 30.2225,
    "members": 341115,
    "founded": 1918,
+   "short": "Diocese of Lafayette in Louisiana",
    "slug": "diocese-of-lafayette-in-louisiana"
   },
   {
@@ -1543,6 +1729,7 @@
    "lat": 30.2264,
    "members": 92250,
    "founded": 1980,
+   "short": "Diocese of Lake Charles",
    "slug": "diocese-of-lake-charles"
   },
   {
@@ -1563,6 +1750,7 @@
    "lat": 32.4975,
    "members": 41505,
    "founded": 1986,
+   "short": "Diocese of Shreveport",
    "slug": "diocese-of-shreveport"
   },
   {
@@ -1585,6 +1773,7 @@
    "lat": 43.6614,
    "members": 200700,
    "founded": 1853,
+   "short": "Diocese of Portland",
    "slug": "diocese-of-portland"
   },
   {
@@ -1607,6 +1796,7 @@
    "lat": 39.3586,
    "members": 517015,
    "founded": 1784,
+   "short": "Archdiocese of Baltimore",
    "slug": "archdiocese-of-baltimore"
   },
   {
@@ -1629,6 +1819,7 @@
    "lat": 38.9061,
    "members": 655601,
    "founded": 1947,
+   "short": "Archdiocese of Washington",
    "slug": "archdiocese-of-washington"
   },
   {
@@ -1651,6 +1842,7 @@
    "lat": 42.3406,
    "members": 1946413,
    "founded": 1808,
+   "short": "Archdiocese of Boston",
    "slug": "archdiocese-of-boston"
   },
   {
@@ -1673,6 +1865,7 @@
    "lat": 41.6986,
    "members": 278863,
    "founded": 1904,
+   "short": "Diocese of Fall River",
    "slug": "diocese-of-fall-river"
   },
   {
@@ -1695,6 +1888,7 @@
    "lat": 42.1042,
    "members": 200900,
    "founded": 1870,
+   "short": "Diocese of Springfield in Massachusetts",
    "slug": "diocese-of-springfield-in-massachusetts"
   },
   {
@@ -1717,6 +1911,7 @@
    "lat": 42.2618,
    "members": 279749,
    "founded": 1950,
+   "short": "Diocese of Worcester",
    "slug": "diocese-of-worcester"
   },
   {
@@ -1740,6 +1935,7 @@
    "lat": 42.2975,
    "members": 22000,
    "founded": 1966,
+   "short": "Melkite Greek Catholic Eparchy of Newton",
    "slug": "melkite-greek-catholic-eparchy-of-newton"
   },
   {
@@ -1762,6 +1958,7 @@
    "lat": 42.3886,
    "members": 1130271,
    "founded": 1937,
+   "short": "Archdiocese of Detroit",
    "slug": "archdiocese-of-detroit"
   },
   {
@@ -1785,6 +1982,7 @@
    "lat": 42.4762,
    "members": 180000,
    "founded": 1982,
+   "short": "Chaldean Catholic Eparchy of Saint Thomas the Apostle of Detroit",
    "slug": "chaldean-catholic-eparchy-of-saint-thomas-the-apostle-of-detroit"
   },
   {
@@ -1807,6 +2005,7 @@
    "lat": 45.0336,
    "members": 78300,
    "founded": 1970,
+   "short": "Diocese of Gaylord",
    "slug": "diocese-of-gaylord"
   },
   {
@@ -1829,6 +2028,7 @@
    "lat": 42.958,
    "members": 193600,
    "founded": 1882,
+   "short": "Diocese of Grand Rapids",
    "slug": "diocese-of-grand-rapids"
   },
   {
@@ -1851,6 +2051,7 @@
    "lat": 42.2917,
    "members": 95831,
    "founded": 1970,
+   "short": "Diocese of Kalamazoo",
    "slug": "diocese-of-kalamazoo"
   },
   {
@@ -1873,6 +2074,7 @@
    "lat": 42.7356,
    "members": 191240,
    "founded": 1937,
+   "short": "Diocese of Lansing",
    "slug": "diocese-of-lansing"
   },
   {
@@ -1895,6 +2097,7 @@
    "lat": 46.5411,
    "members": 66001,
    "founded": 1853,
+   "short": "Diocese of Marquette",
    "slug": "diocese-of-marquette"
   },
   {
@@ -1917,6 +2120,7 @@
    "lat": 43.4255,
    "members": 153260,
    "founded": 1938,
+   "short": "Diocese of Saginaw",
    "slug": "diocese-of-saginaw"
   },
   {
@@ -1939,6 +2143,7 @@
    "lat": 44.9469,
    "members": 870490,
    "founded": 1850,
+   "short": "Archdiocese of Saint Paul and Minneapolis",
    "slug": "archdiocese-of-saint-paul-and-minneapolis"
   },
   {
@@ -1961,6 +2166,7 @@
    "lat": 47.775,
    "members": 35014,
    "founded": 1909,
+   "short": "Diocese of Crookston",
    "slug": "diocese-of-crookston"
   },
   {
@@ -1983,6 +2189,7 @@
    "lat": 46.816,
    "members": 47414,
    "founded": 1889,
+   "short": "Diocese of Duluth",
    "slug": "diocese-of-duluth"
   },
   {
@@ -2005,6 +2212,7 @@
    "lat": 44.3181,
    "members": 51838,
    "founded": 1957,
+   "short": "Diocese of New Ulm",
    "slug": "diocese-of-new-ulm"
   },
   {
@@ -2027,6 +2235,7 @@
    "lat": 45.5586,
    "members": 133215,
    "founded": 1875,
+   "short": "Diocese of Saint Cloud",
    "slug": "diocese-of-saint-cloud"
   },
   {
@@ -2048,6 +2257,7 @@
    "lon": -91.6394,
    "lat": 44.0483,
    "founded": 1889,
+   "short": "Diocese of Winona–Rochester",
    "slug": "diocese-of-winona-rochester"
   },
   {
@@ -2070,6 +2280,7 @@
    "lat": 30.3969,
    "members": 59643,
    "founded": 1977,
+   "short": "Diocese of Biloxi",
    "slug": "diocese-of-biloxi"
   },
   {
@@ -2092,6 +2303,7 @@
    "lat": 32.3011,
    "members": 43865,
    "founded": 1826,
+   "short": "Diocese of Jackson",
    "slug": "diocese-of-jackson"
   },
   {
@@ -2114,6 +2326,7 @@
    "lat": 38.6425,
    "members": 514178,
    "founded": 1826,
+   "short": "Archdiocese of St. Louis",
    "slug": "archdiocese-of-st-louis"
   },
   {
@@ -2137,6 +2350,7 @@
    "lat": 38.5917,
    "members": 76755,
    "founded": 1956,
+   "short": "Diocese of Jefferson City",
    "slug": "diocese-of-jefferson-city"
   },
   {
@@ -2160,6 +2374,7 @@
    "lat": 39.7708,
    "members": 130940,
    "founded": 1880,
+   "short": "Diocese of Kansas City–Saint Joseph",
    "slug": "diocese-of-kansas-city-saint-joseph"
   },
   {
@@ -2183,6 +2398,7 @@
    "lat": 37.2041,
    "members": 64145,
    "founded": 1956,
+   "short": "Diocese of Springfield–Cape Girardeau",
    "slug": "diocese-of-springfield-cape-girardeau"
   },
   {
@@ -2205,6 +2421,7 @@
    "lat": 47.5087,
    "members": 37400,
    "founded": 1904,
+   "short": "Diocese of Great Falls–Billings",
    "slug": "diocese-of-great-falls-billings"
   },
   {
@@ -2227,6 +2444,7 @@
    "lat": 46.5901,
    "members": 45940,
    "founded": 1884,
+   "short": "Diocese of Helena",
    "slug": "diocese-of-helena"
   },
   {
@@ -2249,6 +2467,7 @@
    "lat": 41.2664,
    "members": 240184,
    "founded": 1857,
+   "short": "Archdiocese of Omaha",
    "slug": "archdiocese-of-omaha"
   },
   {
@@ -2271,6 +2490,7 @@
    "lat": 40.9211,
    "members": 58250,
    "founded": 1912,
+   "short": "Diocese of Grand Island",
    "slug": "diocese-of-grand-island"
   },
   {
@@ -2293,6 +2513,7 @@
    "lat": 40.7803,
    "members": 97090,
    "founded": 1887,
+   "short": "Diocese of Lincoln",
    "slug": "diocese-of-lincoln"
   },
   {
@@ -2315,6 +2536,7 @@
    "lat": 36.1306,
    "members": 574000,
    "founded": 2023,
+   "short": "Archdiocese of Las Vegas",
    "slug": "archdiocese-of-las-vegas"
   },
   {
@@ -2337,6 +2559,7 @@
    "lat": 39.5261,
    "members": 106965,
    "founded": 1931,
+   "short": "Diocese of Reno",
    "slug": "diocese-of-reno"
   },
   {
@@ -2359,6 +2582,7 @@
    "lat": 42.9933,
    "members": 330160,
    "founded": 1884,
+   "short": "Diocese of Manchester",
    "slug": "diocese-of-manchester"
   },
   {
@@ -2381,6 +2605,7 @@
    "lat": 40.7549,
    "members": 1501530,
    "founded": 1853,
+   "short": "Archdiocese of Newark",
    "slug": "archdiocese-of-newark"
   },
   {
@@ -2403,6 +2628,7 @@
    "lat": 40.865,
    "members": 11303,
    "founded": 1963,
+   "short": "Byzantine Catholic Eparchy of Passaic",
    "slug": "byzantine-catholic-eparchy-of-passaic"
   },
   {
@@ -2425,6 +2651,7 @@
    "lat": 39.9447,
    "members": 493101,
    "founded": 1937,
+   "short": "Diocese of Camden",
    "slug": "diocese-of-camden"
   },
   {
@@ -2447,6 +2674,7 @@
    "lat": 40.5455,
    "members": 636728,
    "founded": 1981,
+   "short": "Diocese of Metuchen",
    "slug": "diocese-of-metuchen"
   },
   {
@@ -2469,6 +2697,7 @@
    "lat": 40.9128,
    "members": 433000,
    "founded": 1937,
+   "short": "Diocese of Paterson",
    "slug": "diocese-of-paterson"
   },
   {
@@ -2491,6 +2720,7 @@
    "lat": 40.2225,
    "members": 881125,
    "founded": 1881,
+   "short": "Diocese of Trenton",
    "slug": "diocese-of-trenton"
   },
   {
@@ -2514,6 +2744,7 @@
    "lat": 40.6644,
    "members": 11857,
    "founded": 1995,
+   "short": "Syriac Catholic Eparchy of Our Lady of Deliverance in the United States",
    "slug": "syriac-catholic-eparchy-of-our-lady-of-deliverance-in-the-united-states"
   },
   {
@@ -2536,6 +2767,7 @@
    "lat": 35.6865,
    "members": 327964,
    "founded": 1875,
+   "short": "Archdiocese of Santa Fe",
    "slug": "archdiocese-of-santa-fe"
   },
   {
@@ -2559,6 +2791,7 @@
    "lat": 35.5253,
    "members": 65700,
    "founded": 1939,
+   "short": "Diocese of Gallup",
    "slug": "diocese-of-gallup"
   },
   {
@@ -2582,6 +2815,7 @@
    "lat": 32.2993,
    "members": 241900,
    "founded": 1982,
+   "short": "Diocese of Las Cruces",
    "slug": "diocese-of-las-cruces"
   },
   {
@@ -2605,6 +2839,7 @@
    "lat": 40.7586,
    "members": 2807298,
    "founded": 1808,
+   "short": "Archdiocese of New York",
    "slug": "archdiocese-of-new-york"
   },
   {
@@ -2628,6 +2863,7 @@
    "lat": 42.6475,
    "members": 300000,
    "founded": 1847,
+   "short": "Diocese of Albany",
    "slug": "diocese-of-albany"
   },
   {
@@ -2651,6 +2887,7 @@
    "lat": 40.6971,
    "members": 1500000,
    "founded": 1853,
+   "short": "Diocese of Brooklyn",
    "slug": "diocese-of-brooklyn"
   },
   {
@@ -2674,6 +2911,7 @@
    "lat": 42.8828,
    "members": 727125,
    "founded": 1847,
+   "short": "Diocese of Buffalo",
    "slug": "diocese-of-buffalo"
   },
   {
@@ -2697,6 +2935,7 @@
    "lat": 44.6989,
    "members": 86182,
    "founded": 1872,
+   "short": "Diocese of Ogdensburg",
    "slug": "diocese-of-ogdensburg"
   },
   {
@@ -2720,6 +2959,7 @@
    "lat": 43.1931,
    "members": 372000,
    "founded": 1868,
+   "short": "Diocese of Rochester",
    "slug": "diocese-of-rochester"
   },
   {
@@ -2743,6 +2983,7 @@
    "lat": 40.6598,
    "members": 1796000,
    "founded": 1957,
+   "short": "Diocese of Rockville Centre",
    "slug": "diocese-of-rockville-centre"
   },
   {
@@ -2766,6 +3007,7 @@
    "lat": 43.047,
    "members": 234724,
    "founded": 1886,
+   "short": "Diocese of Syracuse",
    "slug": "diocese-of-syracuse"
   },
   {
@@ -2788,6 +3030,7 @@
    "lon": -73.9942,
    "lat": 40.6942,
    "members": 35000,
+   "short": "Eparchy of St. Maron of Brooklyn",
    "slug": "eparchy-of-st-maron-of-brooklyn"
   },
   {
@@ -2810,6 +3053,7 @@
    "lat": 35.2054,
    "members": 285655,
    "founded": 1971,
+   "short": "Diocese of Charlotte",
    "slug": "diocese-of-charlotte"
   },
   {
@@ -2832,6 +3076,7 @@
    "lat": 35.7808,
    "members": 232588,
    "founded": 1868,
+   "short": "Diocese of Raleigh",
    "slug": "diocese-of-raleigh"
   },
   {
@@ -2854,6 +3099,7 @@
    "lat": 46.8099,
    "members": 60342,
    "founded": 1909,
+   "short": "Diocese of Bismarck",
    "slug": "diocese-of-bismarck"
   },
   {
@@ -2876,7 +3122,31 @@
    "lat": 46.8824,
    "members": 73434,
    "founded": 1889,
+   "short": "Diocese of Fargo",
    "slug": "diocese-of-fargo"
+  },
+  {
+   "qid": "Q867787",
+   "name": "Roman Catholic Diocese of Chalan Kanoa",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Northern Mariana Islands"
+   ],
+   "city": "Chalan Kanoa",
+   "website": "http://www.cnmicatholic.org",
+   "cathedral": "Our Lady of Mount Carmel Cathedral (Chalan Kanoa)",
+   "ch": "chak",
+   "gc": "chal0",
+   "bishop": "Romeo Duetao Convocar",
+   "bishop_since": "2024-11-25",
+   "lon": 145.7019,
+   "lat": 15.1511,
+   "members": 44700,
+   "founded": 1984,
+   "short": "Diocese of Chalan Kanoa",
+   "slug": "diocese-of-chalan-kanoa"
   },
   {
    "qid": "Q1364360",
@@ -2898,6 +3168,7 @@
    "lat": 39.1036,
    "members": 451045,
    "founded": 1850,
+   "short": "Archdiocese of Cincinnati",
    "slug": "archdiocese-of-cincinnati"
   },
   {
@@ -2920,6 +3191,7 @@
    "lat": 41.4122,
    "members": 9280,
    "founded": 1969,
+   "short": "Byzantine Catholic Eparchy of Parma",
    "slug": "byzantine-catholic-eparchy-of-parma"
   },
   {
@@ -2942,6 +3214,7 @@
    "lat": 41.5028,
    "members": 674660,
    "founded": 1847,
+   "short": "Diocese of Cleveland",
    "slug": "diocese-of-cleveland"
   },
   {
@@ -2964,6 +3237,7 @@
    "lat": 39.9633,
    "members": 280878,
    "founded": 1868,
+   "short": "Diocese of Columbus",
    "slug": "diocese-of-columbus"
   },
   {
@@ -2984,6 +3258,7 @@
    "lat": 40.3555,
    "members": 35232,
    "founded": 1944,
+   "short": "Diocese of Steubenville",
    "slug": "diocese-of-steubenville"
   },
   {
@@ -3006,6 +3281,7 @@
    "lat": 41.6725,
    "members": 328502,
    "founded": 1910,
+   "short": "Diocese of Toledo in America",
    "slug": "diocese-of-toledo-in-america"
   },
   {
@@ -3028,6 +3304,7 @@
    "lat": 41.1032,
    "members": 173900,
    "founded": 1943,
+   "short": "Diocese of Youngstown",
    "slug": "diocese-of-youngstown"
   },
   {
@@ -3050,6 +3327,7 @@
    "lat": 40.8458,
    "members": 6200,
    "founded": 1987,
+   "short": "Romanian Catholic Eparchy of St George's in Canton",
    "slug": "romanian-catholic-eparchy-of-st-georges-in-canton"
   },
   {
@@ -3072,6 +3350,7 @@
    "lat": 41.4067,
    "members": 10701,
    "founded": 1983,
+   "short": "Ukrainian Catholic Eparchy of Saint Josaphat in Parma",
    "slug": "ukrainian-catholic-eparchy-of-saint-josaphat-in-parma"
   },
   {
@@ -3094,6 +3373,7 @@
    "lat": 35.5026,
    "members": 125000,
    "founded": 1876,
+   "short": "Archdiocese of Oklahoma City",
    "slug": "archdiocese-of-oklahoma-city"
   },
   {
@@ -3116,6 +3396,7 @@
    "lat": 36.1478,
    "members": 60825,
    "founded": 1972,
+   "short": "Diocese of Tulsa",
    "slug": "diocese-of-tulsa"
   },
   {
@@ -3138,6 +3419,7 @@
    "lat": 45.5241,
    "members": 467610,
    "founded": 1843,
+   "short": "Archdiocese of Portland in Oregon",
    "slug": "archdiocese-of-portland-in-oregon"
   },
   {
@@ -3160,6 +3442,7 @@
    "lat": 44.7794,
    "members": 37000,
    "founded": 1903,
+   "short": "Diocese of Baker",
    "slug": "diocese-of-baker"
   },
   {
@@ -3182,6 +3465,7 @@
    "lat": 39.9575,
    "members": 1437400,
    "founded": 1875,
+   "short": "Archdiocese of Philadelphia",
    "slug": "archdiocese-of-philadelphia"
   },
   {
@@ -3204,6 +3488,7 @@
    "lat": 40.3821,
    "members": 57325,
    "founded": 1924,
+   "short": "Byzantine Catholic Archeparchy of Pittsburgh",
    "slug": "byzantine-catholic-archeparchy-of-pittsburgh"
   },
   {
@@ -3226,6 +3511,7 @@
    "lat": 40.5989,
    "members": 309540,
    "founded": 1961,
+   "short": "Diocese of Allentown",
    "slug": "diocese-of-allentown"
   },
   {
@@ -3248,6 +3534,7 @@
    "lat": 40.5158,
    "members": 75468,
    "founded": 1901,
+   "short": "Diocese of Altoona–Johnstown",
    "slug": "diocese-of-altoona-johnstown"
   },
   {
@@ -3270,6 +3557,7 @@
    "lat": 42.1242,
    "members": 198249,
    "founded": 1853,
+   "short": "Diocese of Erie",
    "slug": "diocese-of-erie"
   },
   {
@@ -3292,6 +3580,7 @@
    "lat": 40.3062,
    "members": 133734,
    "founded": 1951,
+   "short": "Diocese of Greensburg",
    "slug": "diocese-of-greensburg"
   },
   {
@@ -3314,6 +3603,7 @@
    "lat": 40.2637,
    "members": 247660,
    "founded": 1868,
+   "short": "Diocese of Harrisburg",
    "slug": "diocese-of-harrisburg"
   },
   {
@@ -3336,6 +3626,7 @@
    "lat": 40.4474,
    "members": 630033,
    "founded": 1843,
+   "short": "Diocese of Pittsburgh",
    "slug": "diocese-of-pittsburgh"
   },
   {
@@ -3358,6 +3649,7 @@
    "lat": 41.4106,
    "members": 276594,
    "founded": 1868,
+   "short": "Diocese of Scranton",
    "slug": "diocese-of-scranton"
   },
   {
@@ -3380,7 +3672,146 @@
    "lat": 39.9664,
    "members": 13141,
    "founded": 1913,
+   "short": "Ukrainian Catholic Archeparchy of Philadelphia",
    "slug": "ukrainian-catholic-archeparchy-of-philadelphia"
+  },
+  {
+   "qid": "Q1365485",
+   "name": "Roman Catholic Archdiocese of San Juan de Puerto Rico",
+   "types": [
+    "Roman Catholic metropolitan archdiocese"
+   ],
+   "states": [
+    "Puerto Rico"
+   ],
+   "city": "San Juan",
+   "website": "http://www.arqsj.org/",
+   "cathedral": "Cathedral of San Juan Bautista",
+   "ch": "sjpr",
+   "gc": "zjua1",
+   "bishop": "Eusebio Ramos Morales",
+   "bishop_since": "2026-08-06",
+   "lon": -66.1178,
+   "lat": 18.4658,
+   "members": 929000,
+   "founded": 1511,
+   "short": "Archdiocese of San Juan de Puerto Rico",
+   "slug": "archdiocese-of-san-juan-de-puerto-rico"
+  },
+  {
+   "qid": "Q866897",
+   "name": "Roman Catholic Diocese of Arecibo",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Puerto Rico"
+   ],
+   "city": "Arecibo",
+   "website": "http://www.diocesisdearecibo.org/",
+   "cathedral": "Catedral de San Felipe Apóstol",
+   "ch": "arec",
+   "gc": "arec0",
+   "bishop": "Alberto Arturo Figueroa Morales",
+   "bishop_since": "2022-09-14",
+   "lon": -66.7151,
+   "lat": 18.4722,
+   "members": 387000,
+   "founded": 1960,
+   "short": "Diocese of Arecibo",
+   "slug": "diocese-of-arecibo"
+  },
+  {
+   "qid": "Q867525",
+   "name": "Roman Catholic Diocese of Caguas",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Puerto Rico"
+   ],
+   "city": "Caguas",
+   "website": "http://home.coqui.net/obicag",
+   "cathedral": "Cathedral Dulce Nombre de Jesús",
+   "ch": "cagu",
+   "gc": "cagu0",
+   "bishop": "Eusebio Ramos Morales",
+   "bishop_since": "",
+   "lon": -66.0343,
+   "lat": 18.2343,
+   "members": 410275,
+   "founded": 1964,
+   "short": "Diocese of Caguas",
+   "slug": "diocese-of-caguas"
+  },
+  {
+   "qid": "Q868791",
+   "name": "Roman Catholic Diocese of Fajardo-Humacao",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Puerto Rico"
+   ],
+   "city": "Fajardo",
+   "website": "http://www.diocesisdecaguaspr.org/",
+   "cathedral": "Cathedral of St. James",
+   "ch": "fahu",
+   "gc": "faja0",
+   "bishop": "Luis Miranda Rivera",
+   "bishop_since": "2020-05-16",
+   "lon": -65.6533,
+   "lat": 18.3269,
+   "members": 93506,
+   "founded": 2008,
+   "short": "Diocese of Fajardo-Humacao",
+   "slug": "diocese-of-fajardo-humacao"
+  },
+  {
+   "qid": "Q872131",
+   "name": "Roman Catholic Diocese of Mayagüez",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Puerto Rico"
+   ],
+   "city": "Mayagüez",
+   "website": "http://www.diocesisdemayaguez.org/",
+   "cathedral": "Cathedral of Mayagüez",
+   "ch": "maya",
+   "gc": "maya0",
+   "bishop": "Ángel Luis Rios Matos",
+   "bishop_since": "2020-05-09",
+   "lon": -67.1382,
+   "lat": 18.2011,
+   "members": 383000,
+   "founded": 1976,
+   "short": "Diocese of Mayagüez",
+   "slug": "diocese-of-mayag-ez"
+  },
+  {
+   "qid": "Q874329",
+   "name": "Roman Catholic Diocese of Ponce",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "Puerto Rico"
+   ],
+   "city": "Ponce",
+   "website": "http://www.diocesisdeponce.org",
+   "cathedral": "Nuestra Señora de Guadalupe Cathedral",
+   "ch": "ponc",
+   "gc": "ponc0",
+   "bishop": "Geraldo Ramírez Torres",
+   "bishop_since": "2026-06-24",
+   "lon": -66.614,
+   "lat": 18.0118,
+   "members": 378792,
+   "founded": 1924,
+   "short": "Diocese of Ponce",
+   "slug": "diocese-of-ponce"
   },
   {
    "qid": "Q874598",
@@ -3402,6 +3833,7 @@
    "lat": 41.8192,
    "members": 623815,
    "founded": 1872,
+   "short": "Diocese of Providence",
    "slug": "diocese-of-providence"
   },
   {
@@ -3424,6 +3856,7 @@
    "lat": 32.7765,
    "members": 196736,
    "founded": 1820,
+   "short": "Diocese of Charleston",
    "slug": "diocese-of-charleston"
   },
   {
@@ -3446,6 +3879,7 @@
    "lat": 44.0597,
    "members": 24240,
    "founded": 1902,
+   "short": "Diocese of Rapid City",
    "slug": "diocese-of-rapid-city"
   },
   {
@@ -3468,6 +3902,7 @@
    "lat": 43.5529,
    "members": 114985,
    "founded": 1889,
+   "short": "Diocese of Sioux Falls",
    "slug": "diocese-of-sioux-falls"
   },
   {
@@ -3490,6 +3925,7 @@
    "lat": 35.9261,
    "members": 73420,
    "founded": 1988,
+   "short": "Diocese of Knoxville",
    "slug": "diocese-of-knoxville"
   },
   {
@@ -3512,6 +3948,7 @@
    "lat": 35.1258,
    "members": 60740,
    "founded": 1970,
+   "short": "Diocese of Memphis",
    "slug": "diocese-of-memphis"
   },
   {
@@ -3534,6 +3971,7 @@
    "lat": 36.1508,
    "members": 85600,
    "founded": 1837,
+   "short": "Diocese of Nashville",
    "slug": "diocese-of-nashville"
   },
   {
@@ -3558,6 +3996,7 @@
    "lat": 29.3041,
    "members": 1804100,
    "founded": 1847,
+   "short": "Archdiocese of Galveston–Houston",
    "slug": "archdiocese-of-galveston-houston"
   },
   {
@@ -3579,6 +4018,7 @@
    "lat": 29.4245,
    "members": 764244,
    "founded": 1926,
+   "short": "Archdiocese of San Antonio",
    "slug": "archdiocese-of-san-antonio"
   },
   {
@@ -3602,6 +4042,7 @@
    "lat": 35.2028,
    "members": 42092,
    "founded": 1926,
+   "short": "Diocese of Amarillo",
    "slug": "diocese-of-amarillo"
   },
   {
@@ -3625,6 +4066,7 @@
    "lat": 30.2711,
    "members": 598292,
    "founded": 1947,
+   "short": "Diocese of Austin",
    "slug": "diocese-of-austin"
   },
   {
@@ -3648,6 +4090,7 @@
    "lat": 30.0777,
    "members": 73348,
    "founded": 1966,
+   "short": "Diocese of Beaumont",
    "slug": "diocese-of-beaumont"
   },
   {
@@ -3671,6 +4114,7 @@
    "lat": 25.9019,
    "members": 1154223,
    "founded": 1965,
+   "short": "Diocese of Brownsville",
    "slug": "diocese-of-brownsville"
   },
   {
@@ -3694,6 +4138,7 @@
    "lat": 27.7945,
    "members": 354946,
    "founded": 1912,
+   "short": "Diocese of Corpus Christi",
    "slug": "diocese-of-corpus-christi"
   },
   {
@@ -3717,6 +4162,7 @@
    "lat": 32.7886,
    "members": 1392000,
    "founded": 1890,
+   "short": "Diocese of Dallas",
    "slug": "diocese-of-dallas"
   },
   {
@@ -3740,6 +4186,7 @@
    "lat": 31.7658,
    "members": 720226,
    "founded": 1914,
+   "short": "Diocese of El Paso",
    "slug": "diocese-of-el-paso"
   },
   {
@@ -3763,6 +4210,7 @@
    "lat": 32.7492,
    "members": 917200,
    "founded": 1969,
+   "short": "Diocese of Fort Worth",
    "slug": "diocese-of-fort-worth"
   },
   {
@@ -3786,6 +4234,7 @@
    "lat": 27.5024,
    "members": 348060,
    "founded": 2000,
+   "short": "Diocese of Laredo",
    "slug": "diocese-of-laredo"
   },
   {
@@ -3809,6 +4258,7 @@
    "lat": 33.5447,
    "members": 138800,
    "founded": 1983,
+   "short": "Diocese of Lubbock",
    "slug": "diocese-of-lubbock"
   },
   {
@@ -3832,6 +4282,7 @@
    "lat": 31.4631,
    "members": 85252,
    "founded": 1961,
+   "short": "Diocese of San Angelo",
    "slug": "diocese-of-san-angelo"
   },
   {
@@ -3855,6 +4306,7 @@
    "lat": 32.3461,
    "members": 122541,
    "founded": 1986,
+   "short": "Diocese of Tyler",
    "slug": "diocese-of-tyler"
   },
   {
@@ -3876,7 +4328,31 @@
    "lat": 28.824,
    "members": 104730,
    "founded": 1982,
+   "short": "Diocese of Victoria in Texas",
    "slug": "diocese-of-victoria-in-texas"
+  },
+  {
+   "qid": "Q875495",
+   "name": "Diocese of Saint Thomas in the Virgin Islands",
+   "types": [
+    "Diocese of the Catholic Church"
+   ],
+   "states": [
+    "U.S. Virgin Islands"
+   ],
+   "city": "Charlotte Amalie",
+   "website": "https://www.catholicvi.com/",
+   "cathedral": "Cathedral of Saints Peter and Paul in Saint Thomas",
+   "ch": "stth",
+   "gc": "ztho0",
+   "bishop": "Jerome Feudjio",
+   "bishop_since": "2021-03-02",
+   "lon": -64.9368,
+   "lat": 18.341,
+   "members": 35350,
+   "founded": 1960,
+   "short": "Diocese of Saint Thomas in the Virgin Islands",
+   "slug": "diocese-of-saint-thomas-in-the-virgin-islands"
   },
   {
    "qid": "Q875617",
@@ -3898,6 +4374,7 @@
    "lat": 40.7697,
    "members": 305122,
    "founded": 1887,
+   "short": "Diocese of Salt Lake City",
    "slug": "diocese-of-salt-lake-city"
   },
   {
@@ -3920,6 +4397,7 @@
    "lat": 44.4797,
    "members": 116000,
    "founded": 1853,
+   "short": "Diocese of Burlington",
    "slug": "diocese-of-burlington"
   },
   {
@@ -3942,6 +4420,7 @@
    "lat": 37.5474,
    "members": 244700,
    "founded": 1820,
+   "short": "Diocese of Richmond",
    "slug": "diocese-of-richmond"
   },
   {
@@ -3964,6 +4443,7 @@
    "lat": 38.8707,
    "members": 463897,
    "founded": 1974,
+   "short": "Diocese of Arlington",
    "slug": "diocese-of-arlington"
   },
   {
@@ -3986,6 +4466,7 @@
    "lat": 47.6077,
    "members": 856000,
    "founded": 1850,
+   "short": "Archdiocese of Seattle",
    "slug": "archdiocese-of-seattle"
   },
   {
@@ -4008,6 +4489,7 @@
    "lat": 47.6587,
    "members": 110771,
    "founded": 1913,
+   "short": "Diocese of Spokane",
    "slug": "diocese-of-spokane"
   },
   {
@@ -4030,6 +4512,7 @@
    "lat": 46.5961,
    "members": 179033,
    "founded": 1951,
+   "short": "Diocese of Yakima",
    "slug": "diocese-of-yakima"
   },
   {
@@ -4052,6 +4535,7 @@
    "lat": 40.0665,
    "members": 111670,
    "founded": 1850,
+   "short": "Diocese of Wheeling–Charleston",
    "slug": "diocese-of-wheeling-charleston"
   },
   {
@@ -4074,6 +4558,7 @@
    "lat": 43.0418,
    "members": 696500,
    "founded": 1843,
+   "short": "Archdiocese of Milwaukee",
    "slug": "archdiocese-of-milwaukee"
   },
   {
@@ -4096,6 +4581,7 @@
    "lat": 44.5114,
    "members": 350700,
    "founded": 1868,
+   "short": "Diocese of Green Bay",
    "slug": "diocese-of-green-bay"
   },
   {
@@ -4118,6 +4604,7 @@
    "lat": 43.811,
    "members": 164410,
    "founded": 1868,
+   "short": "Diocese of La Crosse",
    "slug": "diocese-of-la-crosse"
   },
   {
@@ -4140,6 +4627,7 @@
    "lat": 43.0723,
    "members": 288000,
    "founded": 1946,
+   "short": "Diocese of Madison",
    "slug": "diocese-of-madison"
   },
   {
@@ -4162,6 +4650,7 @@
    "lat": 46.7206,
    "members": 65235,
    "founded": 1905,
+   "short": "Diocese of Superior",
    "slug": "diocese-of-superior"
   },
   {
@@ -4184,99 +4673,8 @@
    "lat": 41.1375,
    "members": 51701,
    "founded": 1887,
+   "short": "Diocese of Cheyenne",
    "slug": "diocese-of-cheyenne"
-  },
-  {
-   "qid": "Q1346692",
-   "name": "Byzantine Catholic Eparchy of Phoenix",
-   "types": [
-    "Greek-Catholic diocese"
-   ],
-   "states": [],
-   "city": "Phoenix",
-   "website": "http://www.eparchyofphoenix.org/",
-   "cathedral": "St. Stephen Cathedral",
-   "ch": "hpmp",
-   "gc": "vann0",
-   "bishop": "Artur Bubnevych",
-   "bishop_since": "2024-11-08",
-   "lon": -112.0477,
-   "lat": 33.5568,
-   "members": 2261,
-   "founded": 1982,
-   "slug": "byzantine-catholic-eparchy-of-phoenix"
-  },
-  {
-   "qid": "Q105409892",
-   "name": "Diocese of New Orleans",
-   "types": [
-    "Diocese of the Catholic Church"
-   ],
-   "states": [],
-   "founded": 1826,
-   "slug": "diocese-of-new-orleans"
-  },
-  {
-   "qid": "Q874158",
-   "name": "Diocese of Phoenix",
-   "types": [
-    "Diocese of the Catholic Church",
-    "suffragan diocese"
-   ],
-   "states": [],
-   "city": "Phoenix",
-   "website": "https://dphx.org",
-   "cathedral": "Cathedral of Saints Simon and Jude",
-   "ch": "phoe",
-   "gc": "phoe0",
-   "bishop": "John Dolan",
-   "bishop_since": "2022-08-02",
-   "lon": -112.116,
-   "lat": 33.5298,
-   "members": 1225677,
-   "founded": 1969,
-   "slug": "diocese-of-phoenix"
-  },
-  {
-   "qid": "Q875495",
-   "name": "Diocese of Saint Thomas in the Virgin Islands",
-   "types": [
-    "Diocese of the Catholic Church"
-   ],
-   "states": [],
-   "city": "Charlotte Amalie",
-   "website": "https://www.catholicvi.com/",
-   "cathedral": "Cathedral of Saints Peter and Paul in Saint Thomas",
-   "ch": "stth",
-   "gc": "ztho0",
-   "bishop": "Jerome Feudjio",
-   "bishop_since": "2021-03-02",
-   "lon": -64.9368,
-   "lat": 18.341,
-   "members": 35350,
-   "founded": 1960,
-   "slug": "diocese-of-saint-thomas-in-the-virgin-islands"
-  },
-  {
-   "qid": "Q877560",
-   "name": "Diocese of Tucson",
-   "types": [
-    "Diocese of the Catholic Church",
-    "suffragan diocese"
-   ],
-   "states": [],
-   "city": "Tucson",
-   "website": "http://www.diocesetucson.org/",
-   "cathedral": "Cathedral of Saint Augustine",
-   "ch": "tucs",
-   "gc": "tucs0",
-   "bishop": "James Misko",
-   "bishop_since": "2025-12-22",
-   "lon": -110.971,
-   "lat": 32.2194,
-   "members": 393500,
-   "founded": 1897,
-   "slug": "diocese-of-tucson"
   },
   {
    "qid": "Q1725662",
@@ -4292,187 +4690,8 @@
    "bishop": "Timothy P. Broglio",
    "bishop_since": "2007-11-19",
    "founded": 1984,
+   "short": "Archdiocese for the Military Services",
    "slug": "archdiocese-for-the-military-services"
-  },
-  {
-   "qid": "Q1363947",
-   "name": "Roman Catholic Archdiocese of Agaña",
-   "types": [
-    "Roman Catholic metropolitan archdiocese"
-   ],
-   "states": [],
-   "city": "Hagåtña",
-   "website": "https://www.aganaarch.org/",
-   "cathedral": "Dulce Nombre de Maria Cathedral Basilica",
-   "ch": "agan",
-   "gc": "agan0",
-   "bishop": "Ryan Pagente Jimenez",
-   "bishop_since": "2024-07-06",
-   "lon": 144.7524,
-   "lat": 13.4743,
-   "members": 149094,
-   "founded": 1984,
-   "slug": "archdiocese-of-aga-a"
-  },
-  {
-   "qid": "Q1365485",
-   "name": "Roman Catholic Archdiocese of San Juan de Puerto Rico",
-   "types": [
-    "Roman Catholic metropolitan archdiocese"
-   ],
-   "states": [],
-   "city": "San Juan",
-   "website": "http://www.arqsj.org/",
-   "cathedral": "Cathedral of San Juan Bautista",
-   "ch": "sjpr",
-   "gc": "zjua1",
-   "bishop": "Eusebio Ramos Morales",
-   "bishop_since": "2026-08-06",
-   "lon": -66.1178,
-   "lat": 18.4658,
-   "members": 929000,
-   "founded": 1511,
-   "slug": "archdiocese-of-san-juan-de-puerto-rico"
-  },
-  {
-   "qid": "Q866897",
-   "name": "Roman Catholic Diocese of Arecibo",
-   "types": [
-    "Diocese of the Catholic Church"
-   ],
-   "states": [],
-   "city": "Arecibo",
-   "website": "http://www.diocesisdearecibo.org/",
-   "cathedral": "Catedral de San Felipe Apóstol",
-   "ch": "arec",
-   "gc": "arec0",
-   "bishop": "Alberto Arturo Figueroa Morales",
-   "bishop_since": "2022-09-14",
-   "lon": -66.7151,
-   "lat": 18.4722,
-   "members": 387000,
-   "founded": 1960,
-   "slug": "diocese-of-arecibo"
-  },
-  {
-   "qid": "Q867525",
-   "name": "Roman Catholic Diocese of Caguas",
-   "types": [
-    "Diocese of the Catholic Church"
-   ],
-   "states": [],
-   "city": "Caguas",
-   "website": "http://home.coqui.net/obicag",
-   "cathedral": "Cathedral Dulce Nombre de Jesús",
-   "ch": "cagu",
-   "gc": "cagu0",
-   "bishop": "Eusebio Ramos Morales",
-   "bishop_since": "",
-   "lon": -66.0343,
-   "lat": 18.2343,
-   "members": 410275,
-   "founded": 1964,
-   "slug": "diocese-of-caguas"
-  },
-  {
-   "qid": "Q867787",
-   "name": "Roman Catholic Diocese of Chalan Kanoa",
-   "types": [
-    "Diocese of the Catholic Church"
-   ],
-   "states": [],
-   "city": "Chalan Kanoa",
-   "website": "http://www.cnmicatholic.org",
-   "cathedral": "Our Lady of Mount Carmel Cathedral (Chalan Kanoa)",
-   "ch": "chak",
-   "gc": "chal0",
-   "bishop": "Romeo Duetao Convocar",
-   "bishop_since": "2024-11-25",
-   "lon": 145.7019,
-   "lat": 15.1511,
-   "members": 44700,
-   "founded": 1984,
-   "slug": "diocese-of-chalan-kanoa"
-  },
-  {
-   "qid": "Q868791",
-   "name": "Roman Catholic Diocese of Fajardo-Humacao",
-   "types": [
-    "Diocese of the Catholic Church"
-   ],
-   "states": [],
-   "city": "Fajardo",
-   "website": "http://www.diocesisdecaguaspr.org/",
-   "cathedral": "Cathedral of St. James",
-   "ch": "fahu",
-   "gc": "faja0",
-   "bishop": "Luis Miranda Rivera",
-   "bishop_since": "2020-05-16",
-   "lon": -65.6533,
-   "lat": 18.3269,
-   "members": 93506,
-   "founded": 2008,
-   "slug": "diocese-of-fajardo-humacao"
-  },
-  {
-   "qid": "Q872131",
-   "name": "Roman Catholic Diocese of Mayagüez",
-   "types": [
-    "Diocese of the Catholic Church"
-   ],
-   "states": [],
-   "city": "Mayagüez",
-   "website": "http://www.diocesisdemayaguez.org/",
-   "cathedral": "Cathedral of Mayagüez",
-   "ch": "maya",
-   "gc": "maya0",
-   "bishop": "Ángel Luis Rios Matos",
-   "bishop_since": "2020-05-09",
-   "lon": -67.1382,
-   "lat": 18.2011,
-   "members": 383000,
-   "founded": 1976,
-   "slug": "diocese-of-mayag-ez"
-  },
-  {
-   "qid": "Q874329",
-   "name": "Roman Catholic Diocese of Ponce",
-   "types": [
-    "Diocese of the Catholic Church"
-   ],
-   "states": [],
-   "city": "Ponce",
-   "website": "http://www.diocesisdeponce.org",
-   "cathedral": "Nuestra Señora de Guadalupe Cathedral",
-   "ch": "ponc",
-   "gc": "ponc0",
-   "bishop": "Geraldo Ramírez Torres",
-   "bishop_since": "2026-06-24",
-   "lon": -66.614,
-   "lat": 18.0118,
-   "members": 378792,
-   "founded": 1924,
-   "slug": "diocese-of-ponce"
-  },
-  {
-   "qid": "Q875649",
-   "name": "Roman Catholic Diocese of Samoa-Pago Pago",
-   "types": [
-    "Diocese of the Catholic Church"
-   ],
-   "states": [],
-   "city": "Pago Pago",
-   "website": "https://diocesesamoapagopago.com",
-   "cathedral": "Cathedral of the Holy Family in Pago Pago",
-   "ch": "samo",
-   "gc": "samo1",
-   "bishop": "Peter Brown",
-   "bishop_since": "",
-   "lon": -170.7358,
-   "lat": -14.3347,
-   "members": 12600,
-   "founded": 1982,
-   "slug": "diocese-of-samoa-pago-pago"
   },
   {
    "qid": "Q620204",
@@ -4491,137 +4710,18 @@
    "lat": 40.71,
    "members": 11600,
    "founded": 2010,
+   "short": "Syro-Malankara Catholic Eparchy of St. Mary, Queen of Peace, of the United States of America and Canada",
    "slug": "syro-malankara-catholic-eparchy-of-st-mary-queen-of-peace-of-the-united-states-of-america-and-canada"
   }
  ],
  "holy_by_state": {
-  "Pennsylvania": [
+  "Montana": [
    {
-    "qid": "Q747050",
-    "name": "Alexis Toth",
-    "rank": 4,
-    "born": 1854,
-    "died": 1909
-   },
-   {
-    "qid": "Q558256",
-    "name": "John Neumann",
-    "rank": 4,
-    "born": 1811,
-    "died": 1860
-   },
-   {
-    "qid": "Q254227",
-    "name": "Katharine Drexel",
-    "rank": 4,
-    "born": 1858,
-    "died": 1955
-   },
-   {
-    "qid": "Q566764",
-    "name": "Nikolaj Velimirović",
-    "rank": 4,
-    "born": 1881,
-    "died": 1956
-   },
-   {
-    "qid": "Q5171155",
-    "name": "Cornelia Connelly",
-    "rank": 2,
-    "born": 1809,
-    "died": 1879
-   },
-   {
-    "qid": "Q704917",
-    "name": "Demetrius Augustine Gallitzin",
+    "qid": "Q436655",
+    "name": "Black Elk",
     "rank": 1,
-    "born": 1770,
-    "died": 1840
-   },
-   {
-    "qid": "Q9283759",
-    "name": "John Hardon",
-    "rank": 1,
-    "born": 1914,
-    "died": 2000
-   }
-  ],
-  "Maryland": [
-   {
-    "qid": "Q312348",
-    "name": "Thurgood Marshall",
-    "rank": 4,
-    "born": 1908,
-    "died": 1993
-   },
-   {
-    "qid": "Q6779421",
-    "name": "Mary Elizabeth Lange",
-    "rank": 2,
-    "born": 1784,
-    "died": 1882
-   }
-  ],
-  "Louisiana": [
-   {
-    "qid": "Q75940",
-    "name": "Francis Xavier Seelos",
-    "rank": 3,
-    "born": 1819,
-    "died": 1867
-   },
-   {
-    "qid": "Q5716083",
-    "name": "Henriette DeLille",
-    "rank": 2,
-    "born": 1813,
-    "died": 1862
-   }
-  ],
-  "Hawaii": [
-   {
-    "qid": "Q232785",
-    "name": "Father Damien",
-    "rank": 4,
-    "born": 1840,
-    "died": 1889
-   },
-   {
-    "qid": "Q76680",
-    "name": "Marianne Cope",
-    "rank": 4,
-    "born": 1838,
-    "died": 1918
-   }
-  ],
-  "Missouri": [
-   {
-    "qid": "Q268064",
-    "name": "Rose Philippine Duchesne",
-    "rank": 4,
-    "born": 1769,
-    "died": 1852
-   },
-   {
-    "qid": "Q2841266",
-    "name": "Augustine Tolton",
-    "rank": 2,
-    "born": 1854,
-    "died": 1897
-   },
-   {
-    "qid": "Q51664373",
-    "name": "Julia Greeley",
-    "rank": 2,
-    "born": 1833,
-    "died": 1918
-   },
-   {
-    "qid": "Q139577779",
-    "name": "Theresia of the Holy Trinity",
-    "rank": 2,
-    "born": 1897,
-    "died": 1926
+    "born": 1863,
+    "died": 1950
    }
   ],
   "New York": [
@@ -4761,13 +4861,41 @@
     "died": 2000
    }
   ],
-  "Montana": [
+  "Pennsylvania": [
    {
-    "qid": "Q436655",
-    "name": "Black Elk",
+    "qid": "Q558256",
+    "name": "John Neumann",
+    "rank": 4,
+    "born": 1811,
+    "died": 1860
+   },
+   {
+    "qid": "Q254227",
+    "name": "Katharine Drexel",
+    "rank": 4,
+    "born": 1858,
+    "died": 1955
+   },
+   {
+    "qid": "Q5171155",
+    "name": "Cornelia Connelly",
+    "rank": 2,
+    "born": 1809,
+    "died": 1879
+   },
+   {
+    "qid": "Q704917",
+    "name": "Demetrius Augustine Gallitzin",
     "rank": 1,
-    "born": 1863,
-    "died": 1950
+    "born": 1770,
+    "died": 1840
+   },
+   {
+    "qid": "Q9283759",
+    "name": "John Hardon",
+    "rank": 1,
+    "born": 1914,
+    "died": 2000
    }
   ],
   "Indiana": [
@@ -4788,21 +4916,85 @@
     "died": 1950
    }
   ],
+  "Louisiana": [
+   {
+    "qid": "Q75940",
+    "name": "Francis Xavier Seelos",
+    "rank": 3,
+    "born": 1819,
+    "died": 1867
+   },
+   {
+    "qid": "Q5716083",
+    "name": "Henriette DeLille",
+    "rank": 2,
+    "born": 1813,
+    "died": 1862
+   }
+  ],
+  "Hawaii": [
+   {
+    "qid": "Q232785",
+    "name": "Father Damien",
+    "rank": 4,
+    "born": 1840,
+    "died": 1889
+   },
+   {
+    "qid": "Q76680",
+    "name": "Marianne Cope",
+    "rank": 4,
+    "born": 1838,
+    "died": 1918
+   }
+  ],
+  "Missouri": [
+   {
+    "qid": "Q268064",
+    "name": "Rose Philippine Duchesne",
+    "rank": 4,
+    "born": 1769,
+    "died": 1852
+   },
+   {
+    "qid": "Q2841266",
+    "name": "Augustine Tolton",
+    "rank": 2,
+    "born": 1854,
+    "died": 1897
+   },
+   {
+    "qid": "Q51664373",
+    "name": "Julia Greeley",
+    "rank": 2,
+    "born": 1833,
+    "died": 1918
+   },
+   {
+    "qid": "Q139577779",
+    "name": "Theresia of the Holy Trinity",
+    "rank": 2,
+    "born": 1897,
+    "died": 1926
+   }
+  ],
+  "Maryland": [
+   {
+    "qid": "Q312348",
+    "name": "Thurgood Marshall",
+    "rank": 4,
+    "born": 1908,
+    "died": 1993
+   },
+   {
+    "qid": "Q6779421",
+    "name": "Mary Elizabeth Lange",
+    "rank": 2,
+    "born": 1784,
+    "died": 1882
+   }
+  ],
   "Ohio": [
-   {
-    "qid": "Q4160008",
-    "name": "Jayananda Dasa",
-    "rank": 4,
-    "born": 1939,
-    "died": 1977
-   },
-   {
-    "qid": "Q111239821",
-    "name": "Thomas Eleftherion",
-    "rank": 4,
-    "born": 1964,
-    "died": 2015
-   },
    {
     "qid": "Q2943912",
     "name": "Celestina Bottego",
@@ -4818,87 +5010,13 @@
     "died": 2005
    }
   ],
-  "Alaska": [
-   {
-    "qid": "Q2469151",
-    "name": "Herman of Alaska",
-    "rank": 4,
-    "born": 1756,
-    "died": 1837
-   },
-   {
-    "qid": "Q7086632",
-    "name": "Olga Michael",
-    "rank": 4,
-    "born": 1916,
-    "died": 1979
-   },
-   {
-    "qid": "Q2562095",
-    "name": "Peter the Aleut",
-    "rank": 4,
-    "born": 1800,
-    "died": 1815
-   }
-  ],
-  "Illinois": [
-   {
-    "qid": "Q238983",
-    "name": "Frances Xavier Cabrini",
-    "rank": 4,
-    "born": 1850,
-    "died": 1917
-   },
-   {
-    "qid": "Q954398",
-    "name": "Fulton J. Sheen",
-    "rank": 3,
-    "born": 1895,
-    "died": 1979
-   },
-   {
-    "qid": "Q2841266",
-    "name": "Augustine Tolton",
-    "rank": 2,
-    "born": 1854,
-    "died": 1897
-   },
-   {
-    "qid": "Q18031468",
-    "name": "Mary Theresa Dudzik",
-    "rank": 2,
-    "born": 1860,
-    "died": 1918
-   }
-  ],
   "California": [
-   {
-    "qid": "Q4160008",
-    "name": "Jayananda Dasa",
-    "rank": 4,
-    "born": 1939,
-    "died": 1977
-   },
    {
     "qid": "Q522107",
     "name": "Junípero Serra",
     "rank": 4,
     "born": 1713,
     "died": 1784
-   },
-   {
-    "qid": "Q2562095",
-    "name": "Peter the Aleut",
-    "rank": 4,
-    "born": 1800,
-    "died": 1815
-   },
-   {
-    "qid": "Q18400083",
-    "name": "Sevastijan Dabović",
-    "rank": 4,
-    "born": 1863,
-    "died": 1940
    },
    {
     "qid": "Q4735362",
@@ -4915,13 +5033,20 @@
     "died": 1992
    }
   ],
-  "Kansas": [
+  "New Jersey": [
    {
-    "qid": "Q989327",
-    "name": "Emil Kapaun",
-    "rank": 2,
-    "born": 1916,
-    "died": 1951
+    "qid": "Q7702128",
+    "name": "Teresa Demjanovich",
+    "rank": 3,
+    "born": 1901,
+    "died": 1927
+   },
+   {
+    "qid": "Q2638523",
+    "name": "Jan Cieplak",
+    "rank": 1,
+    "born": 1857,
+    "died": 1926
    }
   ],
   "Connecticut": [
@@ -4963,53 +5088,33 @@
     "died": 1896
    }
   ],
-  "Massachusetts": [
+  "Illinois": [
    {
-    "qid": "Q6917390",
-    "name": "Mother Mary Alphonsa",
-    "rank": 2,
-    "born": 1851,
-    "died": 1926
+    "qid": "Q238983",
+    "name": "Frances Xavier Cabrini",
+    "rank": 4,
+    "born": 1850,
+    "died": 1917
    },
    {
-    "qid": "Q6285708",
-    "name": "Joseph Muzquiz",
-    "rank": 1,
-    "born": 1912,
-    "died": 1983
-   }
-  ],
-  "Oklahoma": [
-   {
-    "qid": "Q2377024",
-    "name": "Stanley Rother",
+    "qid": "Q954398",
+    "name": "Fulton J. Sheen",
     "rank": 3,
-    "born": 1935,
-    "died": 1981
-   }
-  ],
-  "New Jersey": [
-   {
-    "qid": "Q7702128",
-    "name": "Teresa Demjanovich",
-    "rank": 3,
-    "born": 1901,
-    "died": 1927
+    "born": 1895,
+    "died": 1979
    },
    {
-    "qid": "Q2638523",
-    "name": "Jan Cieplak",
-    "rank": 1,
-    "born": 1857,
-    "died": 1926
-   }
-  ],
-  "Colorado": [
-   {
-    "qid": "Q51664373",
-    "name": "Julia Greeley",
+    "qid": "Q2841266",
+    "name": "Augustine Tolton",
     "rank": 2,
-    "born": 1833,
+    "born": 1854,
+    "died": 1897
+   },
+   {
+    "qid": "Q18031468",
+    "name": "Mary Theresa Dudzik",
+    "rank": 2,
+    "born": 1860,
     "died": 1918
    }
   ],
@@ -5038,15 +5143,6 @@
     "died": 1991
    }
   ],
-  "North Carolina": [
-   {
-    "qid": "Q7346",
-    "name": "John Coltrane",
-    "rank": 4,
-    "born": 1926,
-    "died": 1967
-   }
-  ],
   "Iowa": [
    {
     "qid": "Q5408329",
@@ -5056,13 +5152,56 @@
     "died": 1936
    }
   ],
-  "Florida": [
+  "Colorado": [
    {
-    "qid": "Q111239821",
-    "name": "Thomas Eleftherion",
+    "qid": "Q51664373",
+    "name": "Julia Greeley",
+    "rank": 2,
+    "born": 1833,
+    "died": 1918
+   }
+  ],
+  "Kansas": [
+   {
+    "qid": "Q989327",
+    "name": "Emil Kapaun",
+    "rank": 2,
+    "born": 1916,
+    "died": 1951
+   }
+  ],
+  "Oklahoma": [
+   {
+    "qid": "Q2377024",
+    "name": "Stanley Rother",
+    "rank": 3,
+    "born": 1935,
+    "died": 1981
+   }
+  ],
+  "Massachusetts": [
+   {
+    "qid": "Q6917390",
+    "name": "Mother Mary Alphonsa",
+    "rank": 2,
+    "born": 1851,
+    "died": 1926
+   },
+   {
+    "qid": "Q6285708",
+    "name": "Joseph Muzquiz",
+    "rank": 1,
+    "born": 1912,
+    "died": 1983
+   }
+  ],
+  "North Carolina": [
+   {
+    "qid": "Q7346",
+    "name": "John Coltrane",
     "rank": 4,
-    "born": 1964,
-    "died": 2015
+    "born": 1926,
+    "died": 1967
    }
   ]
  }
