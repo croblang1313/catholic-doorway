@@ -92,6 +92,24 @@ ES_PAGES = [
      "¿Te interesa la Iglesia Católica? Cómo funciona OCIA, sus cuatro etapas, cuánto dura, con quién hablar y qué esperar en tu primera Misa."),
     ("first-mass", "primera-misa", "Tu primera Misa", "Tu primera Misa, paso a paso | CatholicDoorway",
      "¿Vas a Misa por primera vez? Una guía paso a paso para tu teléfono: cuándo ponerse de pie, sentarse y arrodillarse, qué se responde y qué hacer en la Comunión."),
+    ("how-to", "guias", "Guías prácticas", "Guías católicas prácticas: Confesión, Bautismo, Matrimonio y más | CatholicDoorway",
+     "Guías católicas sencillas y prácticas: confesarse, inscribirse en una parroquia, bautizar a un hijo, casarse por la Iglesia, la Unción de los enfermos, funerales y volver a la Iglesia."),
+    ("confession", "confesion", "Confesión", "Cómo confesarse: guía paso a paso | CatholicDoorway",
+     "Cómo hacer una buena confesión: cuándo y dónde, cómo prepararse, qué decir exactamente y qué hacer si han pasado años."),
+    ("coming-back", "volver", "Volver a la Iglesia", "Volver a la Iglesia Católica | CatholicDoorway",
+     "¿Te alejaste de la Iglesia? Cómo volver: la Misa, hablar con un sacerdote, la Confesión y casos especiales como un matrimonio fuera de la Iglesia."),
+    ("join-a-parish", "inscribirse-parroquia", "Inscribirse en una parroquia", "Cómo inscribirse en una parroquia católica | CatholicDoorway",
+     "Por qué y cómo inscribirse en una parroquia católica en Estados Unidos, y en qué ayuda: cartas para padrinos, bautizos, bodas y escuela católica."),
+    ("baptism", "bautismo", "Bautismo", "Cómo bautizar a tu hijo en la Iglesia Católica | CatholicDoorway",
+     "Cómo funciona el Bautismo de un bebé en una parroquia católica: cuándo llamar, la plática, los requisitos de los padrinos, la ceremonia y los casos especiales."),
+    ("marriage", "matrimonio", "Matrimonio", "Cómo casarse por la Iglesia Católica | CatholicDoorway",
+     "Casarse por la Iglesia: con cuánta anticipación empezar, la preparación, los documentos, casarse con alguien no católico, matrimonios anteriores y convalidación."),
+    ("anointing", "uncion", "Unción de los enfermos", "La Unción de los enfermos y los últimos sacramentos | CatholicDoorway",
+     "Cuándo y cómo llamar a un sacerdote para la Unción de los enfermos o los últimos sacramentos, qué son y qué hacer si alguien se está muriendo ahora."),
+    ("funerals", "funerales", "Funerales", "Cómo preparar un funeral católico | CatholicDoorway",
+     "Cómo preparar un funeral católico: la vigilia, la Misa de funeral y la sepultura, las normas sobre la cremación, los costos y las Misas por los difuntos."),
+    ("baptism-certificate", "fe-de-bautismo", "Fe de bautismo", "Cómo pedir tu fe de bautismo católica | CatholicDoorway",
+     "Cómo solicitar tu fe de bautismo con notas marginales para una boda o para ser padrino, incluso si la parroquia cerró o te bautizaron en otro país."),
     ("prayers", "oraciones", "Oraciones", "Oraciones católicas y cómo rezar el Rosario | CatholicDoorway",
      "Las oraciones católicas tradicionales en español: el Padre Nuestro, el Ave María, el Credo, la Salve y más, con una guía del Rosario."),
     ("rosary", "rosario", "Reza el Rosario", "Reza el Rosario en línea, cuenta por cuenta | CatholicDoorway",
@@ -675,19 +693,22 @@ def nav_html(current):
     return "\n".join(items)
 
 
-ES_SUBNAV = {"comenzar": [("comenzar", "Hacerse católico (OCIA)"), ("primera-misa", "Tu primera Misa")],
+ES_SUBNAV = {"comenzar": [("comenzar", "Hacerse católico (OCIA)"), ("primera-misa", "Tu primera Misa"), ("guias", "Guías prácticas"),
+                          ("confesion", "Cómo confesarse"), ("volver", "Volver a la Iglesia")],
              "oraciones": [("oraciones", "Oraciones católicas"), ("rosario", "Reza el Rosario")],
              "biblia": [("biblia", "Las lecturas de hoy y la Biblia"), ("calendario", "Calendario de días santos")],
              "creencias": [("creencias", "Lo que creen los católicos"), ("preguntas", "Preguntas sinceras"), ("glosario", "Glosario")],
              "estructura": [("estructura", "Cómo se organiza la Iglesia"), ("papas", "Los 267 Papas"), ("diocesis", "Las diócesis de EE. UU."),
                             ("buscar-iglesia", "Buscar una iglesia")]}
 ES_SUB_CHILDREN = {c for subs in ES_SUBNAV.values() for c, _ in subs} - set(ES_SUBNAV)
+# Spanish pages reached from a hub page rather than the top menu
+ES_NAV_EXCLUDE = {"inscribirse-parroquia", "bautismo", "matrimonio", "uncion", "funerales", "fe-de-bautismo"}
 
 
 def es_nav(current):
     items = []
     for _, es, label, *_ in ES_PAGES:
-        if es in ES_SUB_CHILDREN:
+        if es in ES_SUB_CHILDREN or es in ES_NAV_EXCLUDE:
             continue
         href = "/es/" if es == "index" else f"/es/{es}"
         cur = ' aria-current="page"' if es == current else ""
