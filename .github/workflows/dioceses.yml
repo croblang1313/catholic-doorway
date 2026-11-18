@@ -1,0 +1,44 @@
+name: Update diocese directory
+
+# Refreshes src/data/dioceses.json from Wikidata every Wednesday (bishops,
+# cathedrals, websites), then rebuilds the site so the diocese pages update.
+on:
+  schedule:
+    - cron: "23 9 * * 3"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dioceses
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Download dioceses from Wikidata
+        run: python3 scripts/fetch_dioceses.py
+      - name: Rebuild the site
+        run: python3 src/build.py
+      - name: Commit if changed
+        run: |
+          git add src/data site
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update diocese directory from Wikidata"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push && exit 0
+            sleep $((i * 15))
+          done
+          exit 1
