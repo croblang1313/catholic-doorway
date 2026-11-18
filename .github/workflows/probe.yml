@@ -1,0 +1,20 @@
+name: Wikidata probe
+
+# Manual helper: runs one Wikidata query and prints the results in the log.
+on:
+  workflow_dispatch:
+    inputs:
+      query:
+        description: "SPARQL query"
+        required: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run query
+        env:
+          QUERY: ${{ github.event.inputs.query }}
+        run: python3 scripts/sparql_probe.py
