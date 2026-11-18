@@ -1,0 +1,87 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker">Biblia y lecturas</p>
+    <h1>La Palabra de Dios</h1>
+    <p class="lede">Cada día, católicos de todo el mundo escuchan las mismas lecturas de la Escritura en la Misa. Lee las de hoy y luego conoce la Biblia en su conjunto.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section">
+    <div class="grid two">
+      <div class="card readings-card" data-readings="today" id="readings-main">
+        <p class="label">Lecturas de la Misa de hoy</p>
+        <h3 class="rd-title">Las lecturas de hoy</h3>
+        <ul class="rd-list"><li class="muted">La primera lectura, el salmo, a veces una segunda lectura y el Evangelio del día.</li></ul>
+        <div class="rd-actions">
+          <a class="btn small rd-read" href="https://bible.usccb.org/es/bible/lecturas" target="_blank" rel="noopener">Leer</a>
+          <a class="btn small secondary" id="readings-tomorrow" href="https://bible.usccb.org/es/bible/lecturas" target="_blank" rel="noopener">Las de mañana</a>
+        </div>
+        <p class="small muted" id="cycle-note" style="margin:.8rem 0 0"></p>
+        <p class="small muted rd-credit">Lecturas en español de la Conferencia de Obispos Católicos de Estados Unidos (USCCB).</p>
+      </div>
+      <div class="card">
+        <p class="label">Elige una fecha</p>
+        <h3 style="margin-top:.2rem">Lecturas de cualquier día</h3>
+        <p>¿Preparas un domingo, una boda o un funeral? Elige una fecha para abrir sus lecturas.</p>
+        <form id="readings-form" class="filters" style="margin:0">
+          <label class="sr-only" for="readings-date-input" style="position:absolute;left:-999px">Fecha</label>
+          <input class="search" type="date" id="readings-date-input" required style="flex:1 1 180px" lang="es">
+          <button class="btn" type="submit">Abrir</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section prose">
+    <h2>Dónde leer la Biblia en línea</h2>
+    <ul>
+      <li><a href="https://www.vatican.va/archive/ESL0506/_INDEX.HTM">La Biblia, &ldquo;El Libro del Pueblo de Dios&rdquo;</a>, en el sitio web del Vaticano. Una traducción católica completa, gratis.</li>
+      <li><a href="https://bible.usccb.org/es/bible/lecturas">Las lecturas diarias en español</a> de los obispos de Estados Unidos, las mismas que se leen en la Misa.</li>
+      <li><a href="https://www.vatican.va/archive/catechism_sp/index_sp.html">El Catecismo de la Iglesia Católica</a>, que explica cómo la Iglesia lee y enseña la Escritura.</li>
+    </ul>
+    <p class="small muted">Enlazamos a estas fuentes en lugar de copiarlas, para que siempre leas un texto aprobado y al día.</p>
+  </section>
+
+  <section class="section">
+    <h2>Cómo está organizada la Biblia católica</h2>
+    <p class="prose">La Biblia católica tiene <strong>73 libros</strong>: 46 en el Antiguo Testamento y 27 en el Nuevo. Tiene siete libros del Antiguo Testamento más que la mayoría de las Biblias protestantes. Los católicos los llaman libros <a href="/es/glosario#deuterocanonical">deuterocanónicos</a>: Tobías, Judit, 1 y 2 Macabeos, Sabiduría, Eclesiástico (Sirácida) y Baruc, además de versiones más largas de Ester y Daniel.</p>
+    <div class="grid two">
+      <div class="card">
+        <h3>Antiguo Testamento <span class="muted small">(46 libros)</span></h3>
+        <p><strong>El Pentateuco</strong>: Génesis, Éxodo, Levítico, Números, Deuteronomio</p>
+        <p><strong>Libros históricos</strong>: Josué, Jueces, Rut, 1 y 2 Samuel, 1 y 2 Reyes, 1 y 2 Crónicas, Esdras, Nehemías, Tobías, Judit, Ester, 1 y 2 Macabeos</p>
+        <p><strong>Libros sapienciales</strong>: Job, Salmos, Proverbios, Eclesiastés, Cantar de los Cantares, Sabiduría, Eclesiástico</p>
+        <p><strong>Profetas</strong>: Isaías, Jeremías, Lamentaciones, Baruc, Ezequiel, Daniel y los doce profetas menores, de Oseas a Malaquías</p>
+      </div>
+      <div class="card">
+        <h3>Nuevo Testamento <span class="muted small">(27 libros)</span></h3>
+        <p><strong>Los Evangelios</strong>: Mateo, Marcos, Lucas, Juan</p>
+        <p><strong>Historia de la Iglesia primitiva</strong>: Hechos de los Apóstoles</p>
+        <p><strong>Cartas de San Pablo</strong>: Romanos, 1 y 2 Corintios, Gálatas, Efesios, Filipenses, Colosenses, 1 y 2 Tesalonicenses, 1 y 2 Timoteo, Tito, Filemón</p>
+        <p><strong>Otras cartas</strong>: Hebreos, Santiago, 1 y 2 Pedro, 1, 2 y 3 Juan, Judas</p>
+        <p><strong>Profecía</strong>: Apocalipsis</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section prose">
+    <h2>¿Nuevo en la Biblia? Empieza aquí</h2>
+    <ol>
+      <li><strong>El Evangelio de Marcos</strong>: el Evangelio más breve, ágil y bueno para empezar.</li>
+      <li><strong>El Evangelio de Lucas y los Hechos de los Apóstoles</strong>: la historia en dos partes, del mismo autor, de Jesús y de la Iglesia primitiva.</li>
+      <li><strong>Los Salmos</strong>: el libro de oración de la Biblia. Prueba con uno al día.</li>
+      <li><strong>El Génesis</strong>: el comienzo de la historia de Dios y su pueblo.</li>
+    </ol>
+    <h3>Una forma sencilla de rezar con la Escritura</h3>
+    <p>Desde hace siglos, los católicos rezan con la Biblia por medio de la <a href="/es/glosario#lectio-divina"><em>lectio divina</em></a> (&ldquo;lectura divina&rdquo;):</p>
+    <ol>
+      <li><strong>Lee</strong> despacio un pasaje breve, por ejemplo el Evangelio de hoy.</li>
+      <li><strong>Medita</strong> una palabra o frase que te llame la atención.</li>
+      <li><strong>Reza</strong>: háblale a Dios de ello.</li>
+      <li><strong>Descansa</strong> en silencio en la presencia de Dios.</li>
+    </ol>
+    <h3>Cómo se eligen las lecturas</h3>
+    <p>Las lecturas de la Misa siguen el <a href="/es/glosario#lectionary">Leccionario</a>. Las lecturas dominicales siguen un ciclo de tres años (Ciclos A, B y C, centrados en Mateo, Marcos y Lucas, con Juan en tiempos especiales). Las de entre semana siguen un ciclo de dos años (años I y II). En tres años de domingos, los católicos escuchan la mayor parte de los Evangelios.</p>
+  </section>
+</div>

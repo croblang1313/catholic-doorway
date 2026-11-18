@@ -89,6 +89,9 @@
     var mm = ('0' + (d.getMonth() + 1)).slice(-2), dd = ('0' + d.getDate()).slice(-2), yy = String(d.getFullYear()).slice(-2);
     return 'https://bible.usccb.org/bible/readings/' + mm + dd + yy + '.cfm';
   }
+  function usccbEs(d) {
+    return 'https://bible.usccb.org/es/bible/lecturas/' + ('0' + (d.getMonth() + 1)).slice(-2) + ('0' + d.getDate()).slice(-2) + String(d.getFullYear()).slice(-2) + '.cfm';
+  }
   var s = season(today);
 
   var dateEl = $('#today-date');
@@ -106,7 +109,7 @@
     }
   }
 
-  var tom = $('#readings-tomorrow'); if (tom) tom.href = usccb(addDays(today, 1));
+  var tom = $('#readings-tomorrow'); if (tom) tom.href = ES ? usccbEs(addDays(today, 1)) : usccb(addDays(today, 1));
 
   /* ---------- Daily readings card: titles, citations and links (no copied text) ---------- */
   var MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
@@ -150,7 +153,8 @@
       })
       .catch(fallback);
   }
-  var cyc = $('#cycle-note'); if (cyc) cyc.textContent = 'This liturgical year: Sunday readings Year ' + s.sunday + ', weekday readings Year ' + s.weekday + '. Season: ' + s.name + '.';
+  var cyc = $('#cycle-note'); if (cyc) cyc.textContent = ES ? 'Este año litúrgico: lecturas dominicales del Ciclo ' + s.sunday + ', lecturas de entre semana del año ' + s.weekday + '. Tiempo litúrgico: ' + s.name + '.'
+    : 'This liturgical year: Sunday readings Year ' + s.sunday + ', weekday readings Year ' + s.weekday + '. Season: ' + s.name + '.';
   var rform = $('#readings-form');
   if (rform) {
     var di = $('#readings-date-input');
@@ -158,7 +162,10 @@
     rform.addEventListener('submit', function (e) {
       e.preventDefault();
       var p = di.value.split('-');
-      if (p.length === 3) window.open(usccb(day(+p[0], +p[1] - 1, +p[2])), '_blank', 'noopener');
+      if (p.length === 3) {
+        var dd = day(+p[0], +p[1] - 1, +p[2]);
+        window.open(ES ? usccbEs(dd) : usccb(dd), '_blank', 'noopener');
+      }
     });
   }
 
@@ -204,7 +211,7 @@
         var ok = (statusSel === 'all' || c.getAttribute('data-status') === statusSel) && (!term || norm(c.textContent).indexOf(term) > -1);
         c.hidden = !ok; if (ok) n++;
       });
-      count.textContent = n + (n === 1 ? ' person' : ' people') + ' shown';
+      count.textContent = ES ? (n === 1 ? '1 persona' : n + ' personas') : n + (n === 1 ? ' person' : ' people') + ' shown';
     };
     q.addEventListener('input', apply);
     chips.forEach(function (ch) {
@@ -307,7 +314,8 @@
   /* ---------- Holy days calendar ---------- */
   var calList = $('#cal-list');
   if (calList) {
-    var LABEL = { obligation: 'Holy Day of Obligation', fast: 'Fast and abstinence', abstinence: 'Abstinence', solemnity: 'Solemnity', feast: 'Feast' };
+    var LABEL = ES ? { obligation: 'Día de precepto', fast: 'Ayuno y abstinencia', abstinence: 'Abstinencia', solemnity: 'Solemnidad', feast: 'Fiesta' }
+      : { obligation: 'Holy Day of Obligation', fast: 'Fast and abstinence', abstinence: 'Abstinence', solemnity: 'Solemnity', feast: 'Feast' };
     var calKind = 'all', calEvents = [];
     var todayIso = (function (d) { return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); })(new Date());
     var escH = function (x) { return String(x || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
@@ -317,7 +325,7 @@
         if (calKind === 'fast') return e.kind === 'fast' || e.kind === 'abstinence';
         return calKind === 'all' || e.kind === calKind;
       });
-      if (!list.length) { calList.innerHTML = '<p class="muted">Nothing coming up in this view.</p>'; return; }
+      if (!list.length) { calList.innerHTML = '<p class="muted">' + T('Nothing coming up in this view.', 'No hay nada próximo en esta vista.') + '</p>'; return; }
       var out = '', month = '';
       list.forEach(function (e) {
         var d = new Date(e.date + 'T12:00:00');
@@ -336,10 +344,10 @@
         drawCal();
       });
     });
-    fetch('/api/calendar.json?year=' + new Date().getFullYear())
+    fetch('/api/calendar.json?year=' + new Date().getFullYear() + (ES ? '&lang=es' : ''))
       .then(function (r) { return r.json(); })
       .then(function (d) { calEvents = d.events; drawCal(); })
-      .catch(function () { calList.innerHTML = '<p class="muted">The calendar could not load. Please try again in a moment.</p>'; });
+      .catch(function () { calList.innerHTML = '<p class="muted">' + T('The calendar could not load. Please try again in a moment.', 'No se pudo cargar el calendario. Inténtalo de nuevo en un momento.') + '</p>'; });
     // Android has no webcal handler; send Android users straight to Google Calendar.
     if (/Android/i.test(navigator.userAgent)) { var ap = $('#sub-apple'); if (ap) ap.hidden = true; }
   }
@@ -357,7 +365,7 @@
       var open = qt.getAttribute('aria-pressed') !== 'true';
       qas.forEach(function (d) { d.open = open; });
       qt.setAttribute('aria-pressed', open ? 'true' : 'false');
-      qt.textContent = open ? 'Close all' : 'Open all';
+      qt.textContent = open ? T('Close all', 'Cerrar todas') : T('Open all', 'Abrir todas');
     });
     var openHash = function () { var d = location.hash && document.getElementById(location.hash.slice(1)); if (d && d.tagName === 'DETAILS') { d.open = true; d.scrollIntoView(); } };
     window.addEventListener('hashchange', openHash); openHash();

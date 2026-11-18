@@ -93,8 +93,22 @@ ES_PAGES = [
     ("first-mass", "primera-misa", "Tu primera Misa", "Tu primera Misa, paso a paso | CatholicDoorway",
      "¿Vas a Misa por primera vez? Una guía paso a paso para tu teléfono: cuándo ponerse de pie, sentarse y arrodillarse, qué se responde y qué hacer en la Comunión."),
     ("prayers", "oraciones", "Oraciones", "Oraciones católicas y cómo rezar el Rosario | CatholicDoorway",
-     "Las oraciones católicas tradicionales en español: el Padre Nuestro, el Ave María, el Credo, la Salve y más, con una guía del Rosario."),    ("rosary", "rosario", "Reza el Rosario", "Reza el Rosario en línea, cuenta por cuenta | CatholicDoorway",
-     "Reza el Rosario paso a paso en tu teléfono: las cuentas se iluminan, cada misterio trae su pasaje bíblico y se guarda dónde vas."),    ("find-a-church", "buscar-iglesia", "Buscar una iglesia", "Encuentra una iglesia católica cerca de ti | CatholicDoorway",
+     "Las oraciones católicas tradicionales en español: el Padre Nuestro, el Ave María, el Credo, la Salve y más, con una guía del Rosario."),
+    ("rosary", "rosario", "Reza el Rosario", "Reza el Rosario en línea, cuenta por cuenta | CatholicDoorway",
+     "Reza el Rosario paso a paso en tu teléfono: las cuentas se iluminan, cada misterio trae su pasaje bíblico y se guarda dónde vas."),
+    ("bible", "biblia", "Biblia", "La Biblia y las lecturas de la Misa de hoy | CatholicDoorway",
+     "Las lecturas de la Misa de hoy en español, cómo está organizada la Biblia católica y dónde leerla gratis en línea."),
+    ("calendar", "calendario", "Calendario", "Días de precepto y de ayuno: calendario católico | CatholicDoorway",
+     "Los días de precepto, los días de ayuno y las fiestas principales en Estados Unidos, con un calendario gratis en español para tu iPhone, Google u Outlook."),
+    ("beliefs", "creencias", "Creencias", "Lo que creen los católicos | CatholicDoorway",
+     "Un resumen sencillo de la fe y la práctica católica: el Credo, los siete sacramentos, la Escritura y la Tradición, María y los santos, y la vida moral."),
+    ("questions", "preguntas", "Preguntas sinceras", "Preguntas sinceras sobre la Iglesia Católica, respondidas | CatholicDoorway",
+     "Respuestas breves, amables y claras a lo que la gente pregunta sobre los católicos: María, los santos, la confesión, el Papa, el purgatorio y más."),
+    ("glossary", "glosario", "Glosario", "Glosario católico: palabras explicadas | CatholicDoorway",
+     "Definiciones sencillas de las palabras católicas, de Adviento a Vísperas."),
+    ("structure", "estructura", "La Iglesia", "Cómo se organiza la Iglesia Católica | CatholicDoorway",
+     "Cómo se organiza la Iglesia Católica: el Papa, los obispos, las diócesis, las parroquias, los sacerdotes y los diáconos, explicado con sencillez."),
+    ("find-a-church", "buscar-iglesia", "Buscar una iglesia", "Encuentra una iglesia católica cerca de ti | CatholicDoorway",
      "Busca iglesias católicas en Estados Unidos por ciudad o código postal: dirección, teléfono, sitio web y cómo llegar."),
 ]
 ES_TEXT = dict(lang="es", skip="Saltar al contenido", home="/es/", home_label="Inicio de CatholicDoorway",
@@ -270,12 +284,14 @@ def saints_html():
     return "\n".join(out)
 
 
-def glossary_html():
-    data = json.loads((ROOT / "src" / "data" / "glossary.json").read_text(encoding="utf-8"))
-    data.sort(key=lambda t: t[1].lower())
+def glossary_html(lang="en"):
+    import unicodedata
+    fold = lambda t: unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode().lower()
+    data = json.loads((ROOT / "src" / "data" / ("glossary_es.json" if lang == "es" else "glossary.json")).read_text(encoding="utf-8"))
+    data.sort(key=lambda t: fold(t[1]))
     out, letters, cur = [], [], None
     for slug, term, definition in data:
-        L = term[0].upper()
+        L = fold(term)[0].upper()
         if L != cur:
             cur = L
             letters.append(L)
@@ -364,12 +380,20 @@ def mass_html(lang="en"):
     return "\n".join(out), len(steps)
 
 
-def questions_html():
-    data = json.loads((ROOT / "src" / "data" / "questions.json").read_text(encoding="utf-8"))
-    out, toc = [], []
+def questions_html(lang="en"):
+    es = lang == "es"
+    data = json.loads((ROOT / "src" / "data" / ("questions_es.json" if es else "questions.json")).read_text(encoding="utf-8"))
+    out = []
     for q in data:
         refs = []
-        for label, target in q["refs"]:
+        for ref in q["refs"]:
+            if isinstance(ref, str):  # Spanish: a plain citation
+                if ref.startswith("Catecismo"):
+                    refs.append(f'<a href="https://www.vatican.va/archive/catechism_sp/index_sp.html" target="_blank" rel="noopener">{html.escape(ref)}</a>')
+                else:
+                    refs.append(html.escape(ref))
+                continue
+            label, target = ref
             if isinstance(target, int):
                 url = f"https://www.scborromeo.org/ccc/para/{target}.htm"
             elif target.startswith("http"):
@@ -378,11 +402,11 @@ def questions_html():
                 url = f"https://bible.usccb.org/bible/{target}"
             refs.append(f'<a href="{url}" target="_blank" rel="noopener">{html.escape(label)}</a>')
         if q.get("glossary"):
-            refs.append(f'<a href="/glossary#{q["glossary"]}">Glossary</a>')
+            refs.append(f'<a href="{"/es/glosario" if es else "/glossary"}#{q["glossary"]}">{"Glosario" if es else "Glossary"}</a>')
         body = "".join(f"<p>{para}</p>" for para in q["a"])
-        out.append(f'    <details class="qa" id="{q["id"]}"><summary>{html.escape(q["q"])}</summary>'
-                   f'<div class="qa-body">{body}<p class="qa-refs">Read more: {" &middot; ".join(refs)}</p></div></details>')
-        toc.append(q["id"])
+        summary = q["q"] if es else html.escape(q["q"])
+        out.append(f'    <details class="qa" id="{q["id"]}"><summary>{summary}</summary>'
+                   f'<div class="qa-body">{body}<p class="qa-refs">{"Para leer más" if es else "Read more"}: {" &middot; ".join(refs)}</p></div></details>')
     return "\n".join(out)
 
 
@@ -575,7 +599,10 @@ def nav_html(current):
 
 
 ES_SUBNAV = {"comenzar": [("comenzar", "Hacerse católico (OCIA)"), ("primera-misa", "Tu primera Misa")],
-             "oraciones": [("oraciones", "Oraciones católicas"), ("rosario", "Reza el Rosario")]}
+             "oraciones": [("oraciones", "Oraciones católicas"), ("rosario", "Reza el Rosario")],
+             "biblia": [("biblia", "Las lecturas de hoy y la Biblia"), ("calendario", "Calendario de días santos")],
+             "creencias": [("creencias", "Lo que creen los católicos"), ("preguntas", "Preguntas sinceras"), ("glosario", "Glosario")],
+             "estructura": [("estructura", "Cómo se organiza la Iglesia"), ("buscar-iglesia", "Buscar una iglesia")]}
 ES_SUB_CHILDREN = {c for subs in ES_SUBNAV.values() for c, _ in subs} - set(ES_SUBNAV)
 
 
@@ -594,7 +621,6 @@ def es_nav(current):
             items.append(f'        <li class="has-sub"><a href="{href}"{cur}>{label}</a><ul class="sub">{sub}</ul></li>')
             continue
         items.append(f'        <li><a href="{href}"{cur}>{label}</a></li>')
-    items.append('        <li><a href="/" lang="en" hreflang="en">Más en inglés</a></li>')
     return "\n".join(items)
 
 
@@ -615,6 +641,11 @@ def build_es():
         page = page.replace('<meta property="og:site_name" content="CatholicDoorway">',
                             '<meta property="og:site_name" content="CatholicDoorway">\n<meta property="og:locale" content="es_US">')
         body = body.replace("{{DOOR}}", DOOR_SVG)
+        if "{{QUESTIONS}}" in body:
+            body = body.replace("{{QUESTIONS}}", questions_html("es"))
+        if "{{GLOSSARY}}" in body:
+            g, a = glossary_html("es")
+            body = body.replace("{{GLOSSARY}}", g).replace("{{ALPHA}}", a)
         if "{{MASS}}" in body:
             ms, mn = mass_html("es")
             body = body.replace("{{MASS}}", ms).replace("{{MASS_COUNT}}", str(mn))
