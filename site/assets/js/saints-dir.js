@@ -123,7 +123,7 @@
       if (params.get('status')) st.value = params.get('status');
       if (params.get('sort')) so.value = params.get('sort');
       run();
-    }).catch(function () { count.textContent = T('The directory could not load. Please refresh the page.', 'No se pudo cargar el directorio. Vuelve a cargar la página.', 'Não foi possível carregar o diretório. Recarregue a página.'); });
+    }).catch(function () { list.classList.add('ready'); count.textContent = T('The directory could not load. Please refresh the page.', 'No se pudo cargar el directorio. Vuelve a cargar la página.', 'Não foi possível carregar o diretório. Recarregue a página.'); });
   }
 
   function run() {
@@ -138,7 +138,7 @@
     if (so.value === 'name' && (ES || PT)) filtered.sort(function (a, b) { var x = fold(a.show), y = fold(b.show); return x < y ? -1 : x > y ? 1 : 0; });
     else if (so.value === 'recent') filtered = filtered.filter(function (p) { return p.when; }).sort(function (a, b) { return b.when - a.when || b.rank - a.rank; });
     else if (so.value === 'died') filtered.sort(function (a, b) { return (a.died || 9999) - (b.died || 9999); });
-    list.innerHTML = ''; shown = 0;
+    list.innerHTML = ''; shown = 0; list.classList.add('ready');
     var one = filtered.length === 1, rec = so.value === 'recent';
     count.textContent = filtered.length
       ? num(filtered.length) + T((one ? ' person' : ' people') + (rec ? ' with a recorded decree date, newest first.' : '.'),
