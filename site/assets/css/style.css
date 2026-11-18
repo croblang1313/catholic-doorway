@@ -367,6 +367,8 @@ dl.glossary dt:target { background: var(--gold-soft); border-radius: 6px; paddin
 .rd-list { list-style: none; padding: 0; margin: 0 0 .9rem; font-size: 1rem; }
 .rd-list li { display: flex; justify-content: space-between; gap: .8rem; padding: .3rem 0; border-bottom: 1px dashed var(--line); margin: 0; }
 .rd-list li:last-child { border-bottom: 0; }
+/* Hold room for the readings while they load so the page does not jump */
+.rd-list li.rd-loading { min-height: 7.6rem; align-items: flex-start; }
 .rd-name { font: 600 .82rem var(--sans); letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); padding-top: .15rem; white-space: nowrap; }
 .rd-list a { text-align: right; }
 .rd-actions { display: flex; flex-wrap: wrap; gap: .45rem; }
@@ -587,6 +589,10 @@ body::before {
 .sd-selects { display: grid; gap: .6rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); }
 .sd-selects label { display: grid; gap: .25rem; font: 600 .82rem var(--sans); color: var(--ink-soft); }
 .sd-list { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); margin-top: 1rem; }
+/* Hold space while the directory loads so the page does not jump (layout shift) */
+.sd-list:not(.ready) { min-height: 100vh; }
+.js #rosary-app[hidden] { display: block !important; }
+.js #rosary-nojs { display: none; }
 .sd-item h3 { margin: 0; font-size: 1.25rem; }
 .sd-head { display: flex; justify-content: space-between; align-items: flex-start; gap: .6rem; }
 .sd-head .status { flex: none; }

@@ -281,7 +281,7 @@ HEAD = """<!doctype html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
 <link rel="stylesheet" href="/assets/css/style.css">
-<script>try{{var t=localStorage.getItem('cd-theme');if(t)document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}</script>
+<script>document.documentElement.classList.add('js');try{{var t=localStorage.getItem('cd-theme');if(t)document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}</script>
 {extra_head}
 </head>
 <body data-page="{slug}">
@@ -1090,6 +1090,16 @@ def build_dioceses(data):
                 page = page.replace('<meta property="og:site_name" content="CatholicDoorway">',
                                     f'<meta property="og:site_name" content="CatholicDoorway">\n<meta property="og:locale" content="{LOCALE[lang]}">')
             page += diocese_body(d, data, lang) + foot.format(extra_foot="")
+            dio_ld = {"@type": "Organization", "name": d["name"], "description": desc}
+            if d.get("website"):
+                dio_ld["url"] = d["website"]
+            if d.get("qid"):
+                dio_ld["sameAs"] = f"https://www.wikidata.org/wiki/{d['qid']}"
+            idx = {"en": "/dioceses", "es": "/es/diocesis", "pt": "/pt/dioceses"}[lang]
+            idx_name = {"en": "Dioceses", "es": "Diócesis", "pt": "Dioceses"}[lang]
+            page = seo(page, lang, f"{base}/{d['slug']}",
+                       crumbs=[(HOME_WORD[lang], LANG_HOME[lang]), (idx_name, idx), (nm, f"{base}/{d['slug']}")],
+                       extra=[dict(dio_ld, **{"subjectOf": {"@id": f"{DOMAIN}{base}/{d['slug']}#webpage"}})])
             (out_dir / f"{d['slug']}.html").write_text(bust(page), encoding="utf-8")
             keep.add(f"{d['slug']}.html")
         for old in out_dir.glob("*.html"):
@@ -1097,6 +1107,65 @@ def build_dioceses(data):
                 old.unlink()
         print(f"built {len(keep)} diocese pages ({lang})")
     return sorted(d["slug"] for d in data["dioceses"])
+
+
+
+# ---------- Search and AI-answer metadata (JSON-LD, social cards) ----------
+OG_LOCALE = {"en": "en_US", "es": "es_US", "pt": "pt_BR"}
+SITE_DESC = {"en": "A free, ad-free guide to the Catholic faith: prayers, the Bible, daily readings, finding a church, OCIA, saints and more.",
+             "es": "Una guía gratuita y sin anuncios de la fe católica: oraciones, la Biblia, lecturas del día, cómo encontrar una iglesia, OCIA, santos y más.",
+             "pt": "Um guia gratuito e sem anúncios da fé católica: orações, a Bíblia, leituras do dia, como encontrar uma igreja, OCIA, santos e mais."}
+HOME_WORD = {"en": "Home", "es": "Inicio", "pt": "Início"}
+OG_ALT = "CatholicDoorway: I am the door; if any one enters by me, he will be saved. (John 10:9)"
+
+
+def _strip(x):
+    return html.unescape(re.sub(r"<[^>]+>", "", x)).strip()
+
+
+def site_ld():
+    org = {"@type": "Organization", "@id": f"{DOMAIN}/#org", "name": "CatholicDoorway", "url": f"{DOMAIN}/",
+           "logo": f"{DOMAIN}/assets/img/logo.png", "email": "hello@catholicdoorway.com"}
+    site = {"@type": "WebSite", "@id": f"{DOMAIN}/#website", "name": "CatholicDoorway", "url": f"{DOMAIN}/",
+            "description": SITE_DESC["en"], "inLanguage": ["en", "es", "pt"], "publisher": {"@id": f"{DOMAIN}/#org"}}
+    return [org, site]
+
+
+def faq_ld(lang):
+    data = json.loads((ROOT / "src" / "data" / ("questions.json" if lang == "en" else f"questions_{lang}.json")).read_text(encoding="utf-8"))
+    return {"@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": _strip(q["q"]),
+         "acceptedAnswer": {"@type": "Answer", "text": " ".join(_strip(a) for a in q["a"])}} for q in data]}
+
+
+def seo(page, lang, url, crumbs=None, extra=None):
+    """Adds social-card tags and a JSON-LD graph to a built page's <head>."""
+    title = _strip(re.search(r"<title>(.*?)</title>", page, re.S).group(1))
+    desc = _strip(re.search(r'<meta name="description" content="([^"]*)"', page).group(1))
+    graph = site_ld()
+    webpage = {"@type": "WebPage", "@id": f"{DOMAIN}{url}#webpage", "url": f"{DOMAIN}{url}", "name": title,
+               "description": desc, "inLanguage": lang, "isPartOf": {"@id": f"{DOMAIN}/#website"},
+               "publisher": {"@id": f"{DOMAIN}/#org"}, "primaryImageOfPage": f"{DOMAIN}/assets/img/og.png"}
+    if crumbs:
+        webpage["breadcrumb"] = {"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "name": n, "item": f"{DOMAIN}{u}"} for i, (n, u) in enumerate(crumbs)]}
+    graph.append(webpage)
+    for e in (extra or []):
+        e = dict(e)
+        if e.get("@type") == "FAQPage":
+            e["@id"] = f"{DOMAIN}{url}#faq"
+            e["isPartOf"] = {"@id": f"{DOMAIN}{url}#webpage"}
+        graph.append(e)
+    ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    tags = []
+    if 'property="og:locale"' not in page:
+        tags.append(f'<meta property="og:locale" content="{OG_LOCALE[lang]}">')
+    tags += ['<meta property="og:image:width" content="1200">', '<meta property="og:image:height" content="630">',
+             f'<meta property="og:image:alt" content="{html.escape(OG_ALT)}">',
+             '<meta name="twitter:card" content="summary_large_image">',
+             '<link rel="apple-touch-icon" href="/assets/img/logo.png">',
+             f'<script type="application/ld+json">{ld}</script>']
+    return page.replace("</head>", "\n".join(tags) + "\n</head>", 1)
 
 
 def version(rel):
@@ -1203,6 +1272,8 @@ def build_lang(code, pages, text, foot, subnav, exclude):
             ms, mn = mass_html(code)
             body = body.replace("{{MASS}}", ms).replace("{{MASS_COUNT}}", str(mn))
         page += body + foot.format(extra_foot=ef)
+        crumbs = None if sl == "index" else [(HOME_WORD[code], LANG_HOME[code]), (label, url)]
+        page = seo(page, code, url, crumbs=crumbs, extra=[faq_ld(code)] if en == "questions" else None)
         (out_dir / f"{sl}.html").write_text(bust(page), encoding="utf-8")
         print(f"built {code}/{sl}")
 
@@ -1247,6 +1318,10 @@ def main():
             body = body.replace("{{POPES}}", pl).replace("{{CENTURIES}}", pj)
         page += body
         page += FOOT.format(extra_foot=ef)
+        if slug != "404":
+            url = "/" if slug == "index" else f"/{slug}"
+            crumbs = None if slug == "index" else [(HOME_WORD["en"], "/"), (label, url)]
+            page = seo(page, "en", url, crumbs=crumbs, extra=[faq_ld("en")] if slug == "questions" else None)
         (OUT / f"{slug}.html").write_text(bust(page), encoding="utf-8")
         print("built", slug)
 
@@ -1254,20 +1329,72 @@ def main():
     build_pt()
     dio_slugs = build_dioceses(dio_data)
 
+    write_sitemap(dio_slugs)
+    write_llms(len(dio_slugs))
+
+
+LLMS_GROUPS = [
+    ("Becoming Catholic and practical guides", ["start-here", "first-mass", "how-to", "confession", "coming-back", "join-a-parish",
+                                               "baptism", "marriage", "anointing", "funerals", "baptism-certificate"]),
+    ("Prayer, Scripture and the calendar", ["prayers", "rosary", "bible", "calendar"]),
+    ("What Catholics believe", ["beliefs", "questions", "glossary"]),
+    ("Saints, Popes and Church structure", ["saints", "saints-directory", "popes", "structure", "dioceses", "find-a-church"]),
+    ("About", ["about"]),
+]
+
+
+def write_llms(dio_count):
+    """llms.txt: a plain map of the site for AI assistants and answer engines."""
+    info = {s: (title.replace(" | CatholicDoorway", ""), desc) for s, _, title, desc in PAGES}
+    out = ["# CatholicDoorway", "",
+           "> " + SITE_DESC["en"] + " Written for Catholics and for anyone exploring the faith or starting OCIA "
+           "(the Order of Christian Initiation of Adults). Free, no ads, no sign-up. English, Spanish and Portuguese.", "",
+           "Content follows the teaching of the Catholic Church and cites the Catechism of the Catholic Church and Scripture. "
+           "U.S. focused for parishes, dioceses and holy days. Saint and diocese data come from Wikidata (CC0) and are refreshed weekly; "
+           "the church map uses OpenStreetMap data. Corrections: hello@catholicdoorway.com.", ""]
+    for head, slugs in LLMS_GROUPS:
+        out.append(f"## {head}")
+        out.append("")
+        for sl in slugs:
+            t, d = info[sl]
+            out.append(f"- [{t}]({DOMAIN}/{sl}): {d}")
+        out.append("")
+    out += ["## Other languages", "",
+            f"- [Español]({DOMAIN}/es/): " + SITE_DESC["es"],
+            f"- [Português]({DOMAIN}/pt/): " + SITE_DESC["pt"], "",
+            "## Data", "",
+            f"- [Diocese pages]({DOMAIN}/dioceses): one page for each of {dio_count} U.S. dioceses, archdioceses and eparchies at /dioceses/<slug>.",
+            f"- [Saints directory data]({DOMAIN}/data/saints-directory.json): JSON list of Saints, Blesseds, Venerables and Servants of God.",
+            f"- [Holy days calendar]({DOMAIN}/api/calendar.json): JSON feed of U.S. holy days of obligation, fast days and major feasts (also .ics).",
+            f"- [Sitemap]({DOMAIN}/sitemap.xml)", ""]
+    (OUT / "llms.txt").write_text("\n".join(out), encoding="utf-8")
+
+
+def page_file(u):
+    return OUT / ("index.html" if u == "/" else (u.strip("/") + "/index.html" if u.endswith("/") else u.lstrip("/") + ".html"))
+
+
+def write_sitemap(dio_slugs):
+    """lastmod only moves when a page's content really changes, so search engines can trust it."""
+    paths = [("/" if s == "index" else "/" + s) for s, *_ in PAGES if s != "404"]
+    paths += [f"/es/{'' if es == 'index' else es}" for _, es, *_ in ES_PAGES]
+    paths += [f"/pt/{'' if pt == 'index' else pt}" for _, pt, *_ in PT_PAGES]
+    paths += [f"{DIO_BASE[c]}/{s}" for c in DIO_LANGS for s in dio_slugs]
+    state_file = ROOT / "src" / "data" / "sitemap-state.json"
+    state = json.loads(state_file.read_text(encoding="utf-8")) if state_file.exists() else {}
     today = datetime.date.today().isoformat()
-    urls = "\n".join(
-        f"  <url><loc>{DOMAIN}{'/' if s == 'index' else '/' + s}</loc><lastmod>{today}</lastmod></url>"
-        for s, *_ in PAGES if s != "404")
-    urls += "\n" + "\n".join(
-        f"  <url><loc>{DOMAIN}/es/{'' if es == 'index' else es}</loc><lastmod>{today}</lastmod></url>"
-        for _, es, *_ in ES_PAGES)
-    urls += "\n" + "\n".join(
-        f"  <url><loc>{DOMAIN}/pt/{'' if pt == 'index' else pt}</loc><lastmod>{today}</lastmod></url>"
-        for _, pt, *_ in PT_PAGES)
-    urls += "\n" + "\n".join(f"  <url><loc>{DOMAIN}{b}/{s}</loc><lastmod>{today}</lastmod></url>" for b in (DIO_BASE[c] for c in DIO_LANGS) for s in dio_slugs)
+    new_state, rows = {}, []
+    for u in paths:
+        text = re.sub(r"\?v=[0-9a-f]{10}", "", page_file(u).read_text(encoding="utf-8"))
+        h = hashlib.sha1(text.encode("utf-8")).hexdigest()[:16]
+        old = state.get(u)
+        lastmod = old[1] if old and old[0] == h else today
+        new_state[u] = [h, lastmod]
+        rows.append(f"  <url><loc>{DOMAIN}{u}</loc><lastmod>{lastmod}</lastmod></url>")
+    state_file.write_text(json.dumps(new_state, indent=0, sort_keys=True) + "\n", encoding="utf-8")
     (OUT / "sitemap.xml").write_text(
-        f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n',
-        encoding="utf-8")
+        '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "\n".join(rows) + "\n</urlset>\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
