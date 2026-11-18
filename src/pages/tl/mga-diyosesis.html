@@ -1,0 +1,74 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker">Mga Diyosesis</p>
+    <h1>Hanapin ang Iyong Diyosesis</h1>
+    <p class="lede">Kabilang ang bawat parokya sa isang diyosesis, isang lokal na simbahang pinamumunuan ng obispo. Matutulungan ka ng iyong diyosesis sa OCIA, paghahanda sa kasal, mga paaralang Katoliko at marami pang iba.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section">
+    <div class="grid two">
+      <div class="card">
+        <h3>Saang diyosesis ako kabilang?</h3>
+        <p>Karaniwang sumusunod sa hangganan ng mga county ang mga diyosesis. Ang pinakamabilis na paraan upang malaman ang sa iyo ay hanapin ang pinakamalapit mong parokya. Nakasaad sa website nito ang diyosesis nito.</p>
+        <div class="btn-row" style="justify-content:flex-start">
+          <a class="btn" href="/tl/hanapin-ang-simbahan">Maghanap ng parokya</a>
+          <a class="btn secondary" href="https://www.usccb.org/about/bishops-and-dioceses">Buong listahan sa USCCB</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Ang maitutulong ng diyosesis</h3>
+        <ul style="margin:0">
+          <li>Paghahanap ng aktibong grupo ng OCIA</li>
+          <li>Paghahanda sa kasal at mga tanong tungkol sa annulment</li>
+          <li>Mga paaralang Katoliko at youth ministry</li>
+          <li>Catholic Charities at mga serbisyong panlipunan</li>
+          <li>Ligtas na kapaligiran at pag-uulat ng pang-aabuso</li>
+          <li>Kadalasan, isang Filipino ministry o apostolado</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Bawat diyosesis sa Estados Unidos</h2>
+    <p class="prose">May {{DIOCESE_COUNT}} na diyosesis, arkidiyosesis at eparkiyang Katolikong Silangan sa Estados Unidos at sa mga teritoryo nito. Pinamumunuan ng isang arkidiyosesis ang isang <a href="/tl/istruktura#local">lalawigan</a> ng mga kalapit na diyosesis. Pindutin ang anumang pangalan para sa obispo, katedral, website, kung paano magsimula ng OCIA doon, at ang mga banal na lalaki at babae ng estadong iyon.</p>
+    <div class="filters">
+      <label for="dio-search" style="position:absolute;left:-999px">Maghanap ng diyosesis ayon sa lungsod, estado o obispo</label>
+      <input id="dio-search" class="search" type="search" placeholder="Maghanap ayon sa lungsod, estado o obispo, hal. Texas" data-filter-target="#dio-table tbody tr">
+    </div>
+    <div class="table-wrap">
+      <table id="dio-table">
+        <thead><tr><th scope="col">Diyosesis</th><th scope="col">Saan</th><th scope="col">Pinamumunuan ni</th></tr></thead>
+        <tbody>
+{{DIOCESES}}
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted" id="dio-empty" hidden>Walang diyosesis na tumugma sa paghahanap na iyon. Subukan ang <a href="https://www.usccb.org/about/bishops-and-dioceses">buong listahan ng USCCB</a>.</p>
+    <p class="small muted">Mula sa <a href="https://www.wikidata.org/">Wikidata</a>, na-update noong {{DIOCESE_UPDATED}} at nire-refresh linggo-linggo. Laging kumpirmahin ang mga detalye sa sariling website ng diyosesis.</p>
+  </section>
+
+  <section class="section">
+    <h2>Iba pang hurisdiksiyon sa Estados Unidos</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Militar</h3>
+        <p>Naglilingkod ang Archdiocese for the Military Services, USA sa mga Katoliko sa sandatahang lakas, sa mga ospital ng mga beterano at sa serbisyo ng gobyerno sa ibang bansa.</p>
+        <a href="https://www.milarch.org/">milarch.org</a>
+      </div>
+      <div class="card">
+        <h3>Ang Personal na Ordinaryato</h3>
+        <p>Tinatanggap ng Personal Ordinariate of the Chair of St. Peter sa Simbahang Katoliko ang mga dating Anglikano at Episkopal habang pinananatili ang mga bahagi ng kanilang pamana.</p>
+        <a href="https://ordinariate.net/">ordinariate.net</a>
+      </div>
+      <div class="card">
+        <h3>Mga Simbahang Katolikong Silangan</h3>
+        <p>May sariling mga eparkiya ang mga Katolikong Silangan sa Estados Unidos, kabilang ang Ukrainian Catholic Archeparchy of Philadelphia at ang Byzantine Catholic Archeparchy of Pittsburgh, pati ang Maronita, Melkita, Kaldeo, Syro-Malabar at iba pa.</p>
+        <a href="https://www.usccb.org/about/bishops-and-dioceses">Tingnan ang lahat ng eparkiya sa USCCB</a>
+      </div>
+    </div>
+    <p class="small muted" style="margin-top:1.2rem">Wala sa Estados Unidos? Nakalista ang bawat diyosesis sa mundo, kasama ang mga nasa Pilipinas, sa <a href="https://www.gcatholic.org/dioceses/">GCatholic</a> at <a href="https://www.catholic-hierarchy.org/">Catholic-Hierarchy</a>.</p>
+  </section>
+</div>

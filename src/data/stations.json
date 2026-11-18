@@ -1,65 +1,450 @@
 {
  "en": {
-  "open": ["Opening", "Before the first station", "Make the Sign of the Cross. Many people pray the Act of Contrition here, then begin.", [["Leader", "We adore you, O Christ, and we praise you."], ["All", "Because by your holy cross you have redeemed the world."]], "At each station, genuflect or bow if you can, and say these two lines. After the reflection, pray an Our Father, a Hail Mary and a Glory Be."],
+  "open": [
+   "Opening",
+   "Before the first station",
+   "Make the Sign of the Cross. Many people pray the Act of Contrition here, then begin.",
+   [
+    [
+     "Leader",
+     "We adore you, O Christ, and we praise you."
+    ],
+    [
+     "All",
+     "Because by your holy cross you have redeemed the world."
+    ]
+   ],
+   "At each station, genuflect or bow if you can, and say these two lines. After the reflection, pray an Our Father, a Hail Mary and a Glory Be."
+  ],
   "part": "Station",
-  "close": ["Closing", "After the fourteenth station", "Many people end with an Our Father, a Hail Mary and a Glory Be for the intentions of the Pope, and with a short prayer of thanks: Lord Jesus, by your cross and resurrection you have set us free. Help me to follow you each day. Amen.", [], "Some parishes add a fifteenth moment for the Resurrection, since the story does not end at the tomb."],
+  "close": [
+   "Closing",
+   "After the fourteenth station",
+   "Many people end with an Our Father, a Hail Mary and a Glory Be for the intentions of the Pope, and with a short prayer of thanks: Lord Jesus, by your cross and resurrection you have set us free. Help me to follow you each day. Amen.",
+   [],
+   "Some parishes add a fifteenth moment for the Resurrection, since the story does not end at the tomb."
+  ],
   "stations": [
-   ["Jesus is condemned to death", "Mark 15:1–15", "Pilate knows Jesus is innocent, but he is afraid of the crowd and hands him over. Jesus says nothing in his own defense.", "Lord, when it is easier to go along with the crowd, give me the courage to stand with you."],
-   ["Jesus takes up his cross", "John 19:16–17", "The heavy beam is laid on shoulders already torn by the scourging. Jesus accepts it, for us.", "Lord, help me carry my own crosses with patience, and not to add to the crosses of others."],
-   ["Jesus falls the first time", "Isaiah 53:4–6", "Weak from pain and loss of blood, Jesus falls. He gets up and keeps going.", "Lord, when I fall into the same sins again, help me to get up and begin again with you."],
-   ["Jesus meets his mother", "Luke 2:34–35", "Mary sees her son on the road to death. She cannot take his pain away, but she does not leave him.", "Mary, stay close to me and to everyone who suffers, as you stayed close to your son."],
-   ["Simon of Cyrene helps Jesus carry the cross", "Mark 15:21", "Simon is pulled from the crowd and made to help. He did not choose this, but he will always be remembered for it.", "Lord, open my eyes to the people around me who need a hand with their burden."],
-   ["Veronica wipes the face of Jesus", "Isaiah 52:14; 53:2–3", "Tradition says a woman pushed through the soldiers to wipe the blood and sweat from his face. A small act of love, at real risk.", "Lord, let me see your face in the poor, the sick and the forgotten, and not look away."],
-   ["Jesus falls the second time", "Psalm 22:6–7", "He falls again, and the crowd mocks him. Still he rises.", "Lord, when I am discouraged and tempted to give up, lift me up."],
-   ["Jesus meets the women of Jerusalem", "Luke 23:27–31", "Women weep for him along the road. Even in agony, Jesus turns to comfort and teach them.", "Lord, teach me to think of others even when I am hurting."],
-   ["Jesus falls the third time", "Lamentations 3:1–16", "Near the top of the hill, his strength is gone and he falls once more. He gets up to finish what he came to do.", "Lord, give me the strength to persevere to the end."],
-   ["Jesus is stripped of his garments", "John 19:23–24", "The soldiers take his clothes and gamble for them. He is left with nothing, not even his dignity in the eyes of the world.", "Lord, free me from clinging to things, and help me respect the dignity of every person."],
-   ["Jesus is nailed to the cross", "Luke 23:33–34", "They drive nails through his hands and feet. He prays, “Father, forgive them; for they know not what they do.”", "Lord, help me forgive the people who have hurt me, as you forgave."],
-   ["Jesus dies on the cross", "John 19:25–30", "After three hours, Jesus says, “It is finished,” bows his head and gives up his spirit. Kneel here for a moment of silence.", "Lord Jesus, you died so that I might live. Thank you. Let me never forget it."],
-   ["Jesus is taken down from the cross", "John 19:38", "Joseph of Arimathea and Nicodemus lower his body and place it in the arms of his mother.", "Mary, Mother of Sorrows, pray for all who grieve."],
-   ["Jesus is laid in the tomb", "John 19:39–42", "His body is wrapped in linen with spices and laid in a new tomb, and a stone is rolled across the door. The world waits in silence for Easter.", "Lord, when it is dark and you seem far away, help me wait in hope for the morning."]
+   [
+    "Jesus is condemned to death",
+    "Mark 15:1–15",
+    "Pilate knows Jesus is innocent, but he is afraid of the crowd and hands him over. Jesus says nothing in his own defense.",
+    "Lord, when it is easier to go along with the crowd, give me the courage to stand with you."
+   ],
+   [
+    "Jesus takes up his cross",
+    "John 19:16–17",
+    "The heavy beam is laid on shoulders already torn by the scourging. Jesus accepts it, for us.",
+    "Lord, help me carry my own crosses with patience, and not to add to the crosses of others."
+   ],
+   [
+    "Jesus falls the first time",
+    "Isaiah 53:4–6",
+    "Weak from pain and loss of blood, Jesus falls. He gets up and keeps going.",
+    "Lord, when I fall into the same sins again, help me to get up and begin again with you."
+   ],
+   [
+    "Jesus meets his mother",
+    "Luke 2:34–35",
+    "Mary sees her son on the road to death. She cannot take his pain away, but she does not leave him.",
+    "Mary, stay close to me and to everyone who suffers, as you stayed close to your son."
+   ],
+   [
+    "Simon of Cyrene helps Jesus carry the cross",
+    "Mark 15:21",
+    "Simon is pulled from the crowd and made to help. He did not choose this, but he will always be remembered for it.",
+    "Lord, open my eyes to the people around me who need a hand with their burden."
+   ],
+   [
+    "Veronica wipes the face of Jesus",
+    "Isaiah 52:14; 53:2–3",
+    "Tradition says a woman pushed through the soldiers to wipe the blood and sweat from his face. A small act of love, at real risk.",
+    "Lord, let me see your face in the poor, the sick and the forgotten, and not look away."
+   ],
+   [
+    "Jesus falls the second time",
+    "Psalm 22:6–7",
+    "He falls again, and the crowd mocks him. Still he rises.",
+    "Lord, when I am discouraged and tempted to give up, lift me up."
+   ],
+   [
+    "Jesus meets the women of Jerusalem",
+    "Luke 23:27–31",
+    "Women weep for him along the road. Even in agony, Jesus turns to comfort and teach them.",
+    "Lord, teach me to think of others even when I am hurting."
+   ],
+   [
+    "Jesus falls the third time",
+    "Lamentations 3:1–16",
+    "Near the top of the hill, his strength is gone and he falls once more. He gets up to finish what he came to do.",
+    "Lord, give me the strength to persevere to the end."
+   ],
+   [
+    "Jesus is stripped of his garments",
+    "John 19:23–24",
+    "The soldiers take his clothes and gamble for them. He is left with nothing, not even his dignity in the eyes of the world.",
+    "Lord, free me from clinging to things, and help me respect the dignity of every person."
+   ],
+   [
+    "Jesus is nailed to the cross",
+    "Luke 23:33–34",
+    "They drive nails through his hands and feet. He prays, “Father, forgive them; for they know not what they do.”",
+    "Lord, help me forgive the people who have hurt me, as you forgave."
+   ],
+   [
+    "Jesus dies on the cross",
+    "John 19:25–30",
+    "After three hours, Jesus says, “It is finished,” bows his head and gives up his spirit. Kneel here for a moment of silence.",
+    "Lord Jesus, you died so that I might live. Thank you. Let me never forget it."
+   ],
+   [
+    "Jesus is taken down from the cross",
+    "John 19:38",
+    "Joseph of Arimathea and Nicodemus lower his body and place it in the arms of his mother.",
+    "Mary, Mother of Sorrows, pray for all who grieve."
+   ],
+   [
+    "Jesus is laid in the tomb",
+    "John 19:39–42",
+    "His body is wrapped in linen with spices and laid in a new tomb, and a stone is rolled across the door. The world waits in silence for Easter.",
+    "Lord, when it is dark and you seem far away, help me wait in hope for the morning."
+   ]
   ]
  },
  "es": {
-  "open": ["Inicio", "Antes de la primera estación", "Haz la señal de la cruz. Muchos rezan aquí el Acto de contrición y luego comienzan.", [["Guía", "Te adoramos, oh Cristo, y te bendecimos."], ["Todos", "Que por tu santa cruz redimiste al mundo."]], "En cada estación, haz una genuflexión o una inclinación si puedes, y di estas dos líneas. Después de la reflexión, reza un Padre Nuestro, un Ave María y un Gloria."],
+  "open": [
+   "Inicio",
+   "Antes de la primera estación",
+   "Haz la señal de la cruz. Muchos rezan aquí el Acto de contrición y luego comienzan.",
+   [
+    [
+     "Guía",
+     "Te adoramos, oh Cristo, y te bendecimos."
+    ],
+    [
+     "Todos",
+     "Que por tu santa cruz redimiste al mundo."
+    ]
+   ],
+   "En cada estación, haz una genuflexión o una inclinación si puedes, y di estas dos líneas. Después de la reflexión, reza un Padre Nuestro, un Ave María y un Gloria."
+  ],
   "part": "Estación",
-  "close": ["Final", "Después de la decimocuarta estación", "Muchos terminan con un Padre Nuestro, un Ave María y un Gloria por las intenciones del Papa, y una breve oración de gracias: Señor Jesús, por tu cruz y resurrección nos has hecho libres. Ayúdame a seguirte cada día. Amén.", [], "Algunas parroquias añaden un momento más para la Resurrección, porque la historia no termina en el sepulcro."],
+  "close": [
+   "Final",
+   "Después de la decimocuarta estación",
+   "Muchos terminan con un Padre Nuestro, un Ave María y un Gloria por las intenciones del Papa, y una breve oración de gracias: Señor Jesús, por tu cruz y resurrección nos has hecho libres. Ayúdame a seguirte cada día. Amén.",
+   [],
+   "Algunas parroquias añaden un momento más para la Resurrección, porque la historia no termina en el sepulcro."
+  ],
   "stations": [
-   ["Jesús es condenado a muerte", "Marcos 15,1–15", "Pilato sabe que Jesús es inocente, pero tiene miedo de la multitud y lo entrega. Jesús no dice nada para defenderse.", "Señor, cuando sea más fácil seguir a la multitud, dame valor para quedarme contigo."],
-   ["Jesús carga con la cruz", "Juan 19,16–17", "Ponen el pesado madero sobre unos hombros ya desgarrados por los azotes. Jesús lo acepta, por nosotros.", "Señor, ayúdame a llevar mis cruces con paciencia y a no hacer más pesadas las cruces de los demás."],
-   ["Jesús cae por primera vez", "Isaías 53,4–6", "Débil por el dolor y la sangre perdida, Jesús cae. Se levanta y sigue adelante.", "Señor, cuando vuelva a caer en los mismos pecados, ayúdame a levantarme y empezar de nuevo contigo."],
-   ["Jesús encuentra a su Madre", "Lucas 2,34–35", "María ve a su hijo camino de la muerte. No puede quitarle el dolor, pero no lo deja solo.", "María, quédate cerca de mí y de todos los que sufren, como te quedaste cerca de tu hijo."],
-   ["Simón de Cirene ayuda a Jesús a llevar la cruz", "Marcos 15,21", "Sacan a Simón de entre la gente y lo obligan a ayudar. No lo eligió, pero siempre será recordado por ello.", "Señor, abre mis ojos a quienes a mi alrededor necesitan una mano con su carga."],
-   ["La Verónica enjuga el rostro de Jesús", "Isaías 52,14; 53,2–3", "La tradición cuenta que una mujer se abrió paso entre los soldados para limpiarle la sangre y el sudor del rostro. Un pequeño gesto de amor, con verdadero riesgo.", "Señor, que vea tu rostro en los pobres, los enfermos y los olvidados, y que no aparte la mirada."],
-   ["Jesús cae por segunda vez", "Salmo 22,7–8", "Cae otra vez y la gente se burla. Aun así, se levanta.", "Señor, cuando me desanime y quiera rendirme, levántame."],
-   ["Jesús consuela a las mujeres de Jerusalén", "Lucas 23,27–31", "Unas mujeres lloran por él en el camino. Aun en su agonía, Jesús se vuelve para consolarlas y enseñarles.", "Señor, enséñame a pensar en los demás incluso cuando sufro."],
-   ["Jesús cae por tercera vez", "Lamentaciones 3,1–16", "Cerca de la cima ya no le quedan fuerzas y cae una vez más. Se levanta para terminar lo que vino a hacer.", "Señor, dame fuerza para perseverar hasta el final."],
-   ["Jesús es despojado de sus vestiduras", "Juan 19,23–24", "Los soldados le quitan la ropa y la sortean. Se queda sin nada, ni siquiera su dignidad a los ojos del mundo.", "Señor, líbrame del apego a las cosas y ayúdame a respetar la dignidad de cada persona."],
-   ["Jesús es clavado en la cruz", "Lucas 23,33–34", "Le atraviesan con clavos las manos y los pies. Él reza: «Padre, perdónalos, porque no saben lo que hacen».", "Señor, ayúdame a perdonar a quienes me han hecho daño, como tú perdonaste."],
-   ["Jesús muere en la cruz", "Juan 19,25–30", "Después de tres horas, Jesús dice: «Todo está cumplido», inclina la cabeza y entrega el espíritu. Arrodíllate aquí un momento en silencio.", "Señor Jesús, moriste para que yo viva. Gracias. Que nunca lo olvide."],
-   ["Jesús es bajado de la cruz", "Juan 19,38", "José de Arimatea y Nicodemo bajan su cuerpo y lo ponen en brazos de su madre.", "María, Madre Dolorosa, ruega por todos los que lloran."],
-   ["Jesús es puesto en el sepulcro", "Juan 19,39–42", "Envuelven su cuerpo en lienzos con perfumes y lo colocan en un sepulcro nuevo, y hacen rodar una piedra a la entrada. El mundo espera en silencio la Pascua.", "Señor, cuando todo esté oscuro y te sienta lejos, ayúdame a esperar con esperanza la mañana."]
+   [
+    "Jesús es condenado a muerte",
+    "Marcos 15,1–15",
+    "Pilato sabe que Jesús es inocente, pero tiene miedo de la multitud y lo entrega. Jesús no dice nada para defenderse.",
+    "Señor, cuando sea más fácil seguir a la multitud, dame valor para quedarme contigo."
+   ],
+   [
+    "Jesús carga con la cruz",
+    "Juan 19,16–17",
+    "Ponen el pesado madero sobre unos hombros ya desgarrados por los azotes. Jesús lo acepta, por nosotros.",
+    "Señor, ayúdame a llevar mis cruces con paciencia y a no hacer más pesadas las cruces de los demás."
+   ],
+   [
+    "Jesús cae por primera vez",
+    "Isaías 53,4–6",
+    "Débil por el dolor y la sangre perdida, Jesús cae. Se levanta y sigue adelante.",
+    "Señor, cuando vuelva a caer en los mismos pecados, ayúdame a levantarme y empezar de nuevo contigo."
+   ],
+   [
+    "Jesús encuentra a su Madre",
+    "Lucas 2,34–35",
+    "María ve a su hijo camino de la muerte. No puede quitarle el dolor, pero no lo deja solo.",
+    "María, quédate cerca de mí y de todos los que sufren, como te quedaste cerca de tu hijo."
+   ],
+   [
+    "Simón de Cirene ayuda a Jesús a llevar la cruz",
+    "Marcos 15,21",
+    "Sacan a Simón de entre la gente y lo obligan a ayudar. No lo eligió, pero siempre será recordado por ello.",
+    "Señor, abre mis ojos a quienes a mi alrededor necesitan una mano con su carga."
+   ],
+   [
+    "La Verónica enjuga el rostro de Jesús",
+    "Isaías 52,14; 53,2–3",
+    "La tradición cuenta que una mujer se abrió paso entre los soldados para limpiarle la sangre y el sudor del rostro. Un pequeño gesto de amor, con verdadero riesgo.",
+    "Señor, que vea tu rostro en los pobres, los enfermos y los olvidados, y que no aparte la mirada."
+   ],
+   [
+    "Jesús cae por segunda vez",
+    "Salmo 22,7–8",
+    "Cae otra vez y la gente se burla. Aun así, se levanta.",
+    "Señor, cuando me desanime y quiera rendirme, levántame."
+   ],
+   [
+    "Jesús consuela a las mujeres de Jerusalén",
+    "Lucas 23,27–31",
+    "Unas mujeres lloran por él en el camino. Aun en su agonía, Jesús se vuelve para consolarlas y enseñarles.",
+    "Señor, enséñame a pensar en los demás incluso cuando sufro."
+   ],
+   [
+    "Jesús cae por tercera vez",
+    "Lamentaciones 3,1–16",
+    "Cerca de la cima ya no le quedan fuerzas y cae una vez más. Se levanta para terminar lo que vino a hacer.",
+    "Señor, dame fuerza para perseverar hasta el final."
+   ],
+   [
+    "Jesús es despojado de sus vestiduras",
+    "Juan 19,23–24",
+    "Los soldados le quitan la ropa y la sortean. Se queda sin nada, ni siquiera su dignidad a los ojos del mundo.",
+    "Señor, líbrame del apego a las cosas y ayúdame a respetar la dignidad de cada persona."
+   ],
+   [
+    "Jesús es clavado en la cruz",
+    "Lucas 23,33–34",
+    "Le atraviesan con clavos las manos y los pies. Él reza: «Padre, perdónalos, porque no saben lo que hacen».",
+    "Señor, ayúdame a perdonar a quienes me han hecho daño, como tú perdonaste."
+   ],
+   [
+    "Jesús muere en la cruz",
+    "Juan 19,25–30",
+    "Después de tres horas, Jesús dice: «Todo está cumplido», inclina la cabeza y entrega el espíritu. Arrodíllate aquí un momento en silencio.",
+    "Señor Jesús, moriste para que yo viva. Gracias. Que nunca lo olvide."
+   ],
+   [
+    "Jesús es bajado de la cruz",
+    "Juan 19,38",
+    "José de Arimatea y Nicodemo bajan su cuerpo y lo ponen en brazos de su madre.",
+    "María, Madre Dolorosa, ruega por todos los que lloran."
+   ],
+   [
+    "Jesús es puesto en el sepulcro",
+    "Juan 19,39–42",
+    "Envuelven su cuerpo en lienzos con perfumes y lo colocan en un sepulcro nuevo, y hacen rodar una piedra a la entrada. El mundo espera en silencio la Pascua.",
+    "Señor, cuando todo esté oscuro y te sienta lejos, ayúdame a esperar con esperanza la mañana."
+   ]
   ]
  },
  "pt": {
-  "open": ["Início", "Antes da primeira estação", "Faça o sinal da cruz. Muitos rezam aqui o Ato de contrição e depois começam.", [["Dirigente", "Nós vos adoramos, Senhor Jesus Cristo, e vos bendizemos."], ["Todos", "Porque pela vossa santa cruz remistes o mundo."]], "Em cada estação, faça uma genuflexão ou uma inclinação se puder, e diga estas duas linhas. Depois da reflexão, reze um Pai-Nosso, uma Ave-Maria e um Glória."],
+  "open": [
+   "Início",
+   "Antes da primeira estação",
+   "Faça o sinal da cruz. Muitos rezam aqui o Ato de contrição e depois começam.",
+   [
+    [
+     "Dirigente",
+     "Nós vos adoramos, Senhor Jesus Cristo, e vos bendizemos."
+    ],
+    [
+     "Todos",
+     "Porque pela vossa santa cruz remistes o mundo."
+    ]
+   ],
+   "Em cada estação, faça uma genuflexão ou uma inclinação se puder, e diga estas duas linhas. Depois da reflexão, reze um Pai-Nosso, uma Ave-Maria e um Glória."
+  ],
   "part": "Estação",
-  "close": ["Final", "Depois da décima quarta estação", "Muitos terminam com um Pai-Nosso, uma Ave-Maria e um Glória pelas intenções do Papa, e uma breve oração de agradecimento: Senhor Jesus, pela vossa cruz e ressurreição nos libertastes. Ajudai-me a seguir-vos todos os dias. Amém.", [], "Algumas paróquias acrescentam mais um momento para a Ressurreição, porque a história não termina no sepulcro."],
+  "close": [
+   "Final",
+   "Depois da décima quarta estação",
+   "Muitos terminam com um Pai-Nosso, uma Ave-Maria e um Glória pelas intenções do Papa, e uma breve oração de agradecimento: Senhor Jesus, pela vossa cruz e ressurreição nos libertastes. Ajudai-me a seguir-vos todos os dias. Amém.",
+   [],
+   "Algumas paróquias acrescentam mais um momento para a Ressurreição, porque a história não termina no sepulcro."
+  ],
   "stations": [
-   ["Jesus é condenado à morte", "Marcos 15,1–15", "Pilatos sabe que Jesus é inocente, mas tem medo da multidão e o entrega. Jesus não diz nada em sua defesa.", "Senhor, quando for mais fácil seguir a multidão, dai-me coragem para ficar do vosso lado."],
-   ["Jesus carrega a cruz", "João 19,16–17", "O pesado madeiro é colocado sobre ombros já feridos pela flagelação. Jesus o aceita, por nós.", "Senhor, ajudai-me a carregar as minhas cruzes com paciência e a não tornar mais pesadas as cruzes dos outros."],
-   ["Jesus cai pela primeira vez", "Isaías 53,4–6", "Fraco pela dor e pelo sangue perdido, Jesus cai. Ele se levanta e continua.", "Senhor, quando eu cair de novo nos mesmos pecados, ajudai-me a levantar e recomeçar convosco."],
-   ["Jesus encontra sua Mãe", "Lucas 2,34–35", "Maria vê o seu filho a caminho da morte. Não pode tirar a dor dele, mas não o abandona.", "Maria, ficai perto de mim e de todos os que sofrem, como ficastes perto do vosso filho."],
-   ["Simão Cireneu ajuda Jesus a carregar a cruz", "Marcos 15,21", "Simão é tirado da multidão e obrigado a ajudar. Ele não escolheu isso, mas será sempre lembrado por isso.", "Senhor, abri os meus olhos para as pessoas ao meu redor que precisam de ajuda com o seu fardo."],
-   ["Verônica enxuga o rosto de Jesus", "Isaías 52,14; 53,2–3", "A tradição conta que uma mulher passou pelos soldados para limpar o sangue e o suor do seu rosto. Um pequeno gesto de amor, com risco real.", "Senhor, que eu veja o vosso rosto nos pobres, nos doentes e nos esquecidos, e não desvie o olhar."],
-   ["Jesus cai pela segunda vez", "Salmo 22,7–8", "Ele cai de novo, e a multidão zomba. Mesmo assim, se levanta.", "Senhor, quando eu desanimar e tiver vontade de desistir, levantai-me."],
-   ["Jesus consola as mulheres de Jerusalém", "Lucas 23,27–31", "Mulheres choram por ele pelo caminho. Mesmo na agonia, Jesus se volta para consolá-las e ensiná-las.", "Senhor, ensinai-me a pensar nos outros mesmo quando estou sofrendo."],
-   ["Jesus cai pela terceira vez", "Lamentações 3,1–16", "Perto do alto do monte, suas forças acabam e ele cai mais uma vez. Levanta-se para terminar o que veio fazer.", "Senhor, dai-me força para perseverar até o fim."],
-   ["Jesus é despojado de suas vestes", "João 19,23–24", "Os soldados tiram as suas roupas e as sorteiam. Ele fica sem nada, nem mesmo a dignidade aos olhos do mundo.", "Senhor, livrai-me do apego às coisas e ajudai-me a respeitar a dignidade de cada pessoa."],
-   ["Jesus é pregado na cruz", "Lucas 23,33–34", "Pregam com cravos as suas mãos e os seus pés. Ele reza: “Pai, perdoa-lhes, porque não sabem o que fazem.”", "Senhor, ajudai-me a perdoar quem me feriu, como vós perdoastes."],
-   ["Jesus morre na cruz", "João 19,25–30", "Depois de três horas, Jesus diz: “Está consumado”, inclina a cabeça e entrega o espírito. Ajoelhe-se aqui um momento em silêncio.", "Senhor Jesus, morrestes para que eu viva. Obrigado. Que eu nunca me esqueça."],
-   ["Jesus é descido da cruz", "João 19,38", "José de Arimateia e Nicodemos descem o seu corpo e o colocam nos braços de sua mãe.", "Maria, Mãe das Dores, rogai por todos os que choram."],
-   ["Jesus é colocado no sepulcro", "João 19,39–42", "Envolvem o seu corpo em panos de linho com perfumes e o colocam num sepulcro novo, e uma pedra é rolada à entrada. O mundo espera em silêncio a Páscoa.", "Senhor, quando tudo estiver escuro e vos sentir longe, ajudai-me a esperar com esperança a manhã."]
+   [
+    "Jesus é condenado à morte",
+    "Marcos 15,1–15",
+    "Pilatos sabe que Jesus é inocente, mas tem medo da multidão e o entrega. Jesus não diz nada em sua defesa.",
+    "Senhor, quando for mais fácil seguir a multidão, dai-me coragem para ficar do vosso lado."
+   ],
+   [
+    "Jesus carrega a cruz",
+    "João 19,16–17",
+    "O pesado madeiro é colocado sobre ombros já feridos pela flagelação. Jesus o aceita, por nós.",
+    "Senhor, ajudai-me a carregar as minhas cruzes com paciência e a não tornar mais pesadas as cruzes dos outros."
+   ],
+   [
+    "Jesus cai pela primeira vez",
+    "Isaías 53,4–6",
+    "Fraco pela dor e pelo sangue perdido, Jesus cai. Ele se levanta e continua.",
+    "Senhor, quando eu cair de novo nos mesmos pecados, ajudai-me a levantar e recomeçar convosco."
+   ],
+   [
+    "Jesus encontra sua Mãe",
+    "Lucas 2,34–35",
+    "Maria vê o seu filho a caminho da morte. Não pode tirar a dor dele, mas não o abandona.",
+    "Maria, ficai perto de mim e de todos os que sofrem, como ficastes perto do vosso filho."
+   ],
+   [
+    "Simão Cireneu ajuda Jesus a carregar a cruz",
+    "Marcos 15,21",
+    "Simão é tirado da multidão e obrigado a ajudar. Ele não escolheu isso, mas será sempre lembrado por isso.",
+    "Senhor, abri os meus olhos para as pessoas ao meu redor que precisam de ajuda com o seu fardo."
+   ],
+   [
+    "Verônica enxuga o rosto de Jesus",
+    "Isaías 52,14; 53,2–3",
+    "A tradição conta que uma mulher passou pelos soldados para limpar o sangue e o suor do seu rosto. Um pequeno gesto de amor, com risco real.",
+    "Senhor, que eu veja o vosso rosto nos pobres, nos doentes e nos esquecidos, e não desvie o olhar."
+   ],
+   [
+    "Jesus cai pela segunda vez",
+    "Salmo 22,7–8",
+    "Ele cai de novo, e a multidão zomba. Mesmo assim, se levanta.",
+    "Senhor, quando eu desanimar e tiver vontade de desistir, levantai-me."
+   ],
+   [
+    "Jesus consola as mulheres de Jerusalém",
+    "Lucas 23,27–31",
+    "Mulheres choram por ele pelo caminho. Mesmo na agonia, Jesus se volta para consolá-las e ensiná-las.",
+    "Senhor, ensinai-me a pensar nos outros mesmo quando estou sofrendo."
+   ],
+   [
+    "Jesus cai pela terceira vez",
+    "Lamentações 3,1–16",
+    "Perto do alto do monte, suas forças acabam e ele cai mais uma vez. Levanta-se para terminar o que veio fazer.",
+    "Senhor, dai-me força para perseverar até o fim."
+   ],
+   [
+    "Jesus é despojado de suas vestes",
+    "João 19,23–24",
+    "Os soldados tiram as suas roupas e as sorteiam. Ele fica sem nada, nem mesmo a dignidade aos olhos do mundo.",
+    "Senhor, livrai-me do apego às coisas e ajudai-me a respeitar a dignidade de cada pessoa."
+   ],
+   [
+    "Jesus é pregado na cruz",
+    "Lucas 23,33–34",
+    "Pregam com cravos as suas mãos e os seus pés. Ele reza: “Pai, perdoa-lhes, porque não sabem o que fazem.”",
+    "Senhor, ajudai-me a perdoar quem me feriu, como vós perdoastes."
+   ],
+   [
+    "Jesus morre na cruz",
+    "João 19,25–30",
+    "Depois de três horas, Jesus diz: “Está consumado”, inclina a cabeça e entrega o espírito. Ajoelhe-se aqui um momento em silêncio.",
+    "Senhor Jesus, morrestes para que eu viva. Obrigado. Que eu nunca me esqueça."
+   ],
+   [
+    "Jesus é descido da cruz",
+    "João 19,38",
+    "José de Arimateia e Nicodemos descem o seu corpo e o colocam nos braços de sua mãe.",
+    "Maria, Mãe das Dores, rogai por todos os que choram."
+   ],
+   [
+    "Jesus é colocado no sepulcro",
+    "João 19,39–42",
+    "Envolvem o seu corpo em panos de linho com perfumes e o colocam num sepulcro novo, e uma pedra é rolada à entrada. O mundo espera em silêncio a Páscoa.",
+    "Senhor, quando tudo estiver escuro e vos sentir longe, ajudai-me a esperar com esperança a manhã."
+   ]
+  ]
+ },
+ "tl": {
+  "open": [
+   "Pambungad",
+   "Bago ang unang estasyon",
+   "Mag-antanda ng krus. Maraming tao ang nagdarasal ng Pagsisisi rito, saka nagsisimula.",
+   [
+    [
+     "Namumuno",
+     "Sinasamba ka namin, O Kristo, at pinupuri ka namin."
+    ],
+    [
+     "Lahat",
+     "Sapagkat sa pamamagitan ng iyong banal na krus ay tinubos mo ang sanlibutan."
+    ]
+   ],
+   "Sa bawat estasyon, lumuhod nang isang tuhod o yumukod kung kaya mo, at sabihin ang dalawang linyang ito. Pagkatapos ng pagninilay, magdasal ng isang Ama Namin, isang Aba Ginoong Maria at isang Luwalhati."
+  ],
+  "part": "Estasyon",
+  "close": [
+   "Pangwakas",
+   "Pagkatapos ng ika-14 na estasyon",
+   "Maraming tao ang nagtatapos sa isang Ama Namin, isang Aba Ginoong Maria at isang Luwalhati para sa mga intensiyon ng Santo Papa, at sa maikling dasal ng pasasalamat: Panginoong Hesus, sa pamamagitan ng iyong krus at muling pagkabuhay ay pinalaya mo kami. Tulungan mo akong sumunod sa iyo araw-araw. Amen.",
+   [],
+   "May mga parokyang nagdadagdag ng ika-15 sandali para sa Muling Pagkabuhay, sapagkat hindi nagtatapos sa libingan ang kuwento."
+  ],
+  "stations": [
+   [
+    "Hinatulan ng kamatayan si Hesus",
+    "Marcos 15:1–15",
+    "Alam ni Pilato na walang sala si Hesus, ngunit natatakot siya sa mga tao kaya ibinigay niya ito sa kanila. Walang sinabi si Hesus upang ipagtanggol ang sarili.",
+    "Panginoon, kapag mas madaling sumunod sa karamihan, bigyan mo ako ng lakas ng loob na pumanig sa iyo."
+   ],
+   [
+    "Pinasan ni Hesus ang krus",
+    "Juan 19:16–17",
+    "Ipinapasan ang mabigat na kahoy sa mga balikat na sugatan na sa paghagupit. Tinanggap ito ni Hesus, para sa atin.",
+    "Panginoon, tulungan mo akong pasanin nang may tiyaga ang sarili kong mga krus, at huwag dagdagan ang krus ng iba."
+   ],
+   [
+    "Unang pagkadapa ni Hesus",
+    "Isaias 53:4–6",
+    "Nanghihina sa sakit at sa pagkaubos ng dugo, nadapa si Hesus. Bumangon siya at nagpatuloy.",
+    "Panginoon, kapag nahuhulog akong muli sa parehong kasalanan, tulungan mo akong bumangon at magsimulang muli kasama mo."
+   ],
+   [
+    "Nasalubong ni Hesus ang kanyang Ina",
+    "Lucas 2:34–35",
+    "Nakita ni Maria ang kanyang anak sa daan patungo sa kamatayan. Hindi niya maaalis ang sakit nito, ngunit hindi niya ito iniwan.",
+    "Maria, manatili ka sa tabi ko at ng lahat ng nagdurusa, gaya ng pananatili mo sa tabi ng iyong anak."
+   ],
+   [
+    "Tinulungan ni Simon Cireneo si Hesus sa pagpasan ng krus",
+    "Marcos 15:21",
+    "Hinila si Simon mula sa karamihan at pinilit na tumulong. Hindi niya ito pinili, ngunit maaalala siya dahil dito magpakailanman.",
+    "Panginoon, buksan mo ang aking mga mata sa mga taong nasa paligid ko na nangangailangan ng tulong sa kanilang pasanin."
+   ],
+   [
+    "Pinunasan ni Veronica ang mukha ni Hesus",
+    "Isaias 52:14; 53:2–3",
+    "Ayon sa tradisyon, isang babae ang sumingit sa mga kawal upang punasan ang dugo at pawis sa kanyang mukha. Isang munting gawa ng pag-ibig, sa tunay na panganib.",
+    "Panginoon, ipakita mo sa akin ang iyong mukha sa mga dukha, maysakit at nakalimutan, at huwag akong tumalikod."
+   ],
+   [
+    "Ikalawang pagkadapa ni Hesus",
+    "Salmo 22:6–7",
+    "Muli siyang nadapa, at kinutya siya ng mga tao. Gayunman ay bumangon siya.",
+    "Panginoon, kapag ako ay pinanghihinaan ng loob at natutuksong sumuko, itayo mo ako."
+   ],
+   [
+    "Nasalubong ni Hesus ang mga babae ng Jerusalem",
+    "Lucas 23:27–31",
+    "Umiiyak para sa kanya ang mga babae sa tabi ng daan. Kahit naghihirap, hinarap sila ni Hesus upang aliwin at turuan.",
+    "Panginoon, turuan mo akong isipin ang iba kahit ako ay nasasaktan."
+   ],
+   [
+    "Ikatlong pagkadapa ni Hesus",
+    "Panaghoy 3:1–16",
+    "Malapit na sa tuktok ng burol, ubos na ang kanyang lakas at muli siyang nadapa. Bumangon siya upang tapusin ang ipinunta niya.",
+    "Panginoon, bigyan mo ako ng lakas na magtiyaga hanggang wakas."
+   ],
+   [
+    "Hinubaran si Hesus ng kanyang damit",
+    "Juan 19:23–24",
+    "Kinuha ng mga kawal ang kanyang damit at pinagsapalaran. Wala nang natira sa kanya, kahit ang dangal sa paningin ng mundo.",
+    "Panginoon, palayain mo ako sa pagkakapit sa mga bagay, at tulungan mo akong igalang ang dangal ng bawat tao."
+   ],
+   [
+    "Ipinako si Hesus sa krus",
+    "Lucas 23:33–34",
+    "Ipinako nila ang kanyang mga kamay at paa. Nanalangin siya: “Ama, patawarin mo sila, sapagkat hindi nila nalalaman ang kanilang ginagawa.”",
+    "Panginoon, tulungan mo akong patawarin ang mga nanakit sa akin, gaya ng iyong pagpapatawad."
+   ],
+   [
+    "Namatay si Hesus sa krus",
+    "Juan 19:25–30",
+    "Pagkaraan ng tatlong oras, sinabi ni Hesus, “Naganap na,” iniyuko ang kanyang ulo at nalagot ang kanyang hininga. Lumuhod dito sandali nang tahimik.",
+    "Panginoong Hesus, namatay ka upang ako ay mabuhay. Salamat. Huwag mong hayaang malimutan ko ito."
+   ],
+   [
+    "Ibinaba si Hesus mula sa krus",
+    "Juan 19:38",
+    "Ibinaba nina Jose ng Arimatea at Nicodemo ang kanyang katawan at inilagay sa mga bisig ng kanyang ina.",
+    "Maria, Ina ng mga Hapis, ipanalangin mo ang lahat ng nagdadalamhati."
+   ],
+   [
+    "Inilibing si Hesus",
+    "Juan 19:39–42",
+    "Binalot ng telang lino na may mga pabango ang kanyang katawan at inilagay sa isang bagong libingan, at iginulong ang isang bato sa pintuan. Naghihintay ang mundo nang tahimik sa Pagkabuhay.",
+    "Panginoon, kapag madilim at tila malayo ka, tulungan mo akong maghintay nang may pag-asa sa umaga."
+   ]
   ]
  }
 }

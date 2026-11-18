@@ -1,0 +1,64 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/tl/magsimula">Magsimula rito</a> &rsaquo; Para sa mga parokya</p>
+    <h1>Ilista ang OCIA ng iyong parokya</h1>
+    <p class="lede">Madalas hindi alam ng mga nagsisiyasat sa pananampalatayang Katoliko kung sino ang tatawagan. Kung ikaw ang nag-uugnay o tumutulong sa OCIA sa isang parokya sa Estados Unidos, idagdag dito ang iyong contact at ipapakita namin ito sa mga taong naghahanap malapit sa iyo. Libre ito at tatlong minuto lamang.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section grid two">
+    <div class="card">
+      <h3>Ano ang susunod</h3>
+      <ol class="prose">
+        <li>Pupunan mo ang porma sa ibaba.</li>
+        <li>Susuriin namin ito kasama ang iyong parokya, karaniwan sa loob ng isang linggo, bago ilathala ang anuman.</li>
+        <li>Lalabas ang iyong listing sa pahinang ito at tutulong sa mga tao na mahanap ka mula sa aming gabay na <a href="/tl/magsimula">Magsimula rito</a> at sa mapa ng mga simbahan.</li>
+      </ol>
+      <p class="small muted">Upang baguhin o alisin ang isang listing anumang oras, mag-email sa <a href="mailto:hello@catholicdoorway.com">hello@catholicdoorway.com</a>.</p>
+    </div>
+    <div class="card">
+      <h3>Ikaw mismo ang naghahanap ng OCIA?</h3>
+      <p>Tingnan sa ibaba ang mga parokyang naglista ng kanilang OCIA, o hanapin sa mapa ang anumang parokyang malapit sa iyo at tumawag sa opisina. Matutulungan ka ng bawat parokya na magsimula.</p>
+      <a class="btn small secondary" href="/tl/hanapin-ang-simbahan?ocia=1">Maghanap ng parokya malapit sa akin</a>
+    </div>
+  </section>
+
+  <section class="section" id="form">
+    <h2>Porma ng listing ng OCIA ng parokya</h2>
+    <form class="card ocia-form" id="ocia-form" novalidate>
+      <div class="form-grid">
+        <label>Pangalan ng parokya <span class="req">*</span><input name="parish" required maxlength="120" autocomplete="organization"></label>
+        <label>Lungsod <span class="req">*</span><input name="city" required maxlength="80" autocomplete="address-level2"></label>
+        <label>Estado <span class="req">*</span><select name="state" required>{{STATE_OPTIONS}}</select></label>
+        <label>Diyosesis<select name="diocese">{{DIOCESE_OPTIONS}}</select></label>
+        <label>Pangalan ng contact <span class="req">*</span><input name="contact" required maxlength="80" autocomplete="name"></label>
+        <label>Tungkulin<input name="role" maxlength="60" placeholder="hal. OCIA coordinator"></label>
+        <label>Email na ilalathala <span class="req">*</span><input name="email" type="email" required maxlength="120" autocomplete="email"></label>
+        <label>Telepono<input name="phone" type="tel" maxlength="40" autocomplete="tel"></label>
+        <label class="wide">Website ng parokya<input name="website" type="url" maxlength="200" placeholder="https://"></label>
+        <label class="wide">Kailan nagkikita ang OCIA<input name="schedule" maxlength="300" placeholder="hal. Martes, ika-7 ng gabi, Setyembre hanggang Pasko ng Pagkabuhay"></label>
+        <label class="wide">Paano magsimula o susunod na petsa ng simula<input name="start" maxlength="120" placeholder="hal. Magsisimula ang mga sesyon sa Agosto; tinatanggap anumang oras"></label>
+      </div>
+      <fieldset class="lang-opts">
+        <legend>Wika ng OCIA</legend>
+        <label><input type="checkbox" name="langs" value="en" checked> Ingles</label>
+        <label><input type="checkbox" name="langs" value="es"> Espanyol</label>
+        <label><input type="checkbox" name="langs" value="pt"> Portuges</label>
+        <label><input type="checkbox" name="langs" value="tl"> Tagalog</label>
+        <label><input type="checkbox" name="langs" value="other"> Iba pa</label>
+      </fieldset>
+      <label class="wide">Iba pang dapat malaman ng mga tao<textarea name="notes" maxlength="600" rows="3"></textarea></label>
+      <label class="hp" aria-hidden="true">Iwanang walang laman<input name="website2" tabindex="-1" autocomplete="off"></label>
+      <label class="consent"><input type="checkbox" name="consent" required> Naglilingkod ako sa parokyang ito, at pumapayag ang parokya na ipakita nang publiko ang contact na ito sa CatholicDoorway.com. <span class="req">*</span></label>
+      <div class="btn-row"><button class="btn" type="submit">Ipadala para suriin</button></div>
+      <p class="status-msg" id="ocia-msg" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <section class="section" id="listed">
+    <h2>Mga parokyang naglista ng kanilang OCIA</h2>
+    <div class="filters"><label>Estado <select id="ol-state"><option value="">Lahat ng estado</option></select></label></div>
+    <div id="ol-list" class="grid two"><p class="muted">Naglo-load&hellip;</p></div>
+  </section>
+</div>

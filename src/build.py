@@ -279,24 +279,114 @@ PT_SUBNAV = {"comecar": [("comecar", "Tornar-se católico (OCIA)"), ("primeira-m
 # Portuguese pages reached from a hub page rather than the top menu
 PT_NAV_EXCLUDE = {"terco-da-misericordia", "via-sacra", "novenas", "angelus", "cadastrar-ocia", "sobre", "inscrever-se-paroquia", "batismo", "matrimonio", "uncao", "funeral", "certidao-de-batismo"}
 
-LANGS = [("en", "English", "home page"), ("es", "Español", "página de inicio"), ("pt", "Português", "página inicial")]
-LANG_HOME = {"en": "/", "es": "/es/", "pt": "/pt/"}
-LANG_WORD = {"en": "Language", "es": "Idioma", "pt": "Idioma"}
+# Filipino (Tagalog): en_slug, tl_slug, nav label, <title>, meta description
+TL_PAGES = [
+    ("index", "index", "Tahanan", "CatholicDoorway sa Filipino: isang libreng gabay sa pananampalatayang Katoliko",
+     "Isang simple at libreng gabay sa pananampalatayang Katoliko: mga dasal, paano maging Katoliko (OCIA), ang iyong unang Misa, ang Rosaryo at paghahanap ng simbahan sa Estados Unidos."),
+    ("start-here", "magsimula", "Maging Katoliko", "Paano maging Katoliko: ang OCIA, hakbang-hakbang | CatholicDoorway",
+     "Interesado sa Simbahang Katolika? Paano gumagana ang OCIA, ang apat na yugto nito, gaano katagal, sino ang kakausapin at ano ang aasahan sa iyong unang Misa."),
+    ("first-mass", "unang-misa", "Ang iyong unang Misa", "Ang iyong unang Misa, hakbang-hakbang | CatholicDoorway",
+     "Unang beses mong magsisimba? Isang gabay sa iyong telepono: kailan tatayo, uupo at luluhod, ano ang isasagot ng mga tao at ano ang gagawin sa Komunyon."),
+    ("how-to", "mga-gabay", "Mga praktikal na gabay", "Mga praktikal na gabay Katoliko: Kumpisal, Binyag, Kasal at iba pa | CatholicDoorway",
+     "Simple at praktikal na mga gabay Katoliko: pangungumpisal, pagpapatala sa parokya, pagpapabinyag sa anak, pagpapakasal sa Simbahan, Pagpapahid ng Langis, libing at pagbabalik sa Simbahan."),
+    ("confession", "kumpisal", "Kumpisal", "Paano mangumpisal: gabay na hakbang-hakbang | CatholicDoorway",
+     "Paano mangumpisal nang mabuti: kailan at saan, paano maghanda, ano mismo ang sasabihin at ano ang gagawin kung matagal ka nang hindi nakapangungumpisal."),
+    ("coming-back", "pagbabalik", "Pagbabalik sa Simbahan", "Pagbabalik sa Simbahang Katolika | CatholicDoorway",
+     "Matagal kang nawalay sa Simbahan? Paano bumalik: ang Misa, pakikipag-usap sa pari, ang Kumpisal at mga espesyal na kalagayan gaya ng kasal sa labas ng Simbahan."),
+    ("join-a-parish", "magpatala-sa-parokya", "Magpatala sa parokya", "Paano magpatala sa isang parokyang Katoliko sa Estados Unidos | CatholicDoorway",
+     "Bakit at paano magpatala sa isang parokyang Katoliko sa Estados Unidos, at saan ito nakatutulong: sulat para sa ninong o ninang, binyag, kasal at paaralang Katoliko."),
+    ("baptism", "binyag", "Binyag", "Paano ipabinyag ang iyong anak sa Simbahang Katolika | CatholicDoorway",
+     "Paano ang binyag ng sanggol sa isang parokyang Katoliko: kailan tatawag, ang seminar, ang mga kailangan sa ninong at ninang, ang seremonya at mga espesyal na kalagayan."),
+    ("marriage", "kasal", "Kasal", "Paano magpakasal sa Simbahang Katolika | CatholicDoorway",
+     "Pagpapakasal sa Simbahan: gaano kaaga magsisimula, ang paghahanda sa kasal, ang mga dokumento, pagpapakasal sa hindi Katoliko, naunang kasal at kumbalidasyon."),
+    ("anointing", "pagpapahid-ng-langis", "Pagpapahid ng Langis sa Maysakit", "Ang Pagpapahid ng Langis sa Maysakit at ang huling mga sakramento | CatholicDoorway",
+     "Kailan at paano tatawag ng pari para sa Pagpapahid ng Langis sa Maysakit o sa huling mga sakramento, ano ang mga ito at ano ang gagawin kung may naghihingalo ngayon."),
+    ("funerals", "libing", "Lamay at libing", "Paano maghanda ng lamay at libing na Katoliko | CatholicDoorway",
+     "Paano maghanda ng libing na Katoliko: ang lamay, ang Misa ng patay at ang paglilibing, ang mga tuntunin sa cremation, ang gastos at ang pagpapamisa para sa yumao."),
+    ("baptism-certificate", "katibayan-ng-binyag", "Katibayan ng binyag", "Paano kumuha ng kopya ng iyong katibayan ng binyag | CatholicDoorway",
+     "Paano humingi ng katibayan ng binyag na may mga tala para sa kasal o pagiging ninong o ninang, kahit sarado na ang parokya o sa Pilipinas ka bininyagan."),
+    ("examination-of-conscience", "pagsusuri-ng-budhi", "Pagsusuri ng budhi", "Pagsusuri ng budhi para sa mga bata, kabataan at nakatatanda | CatholicDoorway",
+     "Isang pagsusuri ng budhi bago mangumpisal, para sa mga bata, kabataan at nakatatanda. Markahan ang angkop at gumawa ng pribadong listahan sa iyong telepono."),
+    ("devotions", "mga-debosyon", "Mga debosyon", "Mga debosyong Katoliko at mga paalala sa pagdarasal | CatholicDoorway",
+     "Ang mga pinakamamahal na debosyong Katoliko at ang kanilang mga dasal: ang Rosaryo, ang Koronilya ng Banal na Awa, ang Daan ng Krus, mga nobena at ang Orasyon, may libreng paalala sa iyong kalendaryo."),
+    ("divine-mercy-chaplet", "koronilya-ng-banal-na-awa", "Koronilya ng Banal na Awa", "Paano dasalin ang Koronilya ng Banal na Awa, hakbang-hakbang | CatholicDoorway",
+     "Dasalin ang Koronilya ng Banal na Awa butil por butil sa iyong telepono: ang mga dasal sa bawat dekada, ang Oras ng Awa sa ika-3 ng hapon at ang nobena."),
+    ("stations-of-the-cross", "daan-ng-krus", "Daan ng Krus", "Daan ng Krus: dasalin ang 14 na estasyon | CatholicDoorway",
+     "Dasalin ang Daan ng Krus (Via Crucis) na may sipi ng Banal na Kasulatan, pagninilay at dasal sa bawat isa sa 14 na estasyon, isa-isa sa iyong telepono."),
+    ("novenas", "mga-nobena", "Mga nobena", "Mga nobenang Katoliko at ang mga petsa nito ngayong taon | CatholicDoorway",
+     "Paano magnobena, kasama ang mga dasal at petsa ngayong taon ng mga nobena kay San Jose, sa Espiritu Santo, sa Banal na Awa, sa Sagrado Corazon, sa Birhen ng Guadalupe at iba pa."),
+    ("angelus", "orasyon", "Ang Orasyon", "Ang Orasyon (Angelus) at ang Regina Caeli | CatholicDoorway",
+     "Ang mga salita ng Orasyon o Angelus, na dinarasal sa ika-6 ng umaga, tanghali at ika-6 ng gabi, at ang Regina Caeli sa Panahon ng Pagkabuhay, may libreng paalala araw-araw."),
+    ("liturgy-of-the-hours", "liturhiya-ng-mga-oras", "Liturhiya ng mga Oras", "Liturhiya ng mga Oras: Panalangin sa Umaga at Gabi ngayon | CatholicDoorway",
+     "Dasalin ngayon ang Panalangin sa Umaga, sa Gabi at Bago Matulog ng Liturhiya ng mga Oras, at alamin kung paano ito gumagana at paano magsisimula."),
+    ("church-documents", "katesismo-at-dokumento", "Katesismo at mga dokumento", "Ang Katesismo ng Simbahang Katolika at ang mahahalagang dokumento ng Simbahan | CatholicDoorway",
+     "Hanapin ang anumang talata ng Katesismo, basahin ito ayon sa paksa, at hanapin ang mahahalagang ensiklika, liham apostoliko at dokumento ng Vaticano II, may link sa opisyal na teksto."),
+    ("ocia-listing", "ilista-ang-ocia", "Ilista ang inyong OCIA", "Ilista ang OCIA ng inyong parokya | CatholicDoorway",
+     "Mga tagapag-ugnay ng OCIA: idagdag ang inyong contact upang malaman ng mga nakikilala ang pananampalatayang Katoliko malapit sa inyo kung sino ang tatawagan. Libre at sinusuri bago ilathala."),
+    ("prayers", "mga-dasal", "Mga dasal", "Mga dasal Katoliko at paano magrosaryo | CatholicDoorway",
+     "Ang mga tradisyonal na dasal Katoliko sa Tagalog: Ama Namin, Aba Ginoong Maria, Sumasampalataya, Aba Po Santa Mariang Hari at iba pa, kasama ang gabay sa Rosaryo."),
+    ("rosary", "rosaryo", "Magrosaryo", "Magrosaryo online, butil por butil | CatholicDoorway",
+     "Dasalin ang Rosaryo hakbang-hakbang sa iyong telepono: umiilaw ang mga butil, may sipi ng Bibliya ang bawat misteryo at natatandaan kung saan ka huminto."),
+    ("beliefs", "mga-paniniwala", "Mga paniniwala", "Ano ang pinaniniwalaan ng mga Katoliko | CatholicDoorway",
+     "Isang simpleng buod ng pananampalataya at pamumuhay Katoliko: ang Kredo, ang pitong sakramento, ang Banal na Kasulatan at Tradisyon, si Maria at ang mga santo, at ang buhay moral."),
+    ("find-a-church", "hanapin-ang-simbahan", "Maghanap ng simbahan", "Maghanap ng simbahang Katoliko malapit sa iyo | CatholicDoorway",
+     "Maghanap ng mga simbahang Katoliko sa Estados Unidos ayon sa lungsod o ZIP code: address, telepono, website at direksiyon."),
+    ("bible", "bibliya", "Bibliya", "Ang Bibliya at ang mga pagbasa sa Misa ngayon | CatholicDoorway",
+     "Ang mga pagbasa sa Misa ngayon, paano nakaayos ang Bibliyang Katoliko at kung saan ito mababasa nang libre."),
+    ("calendar", "kalendaryo", "Kalendaryo", "Mga araw na pangilin at araw ng pag-aayuno: kalendaryong Katoliko | CatholicDoorway",
+     "Ang mga araw na pangilin, mga araw ng pag-aayuno at ang mga pangunahing kapistahan sa Estados Unidos, may libreng kalendaryo sa Filipino para sa iyong iPhone, Google o Outlook."),
+    ("questions", "mga-tanong", "Tapat na mga tanong", "Tapat na mga tanong tungkol sa Simbahang Katolika, sinagot | CatholicDoorway",
+     "Maikli, magiliw at malinaw na sagot sa mga itinatanong tungkol sa mga Katoliko: si Maria, ang mga santo, ang kumpisal, ang Papa, ang purgatoryo at iba pa."),
+    ("glossary", "glosaryo", "Glosaryo", "Glosaryong Katoliko: mga salitang ipinaliwanag | CatholicDoorway",
+     "Simpleng kahulugan ng mga salitang Katoliko, mula Adbiyento hanggang Vaticano."),
+    ("structure", "istruktura", "Ang Simbahan", "Paano nakaayos ang Simbahang Katolika | CatholicDoorway",
+     "Paano nakaayos ang Simbahang Katolika: ang Papa, ang mga obispo, mga diyosesis, mga parokya, mga pari at mga diyakono, ipinaliwanag nang simple."),
+    ("popes", "mga-papa", "Ang mga Papa", "Ang 267 Papa, mula kay San Pedro hanggang kay Leo XIV | CatholicDoorway",
+     "Lahat ng Papa ayon sa pagkakasunod, mula kay San Pedro hanggang kay Leo XIV: ang kanilang lugar sa paghahalili, mga taon ng pagiging Papa at kung bakit sila naaalala."),
+    ("dioceses", "mga-diyosesis", "Mga diyosesis", "Ang mga diyosesis Katoliko sa Estados Unidos | CatholicDoorway",
+     "Lahat ng diyosesis, arkidiyosesis at eparkiya Katoliko sa Estados Unidos: ang obispo, ang katedral, ang website at tulong para magsimula sa OCIA."),
+    ("saints", "mga-santo", "Mga santo", "Mga Santo, Beato at Benerableng Katoliko | CatholicDoorway",
+     "Kilalanin ang mga santo at ang landas tungo sa kabanalan: Lingkod ng Diyos, Benerable, Beato at Santo."),
+    ("saints-directory", "direktoryo-ng-mga-santo", "Direktoryo ng mga santo", "Direktoryo ng mga santo at kausa: Santo, Beato, Benerable at Lingkod ng Diyos | CatholicDoorway",
+     "Maghanap sa libu-libong Santo, Beato, Benerable at Lingkod ng Diyos ayon sa pangalan, bansa, siglo at pagiging patron. Ina-update linggo-linggo."),
+    ("about", "tungkol", "Tungkol sa site", "Tungkol sa CatholicDoorway",
+     "Tungkol sa CatholicDoorway.com: isang libre at walang patalastas na gabay sa pananampalatayang Katoliko. Mga pinagkunan, datos, privacy at pagtatama."),
+]
+TL_TEXT = dict(lang="tl", skip="Lumaktaw sa nilalaman", home="/tl/", home_label="Tahanan ng CatholicDoorway",
+               theme_label="Lumipat sa maliwanag o madilim na anyo", menu_label="Menu", nav_label="Pangunahin")
+EN_TO_TL = {en: tl for en, tl, *_ in TL_PAGES}
+TL_SUBNAV = {"magsimula": [("magsimula", "Maging Katoliko (OCIA)"), ("unang-misa", "Ang iyong unang Misa"), ("mga-gabay", "Mga praktikal na gabay"),
+                           ("kumpisal", "Paano mangumpisal"), ("pagsusuri-ng-budhi", "Pagsusuri ng budhi"), ("pagbabalik", "Pagbabalik sa Simbahan")],
+             "mga-dasal": [("mga-dasal", "Mga dasal Katoliko"), ("rosaryo", "Magrosaryo"), ("mga-debosyon", "Mga debosyon at paalala"),
+                           ("liturhiya-ng-mga-oras", "Liturhiya ng mga Oras")],
+             "bibliya": [("bibliya", "Ang mga pagbasa ngayon at ang Bibliya"), ("kalendaryo", "Kalendaryo ng mga banal na araw")],
+             "mga-paniniwala": [("mga-paniniwala", "Ang pinaniniwalaan ng mga Katoliko"), ("mga-tanong", "Tapat na mga tanong"), ("glosaryo", "Glosaryo"),
+                                ("katesismo-at-dokumento", "Ang Katesismo at mga dokumento")],
+             "mga-santo": [("mga-santo", "Kilalanin ang mga santo"), ("direktoryo-ng-mga-santo", "Direktoryo ng mga santo at kausa")],
+             "istruktura": [("istruktura", "Paano nakaayos ang Simbahan"), ("mga-papa", "Ang 267 Papa"), ("mga-diyosesis", "Ang mga diyosesis sa Estados Unidos"),
+                            ("hanapin-ang-simbahan", "Maghanap ng simbahan")]}
+# Filipino pages reached from a hub page rather than the top menu
+TL_NAV_EXCLUDE = {"koronilya-ng-banal-na-awa", "daan-ng-krus", "mga-nobena", "orasyon", "ilista-ang-ocia", "tungkol", "magpatala-sa-parokya", "binyag", "kasal", "pagpapahid-ng-langis", "libing", "katibayan-ng-binyag"}
+
+LANGS = [("en", "English", "home page"), ("es", "Español", "página de inicio"), ("pt", "Português", "página inicial"), ("tl", "Filipino", "pangunahing pahina")]
+LANG_HOME = {"en": "/", "es": "/es/", "pt": "/pt/", "tl": "/tl/"}
+LANG_WORD = {"en": "Language", "es": "Idioma", "pt": "Idioma", "tl": "Wika"}
 GLOBE_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>'
 
 
 def lang_urls(en_slug):
     """The URL of this page in each language, or None where it has no translation yet."""
     if en_slug is None:
-        return {"en": None, "es": None, "pt": None}
-    es, pt = EN_TO_ES.get(en_slug), EN_TO_PT.get(en_slug)
+        return {"en": None, "es": None, "pt": None, "tl": None}
+    es, pt, tl = EN_TO_ES.get(en_slug), EN_TO_PT.get(en_slug), EN_TO_TL.get(en_slug)
     return {"en": "/" if en_slug == "index" else f"/{en_slug}",
             "es": None if es is None else ("/es/" if es == "index" else f"/es/{es}"),
-            "pt": None if pt is None else ("/pt/" if pt == "index" else f"/pt/{pt}")}
+            "pt": None if pt is None else ("/pt/" if pt == "index" else f"/pt/{pt}"),
+            "tl": None if tl is None else ("/tl/" if tl == "index" else f"/tl/{tl}")}
 
 
-STATE_WORD = {"en": "Choose a state", "es": "Elige un estado", "pt": "Escolha um estado"}
-DIO_WORD = {"en": "Not sure / other", "es": "No sé / otra", "pt": "Não sei / outra"}
+STATE_WORD = {"en": "Choose a state", "es": "Elige un estado", "pt": "Escolha um estado", "tl": "Pumili ng estado"}
+DIO_WORD = {"en": "Not sure / other", "es": "No sé / otra", "pt": "Não sei / outra", "tl": "Hindi sigurado / iba pa"}
 
 
 def ocia_options(body, lang):
@@ -320,8 +410,8 @@ def write_saint_days():
     for line in (ROOT / "src" / "data" / "saint_days.tsv").read_text(encoding="utf-8").splitlines():
         if not line.strip() or line.startswith("#"):
             continue
-        date, rank, en, es, pt = line.split("\t")
-        rows[date] = [rank, en, es, pt]
+        date, rank, en, es, pt, tl = line.split("\t")
+        rows[date] = [rank, en, es, pt, tl]
     (OUT / "data" / "saint-days.json").write_text(json.dumps(rows, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
@@ -483,6 +573,49 @@ FOOT_PT = """</main>
 </html>
 """
 
+FOOT_TL = """</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-verse">&ldquo;Ako ang pintuan; ang sinumang pumasok sa pamamagitan ko ay maliligtas.&rdquo;</p>
+        <p class="small">Juan 10:9</p>
+      </div>
+      <div>
+        <h4>Sa Filipino</h4>
+        <ul>
+          <li><a href="/tl/magsimula">Paano maging Katoliko (OCIA)</a></li>
+          <li><a href="/tl/unang-misa">Ang iyong unang Misa</a></li>
+          <li><a href="/tl/mga-dasal">Mga dasal at ang Rosaryo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Matuto</h4>
+        <ul>
+          <li><a href="/tl/hanapin-ang-simbahan">Maghanap ng simbahan</a></li>
+          <li><a href="/tl/mga-paniniwala">Ang aming pinaniniwalaan</a></li>
+          <li><a href="/tl/mga-santo">Mga santo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Tungkol sa site</h4>
+        <ul>
+          <li><a href="/tl/tungkol">Tungkol sa site</a></li>
+          <li><a href="mailto:hello@catholicdoorway.com">Sumulat sa amin</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      Ang CatholicDoorway ay isang libre at malayang gabay na walang patalastas. Hindi ito opisyal na site ng Simbahang Katolika o ng anumang diyosesis. Para sa opisyal na turo ng Simbahan, tingnan ang <a href="https://www.vatican.va/archive/ENG0015/_INDEX.HTM">Katesismo ng Simbahang Katolika</a>.
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js" defer></script>
+{extra_foot}
+</body>
+</html>
+"""
+
 FOOT = """</main>
 <footer class="site-footer">
   <div class="wrap">
@@ -549,6 +682,8 @@ STATUS_LABEL_ES = {"saint": ("Santo", "Santa"), "blessed": ("Beato", "Beata"), "
                    "servant": ("Siervo de Dios", "Sierva de Dios")}
 
 
+STATUS_LABEL_TL = {"saint": ("San", "Santa"), "blessed": ("Beato", "Beata"), "venerable": ("Benerable", "Benerable"),
+                   "servant": ("Lingkod ng Diyos", "Lingkod ng Diyos")}
 STATUS_LABEL_PT = {"saint": ("Santo", "Santa"), "blessed": ("Beato", "Beata"), "venerable": ("Venerável", "Venerável"),
                    "servant": ("Servo de Deus", "Serva de Deus")}
 
@@ -559,9 +694,13 @@ def saints_html(lang="en"):
     out = []
     for p in data:
         e = html.escape
-        fw = {"en": "Feast", "es": "Fiesta", "pt": "Festa"}[lang]
+        fw = {"en": "Feast", "es": "Fiesta", "pt": "Festa", "tl": "Kapistahan"}[lang]
         feast = f" &middot; {fw}: {e(p['feast'])}" if p.get("feast") else ""
-        if lang == "pt":
+        if lang == "tl":
+            label = {"saint": "Santo", "blessed": "Beato", "venerable": "Benerable", "servant": "Lingkod ng Diyos"}[p["status"]]
+            if p.get("fem"):
+                label = {"saint": "Santa", "blessed": "Beata"}.get(p["status"], label)
+        elif lang == "pt":
             label = STATUS_LABEL_PT[p["status"]][1 if p.get("fem") else 0]
         elif es:
             fem = p["name"].startswith(("Santa ", "Beata ", "Sierva ")) or p["name"].startswith("Venerable") and p["name"].split()[1] in ("Mary", "Henriette")
@@ -666,9 +805,23 @@ def pope_name_pt(n):
     return pre + n
 
 
+POPE_TL = dict(POPE_ES, Leo="Leo", Benedict="Benedicto", Paul="Pablo", Stephen="Esteban")
+
+
+def pope_name_tl(n):
+    n = n.replace("(the Great)", "Dakila").replace("(1st time)", "(unang pagkakataon)").replace("(2nd time)", "(ikalawang pagkakataon)").replace("(3rd time)", "(ikatlong pagkakataon)")
+    pre = ""
+    for a, b in (("St. ", "San "), ("Bl. ", "Beato "), ("Ven. ", "Benerable ")):
+        if n.startswith(a):
+            pre, n = b, n[len(a):]
+    n = " ".join(POPE_TL.get(w, w) for w in n.split(" "))
+    return pre + n
+
+
 def popes_html(lang="en"):
     es = lang == "es"
     pt = lang == "pt"
+    tlg = lang == "tl"
     rows = [l.split("\t") for l in (ROOT / "src" / "data" / "popes.tsv").read_text(encoding="utf-8").splitlines()
             if l and not l.startswith("#")]
     if lang != "en":
@@ -682,19 +835,23 @@ def popes_html(lang="en"):
             name, summary = pope_name_es(name), tr[ord_]
         elif pt:
             name, summary = pope_name_pt(name), tr[ord_]
+        elif tlg:
+            name, summary = pope_name_tl(name), tr[ord_]
         c = (int(start[:4]) - 1) // 100 + 1
         if c != cur:
             if cur is not None:
                 out.append("    </ol>")
             cur = c
             cents.append(c)
-            head = f"Siglo {ROMAN[c]}" if es else f"Século {ROMAN[c]}" if pt else f"{_ordinal(c)} century"
+            head = f"Siglo {ROMAN[c]}" if es else f"Ika-{c} siglo" if tlg else f"Século {ROMAN[c]}" if pt else f"{_ordinal(c)} century"
             out.append(f'    <h2 class="pope-cent" id="c{c}">{head}</h2>\n    <ol class="popes">')
         W = {"en": ("since", "Born", "Lived", "Died", "Born", "Pope"), "es": ("desde", "Nació en", "Vivió", "Murió en", "Nombre de pila:", "Papa"),
-             "pt": ("desde", "Nasceu em", "Viveu", "Morreu em", "Nome de batismo:", "Papa")}[lang]
+             "pt": ("desde", "Nasceu em", "Viveu", "Morreu em", "Nome de batismo:", "Papa"),
+             "tl": ("mula", "Isinilang noong", "Nabuhay", "Namatay noong", "Pangalan sa binyag:", "Papa")}[lang]
         if n == 1:
             reign, life = {"es": ("h. años 30 &ndash; 64 o 67", "Mártir en Roma, 64 o 67"),
-                           "pt": ("c. anos 30 &ndash; 64 ou 67", "Mártir em Roma, 64 ou 67")}.get(lang, ("c. 30s &ndash; 64 or 67", "Martyred in Rome, 64 or 67"))
+                           "pt": ("c. anos 30 &ndash; 64 ou 67", "Mártir em Roma, 64 ou 67"),
+                           "tl": ("c. dekada 30 &ndash; 64 o 67", "Martir sa Roma, 64 o 67")}.get(lang, ("c. 30s &ndash; 64 or 67", "Martyred in Rome, 64 or 67"))
         else:
             a, b = yr(start), yr(end)
             reign = (f"{W[0]} {a}" if not end else a if a == b else f"{a}&ndash;{b}")
@@ -712,7 +869,7 @@ def popes_html(lang="en"):
             f'<p class="pope-meta"><span>{W[5]} {reign}</span><span>{life}</span></p>'
             f'<p>{e(summary)}</p></div></li>')
     out.append("    </ol>")
-    jump = "\n".join(f'    <a href="#c{c}">{ROMAN[c] if lang != "en" else _ordinal(c)}</a>' for c in cents)
+    jump = "\n".join(f'    <a href="#c{c}">{ROMAN[c] if lang not in ("en", "tl") else (str(c) if lang == "tl" else _ordinal(c))}</a>' for c in cents)
     return "\n".join(out), jump
 
 
@@ -721,6 +878,7 @@ POSE = {"stand": "Stand", "sit": "Sit", "kneel": "Kneel", "any": "As you wish"}
 
 POSE_ES = {"stand": "De pie", "sit": "Sentados", "kneel": "De rodillas", "any": "Como prefieras"}
 POSE_PT = {"stand": "De pé", "sit": "Sentados", "kneel": "De joelhos", "any": "Como preferir"}
+POSE_TL = {"stand": "Tumayo", "sit": "Umupo", "kneel": "Lumuhod", "any": "Kung ano ang gusto mo"}
 
 
 LATIN_TEXT = {
@@ -730,8 +888,10 @@ LATIN_TEXT = {
            "Cómo se pronuncia", "El latín de la Iglesia suena muy parecido al italiano. Pronuncia todas las vocales; <em>ae</em> suena como &ldquo;e&rdquo;. La <em>c</em> antes de e o i suena como &ldquo;ch&rdquo; (<em>caelis</em>: CHE-lis), la <em>g</em> antes de e o i suena como la <em>y</em> de &ldquo;yema&rdquo;, y <em>gn</em> suena como &ldquo;ñ&rdquo; (<em>regnum</em>: RE-ñum). Los acentos indican qué sílaba se pronuncia con más fuerza.", "Latín"),
     "pt": ("Reze em latim", "O latim é a língua própria da Igreja, e estas são as palavras que os católicos do mundo inteiro rezam há séculos. Você ainda as ouve em muitas paróquias, nas Missas cantadas e na Bênção do Santíssimo. O latim está à esquerda e o português à direita.",
            "Como pronunciar", "O latim da Igreja soa muito parecido com o italiano. Pronuncie todas as vogais; <em>ae</em> soa como &ldquo;é&rdquo;. O <em>c</em> antes de e ou i soa como &ldquo;tch&rdquo; (<em>caelis</em>: TCHÉ-lis), o <em>g</em> antes de e ou i soa como &ldquo;dj&rdquo;, e <em>gn</em> soa como &ldquo;nh&rdquo; (<em>regnum</em>: RÉ-nhum). Os acentos mostram a sílaba tônica.", "Latim"),
+    "tl": ("Magdasal sa Latin", "Ang Latin ang sariling wika ng Simbahan, at ito ang mga salitang dinarasal ng mga Katoliko sa buong mundo sa loob ng maraming siglo. Naririnig mo pa rin ang mga ito sa maraming parokya, sa mga inaawit na Misa at sa Pagbebendisyon sa Santisimo Sakramento. Nasa kaliwa ang Latin at nasa kanan ang Tagalog.",
+           "Paano bigkasin", "Ang Latin ng Simbahan ay katunog ng Italyano. Bigkasin ang bawat patinig; ang <em>ae</em> ay parang &ldquo;e&rdquo;. Ang <em>c</em> bago ang e o i ay parang &ldquo;ts&rdquo; (<em>caelis</em>: TSE-lis), ang <em>g</em> bago ang e o i ay parang &ldquo;dy&rdquo;, at ang <em>gn</em> ay parang &ldquo;ny&rdquo; (<em>regnum</em>: RE-nyum). Ipinapakita ng tuldik kung aling pantig ang may diin.", "Latin"),
 }
-LANG_LABEL = {"en": "English", "es": "Español", "pt": "Português"}
+LANG_LABEL = {"en": "English", "es": "Español", "pt": "Português", "tl": "Tagalog"}
 
 
 def latin_html(lang="en"):
@@ -754,9 +914,9 @@ def latin_html(lang="en"):
 def mass_html(lang="en"):
     name = "mass.json" if lang == "en" else f"mass_{lang}.json"
     steps = json.loads((ROOT / "src" / "data" / name).read_text(encoding="utf-8"))
-    pose = {"en": POSE, "es": POSE_ES, "pt": POSE_PT}[lang]
+    pose = {"en": POSE, "es": POSE_ES, "pt": POSE_PT, "tl": POSE_TL}[lang]
     everyone = {"en": ("All", "You", "Catholic"), "es": ("Todos", "Tú", "Quien comulga"),
-                "pt": ("Todos", "Você", "Quem comunga")}[lang]
+                "pt": ("Todos", "Você", "Quem comunga"), "tl": ("Lahat", "Ikaw", "Ang tatanggap ng Komunyon")}[lang]
     out, part = [], None
     for i, st in enumerate(steps, 1):
         if st["part"] != part:
@@ -777,7 +937,7 @@ def mass_html(lang="en"):
     return "\n".join(out), len(steps)
 
 
-CCC_URL = {"es": "https://www.vatican.va/archive/catechism_sp/index_sp.html",
+CCC_URL = {"tl": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM", "es": "https://www.vatican.va/archive/catechism_sp/index_sp.html",
            "pt": "https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html"}
 
 
@@ -803,12 +963,12 @@ def questions_html(lang="en"):
                 url = f"https://bible.usccb.org/bible/{target}"
             refs.append(f'<a href="{url}" target="_blank" rel="noopener">{html.escape(label)}</a>')
         if q.get("glossary"):
-            g = {"en": ("/glossary", "Glossary"), "es": ("/es/glosario", "Glosario"), "pt": ("/pt/glossario", "Glossário")}[lang]
+            g = {"en": ("/glossary", "Glossary"), "es": ("/es/glosario", "Glosario"), "pt": ("/pt/glossario", "Glossário"), "tl": ("/tl/glosaryo", "Glosaryo")}[lang]
             refs.append(f'<a href="{g[0]}#{q["glossary"]}">{g[1]}</a>')
         body = "".join(f"<p>{para}</p>" for para in q["a"])
         summary = q["q"] if es else html.escape(q["q"])
         out.append(f'    <details class="qa" id="{q["id"]}"><summary>{summary}</summary>'
-                   f'<div class="qa-body">{body}<p class="qa-refs">{ {"en": "Read more", "es": "Para leer más", "pt": "Para ler mais"}[lang] }: {" &middot; ".join(refs)}</p></div></details>')
+                   f'<div class="qa-body">{body}<p class="qa-refs">{ {"en": "Read more", "es": "Para leer más", "pt": "Para ler mais", "tl": "Basahin pa"}[lang] }: {" &middot; ".join(refs)}</p></div></details>')
     return "\n".join(out)
 
 
@@ -857,7 +1017,8 @@ def dio_place(d, lang="en"):
     st = ", ".join(f"{name(x)} ({ABBR[x]})" if x in ABBR else name(x) for x in d["states"])
     W = {"en": ("Eastern Catholic, nationwide", "based in", "Nationwide", "United States"),
          "es": ("Católica oriental, todo el país", "sede en", "Todo el país", "Estados Unidos"),
-         "pt": ("Católica oriental, todo o país", "sede em", "Todo o país", "Estados Unidos")}[lang]
+         "pt": ("Católica oriental, todo o país", "sede em", "Todo o país", "Estados Unidos"),
+         "tl": ("Katolikong Silanganin, buong bansa", "nakabase sa", "Buong bansa", "Estados Unidos")}[lang]
     if dio_kind(d) == "eastern":
         base = W[0]
         if d.get("city") and st:
@@ -875,7 +1036,7 @@ PT_STATE = {"New York": "Nova York", "New Jersey": "Nova Jersey", "New Mexico": 
             "District of Columbia": "Distrito de Colúmbia", "California": "Califórnia", "Florida": "Flórida", "Georgia": "Geórgia",
             "Arizona": "Arizona", "Oregon": "Oregon", "Northern Mariana Islands": "Ilhas Marianas do Norte",
             "American Samoa": "Samoa Americana", "U.S. Virgin Islands": "Ilhas Virgens Americanas", "Puerto Rico": "Porto Rico"}
-STATE_NAME = {"es": ES_STATE, "pt": PT_STATE}
+STATE_NAME = {"es": ES_STATE, "pt": PT_STATE, "tl": {}}
 
 # Eastern Catholic eparchies and the military archdiocese: Spanish, Portuguese
 EP_NAMES = {
@@ -903,9 +1064,41 @@ EP_NAMES = {
 }
 
 
+EP_TL = {
+    "Byzantine Catholic Eparchy of Phoenix": "Eparkiyang Katolikong Bisantino ng Phoenix",
+    "Armenian Catholic Eparchy of Our Lady of Nareg in the United States of America and Canada": "Eparkiyang Katolikong Armenyo ng Mahal na Birhen ng Narek sa Estados Unidos at Canada",
+    "Chaldean Catholic Eparchy of Saint Peter The Apostle": "Eparkiyang Katolikong Kaldeo ni San Pedro Apostol",
+    "Maronite Catholic Eparchy of Our Lady of Lebanon of Los Angeles": "Eparkiyang Maronita ng Mahal na Birhen ng Lebanon ng Los Angeles",
+    "Ukrainian Catholic Eparchy of Stamford": "Eparkiyang Katolikong Ukranyano ng Stamford",
+    "St. Thomas Syro-Malabar Catholic Eparchy of Chicago": "Eparkiyang Siro-Malabar ni Santo Tomas ng Chicago",
+    "Ukrainian Catholic Eparchy of Chicago": "Eparkiyang Katolikong Ukranyano ng Chicago",
+    "Melkite Greek Catholic Eparchy of Newton": "Eparkiyang Katolikong Griyegong Melkita ng Newton",
+    "Chaldean Catholic Eparchy of Saint Thomas the Apostle of Detroit": "Eparkiyang Katolikong Kaldeo ni Santo Tomas Apostol ng Detroit",
+    "Byzantine Catholic Eparchy of Passaic": "Eparkiyang Katolikong Bisantino ng Passaic",
+    "Syriac Catholic Eparchy of Our Lady of Deliverance in the United States": "Eparkiyang Katolikong Siryako ng Mahal na Birhen ng Kaligtasan sa Estados Unidos",
+    "Eparchy of St. Maron of Brooklyn": "Eparkiyang Maronita ni San Maron ng Brooklyn",
+    "Byzantine Catholic Eparchy of Parma": "Eparkiyang Katolikong Bisantino ng Parma",
+    "Romanian Catholic Eparchy of St George's in Canton": "Eparkiyang Katolikong Rumano ni San Jorge sa Canton",
+    "Ukrainian Catholic Eparchy of Saint Josaphat in Parma": "Eparkiyang Katolikong Ukranyano ni San Josafat sa Parma",
+    "Byzantine Catholic Archeparchy of Pittsburgh": "Arkieparkiyang Katolikong Bisantino ng Pittsburgh",
+    "Ukrainian Catholic Archeparchy of Philadelphia": "Arkieparkiyang Katolikong Ukranyano ng Philadelphia",
+    "Archdiocese for the Military Services": "Arkidiyosesis para sa mga Serbisyong Militar",
+    "Syro-Malankara Catholic Eparchy of St. Mary, Queen of Peace, of the United States of America and Canada": "Eparkiyang Siro-Malankara ni Santa Maria, Reyna ng Kapayapaan, ng Estados Unidos at Canada",
+}
+
+
 def dio_name(n, lang="en"):
     if lang == "en":
         return n
+    if lang == "tl":
+        if n in EP_TL:
+            return EP_TL[n]
+        for x, y in (("Archdiocese of", "Arkidiyosesis ng"), ("Diocese of", "Diyosesis ng")):
+            if n.startswith(x):
+                n = y + n[len(x):]
+                break
+        n = n.replace(" in America", " sa Amerika").replace(" in the Virgin Islands", ", Virgin Islands").replace("Saint Paul and Minneapolis", "Saint Paul at Minneapolis")
+        return re.sub(r" in ([A-Z][a-z]+)$", r", \1", n)
     if n in EP_NAMES:
         return EP_NAMES[n][0 if lang == "es" else 1]
     pairs = ((("Archdiocese of", "Arquidiócesis de"), ("Diocese of", "Diócesis de")) if lang == "es"
@@ -927,8 +1120,8 @@ def dio_name_es(n):
     return dio_name(n, "es")
 
 
-DIO_BASE = {"en": "/dioceses", "es": "/es/diocesis", "pt": "/pt/dioceses"}
-DIO_LANGS = ("en", "es", "pt")
+DIO_BASE = {"en": "/dioceses", "es": "/es/diocesis", "pt": "/pt/dioceses", "tl": "/tl/mga-diyosesis"}
+DIO_LANGS = ("en", "es", "pt", "tl")
 
 
 def dio_rows(data, lang="en"):
@@ -937,7 +1130,7 @@ def dio_rows(data, lang="en"):
     ds = sorted(data["dioceses"], key=lambda d: (order[dio_kind(d)], d["states"][0] if d["states"] else "~", d["short"]))
     rows = []
     for d in ds:
-        vac = {"en": "Vacant or not recorded", "es": "Vacante o sin dato", "pt": "Vacante ou sem dado"}[lang]
+        vac = {"en": "Vacant or not recorded", "es": "Vacante o sin dato", "pt": "Vacante ou sem dado", "tl": "Bakante o walang tala"}[lang]
         lead = html.escape(d.get("bishop", "")) or f'<span class="muted">{vac}</span>'
         nm = dio_name(d["short"], lang)
         rows.append(f'          <tr><td><a href="{DIO_BASE[lang]}/{d["slug"]}">{html.escape(nm)}</a></td>'
@@ -950,15 +1143,16 @@ def _domain(url):
 
 
 MESES = {"es": ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
-         "pt": ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]}
+         "pt": ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"],
+         "tl": ["Enero", "Pebrero", "Marso", "Abril", "Mayo", "Hunyo", "Hulyo", "Agosto", "Setyembre", "Oktubre", "Nobyembre", "Disyembre"]}
 
 
 def _since(x, lang="en"):
     m = re.match(r"(\d{4})-(\d{2})", x or "")
     if not m:
         return ""
-    if lang == "en":
-        return f"{MONTHS[int(m.group(2)) - 1]} {m.group(1)}"
+    if lang in ("en", "tl"):
+        return f"{(MONTHS if lang == 'en' else MESES['tl'])[int(m.group(2)) - 1]} {m.group(1)}"
     return f"{MESES[lang][int(m.group(2)) - 1]} de {m.group(1)}"
 
 
@@ -1051,6 +1245,36 @@ DIO_TXT = {
         title="{n}: bispo, catedral, OCIA e paróquias | CatholicDoorway",
         desc="{n}{st}: quem a dirige, sua catedral e seu site, como encontrar uma paróquia e a OCIA, e os santos da região.",
         rank={4: "Santo", 3: "Beato", 2: "Venerável", 1: "Servo de Deus"}),
+    "tl": dict(
+        what={"diocese": "diyosesis", "archdiocese": "arkidiyosesis", "eastern": "eparkiyang Katolikong Silanganin", "nationwide": "hurisdiksiyon para sa buong bansa"},
+        church={"diocese": "diyosesis", "archdiocese": "arkidiyosesis", "eparchy": "eparkiya"},
+        lede_a="Isang {what} Katoliko", lede_east="Isang eparkiyang Katolikong Silanganin", based=" na nakabase sa {w}", founded=", itinatag noong {y}",
+        eastern_note=" Naglilingkod ang mga eparkiya sa mga Katolikong Silanganin sa isang malawak na rehiyon, kasabay ng mga lokal na diyosesis ng Simbahang Latin.",
+        crumb="Mga diyosesis", us="Estados Unidos",
+        leader={"Archbishop": "arsobispo", "Bishop": "obispo"},
+        who="Sino ang namumuno", since=", mula {s}",
+        who_note="Mula sa Wikidata. Kung kamakailan lamang may itinalagang bagong {l}, unang makikita ito sa website ng {c}.",
+        site="Opisyal na website", site_p="Mga balita, oras ng Misa, mga paaralan, Catholic Charities, paghahanda sa kasal at ang contact ng bawat tanggapan.",
+        site_lang=" May ilang diyosesis na may ministeryo o komunidad para sa mga Pilipino.",
+        cath="Katedral", on_map="Tingnan sa mapa",
+        cath_p="Ang katedral ang sariling simbahan ng {l} at ang inang simbahan ng {c}.",
+        ocia_h="Iniisip mo bang maging Katoliko?",
+        ocia_p="Sa mga parokya ginaganap ang OCIA. Pumili ng parokya malapit sa iyo, saka tumawag o mag-email at itanong kung kailan magsisimula ang susunod na grupo. "
+               "Kung hindi sumagot ang parokya, makatutulong ang Tanggapan ng Pagsamba ng {c} (minsan tinatawag na Ebanghelisasyon o Pagsisimula sa Buhay Kristiyano).",
+        ocia_link="Paano gumagana ang OCIA", start="/tl/magsimula", find="/tl/hanapin-ang-simbahan", find_btn="Maghanap ng parokya", near=" malapit sa {city}",
+        search_btn="Hanapin ang OCIA sa website nito", ocia_q="OCIA",
+        size="Laki", size_p="Mga <strong>{n}</strong> Katoliko, ayon sa pinakabagong bilang sa Wikidata.",
+        holy_h="Mga banal na lalaki at babae ng {st}",
+        holy_p="Mga Santo, Beato, Benerable at Lingkod ng Diyos na isinilang o namatay sa {st}. May mga kausang pinangangasiwaan ng diyosesis na ito; ang iba, ng kalapit na diyosesis o ng isang relihiyosong orden.",
+        sd="/tl/direktoryo-ng-mga-santo", holy_more="Hindi pa naitatala ng Wikidata ang lahat ng kausa. <a href=\"{sd}\">Maghanap sa buong direktoryo</a>.",
+        others="Iba pang diyosesis sa {st}",
+        refs="Kasaysayan, mga parokya at estadistika: {r}.", refs_none="tingnan ang website ng {c}",
+        src="Ang mga detalye sa pahinang ito ay mula sa <a href=\"https://www.wikidata.org/wiki/{q}?uselang=tl\" rel=\"noopener\">Wikidata</a> (na-update noong {u}), kung saan maaaring itama ito ng sinuman.",
+        all="Lahat ng diyosesis sa Estados Unidos",
+        title="{n}: obispo, katedral, OCIA at mga parokya | CatholicDoorway",
+        desc="{n}{st}: sino ang namumuno, ang katedral at website nito, paano maghanap ng parokya at OCIA, at ang mga banal ng rehiyon.",
+        rank={4: "Santo", 3: "Beato", 2: "Benerable", 1: "Lingkod ng Diyos"}),
+
 }
 
 
@@ -1087,11 +1311,16 @@ def diocese_body(d, data, lang="en"):
     elif lang == "pt":
         l2, l3 = lword.split(" ", 1)[1], lword
         c_of = church
+    elif lang == "tl":
+        l2 = l3 = lword
+        c_of = church
     else:
         l2 = l3 = lword
         c_of = church
     if lang == "es" and kind == "eastern":
         l2 = {"Archbishop": "arzobispo (archieparca)", "Bishop": "obispo (eparca)"}[lead]
+    if lang == "tl" and kind == "eastern":
+        l2 = l3 = {"Archbishop": "arsobispo (arkieparka)", "Bishop": "obispo (eparka)"}[lead]
     if lang == "pt" and kind == "eastern":
         l2 = {"Archbishop": "arcebispo (arquieparca)", "Bishop": "bispo (eparca)"}[lead]
     name = dio_name(d["short"], lang)
@@ -1161,7 +1390,7 @@ def diocese_body(d, data, lang="en"):
 
 def build_dioceses(data):
     keep_all = {}
-    for lang, text, foot in (("en", EN_TEXT, FOOT), ("es", ES_TEXT, FOOT_ES), ("pt", PT_TEXT, FOOT_PT)):
+    for lang, text, foot in (("en", EN_TEXT, FOOT), ("es", ES_TEXT, FOOT_ES), ("pt", PT_TEXT, FOOT_PT), ("tl", TL_TEXT, FOOT_TL)):
         if lang not in DIO_LANGS:
             continue
         base = DIO_BASE[lang]
@@ -1170,14 +1399,15 @@ def build_dioceses(data):
         L = DIO_TXT[lang]
         nav = {"en": lambda: nav_html("dioceses"),
                "es": lambda: lang_nav("es", ES_PAGES, ES_SUBNAV, ES_NAV_EXCLUDE, "diocesis"),
-               "pt": lambda: lang_nav("pt", PT_PAGES, PT_SUBNAV, PT_NAV_EXCLUDE, "dioceses")}[lang]()
+               "pt": lambda: lang_nav("pt", PT_PAGES, PT_SUBNAV, PT_NAV_EXCLUDE, "dioceses"),
+               "tl": lambda: lang_nav("tl", TL_PAGES, TL_SUBNAV, TL_NAV_EXCLUDE, "mga-diyosesis")}[lang]()
         keep = set()
         for d in data["dioceses"]:
             nm = dio_name(d["short"], lang)
             st = ", ".join(STATE_NAME.get(lang, {}).get(x, x) for x in d["states"])
             title = L["title"].format(n=nm)
             desc = L["desc"].format(n=nm, st=f" ({st})" if st else "")
-            urls = {c: (f"{DIO_BASE[c]}/{d['slug']}" if c in DIO_LANGS else None) for c in ("en", "es", "pt")}
+            urls = {c: (f"{DIO_BASE[c]}/{d['slug']}" if c in DIO_LANGS else None) for c in ("en", "es", "pt", "tl")}
             page = HEAD.format(title=html.escape(title), desc=html.escape(desc), canonical=f"{DOMAIN}{base}/{d['slug']}",
                                domain=DOMAIN, slug="dioceses", door=DOOR_SVG, menu=MENU_SVG, theme=THEME_SVG,
                                nav=nav, extra_head="", alternates=alternates_html(urls),
@@ -1191,8 +1421,8 @@ def build_dioceses(data):
                 dio_ld["url"] = d["website"]
             if d.get("qid"):
                 dio_ld["sameAs"] = f"https://www.wikidata.org/wiki/{d['qid']}"
-            idx = {"en": "/dioceses", "es": "/es/diocesis", "pt": "/pt/dioceses"}[lang]
-            idx_name = {"en": "Dioceses", "es": "Diócesis", "pt": "Dioceses"}[lang]
+            idx = DIO_BASE[lang]
+            idx_name = {"en": "Dioceses", "es": "Diócesis", "pt": "Dioceses", "tl": "Mga diyosesis"}[lang]
             page = seo(page, lang, f"{base}/{d['slug']}",
                        crumbs=[(HOME_WORD[lang], LANG_HOME[lang]), (idx_name, idx), (nm, f"{base}/{d['slug']}")],
                        extra=[dict(dio_ld, **{"subjectOf": {"@id": f"{DOMAIN}{base}/{d['slug']}#webpage"}})])
@@ -1207,11 +1437,12 @@ def build_dioceses(data):
 
 
 # ---------- Search and AI-answer metadata (JSON-LD, social cards) ----------
-OG_LOCALE = {"en": "en_US", "es": "es_US", "pt": "pt_BR"}
+OG_LOCALE = {"en": "en_US", "es": "es_US", "pt": "pt_BR", "tl": "tl_PH"}
 SITE_DESC = {"en": "A free, ad-free guide to the Catholic faith: prayers, the Bible, daily readings, finding a church, OCIA, saints and more.",
              "es": "Una guía gratuita y sin anuncios de la fe católica: oraciones, la Biblia, lecturas del día, cómo encontrar una iglesia, OCIA, santos y más.",
-             "pt": "Um guia gratuito e sem anúncios da fé católica: orações, a Bíblia, leituras do dia, como encontrar uma igreja, OCIA, santos e mais."}
-HOME_WORD = {"en": "Home", "es": "Inicio", "pt": "Início"}
+             "pt": "Um guia gratuito e sem anúncios da fé católica: orações, a Bíblia, leituras do dia, como encontrar uma igreja, OCIA, santos e mais.",
+             "tl": "Isang libre at walang patalastas na gabay sa pananampalatayang Katoliko: mga dasal, ang Bibliya, mga pagbasa sa araw-araw, paghahanap ng simbahan, OCIA, mga santo at iba pa."}
+HOME_WORD = {"en": "Home", "es": "Inicio", "pt": "Início", "tl": "Tahanan"}
 OG_ALT = "CatholicDoorway: I am the door; if any one enters by me, he will be saved. (John 10:9)"
 
 
@@ -1223,7 +1454,7 @@ def site_ld():
     org = {"@type": "Organization", "@id": f"{DOMAIN}/#org", "name": "CatholicDoorway", "url": f"{DOMAIN}/",
            "logo": f"{DOMAIN}/assets/img/logo.png", "email": "hello@catholicdoorway.com"}
     site = {"@type": "WebSite", "@id": f"{DOMAIN}/#website", "name": "CatholicDoorway", "url": f"{DOMAIN}/",
-            "description": SITE_DESC["en"], "inLanguage": ["en", "es", "pt"], "publisher": {"@id": f"{DOMAIN}/#org"}}
+            "description": SITE_DESC["en"], "inLanguage": ["en", "es", "pt", "tl"], "publisher": {"@id": f"{DOMAIN}/#org"}}
     return [org, site]
 
 
@@ -1332,7 +1563,7 @@ def es_nav(current):
     return lang_nav("es", ES_PAGES, ES_SUBNAV, ES_NAV_EXCLUDE, current)
 
 
-LOCALE = {"es": "es_US", "pt": "pt_BR"}
+LOCALE = {"es": "es_US", "pt": "pt_BR", "tl": "tl_PH"}
 
 
 def build_lang(code, pages, text, foot, subnav, exclude):
@@ -1386,6 +1617,10 @@ def build_pt():
     build_lang("pt", PT_PAGES, PT_TEXT, FOOT_PT, PT_SUBNAV, PT_NAV_EXCLUDE)
 
 
+def build_tl():
+    build_lang("tl", TL_PAGES, TL_TEXT, FOOT_TL, TL_SUBNAV, TL_NAV_EXCLUDE)
+
+
 def main():
     dio_data = load_dioceses()
     for slug, label, title, desc in PAGES:
@@ -1429,6 +1664,7 @@ def main():
 
     build_es()
     build_pt()
+    build_tl()
     dio_slugs = build_dioceses(dio_data)
 
     write_sitemap(dio_slugs)
@@ -1453,7 +1689,7 @@ def write_llms(dio_count):
     info = {s: (title.replace(" | CatholicDoorway", ""), desc) for s, _, title, desc in PAGES}
     out = ["# CatholicDoorway", "",
            "> " + SITE_DESC["en"] + " Written for Catholics and for anyone exploring the faith or starting OCIA "
-           "(the Order of Christian Initiation of Adults). Free, no ads, no sign-up. English, Spanish and Portuguese.", "",
+           "(the Order of Christian Initiation of Adults). Free, no ads, no sign-up. English, Spanish, Portuguese and Filipino (Tagalog).", "",
            "Content follows the teaching of the Catholic Church and cites the Catechism of the Catholic Church and Scripture. "
            "U.S. focused for parishes, dioceses and holy days. Saint and diocese data come from Wikidata (CC0) and are refreshed weekly; "
            "the church map uses OpenStreetMap data. Corrections: hello@catholicdoorway.com.", ""]
@@ -1466,7 +1702,8 @@ def write_llms(dio_count):
         out.append("")
     out += ["## Other languages", "",
             f"- [Español]({DOMAIN}/es/): " + SITE_DESC["es"],
-            f"- [Português]({DOMAIN}/pt/): " + SITE_DESC["pt"], "",
+            f"- [Português]({DOMAIN}/pt/): " + SITE_DESC["pt"],
+            f"- [Filipino (Tagalog)]({DOMAIN}/tl/): " + SITE_DESC["tl"], "",
             "## Data", "",
             f"- [Diocese pages]({DOMAIN}/dioceses): one page for each of {dio_count} U.S. dioceses, archdioceses and eparchies at /dioceses/<slug>.",
             f"- [Saints directory data]({DOMAIN}/data/saints-directory.json): JSON list of Saints, Blesseds, Venerables and Servants of God.",
@@ -1486,6 +1723,7 @@ def write_sitemap(dio_slugs):
     paths = [("/" if s == "index" else "/" + s) for s, *_ in PAGES if s != "404"]
     paths += [f"/es/{'' if es == 'index' else es}" for _, es, *_ in ES_PAGES]
     paths += [f"/pt/{'' if pt == 'index' else pt}" for _, pt, *_ in PT_PAGES]
+    paths += [f"/tl/{'' if tl == 'index' else tl}" for _, tl, *_ in TL_PAGES]
     paths += [f"{DIO_BASE[c]}/{s}" for c in DIO_LANGS for s in dio_slugs]
     state_file = ROOT / "src" / "data" / "sitemap-state.json"
     state = json.loads(state_file.read_text(encoding="utf-8")) if state_file.exists() else {}

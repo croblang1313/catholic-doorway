@@ -1,83 +1,734 @@
 {
  "en": {
   "kids": [
-   {"head": "Loving God", "items": ["Did I pray to God, even a little, most days?", "Did I go to Mass on Sunday, or make it hard for my family to go?", "Did I behave badly or goof around in church on purpose?", "Did I say God’s name or Jesus’ name in a mean or silly way?"]},
-   {"head": "Loving my family", "items": ["Did I disobey my parents or the people who take care of me?", "Did I talk back, yell or slam doors?", "Was I unkind to my brothers, sisters or cousins?", "Did I help at home when I was asked?"]},
-   {"head": "Loving other people", "items": ["Did I hit, kick or hurt someone?", "Did I call people names, tease them or leave someone out on purpose?", "Did I tell lies, or blame someone else for what I did?", "Did I take something that was not mine, or break something and hide it?", "Did I cheat at school or in a game?", "Was I jealous or greedy, or did I refuse to share?", "Did I watch or look at things I know I should not?"]}
+   {
+    "head": "Loving God",
+    "items": [
+     "Did I pray to God, even a little, most days?",
+     "Did I go to Mass on Sunday, or make it hard for my family to go?",
+     "Did I behave badly or goof around in church on purpose?",
+     "Did I say God’s name or Jesus’ name in a mean or silly way?"
+    ]
+   },
+   {
+    "head": "Loving my family",
+    "items": [
+     "Did I disobey my parents or the people who take care of me?",
+     "Did I talk back, yell or slam doors?",
+     "Was I unkind to my brothers, sisters or cousins?",
+     "Did I help at home when I was asked?"
+    ]
+   },
+   {
+    "head": "Loving other people",
+    "items": [
+     "Did I hit, kick or hurt someone?",
+     "Did I call people names, tease them or leave someone out on purpose?",
+     "Did I tell lies, or blame someone else for what I did?",
+     "Did I take something that was not mine, or break something and hide it?",
+     "Did I cheat at school or in a game?",
+     "Was I jealous or greedy, or did I refuse to share?",
+     "Did I watch or look at things I know I should not?"
+    ]
+   }
   ],
   "teens": [
-   {"head": "God first (1st Commandment)", "items": ["Have I prayed regularly, or only when I wanted something?", "Have I put my phone, games, sports, popularity or a relationship ahead of God?", "Have I been involved with horoscopes, tarot, Ouija boards or other occult practices?", "Have I received Communion while aware of a serious sin I had not confessed?"]},
-   {"head": "God’s name (2nd)", "items": ["Have I used God’s name or Jesus’ name as a swear word?", "Have I mocked faith, the Church or other people’s beliefs to look cool?"]},
-   {"head": "The Lord’s Day (3rd)", "items": ["Have I missed Sunday Mass without a serious reason, or spent it on my phone?", "Have I made Sunday a day for God and family, or just another day?"]},
-   {"head": "Family (4th)", "items": ["Have I disrespected or disobeyed my parents in things that are right?", "Have I lied to my parents about where I was or who I was with?", "Have I been cruel or dismissive to my siblings?"]},
-   {"head": "Life and respect (5th)", "items": ["Have I bullied anyone, in person or online?", "Have I hurt my body with drugs, vaping, alcohol, self-harm or not eating?", "Have I held a grudge or refused to forgive?", "Have I encouraged someone else to do something dangerous or wrong?"]},
-   {"head": "Purity (6th and 9th)", "items": ["Have I looked at pornography or sexual content?", "Have I sent, asked for or kept sexual pictures?", "Have I done sexual things alone or with someone else?", "Have I used another person, or let myself be used?"]},
-   {"head": "Honesty (7th, 8th and 10th)", "items": ["Have I stolen, including from stores, family or online (pirating, cheating apps)?", "Have I cheated on tests or homework, or copied someone’s work?", "Have I lied, spread rumors or gossiped, including in group chats?", "Have I posted or shared something to embarrass someone?", "Have I been jealous of what others have, or ungrateful for what I have?"]}
+   {
+    "head": "God first (1st Commandment)",
+    "items": [
+     "Have I prayed regularly, or only when I wanted something?",
+     "Have I put my phone, games, sports, popularity or a relationship ahead of God?",
+     "Have I been involved with horoscopes, tarot, Ouija boards or other occult practices?",
+     "Have I received Communion while aware of a serious sin I had not confessed?"
+    ]
+   },
+   {
+    "head": "God’s name (2nd)",
+    "items": [
+     "Have I used God’s name or Jesus’ name as a swear word?",
+     "Have I mocked faith, the Church or other people’s beliefs to look cool?"
+    ]
+   },
+   {
+    "head": "The Lord’s Day (3rd)",
+    "items": [
+     "Have I missed Sunday Mass without a serious reason, or spent it on my phone?",
+     "Have I made Sunday a day for God and family, or just another day?"
+    ]
+   },
+   {
+    "head": "Family (4th)",
+    "items": [
+     "Have I disrespected or disobeyed my parents in things that are right?",
+     "Have I lied to my parents about where I was or who I was with?",
+     "Have I been cruel or dismissive to my siblings?"
+    ]
+   },
+   {
+    "head": "Life and respect (5th)",
+    "items": [
+     "Have I bullied anyone, in person or online?",
+     "Have I hurt my body with drugs, vaping, alcohol, self-harm or not eating?",
+     "Have I held a grudge or refused to forgive?",
+     "Have I encouraged someone else to do something dangerous or wrong?"
+    ]
+   },
+   {
+    "head": "Purity (6th and 9th)",
+    "items": [
+     "Have I looked at pornography or sexual content?",
+     "Have I sent, asked for or kept sexual pictures?",
+     "Have I done sexual things alone or with someone else?",
+     "Have I used another person, or let myself be used?"
+    ]
+   },
+   {
+    "head": "Honesty (7th, 8th and 10th)",
+    "items": [
+     "Have I stolen, including from stores, family or online (pirating, cheating apps)?",
+     "Have I cheated on tests or homework, or copied someone’s work?",
+     "Have I lied, spread rumors or gossiped, including in group chats?",
+     "Have I posted or shared something to embarrass someone?",
+     "Have I been jealous of what others have, or ungrateful for what I have?"
+    ]
+   }
   ],
   "adults": [
-   {"head": "1st Commandment: I am the Lord your God; you shall not have other gods before me", "items": ["Have I neglected daily prayer?", "Have I doubted or denied my faith deliberately, or been ashamed of it?", "Have I made money, work, pleasure, reputation or another person more important than God?", "Have I practiced superstition, fortune-telling, astrology or the occult?", "Have I received Communion while conscious of unconfessed mortal sin?", "Have I deliberately concealed a serious sin in Confession?"]},
-   {"head": "2nd Commandment: You shall not take the name of the Lord your God in vain", "items": ["Have I used God’s name carelessly, in anger or to curse?", "Have I broken a promise or vow made to God, or sworn falsely?", "Have I spoken with contempt of holy things or of the Church?"]},
-   {"head": "3rd Commandment: Remember to keep holy the Lord’s Day", "items": ["Have I missed Mass on a Sunday or holy day of obligation through my own fault?", "Have I arrived late or left early without good reason?", "Have I done unnecessary work on Sunday, or made others do so?", "Have I kept the fast and abstinence the Church asks of me?"]},
-   {"head": "4th Commandment: Honor your father and your mother", "items": ["Have I neglected or disrespected my parents, or failed to help them in age or need?", "Have I neglected my spouse or children, including their faith and their need for my time?", "Have I given my children a bad example?", "Have I been unjust or unfair as an employer, employee, citizen or leader?"]},
-   {"head": "5th Commandment: You shall not kill", "items": ["Have I physically harmed anyone, or been abusive in word or deed?", "Have I had, encouraged or helped with an abortion?", "Have I harbored hatred or refused to forgive?", "Have I abused alcohol, drugs, food or driven recklessly?", "Have I led someone into sin by my words or example (scandal)?"]},
-   {"head": "6th and 9th Commandments: Chastity, in deed and in desire", "items": ["Have I been unfaithful to my spouse in action or in my heart?", "Have I engaged in sexual activity outside of marriage?", "Have I viewed pornography, or entertained lustful thoughts deliberately?", "Have I masturbated?", "Have I used contraception, or encouraged others to?", "Have I treated anyone as an object, including through words, jokes or media?"]},
-   {"head": "7th and 10th Commandments: Justice and contentment", "items": ["Have I stolen, or kept something that belongs to someone else?", "Have I cheated on taxes, at work or in business, or failed to pay debts?", "Have I wasted time or resources at work that I was paid for?", "Have I been greedy or envious, or let possessions rule me?", "Have I been generous to the poor and to the Church according to my means?"]},
-   {"head": "8th Commandment: You shall not bear false witness", "items": ["Have I lied, or deceived others?", "Have I gossiped, revealed others’ faults without need, or damaged someone’s reputation?", "Have I judged others rashly?", "Have I spread falsehoods online or failed to correct a lie I told?"]},
-   {"head": "Love of neighbor and the works of mercy", "items": ["Have I been impatient, harsh or proud with the people closest to me?", "Have I ignored someone who needed my help?", "Have I been prejudiced against people because of race, origin, poverty or disability?", "Have I been slothful in doing the good I could have done?"]}
+   {
+    "head": "1st Commandment: I am the Lord your God; you shall not have other gods before me",
+    "items": [
+     "Have I neglected daily prayer?",
+     "Have I doubted or denied my faith deliberately, or been ashamed of it?",
+     "Have I made money, work, pleasure, reputation or another person more important than God?",
+     "Have I practiced superstition, fortune-telling, astrology or the occult?",
+     "Have I received Communion while conscious of unconfessed mortal sin?",
+     "Have I deliberately concealed a serious sin in Confession?"
+    ]
+   },
+   {
+    "head": "2nd Commandment: You shall not take the name of the Lord your God in vain",
+    "items": [
+     "Have I used God’s name carelessly, in anger or to curse?",
+     "Have I broken a promise or vow made to God, or sworn falsely?",
+     "Have I spoken with contempt of holy things or of the Church?"
+    ]
+   },
+   {
+    "head": "3rd Commandment: Remember to keep holy the Lord’s Day",
+    "items": [
+     "Have I missed Mass on a Sunday or holy day of obligation through my own fault?",
+     "Have I arrived late or left early without good reason?",
+     "Have I done unnecessary work on Sunday, or made others do so?",
+     "Have I kept the fast and abstinence the Church asks of me?"
+    ]
+   },
+   {
+    "head": "4th Commandment: Honor your father and your mother",
+    "items": [
+     "Have I neglected or disrespected my parents, or failed to help them in age or need?",
+     "Have I neglected my spouse or children, including their faith and their need for my time?",
+     "Have I given my children a bad example?",
+     "Have I been unjust or unfair as an employer, employee, citizen or leader?"
+    ]
+   },
+   {
+    "head": "5th Commandment: You shall not kill",
+    "items": [
+     "Have I physically harmed anyone, or been abusive in word or deed?",
+     "Have I had, encouraged or helped with an abortion?",
+     "Have I harbored hatred or refused to forgive?",
+     "Have I abused alcohol, drugs, food or driven recklessly?",
+     "Have I led someone into sin by my words or example (scandal)?"
+    ]
+   },
+   {
+    "head": "6th and 9th Commandments: Chastity, in deed and in desire",
+    "items": [
+     "Have I been unfaithful to my spouse in action or in my heart?",
+     "Have I engaged in sexual activity outside of marriage?",
+     "Have I viewed pornography, or entertained lustful thoughts deliberately?",
+     "Have I masturbated?",
+     "Have I used contraception, or encouraged others to?",
+     "Have I treated anyone as an object, including through words, jokes or media?"
+    ]
+   },
+   {
+    "head": "7th and 10th Commandments: Justice and contentment",
+    "items": [
+     "Have I stolen, or kept something that belongs to someone else?",
+     "Have I cheated on taxes, at work or in business, or failed to pay debts?",
+     "Have I wasted time or resources at work that I was paid for?",
+     "Have I been greedy or envious, or let possessions rule me?",
+     "Have I been generous to the poor and to the Church according to my means?"
+    ]
+   },
+   {
+    "head": "8th Commandment: You shall not bear false witness",
+    "items": [
+     "Have I lied, or deceived others?",
+     "Have I gossiped, revealed others’ faults without need, or damaged someone’s reputation?",
+     "Have I judged others rashly?",
+     "Have I spread falsehoods online or failed to correct a lie I told?"
+    ]
+   },
+   {
+    "head": "Love of neighbor and the works of mercy",
+    "items": [
+     "Have I been impatient, harsh or proud with the people closest to me?",
+     "Have I ignored someone who needed my help?",
+     "Have I been prejudiced against people because of race, origin, poverty or disability?",
+     "Have I been slothful in doing the good I could have done?"
+    ]
+   }
   ]
  },
  "es": {
   "kids": [
-   {"head": "Amar a Dios", "items": ["¿Recé a Dios, aunque sea un poquito, casi todos los días?", "¿Fui a Misa el domingo, o se lo puse difícil a mi familia?", "¿Me porté mal o jugué en la iglesia a propósito?", "¿Dije el nombre de Dios o de Jesús de forma grosera o en broma?"]},
-   {"head": "Amar a mi familia", "items": ["¿Desobedecí a mis papás o a quienes me cuidan?", "¿Contesté mal, grité o di portazos?", "¿Fui malo con mis hermanos, hermanas o primos?", "¿Ayudé en casa cuando me lo pidieron?"]},
-   {"head": "Amar a los demás", "items": ["¿Le pegué, pateé o lastimé a alguien?", "¿Le puse apodos a alguien, me burlé o dejé a alguien fuera a propósito?", "¿Dije mentiras, o eché la culpa a otro de lo que hice yo?", "¿Tomé algo que no era mío, o rompí algo y lo escondí?", "¿Hice trampa en la escuela o en un juego?", "¿Tuve envidia, fui egoísta o no quise compartir?", "¿Vi cosas que sé que no debo ver?"]}
+   {
+    "head": "Amar a Dios",
+    "items": [
+     "¿Recé a Dios, aunque sea un poquito, casi todos los días?",
+     "¿Fui a Misa el domingo, o se lo puse difícil a mi familia?",
+     "¿Me porté mal o jugué en la iglesia a propósito?",
+     "¿Dije el nombre de Dios o de Jesús de forma grosera o en broma?"
+    ]
+   },
+   {
+    "head": "Amar a mi familia",
+    "items": [
+     "¿Desobedecí a mis papás o a quienes me cuidan?",
+     "¿Contesté mal, grité o di portazos?",
+     "¿Fui malo con mis hermanos, hermanas o primos?",
+     "¿Ayudé en casa cuando me lo pidieron?"
+    ]
+   },
+   {
+    "head": "Amar a los demás",
+    "items": [
+     "¿Le pegué, pateé o lastimé a alguien?",
+     "¿Le puse apodos a alguien, me burlé o dejé a alguien fuera a propósito?",
+     "¿Dije mentiras, o eché la culpa a otro de lo que hice yo?",
+     "¿Tomé algo que no era mío, o rompí algo y lo escondí?",
+     "¿Hice trampa en la escuela o en un juego?",
+     "¿Tuve envidia, fui egoísta o no quise compartir?",
+     "¿Vi cosas que sé que no debo ver?"
+    ]
+   }
   ],
   "teens": [
-   {"head": "Dios primero (1.er mandamiento)", "items": ["¿He rezado con constancia, o solo cuando quería algo?", "¿He puesto el celular, los videojuegos, el deporte, la popularidad o una relación por delante de Dios?", "¿Me he metido con horóscopos, tarot, la ouija u otras prácticas ocultas?", "¿He comulgado siendo consciente de un pecado grave que no había confesado?"]},
-   {"head": "El nombre de Dios (2.º)", "items": ["¿He usado el nombre de Dios o de Jesús como grosería?", "¿Me he burlado de la fe, de la Iglesia o de las creencias de otros para quedar bien?"]},
-   {"head": "El día del Señor (3.º)", "items": ["¿He faltado a Misa el domingo sin un motivo grave, o la he pasado con el celular?", "¿He hecho del domingo un día para Dios y la familia, o uno más?"]},
-   {"head": "La familia (4.º)", "items": ["¿He faltado al respeto o desobedecido a mis papás en cosas justas?", "¿Les he mentido a mis papás sobre dónde estaba o con quién?", "¿He sido cruel o despectivo con mis hermanos?"]},
-   {"head": "La vida y el respeto (5.º)", "items": ["¿He hecho bullying a alguien, en persona o en internet?", "¿He dañado mi cuerpo con drogas, vapeo, alcohol, autolesiones o dejando de comer?", "¿He guardado rencor o me he negado a perdonar?", "¿He animado a alguien a hacer algo peligroso o malo?"]},
-   {"head": "La pureza (6.º y 9.º)", "items": ["¿He visto pornografía o contenido sexual?", "¿He enviado, pedido o guardado fotos sexuales?", "¿He hecho cosas sexuales a solas o con otra persona?", "¿He usado a otra persona, o he dejado que me usen?"]},
-   {"head": "La honestidad (7.º, 8.º y 10.º)", "items": ["¿He robado, también en tiendas, a mi familia o en internet (piratería, trampas en apps)?", "¿He hecho trampa en exámenes o tareas, o he copiado el trabajo de otro?", "¿He mentido, esparcido rumores o chismes, también en chats de grupo?", "¿He publicado o compartido algo para avergonzar a alguien?", "¿He tenido envidia de lo que otros tienen, o he sido malagradecido con lo que tengo?"]}
+   {
+    "head": "Dios primero (1.er mandamiento)",
+    "items": [
+     "¿He rezado con constancia, o solo cuando quería algo?",
+     "¿He puesto el celular, los videojuegos, el deporte, la popularidad o una relación por delante de Dios?",
+     "¿Me he metido con horóscopos, tarot, la ouija u otras prácticas ocultas?",
+     "¿He comulgado siendo consciente de un pecado grave que no había confesado?"
+    ]
+   },
+   {
+    "head": "El nombre de Dios (2.º)",
+    "items": [
+     "¿He usado el nombre de Dios o de Jesús como grosería?",
+     "¿Me he burlado de la fe, de la Iglesia o de las creencias de otros para quedar bien?"
+    ]
+   },
+   {
+    "head": "El día del Señor (3.º)",
+    "items": [
+     "¿He faltado a Misa el domingo sin un motivo grave, o la he pasado con el celular?",
+     "¿He hecho del domingo un día para Dios y la familia, o uno más?"
+    ]
+   },
+   {
+    "head": "La familia (4.º)",
+    "items": [
+     "¿He faltado al respeto o desobedecido a mis papás en cosas justas?",
+     "¿Les he mentido a mis papás sobre dónde estaba o con quién?",
+     "¿He sido cruel o despectivo con mis hermanos?"
+    ]
+   },
+   {
+    "head": "La vida y el respeto (5.º)",
+    "items": [
+     "¿He hecho bullying a alguien, en persona o en internet?",
+     "¿He dañado mi cuerpo con drogas, vapeo, alcohol, autolesiones o dejando de comer?",
+     "¿He guardado rencor o me he negado a perdonar?",
+     "¿He animado a alguien a hacer algo peligroso o malo?"
+    ]
+   },
+   {
+    "head": "La pureza (6.º y 9.º)",
+    "items": [
+     "¿He visto pornografía o contenido sexual?",
+     "¿He enviado, pedido o guardado fotos sexuales?",
+     "¿He hecho cosas sexuales a solas o con otra persona?",
+     "¿He usado a otra persona, o he dejado que me usen?"
+    ]
+   },
+   {
+    "head": "La honestidad (7.º, 8.º y 10.º)",
+    "items": [
+     "¿He robado, también en tiendas, a mi familia o en internet (piratería, trampas en apps)?",
+     "¿He hecho trampa en exámenes o tareas, o he copiado el trabajo de otro?",
+     "¿He mentido, esparcido rumores o chismes, también en chats de grupo?",
+     "¿He publicado o compartido algo para avergonzar a alguien?",
+     "¿He tenido envidia de lo que otros tienen, o he sido malagradecido con lo que tengo?"
+    ]
+   }
   ],
   "adults": [
-   {"head": "1.er mandamiento: Amarás a Dios sobre todas las cosas", "items": ["¿He descuidado la oración diaria?", "¿He dudado o negado mi fe deliberadamente, o me he avergonzado de ella?", "¿He puesto el dinero, el trabajo, el placer, la reputación u otra persona por encima de Dios?", "¿He practicado supersticiones, adivinación, astrología o el ocultismo?", "¿He comulgado siendo consciente de un pecado mortal sin confesar?", "¿He callado a propósito un pecado grave en la Confesión?"]},
-   {"head": "2.º mandamiento: No tomarás el nombre de Dios en vano", "items": ["¿He usado el nombre de Dios sin respeto, con enojo o para maldecir?", "¿He roto una promesa o un voto hecho a Dios, o he jurado en falso?", "¿He hablado con desprecio de las cosas santas o de la Iglesia?"]},
-   {"head": "3.er mandamiento: Santificarás las fiestas", "items": ["¿He faltado a Misa un domingo o día de precepto por mi culpa?", "¿He llegado tarde o me he ido antes sin un buen motivo?", "¿He hecho trabajos innecesarios en domingo, o se los he exigido a otros?", "¿He guardado el ayuno y la abstinencia que pide la Iglesia?"]},
-   {"head": "4.º mandamiento: Honrarás a tu padre y a tu madre", "items": ["¿He descuidado o faltado al respeto a mis padres, o no los he ayudado en su vejez o necesidad?", "¿He descuidado a mi cónyuge o a mis hijos, también su fe y su necesidad de mi tiempo?", "¿He dado mal ejemplo a mis hijos?", "¿He sido injusto como patrón, empleado, ciudadano o autoridad?"]},
-   {"head": "5.º mandamiento: No matarás", "items": ["¿He hecho daño físico a alguien, o he maltratado con palabras o hechos?", "¿He tenido, animado o ayudado a realizar un aborto?", "¿He guardado odio o me he negado a perdonar?", "¿He abusado del alcohol, las drogas o la comida, o he manejado de forma imprudente?", "¿He llevado a alguien a pecar con mis palabras o mi ejemplo (escándalo)?"]},
-   {"head": "6.º y 9.º mandamientos: La castidad, en obras y en deseos", "items": ["¿He sido infiel a mi cónyuge con hechos o en mi corazón?", "¿He tenido relaciones sexuales fuera del matrimonio?", "¿He visto pornografía, o me he entretenido deliberadamente en pensamientos impuros?", "¿Me he masturbado?", "¿He usado anticonceptivos, o he animado a otros a usarlos?", "¿He tratado a alguien como un objeto, también con palabras, chistes o lo que veo?"]},
-   {"head": "7.º y 10.º mandamientos: La justicia y el desprendimiento", "items": ["¿He robado, o me he quedado con algo que es de otro?", "¿He hecho trampa en los impuestos, el trabajo o los negocios, o no he pagado mis deudas?", "¿He perdido el tiempo o los recursos en el trabajo por el que me pagan?", "¿He sido codicioso o envidioso, o he dejado que las cosas me dominen?", "¿He sido generoso con los pobres y con la Iglesia según mis posibilidades?"]},
-   {"head": "8.º mandamiento: No dirás falso testimonio ni mentirás", "items": ["¿He mentido o engañado a otros?", "¿He criticado, revelado sin necesidad las faltas de otros o dañado la fama de alguien?", "¿He juzgado a otros temerariamente?", "¿He difundido mentiras en internet, o no he corregido una mentira que dije?"]},
-   {"head": "El amor al prójimo y las obras de misericordia", "items": ["¿He sido impaciente, duro u orgulloso con las personas más cercanas?", "¿He ignorado a alguien que necesitaba mi ayuda?", "¿He tenido prejuicios contra alguien por su raza, su origen, su pobreza o una discapacidad?", "¿He sido perezoso para hacer el bien que podía hacer?"]}
+   {
+    "head": "1.er mandamiento: Amarás a Dios sobre todas las cosas",
+    "items": [
+     "¿He descuidado la oración diaria?",
+     "¿He dudado o negado mi fe deliberadamente, o me he avergonzado de ella?",
+     "¿He puesto el dinero, el trabajo, el placer, la reputación u otra persona por encima de Dios?",
+     "¿He practicado supersticiones, adivinación, astrología o el ocultismo?",
+     "¿He comulgado siendo consciente de un pecado mortal sin confesar?",
+     "¿He callado a propósito un pecado grave en la Confesión?"
+    ]
+   },
+   {
+    "head": "2.º mandamiento: No tomarás el nombre de Dios en vano",
+    "items": [
+     "¿He usado el nombre de Dios sin respeto, con enojo o para maldecir?",
+     "¿He roto una promesa o un voto hecho a Dios, o he jurado en falso?",
+     "¿He hablado con desprecio de las cosas santas o de la Iglesia?"
+    ]
+   },
+   {
+    "head": "3.er mandamiento: Santificarás las fiestas",
+    "items": [
+     "¿He faltado a Misa un domingo o día de precepto por mi culpa?",
+     "¿He llegado tarde o me he ido antes sin un buen motivo?",
+     "¿He hecho trabajos innecesarios en domingo, o se los he exigido a otros?",
+     "¿He guardado el ayuno y la abstinencia que pide la Iglesia?"
+    ]
+   },
+   {
+    "head": "4.º mandamiento: Honrarás a tu padre y a tu madre",
+    "items": [
+     "¿He descuidado o faltado al respeto a mis padres, o no los he ayudado en su vejez o necesidad?",
+     "¿He descuidado a mi cónyuge o a mis hijos, también su fe y su necesidad de mi tiempo?",
+     "¿He dado mal ejemplo a mis hijos?",
+     "¿He sido injusto como patrón, empleado, ciudadano o autoridad?"
+    ]
+   },
+   {
+    "head": "5.º mandamiento: No matarás",
+    "items": [
+     "¿He hecho daño físico a alguien, o he maltratado con palabras o hechos?",
+     "¿He tenido, animado o ayudado a realizar un aborto?",
+     "¿He guardado odio o me he negado a perdonar?",
+     "¿He abusado del alcohol, las drogas o la comida, o he manejado de forma imprudente?",
+     "¿He llevado a alguien a pecar con mis palabras o mi ejemplo (escándalo)?"
+    ]
+   },
+   {
+    "head": "6.º y 9.º mandamientos: La castidad, en obras y en deseos",
+    "items": [
+     "¿He sido infiel a mi cónyuge con hechos o en mi corazón?",
+     "¿He tenido relaciones sexuales fuera del matrimonio?",
+     "¿He visto pornografía, o me he entretenido deliberadamente en pensamientos impuros?",
+     "¿Me he masturbado?",
+     "¿He usado anticonceptivos, o he animado a otros a usarlos?",
+     "¿He tratado a alguien como un objeto, también con palabras, chistes o lo que veo?"
+    ]
+   },
+   {
+    "head": "7.º y 10.º mandamientos: La justicia y el desprendimiento",
+    "items": [
+     "¿He robado, o me he quedado con algo que es de otro?",
+     "¿He hecho trampa en los impuestos, el trabajo o los negocios, o no he pagado mis deudas?",
+     "¿He perdido el tiempo o los recursos en el trabajo por el que me pagan?",
+     "¿He sido codicioso o envidioso, o he dejado que las cosas me dominen?",
+     "¿He sido generoso con los pobres y con la Iglesia según mis posibilidades?"
+    ]
+   },
+   {
+    "head": "8.º mandamiento: No dirás falso testimonio ni mentirás",
+    "items": [
+     "¿He mentido o engañado a otros?",
+     "¿He criticado, revelado sin necesidad las faltas de otros o dañado la fama de alguien?",
+     "¿He juzgado a otros temerariamente?",
+     "¿He difundido mentiras en internet, o no he corregido una mentira que dije?"
+    ]
+   },
+   {
+    "head": "El amor al prójimo y las obras de misericordia",
+    "items": [
+     "¿He sido impaciente, duro u orgulloso con las personas más cercanas?",
+     "¿He ignorado a alguien que necesitaba mi ayuda?",
+     "¿He tenido prejuicios contra alguien por su raza, su origen, su pobreza o una discapacidad?",
+     "¿He sido perezoso para hacer el bien que podía hacer?"
+    ]
+   }
   ]
  },
  "pt": {
   "kids": [
-   {"head": "Amar a Deus", "items": ["Rezei para Deus, mesmo que um pouquinho, quase todos os dias?", "Fui à Missa no domingo, ou dificultei para a minha família ir?", "Fiz bagunça ou brinquei na igreja de propósito?", "Falei o nome de Deus ou de Jesus de um jeito feio ou de brincadeira?"]},
-   {"head": "Amar a minha família", "items": ["Desobedeci aos meus pais ou a quem cuida de mim?", "Respondi mal, gritei ou bati a porta?", "Fui maldoso com meus irmãos, irmãs ou primos?", "Ajudei em casa quando me pediram?"]},
-   {"head": "Amar as outras pessoas", "items": ["Bati, chutei ou machuquei alguém?", "Xinguei, zombei ou deixei alguém de fora de propósito?", "Contei mentiras, ou pus a culpa em outra pessoa pelo que eu fiz?", "Peguei algo que não era meu, ou quebrei algo e escondi?", "Colei na escola ou trapaceei num jogo?", "Tive inveja, fui egoísta ou não quis dividir?", "Vi coisas que eu sei que não devo ver?"]}
+   {
+    "head": "Amar a Deus",
+    "items": [
+     "Rezei para Deus, mesmo que um pouquinho, quase todos os dias?",
+     "Fui à Missa no domingo, ou dificultei para a minha família ir?",
+     "Fiz bagunça ou brinquei na igreja de propósito?",
+     "Falei o nome de Deus ou de Jesus de um jeito feio ou de brincadeira?"
+    ]
+   },
+   {
+    "head": "Amar a minha família",
+    "items": [
+     "Desobedeci aos meus pais ou a quem cuida de mim?",
+     "Respondi mal, gritei ou bati a porta?",
+     "Fui maldoso com meus irmãos, irmãs ou primos?",
+     "Ajudei em casa quando me pediram?"
+    ]
+   },
+   {
+    "head": "Amar as outras pessoas",
+    "items": [
+     "Bati, chutei ou machuquei alguém?",
+     "Xinguei, zombei ou deixei alguém de fora de propósito?",
+     "Contei mentiras, ou pus a culpa em outra pessoa pelo que eu fiz?",
+     "Peguei algo que não era meu, ou quebrei algo e escondi?",
+     "Colei na escola ou trapaceei num jogo?",
+     "Tive inveja, fui egoísta ou não quis dividir?",
+     "Vi coisas que eu sei que não devo ver?"
+    ]
+   }
   ],
   "teens": [
-   {"head": "Deus em primeiro lugar (1º mandamento)", "items": ["Rezei com regularidade, ou só quando queria alguma coisa?", "Coloquei o celular, os jogos, o esporte, a popularidade ou um namoro na frente de Deus?", "Me envolvi com horóscopo, tarô, tabuleiro Ouija ou outras práticas ocultas?", "Comunguei sabendo que tinha um pecado grave não confessado?"]},
-   {"head": "O nome de Deus (2º)", "items": ["Usei o nome de Deus ou de Jesus como palavrão?", "Zombei da fé, da Igreja ou das crenças dos outros para parecer legal?"]},
-   {"head": "O dia do Senhor (3º)", "items": ["Faltei à Missa de domingo sem um motivo grave, ou passei a Missa no celular?", "Fiz do domingo um dia para Deus e para a família, ou um dia qualquer?"]},
-   {"head": "A família (4º)", "items": ["Desrespeitei ou desobedeci aos meus pais em coisas justas?", "Menti para os meus pais sobre onde eu estava ou com quem?", "Fui cruel ou desprezei meus irmãos?"]},
-   {"head": "A vida e o respeito (5º)", "items": ["Pratiquei bullying com alguém, pessoalmente ou na internet?", "Fiz mal ao meu corpo com drogas, vape, álcool, automutilação ou deixando de comer?", "Guardei rancor ou me recusei a perdoar?", "Incentivei alguém a fazer algo perigoso ou errado?"]},
-   {"head": "A pureza (6º e 9º)", "items": ["Vi pornografia ou conteúdo sexual?", "Enviei, pedi ou guardei fotos sexuais?", "Fiz coisas sexuais sozinho ou com outra pessoa?", "Usei outra pessoa, ou deixei que me usassem?"]},
-   {"head": "A honestidade (7º, 8º e 10º)", "items": ["Roubei, inclusive em lojas, da família ou na internet (pirataria, trapaça em apps)?", "Colei em provas ou trabalhos, ou copiei o trabalho de alguém?", "Menti, espalhei boatos ou fofocas, inclusive em grupos de mensagens?", "Postei ou compartilhei algo para envergonhar alguém?", "Tive inveja do que os outros têm, ou fui ingrato pelo que tenho?"]}
+   {
+    "head": "Deus em primeiro lugar (1º mandamento)",
+    "items": [
+     "Rezei com regularidade, ou só quando queria alguma coisa?",
+     "Coloquei o celular, os jogos, o esporte, a popularidade ou um namoro na frente de Deus?",
+     "Me envolvi com horóscopo, tarô, tabuleiro Ouija ou outras práticas ocultas?",
+     "Comunguei sabendo que tinha um pecado grave não confessado?"
+    ]
+   },
+   {
+    "head": "O nome de Deus (2º)",
+    "items": [
+     "Usei o nome de Deus ou de Jesus como palavrão?",
+     "Zombei da fé, da Igreja ou das crenças dos outros para parecer legal?"
+    ]
+   },
+   {
+    "head": "O dia do Senhor (3º)",
+    "items": [
+     "Faltei à Missa de domingo sem um motivo grave, ou passei a Missa no celular?",
+     "Fiz do domingo um dia para Deus e para a família, ou um dia qualquer?"
+    ]
+   },
+   {
+    "head": "A família (4º)",
+    "items": [
+     "Desrespeitei ou desobedeci aos meus pais em coisas justas?",
+     "Menti para os meus pais sobre onde eu estava ou com quem?",
+     "Fui cruel ou desprezei meus irmãos?"
+    ]
+   },
+   {
+    "head": "A vida e o respeito (5º)",
+    "items": [
+     "Pratiquei bullying com alguém, pessoalmente ou na internet?",
+     "Fiz mal ao meu corpo com drogas, vape, álcool, automutilação ou deixando de comer?",
+     "Guardei rancor ou me recusei a perdoar?",
+     "Incentivei alguém a fazer algo perigoso ou errado?"
+    ]
+   },
+   {
+    "head": "A pureza (6º e 9º)",
+    "items": [
+     "Vi pornografia ou conteúdo sexual?",
+     "Enviei, pedi ou guardei fotos sexuais?",
+     "Fiz coisas sexuais sozinho ou com outra pessoa?",
+     "Usei outra pessoa, ou deixei que me usassem?"
+    ]
+   },
+   {
+    "head": "A honestidade (7º, 8º e 10º)",
+    "items": [
+     "Roubei, inclusive em lojas, da família ou na internet (pirataria, trapaça em apps)?",
+     "Colei em provas ou trabalhos, ou copiei o trabalho de alguém?",
+     "Menti, espalhei boatos ou fofocas, inclusive em grupos de mensagens?",
+     "Postei ou compartilhei algo para envergonhar alguém?",
+     "Tive inveja do que os outros têm, ou fui ingrato pelo que tenho?"
+    ]
+   }
   ],
   "adults": [
-   {"head": "1º mandamento: Amar a Deus sobre todas as coisas", "items": ["Descuidei da oração diária?", "Duvidei ou neguei a minha fé deliberadamente, ou tive vergonha dela?", "Coloquei o dinheiro, o trabalho, o prazer, a reputação ou outra pessoa acima de Deus?", "Pratiquei superstição, adivinhação, astrologia ou ocultismo?", "Comunguei consciente de um pecado mortal não confessado?", "Escondi de propósito um pecado grave na Confissão?"]},
-   {"head": "2º mandamento: Não tomar seu santo nome em vão", "items": ["Usei o nome de Deus sem respeito, com raiva ou para amaldiçoar?", "Quebrei uma promessa ou um voto feito a Deus, ou jurei falso?", "Falei com desprezo das coisas santas ou da Igreja?"]},
-   {"head": "3º mandamento: Guardar domingos e festas de guarda", "items": ["Faltei à Missa num domingo ou dia santo de guarda por culpa minha?", "Cheguei atrasado ou saí antes sem um bom motivo?", "Fiz trabalhos desnecessários no domingo, ou exigi que outros fizessem?", "Guardei o jejum e a abstinência que a Igreja pede?"]},
-   {"head": "4º mandamento: Honrar pai e mãe", "items": ["Descuidei ou desrespeitei meus pais, ou não os ajudei na velhice ou na necessidade?", "Descuidei do meu cônjuge ou dos meus filhos, inclusive da fé deles e da necessidade do meu tempo?", "Dei mau exemplo aos meus filhos?", "Fui injusto como patrão, empregado, cidadão ou autoridade?"]},
-   {"head": "5º mandamento: Não matar", "items": ["Fiz mal físico a alguém, ou maltratei com palavras ou atos?", "Fiz, incentivei ou ajudei a fazer um aborto?", "Guardei ódio ou me recusei a perdoar?", "Abusei do álcool, das drogas ou da comida, ou dirigi de forma imprudente?", "Levei alguém a pecar com minhas palavras ou meu exemplo (escândalo)?"]},
-   {"head": "6º e 9º mandamentos: A castidade, em atos e em desejos", "items": ["Fui infiel ao meu cônjuge em atos ou no coração?", "Tive relações sexuais fora do casamento?", "Vi pornografia, ou me detive deliberadamente em pensamentos impuros?", "Me masturbei?", "Usei contraceptivos, ou incentivei outros a usar?", "Tratei alguém como objeto, inclusive com palavras, piadas ou o que assisto?"]},
-   {"head": "7º e 10º mandamentos: A justiça e o desapego", "items": ["Roubei, ou fiquei com algo que é de outra pessoa?", "Trapaceei nos impostos, no trabalho ou nos negócios, ou deixei de pagar dívidas?", "Desperdicei o tempo ou os recursos do trabalho pelo qual sou pago?", "Fui ganancioso ou invejoso, ou deixei que as coisas me dominassem?", "Fui generoso com os pobres e com a Igreja conforme as minhas possibilidades?"]},
-   {"head": "8º mandamento: Não levantar falso testemunho", "items": ["Menti ou enganei os outros?", "Fiz fofoca, revelei sem necessidade os defeitos dos outros ou prejudiquei a reputação de alguém?", "Julguei os outros temerariamente?", "Espalhei mentiras na internet, ou deixei de corrigir uma mentira que contei?"]},
-   {"head": "O amor ao próximo e as obras de misericórdia", "items": ["Fui impaciente, duro ou orgulhoso com as pessoas mais próximas?", "Ignorei alguém que precisava da minha ajuda?", "Tive preconceito contra alguém por causa da raça, da origem, da pobreza ou de uma deficiência?", "Tive preguiça de fazer o bem que eu podia fazer?"]}
+   {
+    "head": "1º mandamento: Amar a Deus sobre todas as coisas",
+    "items": [
+     "Descuidei da oração diária?",
+     "Duvidei ou neguei a minha fé deliberadamente, ou tive vergonha dela?",
+     "Coloquei o dinheiro, o trabalho, o prazer, a reputação ou outra pessoa acima de Deus?",
+     "Pratiquei superstição, adivinhação, astrologia ou ocultismo?",
+     "Comunguei consciente de um pecado mortal não confessado?",
+     "Escondi de propósito um pecado grave na Confissão?"
+    ]
+   },
+   {
+    "head": "2º mandamento: Não tomar seu santo nome em vão",
+    "items": [
+     "Usei o nome de Deus sem respeito, com raiva ou para amaldiçoar?",
+     "Quebrei uma promessa ou um voto feito a Deus, ou jurei falso?",
+     "Falei com desprezo das coisas santas ou da Igreja?"
+    ]
+   },
+   {
+    "head": "3º mandamento: Guardar domingos e festas de guarda",
+    "items": [
+     "Faltei à Missa num domingo ou dia santo de guarda por culpa minha?",
+     "Cheguei atrasado ou saí antes sem um bom motivo?",
+     "Fiz trabalhos desnecessários no domingo, ou exigi que outros fizessem?",
+     "Guardei o jejum e a abstinência que a Igreja pede?"
+    ]
+   },
+   {
+    "head": "4º mandamento: Honrar pai e mãe",
+    "items": [
+     "Descuidei ou desrespeitei meus pais, ou não os ajudei na velhice ou na necessidade?",
+     "Descuidei do meu cônjuge ou dos meus filhos, inclusive da fé deles e da necessidade do meu tempo?",
+     "Dei mau exemplo aos meus filhos?",
+     "Fui injusto como patrão, empregado, cidadão ou autoridade?"
+    ]
+   },
+   {
+    "head": "5º mandamento: Não matar",
+    "items": [
+     "Fiz mal físico a alguém, ou maltratei com palavras ou atos?",
+     "Fiz, incentivei ou ajudei a fazer um aborto?",
+     "Guardei ódio ou me recusei a perdoar?",
+     "Abusei do álcool, das drogas ou da comida, ou dirigi de forma imprudente?",
+     "Levei alguém a pecar com minhas palavras ou meu exemplo (escândalo)?"
+    ]
+   },
+   {
+    "head": "6º e 9º mandamentos: A castidade, em atos e em desejos",
+    "items": [
+     "Fui infiel ao meu cônjuge em atos ou no coração?",
+     "Tive relações sexuais fora do casamento?",
+     "Vi pornografia, ou me detive deliberadamente em pensamentos impuros?",
+     "Me masturbei?",
+     "Usei contraceptivos, ou incentivei outros a usar?",
+     "Tratei alguém como objeto, inclusive com palavras, piadas ou o que assisto?"
+    ]
+   },
+   {
+    "head": "7º e 10º mandamentos: A justiça e o desapego",
+    "items": [
+     "Roubei, ou fiquei com algo que é de outra pessoa?",
+     "Trapaceei nos impostos, no trabalho ou nos negócios, ou deixei de pagar dívidas?",
+     "Desperdicei o tempo ou os recursos do trabalho pelo qual sou pago?",
+     "Fui ganancioso ou invejoso, ou deixei que as coisas me dominassem?",
+     "Fui generoso com os pobres e com a Igreja conforme as minhas possibilidades?"
+    ]
+   },
+   {
+    "head": "8º mandamento: Não levantar falso testemunho",
+    "items": [
+     "Menti ou enganei os outros?",
+     "Fiz fofoca, revelei sem necessidade os defeitos dos outros ou prejudiquei a reputação de alguém?",
+     "Julguei os outros temerariamente?",
+     "Espalhei mentiras na internet, ou deixei de corrigir uma mentira que contei?"
+    ]
+   },
+   {
+    "head": "O amor ao próximo e as obras de misericórdia",
+    "items": [
+     "Fui impaciente, duro ou orgulhoso com as pessoas mais próximas?",
+     "Ignorei alguém que precisava da minha ajuda?",
+     "Tive preconceito contra alguém por causa da raça, da origem, da pobreza ou de uma deficiência?",
+     "Tive preguiça de fazer o bem que eu podia fazer?"
+    ]
+   }
+  ]
+ },
+ "tl": {
+  "kids": [
+   {
+    "head": "Pagmamahal sa Diyos",
+    "items": [
+     "Nagdasal ba ako sa Diyos, kahit sandali, sa halos araw-araw?",
+     "Nagsimba ba ako tuwing Linggo, o pinahirapan ko ang aking pamilya na makapagsimba?",
+     "Sinadya ko bang magpasaway o maglaro sa loob ng simbahan?",
+     "Binanggit ko ba ang pangalan ng Diyos o ni Hesus nang may galit o pabiro?"
+    ]
+   },
+   {
+    "head": "Pagmamahal sa aking pamilya",
+    "items": [
+     "Sinuway ko ba ang aking mga magulang o ang mga nag-aalaga sa akin?",
+     "Sumagot ba ako nang pabalang, sumigaw o nagbalibag ng pinto?",
+     "Naging masama ba ako sa aking mga kapatid o pinsan?",
+     "Tumulong ba ako sa bahay kapag inuutusan?"
+    ]
+   },
+   {
+    "head": "Pagmamahal sa kapwa",
+    "items": [
+     "Nanakit ba ako, nanipa o nanuntok ng iba?",
+     "Nanukso ba ako, nagbansag ng pangit na pangalan, o sinadyang hindi isali ang iba?",
+     "Nagsinungaling ba ako, o isinisi sa iba ang ginawa ko?",
+     "Kumuha ba ako ng hindi akin, o may nasira akong itinago ko?",
+     "Nandaya ba ako sa paaralan o sa laro?",
+     "Naging mainggitin o madamot ba ako, o ayaw kong magbahagi?",
+     "Nanood o tumingin ba ako ng mga bagay na alam kong hindi dapat?"
+    ]
+   }
+  ],
+  "teens": [
+   {
+    "head": "Diyos muna (Unang Utos)",
+    "items": [
+     "Regular ba akong nagdarasal, o kapag may gusto lang akong hilingin?",
+     "Inuna ko ba ang aking telepono, laro, isports, kasikatan o relasyon kaysa sa Diyos?",
+     "Nakisangkot ba ako sa horoscope, tarot, Ouija board o iba pang okultong gawain?",
+     "Tumanggap ba ako ng Komunyon kahit alam kong may mabigat akong kasalanang hindi pa naikukumpisal?"
+    ]
+   },
+   {
+    "head": "Ang pangalan ng Diyos (Ikalawa)",
+    "items": [
+     "Ginamit ko ba ang pangalan ng Diyos o ni Hesus bilang mura?",
+     "Kinutya ko ba ang pananampalataya, ang Simbahan o ang paniniwala ng iba para magmukhang astig?"
+    ]
+   },
+   {
+    "head": "Ang Araw ng Panginoon (Ikatlo)",
+    "items": [
+     "Hindi ba ako nagsimba tuwing Linggo nang walang mabigat na dahilan, o nagtelepono lang ako sa Misa?",
+     "Ginawa ko bang araw para sa Diyos at sa pamilya ang Linggo, o karaniwang araw lang?"
+    ]
+   },
+   {
+    "head": "Pamilya (Ikaapat)",
+    "items": [
+     "Nawalan ba ako ng galang o sinuway ko ba ang aking mga magulang sa mga bagay na tama?",
+     "Nagsinungaling ba ako sa aking mga magulang kung nasaan ako o kung sino ang kasama ko?",
+     "Naging malupit o walang pakialam ba ako sa aking mga kapatid?"
+    ]
+   },
+   {
+    "head": "Buhay at paggalang (Ikalima)",
+    "items": [
+     "Nang-bully ba ako ng sinuman, harapan man o online?",
+     "Sinaktan ko ba ang aking katawan sa droga, vape, alak, pananakit sa sarili o hindi pagkain?",
+     "Nagtanim ba ako ng sama ng loob o ayaw kong magpatawad?",
+     "Hinikayat ko ba ang iba na gumawa ng mapanganib o masama?"
+    ]
+   },
+   {
+    "head": "Kalinisan (Ikaanim at Ikasiyam)",
+    "items": [
+     "Tumingin ba ako ng pornograpiya o mahahalay na nilalaman?",
+     "Nagpadala, humingi o nagtago ba ako ng mahahalay na litrato?",
+     "Gumawa ba ako ng mga gawaing sekswal nang mag-isa o kasama ang iba?",
+     "Ginamit ko ba ang ibang tao, o nagpagamit ba ako?"
+    ]
+   },
+   {
+    "head": "Katapatan (Ikapito, Ikawalo at Ikasampu)",
+    "items": [
+     "Nagnakaw ba ako, kasama na sa tindahan, sa pamilya o online (pamimirata, pandaraya sa app)?",
+     "Nandaya ba ako sa pagsusulit o takdang-aralin, o kinopya ko ang gawa ng iba?",
+     "Nagsinungaling ba ako, nagkalat ng tsismis o naninira, kasama na sa mga group chat?",
+     "Nag-post o nagbahagi ba ako ng bagay para mapahiya ang iba?",
+     "Nainggit ba ako sa mayroon ang iba, o hindi nagpasalamat sa kung anong mayroon ako?"
+    ]
+   }
+  ],
+  "adults": [
+   {
+    "head": "Unang Utos: Ako ang Panginoon mong Diyos; huwag kang magkakaroon ng ibang diyos maliban sa akin",
+    "items": [
+     "Pinabayaan ko ba ang pagdarasal araw-araw?",
+     "Sinadya ko bang pagdudahan o itatwa ang aking pananampalataya, o ikinahiya ko ito?",
+     "Ginawa ko bang mas mahalaga kaysa sa Diyos ang pera, trabaho, kasiyahan, pangalan o ibang tao?",
+     "Nagsagawa ba ako ng pamahiin, panghuhula, astrolohiya o okultong gawain?",
+     "Tumanggap ba ako ng Komunyon kahit alam kong may mortal na kasalanang hindi pa naikukumpisal?",
+     "Sinadya ko bang itago ang isang mabigat na kasalanan sa Kumpisal?"
+    ]
+   },
+   {
+    "head": "Ikalawang Utos: Huwag mong gagamitin sa walang kabuluhan ang pangalan ng Panginoon mong Diyos",
+    "items": [
+     "Ginamit ko ba ang pangalan ng Diyos nang walang ingat, sa galit o sa pagmumura?",
+     "Sinira ko ba ang isang pangako o panata sa Diyos, o nanumpa ako nang walang katotohanan?",
+     "Nagsalita ba ako nang may paghamak sa mga banal na bagay o sa Simbahan?"
+    ]
+   },
+   {
+    "head": "Ikatlong Utos: Alalahanin mo ang araw ng Panginoon upang ipangilin",
+    "items": [
+     "Hindi ba ako nagsimba sa Linggo o sa araw na pangilin dahil sa sarili kong kasalanan?",
+     "Nahuli ba ako o umalis nang maaga nang walang mabuting dahilan?",
+     "Gumawa ba ako ng hindi kailangang trabaho sa Linggo, o pinagtrabaho ko ang iba?",
+     "Sinunod ko ba ang pag-aayuno at pangingilin sa karne na hinihingi ng Simbahan?"
+    ]
+   },
+   {
+    "head": "Ikaapat na Utos: Igalang mo ang iyong ama at ina",
+    "items": [
+     "Pinabayaan o binastos ko ba ang aking mga magulang, o hindi ko sila tinulungan sa katandaan o pangangailangan?",
+     "Pinabayaan ko ba ang aking asawa o mga anak, kasama na ang kanilang pananampalataya at ang kanilang pangangailangan sa aking oras?",
+     "Nagbigay ba ako ng masamang halimbawa sa aking mga anak?",
+     "Naging hindi makatarungan ba ako bilang amo, empleyado, mamamayan o pinuno?"
+    ]
+   },
+   {
+    "head": "Ikalimang Utos: Huwag kang papatay",
+    "items": [
+     "Nanakit ba ako ng sinuman, o naging mapang-abuso sa salita o gawa?",
+     "Nagpalaglag ba ako, o naghikayat o tumulong sa pagpapalaglag?",
+     "Nagtanim ba ako ng galit o tumangging magpatawad?",
+     "Inabuso ko ba ang alak, droga o pagkain, o nagmaneho nang walang ingat?",
+     "Naakay ko ba ang iba sa kasalanan dahil sa aking salita o halimbawa (eskandalo)?"
+    ]
+   },
+   {
+    "head": "Ikaanim at Ikasiyam na Utos: Kalinisang-puri, sa gawa at sa pagnanasa",
+    "items": [
+     "Nagtaksil ba ako sa aking asawa sa gawa o sa aking puso?",
+     "Nakipagtalik ba ako sa labas ng kasal?",
+     "Tumingin ba ako ng pornograpiya, o sinadya kong aliwin ang mahahalay na isipin?",
+     "Nagsarili ba ako (masturbasyon)?",
+     "Gumamit ba ako ng kontrasepsiyon, o hinikayat ko ang iba?",
+     "Itinuring ko bang bagay ang sinuman, kasama na sa mga salita, biro o media?"
+    ]
+   },
+   {
+    "head": "Ikapito at Ikasampung Utos: Katarungan at kasiyahan sa kung anong mayroon",
+    "items": [
+     "Nagnakaw ba ako, o nagtago ng bagay na pag-aari ng iba?",
+     "Nandaya ba ako sa buwis, sa trabaho o sa negosyo, o hindi ko binayaran ang aking utang?",
+     "Sinayang ko ba ang oras o kagamitan sa trabaho na binabayaran sa akin?",
+     "Naging sakim o mainggitin ba ako, o hinayaan kong pagharian ako ng mga ari-arian?",
+     "Naging mapagbigay ba ako sa mga dukha at sa Simbahan ayon sa aking kakayahan?"
+    ]
+   },
+   {
+    "head": "Ikawalong Utos: Huwag kang magbibintang ng hindi totoo",
+    "items": [
+     "Nagsinungaling ba ako, o nanlinlang ng iba?",
+     "Nakipagtsismisan ba ako, ibinunyag ang kamalian ng iba nang hindi kailangan, o sinira ko ang pangalan ng sinuman?",
+     "Hinusgahan ko ba ang iba nang padalos-dalos?",
+     "Nagkalat ba ako ng kasinungalingan online, o hindi ko itinama ang kasinungalingang sinabi ko?"
+    ]
+   },
+   {
+    "head": "Pag-ibig sa kapwa at ang mga gawa ng awa",
+    "items": [
+     "Naging mainipin, magaspang o mapagmataas ba ako sa mga taong pinakamalapit sa akin?",
+     "Binalewala ko ba ang isang taong nangangailangan ng aking tulong?",
+     "Nagkaroon ba ako ng pagtatangi laban sa iba dahil sa lahi, pinagmulan, kahirapan o kapansanan?",
+     "Naging tamad ba ako sa paggawa ng kabutihang magagawa ko sana?"
+    ]
+   }
   ]
  }
 }

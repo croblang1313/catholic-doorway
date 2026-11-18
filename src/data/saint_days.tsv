@@ -1,211 +1,211 @@
-# date	rank	English	Español	Português   (rank: S solemnity, F feast, M memorial, O optional memorial, D day of prayer). U.S. General Roman Calendar, fixed dates only.
-01-01	S	Mary, the Holy Mother of God	Santa María, Madre de Dios	Santa Maria, Mãe de Deus
-01-02	M	Sts. Basil the Great and Gregory Nazianzen	San Basilio Magno y San Gregorio Nacianceno	São Basílio Magno e São Gregório Nazianzeno
-01-03	O	The Most Holy Name of Jesus	El Santísimo Nombre de Jesús	O Santíssimo Nome de Jesus
-01-04	M	St. Elizabeth Ann Seton	Santa Isabel Ana Seton	Santa Isabel Ana Seton
-01-05	M	St. John Neumann	San Juan Neumann	São João Neumann
-01-06	O	St. André Bessette	San André Bessette	Santo André Bessette
-01-07	O	St. Raymond of Penyafort	San Raimundo de Peñafort	São Raimundo de Penaforte
-01-13	O	St. Hilary	San Hilario	Santo Hilário
-01-17	M	St. Anthony, Abbot	San Antonio Abad	Santo Antão
-01-20	O	St. Fabian; St. Sebastian	San Fabián; San Sebastián	São Fabiano; São Sebastião
-01-21	M	St. Agnes	Santa Inés	Santa Inês
-01-22	D	Day of Prayer for the Legal Protection of Unborn Children	Jornada de oración por la protección legal de los niños por nacer	Dia de oração pela proteção legal dos nascituros
-01-23	O	St. Vincent; St. Marianne Cope	San Vicente; Santa Mariana Cope	São Vicente; Santa Mariana Cope
-01-24	M	St. Francis de Sales	San Francisco de Sales	São Francisco de Sales
-01-25	F	The Conversion of St. Paul	La Conversión de San Pablo	A Conversão de São Paulo
-01-26	M	Sts. Timothy and Titus	San Timoteo y San Tito	São Timóteo e São Tito
-01-27	O	St. Angela Merici	Santa Ángela Merici	Santa Ângela Merici
-01-28	M	St. Thomas Aquinas	Santo Tomás de Aquino	Santo Tomás de Aquino
-01-31	M	St. John Bosco	San Juan Bosco	São João Bosco
-02-02	F	The Presentation of the Lord	La Presentación del Señor	A Apresentação do Senhor
-02-03	O	St. Blaise; St. Ansgar	San Blas; San Óscar	São Brás; Santo Oscar
-02-05	M	St. Agatha	Santa Águeda	Santa Águeda
-02-06	M	St. Paul Miki and Companions	San Pablo Miki y compañeros	São Paulo Miki e companheiros
-02-08	O	St. Jerome Emiliani; St. Josephine Bakhita	San Jerónimo Emiliani; Santa Josefina Bakhita	São Jerônimo Emiliani; Santa Josefina Bakhita
-02-10	M	St. Scholastica	Santa Escolástica	Santa Escolástica
-02-11	O	Our Lady of Lourdes	Nuestra Señora de Lourdes	Nossa Senhora de Lourdes
-02-14	M	Sts. Cyril and Methodius	San Cirilo y San Metodio	São Cirilo e São Metódio
-02-17	O	The Seven Holy Founders of the Servite Order	Los Siete Santos Fundadores de los Servitas	Os Sete Santos Fundadores dos Servitas
-02-21	O	St. Peter Damian	San Pedro Damián	São Pedro Damião
-02-22	F	The Chair of St. Peter	La Cátedra de San Pedro	A Cátedra de São Pedro
-02-23	M	St. Polycarp	San Policarpo	São Policarpo
-02-27	O	St. Gregory of Narek	San Gregorio de Narek	São Gregório de Narek
-03-03	O	St. Katharine Drexel	Santa Catalina Drexel	Santa Catarina Drexel
-03-04	O	St. Casimir	San Casimiro	São Casimiro
-03-07	M	Sts. Perpetua and Felicity	Santas Perpetua y Felicidad	Santas Perpétua e Felicidade
-03-08	O	St. John of God	San Juan de Dios	São João de Deus
-03-09	O	St. Frances of Rome	Santa Francisca Romana	Santa Francisca Romana
-03-17	O	St. Patrick	San Patricio	São Patrício
-03-18	O	St. Cyril of Jerusalem	San Cirilo de Jerusalén	São Cirilo de Jerusalém
-03-19	S	St. Joseph, Spouse of the Blessed Virgin Mary	San José, Esposo de la Virgen María	São José, Esposo da Virgem Maria
-03-23	O	St. Turibius of Mogrovejo	Santo Toribio de Mogrovejo	São Turíbio de Mogrovejo
-03-25	S	The Annunciation of the Lord	La Anunciación del Señor	A Anunciação do Senhor
-04-02	O	St. Francis of Paola	San Francisco de Paula	São Francisco de Paula
-04-04	O	St. Isidore	San Isidoro	Santo Isidoro
-04-05	O	St. Vincent Ferrer	San Vicente Ferrer	São Vicente Ferrer
-04-07	M	St. John Baptist de la Salle	San Juan Bautista de La Salle	São João Batista de La Salle
-04-11	M	St. Stanislaus	San Estanislao	Santo Estanislau
-04-13	O	St. Martin I	San Martín I	São Martinho I
-04-21	O	St. Anselm	San Anselmo	Santo Anselmo
-04-23	O	St. George; St. Adalbert	San Jorge; San Adalberto	São Jorge; Santo Adalberto
-04-24	O	St. Fidelis of Sigmaringen	San Fidel de Sigmaringa	São Fidélis de Sigmaringen
-04-25	F	St. Mark, Evangelist	San Marcos, Evangelista	São Marcos, Evangelista
-04-28	O	St. Peter Chanel; St. Louis Grignion de Montfort	San Pedro Chanel; San Luis María Grignion de Montfort	São Pedro Chanel; São Luís Maria Grignion de Montfort
-04-29	M	St. Catherine of Siena	Santa Catalina de Siena	Santa Catarina de Sena
-04-30	O	St. Pius V	San Pío V	São Pio V
-05-01	O	St. Joseph the Worker	San José Obrero	São José Operário
-05-02	M	St. Athanasius	San Atanasio	Santo Atanásio
-05-03	F	Sts. Philip and James, Apostles	San Felipe y Santiago, Apóstoles	São Filipe e São Tiago, Apóstolos
-05-10	O	St. Damien de Veuster; St. John of Ávila	San Damián de Veuster; San Juan de Ávila	São Damião de Veuster; São João de Ávila
-05-12	O	Sts. Nereus and Achilleus; St. Pancras	San Nereo y San Aquiles; San Pancracio	São Nereu e Santo Aquiles; São Pancrácio
-05-13	O	Our Lady of Fatima	Nuestra Señora de Fátima	Nossa Senhora de Fátima
-05-14	F	St. Matthias, Apostle	San Matías, Apóstol	São Matias, Apóstolo
-05-15	O	St. Isidore the Farmer	San Isidro Labrador	Santo Isidoro Lavrador
-05-18	O	St. John I	San Juan I	São João I
-05-20	O	St. Bernardine of Siena	San Bernardino de Siena	São Bernardino de Sena
-05-21	O	St. Christopher Magallanes and Companions	San Cristóbal Magallanes y compañeros	São Cristóvão Magalhães e companheiros
-05-22	O	St. Rita of Cascia	Santa Rita de Casia	Santa Rita de Cássia
-05-25	O	St. Bede the Venerable; St. Gregory VII; St. Mary Magdalene de’ Pazzi	San Beda el Venerable; San Gregorio VII; Santa María Magdalena de Pazzi	São Beda, o Venerável; São Gregório VII; Santa Maria Madalena de Pazzi
-05-26	M	St. Philip Neri	San Felipe Neri	São Filipe Néri
-05-27	O	St. Augustine of Canterbury	San Agustín de Canterbury	Santo Agostinho de Cantuária
-05-29	O	St. Paul VI	San Pablo VI	São Paulo VI
-05-31	F	The Visitation of the Blessed Virgin Mary	La Visitación de la Virgen María	A Visitação de Nossa Senhora
-06-01	M	St. Justin	San Justino	São Justino
-06-02	O	Sts. Marcellinus and Peter	San Marcelino y San Pedro	São Marcelino e São Pedro
-06-03	M	St. Charles Lwanga and Companions	San Carlos Lwanga y compañeros	São Carlos Lwanga e companheiros
-06-05	M	St. Boniface	San Bonifacio	São Bonifácio
-06-06	O	St. Norbert	San Norberto	São Norberto
-06-09	O	St. Ephrem	San Efrén	Santo Efrém
-06-11	M	St. Barnabas, Apostle	San Bernabé, Apóstol	São Barnabé, Apóstolo
-06-13	M	St. Anthony of Padua	San Antonio de Padua	Santo Antônio de Pádua
-06-19	O	St. Romuald	San Romualdo	São Romualdo
-06-21	M	St. Aloysius Gonzaga	San Luis Gonzaga	São Luís Gonzaga
-06-22	O	St. Paulinus of Nola; Sts. John Fisher and Thomas More	San Paulino de Nola; San Juan Fisher y Santo Tomás Moro	São Paulino de Nola; São João Fisher e São Tomás More
-06-24	S	The Nativity of St. John the Baptist	La Natividad de San Juan Bautista	O Nascimento de São João Batista
-06-27	O	St. Cyril of Alexandria	San Cirilo de Alejandría	São Cirilo de Alexandria
-06-28	M	St. Irenaeus	San Ireneo	Santo Irineu
-06-29	S	Sts. Peter and Paul, Apostles	San Pedro y San Pablo, Apóstoles	São Pedro e São Paulo, Apóstolos
-06-30	O	The First Martyrs of the Holy Roman Church	Los Santos Protomártires de la Iglesia de Roma	Os Santos Protomártires da Igreja de Roma
-07-01	O	St. Junípero Serra	San Junípero Serra	São Junípero Serra
-07-03	F	St. Thomas, Apostle	Santo Tomás, Apóstol	São Tomé, Apóstolo
-07-04	D	Independence Day: a day to pray for our country	Día de la Independencia: un día para rezar por nuestro país	Dia da Independência: um dia para rezar pelo país
-07-05	O	St. Elizabeth of Portugal; St. Anthony Zaccaria	Santa Isabel de Portugal; San Antonio María Zaccaria	Santa Isabel de Portugal; Santo Antônio Maria Zaccaria
-07-06	O	St. Maria Goretti	Santa María Goretti	Santa Maria Goretti
-07-09	O	St. Augustine Zhao Rong and Companions	San Agustín Zhao Rong y compañeros	Santo Agostinho Zhao Rong e companheiros
-07-11	M	St. Benedict	San Benito	São Bento
-07-13	O	St. Henry	San Enrique	Santo Henrique
-07-14	M	St. Kateri Tekakwitha	Santa Kateri Tekakwitha	Santa Kateri Tekakwitha
-07-15	M	St. Bonaventure	San Buenaventura	São Boaventura
-07-16	O	Our Lady of Mount Carmel	Nuestra Señora del Carmen	Nossa Senhora do Carmo
-07-18	O	St. Camillus de Lellis	San Camilo de Lelis	São Camilo de Lellis
-07-20	O	St. Apollinaris	San Apolinar	Santo Apolinário
-07-21	O	St. Lawrence of Brindisi	San Lorenzo de Brindis	São Lourenço de Bríndisi
-07-22	F	St. Mary Magdalene	Santa María Magdalena	Santa Maria Madalena
-07-23	O	St. Bridget	Santa Brígida	Santa Brígida
-07-24	O	St. Sharbel Makhluf	San Charbel Makhluf	São Charbel Makhlouf
-07-25	F	St. James, Apostle	Santiago, Apóstol	São Tiago, Apóstolo
-07-26	M	Sts. Joachim and Anne	San Joaquín y Santa Ana	São Joaquim e Sant’Ana
-07-29	M	Sts. Martha, Mary and Lazarus	Santa Marta, Santa María y San Lázaro	Santa Marta, Santa Maria e São Lázaro
-07-30	O	St. Peter Chrysologus	San Pedro Crisólogo	São Pedro Crisólogo
-07-31	M	St. Ignatius of Loyola	San Ignacio de Loyola	Santo Inácio de Loyola
-08-01	M	St. Alphonsus Liguori	San Alfonso María de Ligorio	Santo Afonso Maria de Ligório
-08-02	O	St. Eusebius of Vercelli; St. Peter Julian Eymard	San Eusebio de Vercelli; San Pedro Julián Eymard	Santo Eusébio de Vercelli; São Pedro Julião Eymard
-08-04	M	St. John Vianney	San Juan María Vianney	São João Maria Vianney
-08-05	O	The Dedication of the Basilica of St. Mary Major	La Dedicación de la Basílica de Santa María la Mayor	A Dedicação da Basílica de Santa Maria Maior
-08-06	F	The Transfiguration of the Lord	La Transfiguración del Señor	A Transfiguração do Senhor
-08-07	O	St. Sixtus II and Companions; St. Cajetan	San Sixto II y compañeros; San Cayetano	São Sisto II e companheiros; São Caetano
-08-08	M	St. Dominic	Santo Domingo de Guzmán	São Domingos
-08-09	O	St. Teresa Benedicta of the Cross (Edith Stein)	Santa Teresa Benedicta de la Cruz (Edith Stein)	Santa Teresa Benedita da Cruz (Edith Stein)
-08-10	F	St. Lawrence	San Lorenzo	São Lourenço
-08-11	M	St. Clare	Santa Clara	Santa Clara
-08-12	O	St. Jane Frances de Chantal	Santa Juana Francisca de Chantal	Santa Joana Francisca de Chantal
-08-13	O	Sts. Pontian and Hippolytus	San Ponciano y San Hipólito	São Ponciano e Santo Hipólito
-08-14	M	St. Maximilian Kolbe	San Maximiliano Kolbe	São Maximiliano Kolbe
-08-15	S	The Assumption of the Blessed Virgin Mary	La Asunción de la Virgen María	A Assunção de Nossa Senhora
-08-16	O	St. Stephen of Hungary	San Esteban de Hungría	Santo Estêvão da Hungria
-08-19	O	St. John Eudes	San Juan Eudes	São João Eudes
-08-20	M	St. Bernard	San Bernardo	São Bernardo
-08-21	M	St. Pius X	San Pío X	São Pio X
-08-22	M	The Queenship of the Blessed Virgin Mary	Santa María Virgen, Reina	Nossa Senhora Rainha
-08-23	O	St. Rose of Lima	Santa Rosa de Lima	Santa Rosa de Lima
-08-24	F	St. Bartholomew, Apostle	San Bartolomé, Apóstol	São Bartolomeu, Apóstolo
-08-25	O	St. Louis; St. Joseph Calasanz	San Luis de Francia; San José de Calasanz	São Luís; São José de Calasanz
-08-27	M	St. Monica	Santa Mónica	Santa Mônica
-08-28	M	St. Augustine	San Agustín	Santo Agostinho
-08-29	M	The Passion of St. John the Baptist	El Martirio de San Juan Bautista	O Martírio de São João Batista
-09-03	M	St. Gregory the Great	San Gregorio Magno	São Gregório Magno
-09-08	F	The Nativity of the Blessed Virgin Mary	La Natividad de la Virgen María	A Natividade de Nossa Senhora
-09-09	M	St. Peter Claver	San Pedro Claver	São Pedro Claver
-09-12	O	The Most Holy Name of Mary	El Santísimo Nombre de María	O Santíssimo Nome de Maria
-09-13	M	St. John Chrysostom	San Juan Crisóstomo	São João Crisóstomo
-09-14	F	The Exaltation of the Holy Cross	La Exaltación de la Santa Cruz	A Exaltação da Santa Cruz
-09-15	M	Our Lady of Sorrows	Nuestra Señora de los Dolores	Nossa Senhora das Dores
-09-16	M	Sts. Cornelius and Cyprian	San Cornelio y San Cipriano	São Cornélio e São Cipriano
-09-17	O	St. Robert Bellarmine; St. Hildegard of Bingen	San Roberto Belarmino; Santa Hildegarda de Bingen	São Roberto Belarmino; Santa Hildegarda de Bingen
-09-19	O	St. Januarius	San Jenaro	São Januário
-09-20	M	Sts. Andrew Kim Tae-gŏn, Paul Chŏng Ha-sang and Companions	San Andrés Kim Taegon, San Pablo Chong Hasang y compañeros	Santo André Kim Taegon, São Paulo Chong Hasang e companheiros
-09-21	F	St. Matthew, Apostle and Evangelist	San Mateo, Apóstol y Evangelista	São Mateus, Apóstolo e Evangelista
-09-23	M	St. Pius of Pietrelcina (Padre Pio)	San Pío de Pietrelcina (Padre Pío)	São Pio de Pietrelcina (Padre Pio)
-09-26	O	Sts. Cosmas and Damian	San Cosme y San Damián	São Cosme e São Damião
-09-27	M	St. Vincent de Paul	San Vicente de Paúl	São Vicente de Paulo
-09-28	O	St. Wenceslaus; St. Lawrence Ruiz and Companions	San Wenceslao; San Lorenzo Ruiz y compañeros	São Venceslau; São Lourenço Ruiz e companheiros
-09-29	F	Sts. Michael, Gabriel and Raphael, Archangels	San Miguel, San Gabriel y San Rafael, Arcángeles	São Miguel, São Gabriel e São Rafael, Arcanjos
-09-30	M	St. Jerome	San Jerónimo	São Jerônimo
-10-01	M	St. Thérèse of the Child Jesus	Santa Teresa del Niño Jesús	Santa Teresinha do Menino Jesus
-10-02	M	The Holy Guardian Angels	Los Santos Ángeles Custodios	Os Santos Anjos da Guarda
-10-04	M	St. Francis of Assisi	San Francisco de Asís	São Francisco de Assis
-10-05	O	St. Faustina Kowalska; Bl. Francis Xavier Seelos	Santa Faustina Kowalska; Beato Francisco Javier Seelos	Santa Faustina Kowalska; Beato Francisco Xavier Seelos
-10-06	O	St. Bruno; Bl. Marie Rose Durocher	San Bruno; Beata María Rosa Durocher	São Bruno; Beata Maria Rosa Durocher
-10-07	M	Our Lady of the Rosary	Nuestra Señora del Rosario	Nossa Senhora do Rosário
-10-09	O	St. Denis and Companions; St. John Leonardi	San Dionisio y compañeros; San Juan Leonardi	São Dionísio e companheiros; São João Leonardi
-10-11	O	St. John XXIII	San Juan XXIII	São João XXIII
-10-14	O	St. Callistus I	San Calixto I	São Calisto I
-10-15	M	St. Teresa of Jesus (of Ávila)	Santa Teresa de Jesús (de Ávila)	Santa Teresa de Jesus (de Ávila)
-10-16	O	St. Hedwig; St. Margaret Mary Alacoque	Santa Eduviges; Santa Margarita María Alacoque	Santa Edwiges; Santa Margarida Maria Alacoque
-10-17	M	St. Ignatius of Antioch	San Ignacio de Antioquía	Santo Inácio de Antioquia
-10-18	F	St. Luke, Evangelist	San Lucas, Evangelista	São Lucas, Evangelista
-10-19	M	Sts. John de Brébeuf, Isaac Jogues and Companions	San Juan de Brébeuf, San Isaac Jogues y compañeros	São João de Brébeuf, Santo Isaac Jogues e companheiros
-10-20	O	St. Paul of the Cross	San Pablo de la Cruz	São Paulo da Cruz
-10-22	O	St. John Paul II	San Juan Pablo II	São João Paulo II
-10-23	O	St. John of Capistrano	San Juan de Capistrano	São João de Capistrano
-10-24	O	St. Anthony Mary Claret	San Antonio María Claret	Santo Antônio Maria Claret
-10-28	F	Sts. Simon and Jude, Apostles	San Simón y San Judas, Apóstoles	São Simão e São Judas, Apóstolos
-11-01	S	All Saints	Todos los Santos	Todos os Santos
-11-02	D	All Souls’ Day	Día de los Fieles Difuntos	Dia de Finados
-11-03	O	St. Martin de Porres	San Martín de Porres	São Martinho de Lima
-11-04	M	St. Charles Borromeo	San Carlos Borromeo	São Carlos Borromeu
-11-09	F	The Dedication of the Lateran Basilica	La Dedicación de la Basílica de Letrán	A Dedicação da Basílica de Latrão
-11-10	M	St. Leo the Great	San León Magno	São Leão Magno
-11-11	M	St. Martin of Tours	San Martín de Tours	São Martinho de Tours
-11-12	M	St. Josaphat	San Josafat	São Josafá
-11-13	M	St. Frances Xavier Cabrini	Santa Francisca Javier Cabrini	Santa Francisca Xavier Cabrini
-11-15	O	St. Albert the Great	San Alberto Magno	Santo Alberto Magno
-11-16	O	St. Margaret of Scotland; St. Gertrude	Santa Margarita de Escocia; Santa Gertrudis	Santa Margarida da Escócia; Santa Gertrudes
-11-17	M	St. Elizabeth of Hungary	Santa Isabel de Hungría	Santa Isabel da Hungria
-11-18	O	The Dedication of the Basilicas of Sts. Peter and Paul; St. Rose Philippine Duchesne	La Dedicación de las Basílicas de San Pedro y San Pablo; Santa Rosa Filipina Duchesne	A Dedicação das Basílicas de São Pedro e São Paulo; Santa Rosa Filipina Duchesne
-11-21	M	The Presentation of the Blessed Virgin Mary	La Presentación de la Virgen María	A Apresentação de Nossa Senhora
-11-22	M	St. Cecilia	Santa Cecilia	Santa Cecília
-11-23	O	St. Clement I; St. Columban; Bl. Miguel Agustín Pro	San Clemente I; San Columbano; Beato Miguel Agustín Pro	São Clemente I; São Columbano; Beato Miguel Agostinho Pro
-11-24	M	St. Andrew Dũng-Lạc and Companions	San Andrés Dung-Lac y compañeros	Santo André Dung-Lac e companheiros
-11-25	O	St. Catherine of Alexandria	Santa Catalina de Alejandría	Santa Catarina de Alexandria
-11-30	F	St. Andrew, Apostle	San Andrés, Apóstol	Santo André, Apóstolo
-12-03	M	St. Francis Xavier	San Francisco Javier	São Francisco Xavier
-12-04	O	St. John Damascene	San Juan Damasceno	São João Damasceno
-12-06	O	St. Nicholas	San Nicolás	São Nicolau
-12-07	M	St. Ambrose	San Ambrosio	Santo Ambrósio
-12-08	S	The Immaculate Conception of the Blessed Virgin Mary	La Inmaculada Concepción de la Virgen María	A Imaculada Conceição da Virgem Maria
-12-09	O	St. Juan Diego	San Juan Diego	São Juan Diego
-12-10	O	Our Lady of Loreto	Nuestra Señora de Loreto	Nossa Senhora de Loreto
-12-11	O	St. Damasus I	San Dámaso I	São Dâmaso I
-12-12	F	Our Lady of Guadalupe	Nuestra Señora de Guadalupe	Nossa Senhora de Guadalupe
-12-13	M	St. Lucy	Santa Lucía	Santa Luzia
-12-14	M	St. John of the Cross	San Juan de la Cruz	São João da Cruz
-12-21	O	St. Peter Canisius	San Pedro Canisio	São Pedro Canísio
-12-23	O	St. John of Kanty	San Juan de Kety	São João Câncio
-12-25	S	The Nativity of the Lord (Christmas)	La Natividad del Señor (Navidad)	O Natal do Senhor
-12-26	F	St. Stephen, the First Martyr	San Esteban, protomártir	Santo Estêvão, primeiro mártir
-12-27	F	St. John, Apostle and Evangelist	San Juan, Apóstol y Evangelista	São João, Apóstolo e Evangelista
-12-28	F	The Holy Innocents	Los Santos Inocentes	Os Santos Inocentes
-12-29	O	St. Thomas Becket	Santo Tomás Becket	São Tomás Becket
-12-31	O	St. Sylvester I	San Silvestre I	São Silvestre I
+# date	rank	English	Español	Português	Filipino   (rank: S solemnity, F feast, M memorial, O optional memorial, D day of prayer). U.S. General Roman Calendar, fixed dates only.
+01-01	S	Mary, the Holy Mother of God	Santa María, Madre de Dios	Santa Maria, Mãe de Deus	Santa Maria, Ina ng Diyos
+01-02	M	Sts. Basil the Great and Gregory Nazianzen	San Basilio Magno y San Gregorio Nacianceno	São Basílio Magno e São Gregório Nazianzeno	San Basilio Magno at San Gregorio Nacianceno
+01-03	O	The Most Holy Name of Jesus	El Santísimo Nombre de Jesús	O Santíssimo Nome de Jesus	Ang Kabanal-banalang Pangalan ni Hesus
+01-04	M	St. Elizabeth Ann Seton	Santa Isabel Ana Seton	Santa Isabel Ana Seton	Santa Elizabeth Ann Seton
+01-05	M	St. John Neumann	San Juan Neumann	São João Neumann	San Juan Neumann
+01-06	O	St. André Bessette	San André Bessette	Santo André Bessette	San André Bessette
+01-07	O	St. Raymond of Penyafort	San Raimundo de Peñafort	São Raimundo de Penaforte	San Raymundo de Peñafort
+01-13	O	St. Hilary	San Hilario	Santo Hilário	San Hilario
+01-17	M	St. Anthony, Abbot	San Antonio Abad	Santo Antão	San Antonio, Abad
+01-20	O	St. Fabian; St. Sebastian	San Fabián; San Sebastián	São Fabiano; São Sebastião	San Fabian; San Sebastian
+01-21	M	St. Agnes	Santa Inés	Santa Inês	Santa Ines
+01-22	D	Day of Prayer for the Legal Protection of Unborn Children	Jornada de oración por la protección legal de los niños por nacer	Dia de oração pela proteção legal dos nascituros	Araw ng Panalangin para sa Legal na Proteksiyon ng mga Sanggol sa Sinapupunan
+01-23	O	St. Vincent; St. Marianne Cope	San Vicente; Santa Mariana Cope	São Vicente; Santa Mariana Cope	San Vicente; Santa Marianne Cope
+01-24	M	St. Francis de Sales	San Francisco de Sales	São Francisco de Sales	San Francisco de Sales
+01-25	F	The Conversion of St. Paul	La Conversión de San Pablo	A Conversão de São Paulo	Ang Pagbabalik-loob ni San Pablo
+01-26	M	Sts. Timothy and Titus	San Timoteo y San Tito	São Timóteo e São Tito	San Timoteo at San Tito
+01-27	O	St. Angela Merici	Santa Ángela Merici	Santa Ângela Merici	Santa Angela Merici
+01-28	M	St. Thomas Aquinas	Santo Tomás de Aquino	Santo Tomás de Aquino	Santo Tomas de Aquino
+01-31	M	St. John Bosco	San Juan Bosco	São João Bosco	San Juan Bosco
+02-02	F	The Presentation of the Lord	La Presentación del Señor	A Apresentação do Senhor	Ang Paghahain kay Hesus sa Templo
+02-03	O	St. Blaise; St. Ansgar	San Blas; San Óscar	São Brás; Santo Oscar	San Blas; San Ansgar
+02-05	M	St. Agatha	Santa Águeda	Santa Águeda	Santa Agueda
+02-06	M	St. Paul Miki and Companions	San Pablo Miki y compañeros	São Paulo Miki e companheiros	San Pablo Miki at mga kasama
+02-08	O	St. Jerome Emiliani; St. Josephine Bakhita	San Jerónimo Emiliani; Santa Josefina Bakhita	São Jerônimo Emiliani; Santa Josefina Bakhita	San Jeronimo Emiliani; Santa Josefina Bakhita
+02-10	M	St. Scholastica	Santa Escolástica	Santa Escolástica	Santa Escolastica
+02-11	O	Our Lady of Lourdes	Nuestra Señora de Lourdes	Nossa Senhora de Lourdes	Mahal na Birhen ng Lourdes
+02-14	M	Sts. Cyril and Methodius	San Cirilo y San Metodio	São Cirilo e São Metódio	San Cirilo at San Metodio
+02-17	O	The Seven Holy Founders of the Servite Order	Los Siete Santos Fundadores de los Servitas	Os Sete Santos Fundadores dos Servitas	Ang Pitong Banal na Tagapagtatag ng Orden ng mga Servita
+02-21	O	St. Peter Damian	San Pedro Damián	São Pedro Damião	San Pedro Damian
+02-22	F	The Chair of St. Peter	La Cátedra de San Pedro	A Cátedra de São Pedro	Ang Luklukan ni San Pedro
+02-23	M	St. Polycarp	San Policarpo	São Policarpo	San Policarpo
+02-27	O	St. Gregory of Narek	San Gregorio de Narek	São Gregório de Narek	San Gregorio ng Narek
+03-03	O	St. Katharine Drexel	Santa Catalina Drexel	Santa Catarina Drexel	Santa Katharine Drexel
+03-04	O	St. Casimir	San Casimiro	São Casimiro	San Casimiro
+03-07	M	Sts. Perpetua and Felicity	Santas Perpetua y Felicidad	Santas Perpétua e Felicidade	Santa Perpetua at Santa Felicidad
+03-08	O	St. John of God	San Juan de Dios	São João de Deus	San Juan de Dios
+03-09	O	St. Frances of Rome	Santa Francisca Romana	Santa Francisca Romana	Santa Francisca Romana
+03-17	O	St. Patrick	San Patricio	São Patrício	San Patricio
+03-18	O	St. Cyril of Jerusalem	San Cirilo de Jerusalén	São Cirilo de Jerusalém	San Cirilo ng Jerusalem
+03-19	S	St. Joseph, Spouse of the Blessed Virgin Mary	San José, Esposo de la Virgen María	São José, Esposo da Virgem Maria	San Jose, Esposo ng Mahal na Birheng Maria
+03-23	O	St. Turibius of Mogrovejo	Santo Toribio de Mogrovejo	São Turíbio de Mogrovejo	Santo Toribio de Mogrovejo
+03-25	S	The Annunciation of the Lord	La Anunciación del Señor	A Anunciação do Senhor	Ang Pagbati ng Anghel sa Panginoon
+04-02	O	St. Francis of Paola	San Francisco de Paula	São Francisco de Paula	San Francisco de Paola
+04-04	O	St. Isidore	San Isidoro	Santo Isidoro	San Isidoro
+04-05	O	St. Vincent Ferrer	San Vicente Ferrer	São Vicente Ferrer	San Vicente Ferrer
+04-07	M	St. John Baptist de la Salle	San Juan Bautista de La Salle	São João Batista de La Salle	San Juan Bautista de la Salle
+04-11	M	St. Stanislaus	San Estanislao	Santo Estanislau	San Estanislao
+04-13	O	St. Martin I	San Martín I	São Martinho I	San Martin I
+04-21	O	St. Anselm	San Anselmo	Santo Anselmo	San Anselmo
+04-23	O	St. George; St. Adalbert	San Jorge; San Adalberto	São Jorge; Santo Adalberto	San Jorge; San Adalberto
+04-24	O	St. Fidelis of Sigmaringen	San Fidel de Sigmaringa	São Fidélis de Sigmaringen	San Fidel de Sigmaringen
+04-25	F	St. Mark, Evangelist	San Marcos, Evangelista	São Marcos, Evangelista	San Marcos, Ebanghelista
+04-28	O	St. Peter Chanel; St. Louis Grignion de Montfort	San Pedro Chanel; San Luis María Grignion de Montfort	São Pedro Chanel; São Luís Maria Grignion de Montfort	San Pedro Chanel; San Luis Grignion de Montfort
+04-29	M	St. Catherine of Siena	Santa Catalina de Siena	Santa Catarina de Sena	Santa Catalina ng Siena
+04-30	O	St. Pius V	San Pío V	São Pio V	San Pio V
+05-01	O	St. Joseph the Worker	San José Obrero	São José Operário	San Jose Manggagawa
+05-02	M	St. Athanasius	San Atanasio	Santo Atanásio	San Atanasio
+05-03	F	Sts. Philip and James, Apostles	San Felipe y Santiago, Apóstoles	São Filipe e São Tiago, Apóstolos	San Felipe at Santiago, mga Apostol
+05-10	O	St. Damien de Veuster; St. John of Ávila	San Damián de Veuster; San Juan de Ávila	São Damião de Veuster; São João de Ávila	San Damian de Veuster; San Juan de Avila
+05-12	O	Sts. Nereus and Achilleus; St. Pancras	San Nereo y San Aquiles; San Pancracio	São Nereu e Santo Aquiles; São Pancrácio	San Nereo at San Aquileo; San Pancracio
+05-13	O	Our Lady of Fatima	Nuestra Señora de Fátima	Nossa Senhora de Fátima	Mahal na Birhen ng Fatima
+05-14	F	St. Matthias, Apostle	San Matías, Apóstol	São Matias, Apóstolo	San Matias, Apostol
+05-15	O	St. Isidore the Farmer	San Isidro Labrador	Santo Isidoro Lavrador	San Isidro Labrador
+05-18	O	St. John I	San Juan I	São João I	San Juan I
+05-20	O	St. Bernardine of Siena	San Bernardino de Siena	São Bernardino de Sena	San Bernardino ng Siena
+05-21	O	St. Christopher Magallanes and Companions	San Cristóbal Magallanes y compañeros	São Cristóvão Magalhães e companheiros	San Cristobal Magallanes at mga kasama
+05-22	O	St. Rita of Cascia	Santa Rita de Casia	Santa Rita de Cássia	Santa Rita de Cascia
+05-25	O	St. Bede the Venerable; St. Gregory VII; St. Mary Magdalene de’ Pazzi	San Beda el Venerable; San Gregorio VII; Santa María Magdalena de Pazzi	São Beda, o Venerável; São Gregório VII; Santa Maria Madalena de Pazzi	San Beda ang Kagalang-galang; San Gregorio VII; Santa Maria Magdalena de' Pazzi
+05-26	M	St. Philip Neri	San Felipe Neri	São Filipe Néri	San Felipe Neri
+05-27	O	St. Augustine of Canterbury	San Agustín de Canterbury	Santo Agostinho de Cantuária	San Agustin ng Canterbury
+05-29	O	St. Paul VI	San Pablo VI	São Paulo VI	San Pablo VI
+05-31	F	The Visitation of the Blessed Virgin Mary	La Visitación de la Virgen María	A Visitação de Nossa Senhora	Ang Pagdalaw ng Mahal na Birheng Maria
+06-01	M	St. Justin	San Justino	São Justino	San Justino
+06-02	O	Sts. Marcellinus and Peter	San Marcelino y San Pedro	São Marcelino e São Pedro	San Marcelino at San Pedro
+06-03	M	St. Charles Lwanga and Companions	San Carlos Lwanga y compañeros	São Carlos Lwanga e companheiros	San Carlos Lwanga at mga kasama
+06-05	M	St. Boniface	San Bonifacio	São Bonifácio	San Bonifacio
+06-06	O	St. Norbert	San Norberto	São Norberto	San Norberto
+06-09	O	St. Ephrem	San Efrén	Santo Efrém	San Efren
+06-11	M	St. Barnabas, Apostle	San Bernabé, Apóstol	São Barnabé, Apóstolo	San Bernabe, Apostol
+06-13	M	St. Anthony of Padua	San Antonio de Padua	Santo Antônio de Pádua	San Antonio de Padua
+06-19	O	St. Romuald	San Romualdo	São Romualdo	San Romualdo
+06-21	M	St. Aloysius Gonzaga	San Luis Gonzaga	São Luís Gonzaga	San Luis Gonzaga
+06-22	O	St. Paulinus of Nola; Sts. John Fisher and Thomas More	San Paulino de Nola; San Juan Fisher y Santo Tomás Moro	São Paulino de Nola; São João Fisher e São Tomás More	San Paulino ng Nola; San Juan Fisher at Santo Tomas More
+06-24	S	The Nativity of St. John the Baptist	La Natividad de San Juan Bautista	O Nascimento de São João Batista	Ang Pagsilang kay San Juan Bautista
+06-27	O	St. Cyril of Alexandria	San Cirilo de Alejandría	São Cirilo de Alexandria	San Cirilo ng Alejandria
+06-28	M	St. Irenaeus	San Ireneo	Santo Irineu	San Ireneo
+06-29	S	Sts. Peter and Paul, Apostles	San Pedro y San Pablo, Apóstoles	São Pedro e São Paulo, Apóstolos	San Pedro at San Pablo, mga Apostol
+06-30	O	The First Martyrs of the Holy Roman Church	Los Santos Protomártires de la Iglesia de Roma	Os Santos Protomártires da Igreja de Roma	Ang mga Unang Martir ng Banal na Simbahan ng Roma
+07-01	O	St. Junípero Serra	San Junípero Serra	São Junípero Serra	San Junipero Serra
+07-03	F	St. Thomas, Apostle	Santo Tomás, Apóstol	São Tomé, Apóstolo	Santo Tomas, Apostol
+07-04	D	Independence Day: a day to pray for our country	Día de la Independencia: un día para rezar por nuestro país	Dia da Independência: um dia para rezar pelo país	Araw ng Kalayaan ng Estados Unidos: araw ng panalangin para sa ating bansa
+07-05	O	St. Elizabeth of Portugal; St. Anthony Zaccaria	Santa Isabel de Portugal; San Antonio María Zaccaria	Santa Isabel de Portugal; Santo Antônio Maria Zaccaria	Santa Isabel ng Portugal; San Antonio Zaccaria
+07-06	O	St. Maria Goretti	Santa María Goretti	Santa Maria Goretti	Santa Maria Goretti
+07-09	O	St. Augustine Zhao Rong and Companions	San Agustín Zhao Rong y compañeros	Santo Agostinho Zhao Rong e companheiros	San Agustin Zhao Rong at mga kasama
+07-11	M	St. Benedict	San Benito	São Bento	San Benito
+07-13	O	St. Henry	San Enrique	Santo Henrique	San Enrique
+07-14	M	St. Kateri Tekakwitha	Santa Kateri Tekakwitha	Santa Kateri Tekakwitha	Santa Kateri Tekakwitha
+07-15	M	St. Bonaventure	San Buenaventura	São Boaventura	San Buenaventura
+07-16	O	Our Lady of Mount Carmel	Nuestra Señora del Carmen	Nossa Senhora do Carmo	Mahal na Birhen ng Bundok Carmelo
+07-18	O	St. Camillus de Lellis	San Camilo de Lelis	São Camilo de Lellis	San Camilo de Lellis
+07-20	O	St. Apollinaris	San Apolinar	Santo Apolinário	San Apolinar
+07-21	O	St. Lawrence of Brindisi	San Lorenzo de Brindis	São Lourenço de Bríndisi	San Lorenzo ng Brindisi
+07-22	F	St. Mary Magdalene	Santa María Magdalena	Santa Maria Madalena	Santa Maria Magdalena
+07-23	O	St. Bridget	Santa Brígida	Santa Brígida	Santa Brigida
+07-24	O	St. Sharbel Makhluf	San Charbel Makhluf	São Charbel Makhlouf	San Charbel Makhlouf
+07-25	F	St. James, Apostle	Santiago, Apóstol	São Tiago, Apóstolo	Santiago, Apostol
+07-26	M	Sts. Joachim and Anne	San Joaquín y Santa Ana	São Joaquim e Sant’Ana	San Joaquin at Santa Ana
+07-29	M	Sts. Martha, Mary and Lazarus	Santa Marta, Santa María y San Lázaro	Santa Marta, Santa Maria e São Lázaro	Santa Marta, Santa Maria at San Lazaro
+07-30	O	St. Peter Chrysologus	San Pedro Crisólogo	São Pedro Crisólogo	San Pedro Crisologo
+07-31	M	St. Ignatius of Loyola	San Ignacio de Loyola	Santo Inácio de Loyola	San Ignacio de Loyola
+08-01	M	St. Alphonsus Liguori	San Alfonso María de Ligorio	Santo Afonso Maria de Ligório	San Alfonso Maria de Liguori
+08-02	O	St. Eusebius of Vercelli; St. Peter Julian Eymard	San Eusebio de Vercelli; San Pedro Julián Eymard	Santo Eusébio de Vercelli; São Pedro Julião Eymard	San Eusebio ng Vercelli; San Pedro Julian Eymard
+08-04	M	St. John Vianney	San Juan María Vianney	São João Maria Vianney	San Juan Maria Vianney
+08-05	O	The Dedication of the Basilica of St. Mary Major	La Dedicación de la Basílica de Santa María la Mayor	A Dedicação da Basílica de Santa Maria Maior	Ang Pagtatalaga sa Basilika ng Santa Maria Maggiore
+08-06	F	The Transfiguration of the Lord	La Transfiguración del Señor	A Transfiguração do Senhor	Ang Pagbabagong-anyo ng Panginoon
+08-07	O	St. Sixtus II and Companions; St. Cajetan	San Sixto II y compañeros; San Cayetano	São Sisto II e companheiros; São Caetano	San Sixto II at mga kasama; San Cayetano
+08-08	M	St. Dominic	Santo Domingo de Guzmán	São Domingos	Santo Domingo de Guzman
+08-09	O	St. Teresa Benedicta of the Cross (Edith Stein)	Santa Teresa Benedicta de la Cruz (Edith Stein)	Santa Teresa Benedita da Cruz (Edith Stein)	Santa Teresa Benedicta ng Krus (Edith Stein)
+08-10	F	St. Lawrence	San Lorenzo	São Lourenço	San Lorenzo
+08-11	M	St. Clare	Santa Clara	Santa Clara	Santa Clara
+08-12	O	St. Jane Frances de Chantal	Santa Juana Francisca de Chantal	Santa Joana Francisca de Chantal	Santa Juana Francisca de Chantal
+08-13	O	Sts. Pontian and Hippolytus	San Ponciano y San Hipólito	São Ponciano e Santo Hipólito	San Ponciano at San Hipolito
+08-14	M	St. Maximilian Kolbe	San Maximiliano Kolbe	São Maximiliano Kolbe	San Maximiliano Kolbe
+08-15	S	The Assumption of the Blessed Virgin Mary	La Asunción de la Virgen María	A Assunção de Nossa Senhora	Ang Pag-akyat sa Langit ng Mahal na Birheng Maria
+08-16	O	St. Stephen of Hungary	San Esteban de Hungría	Santo Estêvão da Hungria	San Esteban ng Hungary
+08-19	O	St. John Eudes	San Juan Eudes	São João Eudes	San Juan Eudes
+08-20	M	St. Bernard	San Bernardo	São Bernardo	San Bernardo
+08-21	M	St. Pius X	San Pío X	São Pio X	San Pio X
+08-22	M	The Queenship of the Blessed Virgin Mary	Santa María Virgen, Reina	Nossa Senhora Rainha	Ang Pagkareyna ng Mahal na Birheng Maria
+08-23	O	St. Rose of Lima	Santa Rosa de Lima	Santa Rosa de Lima	Santa Rosa de Lima
+08-24	F	St. Bartholomew, Apostle	San Bartolomé, Apóstol	São Bartolomeu, Apóstolo	San Bartolome, Apostol
+08-25	O	St. Louis; St. Joseph Calasanz	San Luis de Francia; San José de Calasanz	São Luís; São José de Calasanz	San Luis; San Jose de Calasanz
+08-27	M	St. Monica	Santa Mónica	Santa Mônica	Santa Monica
+08-28	M	St. Augustine	San Agustín	Santo Agostinho	San Agustin
+08-29	M	The Passion of St. John the Baptist	El Martirio de San Juan Bautista	O Martírio de São João Batista	Ang Pagpapakasakit ni San Juan Bautista
+09-03	M	St. Gregory the Great	San Gregorio Magno	São Gregório Magno	San Gregorio Magno
+09-08	F	The Nativity of the Blessed Virgin Mary	La Natividad de la Virgen María	A Natividade de Nossa Senhora	Ang Pagsilang ng Mahal na Birheng Maria
+09-09	M	St. Peter Claver	San Pedro Claver	São Pedro Claver	San Pedro Claver
+09-12	O	The Most Holy Name of Mary	El Santísimo Nombre de María	O Santíssimo Nome de Maria	Ang Kabanal-banalang Pangalan ni Maria
+09-13	M	St. John Chrysostom	San Juan Crisóstomo	São João Crisóstomo	San Juan Crisostomo
+09-14	F	The Exaltation of the Holy Cross	La Exaltación de la Santa Cruz	A Exaltação da Santa Cruz	Ang Pagtatampok sa Banal na Krus
+09-15	M	Our Lady of Sorrows	Nuestra Señora de los Dolores	Nossa Senhora das Dores	Mahal na Birhen ng mga Hapis
+09-16	M	Sts. Cornelius and Cyprian	San Cornelio y San Cipriano	São Cornélio e São Cipriano	San Cornelio at San Cipriano
+09-17	O	St. Robert Bellarmine; St. Hildegard of Bingen	San Roberto Belarmino; Santa Hildegarda de Bingen	São Roberto Belarmino; Santa Hildegarda de Bingen	San Roberto Belarmino; Santa Hildegarda ng Bingen
+09-19	O	St. Januarius	San Jenaro	São Januário	San Januario
+09-20	M	Sts. Andrew Kim Tae-gŏn, Paul Chŏng Ha-sang and Companions	San Andrés Kim Taegon, San Pablo Chong Hasang y compañeros	Santo André Kim Taegon, São Paulo Chong Hasang e companheiros	San Andres Kim Tae-gon, San Pablo Chong Ha-sang at mga kasama
+09-21	F	St. Matthew, Apostle and Evangelist	San Mateo, Apóstol y Evangelista	São Mateus, Apóstolo e Evangelista	San Mateo, Apostol at Ebanghelista
+09-23	M	St. Pius of Pietrelcina (Padre Pio)	San Pío de Pietrelcina (Padre Pío)	São Pio de Pietrelcina (Padre Pio)	San Pio ng Pietrelcina (Padre Pio)
+09-26	O	Sts. Cosmas and Damian	San Cosme y San Damián	São Cosme e São Damião	San Cosme at San Damian
+09-27	M	St. Vincent de Paul	San Vicente de Paúl	São Vicente de Paulo	San Vicente de Paul
+09-28	O	St. Wenceslaus; St. Lawrence Ruiz and Companions	San Wenceslao; San Lorenzo Ruiz y compañeros	São Venceslau; São Lourenço Ruiz e companheiros	San Wenceslao; San Lorenzo Ruiz at mga kasama
+09-29	F	Sts. Michael, Gabriel and Raphael, Archangels	San Miguel, San Gabriel y San Rafael, Arcángeles	São Miguel, São Gabriel e São Rafael, Arcanjos	San Miguel, San Gabriel at San Rafael, mga Arkanghel
+09-30	M	St. Jerome	San Jerónimo	São Jerônimo	San Jeronimo
+10-01	M	St. Thérèse of the Child Jesus	Santa Teresa del Niño Jesús	Santa Teresinha do Menino Jesus	Santa Teresita ng Batang Hesus
+10-02	M	The Holy Guardian Angels	Los Santos Ángeles Custodios	Os Santos Anjos da Guarda	Ang mga Banal na Anghel na Tagatanod
+10-04	M	St. Francis of Assisi	San Francisco de Asís	São Francisco de Assis	San Francisco de Asis
+10-05	O	St. Faustina Kowalska; Bl. Francis Xavier Seelos	Santa Faustina Kowalska; Beato Francisco Javier Seelos	Santa Faustina Kowalska; Beato Francisco Xavier Seelos	Santa Faustina Kowalska; Beato Francis Xavier Seelos
+10-06	O	St. Bruno; Bl. Marie Rose Durocher	San Bruno; Beata María Rosa Durocher	São Bruno; Beata Maria Rosa Durocher	San Bruno; Beata Marie Rose Durocher
+10-07	M	Our Lady of the Rosary	Nuestra Señora del Rosario	Nossa Senhora do Rosário	Mahal na Birhen ng Santo Rosaryo
+10-09	O	St. Denis and Companions; St. John Leonardi	San Dionisio y compañeros; San Juan Leonardi	São Dionísio e companheiros; São João Leonardi	San Dionisio at mga kasama; San Juan Leonardi
+10-11	O	St. John XXIII	San Juan XXIII	São João XXIII	San Juan XXIII
+10-14	O	St. Callistus I	San Calixto I	São Calisto I	San Calixto I
+10-15	M	St. Teresa of Jesus (of Ávila)	Santa Teresa de Jesús (de Ávila)	Santa Teresa de Jesus (de Ávila)	Santa Teresa ni Hesus (ng Avila)
+10-16	O	St. Hedwig; St. Margaret Mary Alacoque	Santa Eduviges; Santa Margarita María Alacoque	Santa Edwiges; Santa Margarida Maria Alacoque	Santa Eduviges; Santa Margarita Maria Alacoque
+10-17	M	St. Ignatius of Antioch	San Ignacio de Antioquía	Santo Inácio de Antioquia	San Ignacio ng Antioquia
+10-18	F	St. Luke, Evangelist	San Lucas, Evangelista	São Lucas, Evangelista	San Lucas, Ebanghelista
+10-19	M	Sts. John de Brébeuf, Isaac Jogues and Companions	San Juan de Brébeuf, San Isaac Jogues y compañeros	São João de Brébeuf, Santo Isaac Jogues e companheiros	San Juan de Brébeuf, San Isaac Jogues at mga kasama
+10-20	O	St. Paul of the Cross	San Pablo de la Cruz	São Paulo da Cruz	San Pablo ng Krus
+10-22	O	St. John Paul II	San Juan Pablo II	São João Paulo II	San Juan Pablo II
+10-23	O	St. John of Capistrano	San Juan de Capistrano	São João de Capistrano	San Juan de Capistrano
+10-24	O	St. Anthony Mary Claret	San Antonio María Claret	Santo Antônio Maria Claret	San Antonio Maria Claret
+10-28	F	Sts. Simon and Jude, Apostles	San Simón y San Judas, Apóstoles	São Simão e São Judas, Apóstolos	San Simon at San Judas, mga Apostol
+11-01	S	All Saints	Todos los Santos	Todos os Santos	Todos los Santos (Araw ng Lahat ng Banal)
+11-02	D	All Souls’ Day	Día de los Fieles Difuntos	Dia de Finados	Araw ng mga Kaluluwa (Undas)
+11-03	O	St. Martin de Porres	San Martín de Porres	São Martinho de Lima	San Martin de Porres
+11-04	M	St. Charles Borromeo	San Carlos Borromeo	São Carlos Borromeu	San Carlos Borromeo
+11-09	F	The Dedication of the Lateran Basilica	La Dedicación de la Basílica de Letrán	A Dedicação da Basílica de Latrão	Ang Pagtatalaga sa Basilika ng Laterano
+11-10	M	St. Leo the Great	San León Magno	São Leão Magno	San Leon Magno
+11-11	M	St. Martin of Tours	San Martín de Tours	São Martinho de Tours	San Martin ng Tours
+11-12	M	St. Josaphat	San Josafat	São Josafá	San Josafat
+11-13	M	St. Frances Xavier Cabrini	Santa Francisca Javier Cabrini	Santa Francisca Xavier Cabrini	Santa Francisca Javier Cabrini
+11-15	O	St. Albert the Great	San Alberto Magno	Santo Alberto Magno	San Alberto Magno
+11-16	O	St. Margaret of Scotland; St. Gertrude	Santa Margarita de Escocia; Santa Gertrudis	Santa Margarida da Escócia; Santa Gertrudes	Santa Margarita ng Escocia; Santa Gertrudis
+11-17	M	St. Elizabeth of Hungary	Santa Isabel de Hungría	Santa Isabel da Hungria	Santa Isabel ng Hungary
+11-18	O	The Dedication of the Basilicas of Sts. Peter and Paul; St. Rose Philippine Duchesne	La Dedicación de las Basílicas de San Pedro y San Pablo; Santa Rosa Filipina Duchesne	A Dedicação das Basílicas de São Pedro e São Paulo; Santa Rosa Filipina Duchesne	Ang Pagtatalaga sa mga Basilika nina San Pedro at San Pablo; Santa Rosa Filipina Duchesne
+11-21	M	The Presentation of the Blessed Virgin Mary	La Presentación de la Virgen María	A Apresentação de Nossa Senhora	Ang Paghahain sa Mahal na Birheng Maria
+11-22	M	St. Cecilia	Santa Cecilia	Santa Cecília	Santa Cecilia
+11-23	O	St. Clement I; St. Columban; Bl. Miguel Agustín Pro	San Clemente I; San Columbano; Beato Miguel Agustín Pro	São Clemente I; São Columbano; Beato Miguel Agostinho Pro	San Clemente I; San Columbano; Beato Miguel Agustin Pro
+11-24	M	St. Andrew Dũng-Lạc and Companions	San Andrés Dung-Lac y compañeros	Santo André Dung-Lac e companheiros	San Andres Dung-Lac at mga kasama
+11-25	O	St. Catherine of Alexandria	Santa Catalina de Alejandría	Santa Catarina de Alexandria	Santa Catalina ng Alejandria
+11-30	F	St. Andrew, Apostle	San Andrés, Apóstol	Santo André, Apóstolo	San Andres, Apostol
+12-03	M	St. Francis Xavier	San Francisco Javier	São Francisco Xavier	San Francisco Javier
+12-04	O	St. John Damascene	San Juan Damasceno	São João Damasceno	San Juan Damasceno
+12-06	O	St. Nicholas	San Nicolás	São Nicolau	San Nicolas
+12-07	M	St. Ambrose	San Ambrosio	Santo Ambrósio	San Ambrosio
+12-08	S	The Immaculate Conception of the Blessed Virgin Mary	La Inmaculada Concepción de la Virgen María	A Imaculada Conceição da Virgem Maria	Ang Kalinis-linisang Paglilihi sa Mahal na Birheng Maria
+12-09	O	St. Juan Diego	San Juan Diego	São Juan Diego	San Juan Diego
+12-10	O	Our Lady of Loreto	Nuestra Señora de Loreto	Nossa Senhora de Loreto	Mahal na Birhen ng Loreto
+12-11	O	St. Damasus I	San Dámaso I	São Dâmaso I	San Damaso I
+12-12	F	Our Lady of Guadalupe	Nuestra Señora de Guadalupe	Nossa Senhora de Guadalupe	Mahal na Birhen ng Guadalupe
+12-13	M	St. Lucy	Santa Lucía	Santa Luzia	Santa Lucia
+12-14	M	St. John of the Cross	San Juan de la Cruz	São João da Cruz	San Juan de la Cruz
+12-21	O	St. Peter Canisius	San Pedro Canisio	São Pedro Canísio	San Pedro Canisio
+12-23	O	St. John of Kanty	San Juan de Kety	São João Câncio	San Juan de Kanty
+12-25	S	The Nativity of the Lord (Christmas)	La Natividad del Señor (Navidad)	O Natal do Senhor	Ang Pagsilang ng Panginoon (Pasko)
+12-26	F	St. Stephen, the First Martyr	San Esteban, protomártir	Santo Estêvão, primeiro mártir	San Esteban, Unang Martir
+12-27	F	St. John, Apostle and Evangelist	San Juan, Apóstol y Evangelista	São João, Apóstolo e Evangelista	San Juan, Apostol at Ebanghelista
+12-28	F	The Holy Innocents	Los Santos Inocentes	Os Santos Inocentes	Ang mga Banal na Walang Malay (Niños Inocentes)
+12-29	O	St. Thomas Becket	Santo Tomás Becket	São Tomás Becket	Santo Tomas Becket
+12-31	O	St. Sylvester I	San Silvestre I	São Silvestre I	San Silvestre I

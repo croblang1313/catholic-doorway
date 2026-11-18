@@ -1,0 +1,58 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/tl/magsimula">Maging Katoliko</a> &rsaquo; Ang iyong unang Misa</p>
+    <h1>Ang iyong unang Misa, hakbang-hakbang</h1>
+    <p class="lede">Hindi ka pa nakapagsisimba, o matagal na? Gagabayan ka nito sa lahat ng {{MASS_COUNT}} na sandali ng Misa sa Linggo: kailan tatayo, uupo at luluhod, ano ang sinasabi ng mga tao, at ano ang gagawin sa Komunyon.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section">
+    <div class="card companion-cta">
+      <div>
+        <p class="label">Sa upuan</p>
+        <h3>Gamitin ito habang nagmimisa</h3>
+        <p>Bumubukas nang isang hakbang sa bawat pagkakataon, sa malalaking letra at may malalaking button na Bumalik at Susunod, kaya masusundan mo ito sa iyong telepono. Nananatiling bukas ang screen at natatandaan kung nasaan ka.</p>
+      </div>
+      <button class="btn" type="button" id="mass-start">Simulan ang gabay</button>
+    </div>
+    <ul class="pose-key" aria-label="Gabay sa tindig">
+      <li><span class="pose pose-stand">Tumayo</span></li>
+      <li><span class="pose pose-sit">Umupo</span></li>
+      <li><span class="pose pose-kneel">Lumuhod</span></li>
+      <li><span class="pose pose-any">Kung ano ang gusto mo</span></li>
+    </ul>
+    <p class="small muted">Bahagyang nagkakaiba ang kaugalian sa bawat parokya. Kapag hindi sigurado, sundan ang mga tao sa paligid mo. Kung mahirap para sa iyo ang lumuhod, laging ayos lang ang umupo. Ang mga salitang sinasabi ng mga tao ay mula sa Misal Romano; nasa misal o misalitang papel sa upuan ang buong teksto. Sa karamihan ng parokya sa Estados Unidos, Ingles ang Misa, kaya isinama namin ang ilang sagot sa Ingles.</p>
+  </section>
+
+  <div class="mass-steps" id="mass-steps">
+{{MASS}}
+  </div>
+
+  <section class="section prose">
+    <h2>Ilan pang dapat malaman</h2>
+    <ul>
+      <li><strong>Gaano katagal ang Misa?</strong> Mga isang oras tuwing Linggo, at mga 30 minuto sa karaniwang araw.</li>
+      <li><strong>Ano ang dapat kong isuot?</strong> Karaniwan ang damit na isusuot mo sa isang magandang hapunan, ngunit pumunta ka kung ano ka.</li>
+      <li><strong>Puwede ba akong magsama ng mga bata?</strong> Oo. Maraming simbahan ang may cry room, ngunit natutuwa ang karamihan ng parokya na marinig ang maliliit na bata.</li>
+      <li><strong>Kailangan ko bang magbigay ng pera?</strong> Hindi. Sumusuporta sa parokya ang koleksiyon. Ayos lang sa mga bisita na ipasa lamang ang basket.</li>
+      <li><strong>May Misa ba sa Tagalog?</strong> Sa ilang lungsod na maraming Pilipino, may parokyang nagdiriwang ng Misa sa Tagalog paminsan-minsan, lalo na sa Simbang Gabi. Itanong sa parokya o sa Filipino ministry ng iyong diyosesis.</li>
+      <li><strong>Saan ko makikita ang oras ng Misa?</strong> Gamitin ang <a href="/tl/hanapin-ang-simbahan">Maghanap ng simbahan</a>, saka tingnan ang website ng parokya o tumawag.</li>
+    </ul>
+    <p><a class="btn secondary" href="/tl/magsimula">Iniisip mong maging Katoliko? Magsimula rito &rarr;</a></p>
+  </section>
+</div>
+
+<div class="companion" id="companion" hidden role="dialog" aria-modal="true" aria-label="Gabay sa Misa">
+  <div class="companion-bar">
+    <span class="companion-part" id="comp-part"></span>
+    <button class="companion-close" type="button" id="comp-close" aria-label="Isara ang gabay">&times;</button>
+  </div>
+  <div class="companion-progress"><span id="comp-progress"></span></div>
+  <div class="companion-body" id="comp-body" aria-live="polite"></div>
+  <div class="companion-nav">
+    <button class="btn secondary" type="button" id="comp-back">&larr; Bumalik</button>
+    <span class="companion-count" id="comp-count"></span>
+    <button class="btn" type="button" id="comp-next">Susunod &rarr;</button>
+  </div>
+</div>

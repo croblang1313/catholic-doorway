@@ -17,6 +17,11 @@ export default [
    "Novena a São José",
    "Termina na solenidade de São José, 19 de março.",
    "São José, guardião de Jesus e esposo fiel de Maria, trabalhastes com as vossas mãos, protegestes a vossa família e confiastes em Deus na escuridão. Cuidai da minha família e do meu trabalho. Ajudai-me nesta necessidade: (diga qual). Ensinai-me a escutar a voz de Deus como vós e a fazer sem demora o que ele me pedir. Amém."
+  ],
+  "tl": [
+   "Nobena kay San Jose",
+   "Nagtatapos sa Dakilang Kapistahan ni San Jose, Marso 19.",
+   "San Jose, tagapag-ingat ni Hesus at tapat na esposo ni Maria, nagtrabaho ka sa iyong mga kamay, ipinagtanggol mo ang iyong pamilya at nagtiwala ka sa Diyos sa dilim. Bantayan mo ang aking pamilya at ang aking trabaho. Tulungan mo ako sa pangangailangang ito: (banggitin ito). Turuan mo akong pakinggan ang tinig ng Diyos gaya mo, at gawin agad ang kanyang hinihingi. Amen."
   ]
  },
  {
@@ -70,8 +75,24 @@ export default [
     "Os que veneram especialmente a misericórdia de Deus",
     "As almas do purgatório",
     "Os que se tornaram tíbios na fé"
+   ],
+   "tl": [
+    "Ang buong sangkatauhan, lalo na ang mga makasalanan",
+    "Ang mga pari at mga relihiyoso",
+    "Ang lahat ng debotong at tapat na kaluluwa",
+    "Ang mga hindi naniniwala sa Diyos at ang mga hindi pa nakakikilala kay Hesus",
+    "Ang mga Kristiyanong nahiwalay sa Simbahan",
+    "Ang maaamo at mapagpakumbaba, at ang mga bata",
+    "Ang mga natatanging nagpaparangal sa awa ng Diyos",
+    "Ang mga kaluluwa sa purgatoryo",
+    "Ang mga lumamig na ang pananampalataya"
    ]
-  }
+  },
+  "tl": [
+   "Nobena sa Banal na Awa",
+   "Nagsisimula sa Biyernes Santo at nagtatapos sa araw bago ang Linggo ng Banal na Awa. Dasalin ang <a href=\"/tl/koronilya-ng-banal-na-awa\">Koronilya ng Banal na Awa</a> araw-araw para sa intensiyon ng araw na iyon.",
+   "Hesus, ako'y nananalig sa iyo. Ngayon ay dinadala ko sa harap ng iyong maawaing Puso ang mga hiniling mong ipanalangin namin sa araw na ito ng nobena. Kaawaan mo sila at ang buong mundo. Amen."
+  ]
  },
  {
   "id": "holy-spirit",
@@ -90,6 +111,11 @@ export default [
    "Novena ao Espírito Santo",
    "A primeira novena: os apóstolos rezaram com Maria durante nove dias entre a Ascensão e Pentecostes (Atos 1,14). Termina na véspera de Pentecostes.",
    "Vinde, Espírito Santo, enchei o meu coração e acendei em mim o fogo do vosso amor. Dai-me sabedoria para ver o que importa, coragem para fazer o que é certo e paz no que não posso mudar. Renovai a vossa Igreja e renovai a face da terra. Amém."
+  ],
+  "tl": [
+   "Nobena sa Espiritu Santo",
+   "Ang unang nobena: nanalangin ang mga apostol kasama ni Maria nang siyam na araw sa pagitan ng Pag-akyat sa Langit at Pentekostes (Mga Gawa 1:14). Nagtatapos ito sa araw bago ang Pentekostes.",
+   "Halina, Espiritu Santo, punuin mo ang aking puso at pag-alabin sa akin ang apoy ng iyong pag-ibig. Bigyan mo ako ng karunungang makita ang mahalaga, ng lakas ng loob na gawin ang tama, at ng kapayapaan sa hindi ko mababago. Panibaguhin mo ang iyong Simbahan at ang mukha ng lupa. Amen."
   ]
  },
  {
@@ -109,6 +135,11 @@ export default [
    "Novena ao Sagrado Coração de Jesus",
    "Termina na véspera da solenidade do Sagrado Coração, a sexta-feira depois de Corpus Christi.",
    "Sagrado Coração de Jesus, vós me amastes sem medida. Ponho em vós a minha confiança e vos apresento esta intenção: (diga qual). Fazei o meu coração semelhante ao vosso: manso, humilde e generoso. Amém."
+  ],
+  "tl": [
+   "Nobena sa Sagrado Corazon ni Hesus",
+   "Nagtatapos sa araw bago ang Dakilang Kapistahan ng Sagrado Corazon, ang Biyernes pagkatapos ng Corpus Christi.",
+   "Kamahal-mahalang Puso ni Hesus, minahal mo ako nang walang hangganan. Inilalagak ko ang aking tiwala sa iyo at dinadala ko sa iyo ang intensiyong ito: (banggitin ito). Gawin mong higit na katulad ng iyo ang aking puso: maamo, mapagpakumbaba at mapagbigay. Amen."
   ]
  },
  {
@@ -128,6 +159,11 @@ export default [
    "Novena a Santo Antônio",
    "Termina na véspera da sua festa, 13 de junho. Muitos rezam a Santo Antônio pelas coisas perdidas e pelos pobres.",
    "Santo Antônio, amigo dos pobres e achador do que se perdeu, pregastes o Evangelho com alegria e amastes o Senhor de todo o coração. Ajudai-me a encontrar o que perdi, sobretudo a fé ou a esperança que deixei escapar. Rogai por esta intenção: (diga qual). Amém."
+  ],
+  "tl": [
+   "Nobena kay San Antonio de Padua",
+   "Nagtatapos sa araw bago ang kanyang kapistahan sa Hunyo 13. Maraming nagdarasal kay San Antonio para sa mga nawawalang bagay, at para sa mga dukha.",
+   "San Antonio, kaibigan ng mga dukha at tagahanap ng nawawala, ipinangaral mo ang Ebanghelyo nang may galak at inibig mo ang Panginoon nang buong puso. Tulungan mo akong makita ang aking nawala, lalo na ang pananampalataya o pag-asang hinayaan kong mawala. Ipanalangin mo ang intensiyong ito: (banggitin ito). Amen."
   ]
  },
  {
@@ -147,6 +183,11 @@ export default [
    "Novena da Assunção",
    "Termina na véspera da Assunção de Maria, 15 de agosto.",
    "Maria, elevada ao céu em corpo e alma, vós nos mostrais onde termina o nosso caminho. Ajudai-me a manter os olhos no céu enquanto caminho na terra, e rogai por mim agora e na hora da minha morte. Amém."
+  ],
+  "tl": [
+   "Nobena para sa Pag-akyat kay Maria sa Langit",
+   "Nagtatapos sa araw bago ang Pag-akyat kay Maria sa Langit sa Agosto 15.",
+   "Maria, iniakyat sa langit nang may katawan at kaluluwa, ipinakikita mo sa amin kung saan nagtatapos ang aming paglalakbay. Tulungan mo akong ituon ang aking mata sa langit habang naglalakad ako sa lupa, at ipanalangin mo ako ngayon at sa oras ng aking kamatayan. Amen."
   ]
  },
  {
@@ -166,6 +207,11 @@ export default [
    "Novena a Santa Teresinha",
    "Termina na véspera da sua festa, 1º de outubro. Santa Teresinha prometeu passar o seu céu fazendo o bem na terra.",
    "Santa Teresinha, Florzinha de Jesus, encontrastes o caminho da santidade nas pequenas coisas feitas com grande amor. Ensinai-me a vossa pequena via de confiança. Pedi a Deus por esta intenção: (diga qual). Amém."
+  ],
+  "tl": [
+   "Nobena kay Santa Teresita ng Lisieux",
+   "Nagtatapos sa araw bago ang kanyang kapistahan sa Oktubre 1. Nangako si Santa Teresita na gugugulin niya ang kanyang langit sa paggawa ng mabuti sa lupa.",
+   "Santa Teresita, Munting Bulaklak, natagpuan mo ang daan sa kabanalan sa maliliit na bagay na ginagawa nang may dakilang pag-ibig. Ituro mo sa akin ang iyong munting daan ng pagtitiwala. Ihingi mo sa Diyos ang intensiyong ito: (banggitin ito). Amen."
   ]
  },
  {
@@ -185,6 +231,11 @@ export default [
    "Novena a São Judas Tadeu",
    "Termina na véspera da festa de São Simão e São Judas, 28 de outubro. São Judas é o padroeiro das causas difíceis e desesperadas.",
    "São Judas Tadeu, apóstolo e amigo de Jesus, recorremos a vós quando tudo parece perdido. Apresento-vos esta necessidade: (diga qual). Rogai para que Deus me ajude e me dê a graça de aceitar a sua vontade com paz. Amém."
+  ],
+  "tl": [
+   "Nobena kay San Judas Tadeo",
+   "Nagtatapos sa araw bago ang kapistahan nina San Simon at San Judas sa Oktubre 28. Si San Judas ang patron ng mahihirap at desperadong kalagayan.",
+   "San Judas, apostol at kaibigan ni Hesus, lumalapit sa iyo ang mga tao kapag tila wala nang pag-asa. Dinadala ko sa iyo ang pangangailangang ito: (banggitin ito). Ipanalangin mo na tulungan ako ng Diyos, at bigyan ako ng biyayang tanggapin ang kanyang kalooban nang may kapayapaan. Amen."
   ]
  },
  {
@@ -204,6 +255,11 @@ export default [
    "Novena à Imaculada Conceição",
    "Termina na véspera da Imaculada Conceição, 8 de dezembro, festa da padroeira dos Estados Unidos.",
    "Maria, concebida sem pecado, Deus vos preparou desde o primeiro momento da vossa vida para ser a mãe do seu Filho. Rogai por mim, para que eu me afaste do pecado e diga sim a Deus como vós. Cuidai do nosso país e de todo o seu povo. Amém."
+  ],
+  "tl": [
+   "Nobena sa Kalinis-linisang Paglilihi",
+   "Nagtatapos sa araw bago ang Kalinis-linisang Paglilihi sa Disyembre 8, ang kapistahan ng patrona ng Estados Unidos at ng Pilipinas.",
+   "Maria, ipinaglihing walang kasalanan, inihanda ka ng Diyos mula sa unang sandali ng iyong buhay upang maging ina ng kanyang Anak. Ipanalangin mo ako, upang tumalikod ako sa kasalanan at magsabi ng oo sa Diyos gaya mo. Bantayan mo ang aming bansa at ang lahat ng mamamayan nito. Amen."
   ]
  },
  {
@@ -223,6 +279,11 @@ export default [
    "Novena a Nossa Senhora de Guadalupe",
    "Termina na véspera da sua festa, 12 de dezembro. Ela apareceu a São Juan Diego em 1531 e é padroeira da América.",
    "Nossa Senhora de Guadalupe, vós dissestes a São Juan Diego: “Não estou aqui eu, que sou tua mãe?” Abraçai a mim e à minha família. Rogai pelos que vão nascer, pelos migrantes e por todos os que estão longe de casa. Apresento-vos esta intenção: (diga qual). Amém."
+  ],
+  "tl": [
+   "Nobena sa Mahal na Birhen ng Guadalupe",
+   "Nagtatapos sa araw bago ang kanyang kapistahan sa Disyembre 12. Nagpakita siya kay San Juan Diego noong 1531 at siya ang patrona ng Amerika at ng Pilipinas.",
+   "Mahal na Birhen ng Guadalupe, sinabi mo kay San Juan Diego: “Hindi ba ako narito, ako na iyong ina?” Yakapin mo ako at ang aking pamilya. Ipanalangin mo ang mga sanggol sa sinapupunan, ang mga migrante at ang lahat ng malayo sa kanilang tahanan. Dinadala ko sa iyo ang intensiyong ito: (banggitin ito). Amen."
   ]
  },
  {
@@ -242,6 +303,11 @@ export default [
    "Novena de Natal",
    "Os nove dias antes do Natal, de 16 a 24 de dezembro.",
    "Vinde, Senhor Jesus. Como Maria e José procuraram um lugar para ficar, abri espaço para vós no meu coração. Preparai a minha família para vos receber neste Natal, e que eu leve a vossa paz a alguém que precise. Amém."
+  ],
+  "tl": [
+   "Nobena ng Pasko",
+   "Ang siyam na araw bago ang Pasko, Disyembre 16 hanggang 24. Sa mga parokyang Pilipino, ito ang Simbang Gabi: siyam na Misa sa madaling-araw o sa gabi.",
+   "Halina, Panginoong Hesus. Gaya nina Maria at Jose na naghanap ng matutuluyan, bigyan mo ng puwang ang aking puso para sa iyo. Ihanda mo ang aking pamilya na tanggapin ka ngayong Pasko, at hayaan mong dalhin ko ang iyong kapayapaan sa nangangailangan nito. Amen."
   ]
  }
 ];

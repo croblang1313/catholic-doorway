@@ -1,50 +1,312 @@
 [
- {"id": "st-joseph", "start": "03-10",
-  "en": ["Novena to St. Joseph", "Ends on the Solemnity of St. Joseph, March 19.", "St. Joseph, guardian of Jesus and faithful husband of Mary, you worked with your hands, protected your family and trusted God in the dark. Watch over my family and my work. Help me with this need: (name it). Teach me to listen for God’s voice as you did, and to do what he asks without delay. Amen."],
-  "es": ["Novena a San José", "Termina en la solemnidad de San José, el 19 de marzo.", "San José, custodio de Jesús y esposo fiel de María, trabajaste con tus manos, protegiste a tu familia y confiaste en Dios en la oscuridad. Cuida de mi familia y de mi trabajo. Ayúdame con esta necesidad: (nómbrala). Enséñame a escuchar la voz de Dios como tú y a hacer sin demora lo que él me pida. Amén."],
-  "pt": ["Novena a São José", "Termina na solenidade de São José, 19 de março.", "São José, guardião de Jesus e esposo fiel de Maria, trabalhastes com as vossas mãos, protegestes a vossa família e confiastes em Deus na escuridão. Cuidai da minha família e do meu trabalho. Ajudai-me nesta necessidade: (diga qual). Ensinai-me a escutar a voz de Deus como vós e a fazer sem demora o que ele me pedir. Amém."]},
- {"id": "divine-mercy", "start": "E-2",
-  "en": ["Divine Mercy Novena", "Begins on Good Friday and ends the day before Divine Mercy Sunday. Pray the <a href=\"/divine-mercy-chaplet\">Divine Mercy Chaplet</a> each day for that day’s intention.", "Jesus, I trust in you. Today I bring before your merciful Heart those you asked us to pray for on this day of the novena. Have mercy on them and on the whole world. Amen."],
-  "es": ["Novena de la Divina Misericordia", "Empieza el Viernes Santo y termina la víspera del Domingo de la Divina Misericordia. Reza cada día la <a href=\"/es/coronilla-de-la-divina-misericordia\">Coronilla de la Divina Misericordia</a> por la intención del día.", "Jesús, en ti confío. Hoy presento ante tu Corazón misericordioso a quienes nos pediste encomendar en este día de la novena. Ten misericordia de ellos y del mundo entero. Amén."],
-  "pt": ["Novena da Divina Misericórdia", "Começa na Sexta-feira Santa e termina na véspera do Domingo da Divina Misericórdia. Reze todos os dias o <a href=\"/pt/terco-da-misericordia\">Terço da Misericórdia</a> pela intenção do dia.", "Jesus, eu confio em vós. Hoje apresento ao vosso Coração misericordioso aqueles que nos pedistes para recomendar neste dia da novena. Tende misericórdia deles e do mundo inteiro. Amém."],
+ {
+  "id": "st-joseph",
+  "start": "03-10",
+  "en": [
+   "Novena to St. Joseph",
+   "Ends on the Solemnity of St. Joseph, March 19.",
+   "St. Joseph, guardian of Jesus and faithful husband of Mary, you worked with your hands, protected your family and trusted God in the dark. Watch over my family and my work. Help me with this need: (name it). Teach me to listen for God’s voice as you did, and to do what he asks without delay. Amen."
+  ],
+  "es": [
+   "Novena a San José",
+   "Termina en la solemnidad de San José, el 19 de marzo.",
+   "San José, custodio de Jesús y esposo fiel de María, trabajaste con tus manos, protegiste a tu familia y confiaste en Dios en la oscuridad. Cuida de mi familia y de mi trabajo. Ayúdame con esta necesidad: (nómbrala). Enséñame a escuchar la voz de Dios como tú y a hacer sin demora lo que él me pida. Amén."
+  ],
+  "pt": [
+   "Novena a São José",
+   "Termina na solenidade de São José, 19 de março.",
+   "São José, guardião de Jesus e esposo fiel de Maria, trabalhastes com as vossas mãos, protegestes a vossa família e confiastes em Deus na escuridão. Cuidai da minha família e do meu trabalho. Ajudai-me nesta necessidade: (diga qual). Ensinai-me a escutar a voz de Deus como vós e a fazer sem demora o que ele me pedir. Amém."
+  ],
+  "tl": [
+   "Nobena kay San Jose",
+   "Nagtatapos sa Dakilang Kapistahan ni San Jose, Marso 19.",
+   "San Jose, tagapag-ingat ni Hesus at tapat na esposo ni Maria, nagtrabaho ka sa iyong mga kamay, ipinagtanggol mo ang iyong pamilya at nagtiwala ka sa Diyos sa dilim. Bantayan mo ang aking pamilya at ang aking trabaho. Tulungan mo ako sa pangangailangang ito: (banggitin ito). Turuan mo akong pakinggan ang tinig ng Diyos gaya mo, at gawin agad ang kanyang hinihingi. Amen."
+  ]
+ },
+ {
+  "id": "divine-mercy",
+  "start": "E-2",
+  "en": [
+   "Divine Mercy Novena",
+   "Begins on Good Friday and ends the day before Divine Mercy Sunday. Pray the <a href=\"/divine-mercy-chaplet\">Divine Mercy Chaplet</a> each day for that day’s intention.",
+   "Jesus, I trust in you. Today I bring before your merciful Heart those you asked us to pray for on this day of the novena. Have mercy on them and on the whole world. Amen."
+  ],
+  "es": [
+   "Novena de la Divina Misericordia",
+   "Empieza el Viernes Santo y termina la víspera del Domingo de la Divina Misericordia. Reza cada día la <a href=\"/es/coronilla-de-la-divina-misericordia\">Coronilla de la Divina Misericordia</a> por la intención del día.",
+   "Jesús, en ti confío. Hoy presento ante tu Corazón misericordioso a quienes nos pediste encomendar en este día de la novena. Ten misericordia de ellos y del mundo entero. Amén."
+  ],
+  "pt": [
+   "Novena da Divina Misericórdia",
+   "Começa na Sexta-feira Santa e termina na véspera do Domingo da Divina Misericórdia. Reze todos os dias o <a href=\"/pt/terco-da-misericordia\">Terço da Misericórdia</a> pela intenção do dia.",
+   "Jesus, eu confio em vós. Hoje apresento ao vosso Coração misericordioso aqueles que nos pedistes para recomendar neste dia da novena. Tende misericórdia deles e do mundo inteiro. Amém."
+  ],
   "days": {
-   "en": ["All people, especially sinners", "Priests and religious", "All devout and faithful souls", "Those who do not believe in God and those who do not yet know Jesus", "Christians separated from the Church", "The meek and humble, and children", "Those who especially honor God’s mercy", "The souls in purgatory", "Those who have grown lukewarm in faith"],
-   "es": ["Toda la humanidad, especialmente los pecadores", "Los sacerdotes y los religiosos", "Todas las almas piadosas y fieles", "Los que no creen en Dios y los que todavía no conocen a Jesús", "Los cristianos separados de la Iglesia", "Los mansos y humildes, y los niños", "Los que veneran especialmente la misericordia de Dios", "Las almas del purgatorio", "Los que se han vuelto tibios en la fe"],
-   "pt": ["Toda a humanidade, especialmente os pecadores", "Os sacerdotes e os religiosos", "Todas as almas piedosas e fiéis", "Os que não creem em Deus e os que ainda não conhecem Jesus", "Os cristãos separados da Igreja", "Os mansos e humildes, e as crianças", "Os que veneram especialmente a misericórdia de Deus", "As almas do purgatório", "Os que se tornaram tíbios na fé"]}},
- {"id": "holy-spirit", "start": "E+40",
-  "en": ["Novena to the Holy Spirit", "The first novena: the apostles prayed with Mary for nine days between the Ascension and Pentecost (Acts 1:14). It ends the day before Pentecost.", "Come, Holy Spirit, fill my heart and kindle in me the fire of your love. Give me wisdom to see what matters, courage to do what is right, and peace in what I cannot change. Renew your Church and renew the face of the earth. Amen."],
-  "es": ["Novena al Espíritu Santo", "La primera novena: los apóstoles rezaron con María durante nueve días entre la Ascensión y Pentecostés (Hechos 1,14). Termina la víspera de Pentecostés.", "Ven, Espíritu Santo, llena mi corazón y enciende en mí el fuego de tu amor. Dame sabiduría para ver lo que importa, valor para hacer lo correcto y paz en lo que no puedo cambiar. Renueva tu Iglesia y renueva la faz de la tierra. Amén."],
-  "pt": ["Novena ao Espírito Santo", "A primeira novena: os apóstolos rezaram com Maria durante nove dias entre a Ascensão e Pentecostes (Atos 1,14). Termina na véspera de Pentecostes.", "Vinde, Espírito Santo, enchei o meu coração e acendei em mim o fogo do vosso amor. Dai-me sabedoria para ver o que importa, coragem para fazer o que é certo e paz no que não posso mudar. Renovai a vossa Igreja e renovai a face da terra. Amém."]},
- {"id": "sacred-heart", "start": "E+59",
-  "en": ["Novena to the Sacred Heart of Jesus", "Ends the day before the Solemnity of the Sacred Heart, the Friday after Corpus Christi.", "Most Sacred Heart of Jesus, you have loved me without limit. I place my trust in you and bring you this intention: (name it). Make my heart more like yours: gentle, humble and generous. Amen."],
-  "es": ["Novena al Sagrado Corazón de Jesús", "Termina la víspera de la solemnidad del Sagrado Corazón, el viernes después de Corpus Christi.", "Sagrado Corazón de Jesús, me has amado sin medida. Pongo en ti mi confianza y te presento esta intención: (nómbrala). Haz mi corazón semejante al tuyo: manso, humilde y generoso. Amén."],
-  "pt": ["Novena ao Sagrado Coração de Jesus", "Termina na véspera da solenidade do Sagrado Coração, a sexta-feira depois de Corpus Christi.", "Sagrado Coração de Jesus, vós me amastes sem medida. Ponho em vós a minha confiança e vos apresento esta intenção: (diga qual). Fazei o meu coração semelhante ao vosso: manso, humilde e generoso. Amém."]},
- {"id": "st-anthony", "start": "06-04",
-  "en": ["Novena to St. Anthony of Padua", "Ends the day before his feast on June 13. Many people pray to St. Anthony for lost things, and for the poor.", "St. Anthony, friend of the poor and finder of what is lost, you preached the Gospel with joy and loved the Lord with all your heart. Help me find what I have lost, above all any faith or hope I have let slip away. Please pray for this intention: (name it). Amen."],
-  "es": ["Novena a San Antonio de Padua", "Termina la víspera de su fiesta, el 13 de junio. Muchos rezan a san Antonio por las cosas perdidas y por los pobres.", "San Antonio, amigo de los pobres y buscador de lo perdido, predicaste el Evangelio con alegría y amaste al Señor con todo tu corazón. Ayúdame a encontrar lo que he perdido, sobre todo la fe o la esperanza que se me hayan escapado. Ruega por esta intención: (nómbrala). Amén."],
-  "pt": ["Novena a Santo Antônio", "Termina na véspera da sua festa, 13 de junho. Muitos rezam a Santo Antônio pelas coisas perdidas e pelos pobres.", "Santo Antônio, amigo dos pobres e achador do que se perdeu, pregastes o Evangelho com alegria e amastes o Senhor de todo o coração. Ajudai-me a encontrar o que perdi, sobretudo a fé ou a esperança que deixei escapar. Rogai por esta intenção: (diga qual). Amém."]},
- {"id": "assumption", "start": "08-06",
-  "en": ["Novena for the Assumption", "Ends the day before the Assumption of Mary on August 15.", "Mary, taken up body and soul into heaven, you show us where our journey ends. Help me keep my eyes on heaven while I walk on earth, and pray for me now and at the hour of my death. Amen."],
-  "es": ["Novena de la Asunción", "Termina la víspera de la Asunción de María, el 15 de agosto.", "María, llevada en cuerpo y alma al cielo, nos muestras dónde termina nuestro camino. Ayúdame a tener los ojos puestos en el cielo mientras camino en la tierra, y ruega por mí ahora y en la hora de mi muerte. Amén."],
-  "pt": ["Novena da Assunção", "Termina na véspera da Assunção de Maria, 15 de agosto.", "Maria, elevada ao céu em corpo e alma, vós nos mostrais onde termina o nosso caminho. Ajudai-me a manter os olhos no céu enquanto caminho na terra, e rogai por mim agora e na hora da minha morte. Amém."]},
- {"id": "st-therese", "start": "09-22",
-  "en": ["Novena to St. Thérèse of Lisieux", "Ends the day before her feast on October 1. St. Thérèse promised to spend her heaven doing good on earth.", "St. Thérèse, Little Flower, you found the way to holiness in small things done with great love. Teach me your little way of trust. Please ask God for this intention: (name it). Amen."],
-  "es": ["Novena a Santa Teresita del Niño Jesús", "Termina la víspera de su fiesta, el 1 de octubre. Santa Teresita prometió pasar su cielo haciendo el bien en la tierra.", "Santa Teresita, Florecilla, encontraste el camino a la santidad en las cosas pequeñas hechas con gran amor. Enséñame tu caminito de confianza. Pide a Dios por esta intención: (nómbrala). Amén."],
-  "pt": ["Novena a Santa Teresinha", "Termina na véspera da sua festa, 1º de outubro. Santa Teresinha prometeu passar o seu céu fazendo o bem na terra.", "Santa Teresinha, Florzinha de Jesus, encontrastes o caminho da santidade nas pequenas coisas feitas com grande amor. Ensinai-me a vossa pequena via de confiança. Pedi a Deus por esta intenção: (diga qual). Amém."]},
- {"id": "st-jude", "start": "10-19",
-  "en": ["Novena to St. Jude", "Ends the day before the feast of Sts. Simon and Jude on October 28. St. Jude is the patron of difficult and desperate cases.", "St. Jude, apostle and friend of Jesus, people turn to you when things seem hopeless. I bring you this need: (name it). Pray that God will help me, and give me the grace to accept his will with peace. Amen."],
-  "es": ["Novena a San Judas Tadeo", "Termina la víspera de la fiesta de san Simón y san Judas, el 28 de octubre. San Judas es patrono de las causas difíciles y desesperadas.", "San Judas Tadeo, apóstol y amigo de Jesús, a ti acudimos cuando todo parece perdido. Te presento esta necesidad: (nómbrala). Ruega para que Dios me ayude y me dé la gracia de aceptar su voluntad con paz. Amén."],
-  "pt": ["Novena a São Judas Tadeu", "Termina na véspera da festa de São Simão e São Judas, 28 de outubro. São Judas é o padroeiro das causas difíceis e desesperadas.", "São Judas Tadeu, apóstolo e amigo de Jesus, recorremos a vós quando tudo parece perdido. Apresento-vos esta necessidade: (diga qual). Rogai para que Deus me ajude e me dê a graça de aceitar a sua vontade com paz. Amém."]},
- {"id": "immaculate-conception", "start": "11-29",
-  "en": ["Novena to the Immaculate Conception", "Ends the day before the Immaculate Conception on December 8, the patronal feast of the United States.", "Mary, conceived without sin, God prepared you from the first moment of your life to be the mother of his Son. Pray for me, that I may turn away from sin and say yes to God as you did. Watch over our country and all its people. Amen."],
-  "es": ["Novena a la Inmaculada Concepción", "Termina la víspera de la Inmaculada Concepción, el 8 de diciembre, fiesta patronal de Estados Unidos.", "María, concebida sin pecado, Dios te preparó desde el primer momento de tu vida para ser la madre de su Hijo. Ruega por mí, para que me aparte del pecado y diga sí a Dios como tú. Cuida de nuestro país y de toda su gente. Amén."],
-  "pt": ["Novena à Imaculada Conceição", "Termina na véspera da Imaculada Conceição, 8 de dezembro, festa da padroeira dos Estados Unidos.", "Maria, concebida sem pecado, Deus vos preparou desde o primeiro momento da vossa vida para ser a mãe do seu Filho. Rogai por mim, para que eu me afaste do pecado e diga sim a Deus como vós. Cuidai do nosso país e de todo o seu povo. Amém."]},
- {"id": "guadalupe", "start": "12-03",
-  "en": ["Novena to Our Lady of Guadalupe", "Ends the day before her feast on December 12. She appeared to St. Juan Diego in 1531 and is patroness of the Americas.", "Our Lady of Guadalupe, you told St. Juan Diego, “Am I not here, I who am your mother?” Hold me and my family close. Pray for the unborn, for migrants and for everyone far from home. I bring you this intention: (name it). Amen."],
-  "es": ["Novena a la Virgen de Guadalupe", "Termina la víspera de su fiesta, el 12 de diciembre. Se apareció a san Juan Diego en 1531 y es patrona de América.", "Virgen de Guadalupe, le dijiste a san Juan Diego: «¿No estoy yo aquí, que soy tu madre?». Abrázame a mí y a mi familia. Ruega por los niños que van a nacer, por los migrantes y por todos los que están lejos de casa. Te presento esta intención: (nómbrala). Amén."],
-  "pt": ["Novena a Nossa Senhora de Guadalupe", "Termina na véspera da sua festa, 12 de dezembro. Ela apareceu a São Juan Diego em 1531 e é padroeira da América.", "Nossa Senhora de Guadalupe, vós dissestes a São Juan Diego: “Não estou aqui eu, que sou tua mãe?” Abraçai a mim e à minha família. Rogai pelos que vão nascer, pelos migrantes e por todos os que estão longe de casa. Apresento-vos esta intenção: (diga qual). Amém."]},
- {"id": "christmas", "start": "12-16",
-  "en": ["Christmas Novena", "The nine days before Christmas, December 16 to 24. In Spanish-speaking parishes these evenings are kept as the Posadas.", "Come, Lord Jesus. As Mary and Joseph searched for a place to stay, make room in my heart for you. Prepare my family to welcome you this Christmas, and let me bring your peace to someone who needs it. Amen."],
-  "es": ["Novena de Navidad", "Los nueve días antes de Navidad, del 16 al 24 de diciembre. En muchas parroquias se celebran como las Posadas.", "Ven, Señor Jesús. Como María y José buscaron posada, haz lugar para ti en mi corazón. Prepara a mi familia para recibirte en esta Navidad, y que yo lleve tu paz a alguien que la necesite. Amén."],
-  "pt": ["Novena de Natal", "Os nove dias antes do Natal, de 16 a 24 de dezembro.", "Vinde, Senhor Jesus. Como Maria e José procuraram um lugar para ficar, abri espaço para vós no meu coração. Preparai a minha família para vos receber neste Natal, e que eu leve a vossa paz a alguém que precise. Amém."]}
+   "en": [
+    "All people, especially sinners",
+    "Priests and religious",
+    "All devout and faithful souls",
+    "Those who do not believe in God and those who do not yet know Jesus",
+    "Christians separated from the Church",
+    "The meek and humble, and children",
+    "Those who especially honor God’s mercy",
+    "The souls in purgatory",
+    "Those who have grown lukewarm in faith"
+   ],
+   "es": [
+    "Toda la humanidad, especialmente los pecadores",
+    "Los sacerdotes y los religiosos",
+    "Todas las almas piadosas y fieles",
+    "Los que no creen en Dios y los que todavía no conocen a Jesús",
+    "Los cristianos separados de la Iglesia",
+    "Los mansos y humildes, y los niños",
+    "Los que veneran especialmente la misericordia de Dios",
+    "Las almas del purgatorio",
+    "Los que se han vuelto tibios en la fe"
+   ],
+   "pt": [
+    "Toda a humanidade, especialmente os pecadores",
+    "Os sacerdotes e os religiosos",
+    "Todas as almas piedosas e fiéis",
+    "Os que não creem em Deus e os que ainda não conhecem Jesus",
+    "Os cristãos separados da Igreja",
+    "Os mansos e humildes, e as crianças",
+    "Os que veneram especialmente a misericórdia de Deus",
+    "As almas do purgatório",
+    "Os que se tornaram tíbios na fé"
+   ],
+   "tl": [
+    "Ang buong sangkatauhan, lalo na ang mga makasalanan",
+    "Ang mga pari at mga relihiyoso",
+    "Ang lahat ng debotong at tapat na kaluluwa",
+    "Ang mga hindi naniniwala sa Diyos at ang mga hindi pa nakakikilala kay Hesus",
+    "Ang mga Kristiyanong nahiwalay sa Simbahan",
+    "Ang maaamo at mapagpakumbaba, at ang mga bata",
+    "Ang mga natatanging nagpaparangal sa awa ng Diyos",
+    "Ang mga kaluluwa sa purgatoryo",
+    "Ang mga lumamig na ang pananampalataya"
+   ]
+  },
+  "tl": [
+   "Nobena sa Banal na Awa",
+   "Nagsisimula sa Biyernes Santo at nagtatapos sa araw bago ang Linggo ng Banal na Awa. Dasalin ang <a href=\"/tl/koronilya-ng-banal-na-awa\">Koronilya ng Banal na Awa</a> araw-araw para sa intensiyon ng araw na iyon.",
+   "Hesus, ako'y nananalig sa iyo. Ngayon ay dinadala ko sa harap ng iyong maawaing Puso ang mga hiniling mong ipanalangin namin sa araw na ito ng nobena. Kaawaan mo sila at ang buong mundo. Amen."
+  ]
+ },
+ {
+  "id": "holy-spirit",
+  "start": "E+40",
+  "en": [
+   "Novena to the Holy Spirit",
+   "The first novena: the apostles prayed with Mary for nine days between the Ascension and Pentecost (Acts 1:14). It ends the day before Pentecost.",
+   "Come, Holy Spirit, fill my heart and kindle in me the fire of your love. Give me wisdom to see what matters, courage to do what is right, and peace in what I cannot change. Renew your Church and renew the face of the earth. Amen."
+  ],
+  "es": [
+   "Novena al Espíritu Santo",
+   "La primera novena: los apóstoles rezaron con María durante nueve días entre la Ascensión y Pentecostés (Hechos 1,14). Termina la víspera de Pentecostés.",
+   "Ven, Espíritu Santo, llena mi corazón y enciende en mí el fuego de tu amor. Dame sabiduría para ver lo que importa, valor para hacer lo correcto y paz en lo que no puedo cambiar. Renueva tu Iglesia y renueva la faz de la tierra. Amén."
+  ],
+  "pt": [
+   "Novena ao Espírito Santo",
+   "A primeira novena: os apóstolos rezaram com Maria durante nove dias entre a Ascensão e Pentecostes (Atos 1,14). Termina na véspera de Pentecostes.",
+   "Vinde, Espírito Santo, enchei o meu coração e acendei em mim o fogo do vosso amor. Dai-me sabedoria para ver o que importa, coragem para fazer o que é certo e paz no que não posso mudar. Renovai a vossa Igreja e renovai a face da terra. Amém."
+  ],
+  "tl": [
+   "Nobena sa Espiritu Santo",
+   "Ang unang nobena: nanalangin ang mga apostol kasama ni Maria nang siyam na araw sa pagitan ng Pag-akyat sa Langit at Pentekostes (Mga Gawa 1:14). Nagtatapos ito sa araw bago ang Pentekostes.",
+   "Halina, Espiritu Santo, punuin mo ang aking puso at pag-alabin sa akin ang apoy ng iyong pag-ibig. Bigyan mo ako ng karunungang makita ang mahalaga, ng lakas ng loob na gawin ang tama, at ng kapayapaan sa hindi ko mababago. Panibaguhin mo ang iyong Simbahan at ang mukha ng lupa. Amen."
+  ]
+ },
+ {
+  "id": "sacred-heart",
+  "start": "E+59",
+  "en": [
+   "Novena to the Sacred Heart of Jesus",
+   "Ends the day before the Solemnity of the Sacred Heart, the Friday after Corpus Christi.",
+   "Most Sacred Heart of Jesus, you have loved me without limit. I place my trust in you and bring you this intention: (name it). Make my heart more like yours: gentle, humble and generous. Amen."
+  ],
+  "es": [
+   "Novena al Sagrado Corazón de Jesús",
+   "Termina la víspera de la solemnidad del Sagrado Corazón, el viernes después de Corpus Christi.",
+   "Sagrado Corazón de Jesús, me has amado sin medida. Pongo en ti mi confianza y te presento esta intención: (nómbrala). Haz mi corazón semejante al tuyo: manso, humilde y generoso. Amén."
+  ],
+  "pt": [
+   "Novena ao Sagrado Coração de Jesus",
+   "Termina na véspera da solenidade do Sagrado Coração, a sexta-feira depois de Corpus Christi.",
+   "Sagrado Coração de Jesus, vós me amastes sem medida. Ponho em vós a minha confiança e vos apresento esta intenção: (diga qual). Fazei o meu coração semelhante ao vosso: manso, humilde e generoso. Amém."
+  ],
+  "tl": [
+   "Nobena sa Sagrado Corazon ni Hesus",
+   "Nagtatapos sa araw bago ang Dakilang Kapistahan ng Sagrado Corazon, ang Biyernes pagkatapos ng Corpus Christi.",
+   "Kamahal-mahalang Puso ni Hesus, minahal mo ako nang walang hangganan. Inilalagak ko ang aking tiwala sa iyo at dinadala ko sa iyo ang intensiyong ito: (banggitin ito). Gawin mong higit na katulad ng iyo ang aking puso: maamo, mapagpakumbaba at mapagbigay. Amen."
+  ]
+ },
+ {
+  "id": "st-anthony",
+  "start": "06-04",
+  "en": [
+   "Novena to St. Anthony of Padua",
+   "Ends the day before his feast on June 13. Many people pray to St. Anthony for lost things, and for the poor.",
+   "St. Anthony, friend of the poor and finder of what is lost, you preached the Gospel with joy and loved the Lord with all your heart. Help me find what I have lost, above all any faith or hope I have let slip away. Please pray for this intention: (name it). Amen."
+  ],
+  "es": [
+   "Novena a San Antonio de Padua",
+   "Termina la víspera de su fiesta, el 13 de junio. Muchos rezan a san Antonio por las cosas perdidas y por los pobres.",
+   "San Antonio, amigo de los pobres y buscador de lo perdido, predicaste el Evangelio con alegría y amaste al Señor con todo tu corazón. Ayúdame a encontrar lo que he perdido, sobre todo la fe o la esperanza que se me hayan escapado. Ruega por esta intención: (nómbrala). Amén."
+  ],
+  "pt": [
+   "Novena a Santo Antônio",
+   "Termina na véspera da sua festa, 13 de junho. Muitos rezam a Santo Antônio pelas coisas perdidas e pelos pobres.",
+   "Santo Antônio, amigo dos pobres e achador do que se perdeu, pregastes o Evangelho com alegria e amastes o Senhor de todo o coração. Ajudai-me a encontrar o que perdi, sobretudo a fé ou a esperança que deixei escapar. Rogai por esta intenção: (diga qual). Amém."
+  ],
+  "tl": [
+   "Nobena kay San Antonio de Padua",
+   "Nagtatapos sa araw bago ang kanyang kapistahan sa Hunyo 13. Maraming nagdarasal kay San Antonio para sa mga nawawalang bagay, at para sa mga dukha.",
+   "San Antonio, kaibigan ng mga dukha at tagahanap ng nawawala, ipinangaral mo ang Ebanghelyo nang may galak at inibig mo ang Panginoon nang buong puso. Tulungan mo akong makita ang aking nawala, lalo na ang pananampalataya o pag-asang hinayaan kong mawala. Ipanalangin mo ang intensiyong ito: (banggitin ito). Amen."
+  ]
+ },
+ {
+  "id": "assumption",
+  "start": "08-06",
+  "en": [
+   "Novena for the Assumption",
+   "Ends the day before the Assumption of Mary on August 15.",
+   "Mary, taken up body and soul into heaven, you show us where our journey ends. Help me keep my eyes on heaven while I walk on earth, and pray for me now and at the hour of my death. Amen."
+  ],
+  "es": [
+   "Novena de la Asunción",
+   "Termina la víspera de la Asunción de María, el 15 de agosto.",
+   "María, llevada en cuerpo y alma al cielo, nos muestras dónde termina nuestro camino. Ayúdame a tener los ojos puestos en el cielo mientras camino en la tierra, y ruega por mí ahora y en la hora de mi muerte. Amén."
+  ],
+  "pt": [
+   "Novena da Assunção",
+   "Termina na véspera da Assunção de Maria, 15 de agosto.",
+   "Maria, elevada ao céu em corpo e alma, vós nos mostrais onde termina o nosso caminho. Ajudai-me a manter os olhos no céu enquanto caminho na terra, e rogai por mim agora e na hora da minha morte. Amém."
+  ],
+  "tl": [
+   "Nobena para sa Pag-akyat kay Maria sa Langit",
+   "Nagtatapos sa araw bago ang Pag-akyat kay Maria sa Langit sa Agosto 15.",
+   "Maria, iniakyat sa langit nang may katawan at kaluluwa, ipinakikita mo sa amin kung saan nagtatapos ang aming paglalakbay. Tulungan mo akong ituon ang aking mata sa langit habang naglalakad ako sa lupa, at ipanalangin mo ako ngayon at sa oras ng aking kamatayan. Amen."
+  ]
+ },
+ {
+  "id": "st-therese",
+  "start": "09-22",
+  "en": [
+   "Novena to St. Thérèse of Lisieux",
+   "Ends the day before her feast on October 1. St. Thérèse promised to spend her heaven doing good on earth.",
+   "St. Thérèse, Little Flower, you found the way to holiness in small things done with great love. Teach me your little way of trust. Please ask God for this intention: (name it). Amen."
+  ],
+  "es": [
+   "Novena a Santa Teresita del Niño Jesús",
+   "Termina la víspera de su fiesta, el 1 de octubre. Santa Teresita prometió pasar su cielo haciendo el bien en la tierra.",
+   "Santa Teresita, Florecilla, encontraste el camino a la santidad en las cosas pequeñas hechas con gran amor. Enséñame tu caminito de confianza. Pide a Dios por esta intención: (nómbrala). Amén."
+  ],
+  "pt": [
+   "Novena a Santa Teresinha",
+   "Termina na véspera da sua festa, 1º de outubro. Santa Teresinha prometeu passar o seu céu fazendo o bem na terra.",
+   "Santa Teresinha, Florzinha de Jesus, encontrastes o caminho da santidade nas pequenas coisas feitas com grande amor. Ensinai-me a vossa pequena via de confiança. Pedi a Deus por esta intenção: (diga qual). Amém."
+  ],
+  "tl": [
+   "Nobena kay Santa Teresita ng Lisieux",
+   "Nagtatapos sa araw bago ang kanyang kapistahan sa Oktubre 1. Nangako si Santa Teresita na gugugulin niya ang kanyang langit sa paggawa ng mabuti sa lupa.",
+   "Santa Teresita, Munting Bulaklak, natagpuan mo ang daan sa kabanalan sa maliliit na bagay na ginagawa nang may dakilang pag-ibig. Ituro mo sa akin ang iyong munting daan ng pagtitiwala. Ihingi mo sa Diyos ang intensiyong ito: (banggitin ito). Amen."
+  ]
+ },
+ {
+  "id": "st-jude",
+  "start": "10-19",
+  "en": [
+   "Novena to St. Jude",
+   "Ends the day before the feast of Sts. Simon and Jude on October 28. St. Jude is the patron of difficult and desperate cases.",
+   "St. Jude, apostle and friend of Jesus, people turn to you when things seem hopeless. I bring you this need: (name it). Pray that God will help me, and give me the grace to accept his will with peace. Amen."
+  ],
+  "es": [
+   "Novena a San Judas Tadeo",
+   "Termina la víspera de la fiesta de san Simón y san Judas, el 28 de octubre. San Judas es patrono de las causas difíciles y desesperadas.",
+   "San Judas Tadeo, apóstol y amigo de Jesús, a ti acudimos cuando todo parece perdido. Te presento esta necesidad: (nómbrala). Ruega para que Dios me ayude y me dé la gracia de aceptar su voluntad con paz. Amén."
+  ],
+  "pt": [
+   "Novena a São Judas Tadeu",
+   "Termina na véspera da festa de São Simão e São Judas, 28 de outubro. São Judas é o padroeiro das causas difíceis e desesperadas.",
+   "São Judas Tadeu, apóstolo e amigo de Jesus, recorremos a vós quando tudo parece perdido. Apresento-vos esta necessidade: (diga qual). Rogai para que Deus me ajude e me dê a graça de aceitar a sua vontade com paz. Amém."
+  ],
+  "tl": [
+   "Nobena kay San Judas Tadeo",
+   "Nagtatapos sa araw bago ang kapistahan nina San Simon at San Judas sa Oktubre 28. Si San Judas ang patron ng mahihirap at desperadong kalagayan.",
+   "San Judas, apostol at kaibigan ni Hesus, lumalapit sa iyo ang mga tao kapag tila wala nang pag-asa. Dinadala ko sa iyo ang pangangailangang ito: (banggitin ito). Ipanalangin mo na tulungan ako ng Diyos, at bigyan ako ng biyayang tanggapin ang kanyang kalooban nang may kapayapaan. Amen."
+  ]
+ },
+ {
+  "id": "immaculate-conception",
+  "start": "11-29",
+  "en": [
+   "Novena to the Immaculate Conception",
+   "Ends the day before the Immaculate Conception on December 8, the patronal feast of the United States.",
+   "Mary, conceived without sin, God prepared you from the first moment of your life to be the mother of his Son. Pray for me, that I may turn away from sin and say yes to God as you did. Watch over our country and all its people. Amen."
+  ],
+  "es": [
+   "Novena a la Inmaculada Concepción",
+   "Termina la víspera de la Inmaculada Concepción, el 8 de diciembre, fiesta patronal de Estados Unidos.",
+   "María, concebida sin pecado, Dios te preparó desde el primer momento de tu vida para ser la madre de su Hijo. Ruega por mí, para que me aparte del pecado y diga sí a Dios como tú. Cuida de nuestro país y de toda su gente. Amén."
+  ],
+  "pt": [
+   "Novena à Imaculada Conceição",
+   "Termina na véspera da Imaculada Conceição, 8 de dezembro, festa da padroeira dos Estados Unidos.",
+   "Maria, concebida sem pecado, Deus vos preparou desde o primeiro momento da vossa vida para ser a mãe do seu Filho. Rogai por mim, para que eu me afaste do pecado e diga sim a Deus como vós. Cuidai do nosso país e de todo o seu povo. Amém."
+  ],
+  "tl": [
+   "Nobena sa Kalinis-linisang Paglilihi",
+   "Nagtatapos sa araw bago ang Kalinis-linisang Paglilihi sa Disyembre 8, ang kapistahan ng patrona ng Estados Unidos at ng Pilipinas.",
+   "Maria, ipinaglihing walang kasalanan, inihanda ka ng Diyos mula sa unang sandali ng iyong buhay upang maging ina ng kanyang Anak. Ipanalangin mo ako, upang tumalikod ako sa kasalanan at magsabi ng oo sa Diyos gaya mo. Bantayan mo ang aming bansa at ang lahat ng mamamayan nito. Amen."
+  ]
+ },
+ {
+  "id": "guadalupe",
+  "start": "12-03",
+  "en": [
+   "Novena to Our Lady of Guadalupe",
+   "Ends the day before her feast on December 12. She appeared to St. Juan Diego in 1531 and is patroness of the Americas.",
+   "Our Lady of Guadalupe, you told St. Juan Diego, “Am I not here, I who am your mother?” Hold me and my family close. Pray for the unborn, for migrants and for everyone far from home. I bring you this intention: (name it). Amen."
+  ],
+  "es": [
+   "Novena a la Virgen de Guadalupe",
+   "Termina la víspera de su fiesta, el 12 de diciembre. Se apareció a san Juan Diego en 1531 y es patrona de América.",
+   "Virgen de Guadalupe, le dijiste a san Juan Diego: «¿No estoy yo aquí, que soy tu madre?». Abrázame a mí y a mi familia. Ruega por los niños que van a nacer, por los migrantes y por todos los que están lejos de casa. Te presento esta intención: (nómbrala). Amén."
+  ],
+  "pt": [
+   "Novena a Nossa Senhora de Guadalupe",
+   "Termina na véspera da sua festa, 12 de dezembro. Ela apareceu a São Juan Diego em 1531 e é padroeira da América.",
+   "Nossa Senhora de Guadalupe, vós dissestes a São Juan Diego: “Não estou aqui eu, que sou tua mãe?” Abraçai a mim e à minha família. Rogai pelos que vão nascer, pelos migrantes e por todos os que estão longe de casa. Apresento-vos esta intenção: (diga qual). Amém."
+  ],
+  "tl": [
+   "Nobena sa Mahal na Birhen ng Guadalupe",
+   "Nagtatapos sa araw bago ang kanyang kapistahan sa Disyembre 12. Nagpakita siya kay San Juan Diego noong 1531 at siya ang patrona ng Amerika at ng Pilipinas.",
+   "Mahal na Birhen ng Guadalupe, sinabi mo kay San Juan Diego: “Hindi ba ako narito, ako na iyong ina?” Yakapin mo ako at ang aking pamilya. Ipanalangin mo ang mga sanggol sa sinapupunan, ang mga migrante at ang lahat ng malayo sa kanilang tahanan. Dinadala ko sa iyo ang intensiyong ito: (banggitin ito). Amen."
+  ]
+ },
+ {
+  "id": "christmas",
+  "start": "12-16",
+  "en": [
+   "Christmas Novena",
+   "The nine days before Christmas, December 16 to 24. In Spanish-speaking parishes these evenings are kept as the Posadas.",
+   "Come, Lord Jesus. As Mary and Joseph searched for a place to stay, make room in my heart for you. Prepare my family to welcome you this Christmas, and let me bring your peace to someone who needs it. Amen."
+  ],
+  "es": [
+   "Novena de Navidad",
+   "Los nueve días antes de Navidad, del 16 al 24 de diciembre. En muchas parroquias se celebran como las Posadas.",
+   "Ven, Señor Jesús. Como María y José buscaron posada, haz lugar para ti en mi corazón. Prepara a mi familia para recibirte en esta Navidad, y que yo lleve tu paz a alguien que la necesite. Amén."
+  ],
+  "pt": [
+   "Novena de Natal",
+   "Os nove dias antes do Natal, de 16 a 24 de dezembro.",
+   "Vinde, Senhor Jesus. Como Maria e José procuraram um lugar para ficar, abri espaço para vós no meu coração. Preparai a minha família para vos receber neste Natal, e que eu leve a vossa paz a alguém que precise. Amém."
+  ],
+  "tl": [
+   "Nobena ng Pasko",
+   "Ang siyam na araw bago ang Pasko, Disyembre 16 hanggang 24. Sa mga parokyang Pilipino, ito ang Simbang Gabi: siyam na Misa sa madaling-araw o sa gabi.",
+   "Halina, Panginoong Hesus. Gaya nina Maria at Jose na naghanap ng matutuluyan, bigyan mo ng puwang ang aking puso para sa iyo. Ihanda mo ang aking pamilya na tanggapin ka ngayong Pasko, at hayaan mong dalhin ko ang iyong kapayapaan sa nangangailangan nito. Amen."
+  ]
+ }
 ]
