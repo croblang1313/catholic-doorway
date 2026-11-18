@@ -91,7 +91,17 @@ def year(x):
     return int(m.group(1)) if m else 0
 
 
+# Places Wikidata does not tie to a state: U.S. territories and nationwide jurisdictions.
+TERRITORY = {"Phoenix": "Arizona", "Tucson": "Arizona", "Hagåtña": "Guam", "Chalan Kanoa": "Northern Mariana Islands",
+             "Pago Pago": "American Samoa", "Charlotte Amalie": "U.S. Virgin Islands"}
+PR = {"San Juan", "Arecibo", "Caguas", "Fajardo", "Mayagüez", "Ponce"}
+SAINTS = Path(__file__).resolve().parent.parent / "site" / "data" / "saints-directory.json"
+
+
 def main():
+    # Holy people come only from our saints directory, which has already checked they are Catholic.
+    known = {a[0]: a[4] for a in json.loads(SAINTS.read_text(encoding="utf-8"))["people"]}
+
     rows = sparql(DIOCESES)
     print(f"{len(rows)} diocese rows")
     out = {}
@@ -132,9 +142,9 @@ def main():
         pl = v(b, "pl").rsplit("/", 1)[-1]
         st = state_of[pl] or ("District of Columbia" if pl == "Q61" else "")
         pid = v(b, "p").rsplit("/", 1)[-1]
-        rank = STATUS_RANK.get(v(b, "st").rsplit("/", 1)[-1], 0)
+        rank = known.get(pid, 0)
         name = v(b, "pLabel")
-        if not st or re.match(r"^Q\d+$", name):
+        if not st or not rank or re.match(r"^Q\d+$", name):
             continue
         cur = by_state.setdefault(st, {}).get(pid)
         if not cur or rank > cur["rank"]:
@@ -145,9 +155,20 @@ def main():
     for d in out.values():
         d["types"] = sorted(d["types"])
         d["states"] = sorted(d["states"])
+        if not d.get("website") and not d.get("ch") and not d.get("bishop"):
+            continue  # a historical record, not a living diocese
         if "Washington" in d["name"] and not d["states"]:
             d["states"] = ["District of Columbia"]
-        slug = slugify(d["name"])
+        if not d["states"]:
+            city = d.get("city", "")
+            if city in TERRITORY:
+                d["states"] = [TERRITORY[city]]
+            elif city in PR or "Puerto Rico" in d["name"]:
+                d["states"] = ["Puerto Rico"]
+            elif "New Orleans" in d["name"]:
+                d["states"] = ["Louisiana"]
+        d["short"] = re.sub(r"^Roman Catholic ", "", d["name"])
+        slug = slugify(d["short"])
         while slug in used:
             slug += "-" + d["qid"].lower()
         used.add(slug)
