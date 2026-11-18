@@ -108,6 +108,12 @@ ES_PAGES = [
      "Definiciones sencillas de las palabras católicas, de Adviento a Vísperas."),
     ("structure", "estructura", "La Iglesia", "Cómo se organiza la Iglesia Católica | CatholicDoorway",
      "Cómo se organiza la Iglesia Católica: el Papa, los obispos, las diócesis, las parroquias, los sacerdotes y los diáconos, explicado con sencillez."),
+    ("dioceses", "diocesis", "Diócesis", "Las diócesis católicas de Estados Unidos | CatholicDoorway",
+     "Todas las diócesis, arquidiócesis y eparquías católicas de Estados Unidos: su obispo, su catedral, su sitio web y ayuda para empezar OCIA."),
+    ("popes", "papas", "Los Papas", "Los 267 Papas, de San Pedro a León XIV | CatholicDoorway",
+     "Todos los Papas en orden, de San Pedro a León XIV: su lugar en la sucesión, sus años de pontificado y por qué se les recuerda."),
+    ("saints", "santos", "Santos", "Santos, Beatos y Venerables católicos | CatholicDoorway",
+     "Conoce a los santos y el camino a la santidad: Siervo de Dios, Venerable, Beato y Santo."),
     ("find-a-church", "buscar-iglesia", "Buscar una iglesia", "Encuentra una iglesia católica cerca de ti | CatholicDoorway",
      "Busca iglesias católicas en Estados Unidos por ciudad o código postal: dirección, teléfono, sitio web y cómo llegar."),
 ]
@@ -270,15 +276,25 @@ EXTRA = {
 STATUS_LABEL = {"saint": "Saint", "blessed": "Blessed", "venerable": "Venerable", "servant": "Servant of God"}
 
 
-def saints_html():
-    data = json.loads((ROOT / "src" / "data" / "saints.json").read_text(encoding="utf-8"))
+STATUS_LABEL_ES = {"saint": ("Santo", "Santa"), "blessed": ("Beato", "Beata"), "venerable": ("Venerable", "Venerable"),
+                   "servant": ("Siervo de Dios", "Sierva de Dios")}
+
+
+def saints_html(lang="en"):
+    es = lang == "es"
+    data = json.loads((ROOT / "src" / "data" / ("saints_es.json" if es else "saints.json")).read_text(encoding="utf-8"))
     out = []
     for p in data:
         e = html.escape
-        feast = f" &middot; Feast: {e(p['feast'])}" if p.get("feast") else ""
+        feast = f" &middot; {'Fiesta' if es else 'Feast'}: {e(p['feast'])}" if p.get("feast") else ""
+        if es:
+            fem = p["name"].startswith(("Santa ", "Beata ", "Sierva ")) or p["name"].startswith("Venerable") and p["name"].split()[1] in ("Mary", "Henriette")
+            label = STATUS_LABEL_ES[p["status"]][1 if fem else 0]
+        else:
+            label = STATUS_LABEL[p["status"]]
         out.append(
             f'      <article class="card saint" data-status="{p["status"]}">'
-            f'<span class="status s-{p["status"]}">{STATUS_LABEL[p["status"]]}</span>'
+            f'<span class="status s-{p["status"]}">{label}</span>'
             f'<h3>{e(p["name"])}</h3><span class="meta">{e(p["years"])}{feast}</span>'
             f'<p>{e(p["bio"])}</p><span class="meta" style="margin-top:.4rem">{e(p["tags"][0].upper() + p["tags"][1:])}</span></article>')
     return "\n".join(out)
@@ -312,40 +328,77 @@ def _ordinal(n):
     return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
 
 
-def popes_html():
+POPE_ES = {"Peter": "Pedro", "Linus": "Lino", "Anacletus": "Anacleto", "Clement": "Clemente", "Evaristus": "Evaristo",
+           "Alexander": "Alejandro", "Sixtus": "Sixto", "Telesphorus": "Telesforo", "Hyginus": "Higinio", "Pius": "Pío",
+           "Anicetus": "Aniceto", "Soter": "Sotero", "Eleutherius": "Eleuterio", "Victor": "Víctor", "Zephyrinus": "Ceferino",
+           "Callixtus": "Calixto", "Urban": "Urbano", "Pontian": "Ponciano", "Anterus": "Antero", "Fabian": "Fabián",
+           "Cornelius": "Cornelio", "Lucius": "Lucio", "Stephen": "Esteban", "Dionysius": "Dionisio", "Felix": "Félix",
+           "Eutychian": "Eutiquiano", "Caius": "Cayo", "Marcellinus": "Marcelino", "Marcellus": "Marcelo", "Eusebius": "Eusebio",
+           "Miltiades": "Melquíades", "Sylvester": "Silvestre", "Mark": "Marcos", "Julius": "Julio", "Liberius": "Liberio",
+           "Damasus": "Dámaso", "Siricius": "Siricio", "Anastasius": "Anastasio", "Innocent": "Inocencio", "Zosimus": "Zósimo",
+           "Boniface": "Bonifacio", "Celestine": "Celestino", "Leo": "León", "Hilarius": "Hilario", "Simplicius": "Simplicio",
+           "Gelasius": "Gelasio", "Symmachus": "Símaco", "John": "Juan", "Agapetus": "Agapito", "Silverius": "Silverio",
+           "Vigilius": "Vigilio", "Pelagius": "Pelagio", "Benedict": "Benedicto", "Gregory": "Gregorio", "Sabinian": "Sabiniano",
+           "Adeodatus": "Adeodato", "Honorius": "Honorio", "Severinus": "Severino", "Theodore": "Teodoro", "Martin": "Martín",
+           "Eugene": "Eugenio", "Vitalian": "Vitaliano", "Donus": "Dono", "Agatho": "Agatón", "Conon": "Conón", "Sergius": "Sergio",
+           "Sisinnius": "Sisinio", "Constantine": "Constantino", "Zachary": "Zacarías", "Paul": "Pablo", "Adrian": "Adriano",
+           "Paschal": "Pascual", "Valentine": "Valentín", "Nicholas": "Nicolás", "Marinus": "Marino", "Formosus": "Formoso",
+           "Romanus": "Romano", "Lando": "Landón", "Francis": "Francisco"}
+ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII",
+         "XIX", "XX", "XXI"]
+
+
+def pope_name_es(n):
+    n = n.replace("(the Great)", "Magno").replace("(1st time)", "(primera vez)").replace("(2nd time)", "(segunda vez)").replace("(3rd time)", "(tercera vez)")
+    pre = ""
+    for a, b in (("St. ", "San "), ("Bl. ", "Beato "), ("Ven. ", "Venerable ")):
+        if n.startswith(a):
+            pre, n = b, n[len(a):]
+    n = " ".join(POPE_ES.get(w, w) for w in n.split(" "))
+    return pre + n
+
+
+def popes_html(lang="en"):
+    es = lang == "es"
     rows = [l.split("\t") for l in (ROOT / "src" / "data" / "popes.tsv").read_text(encoding="utf-8").splitlines()
             if l and not l.startswith("#")]
+    if es:
+        tr = dict(l.split("\t", 1) for l in (ROOT / "src" / "data" / "popes_es.tsv").read_text(encoding="utf-8").splitlines() if l)
     e = html.escape
+    yr = (lambda d: _yr(d).replace("c. ", "h. ")) if es else _yr
     out, cents, cur = [], [], None
     for ord_, name, bn, start, end, birth, death, summary in rows:
         n = int(ord_)
+        if es:
+            name, summary = pope_name_es(name), tr[ord_]
         c = (int(start[:4]) - 1) // 100 + 1
         if c != cur:
             if cur is not None:
                 out.append("    </ol>")
             cur = c
             cents.append(c)
-            out.append(f'    <h2 class="pope-cent" id="c{c}">{_ordinal(c)} century</h2>\n    <ol class="popes">')
+            head = f"Siglo {ROMAN[c]}" if es else f"{_ordinal(c)} century"
+            out.append(f'    <h2 class="pope-cent" id="c{c}">{head}</h2>\n    <ol class="popes">')
         if n == 1:
-            reign, life = "c. 30s &ndash; 64 or 67", "Martyred in Rome, 64 or 67"
+            reign, life = ("h. años 30 &ndash; 64 o 67", "Mártir en Roma, 64 o 67") if es else ("c. 30s &ndash; 64 or 67", "Martyred in Rome, 64 or 67")
         else:
-            a, b = _yr(start), _yr(end)
-            reign = (f"since {a}" if not end else a if a == b else f"{a}&ndash;{b}")
+            a, b = yr(start), yr(end)
+            reign = (f"{'desde' if es else 'since'} {a}" if not end else a if a == b else f"{a}&ndash;{b}")
             if not death:
-                life = f"Born {_yr(birth)}"
+                life = f"{'Nació en' if es else 'Born'} {yr(birth)}"
             elif birth:
-                life = f"Lived {_yr(birth)}&ndash;{_yr(death)}"
+                life = f"{'Vivió' if es else 'Lived'} {yr(birth)}&ndash;{yr(death)}"
             else:
-                life = f"Died {_yr(death)}"
-        born = f'<span class="pope-bn">Born {e(bn)}</span>' if bn else ""
+                life = f"{'Murió en' if es else 'Died'} {yr(death)}"
+        born = f'<span class="pope-bn">{"Nombre de pila:" if es else "Born"} {e(bn)}</span>' if bn else ""
         curcls = " current" if not end else ""
         out.append(
             f'      <li class="pope{curcls}" id="pope-{n}" value="{n}"><span class="pope-no" aria-hidden="true">{n}</span>'
             f'<div><h3>{e(name)}</h3>{born}'
-            f'<p class="pope-meta"><span>Pope {reign}</span><span>{life}</span></p>'
+            f'<p class="pope-meta"><span>{"Papa" if es else "Pope"} {reign}</span><span>{life}</span></p>'
             f'<p>{e(summary)}</p></div></li>')
     out.append("    </ol>")
-    jump = "\n".join(f'    <a href="#c{c}">{_ordinal(c)}</a>' for c in cents)
+    jump = "\n".join(f'    <a href="#c{c}">{ROMAN[c] if es else _ordinal(c)}</a>' for c in cents)
     return "\n".join(out), jump
 
 
@@ -440,23 +493,47 @@ ABBR = dict(zip("Alabama Alaska Arizona Arkansas California Colorado Connecticut
 ABBR = {k.replace("~", " "): v for k, v in ABBR.items()}
 
 
-def dio_place(d):
-    st = ", ".join(f"{x} ({ABBR[x]})" if x in ABBR else x for x in d["states"])
+ES_STATE = {"New York": "Nueva York", "New Jersey": "Nueva Jersey", "New Mexico": "Nuevo México", "North Carolina": "Carolina del Norte",
+            "South Carolina": "Carolina del Sur", "North Dakota": "Dakota del Norte", "South Dakota": "Dakota del Sur",
+            "Pennsylvania": "Pensilvania", "Hawaii": "Hawái", "Louisiana": "Luisiana", "Missouri": "Misuri", "Mississippi": "Misisipi",
+            "Michigan": "Míchigan", "Oregon": "Oregón", "Virginia": "Virginia", "West Virginia": "Virginia Occidental",
+            "District of Columbia": "Distrito de Columbia", "Kansas": "Kansas", "Tennessee": "Tennessee",
+            "Northern Mariana Islands": "Islas Marianas del Norte", "American Samoa": "Samoa Americana",
+            "U.S. Virgin Islands": "Islas Vírgenes de EE. UU.", "Puerto Rico": "Puerto Rico"}
+
+
+def dio_place(d, lang="en"):
+    es = lang == "es"
+    name = (lambda x: ES_STATE.get(x, x)) if es else (lambda x: x)
+    st = ", ".join(f"{name(x)} ({ABBR[x]})" if x in ABBR else name(x) for x in d["states"])
     if dio_kind(d) == "eastern":
-        return "Eastern Catholic, nationwide" + (f" (based in {d['city']}, {st})" if d.get("city") and st else "")
+        base = "Católica oriental, todo el país" if es else "Eastern Catholic, nationwide"
+        if d.get("city") and st:
+            base += f" ({'sede en' if es else 'based in'} {d['city']}, {', '.join(name(x) for x in d['states'])})"
+        return base
     if dio_kind(d) == "nationwide":
-        return "Nationwide"
-    return st or "United States"
+        return "Todo el país" if es else "Nationwide"
+    return st or ("Estados Unidos" if es else "United States")
 
 
-def dio_rows(data):
+def dio_name_es(n):
+    for a, b in (("Archdiocese for the", "Arquidiócesis para los"), ("Archdiocese of", "Arquidiócesis de"), ("Diocese of", "Diócesis de")):
+        if n.startswith(a):
+            n = b + n[len(a):]
+            break
+    return n.replace("Military Services", "Servicios Militares").replace(" in California", ", California").replace(" in Florida", ", Florida")
+
+
+def dio_rows(data, lang="en"):
+    es = lang == "es"
     order = {"latin": 0, "eastern": 1, "nationwide": 2}
     ds = sorted(data["dioceses"], key=lambda d: (order[dio_kind(d)], d["states"][0] if d["states"] else "~", d["short"]))
     rows = []
     for d in ds:
-        lead = html.escape(d.get("bishop", "")) or '<span class="muted">Vacant or not recorded</span>'
-        rows.append(f'          <tr><td><a href="/dioceses/{d["slug"]}">{html.escape(d["short"])}</a></td>'
-                    f'<td>{html.escape(dio_place(d))}</td><td>{lead}</td></tr>')
+        lead = html.escape(d.get("bishop", "")) or f'<span class="muted">{"Vacante o sin dato" if es else "Vacant or not recorded"}</span>'
+        nm = dio_name_es(d["short"]) if es else d["short"]
+        rows.append(f'          <tr><td><a href="/dioceses/{d["slug"]}">{html.escape(nm)}</a></td>'
+                    f'<td>{html.escape(dio_place(d, lang))}</td><td>{lead}</td></tr>')
     return "\n".join(rows), len(ds)
 
 
@@ -602,7 +679,8 @@ ES_SUBNAV = {"comenzar": [("comenzar", "Hacerse católico (OCIA)"), ("primera-mi
              "oraciones": [("oraciones", "Oraciones católicas"), ("rosario", "Reza el Rosario")],
              "biblia": [("biblia", "Las lecturas de hoy y la Biblia"), ("calendario", "Calendario de días santos")],
              "creencias": [("creencias", "Lo que creen los católicos"), ("preguntas", "Preguntas sinceras"), ("glosario", "Glosario")],
-             "estructura": [("estructura", "Cómo se organiza la Iglesia"), ("buscar-iglesia", "Buscar una iglesia")]}
+             "estructura": [("estructura", "Cómo se organiza la Iglesia"), ("papas", "Los 267 Papas"), ("diocesis", "Las diócesis de EE. UU."),
+                            ("buscar-iglesia", "Buscar una iglesia")]}
 ES_SUB_CHILDREN = {c for subs in ES_SUBNAV.values() for c, _ in subs} - set(ES_SUBNAV)
 
 
@@ -643,6 +721,15 @@ def build_es():
         body = body.replace("{{DOOR}}", DOOR_SVG)
         if "{{QUESTIONS}}" in body:
             body = body.replace("{{QUESTIONS}}", questions_html("es"))
+        if "{{SAINTS}}" in body:
+            body = body.replace("{{SAINTS}}", saints_html("es"))
+        if "{{DIOCESES}}" in body:
+            dd = load_dioceses()
+            rows, n = dio_rows(dd, "es")
+            body = body.replace("{{DIOCESES}}", rows).replace("{{DIOCESE_COUNT}}", str(n)).replace("{{DIOCESE_UPDATED}}", dd["updated"])
+        if "{{POPES}}" in body:
+            pl, pj = popes_html("es")
+            body = body.replace("{{POPES}}", pl).replace("{{CENTURIES}}", pj)
         if "{{GLOSSARY}}" in body:
             g, a = glossary_html("es")
             body = body.replace("{{GLOSSARY}}", g).replace("{{ALPHA}}", a)

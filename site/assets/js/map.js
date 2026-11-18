@@ -158,7 +158,7 @@
     return '<details class="ocia"' + (OCIA ? ' open' : '') + '><summary>' + T('Becoming Catholic? Ask about OCIA', '¿Quieres hacerte católico? Pregunta por OCIA') + '</summary>' +
       '<p>' + T('Every parish can connect you with its OCIA group. Call or write and say something like:', 'Cada parroquia puede ponerte en contacto con su grupo de OCIA. Llama o escribe y di algo así:') + '</p>' +
       '<p class="ocia-say">' + say + '</p>' +
-      (btns ? '<div class="actions">' + btns + '</div>' : '<p class="muted">' + T('No phone or website is listed for this church. Try a nearby parish, or ', 'Esta iglesia no tiene teléfono ni sitio web en la lista. Prueba otra parroquia cercana o ') + '<a href="/dioceses">' + T('contact your diocese', 'comunícate con tu diócesis') + '</a>.</p>') +
+      (btns ? '<div class="actions">' + btns + '</div>' : '<p class="muted">' + T('No phone or website is listed for this church. Try a nearby parish, or ', 'Esta iglesia no tiene teléfono ni sitio web en la lista. Prueba otra parroquia cercana o ') + '<a href="' + T('/dioceses', '/es/diocesis') + '">' + T('contact your diocese', 'comunícate con tu diócesis') + '</a>.</p>') +
       '<p class="small muted">' + T('On the website, look for “OCIA,” “RCIA” or “Becoming Catholic.” ', 'En el sitio web, busca “OCIA”, “RICA” o “Hacerse católico”. ') + '<a href="' + (ES ? '/es/comenzar' : '/start-here') + '">' + T('How OCIA works', 'Cómo funciona OCIA') + '</a></p>' +
       '</details>';
   }
