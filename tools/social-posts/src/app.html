@@ -66,8 +66,10 @@ table.list a{font-weight:600}
 .coach .alt{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:10px 0 0;background:#fff}
 .coach .alt p{margin:0 0 8px;white-space:pre-wrap}
 .coach details{margin-top:10px}
-.sc-hi{color:#157f3b;font-weight:700}.sc-mid{color:#b58105;font-weight:700}.sc-lo{color:#c0271b;font-weight:700}
-.coach .score.sc-hi,.coach .score.sc-mid,.coach .score.sc-lo{color:inherit}.coach .score.sc-hi{color:#157f3b}.coach .score.sc-mid{color:#b58105}.coach .score.sc-lo{color:#c0271b}
+.sc-hi,.sc-mid,.sc-lo{display:inline-block;font-weight:800;border-radius:999px;padding:1px 9px;line-height:1.5}
+.sc-hi{background:#16a34a;color:#fff}.sc-mid{background:#facc15;color:#1f1a00}.sc-lo{background:#dc2626;color:#fff}
+.coach .score.sc-hi,.coach .score.sc-mid,.coach .score.sc-lo{font-size:26px;padding:4px 16px}
+.coach .score.sc-hi small,.coach .score.sc-lo small{color:rgba(255,255,255,.85)}.coach .score.sc-mid small{color:#4a3f00}
 tr.day td{background:#f3ead6;color:#5b4413;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;padding:8px 12px}
 .pill.failed{background:#fdecea;color:var(--bad)}
 .pill.todo,.pill.processing{background:#e8efff;color:var(--accent)}
