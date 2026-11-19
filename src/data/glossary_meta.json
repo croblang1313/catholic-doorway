@@ -1,0 +1,1157 @@
+{
+ "cats": {
+  "mass": {
+   "en": "At Mass",
+   "es": "En la Misa",
+   "pt": "Na Missa",
+   "tl": "Sa Misa"
+  },
+  "beliefs": {
+   "en": "Beliefs & Teaching",
+   "es": "Creencias y enseñanza",
+   "pt": "Crenças e ensinamento",
+   "tl": "Paniniwala at turo"
+  },
+  "ocia": {
+   "en": "Becoming Catholic",
+   "es": "Hacerse católico",
+   "pt": "Tornar-se católico",
+   "tl": "Pagiging Katoliko"
+  },
+  "building": {
+   "en": "Inside a Church",
+   "es": "Dentro de una iglesia",
+   "pt": "Dentro de uma igreja",
+   "tl": "Sa loob ng simbahan"
+  },
+  "hierarchy": {
+   "en": "Church Hierarchy",
+   "es": "Jerarquía de la Iglesia",
+   "pt": "Hierarquia da Igreja",
+   "tl": "Herarkiya ng Simbahan"
+  },
+  "prayer": {
+   "en": "Prayer & Devotions",
+   "es": "Oración y devociones",
+   "pt": "Oração e devoções",
+   "tl": "Panalangin at debosyon"
+  },
+  "sacraments": {
+   "en": "Sacraments",
+   "es": "Sacramentos",
+   "pt": "Sacramentos",
+   "tl": "Mga sakramento"
+  },
+  "saints": {
+   "en": "Saints & Mary",
+   "es": "Los santos y María",
+   "pt": "Os santos e Maria",
+   "tl": "Mga santo at si Maria"
+  },
+  "seasons": {
+   "en": "Seasons & Feasts",
+   "es": "Tiempos y fiestas",
+   "pt": "Tempos e festas",
+   "tl": "Mga panahon at kapistahan"
+  },
+  "vestments": {
+   "en": "Vestments & Colors",
+   "es": "Vestiduras y colores",
+   "pt": "Vestes e cores",
+   "tl": "Kasuotan at kulay"
+  }
+ },
+ "terms": {
+  "absolution": {
+   "c": [
+    "sacraments"
+   ],
+   "r": [
+    "confession",
+    "examination-of-conscience",
+    "confessional"
+   ]
+  },
+  "adoration": {
+   "c": [
+    "prayer"
+   ],
+   "r": [
+    "blessed-sacrament",
+    "monstrance",
+    "real-presence",
+    "eucharist",
+    "cope"
+   ]
+  },
+  "advent": {
+   "c": [
+    "seasons"
+   ],
+   "r": [
+    "liturgical-colors",
+    "ordinary-time",
+    "lent"
+   ]
+  },
+  "altar": {
+   "c": [
+    "building",
+    "mass"
+   ],
+   "r": [
+    "sanctuary",
+    "crucifix",
+    "tabernacle",
+    "eucharist",
+    "chalice"
+   ]
+  },
+  "annulment": {
+   "c": [
+    "sacraments"
+   ],
+   "r": [
+    "sacrament",
+    "diocese"
+   ]
+  },
+  "apostolic-succession": {
+   "c": [
+    "hierarchy",
+    "beliefs"
+   ],
+   "r": [
+    "magisterium",
+    "diocese",
+    "vatican",
+    "cathedral"
+   ]
+  },
+  "assumption": {
+   "c": [
+    "saints",
+    "beliefs"
+   ],
+   "r": [
+    "immaculate-conception",
+    "holy-day-of-obligation"
+   ]
+  },
+  "beatification": {
+   "c": [
+    "saints"
+   ],
+   "r": [
+    "canonization",
+    "communion-of-saints"
+   ]
+  },
+  "blessed-sacrament": {
+   "c": [
+    "mass",
+    "prayer"
+   ],
+   "r": [
+    "eucharist",
+    "tabernacle",
+    "adoration",
+    "sanctuary-lamp",
+    "monstrance"
+   ]
+  },
+  "canonization": {
+   "c": [
+    "saints"
+   ],
+   "r": [
+    "beatification",
+    "communion-of-saints",
+    "doctor-of-the-church"
+   ]
+  },
+  "candidate": {
+   "c": [
+    "ocia"
+   ],
+   "r": [
+    "catechumen",
+    "ocia",
+    "sponsor",
+    "inquirer"
+   ]
+  },
+  "catechism": {
+   "c": [
+    "beliefs"
+   ],
+   "r": [
+    "magisterium",
+    "creed"
+   ]
+  },
+  "catechumen": {
+   "c": [
+    "ocia"
+   ],
+   "r": [
+    "inquirer",
+    "elect",
+    "ocia",
+    "candidate"
+   ]
+  },
+  "chrism": {
+   "c": [
+    "sacraments"
+   ],
+   "r": [
+    "confirmation",
+    "sacrament",
+    "sacramental"
+   ]
+  },
+  "communion-of-saints": {
+   "c": [
+    "beliefs",
+    "saints"
+   ],
+   "r": [
+    "purgatory",
+    "canonization"
+   ]
+  },
+  "conclave": {
+   "c": [
+    "hierarchy"
+   ],
+   "r": [
+    "vatican",
+    "zucchetto"
+   ]
+  },
+  "confession": {
+   "c": [
+    "sacraments"
+   ],
+   "r": [
+    "absolution",
+    "examination-of-conscience",
+    "confessional",
+    "mortal-sin",
+    "venial-sin"
+   ]
+  },
+  "confirmation": {
+   "c": [
+    "sacraments",
+    "ocia"
+   ],
+   "r": [
+    "chrism",
+    "sponsor",
+    "pentecost"
+   ]
+  },
+  "consecration": {
+   "c": [
+    "mass"
+   ],
+   "r": [
+    "eucharistic-prayer",
+    "transubstantiation",
+    "real-presence",
+    "eucharist"
+   ]
+  },
+  "creed": {
+   "c": [
+    "mass",
+    "beliefs"
+   ],
+   "r": [
+    "trinity",
+    "incarnation",
+    "catechism"
+   ]
+  },
+  "deacon": {
+   "c": [
+    "hierarchy"
+   ],
+   "r": [
+    "dalmatic",
+    "stole",
+    "homily",
+    "parish"
+   ]
+  },
+  "deuterocanonical": {
+   "c": [
+    "beliefs"
+   ],
+   "r": [
+    "lectionary",
+    "magisterium"
+   ]
+  },
+  "diocese": {
+   "c": [
+    "hierarchy"
+   ],
+   "r": [
+    "parish",
+    "cathedral",
+    "eparchy",
+    "apostolic-succession"
+   ]
+  },
+  "doctor-of-the-church": {
+   "c": [
+    "saints"
+   ],
+   "r": [
+    "canonization"
+   ]
+  },
+  "elect": {
+   "c": [
+    "ocia"
+   ],
+   "r": [
+    "catechumen",
+    "scrutinies",
+    "triduum"
+   ]
+  },
+  "encyclical": {
+   "c": [
+    "beliefs",
+    "hierarchy"
+   ],
+   "r": [
+    "magisterium",
+    "vatican"
+   ]
+  },
+  "eparchy": {
+   "c": [
+    "hierarchy"
+   ],
+   "r": [
+    "diocese"
+   ]
+  },
+  "eucharist": {
+   "c": [
+    "sacraments",
+    "mass"
+   ],
+   "r": [
+    "tabernacle",
+    "monstrance",
+    "real-presence",
+    "transubstantiation",
+    "blessed-sacrament",
+    "consecration",
+    "ciborium"
+   ]
+  },
+  "examination-of-conscience": {
+   "c": [
+    "prayer",
+    "sacraments"
+   ],
+   "r": [
+    "confession",
+    "mortal-sin",
+    "venial-sin"
+   ]
+  },
+  "genuflect": {
+   "c": [
+    "mass"
+   ],
+   "r": [
+    "tabernacle",
+    "real-presence",
+    "sign-of-the-cross",
+    "kneeler"
+   ]
+  },
+  "grace": {
+   "c": [
+    "beliefs"
+   ],
+   "r": [
+    "sacrament",
+    "original-sin"
+   ]
+  },
+  "holy-day-of-obligation": {
+   "c": [
+    "seasons"
+   ],
+   "r": [
+    "mass",
+    "assumption",
+    "immaculate-conception"
+   ]
+  },
+  "holy-water": {
+   "c": [
+    "building",
+    "prayer"
+   ],
+   "r": [
+    "sacramental",
+    "sign-of-the-cross",
+    "narthex",
+    "baptismal-font"
+   ]
+  },
+  "homily": {
+   "c": [
+    "mass"
+   ],
+   "r": [
+    "ambo",
+    "lectionary",
+    "deacon"
+   ]
+  },
+  "immaculate-conception": {
+   "c": [
+    "saints",
+    "beliefs"
+   ],
+   "r": [
+    "original-sin",
+    "assumption",
+    "holy-day-of-obligation"
+   ]
+  },
+  "incarnation": {
+   "c": [
+    "beliefs"
+   ],
+   "r": [
+    "trinity",
+    "creed"
+   ]
+  },
+  "indulgence": {
+   "c": [
+    "beliefs"
+   ],
+   "r": [
+    "purgatory",
+    "communion-of-saints",
+    "confession"
+   ]
+  },
+  "inquirer": {
+   "c": [
+    "ocia"
+   ],
+   "r": [
+    "ocia",
+    "catechumen",
+    "candidate"
+   ]
+  },
+  "lectio-divina": {
+   "c": [
+    "prayer"
+   ],
+   "r": [
+    "liturgy-of-the-hours",
+    "lectionary"
+   ]
+  },
+  "lectionary": {
+   "c": [
+    "mass"
+   ],
+   "r": [
+    "ambo",
+    "missal",
+    "homily"
+   ]
+  },
+  "lent": {
+   "c": [
+    "seasons"
+   ],
+   "r": [
+    "liturgical-colors",
+    "triduum",
+    "stations-of-the-cross",
+    "scrutinies"
+   ]
+  },
+  "liturgy": {
+   "c": [
+    "mass"
+   ],
+   "r": [
+    "mass",
+    "liturgy-of-the-hours",
+    "liturgical-colors"
+   ]
+  },
+  "liturgy-of-the-hours": {
+   "c": [
+    "prayer"
+   ],
+   "r": [
+    "liturgy",
+    "lectio-divina"
+   ]
+  },
+  "magisterium": {
+   "c": [
+    "beliefs",
+    "hierarchy"
+   ],
+   "r": [
+    "catechism",
+    "encyclical",
+    "apostolic-succession"
+   ]
+  },
+  "mass": {
+   "c": [
+    "mass",
+    "sacraments"
+   ],
+   "r": [
+    "eucharist",
+    "liturgy",
+    "missal",
+    "homily",
+    "eucharistic-prayer"
+   ]
+  },
+  "missal": {
+   "c": [
+    "mass"
+   ],
+   "r": [
+    "lectionary",
+    "liturgy"
+   ]
+  },
+  "monstrance": {
+   "c": [
+    "prayer",
+    "building"
+   ],
+   "r": [
+    "adoration",
+    "blessed-sacrament",
+    "eucharist",
+    "cope"
+   ]
+  },
+  "mortal-sin": {
+   "c": [
+    "beliefs",
+    "sacraments"
+   ],
+   "r": [
+    "venial-sin",
+    "confession",
+    "grace"
+   ]
+  },
+  "mystagogy": {
+   "c": [
+    "ocia"
+   ],
+   "r": [
+    "neophyte",
+    "ocia"
+   ]
+  },
+  "neophyte": {
+   "c": [
+    "ocia"
+   ],
+   "r": [
+    "mystagogy",
+    "elect"
+   ]
+  },
+  "novena": {
+   "c": [
+    "prayer"
+   ],
+   "r": [
+    "rosary",
+    "pentecost",
+    "votive-candles"
+   ]
+  },
+  "ocia": {
+   "c": [
+    "ocia"
+   ],
+   "r": [
+    "inquirer",
+    "catechumen",
+    "candidate",
+    "elect",
+    "sponsor",
+    "scrutinies",
+    "mystagogy"
+   ]
+  },
+  "ordinary-time": {
+   "c": [
+    "seasons"
+   ],
+   "r": [
+    "liturgical-colors",
+    "advent",
+    "lent"
+   ]
+  },
+  "original-sin": {
+   "c": [
+    "beliefs"
+   ],
+   "r": [
+    "grace",
+    "immaculate-conception",
+    "baptismal-font"
+   ]
+  },
+  "parish": {
+   "c": [
+    "hierarchy"
+   ],
+   "r": [
+    "pastor",
+    "diocese",
+    "deacon"
+   ]
+  },
+  "pastor": {
+   "c": [
+    "hierarchy"
+   ],
+   "r": [
+    "parish",
+    "diocese"
+   ]
+  },
+  "pentecost": {
+   "c": [
+    "seasons"
+   ],
+   "r": [
+    "confirmation",
+    "liturgical-colors",
+    "novena"
+   ]
+  },
+  "purgatory": {
+   "c": [
+    "beliefs"
+   ],
+   "r": [
+    "communion-of-saints",
+    "indulgence"
+   ]
+  },
+  "real-presence": {
+   "c": [
+    "mass",
+    "beliefs"
+   ],
+   "r": [
+    "eucharist",
+    "transubstantiation",
+    "tabernacle",
+    "monstrance",
+    "genuflect"
+   ]
+  },
+  "rosary": {
+   "c": [
+    "prayer"
+   ],
+   "r": [
+    "novena",
+    "sacramental"
+   ]
+  },
+  "sacrament": {
+   "c": [
+    "sacraments",
+    "beliefs"
+   ],
+   "r": [
+    "grace",
+    "sacramental",
+    "eucharist",
+    "confession",
+    "confirmation"
+   ]
+  },
+  "sacramental": {
+   "c": [
+    "prayer"
+   ],
+   "r": [
+    "holy-water",
+    "rosary",
+    "sacrament",
+    "votive-candles"
+   ]
+  },
+  "scrutinies": {
+   "c": [
+    "ocia"
+   ],
+   "r": [
+    "elect",
+    "lent"
+   ]
+  },
+  "sponsor": {
+   "c": [
+    "ocia"
+   ],
+   "r": [
+    "candidate",
+    "catechumen",
+    "confirmation"
+   ]
+  },
+  "tabernacle": {
+   "c": [
+    "building",
+    "mass"
+   ],
+   "r": [
+    "blessed-sacrament",
+    "sanctuary-lamp",
+    "real-presence",
+    "genuflect",
+    "ciborium",
+    "eucharist"
+   ]
+  },
+  "transubstantiation": {
+   "c": [
+    "beliefs",
+    "mass"
+   ],
+   "r": [
+    "real-presence",
+    "consecration",
+    "eucharist"
+   ]
+  },
+  "trinity": {
+   "c": [
+    "beliefs"
+   ],
+   "r": [
+    "creed",
+    "incarnation",
+    "sign-of-the-cross"
+   ]
+  },
+  "triduum": {
+   "c": [
+    "seasons"
+   ],
+   "r": [
+    "lent",
+    "elect",
+    "liturgical-colors"
+   ]
+  },
+  "vatican": {
+   "c": [
+    "hierarchy"
+   ],
+   "r": [
+    "conclave",
+    "encyclical"
+   ]
+  },
+  "venial-sin": {
+   "c": [
+    "beliefs"
+   ],
+   "r": [
+    "mortal-sin",
+    "confession"
+   ]
+  },
+  "vestments": {
+   "c": [
+    "vestments",
+    "mass"
+   ],
+   "r": [
+    "alb",
+    "stole",
+    "chasuble",
+    "dalmatic",
+    "liturgical-colors"
+   ]
+  },
+  "narthex": {
+   "c": [
+    "building"
+   ],
+   "r": [
+    "nave",
+    "holy-water",
+    "baptismal-font"
+   ]
+  },
+  "nave": {
+   "c": [
+    "building"
+   ],
+   "r": [
+    "narthex",
+    "sanctuary",
+    "pew"
+   ]
+  },
+  "sanctuary": {
+   "c": [
+    "building",
+    "mass"
+   ],
+   "r": [
+    "altar",
+    "ambo",
+    "presider-chair",
+    "tabernacle",
+    "sanctuary-lamp"
+   ]
+  },
+  "ambo": {
+   "c": [
+    "building",
+    "mass"
+   ],
+   "r": [
+    "lectionary",
+    "homily",
+    "sanctuary"
+   ]
+  },
+  "presider-chair": {
+   "c": [
+    "building"
+   ],
+   "r": [
+    "sanctuary",
+    "altar",
+    "cathedral"
+   ]
+  },
+  "baptismal-font": {
+   "c": [
+    "building",
+    "sacraments"
+   ],
+   "r": [
+    "holy-water",
+    "narthex",
+    "original-sin"
+   ]
+  },
+  "crucifix": {
+   "c": [
+    "building"
+   ],
+   "r": [
+    "altar",
+    "stations-of-the-cross"
+   ]
+  },
+  "sanctuary-lamp": {
+   "c": [
+    "building"
+   ],
+   "r": [
+    "tabernacle",
+    "blessed-sacrament"
+   ]
+  },
+  "votive-candles": {
+   "c": [
+    "building",
+    "prayer"
+   ],
+   "r": [
+    "sacramental",
+    "novena"
+   ]
+  },
+  "confessional": {
+   "c": [
+    "building",
+    "sacraments"
+   ],
+   "r": [
+    "confession",
+    "absolution"
+   ]
+  },
+  "pew": {
+   "c": [
+    "building"
+   ],
+   "r": [
+    "kneeler",
+    "nave"
+   ]
+  },
+  "kneeler": {
+   "c": [
+    "building",
+    "mass"
+   ],
+   "r": [
+    "pew",
+    "genuflect"
+   ]
+  },
+  "stations-of-the-cross": {
+   "c": [
+    "building",
+    "prayer"
+   ],
+   "r": [
+    "lent",
+    "crucifix"
+   ]
+  },
+  "cathedral": {
+   "c": [
+    "building",
+    "hierarchy"
+   ],
+   "r": [
+    "diocese",
+    "presider-chair",
+    "mitre"
+   ]
+  },
+  "chalice": {
+   "c": [
+    "mass"
+   ],
+   "r": [
+    "paten",
+    "ciborium",
+    "altar"
+   ]
+  },
+  "ciborium": {
+   "c": [
+    "mass"
+   ],
+   "r": [
+    "tabernacle",
+    "chalice",
+    "eucharist"
+   ]
+  },
+  "paten": {
+   "c": [
+    "mass"
+   ],
+   "r": [
+    "chalice",
+    "altar"
+   ]
+  },
+  "alb": {
+   "c": [
+    "vestments"
+   ],
+   "r": [
+    "cincture",
+    "stole",
+    "chasuble",
+    "dalmatic"
+   ]
+  },
+  "cincture": {
+   "c": [
+    "vestments"
+   ],
+   "r": [
+    "alb"
+   ]
+  },
+  "stole": {
+   "c": [
+    "vestments"
+   ],
+   "r": [
+    "chasuble",
+    "dalmatic",
+    "deacon",
+    "liturgical-colors"
+   ]
+  },
+  "chasuble": {
+   "c": [
+    "vestments"
+   ],
+   "r": [
+    "alb",
+    "stole",
+    "liturgical-colors"
+   ]
+  },
+  "dalmatic": {
+   "c": [
+    "vestments"
+   ],
+   "r": [
+    "deacon",
+    "stole",
+    "alb"
+   ]
+  },
+  "cassock": {
+   "c": [
+    "vestments"
+   ],
+   "r": [
+    "surplice",
+    "clerical-collar",
+    "zucchetto"
+   ]
+  },
+  "surplice": {
+   "c": [
+    "vestments"
+   ],
+   "r": [
+    "cassock",
+    "altar-server",
+    "alb"
+   ]
+  },
+  "clerical-collar": {
+   "c": [
+    "vestments"
+   ],
+   "r": [
+    "cassock",
+    "deacon"
+   ]
+  },
+  "cope": {
+   "c": [
+    "vestments"
+   ],
+   "r": [
+    "adoration",
+    "monstrance",
+    "liturgical-colors"
+   ]
+  },
+  "mitre": {
+   "c": [
+    "vestments",
+    "hierarchy"
+   ],
+   "r": [
+    "crozier",
+    "zucchetto",
+    "cathedral"
+   ]
+  },
+  "crozier": {
+   "c": [
+    "vestments",
+    "hierarchy"
+   ],
+   "r": [
+    "mitre",
+    "diocese"
+   ]
+  },
+  "zucchetto": {
+   "c": [
+    "vestments",
+    "hierarchy"
+   ],
+   "r": [
+    "mitre",
+    "cassock",
+    "conclave"
+   ]
+  },
+  "liturgical-colors": {
+   "c": [
+    "vestments",
+    "seasons"
+   ],
+   "r": [
+    "advent",
+    "lent",
+    "ordinary-time",
+    "pentecost",
+    "chasuble"
+   ]
+  },
+  "altar-server": {
+   "c": [
+    "mass"
+   ],
+   "r": [
+    "surplice",
+    "alb",
+    "altar"
+   ]
+  },
+  "sign-of-the-cross": {
+   "c": [
+    "prayer",
+    "mass"
+   ],
+   "r": [
+    "trinity",
+    "holy-water",
+    "genuflect"
+   ]
+  },
+  "amen": {
+   "c": [
+    "mass",
+    "prayer"
+   ],
+   "r": [
+    "eucharistic-prayer",
+    "creed"
+   ]
+  },
+  "eucharistic-prayer": {
+   "c": [
+    "mass"
+   ],
+   "r": [
+    "consecration",
+    "amen",
+    "transubstantiation"
+   ]
+  }
+ }
+}
