@@ -349,6 +349,8 @@ dl.glossary dt:target { background: var(--gold-soft); border-radius: 6px; paddin
 .footer-base { border-top: 1px solid rgba(255,255,255,.1); margin-top: 2rem; padding-top: 1.2rem; font-size: .88rem; color: #a59f92; }
 .footer-legal { margin: 1rem 0 0; text-align: center; }
 .footer-legal a { white-space: nowrap; }
+.site-footer a.footer-staff { display: inline-flex; vertical-align: middle; margin-left: .6rem; color: #f1e9d6; opacity: .18; transition: opacity .2s, color .2s; }
+.site-footer a.footer-staff:hover, .site-footer a.footer-staff:focus-visible { opacity: 1; color: #e9cf8e; }
 .legal h3 { margin-top: 1.4rem; }
 
 /* Two-column content with side nav on wide screens */
