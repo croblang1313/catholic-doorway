@@ -12,7 +12,7 @@
  *   DRAFTS_TOKEN    secret: lets Claude or a script leave drafts (optional)
  *   SITE_NAME       text: shown on the page (optional)
  *
- * Version 1.0.0-cd (Catholic Doorway: Facebook, Instagram, X, TikTok only; optional post_on date on drafts). License: GPL-2.0-or-later.
+ * Version 1.1.0-cd (Catholic Doorway: Facebook, Instagram, X, TikTok only; optional post_on date on drafts). License: GPL-2.0-or-later.
  */
 
 const VERSION = '1.0.0';
@@ -218,6 +218,22 @@ async function sameText(a, b) {
 	let diff = 0;
 	for (let i = 0; i < da.length; i++) diff |= da[i] ^ db[i];
 	return diff === 0;
+}
+
+// Coach notes from the posting skills (post-writer, post-grader, viral-hooks): a score, the hook
+// pattern, why it works, the grader's scorecard and up to 3 alternate captions. Display only.
+function cleanCoach(c) {
+	if (!c || typeof c !== 'object') return null;
+	const num = (n) => { const v = Number(n); return isFinite(v) ? Math.max(0, Math.min(10, Math.round(v * 10) / 10)) : null; };
+	const out = {
+		score: num(c.score),
+		hook: cleanText(c.hook, 80).trim(),
+		why: cleanText(c.why, 400).trim(),
+		scorecard: (Array.isArray(c.scorecard) ? c.scorecard : []).slice(0, 8).map((r) => ({ name: cleanText(r && r.name, 40).trim(), score: num(r && r.score) })).filter((r) => r.name && r.score !== null),
+		fixes: (Array.isArray(c.fixes) ? c.fixes : []).slice(0, 3).map((f) => cleanText(f, 300).trim()).filter(Boolean),
+		alternates: (Array.isArray(c.alternates) ? c.alternates : []).slice(0, 3).map((a) => ({ caption: cleanText(a && a.caption, 2200).trim(), hook: cleanText(a && a.hook, 80).trim(), score: num(a && a.score) })).filter((a) => a.caption),
+	};
+	return out.score === null && !out.hook && !out.why && !out.alternates.length ? null : out;
 }
 
 function cleanText(s, max) {
@@ -427,6 +443,7 @@ async function savePost(env, id, b, who) {
 		caption,
 		title,
 		post_on: /^\d{4}-\d{2}-\d{2}$/.test(String(b.post_on || '')) ? String(b.post_on) : (post && post.post_on) || '',
+		coach: b.coach !== undefined ? cleanCoach(b.coach) : post && post.coach ? Object.assign({}, post.coach, { edited: post.coach.edited || post.caption !== caption }) : null,
 		updated: now,
 	});
 	await env.SOCIAL.put('post:' + post.id, JSON.stringify(post));

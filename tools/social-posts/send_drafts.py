@@ -9,7 +9,15 @@ sent.txt as each draft is created, so a week is never sent twice.
 plan.json is a list of posts:
   [{"post_on": "2026-11-23", "platforms": ["facebook","instagram","x","tiktok"],
     "caption": "Post text with link and hashtags",
-    "image": {"kicker": "...", "title": "...", "body": "...", "ref": "...", "theme": "cream|navy"}}]
+    "image": {"kicker": "...", "title": "...", "body": "...", "ref": "...", "theme": "cream|navy"},
+    "coach": {"score": 8.4, "hook": "Myth-Buster", "why": "One sentence on why it works.",
+              "scorecard": [{"name": "Hook strength", "score": 8}, ...],
+              "fixes": ["What would raise the score"],
+              "alternates": [{"caption": "Another full version", "hook": "Question Hook", "score": 7.9}]}}]
+
+"coach" is optional. It holds the post-writer / post-grader / viral-hooks results and shows as
+"Coach notes" on the draft's page, where Christopher can swap in an alternate with one tap.
+Follow /mnt/project-files/social-posts/brand-brief.md; its House Rules win over the skills' defaults.
 
 The drafts token comes from $DRAFTS_TOKEN or the file named by $DRAFTS_TOKEN_FILE.
 It can only upload media and create drafts; it cannot approve or post.
@@ -60,7 +68,8 @@ def main():
         media = call("/api/media", open(img, "rb").read(), "image/jpeg", tok, {"X-Width": "1080", "X-Height": "1350"})
         draft = call("/api/drafts", json.dumps({
             "kind": "photo", "platforms": post.get("platforms", ["facebook", "instagram", "x", "tiktok"]),
-            "media": [media["key"]], "caption": cap, "post_on": post["post_on"]}).encode(), "application/json", tok)
+            "media": [media["key"]], "caption": cap, "post_on": post["post_on"],
+            **({"coach": post["coach"]} if post.get("coach") else {})}).encode(), "application/json", tok)
         print("draft", post["post_on"], draft.get("review_url"))
         with open(sent, "a") as f:
             f.write(f"{post['post_on']} {draft.get('review_url')}\n")
