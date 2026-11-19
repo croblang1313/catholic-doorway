@@ -3,6 +3,9 @@
 
 Usage: python3 send_drafts.py plan.json [--dry-run]
 
+A real send refuses to run if sent.txt is in the plan's folder, and writes
+sent.txt as each draft is created, so a week is never sent twice.
+
 plan.json is a list of posts:
   [{"post_on": "2026-11-23", "platforms": ["facebook","instagram","x","tiktok"],
     "caption": "Post text with link and hashtags",
@@ -36,7 +39,11 @@ def call(path, data, ctype, tok, extra=None):
 def main():
     plan = json.load(open(sys.argv[1]))
     dry = "--dry-run" in sys.argv
-    out_dir = os.path.join(os.path.dirname(os.path.abspath(sys.argv[1])), "images")
+    week_dir = os.path.dirname(os.path.abspath(sys.argv[1]))
+    sent = os.path.join(week_dir, "sent.txt")
+    if not dry and os.path.exists(sent):
+        sys.exit(f"already sent: {sent} exists, so these drafts are on the site already. Nothing done.")
+    out_dir = os.path.join(week_dir, "images")
     os.makedirs(out_dir, exist_ok=True)
     tok = None if dry else token()
     for i, post in enumerate(plan, 1):
@@ -55,6 +62,8 @@ def main():
             "kind": "photo", "platforms": post.get("platforms", ["facebook", "instagram", "x", "tiktok"]),
             "media": [media["key"]], "caption": cap, "post_on": post["post_on"]}).encode(), "application/json", tok)
         print("draft", post["post_on"], draft.get("review_url"))
+        with open(sent, "a") as f:
+            f.write(f"{post['post_on']} {draft.get('review_url')}\n")
 
 
 if __name__ == "__main__":
