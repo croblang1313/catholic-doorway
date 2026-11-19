@@ -16,6 +16,8 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import features  # noqa: E402
+import seasons  # noqa: E402
+import searchindex  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES_DIR = ROOT / "src" / "pages"
@@ -48,6 +50,12 @@ PAGES = [
      "How to plan a Catholic funeral: the vigil, funeral Mass and committal, cremation rules, costs, and having a Mass offered for the deceased."),
     ("baptism-certificate", "Baptism Records", "How to Get a Copy of Your Catholic Baptism Certificate | CatholicDoorway",
      "How to request your Catholic baptism record with notations for a wedding or sponsor letter, including closed parishes and baptisms abroad."),
+    ("confirmation", "Confirmation", "How to Be Confirmed in the Catholic Church: Teens and Adults | CatholicDoorway",
+     "Catholic Confirmation explained: what it is, the age in U.S. dioceses, adult Confirmation, choosing a sponsor and a Confirmation name, and what happens at the Mass."),
+    ("first-communion", "First Communion", "First Holy Communion: Preparation, the Day and How to Receive | CatholicDoorway",
+     "How First Communion works in a U.S. parish: age and preparation, First Confession, what to wear, fasting, how to receive Communion, and options for older children and adults."),
+    ("holy-orders", "Holy Orders and Vocations", "Holy Orders and Vocations: Becoming a Priest, Deacon or Religious | CatholicDoorway",
+     "What Holy Orders is, the difference between deacons, priests and bishops, how to discern a vocation, seminary and diaconate formation, and religious life for women and men."),
     ("examination-of-conscience", "Examination of Conscience", "Examination of Conscience for Kids, Teens and Adults | CatholicDoorway",
      "A Catholic examination of conscience before Confession, in versions for kids, teens and adults. Tick what applies and make a private list on your phone."),
     ("ocia-listing", "List Your Parish's OCIA", "List Your Parish's OCIA Program | CatholicDoorway",
@@ -70,6 +78,12 @@ PAGES = [
      "The words of the Angelus, prayed at 6 a.m., noon and 6 p.m., and the Regina Caeli for the Easter season, with a free daily reminder."),
     ("liturgy-of-the-hours", "Liturgy of the Hours", "Liturgy of the Hours: Today's Morning and Evening Prayer | CatholicDoorway",
      "Pray today's Morning, Evening and Night Prayer of the Liturgy of the Hours, and learn how the Divine Office works and how to begin."),
+    ("advent", "Advent and Christmas", "Advent and Christmas: Dates, Wreath Prayers and Traditions | CatholicDoorway",
+     "This year's Advent and Christmas dates, Advent wreath prayers for each week, the O Antiphons, Simbang Gabi and Las Posadas, Confession before Christmas and the Christmas Masses."),
+    ("read-the-bible", "Read the Bible", "Read the Catholic Bible Online: Douay-Rheims, All 73 Books | CatholicDoorway",
+     "Read the complete Catholic Bible free online in the Douay-Rheims translation: all 73 books, chapter by chapter, with quick passage lookup such as John 3:16."),
+    ("search", "Search", "Search CatholicDoorway",
+     "Search CatholicDoorway's prayers, how-to guides, Catholic terms, saints, beliefs and diocese pages."),
     ("bible", "Bible & Readings", "The Bible and Today's Mass Readings | CatholicDoorway",
      "Today's Catholic Mass readings, how the Catholic Bible is arranged, and where to read it free online."),
     ("calendar", "Holy Days Calendar", "Catholic Holy Days of Obligation and Fasting Calendar | CatholicDoorway",
@@ -106,13 +120,14 @@ PAGES = [
      "Terms of use for CatholicDoorway.com: an independent guide, not an official Church resource. Mass times, parish OCIA listings and how you may share our content."),
     ("404", "Not found", "Page not found | CatholicDoorway", "This page could not be found."),
 ]
-NAV_EXCLUDE = {"privacy", "terms", "examination-of-conscience", "ocia-listing", "devotions", "divine-mercy-chaplet", "stations-of-the-cross", "novenas", "angelus", "liturgy-of-the-hours", "church-documents", "about", "404", "saints-directory", "how-to", "confession", "coming-back", "join-a-parish", "baptism", "marriage", "anointing", "funerals", "baptism-certificate", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary", "questions", "church-anatomy", "vestments", "inside-the-mass"}
+NAV_EXCLUDE = {"privacy", "terms", "confirmation", "first-communion", "holy-orders", "advent", "read-the-bible", "search", "examination-of-conscience", "ocia-listing", "devotions", "divine-mercy-chaplet", "stations-of-the-cross", "novenas", "angelus", "liturgy-of-the-hours", "church-documents", "about", "404", "saints-directory", "how-to", "confession", "coming-back", "join-a-parish", "baptism", "marriage", "anointing", "funerals", "baptism-certificate", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary", "questions", "church-anatomy", "vestments", "inside-the-mass"}
 # Pages shown in a dropdown under a main menu item: parent slug -> [(slug, label)]
 SUBNAV = {"beliefs": [("beliefs", "What Catholics Believe"), ("questions", "Honest Questions, Answered"),
                       ("church-documents", "Catechism and Church Documents")],
           "prayers": [("prayers", "Catholic Prayers"), ("rosary", "Pray the Rosary"), ("devotions", "Devotions and Reminders"),
-                      ("liturgy-of-the-hours", "Liturgy of the Hours"), ("stations-of-the-cross", "Stations of the Cross")],
-          "bible": [("bible", "Today’s Readings and the Bible"), ("calendar", "Holy Days Calendar")],
+                      ("liturgy-of-the-hours", "Liturgy of the Hours"), ("stations-of-the-cross", "Stations of the Cross"),
+                      ("advent", "Advent and Christmas")],
+          "bible": [("bible", "Today’s Readings and the Bible"), ("read-the-bible", "Read the Bible"), ("calendar", "Holy Days Calendar")],
           "start-here": [("start-here", "Becoming Catholic (OCIA)"), ("first-mass", "Your First Mass"),
                          ("how-to", "How-To Guides"),
                          ("examination-of-conscience", "Examination of Conscience")],
@@ -147,6 +162,16 @@ ES_PAGES = [
      "Cómo preparar un funeral católico: la vigilia, la Misa de funeral y la sepultura, las normas sobre la cremación, los costos y las Misas por los difuntos."),
     ("baptism-certificate", "fe-de-bautismo", "Fe de bautismo", "Cómo pedir tu fe de bautismo católica | CatholicDoorway",
      "Cómo solicitar tu fe de bautismo con notas marginales para una boda o para ser padrino, incluso si la parroquia cerró o te bautizaron en otro país."),
+    ("confirmation", "confirmacion", "Confirmación", "Cómo confirmarse en la Iglesia Católica: jóvenes y adultos | CatholicDoorway",
+     "La Confirmación explicada: qué es, la edad en las diócesis de EE. UU., la Confirmación de adultos, cómo elegir padrino y nombre, y qué pasa en la Misa."),
+    ("first-communion", "primera-comunion", "Primera Comunión", "La Primera Comunión: preparación, el día y cómo comulgar | CatholicDoorway",
+     "Cómo funciona la Primera Comunión en una parroquia de EE. UU.: edad y preparación, la Primera Confesión, qué ponerse, el ayuno, cómo comulgar y opciones para niños mayores y adultos."),
+    ("holy-orders", "orden-sacerdotal", "Orden sacerdotal y vocaciones", "El Orden sacerdotal y las vocaciones: ser sacerdote, diácono o religioso | CatholicDoorway",
+     "Qué es el sacramento del Orden, la diferencia entre diáconos, sacerdotes y obispos, cómo discernir una vocación, el seminario, el diaconado y la vida consagrada."),
+    ("advent", "adviento", "Adviento y Navidad", "Adviento y Navidad: fechas, oraciones de la corona y tradiciones | CatholicDoorway",
+     "Las fechas de Adviento y Navidad de este año, oraciones para la corona de Adviento, las antífonas «O», las Posadas, la confesión antes de Navidad y las Misas de Navidad."),
+    ("search", "buscar", "Buscar", "Buscar en CatholicDoorway",
+     "Busca entre las oraciones, guías, términos católicos, santos, creencias y diócesis de CatholicDoorway."),
     ("examination-of-conscience", "examen-de-conciencia", "Examen de conciencia", "Examen de conciencia para niños, adolescentes y adultos | CatholicDoorway",
      "Un examen de conciencia católico para antes de confesarse, en versiones para niños, adolescentes y adultos. Marca lo que aplique y haz una lista privada en tu teléfono."),
     ("devotions", "devociones", "Devociones", "Devociones católicas y recordatorios de oración | CatholicDoorway",
@@ -206,10 +231,10 @@ ES_PAGES = [
 ]
 ES_TEXT = dict(lang="es", skip="Saltar al contenido", home="/es/", home_label="Inicio de CatholicDoorway",
                theme_label="Cambiar a modo claro u oscuro", menu_label="Menú", nav_label="Principal",
-               alt_lang="en", alt_label="English")
+               alt_lang="en", alt_label="English", search_url="/es/buscar", search_label="Buscar")
 EN_TEXT = dict(lang="en", skip="Skip to content", home="/", home_label="CatholicDoorway home",
                theme_label="Switch light or dark mode", menu_label="Menu", nav_label="Main",
-               alt_lang="es", alt_label="Español")
+               alt_lang="es", alt_label="Español", search_url="/search", search_label="Search")
 EN_TO_ES = {en: es for en, es, *_ in ES_PAGES}
 
 # Portuguese: the core pages for newcomers. en_slug, pt_slug, nav label, <title>, meta description
@@ -220,6 +245,16 @@ PT_PAGES = [
      "Interessado na Igreja Católica? Como funciona a OCIA, suas quatro etapas, quanto tempo dura, com quem falar e o que esperar na sua primeira Missa."),
     ("first-mass", "primeira-missa", "Sua primeira Missa", "Sua primeira Missa, passo a passo | CatholicDoorway",
      "Vai à Missa pela primeira vez? Um guia passo a passo no seu celular: quando ficar de pé, sentar e ajoelhar, o que se responde e o que fazer na Comunhão."),
+    ("confirmation", "crisma", "Crisma", "Como ser crismado na Igreja Católica: jovens e adultos | CatholicDoorway",
+     "A Crisma (Confirmação) explicada: o que é, a idade nas dioceses dos EUA, a Crisma de adultos, como escolher padrinho e nome, e o que acontece na Missa."),
+    ("first-communion", "primeira-comunhao", "Primeira Comunhão", "A Primeira Comunhão: preparação, o dia e como comungar | CatholicDoorway",
+     "Como funciona a Primeira Comunhão numa paróquia dos EUA: idade e preparação, a Primeira Confissão, o que vestir, o jejum, como comungar e opções para crianças maiores e adultos."),
+    ("holy-orders", "ordem", "Ordem e vocações", "O sacramento da Ordem e as vocações: ser padre, diácono ou religioso | CatholicDoorway",
+     "O que é o sacramento da Ordem, a diferença entre diáconos, padres e bispos, como discernir uma vocação, o seminário, o diaconato e a vida consagrada."),
+    ("advent", "advento", "Advento e Natal", "Advento e Natal: datas, orações da coroa e tradições | CatholicDoorway",
+     "As datas do Advento e do Natal deste ano, orações da coroa do Advento, as antífonas do Ó, a confissão antes do Natal e as Missas de Natal."),
+    ("search", "buscar", "Buscar", "Buscar no CatholicDoorway",
+     "Procure orações, guias, termos católicos, santos, crenças e dioceses no CatholicDoorway."),
     ("examination-of-conscience", "exame-de-consciencia", "Exame de consciência", "Exame de consciência para crianças, adolescentes e adultos | CatholicDoorway",
      "Um exame de consciência católico para antes da Confissão, em versões para crianças, adolescentes e adultos. Marque o que se aplica e faça uma lista privada no celular."),
     ("devotions", "devocoes", "Devoções", "Devoções católicas e lembretes de oração | CatholicDoorway",
@@ -296,12 +331,14 @@ PT_PAGES = [
      "Termos de uso do CatholicDoorway.com: um guia independente, não um recurso oficial da Igreja. Horários de Missa, cadastros de OCIA e como compartilhar o conteúdo."),
 ]
 PT_TEXT = dict(lang="pt", skip="Pular para o conteúdo", home="/pt/", home_label="Início do CatholicDoorway",
-               theme_label="Mudar para o modo claro ou escuro", menu_label="Menu", nav_label="Principal")
+               theme_label="Mudar para o modo claro ou escuro", menu_label="Menu", nav_label="Principal",
+               search_url="/pt/buscar", search_label="Buscar")
 EN_TO_PT = {en: pt for en, pt, *_ in PT_PAGES}
 PT_SUBNAV = {"comecar": [("comecar", "Tornar-se católico (OCIA)"), ("primeira-missa", "Sua primeira Missa"), ("guias", "Guias práticos"),
                          ("exame-de-consciencia", "Exame de consciência")],
              "oracoes": [("oracoes", "Orações católicas"), ("rosario", "Reze o Rosário"), ("devocoes", "Devoções e lembretes"),
-                         ("liturgia-das-horas", "Liturgia das Horas"), ("via-sacra", "Via-Sacra")],
+                         ("liturgia-das-horas", "Liturgia das Horas"), ("via-sacra", "Via-Sacra"),
+                         ("advento", "Advento e Natal")],
              "biblia": [("biblia", "As leituras de hoje e a Bíblia"), ("calendario", "Calendário de dias santos")],
              "crencas": [("crencas", "No que os católicos acreditam"), ("perguntas", "Perguntas sinceras"),
                          ("documentos-da-igreja", "O Catecismo e os documentos")],
@@ -311,7 +348,7 @@ PT_SUBNAV = {"comecar": [("comecar", "Tornar-se católico (OCIA)"), ("primeira-m
              "estrutura": [("estrutura", "Como a Igreja é organizada"), ("papas", "A sucessão dos Papas"), ("dioceses", "As dioceses dos EUA"),
                            ("encontrar-igreja", "Encontrar uma igreja")]}
 # Portuguese pages reached from a hub page rather than the top menu
-PT_NAV_EXCLUDE = {"privacidade", "termos", "confissao", "voltar", "terco-da-misericordia", "via-sacra", "novenas", "angelus", "cadastrar-ocia", "sobre", "inscrever-se-paroquia", "batismo", "matrimonio", "uncao", "funeral", "certidao-de-batismo"}
+PT_NAV_EXCLUDE = {"privacidade", "termos", "crisma", "primeira-comunhao", "ordem", "buscar", "confissao", "voltar", "terco-da-misericordia", "via-sacra", "novenas", "angelus", "cadastrar-ocia", "sobre", "inscrever-se-paroquia", "batismo", "matrimonio", "uncao", "funeral", "certidao-de-batismo"}
 
 # Filipino (Tagalog): en_slug, tl_slug, nav label, <title>, meta description
 TL_PAGES = [
@@ -339,6 +376,16 @@ TL_PAGES = [
      "Paano maghanda ng libing na Katoliko: ang lamay, ang Misa ng patay at ang paglilibing, ang mga tuntunin sa cremation, ang gastos at ang pagpapamisa para sa yumao."),
     ("baptism-certificate", "katibayan-ng-binyag", "Katibayan ng binyag", "Paano kumuha ng kopya ng iyong katibayan ng binyag | CatholicDoorway",
      "Paano humingi ng katibayan ng binyag na may mga tala para sa kasal o pagiging ninong o ninang, kahit sarado na ang parokya o sa Pilipinas ka bininyagan."),
+    ("confirmation", "kumpil", "Kumpil", "Paano magpakumpil sa Simbahang Katolika: kabataan at adulto | CatholicDoorway",
+     "Ang Kumpil, ipinaliwanag: ano ito, ang edad sa mga diyosesis sa Estados Unidos, Kumpil para sa adulto, pagpili ng ninong o ninang at ng pangalan, at ang nangyayari sa Misa."),
+    ("first-communion", "unang-komunyon", "Unang Komunyon", "Ang Unang Komunyon: paghahanda, ang araw at paano tumanggap | CatholicDoorway",
+     "Paano ang Unang Komunyon sa isang parokya sa Estados Unidos: edad at paghahanda, Unang Kumpisal, isusuot, pag-aayuno, paano tumanggap ng Komunyon at para sa mas nakatatanda."),
+    ("holy-orders", "banal-na-orden", "Banal na Orden at bokasyon", "Ang Banal na Orden at bokasyon: pagiging pari, diyakono o relihiyoso | CatholicDoorway",
+     "Ano ang Banal na Orden, ang pagkakaiba ng diyakono, pari at obispo, paano kilalanin ang bokasyon, ang seminaryo, ang pagka-diyakono at ang buhay-relihiyoso."),
+    ("advent", "adbiyento", "Adbiyento at Pasko", "Adbiyento at Pasko: mga petsa, dasal sa korona, Simbang Gabi | CatholicDoorway",
+     "Ang mga petsa ng Adbiyento at Pasko ngayong taon, Simbang Gabi, mga dasal sa korona ng Adbiyento, ang O Antiphons, Kumpisal bago mag-Pasko at ang mga Misa ng Pasko."),
+    ("search", "maghanap", "Maghanap", "Maghanap sa CatholicDoorway",
+     "Maghanap ng mga dasal, gabay, terminong Katoliko, santo, paniniwala at diyosesis sa CatholicDoorway."),
     ("examination-of-conscience", "pagsusuri-ng-budhi", "Pagsusuri ng budhi", "Pagsusuri ng budhi para sa mga bata, kabataan at nakatatanda | CatholicDoorway",
      "Isang pagsusuri ng budhi bago mangumpisal, para sa mga bata, kabataan at nakatatanda. Markahan ang angkop at gumawa ng pribadong listahan sa iyong telepono."),
     ("devotions", "mga-debosyon", "Mga debosyon", "Mga debosyong Katoliko at mga paalala sa pagdarasal | CatholicDoorway",
@@ -397,12 +444,14 @@ TL_PAGES = [
      "Mga tuntunin ng paggamit ng CatholicDoorway.com: isang malayang gabay, hindi opisyal na mapagkukunan ng Simbahan. Oras ng Misa, listahan ng OCIA at pagbabahagi ng nilalaman."),
 ]
 TL_TEXT = dict(lang="tl", skip="Lumaktaw sa nilalaman", home="/tl/", home_label="Tahanan ng CatholicDoorway",
-               theme_label="Lumipat sa maliwanag o madilim na anyo", menu_label="Menu", nav_label="Pangunahin")
+               theme_label="Lumipat sa maliwanag o madilim na anyo", menu_label="Menu", nav_label="Pangunahin",
+               search_url="/tl/maghanap", search_label="Maghanap")
 EN_TO_TL = {en: tl for en, tl, *_ in TL_PAGES}
 TL_SUBNAV = {"magsimula": [("magsimula", "Maging Katoliko (OCIA)"), ("unang-misa", "Ang iyong unang Misa"), ("mga-gabay", "Mga praktikal na gabay"),
                            ("pagsusuri-ng-budhi", "Pagsusuri ng budhi")],
              "mga-dasal": [("mga-dasal", "Mga dasal Katoliko"), ("rosaryo", "Magrosaryo"), ("mga-debosyon", "Mga debosyon at paalala"),
-                           ("liturhiya-ng-mga-oras", "Liturhiya ng mga Oras"), ("daan-ng-krus", "Daan ng Krus")],
+                           ("liturhiya-ng-mga-oras", "Liturhiya ng mga Oras"), ("daan-ng-krus", "Daan ng Krus"),
+                           ("adbiyento", "Adbiyento at Pasko")],
              "bibliya": [("bibliya", "Ang mga pagbasa ngayon at ang Bibliya"), ("kalendaryo", "Kalendaryo ng mga banal na araw")],
              "mga-paniniwala": [("mga-paniniwala", "Ang pinaniniwalaan ng mga Katoliko"), ("mga-tanong", "Tapat na mga tanong"),
                                 ("katesismo-at-dokumento", "Ang Katesismo at mga dokumento")],
@@ -412,7 +461,7 @@ TL_SUBNAV = {"magsimula": [("magsimula", "Maging Katoliko (OCIA)"), ("unang-misa
              "istruktura": [("istruktura", "Paano nakaayos ang Simbahan"), ("mga-papa", "Ang paghahalili ng mga Papa"), ("mga-diyosesis", "Ang mga diyosesis sa Estados Unidos"),
                             ("hanapin-ang-simbahan", "Maghanap ng simbahan")]}
 # Filipino pages reached from a hub page rather than the top menu
-TL_NAV_EXCLUDE = {"patakaran-sa-privacy", "mga-tuntunin", "kumpisal", "pagbabalik", "koronilya-ng-banal-na-awa", "daan-ng-krus", "mga-nobena", "orasyon", "ilista-ang-ocia", "tungkol", "magpatala-sa-parokya", "binyag", "kasal", "pagpapahid-ng-langis", "libing", "katibayan-ng-binyag"}
+TL_NAV_EXCLUDE = {"patakaran-sa-privacy", "mga-tuntunin", "kumpil", "unang-komunyon", "banal-na-orden", "maghanap", "kumpisal", "pagbabalik", "koronilya-ng-banal-na-awa", "daan-ng-krus", "mga-nobena", "orasyon", "ilista-ang-ocia", "tungkol", "magpatala-sa-parokya", "binyag", "kasal", "pagpapahid-ng-langis", "libing", "katibayan-ng-binyag"}
 
 LANGS = [("en", "English", "home page"), ("es", "Español", "página de inicio"), ("pt", "Português", "página inicial"), ("tl", "Filipino", "pangunahing pahina")]
 LANG_HOME = {"en": "/", "es": "/es/", "pt": "/pt/", "tl": "/tl/"}
@@ -487,6 +536,9 @@ def alternates_html(urls):
 DOOR_SVG = '''<svg viewBox="0 0 34 40" aria-hidden="true" focusable="false"><path d="M3 39V17C3 8.7 9.3 2 17 2s14 6.7 14 15v22" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M8 39V18.5C8 13 12 8.5 17 8.5S26 13 26 18.5V39" fill="currentColor" opacity=".16"/><path d="M8 39V18.5C8 13 12 8.5 17 8.5S26 13 26 18.5V39" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M17 12v9M13.6 15.2h6.8" stroke="#a8802f" stroke-width="2" stroke-linecap="round"/><circle cx="22" cy="28" r="1.4" fill="#a8802f"/><path d="M1 39h32" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>'''
 
 MENU_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
+SEARCH_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
+for _t in (EN_TEXT, ES_TEXT, PT_TEXT, TL_TEXT):
+    _t["search_svg"] = SEARCH_SVG
 THEME_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>'
 
 HEAD = """<!doctype html>
@@ -519,6 +571,7 @@ HEAD = """<!doctype html>
   <div class="wrap header-row">
     <a class="brand" href="{home}" aria-label="{home_label}">{door}<span class="brand-name">Catholic<span>Doorway</span></span></a>
     <div class="header-tools">
+      <a class="search-btn" href="{search_url}" aria-label="{search_label}" title="{search_label}">{search_svg}</a>
       {lang_menu}
       <button class="theme-btn" type="button" data-theme-toggle aria-label="{theme_label}">{theme}</button>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">{menu}<span class="nt-label">{menu_label}</span></button>
@@ -723,6 +776,8 @@ EXTRA = {
     "rosary": ("", '<script src="/assets/js/rosary.js" defer></script>'),
     "stations-of-the-cross": ("", '<script src="/assets/js/stations.js" defer></script>'),
     "saints-directory": ("", '<script src="/assets/js/saints-dir.js" defer></script>'),
+    "read-the-bible": ("", '<script src="/assets/js/bible.js" defer></script>'),
+    "search": ("", '<script src="/assets/js/search.js" defer></script>'),
     "find-a-church": (
         '<link rel="stylesheet" href="/assets/vendor/leaflet/leaflet.css">',
         '<script src="/assets/vendor/leaflet/leaflet.js"></script>\n<script src="/assets/js/map.js" defer></script>',
@@ -1556,7 +1611,7 @@ def version(rel):
 
 
 def bust(page):
-    for rel in ("/assets/css/style.css", "/assets/js/main.js", "/assets/js/map.js", "/assets/js/rosary.js", "/assets/js/saints-dir.js", "/assets/js/pray.js"):
+    for rel in ("/assets/css/style.css", "/assets/js/main.js", "/assets/js/map.js", "/assets/js/rosary.js", "/assets/js/saints-dir.js", "/assets/js/pray.js", "/assets/js/bible.js", "/assets/js/search.js"):
         page = page.replace(f'"{rel}"', f'"{rel}?v={version(rel)}"')
     return page
 
@@ -1595,7 +1650,8 @@ def nav_html(current):
 ES_SUBNAV = {"comenzar": [("comenzar", "Hacerse católico (OCIA)"), ("primera-misa", "Tu primera Misa"), ("guias", "Guías prácticas"),
                           ("examen-de-conciencia", "Examen de conciencia")],
              "oraciones": [("oraciones", "Oraciones católicas"), ("rosario", "Reza el Rosario"), ("devociones", "Devociones y recordatorios"),
-                           ("liturgia-de-las-horas", "Liturgia de las Horas"), ("via-crucis", "Vía Crucis")],
+                           ("liturgia-de-las-horas", "Liturgia de las Horas"), ("via-crucis", "Vía Crucis"),
+                           ("adviento", "Adviento y Navidad")],
              "biblia": [("biblia", "Las lecturas de hoy y la Biblia"), ("calendario", "Calendario de días santos")],
              "creencias": [("creencias", "Lo que creen los católicos"), ("preguntas", "Preguntas sinceras"),
                            ("documentos-de-la-iglesia", "El Catecismo y los documentos")],
@@ -1606,7 +1662,7 @@ ES_SUBNAV = {"comenzar": [("comenzar", "Hacerse católico (OCIA)"), ("primera-mi
                             ("buscar-iglesia", "Buscar una iglesia")]}
 ES_SUB_CHILDREN = {c for subs in ES_SUBNAV.values() for c, _ in subs} - set(ES_SUBNAV)
 # Spanish pages reached from a hub page rather than the top menu
-ES_NAV_EXCLUDE = {"privacidad", "terminos", "confesion", "volver", "coronilla-de-la-divina-misericordia", "via-crucis", "novenas", "angelus", "registrar-ocia", "acerca", "inscribirse-parroquia", "bautismo", "matrimonio", "uncion", "funerales", "fe-de-bautismo"}
+ES_NAV_EXCLUDE = {"privacidad", "terminos", "confirmacion", "primera-comunion", "orden-sacerdotal", "buscar", "confesion", "volver", "coronilla-de-la-divina-misericordia", "via-crucis", "novenas", "angelus", "registrar-ocia", "acerca", "inscribirse-parroquia", "bautismo", "matrimonio", "uncion", "funerales", "fe-de-bautismo"}
 
 
 def lang_nav(code, pages, subnav, exclude, current):
@@ -1651,6 +1707,7 @@ def build_lang(code, pages, text, foot, subnav, exclude):
                             f'<meta property="og:site_name" content="CatholicDoorway">\n<meta property="og:locale" content="{LOCALE[code]}">')
         body = body.replace("{{DOOR}}", DOOR_SVG)
         body = features.render(body, code)
+        body = seasons.render(body, code)
         body = ocia_options(body, code)
         if "{{QUESTIONS}}" in body:
             body = body.replace("{{QUESTIONS}}", questions_html(code))
@@ -1703,6 +1760,7 @@ def main():
                            lang_menu=lang_menu("en", urls), **EN_TEXT)
         body = body.replace("{{DOOR}}", DOOR_SVG)
         body = features.render(body, "en")
+        body = seasons.render(body, "en")
         body = ocia_options(body, "en")
         if "{{SAINTS}}" in body:
             body = body.replace("{{SAINTS}}", saints_html())
@@ -1740,13 +1798,15 @@ def main():
     write_llms(len(dio_slugs))
     write_saint_days()
     features.write_worker_data(ROOT)
+    write_search(dio_slugs)
 
 
 LLMS_GROUPS = [
     ("Becoming Catholic and practical guides", ["start-here", "first-mass", "how-to", "confession", "examination-of-conscience", "coming-back",
-                                               "join-a-parish", "baptism", "marriage", "anointing", "funerals", "baptism-certificate", "ocia-listing"]),
+                                               "join-a-parish", "baptism", "confirmation", "first-communion", "marriage", "holy-orders", "anointing", "funerals",
+                                               "baptism-certificate", "ocia-listing"]),
     ("Prayer, Scripture and the calendar", ["prayers", "rosary", "devotions", "divine-mercy-chaplet", "stations-of-the-cross", "novenas", "angelus",
-                                            "liturgy-of-the-hours", "bible", "calendar"]),
+                                            "liturgy-of-the-hours", "advent", "bible", "read-the-bible", "calendar"]),
     ("What Catholics believe", ["beliefs", "questions", "church-documents", "glossary", "church-anatomy", "inside-the-mass", "vestments"]),
     ("Saints, Popes and Church structure", ["saints", "saints-directory", "popes", "structure", "dioceses", "find-a-church"]),
     ("About", ["about", "privacy", "terms"]),
@@ -1781,6 +1841,16 @@ def write_llms(dio_count):
             f"- [Saint of the day]({DOMAIN}/data/saint-days.json): the fixed-date celebrations of the U.S. General Roman Calendar (MM-DD keys).",
             f"- [Sitemap]({DOMAIN}/sitemap.xml)", ""]
     (OUT / "llms.txt").write_text("\n".join(out), encoding="utf-8")
+
+
+def write_search(dio_slugs):
+    """Site search index, one file per language, from the finished pages."""
+    lp = {"en": [("/" if s == "index" else "/" + s) for s, *_ in PAGES if s not in ("404", "search", "privacy", "terms")]}
+    for code, pages in (("es", ES_PAGES), ("pt", PT_PAGES), ("tl", TL_PAGES)):
+        lp[code] = [f"/{code}/{'' if sl == 'index' else sl}" for en, sl, *_ in pages if en not in ("search", "privacy", "terms")]
+    for c in DIO_LANGS:
+        lp.setdefault(c, []).extend(f"{DIO_BASE[c]}/{s}" for s in dio_slugs)
+    searchindex.write(OUT, {k: [(u, page_file(u).read_text(encoding="utf-8")) for u in v] for k, v in lp.items()})
 
 
 def page_file(u):

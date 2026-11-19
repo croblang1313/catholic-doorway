@@ -9,9 +9,9 @@
 // Until they exist, the endpoints answer 503 and the form offers email instead.
 // Nothing is published until an administrator approves it.
 
-const MAX = { parish: 120, city: 80, state: 40, diocese: 120, contact: 80, role: 60, email: 120, phone: 40, website: 200, schedule: 300, start: 120, notes: 600 };
+const MAX = { parish: 120, city: 80, state: 40, diocese: 120, contact: 80, role: 60, email: 120, phone: 40, website: 200, schedule: 300, start: 120, masses: 400, notes: 600 };
 const LANGS = ["en", "es", "pt", "tl", "other"];
-const PUBLIC = ["parish", "city", "state", "diocese", "contact", "role", "email", "phone", "website", "schedule", "start", "langs", "notes", "approved"];
+const PUBLIC = ["parish", "city", "state", "diocese", "contact", "role", "email", "phone", "website", "schedule", "start", "masses", "langs", "notes", "approved"];
 
 function json(body, status = 200, extra = {}) {
   return new Response(JSON.stringify(body), {
@@ -109,7 +109,7 @@ input{font:inherit;padding:.45rem;border:1px solid #bbb;border-radius:8px}form.i
 }
 
 function card(r, token) {
-  const rows = ["parish", "city", "state", "diocese", "contact", "role", "email", "phone", "website", "schedule", "start", "notes"]
+  const rows = ["parish", "city", "state", "diocese", "contact", "role", "email", "phone", "website", "schedule", "start", "masses", "notes"]
     .filter((k) => r[k]).map((k) => `<dt>${k}</dt><dd>${esc(r[k])}</dd>`).join("");
   const langs = (r.langs || []).length ? `<dt>languages</dt><dd>${esc(r.langs.join(", "))}</dd>` : "";
   const btn = (action, label, cls = "") =>

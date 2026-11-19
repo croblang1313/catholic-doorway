@@ -7,6 +7,11 @@
   // Filipino (Tagalog) strings, keyed by the English text.
   var TLX = {
     "The map could not load. Please check your connection and refresh.": "Hindi ma-load ang mapa. Pakitingnan ang iyong koneksiyon at i-refresh.",
+    "Mass times:": "Oras ng Misa:",
+    "OCIA contact:": "Contact sa OCIA:",
+    "OCIA meets:": "Nagkikita ang OCIA:",
+    "Provided by the parish": "Mula sa parokya",
+    "Parish staff: add your Mass times and OCIA contact": "Para sa parokya: idagdag ang oras ng Misa at contact sa OCIA",
     "Address not listed": "Walang nakalistang tirahan",
     "Becoming Catholic? Ask about OCIA": "Magiging Katoliko? Magtanong tungkol sa OCIA",
     "Call ": "Tumawag sa ",
@@ -215,6 +220,41 @@
   }
 
 
+  /* ---------- Parish-provided listings (Mass times, OCIA contact), reviewed before publishing ---------- */
+  var listings = [];
+  function nameKey(n) {
+    return String(n || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/['\u2019]s\b/g, '')
+      .replace(/\b(st|sta|sto|san|santa|santo|sao)\b\.?/g, ' ')
+      .replace(/\b(saint|the|of|and|catholic|roman|church|parish|community|mission|chapel|shrine|cathedral|basilica|iglesia|parroquia|igreja|paroquia|simbahan|parokya|ng|de|del|la|el|do|da|dos|das)\b/g, ' ')
+      .replace(/[^a-z0-9]+/g, '');
+  }
+  function listingFor(c) {
+    if (!listings.length) return null;
+    var k = nameKey(c.name), addr = (c.addr || '').toLowerCase();
+    if (k.length < 3) return null;
+    for (var i = 0; i < listings.length; i++) {
+      var r = listings[i], rk = r._k, city = (r.city || '').toLowerCase().trim();
+      var nameOk = rk === k || (rk.length >= 5 && k.length >= 5 && (rk.indexOf(k) >= 0 || k.indexOf(rk) >= 0));
+      if (nameOk && (addr ? (city && addr.indexOf(city) >= 0) : rk === k)) return r;
+    }
+    return null;
+  }
+  function listingBox(r) {
+    var rows = [], how = [];
+    if (r.masses) rows.push('<strong>' + T('Mass times:', 'Horarios de Misa:', 'Horários de Missa:') + '</strong> ' + esc(r.masses));
+    if (r.email) how.push('<a href="mailto:' + esc(r.email) + '">' + esc(r.email) + '</a>');
+    if (r.phone) how.push('<a href="tel:' + esc(r.phone.replace(/[^\d+]/g, '')) + '">' + esc(r.phone) + '</a>');
+    if (r.contact) rows.push('<strong>' + T('OCIA contact:', 'Contacto de OCIA:', 'Contato da OCIA:') + '</strong> ' + esc(r.contact + (r.role ? ', ' + r.role : '')) + (how.length ? ' &middot; ' + how.join(' &middot; ') : ''));
+    if (r.schedule) rows.push('<strong>' + T('OCIA meets:', 'OCIA se reúne:', 'A OCIA se reúne:') + '</strong> ' + esc(r.schedule));
+    if (r.start) rows.push(esc(r.start));
+    return '<div class="times parish-provided">' + rows.join('<br>') + '<br><span class="muted">' +
+      T('Provided by the parish', 'Información de la parroquia', 'Informado pela paróquia') + (r.approved ? ' (' + esc(r.approved) + ')' : '') + '.</span></div>';
+  }
+  var LISTING_URL = TL ? '/tl/ilista-ang-ocia#form' : PT ? '/pt/cadastrar-ocia#form' : ES ? '/es/registrar-ocia#form' : '/ocia-listing#form';
+  var listingsP = fetch('/api/ocia-listings.json').then(function (r) { return r.ok ? r.json() : { listings: [] }; }).then(function (d) {
+    listings = (d.listings || []).map(function (r) { r._k = nameKey(r.parish); return r; });
+  }).catch(function () {});
+
   function ociaBox(c) {
     var subj = T('Interested in becoming Catholic (OCIA)', 'Interés en hacerme católico (OCIA)');
     var body = TL ? 'Hello,\n\nI found ' + c.name + ' on CatholicDoorway.com. I am interested in learning more about becoming Catholic. Could you please put me in touch with the person who leads OCIA, and let me know when the next group begins? Is there a Filipino ministry or a Tagalog-speaking contact at the parish?\n\nThank you,\n' : T('Hello,\n\nI found ' + c.name + ' on CatholicDoorway.com. I am interested in learning more about becoming Catholic. Could you please put me in touch with the person who leads OCIA, and let me know when the next group begins?\n\nThank you,\n',
@@ -242,6 +282,7 @@
     var shown = list.slice(0, 60);
     shown.forEach(function (c) {
       var dir = directions(c.lat, c.lon, c.name);
+      var lst = listingFor(c);
       var popup = '<strong>' + esc(c.name) + '</strong>' + (c.addr ? '<br>' + esc(c.addr) : '') +
         '<br><a href="' + esc(dir) + '" target="_blank" rel="noopener">' + T('Directions', 'Cómo llegar') + '</a>' +
         (c.web ? ' &middot; <a href="' + esc(c.web) + '" target="_blank" rel="noopener">' + T('Website', 'Sitio web') + '</a>' : '');
@@ -256,14 +297,16 @@
         (c.d != null ? '<span class="dist">' + (ES ? 'a ' + fmtDist(c.d) : PT ? 'a ' + fmtDist(c.d) : TL ? fmtDist(c.d) + ' ang layo' : fmtDist(c.d) + ' away') + '</span>' : '') +
         '<h3><button type="button" class="linklike" style="all:unset;cursor:pointer">' + esc(c.name) + '</button></h3>' +
         '<p class="addr">' + (c.addr ? esc(c.addr) : '<span class="muted">' + T('Address not listed', 'Dirección no disponible') + '</span>') + '</p>' +
-        (c.times ? '<div class="times"><strong>' + T('Listed service times:', 'Horarios publicados:') + '</strong> ' + esc(c.times) + '<br><span class="muted">' + T('From OpenStreetMap. Please confirm with the parish.', 'Según OpenStreetMap. Confírmalos con la parroquia.') + '</span></div>' : '') +
+        (lst ? listingBox(lst) : '') +
+        (c.times && !(lst && lst.masses) ? '<div class="times"><strong>' + T('Listed service times:', 'Horarios publicados:') + '</strong> ' + esc(c.times) + '<br><span class="muted">' + T('From OpenStreetMap. Please confirm with the parish.', 'Según OpenStreetMap. Confírmalos con la parroquia.') + '</span></div>' : '') +
         '<div class="actions">' +
           '<a class="btn small" href="' + esc(dir) + '" target="_blank" rel="noopener">' + T('Directions', 'Cómo llegar') + '</a>' +
           (c.phone ? '<a class="btn small secondary" href="tel:' + esc(c.phone.replace(/[^\d+]/g, '')) + '">' + T('Call ', 'Llamar al ') + esc(c.phone) + '</a>' : '') +
           (c.web ? '<a class="btn small secondary" href="' + esc(c.web) + '" target="_blank" rel="noopener">' + T('Website &amp; Mass times', 'Sitio web y horarios de Misa') + '</a>' : '') +
         '</div>' +
         ociaBox(c) +
-        '<p class="small muted" style="margin:.6rem 0 0"><a href="https://www.openstreetmap.org/edit?' + c.type + '=' + c.osmId + '" target="_blank" rel="noopener">' + T('Improve this listing', 'Mejorar este dato') + '</a></p>';
+        '<p class="small muted" style="margin:.6rem 0 0"><a href="https://www.openstreetmap.org/edit?' + c.type + '=' + c.osmId + '" target="_blank" rel="noopener">' + T('Improve this listing', 'Mejorar este dato') + '</a>' +
+          (lst ? '' : ' &middot; <a href="' + LISTING_URL + '">' + T('Parish staff: add your Mass times and OCIA contact', 'Personal de la parroquia: añadan sus horarios de Misa y su contacto de OCIA', 'Equipe da paróquia: informe os horários de Missa e o contato da OCIA') + '</a>') + '</p>';
       card.querySelector('h3 button').addEventListener('click', function () {
         map.setView([c.lat, c.lon], Math.max(map.getZoom(), 15));
         m.openPopup();
@@ -292,6 +335,7 @@
   }
 
   function showResults(list) {
+    if (!listingsP.done) { listingsP.then(function () { listingsP.done = true; showResults(list); }); return; }
     render(list);
     var pts = list.slice(0, 12).map(function (c) { return [c.lat, c.lon]; }).concat([origin]);
     if (pts.length > 1) map.fitBounds(pts, { padding: [30, 30], maxZoom: 15 }); else map.setView(origin, 13);

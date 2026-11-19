@@ -40,6 +40,7 @@
     "No parishes listed here yet. Find any parish on the ": "Wala pang nakalistang parokya rito. Hanapin ang anumang parokya sa ",
     "/find-a-church?ocia=1": "/hanapin-ang-simbahan?ocia=1",
     "map": "mapa",
+    "Mass times:": "Oras ng Misa:",
     "Website": "Website"
   };
   var T = function (en, es, pt) { return TL ? (TLX[en] !== undefined ? TLX[en] : en) : PT ? pt : ES ? es : en; };
@@ -233,7 +234,7 @@
     var mailto = function (data) {
       var body = Object.keys(data).filter(function (k) { return data[k] && k !== 't' && k !== 'consent' && k !== 'lang'; })
         .map(function (k) { return k + ': ' + (Array.isArray(data[k]) ? data[k].join(', ') : data[k]); }).join('\n');
-      return 'mailto:hello@catholicdoorway.com?subject=' + encodeURIComponent('OCIA listing: ' + (data.parish || '')) + '&body=' + encodeURIComponent(body);
+      return 'mailto:hello@catholicdoorway.com?subject=' + encodeURIComponent('Parish listing: ' + (data.parish || '')) + '&body=' + encodeURIComponent(body);
     };
     of.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -282,6 +283,7 @@
         if (c.length) lines.push(c.join(' &middot; '));
         if (r.schedule) lines.push(esc(r.schedule));
         if (r.start) lines.push(esc(r.start));
+        if (r.masses) lines.push('<strong>' + T('Mass times:', 'Horarios de Misa:', 'Horários de Missa:') + '</strong> ' + esc(r.masses));
         if (r.langs && r.langs.length) lines.push(r.langs.map(function (l) { return LN[l] || l; }).join(', '));
         if (r.notes) lines.push('<span class="muted">' + esc(r.notes) + '</span>');
         return '<article class="card"><h3>' + esc(r.parish) + '</h3><p class="small muted">' + esc(r.city) + ', ' + esc(r.state) + (r.diocese ? ' &middot; ' + esc(r.diocese) : '') + '</p><p>' + lines.join('<br>') + '</p></article>';
