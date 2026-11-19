@@ -16,7 +16,10 @@ plan.json is a list of posts:
               "alternates": [{"caption": "Another full version", "hook": "Question Hook", "score": 7.9}]}}]
 
 "video" is optional: extra fields for the TikTok video (make_post_video.js), e.g.
-    {"hook": "Big first line, *gold* words", "path": "/saints", "art": "window"|"none"}.
+    {"format": "reveal"|"kinetic"|"list"|"split"|"scripture", "hook": "Big first line, *gold* words",
+     "path": "/saints", "art": "window"|"none", plus "lines" (kinetic), "items"/"list_title" (list),
+     "quote" (scripture). See make_post_video.js. Use a different format for each post in a week and
+    don't open a week with the format that closed the previous one.
 When "tiktok" is in platforms, TikTok gets its own 11-second video draft (motion + original sound)
 and the photo draft goes to the other platforms. Set "video": false to send TikTok the photo instead.
 

@@ -69,7 +69,8 @@
   "video": {
    "hook": "*14,000+* Catholic churches. *204* dioceses. *Free.*",
    "path": "",
-   "art": "window"
+   "art": "window",
+   "format": "reveal"
   }
  },
  {
@@ -141,7 +142,8 @@
   "video": {
    "hook": "His only earthly crown was made of *thorns.*",
    "path": "/calendar",
-   "art": "window"
+   "art": "window",
+   "format": "reveal"
   }
  }
 ]

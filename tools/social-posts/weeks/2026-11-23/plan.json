@@ -68,7 +68,8 @@
   "video": {
    "hook": "He dressed as a *beggar* to bring people the *sacraments.*",
    "path": "/saints",
-   "art": "window"
+   "art": "window",
+   "format": "reveal"
   }
  },
  {
@@ -137,7 +138,9 @@
    ]
   },
   "video": {
-   "hook": "Who's saying *grace* on Thursday?",
+   "format": "scripture",
+   "quote": "Bless us, O Lord, and these thy gifts, which we are about to receive from thy bounty, through *Christ our Lord.* Amen.",
+   "ref": "Grace Before Meals",
    "path": "/prayers",
    "art": "window"
   }
@@ -209,7 +212,13 @@
    ]
   },
   "video": {
-   "hook": "The Church's new year doesn't start on *January 1.*",
+   "format": "list",
+   "list_title": "*Advent* starts Sunday. 3 things to know:",
+   "items": [
+    "*4 weeks* of waiting for Christmas",
+    "Purple candles, and one *rose* candle",
+    "A new *door* to open each day on our calendar"
+   ],
    "path": "/advent",
    "art": "window"
   }
