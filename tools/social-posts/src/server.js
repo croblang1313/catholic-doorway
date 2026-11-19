@@ -12,7 +12,7 @@
  *   DRAFTS_TOKEN    secret: lets Claude or a script leave drafts (optional)
  *   SITE_NAME       text: shown on the page (optional)
  *
- * Version 1.1.0-cd (Catholic Doorway: Facebook, Instagram, X, TikTok only; optional post_on date on drafts). License: GPL-2.0-or-later.
+ * Version 1.2.0-cd (Catholic Doorway: Facebook, Instagram, X, TikTok only; optional post_on date on drafts). License: GPL-2.0-or-later.
  */
 
 const VERSION = '1.0.0';

@@ -66,7 +66,9 @@ table.list a{font-weight:600}
 .coach .alt{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:10px 0 0;background:#fff}
 .coach .alt p{margin:0 0 8px;white-space:pre-wrap}
 .coach details{margin-top:10px}
-.pill.score{background:#f6ecd2;color:#7a5b16}
+.sc-hi{color:#157f3b;font-weight:700}.sc-mid{color:#b58105;font-weight:700}.sc-lo{color:#c0271b;font-weight:700}
+.coach .score.sc-hi,.coach .score.sc-mid,.coach .score.sc-lo{color:inherit}.coach .score.sc-hi{color:#157f3b}.coach .score.sc-mid{color:#b58105}.coach .score.sc-lo{color:#c0271b}
+tr.day td{background:#f3ead6;color:#5b4413;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;padding:8px 12px}
 .pill.failed{background:#fdecea;color:var(--bad)}
 .pill.todo,.pill.processing{background:#e8efff;color:var(--accent)}
 .pv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
@@ -211,14 +213,28 @@ code{background:#eef0f3;border-radius:4px;padding:1px 5px;font-size:14px}
 	/* ---------------- Lists ---------------- */
 	function viewList(top, which) {
 		var rows = S.posts.filter(function (p) { return which === 'todo' ? p.status !== 'sent' : true; });
+		if (which === 'todo') {
+			// Next in line first: by post date (undated last), then the photo post before the TikTok video.
+			rows = rows.slice().sort(function (a, b) {
+				var da = a.post_on || '9999-99-99', db = b.post_on || '9999-99-99';
+				if (da !== db) { return da < db ? -1 : 1; }
+				var ka = a.kind === 'video' ? 1 : 0, kb = b.kind === 'video' ? 1 : 0;
+				return ka !== kb ? ka - kb : a.created - b.created;
+			});
+		}
 		var html = top + '<div class="card"><h2>' + (which === 'todo' ? 'Waiting on you' : 'All posts') + '</h2>';
 		if (!rows.length) {
 			html += '<p class="empty">' + (which === 'todo' ? 'Nothing waiting. Nice.' : 'No posts yet.') + '</p>';
 		} else {
 			html += '<table class="list"><thead><tr><th>Post</th><th class="hide-s">Goes to</th><th>Status</th><th class="hide-s">When</th></tr></thead><tbody>';
+			var lastDay = null;
 			rows.forEach(function (p) {
+				if (which === 'todo' && (p.post_on || '') !== lastDay) {
+					lastDay = p.post_on || '';
+					html += '<tr class="day"><td colspan="4">' + (lastDay ? esc(postOn(lastDay)) : 'No date set') + '</td></tr>';
+				}
 				var t = p.caption.length > 70 ? p.caption.slice(0, 70) + '…' : p.caption;
-				html += '<tr><td><a href="#post/' + esc(p.id) + '">' + esc(t) + '</a><div class="hint">' + (p.kind === 'video' ? 'Video' : (p.media.length + ' photo' + (p.media.length > 1 ? 's' : ''))) + ' · by ' + esc(p.author) + (p.post_on ? ' · <strong>post on ' + esc(postOn(p.post_on)) + '</strong>' : '') + (p.coach && p.coach.score !== null && p.coach.score !== undefined ? ' · <span class="pill score">' + esc(String(p.coach.score)) + '/10</span>' : '') + '</div></td>' +
+				html += '<tr><td><a href="#post/' + esc(p.id) + '">' + esc(t) + '</a><div class="hint">' + (p.kind === 'video' ? '<strong>' + esc(p.platforms.map(label).join(', ')) + ' video</strong>' : '<strong>' + esc(p.platforms.map(label).join(', ')) + '</strong> · ' + p.media.length + ' photo' + (p.media.length > 1 ? 's' : '')) + ' · by ' + esc(p.author) + (p.post_on ? ' · <strong>post on ' + esc(postOn(p.post_on)) + '</strong>' : '') + (p.coach && p.coach.score !== null && p.coach.score !== undefined ? ' · ' + scoreTag(p.coach.score) : '') + '</div></td>' +
 					'<td class="hide-s">' + p.platforms.map(label).map(esc).join(', ') + '</td><td>' + statusPill(p.status) + '</td><td class="hide-s">' + esc(when(p.sent_at || p.created)) + '</td></tr>';
 			});
 			html += '</tbody></table>';
@@ -421,9 +437,13 @@ code{background:#eef0f3;border-radius:4px;padding:1px 5px;font-size:14px}
 			};
 		});
 	}
+	// Rating colors: green 8+ (likely to do well), yellow 6.5-7.9 (could go either way), red under 6.5 (unlikely).
+	function scoreClass(n) { return n >= 8 ? 'hi' : n >= 6.5 ? 'mid' : 'lo'; }
+	function scoreTag(n) { return '<span class="sc-' + scoreClass(n) + '" title="' + (n >= 8 ? 'Likely to do well' : n >= 6.5 ? 'Could go either way' : 'Unlikely to do well') + '">' + esc(String(n)) + '/10</span>'; }
 	function coachHtml(p) {
 		var c = p.coach, h = '<div class="card coach"><div class="row" style="justify-content:space-between"><h2 style="margin:0">Coach notes</h2>' +
-			(c.score !== null && c.score !== undefined ? '<span class="score">' + esc(String(c.score)) + '<small>/10</small></span>' : '') + '</div>';
+			(c.score !== null && c.score !== undefined ? '<span class="score sc-' + scoreClass(c.score) + '">' + esc(String(c.score)) + '<small>/10</small></span>' : '') + '</div>' +
+			'<p class="hint" style="margin-top:2px"><span class="sc-hi">Green 8+</span> likely to do well · <span class="sc-mid">Yellow 6.5 to 7.9</span> could go either way · <span class="sc-lo">Red under 6.5</span> unlikely</p>';
 		if (c.hook) { h += '<p class="hint" style="margin-top:4px">Hook: <strong>' + esc(c.hook) + '</strong></p>'; }
 		if (c.edited) { h += '<p class="hint">You edited the text after it was scored, so the score is for the earlier wording.</p>'; }
 		if (c.why) { h += '<p style="margin:10px 0 0">' + esc(c.why) + '</p>'; }
@@ -431,7 +451,7 @@ code{background:#eef0f3;border-radius:4px;padding:1px 5px;font-size:14px}
 		if (c.fixes && c.fixes.length) { h += '<details><summary>What would make it stronger</summary><ul>' + c.fixes.map(function (f) { return '<li>' + esc(f) + '</li>'; }).join('') + '</ul></details>'; }
 		if (c.alternates && c.alternates.length) {
 			h += '<details' + (p.status === 'draft' ? ' open' : '') + '><summary>Other versions (' + c.alternates.length + ')</summary>' + c.alternates.map(function (a, i) {
-				return '<div class="alt"><p>' + esc(a.caption) + '</p><div class="row"><span class="hint" style="margin:0">' + esc(a.hook || '') + (a.score !== null && a.score !== undefined ? ' · ' + esc(String(a.score)) + '/10' : '') + ' · ' + Array.from(a.caption).length + ' characters</span>' +
+				return '<div class="alt"><p>' + esc(a.caption) + '</p><div class="row"><span class="hint" style="margin:0">' + esc(a.hook || '') + (a.score !== null && a.score !== undefined ? ' · ' + scoreTag(a.score) : '') + ' · ' + Array.from(a.caption).length + ' characters</span>' +
 					(p.status === 'draft' ? '<button type="button" class="btn ghost use-alt" style="min-height:34px;padding:4px 12px" data-i="' + i + '">Use this version</button>' : '') + '</div></div>';
 			}).join('') + '</details>';
 		}
