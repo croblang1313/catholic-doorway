@@ -6,7 +6,7 @@ Content follows the teaching of the Catholic Church and cites the Catechism of t
 
 ## Becoming Catholic and practical guides
 
-- [Start Here: Becoming Catholic (OCIA)](https://catholicdoorway.com/start-here): New to the Catholic Church? How OCIA works, the four stages, how long it takes, who to contact, and what to expect at your first Mass.
+- [Begin Here: Becoming Catholic (OCIA)](https://catholicdoorway.com/start-here): New to the Catholic Church? How OCIA works, the four stages, how long it takes, who to contact, and what to expect at your first Mass.
 - [Your First Mass: A Step-by-Step Guide](https://catholicdoorway.com/first-mass): Going to Mass for the first time? A step-by-step companion for your phone: when to stand, sit and kneel, what people say, and what to do at Communion.
 - [Catholic How-To Guides: Confession, Baptism, Marriage and More](https://catholicdoorway.com/how-to): Plain, practical Catholic how-tos: going to Confession, joining a parish, baptizing a child, getting married, Last Rites, funerals and coming back to the Church.
 - [How to Go to Confession: A Step-by-Step Guide](https://catholicdoorway.com/confession): How to go to Catholic Confession: when and where, how to prepare, exactly what to say, and what to do if it has been years.
@@ -38,13 +38,13 @@ Content follows the teaching of the Catholic Church and cites the Catechism of t
 - [What Catholics Believe](https://catholicdoorway.com/beliefs): A plain-language overview of Catholic belief and practice: the Creed, the seven sacraments, Scripture and Tradition, Mary and the saints, and the moral life.
 - [Honest Questions About the Catholic Church, Answered](https://catholicdoorway.com/questions): Short, kind, straight answers to the questions people ask about Catholics: Mary, saints, confession, the Pope, purgatory, the extra Bible books and more.
 - [Catechism of the Catholic Church and Major Church Documents](https://catholicdoorway.com/church-documents): Look up any paragraph of the Catechism, browse it by topic, and search the major encyclicals, apostolic letters and Vatican II documents, with links to the official texts.
-- [Catholic Glossary: Terms Explained Simply](https://catholicdoorway.com/glossary): Plain-English definitions of Catholic words, from Advent to Vespers.
+- [Catholic Terms: Words Explained Simply](https://catholicdoorway.com/glossary): Plain-English definitions of Catholic words, from Advent to Vespers.
 
 ## Saints, Popes and Church structure
 
 - [Catholic Saints, Blesseds and Venerables](https://catholicdoorway.com/saints): Meet the saints, and learn the path to sainthood: Servant of God, Venerable, Blessed and Saint.
 - [Saints and Causes Directory: Saints, Blesseds, Venerables, Servants of God](https://catholicdoorway.com/saints-directory): Search thousands of Catholic Saints, Blesseds, Venerables and Servants of God by name, country, century and patronage. Updated weekly.
-- [All 267 Popes in Succession, from St. Peter to Leo XIV](https://catholicdoorway.com/popes): Every Pope in order from St. Peter to Leo XIV: number in the line of succession, years as Pope, birth and death, and what each is remembered for.
+- [Succession of Popes, from St. Peter to Leo XIV](https://catholicdoorway.com/popes): Every Pope in order from St. Peter to Leo XIV: number in the line of succession, years as Pope, birth and death, and what each is remembered for.
 - [How the Catholic Church Is Organized](https://catholicdoorway.com/structure): How the Catholic Church is organized: the Pope, bishops, dioceses, parishes, priests and deacons, explained simply.
 - [U.S. Catholic Dioceses Directory](https://catholicdoorway.com/dioceses): Every Catholic diocese, archdiocese and eparchy in the United States: its bishop, cathedral, website, OCIA help and local saints.
 - [Find a Catholic Church Near You](https://catholicdoorway.com/find-a-church): Find Catholic churches near you on a free map built from OpenStreetMap, with address, phone, website and directions.
