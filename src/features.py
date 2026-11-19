@@ -59,16 +59,62 @@ def _step(i, part, title, what, say="", tip="", sub=""):
             f'<p>{what}</p>{say}{tip}</section>')
 
 
+def _usccb(ref):
+    """English reference like "Isaiah 52:14; 53:2-3" -> USCCB Bible link path."""
+    import re
+    m = re.match(r"(\d?\s?[A-Za-z]+)\s(\d+)(?::(\d+))?", ref)
+    book = m.group(1).lower().replace(" ", "")
+    book = {"psalm": "psalms"}.get(book, book)
+    verse = "" if book == "psalms" or not m.group(3) else "?" + m.group(3)
+    return f"https://bible.usccb.org/bible/{book}/{m.group(2)}{verse}"
+
+
 def stations_html(lang):
+    """The Stations of the Cross: one card per station with an original illustration.
+    Without JavaScript the cards read as a list; stations.js turns them into a walk-through."""
+    import stations_art
     d = _load("stations.json")[lang]
+    en = _load("stations.json")["en"]
+    ui = d["ui"]
+    resp = _say(d["open"][3], ALL_WORD[lang])
+    prayers = "".join(f'<h4>{e(t)}</h4><p>{e(x).replace(chr(10), "<br>")}</p>' for t, x in d["prayers"])
+    hl = "" if lang == "en" else ' hreflang="en"'
+
+    def card(i, label, title, body):
+        art = stations_art.svg(i, ui["art"].replace("{t}", title))
+        return (f'  <section class="st-card" id="station-{i}" data-i="{i}" aria-labelledby="st-h-{i}">'
+                f'<figure class="st-fig">{art}</figure><div class="st-body">'
+                f'<p class="st-num">{label}</p><h2 id="st-h-{i}">{e(title)}</h2>{body}</div></section>')
+
     o = d["open"]
-    resp = _say(o[3], ALL_WORD[lang])
-    out = [_step(0, o[0], o[1], e(o[2]), resp, e(o[4])).replace('<span class="mass-no">0.</span> ', "")]
+    cards = [card(0, e(o[0]), o[1], f'<p>{e(o[2])}</p>{resp}<p class="st-tip">{e(o[4])}</p>')]
     for i, (title, ref, text, prayer) in enumerate(d["stations"], 1):
-        out.append(_step(i, f'{d["part"]} {i}', title, e(text), resp, f'<em>{e(prayer)}</em>', e(ref)))
+        link = _usccb(en["stations"][i - 1][1])
+        if lang == "en":
+            q, qref = d["quotes"][i - 1]
+            scripture = (f'<blockquote class="st-scripture"><p>{e(q)}</p><footer><a href="{link}" target="_blank" rel="noopener" '
+                         f'title="{ui["read"]}">{e(qref)}</a></footer></blockquote>')
+        else:
+            scripture = f'<p class="st-read">{ui["read"]}: <a href="{link}" target="_blank" rel="noopener"{hl}>{e(ref)}</a></p>'
+        body = (f'{resp}{scripture}<p class="st-reflect">{e(text)}</p><p class="st-prayer">{e(prayer)}</p>'
+                f'<details class="st-prayers"><summary>{ui["pray"]}: {e(ui["prayers"])}</summary>{prayers}</details>')
+        cards.append(card(i, ui["of"].replace("{n}", str(i)), title, body))
     c = d["close"]
-    out.append(_step(15, c[0], c[1], e(c[2]), "", e(c[4])).replace('<span class="mass-no">15.</span> ', ""))
-    return "\n".join(out)
+    cards.append(card(15, e(c[0]), c[1], f'<p>{e(c[2])}</p><p class="st-tip">{e(c[4])}</p>'))
+
+    dots = [f'<button type="button" data-go="0" aria-label="{e(o[0])}">&#10013;</button>']
+    dots += [f'<button type="button" data-go="{i}" aria-label="{e(ui["of"].replace("{n}", str(i)))}">{i}</button>' for i in range(1, 15)]
+    dots.append(f'<button type="button" data-go="15" aria-label="{e(c[0])}">&#10013;</button>')
+    return f'''<div class="stations" id="stations-app">
+  <nav class="st-dots" aria-label="{e(ui["nav"])}" hidden>{"".join(dots)}</nav>
+{chr(10).join(cards)}
+  <div class="st-nav" hidden>
+    <button class="btn secondary" type="button" id="st-back">{ui["back"]}</button>
+    <span id="st-count" class="rs-count"></span>
+    <button class="btn" type="button" id="st-next" data-next="{e(ui["next"])}" data-again="{e(ui["again"])}">{ui["next"]}</button>
+  </div>
+  <p class="small muted st-hint" hidden>{e(ui["hint"])}</p>
+</div>'''
 
 
 def chaplet_html(lang):

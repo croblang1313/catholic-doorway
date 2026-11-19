@@ -268,6 +268,17 @@ VESSEL_SVG = {
 }
 
 
+STATIONS_URL = {"en": "/stations-of-the-cross", "es": "/es/via-crucis", "pt": "/pt/via-sacra", "tl": "/tl/daan-ng-krus"}
+STATIONS_LINK = {"en": "Pray the Stations, with pictures", "es": "Reza el Vía Crucis, con imágenes",
+                 "pt": "Reze a Via-Sacra, com imagens", "tl": "Dasalin ang Daan ng Krus, may larawan"}
+
+
+def _pray_link(k, lang):
+    if k != "stations-of-the-cross":
+        return ""
+    return f'<a class="small an-pray" href="{STATIONS_URL[lang]}">{STATIONS_LINK[lang]} &rarr;</a>'
+
+
 def anatomy_html(lang):
     names = term_index(lang)
     t = URL["terms"][lang]
@@ -276,7 +287,7 @@ def anatomy_html(lang):
         n, d = names[k]
         rows.append(f'<li id="{k}" data-k="{k}"><button type="button" class="an-item"><span class="an-no">{i}</span>'
                     f'<span><strong>{e(n)}</strong><span class="an-def">{e(d)}</span></span></button>'
-                    f'<a class="small" href="{t}#{k}">{W["terms"][lang]} &rarr;</a></li>')
+                    f'{_pray_link(k, lang)}<a class="small" href="{t}#{k}">{W["terms"][lang]} &rarr;</a></li>')
     vessels = "".join(f'<div class="card vessel" id="{k}">{VESSEL_SVG[k]}<h3>{e(names[k][0])}</h3><p>{e(names[k][1])}</p></div>'
                       for k in ("chalice", "paten", "ciborium", "monstrance"))
     tips = "".join(f"<li>{e(x)}</li>" for x in AT["tip_list"][lang])
