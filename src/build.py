@@ -100,9 +100,13 @@ PAGES = [
      "Every Pope in order from St. Peter to Leo XIV: number in the line of succession, years as Pope, birth and death, and what each is remembered for."),
     ("about", "About", "About CatholicDoorway",
      "About CatholicDoorway.com: a free, ad-free guide to the Catholic faith. Sources, data and corrections."),
+    ("privacy", "Privacy Policy", "Privacy Policy | CatholicDoorway",
+     "How CatholicDoorway.com handles information: no ads, no trackers, no accounts. What the OCIA listing form, email and church map use, and your choices."),
+    ("terms", "Terms of Use", "Terms of Use | CatholicDoorway",
+     "Terms of use for CatholicDoorway.com: an independent guide, not an official Church resource. Mass times, parish OCIA listings and how you may share our content."),
     ("404", "Not found", "Page not found | CatholicDoorway", "This page could not be found."),
 ]
-NAV_EXCLUDE = {"examination-of-conscience", "ocia-listing", "devotions", "divine-mercy-chaplet", "stations-of-the-cross", "novenas", "angelus", "liturgy-of-the-hours", "church-documents", "about", "404", "saints-directory", "how-to", "confession", "coming-back", "join-a-parish", "baptism", "marriage", "anointing", "funerals", "baptism-certificate", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary", "questions", "church-anatomy", "vestments", "inside-the-mass"}
+NAV_EXCLUDE = {"privacy", "terms", "examination-of-conscience", "ocia-listing", "devotions", "divine-mercy-chaplet", "stations-of-the-cross", "novenas", "angelus", "liturgy-of-the-hours", "church-documents", "about", "404", "saints-directory", "how-to", "confession", "coming-back", "join-a-parish", "baptism", "marriage", "anointing", "funerals", "baptism-certificate", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary", "questions", "church-anatomy", "vestments", "inside-the-mass"}
 # Pages shown in a dropdown under a main menu item: parent slug -> [(slug, label)]
 SUBNAV = {"beliefs": [("beliefs", "What Catholics Believe"), ("questions", "Honest Questions, Answered"),
                       ("church-documents", "Catechism and Church Documents")],
@@ -195,6 +199,10 @@ ES_PAGES = [
      "Busca entre miles de Santos, Beatos, Venerables y Siervos de Dios por nombre, país, siglo y patronazgo. Se actualiza cada semana."),
     ("about", "acerca", "Acerca del sitio", "Acerca de CatholicDoorway",
      "Acerca de CatholicDoorway.com: una guía gratuita y sin anuncios de la fe católica. Fuentes, datos, privacidad y correcciones."),
+    ("privacy", "privacidad", "Política de privacidad", "Política de privacidad | CatholicDoorway",
+     "Cómo maneja CatholicDoorway.com la información: sin anuncios, sin rastreadores y sin cuentas. Qué usan el formulario del OCIA, el correo y el mapa, y tus opciones."),
+    ("terms", "terminos", "Términos de uso", "Términos de uso | CatholicDoorway",
+     "Términos de uso de CatholicDoorway.com: una guía independiente, no un recurso oficial de la Iglesia. Horarios de Misa, registros de OCIA y cómo compartir el contenido."),
 ]
 ES_TEXT = dict(lang="es", skip="Saltar al contenido", home="/es/", home_label="Inicio de CatholicDoorway",
                theme_label="Cambiar a modo claro u oscuro", menu_label="Menú", nav_label="Principal",
@@ -282,6 +290,10 @@ PT_PAGES = [
      "Pesquise entre milhares de Santos, Beatos, Veneráveis e Servos de Deus por nome, país, século e padroado. Atualizado toda semana."),
     ("about", "sobre", "Sobre o site", "Sobre o CatholicDoorway",
      "Sobre o CatholicDoorway.com: um guia gratuito e sem anúncios da fé católica. Fontes, dados, privacidade e correções."),
+    ("privacy", "privacidade", "Política de privacidade", "Política de privacidade | CatholicDoorway",
+     "Como o CatholicDoorway.com trata as informações: sem anúncios, sem rastreadores e sem contas. O que usam o formulário da OCIA, o e-mail e o mapa, e as suas escolhas."),
+    ("terms", "termos", "Termos de uso", "Termos de uso | CatholicDoorway",
+     "Termos de uso do CatholicDoorway.com: um guia independente, não um recurso oficial da Igreja. Horários de Missa, cadastros de OCIA e como compartilhar o conteúdo."),
 ]
 PT_TEXT = dict(lang="pt", skip="Pular para o conteúdo", home="/pt/", home_label="Início do CatholicDoorway",
                theme_label="Mudar para o modo claro ou escuro", menu_label="Menu", nav_label="Principal")
@@ -299,7 +311,7 @@ PT_SUBNAV = {"comecar": [("comecar", "Tornar-se católico (OCIA)"), ("primeira-m
              "estrutura": [("estrutura", "Como a Igreja é organizada"), ("papas", "A sucessão dos Papas"), ("dioceses", "As dioceses dos EUA"),
                            ("encontrar-igreja", "Encontrar uma igreja")]}
 # Portuguese pages reached from a hub page rather than the top menu
-PT_NAV_EXCLUDE = {"confissao", "voltar", "terco-da-misericordia", "via-sacra", "novenas", "angelus", "cadastrar-ocia", "sobre", "inscrever-se-paroquia", "batismo", "matrimonio", "uncao", "funeral", "certidao-de-batismo"}
+PT_NAV_EXCLUDE = {"privacidade", "termos", "confissao", "voltar", "terco-da-misericordia", "via-sacra", "novenas", "angelus", "cadastrar-ocia", "sobre", "inscrever-se-paroquia", "batismo", "matrimonio", "uncao", "funeral", "certidao-de-batismo"}
 
 # Filipino (Tagalog): en_slug, tl_slug, nav label, <title>, meta description
 TL_PAGES = [
@@ -379,6 +391,10 @@ TL_PAGES = [
      "Maghanap sa libu-libong Santo, Beato, Benerable at Lingkod ng Diyos ayon sa pangalan, bansa, siglo at pagiging patron. Ina-update linggo-linggo."),
     ("about", "tungkol", "Tungkol sa site", "Tungkol sa CatholicDoorway",
      "Tungkol sa CatholicDoorway.com: isang libre at walang patalastas na gabay sa pananampalatayang Katoliko. Mga pinagkunan, datos, privacy at pagtatama."),
+    ("privacy", "patakaran-sa-privacy", "Patakaran sa Privacy", "Patakaran sa Privacy | CatholicDoorway",
+     "Paano hinahawakan ng CatholicDoorway.com ang impormasyon: walang patalastas, tracker o account. Ang ginagamit ng form ng OCIA, ng email at ng mapa, at ang iyong mga pagpipilian."),
+    ("terms", "mga-tuntunin", "Mga Tuntunin ng Paggamit", "Mga Tuntunin ng Paggamit | CatholicDoorway",
+     "Mga tuntunin ng paggamit ng CatholicDoorway.com: isang malayang gabay, hindi opisyal na mapagkukunan ng Simbahan. Oras ng Misa, listahan ng OCIA at pagbabahagi ng nilalaman."),
 ]
 TL_TEXT = dict(lang="tl", skip="Lumaktaw sa nilalaman", home="/tl/", home_label="Tahanan ng CatholicDoorway",
                theme_label="Lumipat sa maliwanag o madilim na anyo", menu_label="Menu", nav_label="Pangunahin")
@@ -396,7 +412,7 @@ TL_SUBNAV = {"magsimula": [("magsimula", "Maging Katoliko (OCIA)"), ("unang-misa
              "istruktura": [("istruktura", "Paano nakaayos ang Simbahan"), ("mga-papa", "Ang paghahalili ng mga Papa"), ("mga-diyosesis", "Ang mga diyosesis sa Estados Unidos"),
                             ("hanapin-ang-simbahan", "Maghanap ng simbahan")]}
 # Filipino pages reached from a hub page rather than the top menu
-TL_NAV_EXCLUDE = {"kumpisal", "pagbabalik", "koronilya-ng-banal-na-awa", "daan-ng-krus", "mga-nobena", "orasyon", "ilista-ang-ocia", "tungkol", "magpatala-sa-parokya", "binyag", "kasal", "pagpapahid-ng-langis", "libing", "katibayan-ng-binyag"}
+TL_NAV_EXCLUDE = {"patakaran-sa-privacy", "mga-tuntunin", "kumpisal", "pagbabalik", "koronilya-ng-banal-na-awa", "daan-ng-krus", "mga-nobena", "orasyon", "ilista-ang-ocia", "tungkol", "magpatala-sa-parokya", "binyag", "kasal", "pagpapahid-ng-langis", "libing", "katibayan-ng-binyag"}
 
 LANGS = [("en", "English", "home page"), ("es", "Español", "página de inicio"), ("pt", "Português", "página inicial"), ("tl", "Filipino", "pangunahing pahina")]
 LANG_HOME = {"en": "/", "es": "/es/", "pt": "/pt/", "tl": "/tl/"}
@@ -552,6 +568,7 @@ FOOT_ES = """</main>
     </div>
     <div class="footer-base">
       CatholicDoorway es una guía gratuita e independiente, sin anuncios. No es un sitio oficial de la Iglesia Católica ni de ninguna diócesis. Para la enseñanza oficial de la Iglesia, consulta el <a href="https://www.vatican.va/archive/catechism_sp/index_sp.html">Catecismo de la Iglesia Católica</a>.
+      <p class="footer-legal"><a href="/es/privacidad">Política de privacidad</a> <span aria-hidden="true">&middot;</span> <a href="/es/terminos">Términos de uso</a></p>
     </div>
   </div>
 </footer>
@@ -596,6 +613,7 @@ FOOT_PT = """</main>
     </div>
     <div class="footer-base">
       O CatholicDoorway é um guia gratuito e independente, sem anúncios. Não é um site oficial da Igreja Católica nem de nenhuma diocese. Para o ensinamento oficial da Igreja, consulte o <a href="https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html">Catecismo da Igreja Católica</a>.
+      <p class="footer-legal"><a href="/pt/privacidade">Política de privacidade</a> <span aria-hidden="true">&middot;</span> <a href="/pt/termos">Termos de uso</a></p>
     </div>
   </div>
 </footer>
@@ -640,6 +658,7 @@ FOOT_TL = """</main>
     </div>
     <div class="footer-base">
       Ang CatholicDoorway ay isang libre at malayang gabay na walang patalastas. Hindi ito opisyal na site ng Simbahang Katolika o ng anumang diyosesis. Para sa opisyal na turo ng Simbahan, tingnan ang <a href="https://www.vatican.va/archive/ENG0015/_INDEX.HTM">Katesismo ng Simbahang Katolika</a>.
+      <p class="footer-legal"><a href="/tl/patakaran-sa-privacy">Patakaran sa Privacy</a> <span aria-hidden="true">&middot;</span> <a href="/tl/mga-tuntunin">Mga Tuntunin ng Paggamit</a></p>
     </div>
   </div>
 </footer>
@@ -687,6 +706,7 @@ FOOT = """</main>
     </div>
     <div class="footer-base">
       CatholicDoorway is a free, independent guide with no ads. It is not an official site of the Catholic Church or any diocese. For the Church&rsquo;s official teaching, see the <a href="https://www.vatican.va/archive/ENG0015/_INDEX.HTM">Catechism of the Catholic Church</a>. Scripture quotations are from the Revised Standard Version of the Bible, Second Catholic Edition &copy; 2006 National Council of the Churches of Christ in the USA. Used by permission. All rights reserved.
+      <p class="footer-legal"><a href="/privacy">Privacy Policy</a> <span aria-hidden="true">&middot;</span> <a href="/terms">Terms of Use</a></p>
     </div>
   </div>
 </footer>
@@ -1586,7 +1606,7 @@ ES_SUBNAV = {"comenzar": [("comenzar", "Hacerse católico (OCIA)"), ("primera-mi
                             ("buscar-iglesia", "Buscar una iglesia")]}
 ES_SUB_CHILDREN = {c for subs in ES_SUBNAV.values() for c, _ in subs} - set(ES_SUBNAV)
 # Spanish pages reached from a hub page rather than the top menu
-ES_NAV_EXCLUDE = {"confesion", "volver", "coronilla-de-la-divina-misericordia", "via-crucis", "novenas", "angelus", "registrar-ocia", "acerca", "inscribirse-parroquia", "bautismo", "matrimonio", "uncion", "funerales", "fe-de-bautismo"}
+ES_NAV_EXCLUDE = {"privacidad", "terminos", "confesion", "volver", "coronilla-de-la-divina-misericordia", "via-crucis", "novenas", "angelus", "registrar-ocia", "acerca", "inscribirse-parroquia", "bautismo", "matrimonio", "uncion", "funerales", "fe-de-bautismo"}
 
 
 def lang_nav(code, pages, subnav, exclude, current):
@@ -1729,7 +1749,7 @@ LLMS_GROUPS = [
                                             "liturgy-of-the-hours", "bible", "calendar"]),
     ("What Catholics believe", ["beliefs", "questions", "church-documents", "glossary", "church-anatomy", "inside-the-mass", "vestments"]),
     ("Saints, Popes and Church structure", ["saints", "saints-directory", "popes", "structure", "dioceses", "find-a-church"]),
-    ("About", ["about"]),
+    ("About", ["about", "privacy", "terms"]),
 ]
 
 
