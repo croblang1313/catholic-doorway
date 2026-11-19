@@ -627,6 +627,7 @@ FOOT_ES = """</main>
 </footer>
 <script src="/assets/js/main.js" defer></script>
 {extra_foot}
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "e8528e6a106c4138a78b047670f742e1"}}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
 """
@@ -672,6 +673,7 @@ FOOT_PT = """</main>
 </footer>
 <script src="/assets/js/main.js" defer></script>
 {extra_foot}
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "e8528e6a106c4138a78b047670f742e1"}}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
 """
@@ -717,6 +719,7 @@ FOOT_TL = """</main>
 </footer>
 <script src="/assets/js/main.js" defer></script>
 {extra_foot}
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "e8528e6a106c4138a78b047670f742e1"}}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
 """
@@ -765,6 +768,7 @@ FOOT = """</main>
 </footer>
 <script src="/assets/js/main.js" defer></script>
 {extra_foot}
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "e8528e6a106c4138a78b047670f742e1"}}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
 """
