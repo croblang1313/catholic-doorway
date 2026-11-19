@@ -206,7 +206,7 @@ AT = {
 def church_svg(lang):
     s = []
     a = s.append
-    a(f'<svg class="church-plan" viewBox="0 0 600 840" role="img" aria-labelledby="plan-t"><title id="plan-t">{e(AT["plan"][lang])}</title>')
+    a(f'<svg class="church-plan" viewBox="18 10 566 836" role="img" aria-labelledby="plan-t"><title id="plan-t">{e(AT["plan"][lang])}</title>')
     # walls and floor
     a('<path class="floor" d="M150 270V150A150 112 0 0 1 450 150V270H520V740H80V270Z"/>')
     a('<rect class="floor narthex" x="80" y="740" width="440" height="82"/>')
@@ -255,7 +255,7 @@ def church_svg(lang):
     for i, k in enumerate(ANATOMY_ORDER, 1):
         x, y = MARK[k]
         a(f'<g class="hot" data-k="{k}" tabindex="0" role="button" aria-label="{i}. {e(names[k][0])}">'
-          f'<circle cx="{x}" cy="{y}" r="14"/><text x="{x}" y="{y + 5}" text-anchor="middle">{i}</text></g>')
+          f'<circle cx="{x}" cy="{y}" r="19"/><text x="{x}" y="{y + 6}" text-anchor="middle">{i}</text></g>')
     a('</svg>')
     return "".join(s)
 
@@ -426,7 +426,6 @@ def _figure(kind, label=""):
     if kind == "street":
         a('<path class="cassock" d="M64 92Q100 80 136 92L148 382H52Z"/><path class="cassock" d="M64 92L40 232H58L74 130ZM136 92L160 232H142L126 130Z"/>')
         a('<g class="buttons">' + "".join(f'<circle cx="100" cy="{y}" r="1.8"/>' for y in range(96, 380, 12)) + '</g>')
-        a('<rect class="collar" x="94" y="80" width="12" height="7" rx="1"/>')
     else:
         a('<g class="layer l-alb"><path class="alb" d="M64 92Q100 80 136 92L148 382H52Z"/>'
           '<path class="alb" d="M64 92L40 232H58L74 130ZM136 92L160 232H142L126 130Z"/><path class="fold" d="M84 140L78 380M116 140L122 380M100 110V382"/></g>')
@@ -443,7 +442,11 @@ def _figure(kind, label=""):
     # head, hands
     a('<rect class="skin" x="92" y="68" width="16" height="16"/><circle class="skin" cx="100" cy="52" r="22"/>'
       '<path class="hair" d="M78 50Q80 26 100 28Q120 26 122 50Q116 36 100 38Q84 36 78 50Z"/>')
-    a('<circle class="skin" cx="49" cy="238" r="9"/><circle class="skin" cx="151" cy="238" r="9"/>')
+    if kind == "street":
+        a('<path class="cassock" d="M88 78h24v10H88z"/><rect class="collar" x="95" y="79" width="10" height="7" rx="1"/>')
+    a('<g class="h-alb"><circle class="skin" cx="49" cy="238" r="9"/><circle class="skin" cx="151" cy="238" r="9"/></g>')
+    if kind in ("layered", "priest", "bishop"):
+        a('<g class="h-chas"><circle class="skin" cx="29" cy="262" r="9"/><circle class="skin" cx="171" cy="262" r="9"/></g>')
     if kind == "bishop":
         a('<path class="mitre" d="M80 42L83 4L100 16L117 4L120 42Q100 36 80 42Z"/><path class="orph" d="M97 13V40H103V13Z"/>'
           '<path class="crozier" d="M172 392V64M172 64Q172 30 150 32Q134 36 142 52Q150 60 158 50"/>')
@@ -454,10 +457,10 @@ def _figure(kind, label=""):
 def _wheel(lang):
     import math
     cx = cy = 160
-    R, r = 132, 78
+    R, r = 140, 74
     total = sum(w for _, w, _ in SEASONS)
     sw = dict(COLORS)
-    out = [f'<svg class="year-wheel" viewBox="0 0 320 320" role="img" aria-labelledby="wheel-t"><title id="wheel-t">{e(VT["wheel"][lang])}</title>']
+    out = [f'<svg class="year-wheel" viewBox="0 0 320 320" role="img" aria-labelledby="wheel-t" overflow="visible"><title id="wheel-t">{e(VT["wheel"][lang])}</title>']
     ang = -math.pi / 2
     for key, w, col in SEASONS:
         a2 = ang + 2 * math.pi * w / total
@@ -469,7 +472,11 @@ def _wheel(lang):
         if w >= 4:
             mid = (ang + a2) / 2
             tx, ty = p(mid, (R + r) / 2)
-            out.append(f'<text class="seg-label{" dark" if col == "white" else ""}" x="{tx:.1f}" y="{ty + 4:.1f}" text-anchor="middle">{e(SEASON_NAME[key][lang])}</text>')
+            words = SEASON_NAME[key][lang].split(" ")
+            lines = [" ".join(words[:len(words) // 2]), " ".join(words[len(words) // 2:])] if len(words) > 1 else words
+            y0 = ty + 4 - 6 * (len(lines) - 1)
+            spans = "".join(f'<tspan x="{tx:.1f}" y="{y0 + 12 * j:.1f}">{e(w)}</tspan>' for j, w in enumerate(lines))
+            out.append(f'<text class="seg-label{" dark" if col == "white" else ""}" text-anchor="middle">{spans}</text>')
         ang = a2
     # rose Sundays (3rd of Advent, 4th of Lent) as small marks
     for weeks in (2.5, 4 + 2.5 + 7 + 3.5):

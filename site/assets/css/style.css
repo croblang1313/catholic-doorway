@@ -747,12 +747,12 @@ dl.glossary .see { font: 600 .85rem var(--sans); margin-left: .2rem; }
 .church-plan .taber { fill: #d4a93c; stroke: #8a6a1e; stroke-width: 1.5; }
 .church-plan .taber-door { stroke: #8a6a1e; stroke-width: 1.5; }
 .church-plan .lamp { fill: #c8302b; }
-.church-plan .plan-label { font: 600 15px var(--sans); fill: var(--ink-soft); }
+.church-plan .plan-label { font: 600 17px var(--sans); fill: var(--ink-soft); }
 .church-plan .hot { cursor: pointer; outline: none; }
 .church-plan .hot circle { fill: var(--navy); stroke: var(--surface); stroke-width: 3; transition: r .15s; }
-.church-plan .hot text { font: 700 14px var(--sans); fill: var(--bg); pointer-events: none; }
+.church-plan .hot text { font: 700 18px var(--sans); fill: var(--bg); pointer-events: none; }
 .church-plan .hot:hover circle, .church-plan .hot:focus-visible circle { fill: var(--gold); }
-.church-plan .hot.on circle { fill: var(--gold); r: 17; }
+.church-plan .hot.on circle { fill: var(--gold); r: 22; }
 .plan-info { min-height: 5.2rem; padding: .8rem .4rem .2rem; border-top: 1px solid var(--line); margin-top: .6rem; }
 .plan-info strong { font-family: var(--serif-display); font-size: 1.35rem; color: var(--navy); display: block; }
 .an-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; }
@@ -806,7 +806,7 @@ dl.glossary .see { font: 600 .85rem var(--sans); margin-left: .2rem; }
 .swatch { font: 600 .88rem var(--sans); display: inline-flex; align-items: center; gap: .45rem; border: 1px solid var(--line); background: var(--surface); color: var(--ink); padding: .4rem .8rem .4rem .45rem; border-radius: 999px; cursor: pointer; min-height: 40px; }
 .swatch span { width: 22px; height: 22px; border-radius: 50%; background: var(--sw); border: 1px solid rgba(0,0,0,.25); }
 .swatch[aria-pressed="true"] { border-color: var(--navy); box-shadow: 0 0 0 2px var(--navy) inset; }
-.who-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); }
+.who-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr)); }
 .who { margin: 0; text-align: center; }
 .who .vest-fig { max-width: 170px; margin: 0 auto .4rem; }
 .who h3 { margin: .2rem 0 .3rem; }
@@ -850,3 +850,4 @@ dl.glossary .see { font: 600 .85rem var(--sans); margin-left: .2rem; }
 .pfig .seat { stroke: var(--gold); }
 .resp .say { margin: 0 0 .6rem; }
 .resp p { margin: 0; }
+.fig-priest .h-alb, .fig-bishop .h-alb, .dress-fig[data-layer="4"] .h-alb, .dress-fig:not([data-layer="4"]) .h-chas { display: none; }
