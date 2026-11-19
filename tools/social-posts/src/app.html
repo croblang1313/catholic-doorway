@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Social Posts</title>
+<style>
+:root{--accent:#2563eb;--ink:#16181d;--muted:#5d6470;--line:#e2e5ea;--bg:#f6f7f9;--card:#fff;--ok:#157f3b;--bad:#b42318;--warn:#a15c07;--radius:12px}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent)}
+button,input,select,textarea{font:inherit;color:inherit}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;background:var(--ink);color:#fff;border-bottom:3px solid var(--accent)}
+.bar strong{font-size:17px}
+.bar .who{font-size:14px;opacity:.9}
+.bar button{background:none;border:0;color:#fff;text-decoration:underline;cursor:pointer;padding:0 0 0 6px}
+main{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:24px;margin:4px 0 16px}
+h2{font-size:18px;margin:0 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin:0 0 16px}
+.banner{border-left:4px solid var(--accent);background:#fff;padding:10px 14px;border-radius:8px;margin:0 0 16px;font-size:15px}
+.banner.test{border-color:var(--warn);background:#fff8eb}
+.msg{padding:10px 14px;border-radius:8px;margin:0 0 16px;font-size:15px}
+.msg.ok{background:#e9f7ee;color:var(--ok)}
+.msg.err{background:#fdecea;color:var(--bad)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 16px}
+.tabs a{padding:8px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);text-decoration:none;color:var(--ink);font-weight:600;font-size:15px}
+.tabs a.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:8px 18px;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:#fff;font-weight:600;cursor:pointer;text-decoration:none}
+.btn.ghost{background:#fff;color:var(--accent)}
+.btn.danger{background:#fff;color:var(--bad);border-color:#f0c6c2}
+.btn:disabled{opacity:.6;cursor:wait}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+label.field{display:block;font-weight:600;margin:14px 0 6px}
+input[type=text],input[type=password],input[type=url],textarea,select{width:100%;padding:10px 12px;border:1px solid #c9ced6;border-radius:8px;background:#fff}
+textarea{min-height:140px;resize:vertical}
+.hint{color:var(--muted);font-size:14px;margin:6px 0 0}
+.counts{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:4px}
+.counts .over{color:var(--bad);font-weight:700}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.seg button{border:0;background:none;padding:10px 18px;font-weight:600;cursor:pointer;min-height:44px}
+.seg button.on{background:var(--accent);color:#fff}
+.plats{display:flex;flex-wrap:wrap;gap:8px}
+.plats label{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:8px 12px;background:#fff;cursor:pointer;min-height:44px}
+.thumbs{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
+.thumb{position:relative;width:104px;height:104px;border-radius:10px;overflow:hidden;background:#e9ecf0;border:1px solid var(--line)}
+.thumb img,.thumb video{width:100%;height:100%;object-fit:cover;display:block}
+.thumb .x{position:absolute;top:4px;right:4px;width:28px;height:28px;border-radius:50%;border:0;background:rgba(0,0,0,.65);color:#fff;cursor:pointer;font-size:16px;line-height:1}
+.thumb .mv{position:absolute;bottom:4px;left:4px;width:28px;height:28px;border-radius:50%;border:0;background:rgba(0,0,0,.65);color:#fff;cursor:pointer}
+.thumb .bar2{position:absolute;left:0;right:0;bottom:0;height:5px;background:rgba(0,0,0,.2)}
+.thumb .bar2 i{display:block;height:100%;background:var(--accent);width:0}
+.drop{border:2px dashed #c9ced6;border-radius:12px;padding:18px;text-align:center;background:#fff;cursor:pointer}
+.drop.hot{border-color:var(--accent);background:#eef3ff}
+table.list{width:100%;border-collapse:collapse;font-size:15px}
+table.list th,table.list td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+table.list a{font-weight:600}
+.pill{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:600;background:#eef0f3;color:var(--muted);white-space:nowrap}
+.pill.draft{background:#fff1d6;color:var(--warn)}
+.pill.sent{background:#e2f5e9;color:var(--ok)}
+.pill.failed{background:#fdecea;color:var(--bad)}
+.pill.todo,.pill.processing{background:#e8efff;color:var(--accent)}
+.pv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.pv{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:0}
+.pv-head{display:flex;gap:10px;align-items:center;padding:12px}
+.av{width:38px;height:38px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex:none}
+.pv-sub{color:var(--muted);font-size:13px}
+.pv-text{padding:0 12px 12px;white-space:pre-wrap;word-wrap:break-word;font-size:15px}
+.pv-media{position:relative;background:#111}
+.pv-media img,.pv-media video{display:block;width:100%;max-height:420px;object-fit:cover}
+.pv-media .more{position:absolute;right:10px;bottom:10px;background:rgba(0,0,0,.7);color:#fff;border-radius:999px;padding:2px 10px;font-size:13px}
+.pv.instagram .pv-media img{aspect-ratio:4/5}
+.pv.tiktok .pv-media video,.pv.youtube .pv-media video{aspect-ratio:9/16;max-height:480px;object-fit:cover}
+.pv-note{padding:8px 12px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+.pv-note.bad{color:var(--bad)}
+.results{list-style:none;margin:0;padding:0}
+.results li{padding:10px 0;border-bottom:1px solid var(--line)}
+.results li:last-child{border:0}
+.ok{color:var(--ok)}.bad{color:var(--bad)}
+.phone{border:1px solid var(--line);border-radius:12px;padding:14px;margin:10px 0;background:#fbfcfd}
+.phone h3{margin:0 0 6px;font-size:16px}
+.phone .row{margin-top:10px}
+.login{max-width:420px;margin:40px auto}
+.choose label{display:flex;gap:10px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:10px;margin:6px 0;cursor:pointer;background:#fff}
+details.howto{margin-top:14px}
+details.howto summary{cursor:pointer;font-weight:600}
+details.howto li{margin:6px 0}
+code{background:#eef0f3;border-radius:4px;padding:1px 5px;font-size:14px}
+.empty{color:var(--muted);padding:12px 0}
+@media (max-width:600px){h1{font-size:21px}.card{padding:14px}table.list .hide-s{display:none}.btn{width:100%}.row .btn{flex:1 1 auto}}
+</style>
+</head>
+<body>
+<header class="bar"><strong id="brand">Social Posts</strong><span class="who" id="who"></span></header>
+<main id="app"><p class="empty">Loading…</p></main>
+<script>
+(function () {
+	'use strict';
+	var S = { settings: null, platforms: {}, posts: [], who: '' };
+	var app = document.getElementById('app');
+	var draft = null; // Compose state.
+
+	function esc(s) {
+		return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; });
+	}
+	function api(method, path, body) {
+		var opt = { method: method, headers: { 'X-SP': '1' }, credentials: 'same-origin' };
+		if (body !== undefined) { opt.headers['Content-Type'] = 'application/json'; opt.body = JSON.stringify(body); }
+		return fetch(path, opt).then(function (r) {
+			return r.json().catch(function () { return {}; }).then(function (d) {
+				if (r.status === 401) { showLogin(); throw new Error(d.error || 'Please sign in.'); }
+				if (!r.ok) { throw new Error(d.error || ('Error ' + r.status)); }
+				return d;
+			});
+		});
+	}
+	function flash(kind, text) {
+		sessionStorageSet('sp_flash', JSON.stringify({ kind: kind, text: text }));
+	}
+	function sessionStorageSet(k, v) { try { sessionStorage.setItem(k, v); } catch (e) { /* ignore */ } }
+	function takeFlash() {
+		var v = null;
+		try { v = sessionStorage.getItem('sp_flash'); sessionStorage.removeItem('sp_flash'); } catch (e) { /* ignore */ }
+		if (!v) { return ''; }
+		try { var f = JSON.parse(v); return '<div class="msg ' + (f.kind === 'ok' ? 'ok' : 'err') + '">' + esc(f.text) + '</div>'; } catch (e) { return ''; }
+	}
+	function siteName() { return (S.settings && S.settings.site_name) || 'Social Posts'; }
+	function initials() {
+		var w = siteName().replace(/[^A-Za-z0-9 ]/g, ' ').trim().split(/\s+/);
+		return ((w[0] || 'S').charAt(0) + (w[1] ? w[1].charAt(0) : '')).toUpperCase();
+	}
+	function when(t) {
+		if (!t) { return ''; }
+		var d = new Date(t);
+		return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) + ', ' + d.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
+	}
+	function postOn(d) { var t = new Date(d + 'T12:00:00'); return isNaN(t) ? d : t.toLocaleDateString(undefined, { weekday: 'long', month: 'short', day: 'numeric' }); }
+	function label(p) { return (S.platforms[p] && S.platforms[p].label) || p; }
+	function statusPill(st) {
+		var t = { draft: 'Waiting for approval', todo: 'Finish on phone', processing: 'Processing', failed: 'Needs attention', sent: 'Posted' }[st] || st;
+		return '<span class="pill ' + esc(st) + '">' + esc(t) + '</span>';
+	}
+	function mediaSrc(m, ig) { return '/m/' + (ig && m.ig_key ? m.ig_key : m.key); }
+
+	/* ---------------- Sign-in ---------------- */
+	function showLogin(err) {
+		document.getElementById('who').innerHTML = '';
+		app.innerHTML = '<div class="login card"><h1>Social Posts</h1><p>Sign in to write and approve posts.</p>' +
+			(err ? '<div class="msg err">' + esc(err) + '</div>' : '') +
+			'<form id="lf"><label class="field" for="ln">Your name</label><input type="text" id="ln" autocomplete="name" placeholder="So posts show who wrote them">' +
+			'<label class="field" for="lp">Password</label><input type="password" id="lp" autocomplete="current-password" required>' +
+			'<label style="display:flex;gap:8px;align-items:center;margin:14px 0"><input type="checkbox" id="lr" checked> Keep me signed in on this device</label>' +
+			'<button class="btn" type="submit" style="width:100%">Sign in</button></form></div>';
+		try { document.getElementById('ln').value = localStorage.getItem('sp_name') || ''; } catch (e) { /* ignore */ }
+		document.getElementById('lf').onsubmit = function (e) {
+			e.preventDefault();
+			var name = document.getElementById('ln').value;
+			try { localStorage.setItem('sp_name', name); } catch (er) { /* ignore */ }
+			var b = this.querySelector('button'); b.disabled = true;
+			fetch('/api/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'same-origin', body: JSON.stringify({ name: name, password: document.getElementById('lp').value, remember: document.getElementById('lr').checked }) })
+				.then(function (r) { return r.json().then(function (d) { if (!r.ok) { throw new Error(d.error || 'Sign-in failed.'); } }); })
+				.then(load).catch(function (er) { showLogin(er.message); });
+		};
+	}
+
+	/* ---------------- Load + route ---------------- */
+	function load() {
+		return fetch('/api/state', { credentials: 'same-origin' }).then(function (r) {
+			if (r.status === 401) { showLogin(); return null; }
+			return r.json().then(function (d) {
+				if (!r.ok) { throw new Error(d.error || 'Could not load.'); }
+				S = d;
+				document.documentElement.style.setProperty('--accent', S.settings.accent || '#2563eb');
+				document.getElementById('brand').textContent = siteName();
+				document.title = 'Social Posts · ' + siteName();
+				document.getElementById('who').innerHTML = esc(S.who) + ' · <button type="button" id="so">Sign out</button>';
+				document.getElementById('so').onclick = function () { api('POST', '/api/logout', {}).then(function () { showLogin(); }); };
+				render();
+				return d;
+			});
+		}).catch(function (e) { app.innerHTML = '<div class="msg err">' + esc(e.message) + '</div>'; });
+	}
+	window.addEventListener('hashchange', function () { if (S.settings) { render(); } });
+
+	function render() {
+		var h = location.hash.replace(/^#/, '') || 'new';
+		var todo = S.posts.filter(function (p) { return p.status !== 'sent'; }).length;
+		var tabs = [['new', 'New post'], ['todo', 'To do' + (todo ? ' (' + todo + ')' : '')], ['history', 'History'], ['settings', 'Settings']];
+		var top = '<h1>Social Posts</h1>' + takeFlash();
+		if (S.settings.test_mode) {
+			top += '<div class="banner test"><strong>Test mode is on.</strong> Nothing will be posted. Approving shows exactly what would have been sent. Turn it off under <a href="#settings">Settings</a> when you are ready.</div>';
+		}
+		top += '<nav class="tabs">' + tabs.map(function (t) { return '<a href="#' + t[0] + '" class="' + (h === t[0] || (h.indexOf(t[0]) === 0 && t[0] !== 'new') ? 'on' : '') + '">' + esc(t[1]) + '</a>'; }).join('') + '</nav>';
+		if (h.indexOf('post/') === 0) { return viewPost(top, h.slice(5)); }
+		if (h.indexOf('edit/') === 0) { return viewCompose(top, h.slice(5)); }
+		if (h === 'todo') { return viewList(top, 'todo'); }
+		if (h === 'history') { return viewList(top, 'history'); }
+		if (h === 'settings') { return viewSettings(top); }
+		return viewCompose(top, '');
+	}
+
+	/* ---------------- Lists ---------------- */
+	function viewList(top, which) {
+		var rows = S.posts.filter(function (p) { return which === 'todo' ? p.status !== 'sent' : true; });
+		var html = top + '<div class="card"><h2>' + (which === 'todo' ? 'Waiting on you' : 'All posts') + '</h2>';
+		if (!rows.length) {
+			html += '<p class="empty">' + (which === 'todo' ? 'Nothing waiting. Nice.' : 'No posts yet.') + '</p>';
+		} else {
+			html += '<table class="list"><thead><tr><th>Post</th><th class="hide-s">Goes to</th><th>Status</th><th class="hide-s">When</th></tr></thead><tbody>';
+			rows.forEach(function (p) {
+				var t = p.caption.length > 70 ? p.caption.slice(0, 70) + '…' : p.caption;
+				html += '<tr><td><a href="#post/' + esc(p.id) + '">' + esc(t) + '</a><div class="hint">' + (p.kind === 'video' ? 'Video' : (p.media.length + ' photo' + (p.media.length > 1 ? 's' : ''))) + ' · by ' + esc(p.author) + (p.post_on ? ' · <strong>post on ' + esc(postOn(p.post_on)) + '</strong>' : '') + '</div></td>' +
+					'<td class="hide-s">' + p.platforms.map(label).map(esc).join(', ') + '</td><td>' + statusPill(p.status) + '</td><td class="hide-s">' + esc(when(p.sent_at || p.created)) + '</td></tr>';
+			});
+			html += '</tbody></table>';
+		}
+		app.innerHTML = html + '</div>';
+	}
+
+	/* ---------------- Compose ---------------- */
+	function viewCompose(top, id) {
+		var existing = id ? S.posts.filter(function (p) { return p.id === id; })[0] : null;
+		if (!draft || draft.id !== (existing ? existing.id : '')) {
+			draft = existing ? { id: existing.id, kind: existing.kind, caption: existing.caption, title: existing.title, platforms: existing.platforms.slice(), media: existing.media.map(function (m) { return { key: m.key, ig_key: m.ig_key, type: m.type, src: '/m/' + m.key, done: true }; }) }
+				: { id: '', kind: 'photo', caption: '', title: '', platforms: (S.settings.default_platforms || ['facebook', 'instagram']).slice(), media: [] };
+		}
+		var d = draft;
+		var plats = Object.keys(S.platforms).filter(function (p) { return S.platforms[p][d.kind]; });
+		var html = top + '<form class="card" id="cf"><h2>' + (d.id ? 'Edit draft' : 'New post') + '</h2>';
+		if (!d.id) {
+			html += '<div class="seg" role="group" aria-label="Post type"><button type="button" data-k="photo" class="' + (d.kind === 'photo' ? 'on' : '') + '">Photo post</button><button type="button" data-k="video" class="' + (d.kind === 'video' ? 'on' : '') + '">Video post</button></div>';
+		}
+		html += '<label class="field">' + (d.kind === 'video' ? 'Video' : 'Photos (up to 10)') + '</label>' +
+			'<div class="drop" id="drop" tabindex="0" role="button">' + (d.kind === 'video' ? 'Tap to choose a video, or drop it here. MP4 or MOV, 25 MB or less. Vertical and under 90 seconds works everywhere.' : 'Tap to choose photos, or drop them here.') + '</div>' +
+			'<input type="file" id="file" hidden ' + (d.kind === 'video' ? 'accept="video/mp4,video/quicktime"' : 'accept="image/*" multiple') + '>' +
+			'<div class="thumbs" id="thumbs"></div>' +
+			'<label class="field" for="cap">Post text</label><textarea id="cap" maxlength="2200" placeholder="Write it once. It goes to every place you tick.">' + esc(d.caption) + '</textarea><div class="counts" id="counts"></div>' +
+			'<div id="ytbox"' + (d.kind === 'video' && d.platforms.indexOf('youtube') > -1 ? '' : ' hidden') + '><label class="field" for="ttl">YouTube title</label><input type="text" id="ttl" maxlength="100" value="' + esc(d.title) + '"><p class="hint">100 characters or fewer.</p></div>' +
+			'<label class="field">Post to</label><div class="plats">' + plats.map(function (p) {
+				return '<label><input type="checkbox" name="pl" value="' + p + '"' + (d.platforms.indexOf(p) > -1 ? ' checked' : '') + '> ' + esc(label(p)) + '</label>';
+			}).join('') + '</div><p class="hint">' + esc(viaHint()) + '</p>' +
+			'<div class="row" style="margin-top:18px"><button class="btn" type="submit" id="save">Save and preview</button>' + (d.id ? '<a class="btn ghost" href="#post/' + esc(d.id) + '">Cancel</a>' : '') + '</div></form>';
+		app.innerHTML = html;
+		var form = document.getElementById('cf');
+		Array.prototype.forEach.call(form.querySelectorAll('.seg button'), function (b) {
+			b.onclick = function () {
+				if (d.kind === b.dataset.k) { return; }
+				if (d.media.length && !confirm('Switching clears the files you added. Continue?')) { return; }
+				d.kind = b.dataset.k; d.media = []; render();
+			};
+		});
+		var file = document.getElementById('file'), drop = document.getElementById('drop');
+		drop.onclick = function () { file.click(); };
+		drop.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); file.click(); } };
+		drop.ondragover = function (e) { e.preventDefault(); drop.classList.add('hot'); };
+		drop.ondragleave = function () { drop.classList.remove('hot'); };
+		drop.ondrop = function (e) { e.preventDefault(); drop.classList.remove('hot'); addFiles(e.dataTransfer.files); };
+		file.onchange = function () { addFiles(file.files); file.value = ''; };
+		var cap = document.getElementById('cap');
+		cap.oninput = function () { d.caption = cap.value; counts(); };
+		var ttl = document.getElementById('ttl');
+		if (ttl) { ttl.oninput = function () { d.title = ttl.value; }; }
+		Array.prototype.forEach.call(form.querySelectorAll('input[name=pl]'), function (c) {
+			c.onchange = function () {
+				d.platforms = Array.prototype.map.call(form.querySelectorAll('input[name=pl]:checked'), function (x) { return x.value; });
+				document.getElementById('ytbox').hidden = !(d.kind === 'video' && d.platforms.indexOf('youtube') > -1);
+				counts();
+			};
+		});
+		form.onsubmit = function (e) { e.preventDefault(); saveDraft(); };
+		drawThumbs(); counts();
+	}
+	function viaHint() {
+		var s = S.settings, auto = [], phone = [];
+		[['facebook', s.facebook_via], ['instagram', s.instagram_via]].forEach(function (x) { (x[1] === 'share' ? phone : auto).push(label(x[0])); });
+		['x', 'tiktok'].forEach(function (p) { phone.push(label(p)); });
+		return (auto.length ? auto.join(' and ') + ' post automatically. ' : '') + phone.join(', ') + ' finish from your phone with one tap.';
+	}
+	function counts() {
+		var n = Array.from(draft.caption || '').length, out = [];
+		var lim = { x: 280, pinterest: 500, instagram: 2200, tiktok: 2200, facebook: 2200 };
+		draft.platforms.forEach(function (p) { if (lim[p]) { out.push('<span class="' + (n > lim[p] ? 'over' : '') + '">' + esc(label(p)) + ': ' + n + ' / ' + lim[p] + '</span>'); } });
+		var el = document.getElementById('counts'); if (el) { el.innerHTML = out.join(''); }
+	}
+	function drawThumbs() {
+		var box = document.getElementById('thumbs'); if (!box) { return; }
+		box.innerHTML = draft.media.map(function (m, i) {
+			return '<div class="thumb">' + (m.type.indexOf('video') === 0 ? '<video src="' + esc(m.src) + '" muted playsinline preload="metadata"></video>' : '<img src="' + esc(m.src) + '" alt="">') +
+				'<button type="button" class="x" data-i="' + i + '" aria-label="Remove">×</button>' + (i > 0 ? '<button type="button" class="mv" data-i="' + i + '" aria-label="Move earlier">‹</button>' : '') +
+				(m.done ? '' : '<div class="bar2"><i style="width:' + Math.round((m.pct || 0) * 100) + '%"></i></div>') + '</div>';
+		}).join('');
+		Array.prototype.forEach.call(box.querySelectorAll('.x'), function (b) { b.onclick = function () { draft.media.splice(+b.dataset.i, 1); drawThumbs(); }; });
+		Array.prototype.forEach.call(box.querySelectorAll('.mv'), function (b) { b.onclick = function () { var i = +b.dataset.i; var t = draft.media[i]; draft.media[i] = draft.media[i - 1]; draft.media[i - 1] = t; drawThumbs(); }; });
+	}
+	function upload(blob, name, w, h, onPct) {
+		return new Promise(function (resolve, reject) {
+			var x = new XMLHttpRequest();
+			x.open('POST', '/api/media');
+			x.setRequestHeader('X-SP', '1');
+			x.setRequestHeader('Content-Type', blob.type);
+			x.setRequestHeader('X-Filename', (name || 'media').replace(/[^\w.\- ]/g, ''));
+			if (w) { x.setRequestHeader('X-Width', String(w)); x.setRequestHeader('X-Height', String(h)); }
+			x.upload.onprogress = function (e) { if (e.lengthComputable && onPct) { onPct(e.loaded / e.total); } };
+			x.onload = function () { var d = {}; try { d = JSON.parse(x.responseText); } catch (e) { /* ignore */ } if (x.status === 200) { resolve(d); } else { reject(new Error(d.error || 'Upload failed (' + x.status + ').')); } };
+			x.onerror = function () { reject(new Error('Upload failed. Check the connection and try again.')); };
+			x.send(blob);
+		});
+	}
+	function toJpeg(file, crop) {
+		// Re-saves a photo as JPEG (max 2160px), optionally center-cropped to fit Instagram (4:5 to 1.91:1).
+		return new Promise(function (resolve, reject) {
+			var url = URL.createObjectURL(file), img = new Image();
+			img.onload = function () {
+				var sw = img.naturalWidth, sh = img.naturalHeight, sx = 0, sy = 0, r = sw / sh;
+				if (crop) {
+					if (r < 0.8) { var nh = Math.floor(sw / 0.8); sy = Math.round((sh - nh) / 2); sh = nh; }
+					else if (r > 1.91) { var nw = Math.floor(sh * 1.91); sx = Math.round((sw - nw) / 2); sw = nw; }
+				}
+				var scale = Math.min(1, 2160 / Math.max(sw, sh)), cw = Math.round(sw * scale), ch = Math.round(sh * scale);
+				var c = document.createElement('canvas'); c.width = cw; c.height = ch;
+				var g = c.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, cw, ch);
+				g.drawImage(img, sx, sy, sw, sh, 0, 0, cw, ch);
+				URL.revokeObjectURL(url);
+				c.toBlob(function (b) { if (b) { resolve({ blob: b, w: cw, h: ch, ratio: img.naturalWidth / img.naturalHeight }); } else { reject(new Error('Could not read that photo.')); } }, 'image/jpeg', 0.88);
+			};
+			img.onerror = function () { URL.revokeObjectURL(url); reject(new Error('Could not read that photo. Try a JPEG or PNG.')); };
+			img.src = url;
+		});
+	}
+	function addFiles(list) {
+		var files = Array.prototype.slice.call(list || []);
+		if (draft.kind === 'video') { files = files.slice(0, 1); draft.media = []; }
+		files = files.slice(0, Math.max(0, 10 - draft.media.length));
+		files.forEach(function (f) {
+			var m = { type: f.type || 'application/octet-stream', src: URL.createObjectURL(f), done: false, pct: 0 };
+			draft.media.push(m); drawThumbs();
+			var job;
+			if (draft.kind === 'video') {
+				if (!/^video\/(mp4|quicktime)$/.test(f.type)) { job = Promise.reject(new Error('Use an MP4 or MOV video.')); }
+				else if (f.size > 25 * 1024 * 1024) { job = Promise.reject(new Error('That video is over 25 MB. Export it smaller (1080p, under 90 seconds) and try again.')); }
+				else { job = upload(f, f.name, 0, 0, function (p) { m.pct = p; drawThumbs(); }).then(function (r) { m.key = r.key; }); }
+			} else {
+				job = toJpeg(f, false).then(function (j) {
+					return upload(j.blob, f.name.replace(/\.\w+$/, '') + '.jpg', j.w, j.h, function (p) { m.pct = p; drawThumbs(); }).then(function (r) {
+						m.key = r.key; m.type = 'image/jpeg';
+						if (j.ratio < 0.8 || j.ratio > 1.91) {
+							return toJpeg(f, true).then(function (c) { return upload(c.blob, 'ig-' + f.name.replace(/\.\w+$/, '') + '.jpg', c.w, c.h); }).then(function (r2) { m.ig_key = r2.key; });
+						}
+					});
+				});
+			}
+			job.then(function () { m.done = true; drawThumbs(); }).catch(function (e) {
+				var i = draft.media.indexOf(m); if (i > -1) { draft.media.splice(i, 1); }
+				drawThumbs(); alert(e.message);
+			});
+		});
+	}
+	function saveDraft() {
+		var d = draft, b = document.getElementById('save');
+		if (d.media.some(function (m) { return !m.done; })) { alert('Wait for the files to finish uploading.'); return; }
+		b.disabled = true; b.textContent = 'Saving…';
+		var body = { kind: d.kind, caption: d.caption, title: d.title, platforms: d.platforms, media: d.media.map(function (m) { return m.key; }), ig_media: d.media.map(function (m) { return m.ig_key || ''; }) };
+		(d.id ? api('PUT', '/api/posts/' + d.id, body) : api('POST', '/api/posts', body)).then(function (r) {
+			var id = r.id; draft = null;
+			flash('ok', 'Saved. Check the preview, then approve it.');
+			return load().then(function () { location.hash = 'post/' + id; });
+		}).catch(function (e) { b.disabled = false; b.textContent = 'Save and preview'; alert(e.message); });
+	}
+
+	/* ---------------- One post ---------------- */
+	function viewPost(top, id) {
+		var p = S.posts.filter(function (x) { return x.id === id; })[0];
+		if (!p) {
+			app.innerHTML = top + '<div class="card"><p class="empty">Loading…</p></div>';
+			api('GET', '/api/posts/' + id).then(function (post) { S.posts.unshift(post); render(); }).catch(function (e) { app.innerHTML = top + '<div class="msg err">' + esc(e.message) + '</div>'; });
+			return;
+		}
+		var html = top + '<div class="row" style="margin-bottom:12px">' + statusPill(p.status) + '<span class="hint" style="margin:0">Written by ' + esc(p.author) + ', ' + esc(when(p.created)) + (p.approved_by ? ' · approved by ' + esc(p.approved_by) : '') + (p.post_on ? ' · <strong>planned for ' + esc(postOn(p.post_on)) + '</strong>' : '') + '</span></div>';
+		if (p.status === 'draft') {
+			html += '<div class="card" style="border-color:var(--accent)"><div class="row"><button class="btn" id="ap">' + (S.settings.test_mode ? 'Approve (test run)' : 'Approve and post') + '</button><a class="btn ghost" href="#edit/' + esc(p.id) + '">Edit</a><button class="btn danger" id="del">Delete draft</button></div></div>';
+		} else {
+			html += resultsHtml(p);
+		}
+		html += '<h2>Preview</h2><div class="pv-grid">' + p.platforms.map(function (pl) { return previewCard(p, pl); }).join('') + '</div>';
+		if (p.status !== 'draft') { html += '<div class="row" style="margin-top:16px"><button class="btn danger" id="del">Remove from this list</button></div>'; }
+		app.innerHTML = html;
+		var ap = document.getElementById('ap');
+		if (ap) {
+			ap.onclick = function () {
+				if (!S.settings.test_mode && !confirm('Post this now to ' + p.platforms.map(label).join(', ') + '?')) { return; }
+				ap.disabled = true; ap.textContent = 'Posting… this can take up to a minute for videos';
+				api('POST', '/api/posts/' + p.id + '/approve', {}).then(function (np) { replacePost(np); flash(np.status === 'failed' ? 'err' : 'ok', np.status === 'failed' ? 'Some places failed. See below.' : (np.status === 'todo' ? 'Approved. Finish the phone steps below.' : 'Approved.')); render(); })
+					.catch(function (e) { ap.disabled = false; ap.textContent = 'Approve'; alert(e.message); });
+			};
+		}
+		var rt = document.getElementById('retry');
+		if (rt) { rt.onclick = function () { rt.disabled = true; api('POST', '/api/posts/' + p.id + '/approve', {}).then(function (np) { replacePost(np); render(); }).catch(function (e) { rt.disabled = false; alert(e.message); }); }; }
+		var ck = document.getElementById('check');
+		if (ck) { ck.onclick = function () { ck.disabled = true; ck.textContent = 'Checking…'; api('POST', '/api/posts/' + p.id + '/check', {}).then(function (np) { replacePost(np); render(); }).catch(function (e) { ck.disabled = false; alert(e.message); }); }; }
+		var del = document.getElementById('del');
+		if (del) { del.onclick = function () { if (!confirm(p.status === 'draft' ? 'Delete this draft?' : 'Remove this post and its files from this list? It stays on the social sites.')) { return; } api('DELETE', '/api/posts/' + p.id).then(function () { S.posts = S.posts.filter(function (x) { return x.id !== p.id; }); flash('ok', 'Deleted.'); location.hash = 'todo'; }).catch(function (e) { alert(e.message); }); }; }
+		Array.prototype.forEach.call(app.querySelectorAll('.phone'), wirePhone);
+	}
+	function replacePost(np) { S.posts = S.posts.map(function (x) { return x.id === np.id ? np : x; }); }
+	function resultsHtml(p) {
+		var r = p.results || {}, html = '<div class="card"><h2>What happened</h2><ul class="results">', failed = false, processing = false, phones = '';
+		p.platforms.forEach(function (pl) {
+			var x = r[pl] || {}, line = '';
+			if (x.state === 'sent') { line = '<span class="ok">Posted.</span>' + (x.url ? ' <a href="' + esc(x.url) + '" target="_blank" rel="noopener">View it</a>' : ''); }
+			else if (x.state === 'test') { line = '<span class="ok">' + esc(x.message) + '</span>'; }
+			else if (x.state === 'failed') { failed = true; line = '<span class="bad">Failed: ' + esc(x.message) + '</span>'; }
+			else if (x.state === 'processing') { processing = true; line = esc(x.message); }
+			else if (x.state === 'done') { line = '<span class="ok">Done from phone.</span> <button type="button" class="btn ghost undo" style="min-height:32px;padding:2px 10px" data-p="' + pl + '">Undo</button>'; }
+			else if (x.state === 'phone') { line = 'Finish on your phone (below).'; phones += phoneBox(p, pl); }
+			else { line = 'Not sent yet.'; }
+			html += '<li><strong>' + esc(label(pl)) + ':</strong> ' + line + '</li>';
+		});
+		html += '</ul>';
+		if (failed) { html += '<div class="row" style="margin-top:10px"><button class="btn" id="retry">Try the failed ones again</button></div>'; }
+		if (processing) { html += '<div class="row" style="margin-top:10px"><button class="btn" id="check">Check Instagram now</button></div>'; }
+		html += phones + '</div>';
+		setTimeout(function () {
+			Array.prototype.forEach.call(app.querySelectorAll('.undo'), function (b) { b.onclick = function () { api('POST', '/api/posts/' + p.id + '/done', { platform: b.dataset.p, undo: true }).then(function (np) { replacePost(np); render(); }); }; });
+		}, 0);
+		return html;
+	}
+	function shareText(p, pl) {
+		var t = p.caption;
+		if (pl === 'youtube' && p.title) { t = p.title + '\n\n' + t; }
+		if (pl === 'pinterest' && S.settings.site_link) { t += '\n\n' + S.settings.site_link; }
+		return t;
+	}
+	function phoneBox(p, pl) {
+		var app2 = { x: 'X', youtube: 'YouTube', tiktok: 'TikTok', pinterest: 'Pinterest', facebook: 'Facebook (or Meta Business Suite)', instagram: 'Instagram' }[pl] || label(pl);
+		return '<div class="phone" data-p="' + pl + '" data-id="' + esc(p.id) + '"><h3>Finish on ' + esc(label(pl)) + '</h3>' +
+			'<p class="hint">Open this page on your phone. Tap Share, pick ' + esc(app2) + ', paste the text if it is not already there, and tap Post. Then come back and tap Done.' + (pl === 'x' ? ' X allows 280 characters.' : '') + '</p>' +
+			'<textarea readonly style="min-height:90px">' + esc(shareText(p, pl)) + '</textarea>' +
+			'<div class="row"><button type="button" class="btn sh">Share to ' + esc(label(pl).replace(/ \(.*\)$/, '')) + '</button><button type="button" class="btn ghost cp">Copy text</button><button type="button" class="btn ghost dn">Done</button></div>' +
+			'<p class="hint fb" hidden>This browser can\'t share files. Save the ' + (p.kind === 'video' ? 'video' : 'photos') + ': ' + p.media.map(function (m, i) { return '<a href="' + esc(mediaSrc(m, pl === 'instagram')) + '" download>file ' + (i + 1) + '</a>'; }).join(', ') + ', copy the text, then post them in the app.</p></div>';
+	}
+	function copy(text) {
+		if (navigator.clipboard && window.isSecureContext) { return navigator.clipboard.writeText(text); }
+		var t = document.createElement('textarea'); t.value = text; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select();
+		try { document.execCommand('copy'); } catch (e) { /* ignore */ }
+		t.remove(); return Promise.resolve();
+	}
+	function wirePhone(box) {
+		var pl = box.dataset.p, p = S.posts.filter(function (x) { return x.id === box.dataset.id; })[0], text = shareText(p, pl);
+		var sh = box.querySelector('.sh'), fb = box.querySelector('.fb');
+		if (!(navigator.canShare && window.File)) { fb.hidden = false; }
+		box.querySelector('.cp').onclick = function () { var b = this; copy(text).then(function () { b.textContent = 'Text copied'; }); };
+		box.querySelector('.dn').onclick = function () { api('POST', '/api/posts/' + p.id + '/done', { platform: pl }).then(function (np) { replacePost(np); render(); }).catch(function (e) { alert(e.message); }); };
+		sh.onclick = function () {
+			var lbl = sh.textContent; sh.disabled = true; sh.textContent = 'Getting it ready…';
+			copy(text).catch(function () {}).then(function () {
+				return Promise.all(p.media.map(function (m, i) {
+					return fetch(mediaSrc(m, pl === 'instagram')).then(function (r) { if (!r.ok) { throw new Error('download'); } return r.blob(); }).then(function (b) {
+						return new File([b], 'post-' + (i + 1) + '.' + (b.type.indexOf('video') === 0 ? 'mp4' : 'jpg'), { type: b.type });
+					});
+				}));
+			}).then(function (files) {
+				var data = { files: files, text: text };
+				if (!navigator.canShare || !navigator.canShare({ files: files })) { throw new Error('noshare'); }
+				if (!navigator.canShare(data)) { delete data.text; }
+				return navigator.share(data);
+			}).then(function () { sh.disabled = false; sh.textContent = 'Sent. Paste the text if needed, post, then tap Done.'; })
+				.catch(function (err) { sh.disabled = false; sh.textContent = lbl; if (err && err.name === 'AbortError') { return; } fb.hidden = false; });
+		};
+	}
+	function previewCard(p, pl) {
+		var s = S.settings, name = siteName(), sub = label(pl), note = '', bad = false;
+		if (pl === 'facebook' && s.meta_page) { name = s.meta_page; }
+		if (pl === 'instagram' && s.meta_ig_user) { name = s.meta_ig_user; sub = '@' + s.meta_ig_user + ' · Instagram'; }
+		var auto = (pl === 'facebook' && s.facebook_via !== 'share') || (pl === 'instagram' && s.instagram_via !== 'share');
+		if (auto && !s.connected) { note = 'Not connected yet. Connect it under Settings.'; bad = true; }
+		else if (auto && pl === 'instagram' && !s.meta_ig_id) { note = 'No Instagram account is linked to the Facebook Page.'; bad = true; }
+		else if (!auto) { note = 'You finish this one from your phone after approving.'; }
+		if (pl === 'x' && Array.from(p.caption).length > 280) { note = 'Over 280 characters. X will cut it off; shorten it when you share.'; bad = true; }
+		if (pl === 'instagram' && p.media.some(function (m) { return m.ig_key; })) { note = (note ? note + ' ' : '') + 'Instagram gets a cropped copy of tall or wide photos.'; }
+		var media = '';
+		if (p.kind === 'video') { media = '<div class="pv-media"><video src="' + esc(mediaSrc(p.media[0])) + '" controls playsinline preload="metadata"></video></div>'; }
+		else { media = '<div class="pv-media"><img src="' + esc(mediaSrc(p.media[0], pl === 'instagram')) + '" alt="">' + (p.media.length > 1 ? '<span class="more">1 / ' + p.media.length + '</span>' : '') + '</div>'; }
+		var textTop = pl === 'facebook' || pl === 'x';
+		var cap = esc(pl === 'x' && Array.from(p.caption).length > 280 ? Array.from(p.caption).slice(0, 279).join('') + '…' : p.caption);
+		var title = pl === 'youtube' && p.title ? '<div class="pv-text"><strong>' + esc(p.title) + '</strong></div>' : '';
+		return '<figure class="pv ' + pl + '"><figcaption class="pv-head"><span class="av">' + esc(initials()) + '</span><span><strong>' + esc(name) + '</strong><br><span class="pv-sub">' + esc(sub) + '</span></span></figcaption>' +
+			(textTop ? '<div class="pv-text">' + cap + '</div>' : '') + media + title + (!textTop ? '<div class="pv-text" style="padding-top:10px">' + cap + '</div>' : '') +
+			(note ? '<div class="pv-note' + (bad ? ' bad' : '') + '">' + esc(note) + '</div>' : '') + '</figure>';
+	}
+
+	/* ---------------- Settings ---------------- */
+	function viewSettings(top) {
+		var s = S.settings, origin = location.origin;
+		var html = top + '<form class="card" id="sf"><h2>General</h2>' +
+			'<label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="tm"' + (s.test_mode ? ' checked' : '') + '> Test mode: approving shows what would be sent, and nothing is posted</label>' +
+			'<label class="field" for="sn">Name shown on this page</label><input type="text" id="sn" value="' + esc(s.site_name) + '">' +
+			'<label class="field" for="sl">Your website address</label><input type="text" inputmode="url" id="sl" placeholder="https://example.com" value="' + esc(s.site_link) + '"><p class="hint">Added to the end of Pinterest pins so people can click through.</p>' +
+			'<label class="field" for="ac">Accent color</label><input type="color" id="ac" value="' + esc(s.accent) + '" style="width:64px;height:44px;padding:2px;border:1px solid #c9ced6;border-radius:8px">' +
+			'<label class="field">Ticked on new posts</label><div class="plats">' + Object.keys(S.platforms).map(function (p) { return '<label><input type="checkbox" name="dp" value="' + p + '"' + (s.default_platforms.indexOf(p) > -1 ? ' checked' : '') + '> ' + esc(label(p)) + '</label>'; }).join('') + '</div>' +
+			'<h2 style="margin-top:22px">Facebook and Instagram</h2>' +
+			'<label class="field">Facebook posts</label><label style="display:block"><input type="radio" name="fv" value="meta"' + (s.facebook_via !== 'share' ? ' checked' : '') + '> Post automatically (the Meta app must be in Live mode, or only you will see the posts)</label><label style="display:block"><input type="radio" name="fv" value="share"' + (s.facebook_via === 'share' ? ' checked' : '') + '> Always send from my phone</label>' +
+			'<label class="field">Instagram posts</label><label style="display:block"><input type="radio" name="iv" value="meta"' + (s.instagram_via !== 'share' ? ' checked' : '') + '> Post automatically</label><label style="display:block"><input type="radio" name="iv" value="share"' + (s.instagram_via === 'share' ? ' checked' : '') + '> Always send from my phone</label>' +
+			'<div class="row" style="margin-top:18px"><button class="btn" type="submit">Save settings</button></div></form>';
+		html += '<div class="card"><h2>Connect Facebook and Instagram</h2>';
+		if (s.connected) {
+			html += '<ul class="results"><li class="ok"><strong>Facebook Page:</strong> ' + esc(s.meta_page) + '</li><li class="' + (s.meta_ig_id ? 'ok' : 'bad') + '"><strong>Instagram:</strong> ' + (s.meta_ig_id ? '@' + esc(s.meta_ig_user) : 'not linked to this Page') + '</li></ul><p class="hint">Connected ' + esc(when(s.meta_at)) + '. This connection does not expire unless the Page admin removes it or changes their Facebook password.</p>';
+		} else {
+			html += '<p>Not connected yet. Follow the steps once. It takes about 10 minutes.</p>';
+		}
+		html += '<form id="mf"><label class="field" for="ut">Access token from Graph API Explorer</label><textarea id="ut" style="min-height:80px" autocomplete="off" placeholder="Paste it here. It is swapped for a Page connection that does not expire; the pasted token is not kept."></textarea>' +
+			'<details class="howto"><summary>Optional: App ID and App Secret (swaps a short token for a long one)</summary><label class="field" for="ai">Meta App ID</label><input type="text" id="ai"><label class="field" for="as">Meta App Secret</label><input type="password" id="as" autocomplete="off"><p class="hint">Used once and not saved.</p></details>' +
+			'<div id="choose"></div><div class="row" style="margin-top:14px"><button class="btn" type="submit" id="cn">' + (s.connected ? 'Connect again' : 'Connect') + '</button>' + (s.connected ? '<button class="btn danger" type="button" id="dc">Disconnect</button>' : '') + '</div></form>' +
+			'<details class="howto"' + (s.connected ? '' : ' open') + '><summary>How to connect</summary><ol>' +
+			'<li>Make sure your Instagram is a <strong>Business</strong> or <strong>Creator</strong> account linked to your Facebook Page (Page settings → Linked accounts).</li>' +
+			'<li>At <a href="https://developers.facebook.com/apps/" target="_blank" rel="noopener">developers.facebook.com/apps</a>, sign in as a Page admin and create a <strong>Business</strong> app (or reuse one you have). In <strong>App settings → Basic</strong> add your domain, a privacy policy URL and a category, then switch the app to <strong>Live</strong>.</li>' +
+			'<li>Open the <a href="https://developers.facebook.com/tools/explorer/" target="_blank" rel="noopener">Graph API Explorer</a>, pick the app, and add these permissions: <code>pages_show_list</code>, <code>pages_read_engagement</code>, <code>pages_manage_posts</code>, <code>business_management</code>, <code>instagram_basic</code>, <code>instagram_content_publish</code>.</li>' +
+			'<li>Click <strong>Generate Access Token</strong>. When Facebook asks which Pages to allow, pick only the Page this site posts to, and its Instagram.</li>' +
+			'<li>No App Secret? Open the token in the <a href="https://developers.facebook.com/tools/debug/accesstoken/" target="_blank" rel="noopener">Access Token Debugger</a> and click <strong>Extend Access Token</strong>; use the longer token.</li>' +
+			'<li>Paste it above and click Connect. Then make a test post with test mode on before turning test mode off.</li></ol></details></div>';
+		html += '<div class="card"><h2>Drafts from Claude or a script</h2>' + (s.drafts_api ? '<p class="ok">On. Drafts can be sent to <code>' + esc(origin) + '/api/drafts</code> with the drafts token. They wait here for approval.</p>' : '<p>Off. Add a secret named <code>DRAFTS_TOKEN</code> to the Worker to turn it on.</p>') + '<p class="hint">Social Posts ' + esc(s.version) + '</p></div>';
+		app.innerHTML = html;
+		document.getElementById('sf').onsubmit = function (e) {
+			e.preventDefault();
+			var b = { test_mode: document.getElementById('tm').checked, site_name: document.getElementById('sn').value, site_link: document.getElementById('sl').value, accent: document.getElementById('ac').value,
+				facebook_via: (document.querySelector('input[name=fv]:checked') || {}).value, instagram_via: (document.querySelector('input[name=iv]:checked') || {}).value,
+				default_platforms: Array.prototype.map.call(document.querySelectorAll('input[name=dp]:checked'), function (x) { return x.value; }) };
+			api('POST', '/api/settings', b).then(function () { flash('ok', b.test_mode ? 'Saved. Test mode is on.' : 'Saved. Test mode is off, so approved posts will go live.'); return load(); }).catch(function (er) { alert(er.message); });
+		};
+		var dc = document.getElementById('dc');
+		if (dc) { dc.onclick = function () { if (confirm('Disconnect Facebook and Instagram?')) { api('POST', '/api/disconnect', {}).then(function () { flash('ok', 'Disconnected.'); load(); }); } }; }
+		document.getElementById('mf').onsubmit = function (e) {
+			e.preventDefault();
+			var cn = document.getElementById('cn'); cn.disabled = true; cn.textContent = 'Connecting…';
+			api('POST', '/api/connect', { user_token: document.getElementById('ut').value, app_id: document.getElementById('ai').value, app_secret: document.getElementById('as').value }).then(function (r) {
+				if (r.choose) {
+					cn.disabled = false; cn.textContent = 'Connect';
+					var c = document.getElementById('choose');
+					c.innerHTML = '<p><strong>Which Page should posts go to?</strong></p><div class="choose">' + r.choose.map(function (pg) { return '<label><input type="radio" name="pg" value="' + esc(pg.id) + '"> ' + esc(pg.name) + (pg.ig_user ? ' <span class="hint">(Instagram @' + esc(pg.ig_user) + ')</span>' : ' <span class="hint">(no Instagram linked)</span>') + '</label>'; }).join('') + '</div><button class="btn" type="button" id="pk">Use this Page</button>';
+					document.getElementById('pk').onclick = function () {
+						var v = (document.querySelector('input[name=pg]:checked') || {}).value; if (!v) { alert('Pick a Page.'); return; }
+						api('POST', '/api/connect/pick', { page_id: v }).then(done).catch(function (er) { alert(er.message); });
+					};
+					return;
+				}
+				done(r);
+			}).catch(function (er) { cn.disabled = false; cn.textContent = 'Connect'; alert(er.message); });
+			function done(r) { flash(r.warning ? 'err' : 'ok', r.warning || 'Connected. Facebook and Instagram are ready.'); load(); }
+		};
+	}
+
+	load();
+}());
+</script>
+</body>
+</html>
