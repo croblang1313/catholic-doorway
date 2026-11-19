@@ -10,7 +10,7 @@
 // Nothing is published until an administrator approves it.
 
 const MAX = { parish: 120, city: 80, state: 40, diocese: 120, contact: 80, role: 60, email: 120, phone: 40, website: 200, schedule: 300, start: 120, notes: 600 };
-const LANGS = ["en", "es", "pt", "other"];
+const LANGS = ["en", "es", "pt", "tl", "other"];
 const PUBLIC = ["parish", "city", "state", "diocese", "contact", "role", "email", "phone", "website", "schedule", "start", "langs", "notes", "approved"];
 
 function json(body, status = 200, extra = {}) {
@@ -72,7 +72,7 @@ async function submit(request, env) {
   if (errors.length) return json({ ok: false, error: "invalid", fields: errors }, 400);
   const id = new Date().toISOString().replace(/[-:.TZ]/g, "").slice(0, 14) + "-" + crypto.randomUUID().slice(0, 8);
   f.submitted = new Date().toISOString();
-  f.lang = ["en", "es", "pt"].includes(body.lang) ? body.lang : "en";
+  f.lang = ["en", "es", "pt", "tl"].includes(body.lang) ? body.lang : "en";
   await env.LISTINGS.put("pending:" + id, JSON.stringify(f));
   await env.LISTINGS.put(rk, String(n + 1), { expirationTtl: 3600 });
   return json({ ok: true, id });

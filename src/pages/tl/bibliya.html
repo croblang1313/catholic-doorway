@@ -1,0 +1,91 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker">Bibliya at mga Pagbasa</p>
+    <h1>Ang Salita ng Diyos</h1>
+    <p class="lede">Araw-araw, naririnig ng mga Katoliko sa buong mundo ang iisang mga pagbasa mula sa Kasulatan sa Misa. Basahin ang mga pagbasa ngayon, saka tuklasin ang buong Bibliya.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section">
+    <div class="grid two">
+      <div class="card readings-card" data-readings="today" id="readings-main">
+      <p class="label">Mga pagbasa sa Misa araw-araw</p>
+      <h3 class="rd-title">Mga pagbasa ngayon</h3>
+      <ul class="rd-list"><li class="muted rd-loading">Inilo-load ang mga pagbasa ngayon&hellip;</li></ul>
+      <div class="rd-actions">
+        <a class="btn small rd-listen" href="https://bible.usccb.org/podcasts/audio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Pakinggan</a>
+        <a class="btn small secondary rd-read" href="https://bible.usccb.org/daily-bible-reading" target="_blank" rel="noopener">Basahin</a>
+        <a class="btn small secondary" id="readings-tomorrow" href="https://bible.usccb.org/daily-bible-reading" target="_blank" rel="noopener">Bukas</a>
+        <a class="btn small secondary rd-video" href="#" target="_blank" rel="noopener" hidden>Video ng pagninilay</a>
+      </div>
+      <p class="small muted" id="cycle-note" style="margin:.8rem 0 0"></p>
+      <p class="small muted rd-credit">Audio at teksto sa Ingles mula sa U.S. Conference of Catholic Bishops.</p>
+    </div>
+      <div class="card">
+        <p class="label">Pumili ng petsa</p>
+        <h3 style="margin-top:.2rem">Mga pagbasa para sa anumang araw</h3>
+        <p>Naghahanda para sa Linggo, kasal o libing? Pumili ng petsa upang buksan ang mga pagbasa nito.</p>
+        <form id="readings-form" class="filters" style="margin:0">
+          <label class="sr-only" for="readings-date-input" style="position:absolute;left:-999px">Petsa</label>
+          <input class="search" type="date" id="readings-date-input" required style="flex:1 1 180px">
+          <button class="btn" type="submit">Buksan</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section prose">
+    <h2>Saan mababasa ang Bibliya</h2>
+    <ul>
+      <li><strong>Magandang Balita Biblia</strong> ng Philippine Bible Society, ang salin sa Tagalog na ginagamit sa maraming parokya. Piliin ang edisyong may mga aklat na deuterokanoniko (minarkahang &ldquo;DC&rdquo;). Mababasa ito nang libre sa mga Bible app tulad ng <a href="https://www.bible.com/">YouVersion</a>.</li>
+      <li>Para sa mga pagbasa tuwing Linggo sa Tagalog, maraming parokya sa Pilipinas ang gumagamit ng misalitang <em>Sambuhay</em> ng St. Pauls.</li>
+      <li><a href="https://bible.usccb.org/bible">The New American Bible, Revised Edition (NABRE)</a> sa USCCB. Ang saling Ingles na aprobado para sa mga Katoliko sa Estados Unidos, libreng basahin.</li>
+      <li><a href="https://www.drbo.org/">The Douay-Rheims Bible</a>. Ang klasikong saling Ingles na Katoliko, ngayon ay nasa pampublikong dominyo.</li>
+      <li><a href="https://www.vatican.va/archive/ENG0015/_INDEX.HTM">Ang Katesismo ng Simbahang Katolika</a>, na nagpapaliwanag kung paano binabasa at itinuturo ng Simbahan ang Kasulatan.</li>
+    </ul>
+    <p class="small muted">Nagli-link kami sa mga mapagkukunang ito sa halip na kopyahin ang mga ito, upang lagi kang makabasa ng aprobado at napapanahong teksto.</p>
+  </section>
+
+  <section class="section">
+    <h2>Paano nakaayos ang Bibliyang Katoliko</h2>
+    <p class="prose">May <strong>73 aklat</strong> ang Bibliyang Katoliko: 46 sa Lumang Tipan at 27 sa Bagong Tipan. Pito ang higit na aklat ng Lumang Tipan nito kaysa sa karamihan ng Bibliyang Protestante. Tinatawag ng mga Katoliko ang mga ito na mga aklat na <a href="/tl/glosaryo#deuterocanonical">deuterokanoniko</a>: Tobit, Judit, 1 at 2 Macabeo, Karunungan, Sirac at Baruc, pati ang mas mahahabang bersiyon ng Ester at Daniel.</p>
+    <div class="grid two">
+      <div class="card">
+        <h3>Lumang Tipan <span class="muted small">(46 na aklat)</span></h3>
+        <p><strong>Ang Pentateuco</strong>: Genesis, Exodo, Levitico, Mga Bilang, Deuteronomio</p>
+        <p><strong>Mga aklat ng kasaysayan</strong>: Josue, Mga Hukom, Ruth, 1 at 2 Samuel, 1 at 2 Mga Hari, 1 at 2 Cronica, Ezra, Nehemias, Tobit, Judit, Ester, 1 at 2 Macabeo</p>
+        <p><strong>Mga aklat ng karunungan</strong>: Job, Mga Salmo, Mga Kawikaan, Eclesiastes, Awit ng mga Awit, Karunungan, Sirac</p>
+        <p><strong>Mga Propeta</strong>: Isaias, Jeremias, Mga Panaghoy, Baruc, Ezekiel, Daniel, at ang labindalawang mas maiikling propeta mula Oseas hanggang Malakias</p>
+      </div>
+      <div class="card">
+        <h3>Bagong Tipan <span class="muted small">(27 aklat)</span></h3>
+        <p><strong>Ang mga Ebanghelyo</strong>: Mateo, Marcos, Lucas, Juan</p>
+        <p><strong>Kasaysayan ng unang Simbahan</strong>: Mga Gawa ng mga Apostol</p>
+        <p><strong>Mga sulat ni San Pablo</strong>: Roma, 1 at 2 Corinto, Galacia, Efeso, Filipos, Colosas, 1 at 2 Tesalonica, 1 at 2 Timoteo, Tito, Filemon</p>
+        <p><strong>Iba pang mga sulat</strong>: Hebreo, Santiago, 1 at 2 Pedro, 1, 2 at 3 Juan, Judas</p>
+        <p><strong>Propesiya</strong>: Pahayag</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section prose">
+    <h2>Bago sa Bibliya? Magsimula rito</h2>
+    <ol>
+      <li><strong>Ang Ebanghelyo ayon kay Marcos</strong>: ang pinakamaikling Ebanghelyo, mabilis ang daloy, at magandang unang basahin.</li>
+      <li><strong>Ang Ebanghelyo ayon kay Lucas at ang Mga Gawa ng mga Apostol</strong>: dalawang bahaging kuwento ng iisang may-akda tungkol kay Hesus at sa unang Simbahan.</li>
+      <li><strong>Ang Mga Salmo</strong>: ang aklat-dasalan ng Bibliya. Subukan ang isa bawat araw.</li>
+      <li><strong>Genesis</strong>: ang simula ng kuwento ng Diyos at ng kanyang bayan.</li>
+    </ol>
+    <h3>Isang simpleng paraan ng pananalangin sa Kasulatan</h3>
+    <p>Matagal nang nananalangin ang mga Katoliko gamit ang Bibliya sa pamamagitan ng <a href="/tl/glosaryo#lectio-divina"><em>lectio divina</em></a> (&ldquo;banal na pagbasa&rdquo;):</p>
+    <ol>
+      <li><strong>Basahin</strong> nang dahan-dahan ang isang maikling talata, marahil ang Ebanghelyo ngayon.</li>
+      <li><strong>Pagnilayan</strong> ang isang salita o pariralang tumatatak sa iyo.</li>
+      <li><strong>Manalangin</strong>: kausapin ang Diyos tungkol dito.</li>
+      <li><strong>Magpahinga</strong> nang tahimik sa presensiya ng Diyos.</li>
+    </ol>
+    <h3>Paano pinipili ang mga pagbasa</h3>
+    <p>Sumusunod ang mga pagbasa sa Misa sa <a href="/tl/glosaryo#lectionary">Leksiyonaryo</a>. Sumusunod ang mga pagbasa tuwing Linggo sa tatlong-taong siklo (Taon A, B at C, nakatuon kina Mateo, Marcos at Lucas, at binabasa si Juan sa mga espesyal na panahon). Sumusunod ang mga pagbasa sa karaniwang araw sa dalawang-taong siklo (Taon I at II). Sa loob ng tatlong taon ng mga Linggo, naririnig ng mga Katoliko ang karamihan ng mga Ebanghelyo.</p>
+  </section>
+</div>

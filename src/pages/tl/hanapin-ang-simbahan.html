@@ -1,0 +1,38 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker">Maghanap ng Simbahan</p>
+    <h1>Maghanap ng Simbahang Katoliko Malapit sa Iyo</h1>
+    <p class="lede">Maghanap ayon sa lungsod o ZIP code, o gamitin ang iyong lokasyon. Pindutin ang isang simbahan para sa tirahan, telepono, website at direksiyon nito.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="note ocia-banner" style="margin-top:1.5rem">
+    <p><strong>Naghahanap ng OCIA?</strong> Hanapin ang iyong lugar, saka buksan ang <em>&ldquo;Magiging Katoliko? Magtanong tungkol sa OCIA&rdquo;</em> sa anumang simbahan para sa sasabihin at kung paano maaabot ang parokya. Bago sa OCIA? <a href="/tl/magsimula">Ganito ito gumagana</a>. May ilang parokya ring <a href="/tl/ilista-ang-ocia#listed">naglista ng kanilang contact sa OCIA</a> sa amin.</p>
+  </div>
+  <form class="map-search" id="map-form" role="search" style="margin-top:1.5rem">
+    <label for="map-q" style="position:absolute;left:-999px">Lungsod, tirahan o ZIP code</label>
+    <input class="search" id="map-q" type="search" placeholder="Lungsod, tirahan o ZIP code" autocomplete="postal-code">
+    <button class="btn" type="submit">Maghanap</button>
+    <button class="btn secondary" type="button" id="near-me">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="3.2" fill="currentColor"/><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3" stroke="currentColor" stroke-width="2"/></svg>
+      Malapit sa akin
+    </button>
+  </form>
+
+  <div class="map-layout">
+    <div>
+      <div id="map" aria-label="Mapa ng mga simbahang Katoliko"></div>
+      <p class="small muted" style="margin-top:.6rem">Igalaw ang mapa, saka pindutin ang <button type="button" class="copy-btn" id="search-area">Maghanap sa lugar na ito</button></p>
+    </div>
+    <div>
+      <p class="status-msg" id="map-status" aria-live="polite">Maghanap ng lugar upang makita ang mga simbahang malapit.</p>
+      <div class="results" id="results"></div>
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:2rem">
+    <p><strong>Pakikumpirma ang oras ng Misa sa parokya.</strong> Nagbabago ang iskedyul tuwing pista opisyal, panahon at tag-init. Ang sariling website o bulletin ng parokya ang pinakamaaasahang mapagkukunan. Kung may oras na nakalista, galing ito sa mga boluntaryo sa OpenStreetMap at maaaring luma na.</p>
+  </div>
+  <p class="small muted">Datos ng simbahan &copy; <a href="https://www.openstreetmap.org/copyright">mga kontribyutor ng OpenStreetMap</a>. May kulang na simbahan, o maling numero ng telepono? <a href="https://www.openstreetmap.org/">Maaaring ayusin ito ng sinuman sa OpenStreetMap</a>, at lalabas dito ang pagbabago.</p>
+</div>

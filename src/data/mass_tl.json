@@ -1,0 +1,151 @@
+[
+  {"part": "Bago ang Misa", "title": "Pagdating", "pose": "any",
+   "what": "Dumating nang sampung minuto bago magsimula at patahimikin ang iyong telepono. Maraming Katoliko ang naglulubog ng daliri sa agua bendita sa may pintuan at nag-aantanda ng krus, saka yumuyukod o saglit na lumuluhod ang kanang tuhod (genuflect) paharap sa tabernakulo bago pumasok sa upuan.",
+   "say": [],
+   "tip": "Wala sa mga ito ang hinihingi sa mga bisita. Mainam nang umupo nang tahimik at magmasid. Marami ang lumuluhod at nagdarasal nang tahimik bago magsimula ang Misa. Sa karamihan ng parokya sa Estados Unidos, Ingles ang Misa; may mga parokyang may Misa sa Tagalog paminsan-minsan. Isinama namin ang mga sagot sa Ingles sa ilang hakbang."},
+
+  {"part": "Pambungad na Ritu", "title": "Pagpasok", "pose": "stand",
+   "what": "Tumatayo ang lahat habang pumapasok ang prusisyon sa pasilyo: isang krus, mga sakristan, mga lektor, minsan isang diyakono na may dalang Aklat ng Mabuting Balita, at sa huli ang pari. Kadalasan ay may inaawit na himno.",
+   "say": [],
+   "tip": "Madalas nakapaskil sa isang board sa harap ang bilang ng mga himno, o nakalimbag sa misalitang papel."},
+
+  {"part": "Pambungad na Ritu", "title": "Tanda ng Krus at pagbati", "pose": "stand",
+   "what": "Nagsisimula ang pari sa Tanda ng Krus, at sabay na nag-aantanda ang lahat: hipuin ang noo, dibdib, kaliwang balikat, saka kanang balikat. Pagkatapos ay binabati niya ang mga tao.",
+   "say": [["Pari", "Sa ngalan ng Ama, at ng Anak, at ng Espiritu Santo."], ["Lahat", "Amen."], ["Pari", "Sumainyo ang Panginoon."], ["Lahat", "At sumaiyo rin."]],
+   "tip": "Ang “At sumaiyo rin” ang pinakamadalas mong maririnig na sagot sa Misa. Sa Ingles: “And with your spirit.”"},
+
+  {"part": "Pambungad na Ritu", "title": "Paghingi ng awa", "pose": "stand",
+   "what": "Saglit na humihinto ang lahat upang alalahanin ang kanilang mga kasalanan at humingi ng awa ng Diyos. Kadalasan ay sabay-sabay na dinarasal ng mga tao ang maikling dasal ng pagsisisi (ang “Inaamin ko”), na nakalimbag sa misal.",
+   "say": [["Pari o mang-aawit", "Panginoon, maawa ka."], ["Lahat", "Panginoon, maawa ka."], ["", "Kristo, maawa ka."], ["Lahat", "Kristo, maawa ka."], ["", "Panginoon, maawa ka."], ["Lahat", "Panginoon, maawa ka."]],
+   "tip": "Minsan ito ay inaawit sa Griyego: “Kyrie, eleison” at “Christe, eleison.” Sa Ingles: “Lord, have mercy. Christ, have mercy.”"},
+
+  {"part": "Pambungad na Ritu", "title": "Papuri sa Diyos", "pose": "stand",
+   "what": "Tuwing Linggo (maliban sa Adbiyento at Kuwaresma) at sa mga kapistahan, inaawit o binibigkas ng bayan ang sinaunang himnong “Papuri sa Diyos sa kaitaasan” (Gloria).",
+   "say": [],
+   "tip": "Nasa misal o misalitang papel ang mga salita. Ayos lang na makinig lamang."},
+
+  {"part": "Pambungad na Ritu", "title": "Pambungad na panalangin", "pose": "stand",
+   "what": "Sinasabi ng pari ang “Manalangin tayo,” humihinto sandali nang tahimik, saka dinarasal ang pambungad na panalangin ng araw (ang Collecta).",
+   "say": [["Lahat", "Amen."]],
+   "tip": "Ang “Amen” ay nangangahulugang “oo, mangyari nawa.” Sa ganitong paraan, ginagawang sarili ng bayan ang panalangin ng pari."},
+
+  {"part": "Liturhiya ng Salita", "title": "Unang pagbasa", "pose": "sit",
+   "what": "Umuupo ang lahat. Ipinahahayag ng isang lektor ang isang sipi, kadalasan mula sa Lumang Tipan (mula sa Mga Gawa ng mga Apostol sa Panahon ng Pagkabuhay).",
+   "say": [["Lektor", "Ang Salita ng Diyos."], ["Lahat", "Salamat sa Diyos."]],
+   "tip": "Sa Ingles: “The word of the Lord.” / “Thanks be to God.” Nasa aming pahinang <a href=\"/tl/bibliya\">Bibliya</a> ang mga pagbasa ngayon kung gusto mong basahin pagkatapos."},
+
+  {"part": "Liturhiya ng Salita", "title": "Salmong Tugunan", "pose": "sit",
+   "what": "Umaawit ng salmo ang isang mang-aawit. Inuulit ng bayan ang isang maikling tugon pagkatapos ng bawat taludtod.",
+   "say": [["Lahat", "Ulitin ang tugong unang inawit ng mang-aawit."]],
+   "tip": "Kadalasang nakalimbag ang tugon sa misalitang papel o ipinapakita sa screen."},
+
+  {"part": "Liturhiya ng Salita", "title": "Ikalawang pagbasa", "pose": "sit",
+   "what": "Tuwing Linggo at sa malalaking kapistahan ay may ikalawang pagbasa, kadalasan mula sa isa sa mga sulat sa Bagong Tipan.",
+   "say": [["Lektor", "Ang Salita ng Diyos."], ["Lahat", "Salamat sa Diyos."]],
+   "tip": "Walang ganitong pagbasa sa Misa sa karaniwang araw, kaya mas maikli ang mga ito, mga 30 minuto."},
+
+  {"part": "Liturhiya ng Salita", "title": "Aleluya", "pose": "stand",
+   "what": "Tumatayo ang lahat upang salubungin ang Mabuting Balita sa pag-awit ng “Aleluya.” Sa Kuwaresma, ibang pagbubunyi ang pumapalit sa Aleluya.",
+   "say": [["Lahat", "Aleluya, aleluya, aleluya."]],
+   "tip": "Ang pagtayo para sa Mabuting Balita ay tanda ng natatanging paggalang sa mga salita at gawa ni Hesus."},
+
+  {"part": "Liturhiya ng Salita", "title": "Ang Mabuting Balita", "pose": "stand",
+   "what": "Binabasa ng pari o diyakono ang isang sipi mula sa isa sa apat na Ebanghelyo. Habang ipinapahayag niya ito, gumuguhit ang mga Katoliko ng maliit na krus gamit ang hinlalaki sa noo, labi at dibdib, upang hilinging mapasaisip, mapasalabi at mapasapuso nila ang salita ng Diyos.",
+   "say": [["Pari", "Sumainyo ang Panginoon."], ["Lahat", "At sumaiyo rin."], ["Pari", "Ang Mabuting Balita ng Panginoon ayon kay San…"], ["Lahat", "Papuri sa iyo, Panginoon."], ["Pagkatapos ng pagbasa", "Ang Mabuting Balita ng Panginoon."], ["Lahat", "Pinupuri ka namin, Panginoong Hesukristo."]],
+   "tip": "Sa Ingles: “Glory to you, O Lord” at, pagkatapos ng pagbasa, “Praise to you, Lord Jesus Christ.”"},
+
+  {"part": "Liturhiya ng Salita", "title": "Homiliya", "pose": "sit",
+   "what": "Umuupo ang lahat habang nangangaral ang pari o diyakono, ipinaliliwanag ang mga pagbasa at kung paano isasabuhay ang mga ito.",
+   "say": [],
+   "tip": "Karaniwang 5 hanggang 15 minuto ang homiliya."},
+
+  {"part": "Liturhiya ng Salita", "title": "Ang Kredo", "pose": "stand",
+   "what": "Tuwing Linggo at sa mga dakilang kapistahan, tumatayo ang lahat at sabay-sabay na ipinahahayag ang pananampalataya, kadalasan gamit ang Kredo ng Nicea. Sa mga salita tungkol sa pagkakatawang-tao ni Hesus (“nagkatawang-tao siya lalang ng Espiritu Santo…”), yumuyukod ang lahat.",
+   "say": [["Lahat", "Nasa misal o misalitang papel ang mga salita."]],
+   "tip": "Sa Pasko at sa Pagbati ng Anghel kay Maria, lumuluhod ang mga tao sa mga salitang iyon sa halip na yumukod."},
+
+  {"part": "Liturhiya ng Salita", "title": "Panalangin ng Bayan", "pose": "stand",
+   "what": "Nag-aalay ang diyakono o lektor ng maiikling panalangin para sa Simbahan, sa mundo, sa mga nangangailangan, sa mga maysakit at sa mga yumao.",
+   "say": [["Lektor", "Manalangin tayo sa Panginoon."], ["Lahat", "Panginoon, dinggin mo ang aming panalangin."]],
+   "tip": "Minsan ay iba ang tugon. Pakinggan ang una at sumabay. Sa Ingles, kadalasan: “Lord, hear our prayer.”"},
+
+  {"part": "Liturhiya ng Eukaristiya", "title": "Paghahanda ng mga alay", "pose": "sit",
+   "what": "Umuupo ang lahat. Dinadala sa altar ang tinapay at alak, kadalasan ng mga taga-parokya na naglalakad sa pasilyo, at inihahanda ang altar. Kadalasan ay may koleksiyon sa oras na ito.",
+   "say": [],
+   "tip": "Ayos lang sa mga bisita na ipasa lamang ang basket."},
+
+  {"part": "Liturhiya ng Eukaristiya", "title": "“Manalangin kayo, mga kapatid”", "pose": "stand",
+   "what": "Inaanyayahan ng pari ang lahat na manalangin upang maging kalugud-lugod sa Diyos ang paghahain. Tumatayo ang bayan at sumasagot ng maikling dasal na nakalimbag sa misal, saka nagdarasal ang pari sa mga alay.",
+   "say": [["Lahat", "Sumagot ng dasal na nasa misal; saka “Amen.”"]],
+   "tip": ""},
+
+  {"part": "Liturhiya ng Eukaristiya", "title": "“Itaas ninyo ang inyong puso”", "pose": "stand",
+   "what": "Nagsisimula ang dakilang panalangin ng pasasalamat sa isang pag-uusap ng pari at ng bayan na ginagamit na ng mga Kristiyano mula pa sa mga unang siglo.",
+   "say": [["Pari", "Sumainyo ang Panginoon."], ["Lahat", "At sumaiyo rin."], ["Pari", "Itaas ninyo ang inyong puso."], ["Lahat", "Itinaas na namin sa Panginoon."], ["Pari", "Pasalamatan natin ang Panginoong ating Diyos."], ["Lahat", "Marapat na siya ay pasalamatan."]],
+   "tip": "Sa Ingles: “We lift them up to the Lord.” / “It is right and just.”"},
+
+  {"part": "Liturhiya ng Eukaristiya", "title": "Santo, Santo, Santo", "pose": "stand",
+   "what": "Dinarasal ng pari ang Prepasyo bilang papuri sa Diyos, at sumasabay ang lahat sa pag-awit ng “Santo, Santo, Santo” (Sanctus), na umaalingawngaw sa awit ng mga anghel sa Isaias 6.",
+   "say": [["Lahat", "Sumabay sa awit mula sa misalitang papel."]],
+   "tip": "Pagkatapos nito, lumuluhod ang lahat."},
+
+  {"part": "Liturhiya ng Eukaristiya", "title": "Panalanging Eukaristiko", "pose": "kneel",
+   "what": "Ito ang puso ng Misa. Inuulit ng pari ang mga salita ni Hesus sa Huling Hapunan sa tinapay at alak. Naniniwala ang mga Katoliko na sa sandaling ito ay tunay na nagiging Katawan at Dugo ni Kristo ang mga ito. Itinataas ng pari ang bawat isa upang makita ng lahat, at kadalasan ay pinatutunog ang kampanilya.",
+   "say": [],
+   "tip": "Maraming Katoliko ang tumitingin sa Ostiya habang itinataas ito at tahimik na nagdarasal: “Panginoon ko at Diyos ko.” Kung hindi ka makaluluhod, umupo nang tahimik at bahagyang nakayuko."},
+
+  {"part": "Liturhiya ng Eukaristiya", "title": "Ang misteryo ng pananampalataya", "pose": "kneel",
+   "what": "Sinasabi ng pari ang “Ipahayag natin ang misteryo ng pananampalataya,” at sumasagot ang bayan ng maikling pagbubunyi tungkol sa kamatayan at Muling Pagkabuhay ni Kristo, na nakalimbag sa misal.",
+   "say": [["Lahat", "Sumagot ng pagbubunyi na nasa misal."]],
+   "tip": ""},
+
+  {"part": "Liturhiya ng Eukaristiya", "title": "Ang Dakilang Amen", "pose": "kneel",
+   "what": "Nagtatapos ang Panalanging Eukaristiko sa pagtataas ng pari sa Katawan at Dugo ni Kristo habang pinupuri ang Ama sa pamamagitan ni Kristo. Sumasagot ang bayan ng inaawit na “Amen,” na kadalasang inuulit.",
+   "say": [["Lahat", "Amen."]],
+   "tip": "Pagkatapos ay tumatayo ang lahat."},
+
+  {"part": "Ritu ng Komunyon", "title": "Ama Namin", "pose": "stand",
+   "what": "Sabay-sabay na dinarasal ng lahat ang Ama Namin. Sa ilang parokya, naghahawak-kamay o nagtataas ng kamay ang mga tao; sa iba ay magkadaop ang kamay. Gawin kung ano ang komportable sa iyo.",
+   "say": [["Lahat", "Ama namin, sumasalangit ka… at iadya mo kami sa lahat ng masama."], ["", "Huminto rito habang nagdarasal nang mag-isa ang pari."], ["Lahat", "Sapagkat iyo ang kaharian at ang kapangyarihan at ang kapurihan magpakailanman."]],
+   "tip": "Hindi idinudugtong ng mga Katoliko ang “Sapagkat iyo ang kaharian” kaagad pagkatapos ng “iadya mo kami sa lahat ng masama.” Dumarating ito makalipas ang sandali, pagkatapos ng maikling dasal ng pari."},
+
+  {"part": "Ritu ng Komunyon", "title": "Tanda ng kapayapaan", "pose": "stand",
+   "what": "Maaaring anyayahan ng pari ang lahat na magbigayan ng tanda ng kapayapaan. Makipagkamay, tumango o kumaway sa mga taong malapit sa iyo.",
+   "say": [["Ikaw", "Sumaiyo ang kapayapaan."]],
+   "tip": "Panatilihing maikli at simple, sa mga katabi mo lamang. Sa Ingles: “Peace be with you.”"},
+
+  {"part": "Ritu ng Komunyon", "title": "Kordero ng Diyos", "pose": "stand",
+   "what": "Pinaghahati-hati ng pari ang konsagradong Ostiya habang inaawit ng lahat ang “Kordero ng Diyos.”",
+   "say": [["Lahat", "Kordero ng Diyos, na nag-aalis ng mga kasalanan ng sanlibutan, maawa ka sa amin. (dalawang beses)"], ["Lahat", "Kordero ng Diyos, na nag-aalis ng mga kasalanan ng sanlibutan, ipagkaloob mo sa amin ang kapayapaan."]],
+   "tip": "Pagkatapos ay lumuluhod ang lahat."},
+
+  {"part": "Ritu ng Komunyon", "title": "“Ito ang Kordero ng Diyos”", "pose": "kneel",
+   "what": "Itinataas ng pari ang Ostiya at inaanyayahan ang bayan sa Komunyon. Sumasagot ang lahat sa mga salita ng senturyong Romano sa Mateo 8:8.",
+   "say": [["Pari", "Ito ang Kordero ng Diyos…"], ["Lahat", "Panginoon, hindi ako karapat-dapat na magpatuloy sa iyo, ngunit sa isang salita mo lamang ay gagaling na ako."]],
+   "tip": "Sa Ingles: “Lord, I am not worthy that you should enter under my roof, but only say the word and my soul shall be healed.”"},
+
+  {"part": "Ritu ng Komunyon", "title": "Banal na Komunyon", "pose": "any",
+   "what": "Lumalapit nang hanay-hanay ang mga Katolikong handa. Kung hindi ka Katoliko, malugod kang manatili sa iyong upuan at magdasal, at padaanin ang iba. Sa maraming parokya, maaari ka ring lumapit nang nakakrus ang mga braso sa dibdib upang tumanggap ng bendisyon.",
+   "say": [["Ministro", "Katawan ni Kristo."], ["Ang tatanggap ng Komunyon", "Amen."]],
+   "tip": "Bakit hindi lahat ay maaaring tumanggap? Naniniwala ang mga Katoliko na tunay na si Kristo ang Komunyon at tanda ito ng ganap na pagkakaisa sa pananampalataya, kaya tinatanggap ito ng mga Katolikong handa. Ang <a href=\"/tl/magsimula\">pagiging Katoliko</a> ang paraan upang mabuksan ang pintong iyon."},
+
+  {"part": "Ritu ng Komunyon", "title": "Tahimik na panalangin", "pose": "kneel",
+   "what": "Pagkatapos ng Komunyon, bumabalik ang mga tao sa kanilang upuan at tahimik na nagdarasal, nakaluhod o nakaupo. Madalas may inaawit na himno.",
+   "say": [],
+   "tip": "Magandang sandali ito upang kausapin ang Diyos sa sarili mong salita."},
+
+  {"part": "Ritu ng Komunyon", "title": "Panalangin pagkatapos ng Komunyon", "pose": "stand",
+   "what": "Sinasabi ng pari ang “Manalangin tayo” at tumatayo ang lahat para sa pangwakas na panalangin. Maaaring sumunod ang mga patalastas ng parokya.",
+   "say": [["Lahat", "Amen."]],
+   "tip": ""},
+
+  {"part": "Pangwakas na Ritu", "title": "Bendisyon at paghayo", "pose": "stand",
+   "what": "Binabasbasan ng pari ang lahat. Mag-antanda ng krus habang ginagawa niya ito. Pagkatapos ay pinahahayo niya o ng diyakono ang bayan.",
+   "say": [["Pari", "Sumainyo ang Panginoon."], ["Lahat", "At sumaiyo rin."], ["Pari", "…ang Ama, at ang Anak, at ang Espiritu Santo."], ["Lahat", "Amen."], ["Pari o diyakono", "Humayo kayo, tapos na ang Misa."], ["Lahat", "Salamat sa Diyos."]],
+   "tip": "Sa Ingles: “Go forth, the Mass is ended.” / “Thanks be to God.”"},
+
+  {"part": "Pangwakas na Ritu", "title": "Pagkatapos ng Misa", "pose": "any",
+   "what": "Kadalasang may pangwakas na himno habang lumalabas ang pari sa prusisyon. Magalang na manatili hanggang makaalis siya. Marami ang lumuluhod sandali upang magdasal bago umalis.",
+   "say": [],
+   "tip": "Madalas bumabati ang pari sa mga tao sa may pintuan. Ang pagsasabi sa kanya ng “Ito po ang una kong Misa” ay magandang simula ng pag-uusap. Kapag handa ka na, tingnan ang <a href=\"/tl/magsimula\">Magsimula rito</a>."}
+]

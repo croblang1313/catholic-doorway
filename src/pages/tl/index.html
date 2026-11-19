@@ -1,0 +1,141 @@
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-door">{{DOOR}}</div>
+    <h1 class="verse">&ldquo;Ako ang pintuan; ang sinumang pumasok sa pamamagitan ko ay maliligtas.&rdquo;</h1>
+    <p class="verse-cite">Juan 10:9</p>
+    <p class="hero-lede">Isang libre at simpleng gabay sa pananampalatayang Katoliko, para sa mga Katoliko mula pagkabata at para sa sinumang kumakatok sa pinto sa unang pagkakataon.</p>
+    <div class="btn-row">
+      <a class="btn" href="/tl/magsimula">Gusto kong malaman kung paano maging Katoliko</a>
+      <a class="btn secondary" href="/tl/hanapin-ang-simbahan">Maghanap ng simbahan malapit sa akin</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="today four" aria-label="Ngayon">
+    <div class="card">
+      <p class="label">Ngayon</p>
+      <p style="margin:0;font-size:1.25rem" id="today-date">&nbsp;</p>
+      <p style="margin:.2rem 0 0" id="season"><span class="muted">Ang taon ng Simbahan</span></p>
+      <p class="small muted" style="margin:.3rem 0 0" id="season-next"></p>
+    </div>
+    <div class="card readings-card" data-readings="today">
+      <p class="label">Mga pagbasa sa Misa</p>
+      <h3 class="rd-title">Ang mga pagbasa ngayon</h3>
+      <ul class="rd-list"><li class="muted rd-loading">Kinukuha ang mga pagbasa ngayon&hellip;</li></ul>
+      <div class="rd-actions">
+        <a class="btn small rd-listen" href="https://bible.usccb.org/podcasts/audio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Pakinggan</a>
+        <a class="btn small secondary rd-read" href="https://bible.usccb.org/daily-bible-reading" target="_blank" rel="noopener">Basahin</a>
+        <a class="btn small secondary rd-video" href="#" target="_blank" rel="noopener" hidden>Video ng pagninilay</a>
+      </div>
+      <p class="small muted rd-credit">Audio at teksto sa Ingles mula sa Kumperensiya ng mga Obispong Katoliko ng Estados Unidos (USCCB), ang mga pagbasang ginagamit sa mga parokya rito.</p>
+    </div>
+    <a class="card tile" href="/tl/rosaryo">
+      <p class="label">Magdasal ngayon</p>
+      <h3 id="mystery-title">Ang Rosaryo</h3>
+      <p id="mystery-sub">Isang gabay na hakbang-hakbang, kasama ang mga misteryo ngayon.</p>
+      <span class="go">Magrosaryo &rarr;</span>
+    </a>
+    <a class="card tile saint-today" href="/tl/mga-santo" data-sod>
+      <p class="label">Santo ng araw</p>
+      <h3 class="sod-name">Ang santo ngayon</h3>
+      <p class="sod-sub small muted">&nbsp;</p>
+      <span class="go">Kilalanin ang mga santo &rarr;</span>
+    </a>
+  </div>
+
+  <section class="section">
+    <h2>Saan mo gustong magsimula?</h2>
+    <div class="grid">
+      <a class="card tile feature" href="/tl/magsimula">
+        <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 36V17a12 12 0 0 1 24 0v19" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M4 36h32" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="26" cy="26" r="1.6" fill="currentColor"/></svg>
+        <h3>Maging Katoliko</h3>
+        <p>Iniisip mong maging Katoliko? Paano gumagana ang OCIA, gaano katagal at sino ang tatawagan.</p>
+        <span class="go">Simulan ang paglalakbay &rarr;</span>
+      </a>
+      <a class="card tile" href="/tl/unang-misa">
+        <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 6v8M16 10h8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M8 34V22l12-6 12 6v12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M4 34h32M17 34v-7h6v7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <h3>Ang iyong unang Misa</h3>
+        <p>Gabay na hakbang-hakbang sa iyong telepono: kailan tatayo, uupo at luluhod, at ano ang isasagot.</p>
+        <span class="go">Maghanda &rarr;</span>
+      </a>
+      <a class="card tile" href="/tl/mga-gabay">
+        <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><rect x="8" y="5" width="24" height="30" rx="3" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M14 14h12M14 20h12M14 26h7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <h3>Mga praktikal na gabay</h3>
+        <p>Kumpisal, pagpapatala sa parokya, Binyag, kasal, huling mga sakramento, libing at pagbabalik.</p>
+        <span class="go">Tingnan ang mga gabay &rarr;</span>
+      </a>
+      <a class="card tile" href="/tl/hanapin-ang-simbahan">
+        <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 37s11-11.2 11-19.5a11 11 0 0 0-22 0C9 25.8 20 37 20 37z" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M20 11v11M15.5 15.5h9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <h3>Maghanap ng simbahan</h3>
+        <p>Mapa ng mga simbahang Katoliko malapit sa iyo sa Estados Unidos, may telepono, website at direksiyon.</p>
+        <span class="go">Buksan ang mapa &rarr;</span>
+      </a>
+      <a class="card tile" href="/tl/mga-dasal">
+        <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="9" r="2.2" fill="currentColor"/><circle cx="27" cy="12" r="2.2" fill="currentColor"/><circle cx="30" cy="19" r="2.2" fill="currentColor"/><circle cx="13" cy="12" r="2.2" fill="currentColor"/><circle cx="10" cy="19" r="2.2" fill="currentColor"/><circle cx="12" cy="26" r="2.2" fill="currentColor"/><circle cx="28" cy="26" r="2.2" fill="currentColor"/><path d="M20 28v10M16.5 31.5h7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <h3>Mga dasal</h3>
+        <p>Ang mga dasal na alam ng bawat Katoliko sa Tagalog, isang simpleng gabay sa Rosaryo at ang mga dasal sa Latin.</p>
+        <span class="go">Magdasal &rarr;</span>
+      </a>
+      <a class="card tile" href="/tl/mga-debosyon">
+        <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4v8M16 8h8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M12 36V20a8 8 0 0 1 16 0v16" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M8 36h24" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M20 22v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <h3>Mga debosyon</h3>
+        <p>Ang Koronilya ng Banal na Awa, ang Daan ng Krus, mga nobena at ang Orasyon, may mga paalala.</p>
+        <span class="go">Magdasal &rarr;</span>
+      </a>
+      <a class="card tile" href="/tl/bibliya">
+        <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 10c-4-3-9-3-14-2v24c5-1 10-1 14 2 4-3 9-3 14-2V8c-5-1-10-1-14 2zM20 10v24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>
+        <h3>Bibliya at mga pagbasa</h3>
+        <p>Ang mga pagbasa sa Misa ngayon at gabay sa 73 aklat ng Bibliyang Katoliko.</p>
+        <span class="go">Basahin &rarr;</span>
+      </a>
+      <a class="card tile" href="/tl/mga-paniniwala">
+        <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4v32M11 13h18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+        <h3>Ang aming pinaniniwalaan</h3>
+        <p>Ang Kredo, ang pitong sakramento, si Maria at ang mga santo, at kung paano namumuhay ang mga Katoliko.</p>
+        <span class="go">Matuto &rarr;</span>
+      </a>
+      <a class="card tile" href="/tl/mga-santo">
+        <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><ellipse cx="20" cy="8" rx="9" ry="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="19" r="6" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M8 37c1.5-7 6-10 12-10s10.5 3 12 10" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+        <h3>Mga santo</h3>
+        <p>Mga banal na lalaki at babae, kasama sina San Lorenzo Ruiz at San Pedro Calungsod, at ang mga hakbang mula Lingkod ng Diyos hanggang Santo.</p>
+        <span class="go">Kilalanin ang mga santo &rarr;</span>
+      </a>
+      <a class="card tile" href="/tl/istruktura">
+        <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><rect x="15" y="4" width="10" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="4" y="29" width="10" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="26" y="29" width="10" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="15" y="17" width="10" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 11v6M20 24v2.5M9 29v-2.5h22V29" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <h3>Ang Simbahan</h3>
+        <p>Ang Papa, mga obispo, mga diyosesis at mga parokya, at kung paano sila magkakaugnay.</p>
+        <span class="go">Tingnan ang istruktura &rarr;</span>
+      </a>
+      <a class="card tile" href="/tl/mga-diyosesis">
+        <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M5 9l10-4 10 4 10-4v26l-10 4-10-4-10 4z M15 5v26M25 9v26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>
+        <h3>Mga diyosesis</h3>
+        <p>Hanapin ang iyong diyosesis at ang obispo nito, mula Anchorage hanggang Miami.</p>
+        <span class="go">Tingnan ang mga diyosesis &rarr;</span>
+      </a>
+      <a class="card tile" href="/tl/glosaryo">
+        <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 34l7-26h3l7 26M10.5 25h12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M28 18h6M28 24h6M28 30h6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <h3>Glosaryo</h3>
+        <p>Ano ang katekumeno? Ang tabernakulo? Mga salitang Katoliko, ipinaliwanag nang simple.</p>
+        <span class="go">Maghanap ng salita &rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="grid two">
+      <div class="card">
+        <h3>Bago sa Simbahang Katolika?</h3>
+        <p>Malugod kang tinatanggap sa anumang Misang Katoliko, anuman ang iyong paniniwala. Hindi mo kailangang magpatala, magbihis nang pormal o malaman ang gagawin. Umupo sa may likuran, magmasid at makinig.</p>
+        <p>Kapag handa ka nang matuto pa, may landas ang Simbahan para sa mga nasa hustong gulang na tinatawag na <strong>OCIA</strong> (Order of Christian Initiation of Adults, dating RCIA). Nagsisimula ito sa isang simpleng tawag sa parokya.</p>
+        <a class="btn small" href="/tl/magsimula">Paano magsimula</a>
+      </div>
+      <div class="card">
+        <h3>Bumabalik sa pananampalataya?</h3>
+        <p>Maraming Katoliko ang lumalayo nang ilang panahon. Mas simple ang pag-uwi kaysa sa inaakala mo. Maaaring pakinggan ng sinumang pari ang iyong Kumpisal, at nakalista sa website ng karamihan ng parokya ang oras ng Kumpisal. Tingnan ang <a href="/tl/pagbabalik">Pagbabalik sa Simbahan</a>.</p>
+        <p>Kung bininyagan kang Katoliko ngunit hindi pa nakukumpilan, itanong sa iyong parokya ang tungkol sa Kumpil para sa nasa hustong gulang.</p>
+        <a class="btn small secondary" href="/tl/hanapin-ang-simbahan">Maghanap ng parokya</a>
+      </div>
+    </div>
+  </section>
+</div>

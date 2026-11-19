@@ -1,6 +1,6 @@
 # CatholicDoorway
 
-> A free, ad-free guide to the Catholic faith: prayers, the Bible, daily readings, finding a church, OCIA, saints and more. Written for Catholics and for anyone exploring the faith or starting OCIA (the Order of Christian Initiation of Adults). Free, no ads, no sign-up. English, Spanish and Portuguese.
+> A free, ad-free guide to the Catholic faith: prayers, the Bible, daily readings, finding a church, OCIA, saints and more. Written for Catholics and for anyone exploring the faith or starting OCIA (the Order of Christian Initiation of Adults). Free, no ads, no sign-up. English, Spanish, Portuguese and Filipino (Tagalog).
 
 Content follows the teaching of the Catholic Church and cites the Catechism of the Catholic Church and Scripture. U.S. focused for parishes, dioceses and holy days. Saint and diocese data come from Wikidata (CC0) and are refreshed weekly; the church map uses OpenStreetMap data. Corrections: hello@catholicdoorway.com.
 
@@ -57,6 +57,7 @@ Content follows the teaching of the Catholic Church and cites the Catechism of t
 
 - [Español](https://catholicdoorway.com/es/): Una guía gratuita y sin anuncios de la fe católica: oraciones, la Biblia, lecturas del día, cómo encontrar una iglesia, OCIA, santos y más.
 - [Português](https://catholicdoorway.com/pt/): Um guia gratuito e sem anúncios da fé católica: orações, a Bíblia, leituras do dia, como encontrar uma igreja, OCIA, santos e mais.
+- [Filipino (Tagalog)](https://catholicdoorway.com/tl/): Isang libre at walang patalastas na gabay sa pananampalatayang Katoliko: mga dasal, ang Bibliya, mga pagbasa sa araw-araw, paghahanap ng simbahan, OCIA, mga santo at iba pa.
 
 ## Data
 

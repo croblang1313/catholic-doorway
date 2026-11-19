@@ -1,0 +1,48 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/tl/mga-santo">Mga Santo</a> &rsaquo; Direktoryo</p>
+    <h1>Direktoryo ng mga santo at kaso</h1>
+    <p class="lede">Maghanap sa libu-libong Santo, Beato, Benerable at Lingkod ng Diyos. Maaari kang magsala ayon sa bansa, siglo at katayuan, o tingnan kung sino ang pinakahuling binatipika o kinanonisa.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section">
+    <div class="sd-controls" role="search">
+      <label for="sd-q" class="sr-only">Maghanap sa direktoryo</label>
+      <input id="sd-q" class="search" type="search" placeholder="Maghanap ng pangalan, lugar, orden o pagkapatron" autocomplete="off">
+      <div class="sd-selects">
+        <label><span>Katayuan</span>
+          <select id="sd-status" class="search">
+            <option value="0">Lahat ng katayuan</option>
+            <option value="4">Mga Santo</option>
+            <option value="3">Mga Beato</option>
+            <option value="2">Mga Benerable</option>
+            <option value="1">Mga Lingkod ng Diyos</option>
+          </select>
+        </label>
+        <label><span>Bansa</span><select id="sd-country" class="search"><option value="">Lahat ng bansa</option></select></label>
+        <label><span>Siglo</span><select id="sd-century" class="search"><option value="">Lahat ng siglo</option></select></label>
+        <label><span>Ayusin</span>
+          <select id="sd-sort" class="search">
+            <option value="name">A hanggang Z</option>
+            <option value="recent">Pinakabagong dekreto</option>
+            <option value="died">Ayon sa petsa ng kamatayan</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <p class="note" id="sd-feast-note" hidden>Ipinapakita ang mga taong ang kapistahan ay sa <b></b>. <a href="/tl/direktoryo-ng-mga-santo">Ipakita ang lahat</a></p>
+    <p class="status-msg" id="sd-count" aria-live="polite">Inilo-load ang direktoryo&hellip;</p>
+    <div id="sd-list" class="sd-list"></div>
+    <p style="text-align:center"><button class="btn secondary" type="button" id="sd-more" hidden>Ipakita pa</button></p>
+    <noscript><p>Kailangan ng JavaScript ang direktoryo. Maaari mong tingnan ang isang seleksiyon sa aming <a href="/tl/mga-santo">pahina ng Mga Santo</a>.</p></noscript>
+  </section>
+
+  <section class="section prose">
+    <h2>Tungkol sa listahang ito</h2>
+    <p>Ipinaliliwanag sa aming <a href="/tl/mga-santo">pahina ng Mga Santo</a> ang mga hakbang sa landas tungo sa pagkasanto. Galing ang direktoryong ito sa <a href="https://www.wikidata.org/">Wikidata</a>, isang libreng database na pinananatili ng mga boluntaryo sa buong mundo. Nire-refresh ito linggo-linggo, kaya lumalabas dito ang mga bagong beatipikasyon at kanonisasyon di-nagtagal matapos itala ng mga boluntaryo ang mga dekreto ng Vaticano. Galing sa <a href="https://www.causesanti.va/en.html">Dicastery for the Causes of Saints</a> ang mga opisyal na anunsiyo.</p>
+    <p>Napakahusay ng Wikidata ngunit hindi perpekto. May ilang taong wala rito, at may ilang bukas na kasong hindi pa naitatala. Nagli-link ang bawat entry sa pahina nito sa Wikidata, kung saan maaaring magtuwid ang sinuman. Karamihan ng pangalan at paglalarawan ay nasa Ingles o sa orihinal na wika.</p>
+    <p class="small muted" id="sd-updated"></p>
+  </section>
+</div>

@@ -17,7 +17,8 @@ def _load(name):
 
 EXAMEN_TABS = {"en": [("kids", "Kids"), ("teens", "Teens"), ("adults", "Adults")],
                "es": [("kids", "Niños"), ("teens", "Adolescentes"), ("adults", "Adultos")],
-               "pt": [("kids", "Crianças"), ("teens", "Adolescentes"), ("adults", "Adultos")]}
+               "pt": [("kids", "Crianças"), ("teens", "Adolescentes"), ("adults", "Adultos")],
+               "tl": [("kids", "Mga bata"), ("teens", "Kabataan"), ("adults", "Nakatatanda")]}
 
 
 def examen_html(lang):
@@ -47,7 +48,7 @@ def _say(rows, all_words):
     return f'<dl class="say">{out}</dl>'
 
 
-ALL_WORD = {"en": ("All",), "es": ("Todos",), "pt": ("Todos",)}
+ALL_WORD = {"en": ("All",), "es": ("Todos",), "pt": ("Todos",), "tl": ("Lahat",)}
 
 
 def _step(i, part, title, what, say="", tip="", sub=""):
@@ -92,7 +93,8 @@ def chaplet_html(lang):
 
 NOVENA_WORDS = {"en": ("Prayer for each day", "Intentions for each day", "Day"),
                 "es": ("Oración para cada día", "Intenciones de cada día", "Día"),
-                "pt": ("Oração para cada dia", "Intenções de cada dia", "Dia")}
+                "pt": ("Oração para cada dia", "Intenções de cada dia", "Dia"),
+                "tl": ("Dasal sa bawat araw", "Intensiyon sa bawat araw", "Ika-")}
 
 
 def novenas_html(lang):
@@ -102,7 +104,7 @@ def novenas_html(lang):
         title, about, prayer = nv[lang]
         days = ""
         if nv.get("days"):
-            lis = "".join(f"<li><strong>{w[2]} {i}.</strong> {e(x)}</li>" for i, x in enumerate(nv["days"][lang], 1))
+            lis = "".join(f"<li><strong>{w[2]}{'' if w[2].endswith('-') else ' '}{i}{' na araw' if w[2].endswith('-') else ''}.</strong> {e(x)}</li>" for i, x in enumerate(nv["days"][lang], 1))
             days = f'<h4>{w[1]}</h4><ol class="novena-days">{lis}</ol>'
         out.append(
             f'      <article class="card novena prayer" id="{nv["id"]}" data-start="{nv["start"]}">'
@@ -113,7 +115,8 @@ def novenas_html(lang):
 
 COMP_WORDS = {"en": ("Prayer companion", "Close", "&larr; Back", "Next &rarr;"),
               "es": ("Guía de oración", "Cerrar", "&larr; Atrás", "Siguiente &rarr;"),
-              "pt": ("Guia de oração", "Fechar", "&larr; Voltar", "Próximo &rarr;")}
+              "pt": ("Guia de oração", "Fechar", "&larr; Voltar", "Próximo &rarr;"),
+              "tl": ("Gabay sa pagdarasal", "Isara", "&larr; Bumalik", "Susunod &rarr;")}
 
 
 def companion_html(lang):
@@ -150,7 +153,12 @@ REGINA = {
            "Oremos. Ó Deus, que vos dignastes alegrar o mundo com a ressurreição do vosso Filho, Nosso Senhor Jesus Cristo,\nconcedei-nos, vos suplicamos, que por sua Mãe, a Virgem Maria,\nalcancemos as alegrias da vida eterna.\nPor Cristo, nosso Senhor. Amém.",
            "Rezada no lugar do Angelus desde o Domingo de Páscoa até Pentecostes."),
 }
-PRAYERS_PAGE = {"en": "prayers.html", "es": "es/oraciones.html", "pt": "pt/oracoes.html"}
+REGINA["tl"] = ("Regina Caeli", "Reyna ng Langit", [("N", "Reyna ng langit, magalak ka, aleluya."), ("B", "Sapagkat ang iyong pinagindapat na dalhin sa iyong sinapupunan, aleluya,"),
+           ("N", "Ay nabuhay na mag-uli ayon sa kanyang sinabi, aleluya."), ("B", "Ipanalangin mo kami sa Diyos, aleluya."),
+           ("N", "Magalak ka at matuwa, O Birheng Maria, aleluya."), ("B", "Sapagkat tunay na nabuhay na mag-uli ang Panginoon, aleluya.")],
+           "Manalangin tayo. Ama naming makapangyarihan, sa muling pagkabuhay ng iyong Anak, ang aming Panginoong Hesukristo, ay ipinagkaloob mo ang galak sa sanlibutan;\nipagkaloob mo, hinihiling namin, na sa pamamagitan ng Birheng Maria, ang kanyang Ina,\nay makamtan namin ang mga kagalakan ng buhay na walang hanggan.\nSa pamamagitan din ni Kristong aming Panginoon. Amen.",
+           "Dinarasal kapalit ng Orasyon mula Linggo ng Pagkabuhay hanggang Pentekostes.")
+PRAYERS_PAGE = {"en": "prayers.html", "es": "es/oraciones.html", "pt": "pt/oracoes.html", "tl": "tl/mga-dasal.html"}
 
 
 def angelus_html(lang):
@@ -164,34 +172,34 @@ def angelus_html(lang):
     return ang + "\n      " + rc
 
 
-BY = {"jp2": ("St. John Paul II", "San Juan Pablo II", "São João Paulo II"), "b16": ("Benedict XVI", "Benedicto XVI", "Bento XVI"),
-      "fr": ("Francis", "Francisco", "Francisco"), "leo14": ("Leo XIV", "León XIV", "Leão XIV"), "leo13": ("Leo XIII", "León XIII", "Leão XIII"),
-      "pius11": ("Pius XI", "Pío XI", "Pio XI"), "pius12": ("Pius XII", "Pío XII", "Pio XII"), "j23": ("St. John XXIII", "San Juan XXIII", "São João XXIII"),
-      "p6": ("St. Paul VI", "San Pablo VI", "São Paulo VI"), "v2": ("Second Vatican Council", "Concilio Vaticano II", "Concílio Vaticano II"),
-      "cdf": ("Dicastery for the Doctrine of the Faith", "Dicasterio para la Doctrina de la Fe", "Dicastério para a Doutrina da Fé")}
-KIND = {"catechism": ("Catechism", "Catecismo", "Catecismo"), "law": ("Church law", "Derecho de la Iglesia", "Direito da Igreja"),
-        "council": ("Vatican II", "Vaticano II", "Vaticano II"), "encyclical": ("Encyclical", "Encíclica", "Encíclica"),
-        "exhortation": ("Apostolic exhortation", "Exhortación apostólica", "Exortação apostólica"),
-        "letter": ("Apostolic letter", "Carta apostólica", "Carta apostólica"), "doctrine": ("Doctrinal document", "Documento doctrinal", "Documento doutrinal")}
-TOPIC = {"faith": ("Faith and God", "La fe y Dios", "A fé e Deus"), "church": ("The Church", "La Iglesia", "A Igreja"),
-         "scripture": ("Scripture", "La Escritura", "A Escritura"), "liturgy": ("Mass and liturgy", "La Misa y la liturgia", "A Missa e a liturgia"),
-         "sacraments": ("Sacraments", "Sacramentos", "Sacramentos"), "mary": ("Mary", "María", "Maria"),
-         "morality": ("Moral life", "La vida moral", "A vida moral"), "life": ("Human life", "La vida humana", "A vida humana"),
-         "family": ("Marriage and family", "El matrimonio y la familia", "O matrimônio e a família"),
-         "social": ("Social teaching", "Doctrina social", "Doutrina social"), "mission": ("Mission and evangelization", "Misión y evangelización", "Missão e evangelização"),
-         "prayer": ("Prayer and holiness", "Oración y santidad", "Oração e santidade"), "ecumenism": ("Other Christians and religions", "Otros cristianos y religiones", "Outros cristãos e religiões")}
-LI = {"en": 0, "es": 1, "pt": 2}
-ARCH = {"en": "en", "es": "sp", "pt": "po"}
+BY = {"jp2": ("St. John Paul II", "San Juan Pablo II", "São João Paulo II", "San Juan Pablo II"), "b16": ("Benedict XVI", "Benedicto XVI", "Bento XVI", "Benedicto XVI"),
+      "fr": ("Francis", "Francisco", "Francisco", "Francisco"), "leo14": ("Leo XIV", "León XIV", "Leão XIV", "Leo XIV"), "leo13": ("Leo XIII", "León XIII", "Leão XIII", "Leo XIII"),
+      "pius11": ("Pius XI", "Pío XI", "Pio XI", "Pio XI"), "pius12": ("Pius XII", "Pío XII", "Pio XII", "Pio XII"), "j23": ("St. John XXIII", "San Juan XXIII", "São João XXIII", "San Juan XXIII"),
+      "p6": ("St. Paul VI", "San Pablo VI", "São Paulo VI", "San Pablo VI"), "v2": ("Second Vatican Council", "Concilio Vaticano II", "Concílio Vaticano II", "Ikalawang Konsilyo Vaticano"),
+      "cdf": ("Dicastery for the Doctrine of the Faith", "Dicasterio para la Doctrina de la Fe", "Dicastério para a Doutrina da Fé", "Dikasteryo para sa Doktrina ng Pananampalataya")}
+KIND = {"catechism": ("Catechism", "Catecismo", "Catecismo", "Katesismo"), "law": ("Church law", "Derecho de la Iglesia", "Direito da Igreja", "Batas ng Simbahan"),
+        "council": ("Vatican II", "Vaticano II", "Vaticano II", "Vaticano II"), "encyclical": ("Encyclical", "Encíclica", "Encíclica", "Ensiklika"),
+        "exhortation": ("Apostolic exhortation", "Exhortación apostólica", "Exortação apostólica", "Pangaral apostoliko"),
+        "letter": ("Apostolic letter", "Carta apostólica", "Carta apostólica", "Liham apostoliko"), "doctrine": ("Doctrinal document", "Documento doctrinal", "Documento doutrinal", "Dokumentong doktrinal")}
+TOPIC = {"faith": ("Faith and God", "La fe y Dios", "A fé e Deus", "Ang pananampalataya at ang Diyos"), "church": ("The Church", "La Iglesia", "A Igreja", "Ang Simbahan"),
+         "scripture": ("Scripture", "La Escritura", "A Escritura", "Ang Banal na Kasulatan"), "liturgy": ("Mass and liturgy", "La Misa y la liturgia", "A Missa e a liturgia", "Ang Misa at ang liturhiya"),
+         "sacraments": ("Sacraments", "Sacramentos", "Sacramentos", "Mga sakramento"), "mary": ("Mary", "María", "Maria", "Si Maria"),
+         "morality": ("Moral life", "La vida moral", "A vida moral", "Ang buhay moral"), "life": ("Human life", "La vida humana", "A vida humana", "Ang buhay ng tao"),
+         "family": ("Marriage and family", "El matrimonio y la familia", "O matrimônio e a família", "Ang kasal at ang pamilya"),
+         "social": ("Social teaching", "Doctrina social", "Doutrina social", "Panlipunang turo"), "mission": ("Mission and evangelization", "Misión y evangelización", "Missão e evangelização", "Misyon at ebanghelisasyon"),
+         "prayer": ("Prayer and holiness", "Oración y santidad", "Oração e santidade", "Panalangin at kabanalan"), "ecumenism": ("Other Christians and religions", "Otros cristianos y religiones", "Outros cristãos e religiões", "Ibang Kristiyano at relihiyon")}
+LI = {"en": 0, "es": 1, "pt": 2, "tl": 3}
+ARCH = {"en": "en", "es": "sp", "pt": "po", "tl": "en"}
 
 
 def doc_url(d, lang):
     if "url" in d:
-        return d["url"][lang]
+        return d["url"].get(lang, d["url"]["en"])
     if "a" in d:
         return f'https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_{d["a"]}_{ARCH[lang]}.html'
     if "r" in d:
         return f'https://www.vatican.va/roman_curia/congregations/cfaith/documents/{d["r"]}_{ARCH[lang]}.html'
-    return "https://www.vatican.va/content/" + d["c"].replace("{l}", lang)
+    return "https://www.vatican.va/content/" + d["c"].replace("{l}", "en" if lang == "tl" else lang)
 
 
 def documents_html(lang):
@@ -210,53 +218,53 @@ def documents_html(lang):
             f'      <li class="doc" data-kind="{d["kind"]}" data-topics="{tags}"><a href="{e(doc_url(d, lang))}" target="_blank" rel="noopener">'
             f'<span class="doc-kind">{KIND[d["kind"]][i]} &middot; {d["year"]}</span>{latin}<strong>{e(title)}</strong></a>'
             f'<p>{e(summary)}</p><p class="small muted">{BY[d["by"]][i]} &middot; {e(topics)}</p></li>')
-    all_w = ("All", "Todos", "Todos")[i]
+    all_w = ("All", "Todos", "Todos", "Lahat")[i]
     chips = f'<button type="button" class="chip" data-dkind="all" aria-pressed="true">{all_w}</button>' + "".join(
         f'<button type="button" class="chip" data-dkind="{k}" aria-pressed="false">{KIND[k][i]}</button>' for k in kinds)
-    opts = f'<option value="">{("Any topic", "Cualquier tema", "Qualquer tema")[i]}</option>' + "".join(
+    opts = f'<option value="">{("Any topic", "Cualquier tema", "Qualquer tema", "Anumang paksa")[i]}</option>' + "".join(
         f'<option value="{k}">{v[i]}</option>' for k, v in TOPIC.items())
-    return (f'<div class="filters" role="group">{chips}</div>\n<select id="doc-topic" class="doc-topic" aria-label="{("Topic", "Tema", "Tema")[i]}">{opts}</select>\n'
+    return (f'<div class="filters" role="group">{chips}</div>\n<select id="doc-topic" class="doc-topic" aria-label="{("Topic", "Tema", "Tema", "Paksa")[i]}">{opts}</select>\n'
             f'<ul class="doc-list" id="doc-list">\n' + "\n".join(out) + "\n    </ul>")
 
 
 CCC_TOPICS = [
-    ("Scripture and Tradition", "La Escritura y la Tradición", "A Escritura e a Tradição", 74, 141),
-    ("Faith", "La fe", "A fé", 142, 184),
-    ("The Trinity", "La Trinidad", "A Trindade", 232, 267),
-    ("Creation and the angels", "La creación y los ángeles", "A criação e os anjos", 279, 354),
-    ("Original sin", "El pecado original", "O pecado original", 385, 421),
-    ("Jesus, true God and true man", "Jesús, verdadero Dios y verdadero hombre", "Jesus, verdadeiro Deus e verdadeiro homem", 456, 483),
-    ("Mary, Mother of God", "María, Madre de Dios", "Maria, Mãe de Deus", 484, 511),
-    ("Jesus’ death and resurrection", "La muerte y resurrección de Jesús", "A morte e ressurreição de Jesus", 571, 658),
-    ("The Holy Spirit", "El Espíritu Santo", "O Espírito Santo", 683, 747),
-    ("The Church: one, holy, catholic and apostolic", "La Iglesia: una, santa, católica y apostólica", "A Igreja: una, santa, católica e apostólica", 811, 870),
-    ("The Pope and the bishops", "El Papa y los obispos", "O Papa e os bispos", 880, 896),
-    ("The communion of saints", "La comunión de los santos", "A comunhão dos santos", 946, 962),
-    ("Heaven, purgatory and hell", "El cielo, el purgatorio y el infierno", "O céu, o purgatório e o inferno", 1020, 1041),
-    ("The liturgy", "La liturgia", "A liturgia", 1066, 1209),
-    ("Baptism", "El Bautismo", "O Batismo", 1213, 1284),
-    ("Confirmation", "La Confirmación", "A Crisma", 1285, 1321),
-    ("The Eucharist and the Mass", "La Eucaristía y la Misa", "A Eucaristia e a Missa", 1322, 1419),
-    ("Confession", "La Confesión", "A Confissão", 1422, 1498),
-    ("Indulgences", "Las indulgencias", "As indulgências", 1471, 1479),
-    ("Anointing of the Sick", "La Unción de los enfermos", "A Unção dos Enfermos", 1499, 1532),
-    ("Holy Orders", "El Orden sacerdotal", "A Ordem", 1536, 1600),
-    ("Marriage", "El Matrimonio", "O Matrimônio", 1601, 1666),
-    ("Sacramentals and funerals", "Los sacramentales y los funerales", "Os sacramentais e os funerais", 1667, 1690),
-    ("Conscience", "La conciencia", "A consciência", 1776, 1802),
-    ("The virtues", "Las virtudes", "As virtudes", 1803, 1845),
-    ("Sin, mortal and venial", "El pecado, mortal y venial", "O pecado, mortal e venial", 1846, 1876),
-    ("Social justice", "La justicia social", "A justiça social", 1928, 1948),
-    ("Grace", "La gracia", "A graça", 1987, 2029),
-    ("The Ten Commandments", "Los Diez Mandamientos", "Os Dez Mandamentos", 2052, 2082),
-    ("Sunday and holy days", "El domingo y las fiestas", "O domingo e as festas", 2168, 2195),
-    ("Family and parents", "La familia y los padres", "A família e os pais", 2197, 2257),
-    ("Respect for life", "El respeto a la vida", "O respeito à vida", 2258, 2330),
-    ("Chastity and sexuality", "La castidad y la sexualidad", "A castidade e a sexualidade", 2331, 2400),
-    ("Property, work and the poor", "Los bienes, el trabajo y los pobres", "Os bens, o trabalho e os pobres", 2401, 2463),
-    ("Truthfulness", "La verdad", "A verdade", 2464, 2513),
-    ("Prayer", "La oración", "A oração", 2558, 2758),
-    ("The Our Father", "El Padre Nuestro", "O Pai-Nosso", 2759, 2865),
+    ("Scripture and Tradition", "La Escritura y la Tradición", "A Escritura e a Tradição", "Ang Banal na Kasulatan at Tradisyon", 74, 141),
+    ("Faith", "La fe", "A fé", "Ang pananampalataya", 142, 184),
+    ("The Trinity", "La Trinidad", "A Trindade", "Ang Banal na Santatlo", 232, 267),
+    ("Creation and the angels", "La creación y los ángeles", "A criação e os anjos", "Ang paglikha at ang mga anghel", 279, 354),
+    ("Original sin", "El pecado original", "O pecado original", "Ang kasalanang mana", 385, 421),
+    ("Jesus, true God and true man", "Jesús, verdadero Dios y verdadero hombre", "Jesus, verdadeiro Deus e verdadeiro homem", "Si Hesus, tunay na Diyos at tunay na tao", 456, 483),
+    ("Mary, Mother of God", "María, Madre de Dios", "Maria, Mãe de Deus", "Si Maria, Ina ng Diyos", 484, 511),
+    ("Jesus’ death and resurrection", "La muerte y resurrección de Jesús", "A morte e ressurreição de Jesus", "Ang kamatayan at muling pagkabuhay ni Hesus", 571, 658),
+    ("The Holy Spirit", "El Espíritu Santo", "O Espírito Santo", "Ang Espiritu Santo", 683, 747),
+    ("The Church: one, holy, catholic and apostolic", "La Iglesia: una, santa, católica y apostólica", "A Igreja: una, santa, católica e apostólica", "Ang Simbahan: iisa, banal, katolika at apostolika", 811, 870),
+    ("The Pope and the bishops", "El Papa y los obispos", "O Papa e os bispos", "Ang Papa at ang mga obispo", 880, 896),
+    ("The communion of saints", "La comunión de los santos", "A comunhão dos santos", "Ang pakikipag-isa ng mga banal", 946, 962),
+    ("Heaven, purgatory and hell", "El cielo, el purgatorio y el infierno", "O céu, o purgatório e o inferno", "Langit, purgatoryo at impiyerno", 1020, 1041),
+    ("The liturgy", "La liturgia", "A liturgia", "Ang liturhiya", 1066, 1209),
+    ("Baptism", "El Bautismo", "O Batismo", "Ang Binyag", 1213, 1284),
+    ("Confirmation", "La Confirmación", "A Crisma", "Ang Kumpil", 1285, 1321),
+    ("The Eucharist and the Mass", "La Eucaristía y la Misa", "A Eucaristia e a Missa", "Ang Eukaristiya at ang Misa", 1322, 1419),
+    ("Confession", "La Confesión", "A Confissão", "Ang Kumpisal", 1422, 1498),
+    ("Indulgences", "Las indulgencias", "As indulgências", "Ang mga indulhensiya", 1471, 1479),
+    ("Anointing of the Sick", "La Unción de los enfermos", "A Unção dos Enfermos", "Ang Pagpapahid ng Langis sa Maysakit", 1499, 1532),
+    ("Holy Orders", "El Orden sacerdotal", "A Ordem", "Ang Banal na Orden", 1536, 1600),
+    ("Marriage", "El Matrimonio", "O Matrimônio", "Ang Kasal", 1601, 1666),
+    ("Sacramentals and funerals", "Los sacramentales y los funerales", "Os sacramentais e os funerais", "Ang mga sakramental at ang libing", 1667, 1690),
+    ("Conscience", "La conciencia", "A consciência", "Ang budhi", 1776, 1802),
+    ("The virtues", "Las virtudes", "As virtudes", "Ang mga birtud", 1803, 1845),
+    ("Sin, mortal and venial", "El pecado, mortal y venial", "O pecado, mortal e venial", "Ang kasalanan, mortal at benyal", 1846, 1876),
+    ("Social justice", "La justicia social", "A justiça social", "Katarungang panlipunan", 1928, 1948),
+    ("Grace", "La gracia", "A graça", "Ang grasya", 1987, 2029),
+    ("The Ten Commandments", "Los Diez Mandamientos", "Os Dez Mandamentos", "Ang Sampung Utos", 2052, 2082),
+    ("Sunday and holy days", "El domingo y las fiestas", "O domingo e as festas", "Ang Linggo at ang mga pista", 2168, 2195),
+    ("Family and parents", "La familia y los padres", "A família e os pais", "Ang pamilya at ang mga magulang", 2197, 2257),
+    ("Respect for life", "El respeto a la vida", "O respeito à vida", "Paggalang sa buhay", 2258, 2330),
+    ("Chastity and sexuality", "La castidad y la sexualidad", "A castidade e a sexualidade", "Kalinisang-puri at sekswalidad", 2331, 2400),
+    ("Property, work and the poor", "Los bienes, el trabajo y los pobres", "Os bens, o trabalho e os pobres", "Ari-arian, trabaho at ang mga dukha", 2401, 2463),
+    ("Truthfulness", "La verdad", "A verdade", "Katapatan sa katotohanan", 2464, 2513),
+    ("Prayer", "La oración", "A oração", "Ang panalangin", 2558, 2758),
+    ("The Our Father", "El Padre Nuestro", "O Pai-Nosso", "Ang Ama Namin", 2759, 2865),
 ]
 
 

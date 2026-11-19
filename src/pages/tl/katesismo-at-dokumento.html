@@ -1,0 +1,45 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/tl/mga-paniniwala">Mga paniniwala</a> &rsaquo; Katesismo at mga dokumento ng Simbahan</p>
+    <h1>Ang Katesismo at mga dokumento ng Simbahan</h1>
+    <p class="lede">Kung saan makikita ang tunay na itinuturo ng Simbahan, sa sarili niyang mga salita. Hanapin ang anumang talata ng Katesismo, tingnan ito ayon sa paksa, o hanapin ang mga pangunahing dokumento ng mga Papa at ng Ikalawang Konsilyo Vaticano. Bawat link ay nagbubukas ng opisyal na teksto sa website ng Vaticano, sa Ingles, dahil walang opisyal na bersiyong Tagalog doon.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section" id="ccc">
+    <h2>Ang Katesismo ng Simbahang Katolika</h2>
+    <p class="prose">Inilathala ni San Juan Pablo II noong 1992, ang Katesismo ang buong buod ng pananampalatayang Katoliko sa 2,865 na may bilang na talata. Kapag binabanggit ng mga tao ang &ldquo;CCC 1324,&rdquo; ang tinutukoy nila ay ang talata 1324. Mayroon itong apat na bahagi: ang ating pinaniniwalaan (ang Kredo), kung paano tayo sumasamba (ang mga sakramento), kung paano tayo namumuhay (ang buhay moral at ang Sampung Utos), at kung paano tayo nananalangin (ang Ama Namin).</p>
+    <div class="grid two">
+      <form class="card ccc-lookup" id="ccc-form" data-map="{{CCC_MAP}}">
+        <h3>Hanapin ang isang talata</h3>
+        <label for="ccc-num">Bilang ng talata (1 hanggang 2865)</label>
+        <div class="search">
+          <input id="ccc-num" type="number" inputmode="numeric" min="1" max="2865" placeholder="hal. 1324" required>
+          <button class="btn" type="submit">Buksan</button>
+        </div>
+        <p class="small muted" id="ccc-msg">Binubuksan ang pahina ng Katesismo ng Vaticano na naglalaman ng talatang iyon.</p>
+      </form>
+      <div class="card">
+        <h3>Bago sa Katesismo?</h3>
+        <p>Magsimula sa <a href="https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html" target="_blank" rel="noopener">Compendium</a>, ang Katesismo sa maiikling tanong at sagot, o sa aming simpleng <a href="/tl/mga-paniniwala">Ang Pinaniniwalaan ng mga Katoliko</a> at <a href="/tl/mga-tanong">Mga Tapat na Tanong</a>. Para sa kabataan, maraming parokya ang gumagamit ng <em>YOUCAT</em>, isang katesismo para sa kabataan, na may salin sa Filipino. Sa Pilipinas, inilathala ng CBCP ang <em>Katesismo para sa mga Pilipinong Katoliko</em> (KPK), ang bersiyong Tagalog ng <em>Catechism for Filipino Catholics</em>.</p>
+      </div>
+    </div>
+    <h3>Maghanap ng paksa</h3>
+    <ul class="ccc-topics">
+{{CCC_TOPICS}}
+    </ul>
+  </section>
+
+  <section class="section" id="documents">
+    <h2>Mga pangunahing dokumento ng Simbahan</h2>
+    <p class="prose">Nagtuturo ang mga Papa sa pamamagitan ng mga <strong>ensiklika</strong> (mga liham sa buong Simbahan), mga <strong>apostolikong pangaral</strong> (kadalasan pagkatapos ng pulong ng mga obispo na tinatawag na sinodo) at mga <strong>apostolikong liham</strong>. Tinipon ng <strong>Ikalawang Konsilyo Vaticano</strong> (1962&ndash;1965) ang mga obispo ng mundo at nakabuo ng labing-anim na dokumentong humuhubog sa buhay Katoliko ngayon. Karaniwang kilala ang mga dokumento sa kanilang unang mga salita sa Latin, tulad ng <em>Lumen Gentium</em>, &ldquo;Liwanag ng mga Bansa.&rdquo;</p>
+    <div class="search">
+      <label class="sr-only" for="doc-search">Maghanap ng mga dokumento</label>
+      <input id="doc-search" type="search" placeholder="Maghanap, hal. Eukaristiya, trabaho, pamilya, Laudato">
+    </div>
+{{DOCUMENTS}}
+    <p class="muted" id="doc-empty" hidden>Walang tumugmang dokumento. Subukan ang ibang salita.</p>
+    <p class="small muted">Libreng mababasa ang lahat ng dokumento ng Vaticano sa <a href="https://www.vatican.va/" target="_blank" rel="noopener">vatican.va</a>. Magkakaiba ang bigat ng mga dokumentong nagtuturo: nasa sentro ang Kredo at ang mga dogmang itinakda ng Simbahan, at binabasa ang lahat ng iba pa sa liwanag ng mga ito.</p>
+  </section>
+</div>
