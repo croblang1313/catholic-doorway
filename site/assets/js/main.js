@@ -319,25 +319,7 @@
     apply();
   }
 
-  // Glossary
-  var gl = $('#glossary');
-  if (gl) {
-    var gq = $('#gloss-search'), gEmpty = $('#gloss-empty');
-    gq.addEventListener('input', function () {
-      var term = norm(gq.value), any = false;
-      $$('dt', gl).forEach(function (dt) {
-        var dd = dt.nextElementSibling;
-        var ok = !term || norm(dt.textContent + ' ' + dd.textContent).indexOf(term) > -1;
-        dt.hidden = dd.hidden = !ok; if (ok) any = true;
-      });
-      $$('.letter-head', gl).forEach(function (h) {
-        var el = h.nextElementSibling, vis = false;
-        while (el && !el.classList.contains('letter-head')) { if (el.tagName === 'DT' && !el.hidden) vis = true; el = el.nextElementSibling; }
-        h.hidden = !vis;
-      });
-      gEmpty.hidden = any;
-    });
-  }
+  // Catholic Terms search and theme filters live in visual.js
 
   // Dioceses
   /* ---------- First Mass companion: one step at a time, screen kept on, place saved ---------- */

@@ -295,10 +295,11 @@ PLACEHOLDERS = {"{{DOCUMENTS}}": documents_html, "{{CCC_TOPICS}}": ccc_topics_ht
 
 
 def render(body, lang="en"):
+    import visual
     for ph, fn in PLACEHOLDERS.items():
         if ph in body:
             body = body.replace(ph, fn(lang))
-    return body
+    return visual.render(body, lang)
 
 
 def write_worker_data(root):

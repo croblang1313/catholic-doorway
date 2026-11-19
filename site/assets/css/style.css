@@ -701,3 +701,153 @@ body::before {
   .exam-tabs, .exam-panel, .exam-actions, .exam-cta { display: none !important; }
   .exam-list { display: block !important; border: 0; padding: 0; }
 }
+
+/* ---------- Catholic Terms: themes, related terms, visual guides ---------- */
+.term-cats { display: flex; flex-wrap: wrap; gap: .45rem; align-items: center; margin: .4rem 0 1rem; }
+.term-cats .label { width: 100%; margin: 0 0 .1rem; }
+.term-cats .chip .n { font-weight: 400; opacity: .7; font-size: .8rem; margin-left: .15rem; }
+dl.glossary dd p { margin: 0 0 .35rem; }
+dl.glossary dd .related { font-size: .95rem; color: var(--ink-soft); }
+dl.glossary dd .related span { font: 600 .8rem var(--sans); text-transform: uppercase; letter-spacing: .06em; color: var(--gold); margin-right: .2rem; }
+dl.glossary dd .tags { display: flex; flex-wrap: wrap; gap: .35rem; align-items: center; margin-top: .3rem; }
+.tag { font: 600 .75rem var(--sans); border: 1px solid var(--line); background: var(--bg-alt); color: var(--ink-soft); padding: .2rem .6rem; border-radius: 999px; cursor: pointer; }
+.tag:hover { border-color: var(--gold); color: var(--ink); }
+dl.glossary .see { font: 600 .85rem var(--sans); margin-left: .2rem; }
+.guide-cards { margin: .6rem 0 1.4rem; }
+.guide-card { display: flex; gap: .9rem; align-items: flex-start; text-decoration: none; color: var(--ink); padding: 1rem 1.1rem; }
+.guide-card:hover { border-color: var(--gold); }
+.guide-card strong { display: block; font-family: var(--serif-display); font-size: 1.3rem; color: var(--navy); line-height: 1.15; margin-bottom: .2rem; }
+.guide-card .small { display: block; }
+.gicon { width: 44px; height: 44px; flex: none; color: var(--gold); }
+
+/* Anatomy of a Catholic Church */
+.anatomy { display: grid; gap: 1.6rem; grid-template-columns: minmax(0, 1fr); margin-top: 1.2rem; }
+@media (min-width: 900px) { .anatomy { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: start; } .plan-wrap { position: sticky; top: 84px; } }
+.plan-wrap { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: .8rem; }
+.church-plan { width: 100%; height: auto; display: block; max-height: 78vh; }
+.church-plan .floor { fill: var(--bg-alt); }
+.church-plan .narthex { fill: var(--bg); }
+.church-plan .wall { fill: none; stroke: var(--navy); stroke-width: 5; stroke-linejoin: round; }
+.church-plan .sanct { fill: var(--gold-soft); opacity: .7; }
+.church-plan .step { fill: none; stroke: var(--gold); stroke-width: 2; }
+.church-plan .aisle { fill: var(--lit-red); opacity: .12; }
+.church-plan .pew { fill: #9a7348; }
+.church-plan .kneel { fill: #6b5236; }
+.church-plan .station { stroke: var(--ink-soft); stroke-width: 2.2; }
+.church-plan .statue { fill: #8fa3c7; }
+.church-plan .votive { fill: #e6a63a; }
+.church-plan .screen { stroke: var(--ink-soft); stroke-width: 3; stroke-dasharray: 4 3; }
+.church-plan .chair { fill: #7a5a3a; }
+.church-plan .font { fill: #c9c3b5; stroke: var(--ink-soft); stroke-width: 1.5; }
+.church-plan .water { fill: #6aa6d6; }
+.church-plan .altar { fill: #f4efe3; stroke: var(--navy); stroke-width: 2; }
+.church-plan .cloth { stroke: var(--gold); stroke-width: 2; }
+.church-plan .ambo { fill: #9a7348; stroke: var(--navy); stroke-width: 1.5; }
+.church-plan .cross { stroke: var(--navy); stroke-width: 4; stroke-linecap: round; }
+.church-plan .taber { fill: #d4a93c; stroke: #8a6a1e; stroke-width: 1.5; }
+.church-plan .taber-door { stroke: #8a6a1e; stroke-width: 1.5; }
+.church-plan .lamp { fill: #c8302b; }
+.church-plan .plan-label { font: 600 17px var(--sans); fill: var(--ink-soft); }
+.church-plan .hot { cursor: pointer; outline: none; }
+.church-plan .hot circle { fill: var(--navy); stroke: var(--surface); stroke-width: 3; transition: r .15s; }
+.church-plan .hot text { font: 700 18px var(--sans); fill: var(--bg); pointer-events: none; }
+.church-plan .hot:hover circle, .church-plan .hot:focus-visible circle { fill: var(--gold); }
+.church-plan .hot.on circle { fill: var(--gold); r: 22; }
+.plan-info { min-height: 5.2rem; padding: .8rem .4rem .2rem; border-top: 1px solid var(--line); margin-top: .6rem; }
+.plan-info strong { font-family: var(--serif-display); font-size: 1.35rem; color: var(--navy); display: block; }
+.an-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; }
+.an-steps li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: .7rem .9rem; scroll-margin-top: 90px; }
+.an-steps li.on { border-color: var(--gold); box-shadow: 0 0 0 2px var(--gold-soft); }
+.an-item { all: unset; display: flex; gap: .8rem; cursor: pointer; width: 100%; }
+.an-item:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 6px; }
+.an-no { flex: none; width: 1.9rem; height: 1.9rem; border-radius: 50%; background: var(--navy); color: var(--bg); display: grid; place-items: center; font: 700 .9rem var(--sans); }
+.an-steps li.on .an-no { background: var(--gold); }
+.an-item strong { display: block; font-size: 1.1rem; }
+.an-def { display: block; color: var(--ink-soft); font-size: 1rem; }
+.an-steps li > a { display: inline-block; margin: .3rem 0 0 2.7rem; }
+.vessel svg { width: 60px; height: 60px; fill: none; stroke: var(--gold); stroke-width: 2.2; stroke-linejoin: round; }
+.vessel svg .host { fill: var(--bg-alt); }
+.vessel h3 { margin: .4rem 0 .2rem; }
+.alpha a.off { opacity: .3; pointer-events: none; }
+
+/* What Priests & Deacons Wear */
+.vest-fig { --vc: #3f7a4a; --vt: #d4b26a; width: 100%; height: auto; display: block; }
+.vest-fig[data-color="violet"] { --vc: #6a3f8a; }
+.vest-fig[data-color="white"] { --vc: #f4efe2; }
+.vest-fig[data-color="red"] { --vc: #a8322d; }
+.vest-fig[data-color="green"] { --vc: #3f7a4a; }
+.vest-fig[data-color="rose"] { --vc: #d48aa0; }
+.vest-fig[data-color="black"] { --vc: #2b2b30; --vt: #b9b3a6; }
+.vest-fig .shadow { fill: var(--line); }
+.vest-fig .alb { fill: #fbfaf6; stroke: #b7ae9c; stroke-width: 1.5; stroke-linejoin: round; }
+.vest-fig .fold { fill: none; stroke: #ddd5c4; stroke-width: 1.2; }
+.vest-fig .cinc { fill: none; stroke: #e9e1cf; stroke-width: 4; stroke-linecap: round; }
+.vest-fig .lit { fill: var(--vc); stroke: rgba(0,0,0,.25); stroke-width: 1.2; stroke-linejoin: round; transition: fill .3s; }
+.vest-fig .orph { fill: var(--vt); opacity: .9; }
+.vest-fig .trim { fill: none; stroke: var(--vt); stroke-width: 2.5; }
+.vest-fig .skin { fill: #d9a982; }
+.vest-fig .hair { fill: #4a3a2c; }
+.vest-fig .cassock { fill: #1f1f24; stroke: #000; stroke-width: 1; }
+.vest-fig .buttons circle { fill: #555; }
+.vest-fig .collar { fill: #fff; }
+.vest-fig .mitre { fill: #f6f1e2; stroke: var(--vt); stroke-width: 2; }
+.vest-fig .crozier { fill: none; stroke: #b88a2e; stroke-width: 5; stroke-linecap: round; }
+.dress-fig .layer { transition: opacity .25s; }
+.dress-fig[data-layer="1"] .l-cinc, .dress-fig[data-layer="1"] .l-stole, .dress-fig[data-layer="1"] .l-chas,
+.dress-fig[data-layer="2"] .l-stole, .dress-fig[data-layer="2"] .l-chas,
+.dress-fig[data-layer="3"] .l-chas { opacity: 0; }
+.dress { display: grid; gap: 1.5rem; grid-template-columns: minmax(0, 1fr); align-items: center; }
+.dress-fig { max-width: 260px; margin: 0 auto; width: 100%; }
+@media (min-width: 760px) { .dress { grid-template-columns: 280px minmax(0, 1fr); } }
+.dress .label { margin: 1rem 0 .3rem; }
+.dress .filters { margin: .2rem 0 .6rem; }
+.layer-text { min-height: 3.5em; }
+.swatches { display: flex; flex-wrap: wrap; gap: .45rem; }
+.swatch { font: 600 .88rem var(--sans); display: inline-flex; align-items: center; gap: .45rem; border: 1px solid var(--line); background: var(--surface); color: var(--ink); padding: .4rem .8rem .4rem .45rem; border-radius: 999px; cursor: pointer; min-height: 40px; }
+.swatch span { width: 22px; height: 22px; border-radius: 50%; background: var(--sw); border: 1px solid rgba(0,0,0,.25); }
+.swatch[aria-pressed="true"] { border-color: var(--navy); box-shadow: 0 0 0 2px var(--navy) inset; }
+.who-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr)); }
+.who { margin: 0; text-align: center; }
+.who .vest-fig { max-width: 170px; margin: 0 auto .4rem; }
+.who h3 { margin: .2rem 0 .3rem; }
+.year { display: grid; gap: 1.4rem; grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 900px) { .year { grid-template-columns: 340px minmax(0, 1fr); } .wheel-wrap { position: sticky; top: 84px; } }
+.year-wheel { width: 100%; max-width: 340px; height: auto; display: block; margin: 0 auto; }
+.year-wheel .seg { stroke: var(--surface); stroke-width: 2; cursor: pointer; }
+.year-wheel .seg.c-white { stroke: #c9a64a; stroke-width: 1.2; }
+.year-wheel .seg:hover { opacity: .85; }
+.year-wheel .seg-label { font: 700 11px var(--sans); fill: #fff; pointer-events: none; }
+.year-wheel .seg-label.dark { fill: #5a4a1e; }
+.year-wheel .wheel-mid { font: 40px var(--serif); fill: var(--gold); }
+.color-cards { grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); }
+.color-card { border-top: 8px solid var(--sw); }
+.color-card .sw { display: none; }
+.color-card h3 { margin-bottom: .4rem; }
+.color-card p { font-size: 1rem; margin: 0 0 .4rem; }
+.vest-list dt { font-size: 1.25rem; }
+
+/* Inside the Mass */
+.mkey { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; padding: 0; margin: .6rem 0 1rem; font: 600 .9rem var(--sans); }
+.mkey li { display: flex; align-items: center; gap: .4rem; }
+.mdot-key { width: 14px; height: 14px; border-radius: 50%; display: inline-block; }
+.pose-bg-stand { background: var(--lit-green); color: #fff; }
+.pose-bg-sit { background: #4f6ea8; color: #fff; }
+.pose-bg-kneel { background: var(--lit-violet); color: #fff; }
+.pose-bg-any { background: var(--bg-alt); color: var(--ink); border: 1px solid var(--line); }
+.mtimeline { list-style: none; padding: 0; margin: 0; border-left: 3px solid var(--gold-soft); }
+.mpart { position: relative; padding: 0 0 1.4rem 1.3rem; }
+.mpart::before { content: ""; position: absolute; left: -9px; top: .35rem; width: 15px; height: 15px; border-radius: 50%; background: var(--gold); border: 3px solid var(--bg); }
+.mpart h3 { margin: 0 0 .2rem; }
+.mpart > p { margin: 0 0 .6rem; max-width: var(--read); color: var(--ink-soft); }
+.mdots { display: flex; flex-wrap: wrap; gap: .35rem; }
+.mdot { display: inline-flex; align-items: center; gap: .4rem; text-decoration: none; border-radius: 999px; padding: .28rem .7rem .28rem .3rem; font: 600 .85rem var(--sans); }
+.mdot:hover { filter: brightness(1.1); text-decoration: underline; }
+.mdot-n { background: rgba(255,255,255,.25); border-radius: 50%; width: 1.5rem; height: 1.5rem; display: grid; place-items: center; font-size: .75rem; }
+.pose-bg-any .mdot-n { background: var(--surface); }
+.postures .posture { text-align: center; }
+.pfig { width: 56px; height: 76px; fill: none; stroke: var(--navy); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.pfig circle { fill: var(--navy); stroke: none; }
+.pfig .seat { stroke: var(--gold); }
+.resp .say { margin: 0 0 .6rem; }
+.resp p { margin: 0; }
+.fig-priest .h-alb, .fig-bishop .h-alb, .dress-fig[data-layer="4"] .h-alb, .dress-fig:not([data-layer="4"]) .h-chas { display: none; }
