@@ -413,8 +413,8 @@ code{background:#eef0f3;border-radius:4px;padding:1px 5px;font-size:14px}
 		Array.prototype.forEach.call(app.querySelectorAll('.use-alt'), function (b) {
 			b.onclick = function () {
 				var i = Number(b.dataset.i), c = p.coach, alt = c.alternates[i];
-				var alts = c.alternates.slice(); alts[i] = { caption: p.caption, hook: c.hook, score: c.score };
-				var coach = Object.assign({}, c, { hook: alt.hook, score: alt.score, alternates: alts, scorecard: [], fixes: [], why: 'Swapped in from the other versions.' });
+				var alts = c.alternates.slice(); alts[i] = { caption: p.caption, hook: c.edited ? 'Your edit' : c.hook, score: c.edited ? null : c.score, why: c.edited ? '' : c.why, scorecard: c.edited ? [] : c.scorecard, fixes: c.edited ? [] : c.fixes };
+				var coach = { hook: alt.hook, score: alt.score, why: alt.why || '', scorecard: alt.scorecard || [], fixes: alt.fixes || [], alternates: alts };
 				var body = { kind: p.kind, caption: alt.caption, title: p.title, platforms: p.platforms, media: p.media.map(function (m) { return m.key; }), ig_media: p.media.map(function (m) { return m.ig_key || ''; }), coach: coach };
 				b.disabled = true;
 				api('PUT', '/api/posts/' + p.id, body).then(function (np) { replacePost(np); flash('ok', 'Switched to that version. The old one is kept under Other versions.'); render(); }).catch(function (e) { b.disabled = false; alert(e.message); });

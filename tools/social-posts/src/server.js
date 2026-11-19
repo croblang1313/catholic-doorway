@@ -225,13 +225,15 @@ async function sameText(a, b) {
 function cleanCoach(c) {
 	if (!c || typeof c !== 'object') return null;
 	const num = (n) => { const v = Number(n); return isFinite(v) ? Math.max(0, Math.min(10, Math.round(v * 10) / 10)) : null; };
+	const card = (a) => (Array.isArray(a) ? a : []).slice(0, 8).map((r) => ({ name: cleanText(r && r.name, 40).trim(), score: num(r && r.score) })).filter((r) => r.name && r.score !== null);
+	const fixes = (a) => (Array.isArray(a) ? a : []).slice(0, 3).map((f) => cleanText(f, 300).trim()).filter(Boolean);
 	const out = {
 		score: num(c.score),
 		hook: cleanText(c.hook, 80).trim(),
 		why: cleanText(c.why, 400).trim(),
-		scorecard: (Array.isArray(c.scorecard) ? c.scorecard : []).slice(0, 8).map((r) => ({ name: cleanText(r && r.name, 40).trim(), score: num(r && r.score) })).filter((r) => r.name && r.score !== null),
-		fixes: (Array.isArray(c.fixes) ? c.fixes : []).slice(0, 3).map((f) => cleanText(f, 300).trim()).filter(Boolean),
-		alternates: (Array.isArray(c.alternates) ? c.alternates : []).slice(0, 3).map((a) => ({ caption: cleanText(a && a.caption, 2200).trim(), hook: cleanText(a && a.hook, 80).trim(), score: num(a && a.score) })).filter((a) => a.caption),
+		scorecard: card(c.scorecard),
+		fixes: fixes(c.fixes),
+		alternates: (Array.isArray(c.alternates) ? c.alternates : []).slice(0, 3).filter((a) => a && typeof a === 'object').map((a) => ({ caption: cleanText(a.caption, 2200).trim(), hook: cleanText(a.hook, 80).trim(), score: num(a.score), why: cleanText(a.why, 400).trim(), scorecard: card(a.scorecard), fixes: fixes(a.fixes) })).filter((a) => a.caption),
 	};
 	return out.score === null && !out.hook && !out.why && !out.alternates.length ? null : out;
 }
