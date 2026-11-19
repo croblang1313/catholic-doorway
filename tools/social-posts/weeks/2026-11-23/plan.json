@@ -7,13 +7,68 @@
    "x",
    "tiktok"
   ],
-  "caption": "\"Viva Cristo Rey!\" The day after the feast of Christ the King, we remember Bl. Miguel Pro, a Mexican Jesuit who kept bringing the sacraments to people in secret and died forgiving his executioners. Meet more saints: catholicdoorway.com/saints #Catholic #Saints",
+  "caption": "He dressed as a mechanic, a beggar, even a police officer, just to bring people the sacraments. Bl. Miguel Pro died in 1927 forgiving his executioners: \"Viva Cristo Rey!\" Meet more saints: catholicdoorway.com/saints #Saints #Catholic",
   "image": {
    "kicker": "Nov 23 · Feast",
    "title": "Blessed Miguel Pro",
    "body": "A Jesuit priest who served Mexico's Catholics in secret and died with arms outstretched, crying “Viva Cristo Rey!”",
    "ref": "1891 – 1927",
    "theme": "navy"
+  },
+  "coach": {
+   "score": 8.6,
+   "hook": "Transformation / Story",
+   "why": "A vivid, true detail in the first line makes people need the rest of the story, and the ending carries real emotion.",
+   "scorecard": [
+    {
+     "name": "Hook strength",
+     "score": 9
+    },
+    {
+     "name": "Curiosity & specificity",
+     "score": 9
+    },
+    {
+     "name": "Emotional charge",
+     "score": 9
+    },
+    {
+     "name": "Share-worthiness",
+     "score": 8
+    },
+    {
+     "name": "Voice match",
+     "score": 8
+    },
+    {
+     "name": "Polarity",
+     "score": 6
+    },
+    {
+     "name": "Platform fit",
+     "score": 8
+    }
+   ],
+   "fixes": [
+    "\"Send this to someone who needs courage today\" would add a share ask if you shorten elsewhere."
+   ],
+   "alternates": [
+    {
+     "caption": "3 disguises, 1 mission: a Jesuit priest in 1920s Mexico who kept bringing the sacraments to people in hiding. Bl. Miguel Pro's last words: \"Viva Cristo Rey!\" catholicdoorway.com/saints #Saints #Catholic",
+     "hook": "Listicle / Number",
+     "score": 7.7
+    },
+    {
+     "caption": "\"Viva Cristo Rey!\" The day after the feast of Christ the King, we remember Bl. Miguel Pro, a Mexican Jesuit who kept bringing the sacraments to people in secret and died forgiving his executioners. Meet more saints: catholicdoorway.com/saints #Catholic #Saints",
+     "hook": "Original draft",
+     "score": 6.4
+    }
+   ]
+  },
+  "video": {
+   "hook": "He dressed as a *beggar* to bring people the *sacraments.*",
+   "path": "/saints",
+   "art": "window"
   }
  },
  {
@@ -24,12 +79,67 @@
    "x",
    "tiktok"
   ],
-  "caption": "Happy Thanksgiving week! A simple prayer for every table: \"Bless us, O Lord, and these thy gifts, which we are about to receive from thy bounty, through Christ our Lord. Amen.\" More prayers: catholicdoorway.com/prayers #Thanksgiving #Catholic",
+  "caption": "Who's saying grace on Thursday? Here's the one most Catholics learned as kids: \"Bless us, O Lord, and these thy gifts, which we are about to receive from thy bounty, through Christ our Lord. Amen.\" Save it for the table. catholicdoorway.com/prayers #Thanksgiving",
   "image": {
    "kicker": "A prayer for Thanksgiving",
    "title": "Grace Before Meals",
    "body": "Bless us, O Lord, and these thy gifts, which we are about to receive from thy bounty, through Christ our Lord. Amen.",
    "theme": "cream"
+  },
+  "coach": {
+   "score": 7.9,
+   "hook": "Question Hook",
+   "why": "Everyone has to answer that question in their head this week, and the save ask matches what Instagram rewards.",
+   "scorecard": [
+    {
+     "name": "Hook strength",
+     "score": 8
+    },
+    {
+     "name": "Curiosity & specificity",
+     "score": 7
+    },
+    {
+     "name": "Emotional charge",
+     "score": 8
+    },
+    {
+     "name": "Share-worthiness",
+     "score": 9
+    },
+    {
+     "name": "Voice match",
+     "score": 8
+    },
+    {
+     "name": "Polarity",
+     "score": 5
+    },
+    {
+     "name": "Platform fit",
+     "score": 8
+    }
+   ],
+   "fixes": [
+    "Swap the card's kicker to \"Save this for Thursday\" next time the image is made."
+   ],
+   "alternates": [
+    {
+     "caption": "10 seconds is all it takes. Before Thursday's turkey, try the grace most Catholics learned as kids: \"Bless us, O Lord, and these thy gifts...\" Full prayer: catholicdoorway.com/prayers #Thanksgiving #Catholic",
+     "hook": "Speed / Effortless",
+     "score": 7.8
+    },
+    {
+     "caption": "Happy Thanksgiving week! A simple prayer for every table: \"Bless us, O Lord, and these thy gifts, which we are about to receive from thy bounty, through Christ our Lord. Amen.\" More prayers: catholicdoorway.com/prayers #Thanksgiving #Catholic",
+     "hook": "Original draft",
+     "score": 5.9
+    }
+   ]
+  },
+  "video": {
+   "hook": "Who's saying *grace* on Thursday?",
+   "path": "/prayers",
+   "art": "window"
   }
  },
  {
@@ -40,13 +150,68 @@
    "x",
    "tiktok"
   ],
-  "caption": "Advent begins this Sunday, November 29: four weeks of waiting and preparing for Christmas. Open a door each day on our Advent calendar: catholicdoorway.com/advent #Advent #Catholic",
+  "caption": "The Church's new year doesn't start on January 1. It starts this Sunday. Advent begins Nov 29: 4 weeks to slow down and make room for Christ. Open a door each day on our Advent calendar: catholicdoorway.com/advent #Advent #Catholic",
   "image": {
    "kicker": "This Sunday · Nov 29",
    "title": "Advent Begins",
    "body": "Four weeks to slow down, pray, and prepare room for Christ. Open a new door each day.",
    "ref": "“Watch therefore…” · Matthew 24:42",
    "theme": "navy"
+  },
+  "coach": {
+   "score": 7.9,
+   "hook": "Contrarian / Myth-Buster (gentle)",
+   "why": "A surprising, true fact most people don't know, with a simple daily habit as the payoff.",
+   "scorecard": [
+    {
+     "name": "Hook strength",
+     "score": 8
+    },
+    {
+     "name": "Curiosity & specificity",
+     "score": 8
+    },
+    {
+     "name": "Emotional charge",
+     "score": 7
+    },
+    {
+     "name": "Share-worthiness",
+     "score": 8
+    },
+    {
+     "name": "Voice match",
+     "score": 8
+    },
+    {
+     "name": "Polarity",
+     "score": 7
+    },
+    {
+     "name": "Platform fit",
+     "score": 8
+    }
+   ],
+   "fixes": [
+    "Post the Advent calendar link again on Sunday morning as a reminder."
+   ],
+   "alternates": [
+    {
+     "caption": "Here's your sign to slow down this December. Advent starts Sunday, Nov 29: 4 weeks of waiting, praying and getting ready for Christmas. A new door opens each day: catholicdoorway.com/advent #Advent",
+     "hook": "Urgency (invitation)",
+     "score": 7.5
+    },
+    {
+     "caption": "Advent begins this Sunday, November 29: four weeks of waiting and preparing for Christmas. Open a door each day on our Advent calendar: catholicdoorway.com/advent #Advent #Catholic",
+     "hook": "Original draft",
+     "score": 6.0
+    }
+   ]
+  },
+  "video": {
+   "hook": "The Church's new year doesn't start on *January 1.*",
+   "path": "/advent",
+   "art": "window"
   }
  }
 ]

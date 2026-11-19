@@ -58,6 +58,15 @@ table.list a{font-weight:600}
 .pill{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:600;background:#eef0f3;color:var(--muted);white-space:nowrap}
 .pill.draft{background:#fff1d6;color:var(--warn)}
 .pill.sent{background:#e2f5e9;color:var(--ok)}
+.coach{border-color:#e6d3a3;background:#fffdf7}
+.coach .score{display:inline-flex;align-items:baseline;gap:2px;font-weight:700;font-size:28px;color:var(--accent)}
+.coach .score small{font-size:15px;color:var(--muted);font-weight:600}
+.coach .sc{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:4px 16px;margin:10px 0 0;padding:0;list-style:none;font-size:14px;color:var(--muted)}
+.coach .sc b{color:var(--ink)}
+.coach .alt{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:10px 0 0;background:#fff}
+.coach .alt p{margin:0 0 8px;white-space:pre-wrap}
+.coach details{margin-top:10px}
+.pill.score{background:#f6ecd2;color:#7a5b16}
 .pill.failed{background:#fdecea;color:var(--bad)}
 .pill.todo,.pill.processing{background:#e8efff;color:var(--accent)}
 .pv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
@@ -209,7 +218,7 @@ code{background:#eef0f3;border-radius:4px;padding:1px 5px;font-size:14px}
 			html += '<table class="list"><thead><tr><th>Post</th><th class="hide-s">Goes to</th><th>Status</th><th class="hide-s">When</th></tr></thead><tbody>';
 			rows.forEach(function (p) {
 				var t = p.caption.length > 70 ? p.caption.slice(0, 70) + '…' : p.caption;
-				html += '<tr><td><a href="#post/' + esc(p.id) + '">' + esc(t) + '</a><div class="hint">' + (p.kind === 'video' ? 'Video' : (p.media.length + ' photo' + (p.media.length > 1 ? 's' : ''))) + ' · by ' + esc(p.author) + (p.post_on ? ' · <strong>post on ' + esc(postOn(p.post_on)) + '</strong>' : '') + '</div></td>' +
+				html += '<tr><td><a href="#post/' + esc(p.id) + '">' + esc(t) + '</a><div class="hint">' + (p.kind === 'video' ? 'Video' : (p.media.length + ' photo' + (p.media.length > 1 ? 's' : ''))) + ' · by ' + esc(p.author) + (p.post_on ? ' · <strong>post on ' + esc(postOn(p.post_on)) + '</strong>' : '') + (p.coach && p.coach.score !== null && p.coach.score !== undefined ? ' · <span class="pill score">' + esc(String(p.coach.score)) + '/10</span>' : '') + '</div></td>' +
 					'<td class="hide-s">' + p.platforms.map(label).map(esc).join(', ') + '</td><td>' + statusPill(p.status) + '</td><td class="hide-s">' + esc(when(p.sent_at || p.created)) + '</td></tr>';
 			});
 			html += '</tbody></table>';
@@ -381,6 +390,7 @@ code{background:#eef0f3;border-radius:4px;padding:1px 5px;font-size:14px}
 		} else {
 			html += resultsHtml(p);
 		}
+		if (p.coach) { html += coachHtml(p); }
 		html += '<h2>Preview</h2><div class="pv-grid">' + p.platforms.map(function (pl) { return previewCard(p, pl); }).join('') + '</div>';
 		if (p.status !== 'draft') { html += '<div class="row" style="margin-top:16px"><button class="btn danger" id="del">Remove from this list</button></div>'; }
 		app.innerHTML = html;
@@ -400,6 +410,32 @@ code{background:#eef0f3;border-radius:4px;padding:1px 5px;font-size:14px}
 		var del = document.getElementById('del');
 		if (del) { del.onclick = function () { if (!confirm(p.status === 'draft' ? 'Delete this draft?' : 'Remove this post and its files from this list? It stays on the social sites.')) { return; } api('DELETE', '/api/posts/' + p.id).then(function () { S.posts = S.posts.filter(function (x) { return x.id !== p.id; }); flash('ok', 'Deleted.'); location.hash = 'todo'; }).catch(function (e) { alert(e.message); }); }; }
 		Array.prototype.forEach.call(app.querySelectorAll('.phone'), wirePhone);
+		Array.prototype.forEach.call(app.querySelectorAll('.use-alt'), function (b) {
+			b.onclick = function () {
+				var i = Number(b.dataset.i), c = p.coach, alt = c.alternates[i];
+				var alts = c.alternates.slice(); alts[i] = { caption: p.caption, hook: c.edited ? 'Your edit' : c.hook, score: c.edited ? null : c.score, why: c.edited ? '' : c.why, scorecard: c.edited ? [] : c.scorecard, fixes: c.edited ? [] : c.fixes };
+				var coach = { hook: alt.hook, score: alt.score, why: alt.why || '', scorecard: alt.scorecard || [], fixes: alt.fixes || [], alternates: alts };
+				var body = { kind: p.kind, caption: alt.caption, title: p.title, platforms: p.platforms, media: p.media.map(function (m) { return m.key; }), ig_media: p.media.map(function (m) { return m.ig_key || ''; }), coach: coach };
+				b.disabled = true;
+				api('PUT', '/api/posts/' + p.id, body).then(function (np) { replacePost(np); flash('ok', 'Switched to that version. The old one is kept under Other versions.'); render(); }).catch(function (e) { b.disabled = false; alert(e.message); });
+			};
+		});
+	}
+	function coachHtml(p) {
+		var c = p.coach, h = '<div class="card coach"><div class="row" style="justify-content:space-between"><h2 style="margin:0">Coach notes</h2>' +
+			(c.score !== null && c.score !== undefined ? '<span class="score">' + esc(String(c.score)) + '<small>/10</small></span>' : '') + '</div>';
+		if (c.hook) { h += '<p class="hint" style="margin-top:4px">Hook: <strong>' + esc(c.hook) + '</strong></p>'; }
+		if (c.edited) { h += '<p class="hint">You edited the text after it was scored, so the score is for the earlier wording.</p>'; }
+		if (c.why) { h += '<p style="margin:10px 0 0">' + esc(c.why) + '</p>'; }
+		if (c.scorecard && c.scorecard.length) { h += '<ul class="sc">' + c.scorecard.map(function (r) { return '<li>' + esc(r.name) + ': <b>' + esc(String(r.score)) + '</b></li>'; }).join('') + '</ul>'; }
+		if (c.fixes && c.fixes.length) { h += '<details><summary>What would make it stronger</summary><ul>' + c.fixes.map(function (f) { return '<li>' + esc(f) + '</li>'; }).join('') + '</ul></details>'; }
+		if (c.alternates && c.alternates.length) {
+			h += '<details' + (p.status === 'draft' ? ' open' : '') + '><summary>Other versions (' + c.alternates.length + ')</summary>' + c.alternates.map(function (a, i) {
+				return '<div class="alt"><p>' + esc(a.caption) + '</p><div class="row"><span class="hint" style="margin:0">' + esc(a.hook || '') + (a.score !== null && a.score !== undefined ? ' · ' + esc(String(a.score)) + '/10' : '') + ' · ' + Array.from(a.caption).length + ' characters</span>' +
+					(p.status === 'draft' ? '<button type="button" class="btn ghost use-alt" style="min-height:34px;padding:4px 12px" data-i="' + i + '">Use this version</button>' : '') + '</div></div>';
+			}).join('') + '</details>';
+		}
+		return h + '</div>';
 	}
 	function replacePost(np) { S.posts = S.posts.map(function (x) { return x.id === np.id ? np : x; }); }
 	function resultsHtml(p) {
