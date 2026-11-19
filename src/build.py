@@ -586,10 +586,49 @@ HEAD = """<!doctype html>
 <main id="main">
 """
 
+
+SOCIAL_LINKS = [
+    ("facebook", "Facebook", "https://www.facebook.com/CatholicDoorway/",
+     '<path fill="currentColor" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.33-.04-1.56-.14-2.86-.14C11.93 2 10 3.66 10 6.7v2.8H7v4h3V22h4z"/>'),
+    ("x", "X", "https://x.com/CatholicDoorway",
+     '<path fill="currentColor" d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.21-6.82-5.97 6.82H1.68l7.73-8.84L1.25 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.08 4.13H5.12z"/>'),
+    ("instagram", "Instagram", "https://www.instagram.com/catholicdoorway/",
+     '<rect x="2.75" y="2.75" width="18.5" height="18.5" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.25" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.25" fill="currentColor"/>'),
+    ("tiktok", "TikTok", "https://www.tiktok.com/@catholicdoorway",
+     '<path fill="currentColor" d="M16 8.25v7.25a6.5 6.5 0 1 1-5-6.33v3.17a3.5 3.5 0 1 0 2 3.16V2h3a5 5 0 0 0 5 5v3a7.97 7.97 0 0 1-5-1.75z"/>'),
+]
+
+SOCIAL_TEXT = {
+    "en": ("Follow Catholic Doorway", "Prayers, saints and guides for the journey, wherever you scroll.", "Catholic Doorway on {}"),
+    "es": ("Sigue a Catholic Doorway", "Oraciones, santos y guías para el camino, dondequiera que estés.", "Catholic Doorway en {}"),
+    "pt": ("Siga o Catholic Doorway", "Orações, santos e guias para a caminhada, onde você estiver.", "Catholic Doorway no {}"),
+    "tl": ("Sundan ang Catholic Doorway", "Mga dasal, santo at gabay sa paglalakbay, saanman ka naroon.", "Catholic Doorway sa {}"),
+}
+
+
+def social_band(lang):
+    """The "Follow Catholic Doorway" row at the top of every footer."""
+    head, line, label = SOCIAL_TEXT[lang]
+    icons = "\n".join(
+        f'          <li><a class="social-btn social-{key}" href="{url}" target="_blank" rel="noopener me" '
+        f'aria-label="{label.format(name)}" title="{name}"><svg viewBox="0 0 24 24" width="22" height="22" '
+        f'aria-hidden="true" focusable="false">{svg}</svg></a></li>'
+        for key, name, url, svg in SOCIAL_LINKS)
+    return f"""    <div class="footer-social">
+      <div class="footer-social-text">
+        <h2 class="footer-social-head">{head}</h2>
+        <p>{line}</p>
+      </div>
+      <ul class="social-links">
+{icons}
+      </ul>
+    </div>
+"""
+
 FOOT_ES = """</main>
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer-grid">
+""" + social_band("es") + """    <div class="footer-grid">
       <div>
         <p class="footer-verse">&ldquo;Yo soy la puerta; el que entre por mí se salvará.&rdquo;</p>
         <p class="small">Juan 10:9</p>
@@ -635,7 +674,7 @@ FOOT_ES = """</main>
 FOOT_PT = """</main>
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer-grid">
+""" + social_band("pt") + """    <div class="footer-grid">
       <div>
         <p class="footer-verse">&ldquo;Eu sou a porta; se alguém entrar por mim, será salvo.&rdquo;</p>
         <p class="small">João 10,9</p>
@@ -681,7 +720,7 @@ FOOT_PT = """</main>
 FOOT_TL = """</main>
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer-grid">
+""" + social_band("tl") + """    <div class="footer-grid">
       <div>
         <p class="footer-verse">&ldquo;Ako ang pintuan; ang sinumang pumasok sa pamamagitan ko ay maliligtas.&rdquo;</p>
         <p class="small">Juan 10:9</p>
@@ -727,7 +766,7 @@ FOOT_TL = """</main>
 FOOT = """</main>
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer-grid">
+""" + social_band("en") + """    <div class="footer-grid">
       <div>
         <p class="footer-verse">&ldquo;I am the door; if any one enters by me, he will be saved.&rdquo;</p>
         <p class="small">John 10:9 (RSV-CE)</p>
@@ -1567,7 +1606,8 @@ def _strip(x):
 
 def site_ld():
     org = {"@type": "Organization", "@id": f"{DOMAIN}/#org", "name": "CatholicDoorway", "url": f"{DOMAIN}/",
-           "logo": f"{DOMAIN}/assets/img/logo.png", "email": "hello@catholicdoorway.com"}
+           "logo": f"{DOMAIN}/assets/img/logo.png", "email": "hello@catholicdoorway.com",
+           "sameAs": [url for _, _, url, _ in SOCIAL_LINKS]}
     site = {"@type": "WebSite", "@id": f"{DOMAIN}/#website", "name": "CatholicDoorway", "url": f"{DOMAIN}/",
             "description": SITE_DESC["en"], "inLanguage": ["en", "es", "pt", "tl"], "publisher": {"@id": f"{DOMAIN}/#org"}}
     return [org, site]

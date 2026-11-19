@@ -332,6 +332,15 @@ dl.glossary dt:target { background: var(--gold-soft); border-radius: 6px; paddin
 /* ---------- Footer ---------- */
 .site-footer { background: var(--navy-deep); color: #cfc8b8; padding: 2.8rem 0 2rem; font-size: 1rem; }
 .site-footer a { color: #e9cf8e; }
+.footer-social { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem 2rem; padding-bottom: 2rem; margin-bottom: 2.2rem; border-bottom: 1px solid rgba(255,255,255,.1); }
+.footer-social-head { font-family: var(--serif-display); color: #f1e9d6; font-size: 1.7rem; margin: 0 0 .25rem; line-height: 1.2; }
+.footer-social-text p { margin: 0; }
+.social-links { display: flex !important; flex-wrap: wrap; gap: .75rem; }
+.site-footer .social-links li { margin: 0; }
+.site-footer a.social-btn { display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border: 1px solid rgba(233,207,142,.35); border-radius: 12px; background: rgba(255,255,255,.04); color: #f1e9d6; transition: background .15s, color .15s, border-color .15s, transform .15s; }
+.site-footer a.social-btn:hover, .site-footer a.social-btn:focus-visible { background: #e9cf8e; border-color: #e9cf8e; color: var(--navy-deep); transform: translateY(-2px); }
+.site-footer a.social-btn:focus-visible { outline: 2px solid #f1e9d6; outline-offset: 3px; }
+@media (max-width: 560px) { .footer-social { flex-direction: column; align-items: flex-start; } .footer-social-head { font-size: 1.45rem; } }
 .footer-grid { display: grid; gap: 1.6rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
 .site-footer h4 { color: #f1e9d6; margin: 0 0 .6rem; font-size: 1.25rem; }
 .site-footer ul { list-style: none; padding: 0; margin: 0; }
