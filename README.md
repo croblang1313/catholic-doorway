@@ -40,6 +40,14 @@ The OCIA listing form (`/ocia-listing`) saves submissions in Workers KV. Until t
 3. In the `catholic-doorway` Worker, go to Settings > Variables and Secrets and add a **Secret** named `ADMIN_TOKEN` with a long random password.
 4. Review submissions at `/api/ocia-admin` (enter that password). Approve, unpublish or delete there. Only approved listings appear on the site.
 
+Approved listings also appear on the church map (`site/assets/js/map.js` matches them to churches by parish name and city), including any **Mass and Confession times** the parish sends in the `masses` field.
+
+### Site search, seasons and the Bible reader
+
+- `src/searchindex.py` builds `site/data/search-<lang>.json` from the finished pages on every build; `site/assets/js/search.js` runs the search at `/search` (es `/buscar`, pt `/buscar`, tl `/maghanap`). Any heading or card with an `id` becomes its own result.
+- `src/seasons.py` fills `{{ADVENT_DATES}}` on the Advent pages and the seasonal `{{SEASON_BANNER}}` card on the home pages (shown by `main.js` from three weeks before Advent to the Baptism of the Lord). The weekly rebuild keeps the year current.
+- `/read-the-bible` reads the Douay-Rheims Bible (Challoner revision, public domain) from `site/data/bible/drb/`, made once by `scripts/make_bible.py` from the scrollmapper/bible_databases `DRC.json`.
+
 ### Prayer reminders
 
 `/api/devotions.ics?set=angelus12,angelus6,mercy,stations,novenas&lang=en|es|pt` is a subscribable calendar (see `worker/devotions.js`). Novena dates come from `src/data/novenas.json`; the build writes `worker/novenas-data.js` from it, so rebuild after editing.
@@ -47,5 +55,5 @@ The OCIA listing form (`/ocia-listing`) saves submissions in Workers KV. Until t
 ## Data and licensing
 
 - Church locations come from OpenStreetMap (ODbL). `scripts/fetch_churches.py`, run weekly by `.github/workflows/churches.yml`, saves them to `site/data/churches/` so the map loads instantly; it falls back to the live Overpass API only if that copy is missing, with geocoding from Nominatim and map tiles from tile.openstreetmap.org. Nothing is scraped from MassTimes.org or other directories. If traffic grows, move tiles to a provider with a free tier (OSM's tile usage policy asks heavy users to do so).
-- Scripture quotations: RSV, Second Catholic Edition (used within the NCC's permission for short quotations). Daily readings link to the USCCB rather than copying the NABRE.
+- Scripture quotations: RSV, Second Catholic Edition (used within the NCC's permission for short quotations). Daily readings link to the USCCB rather than copying the NABRE. The full Bible reader uses the public-domain Douay-Rheims.
 - Leaflet is bundled under its BSD-2 license (`site/assets/vendor/leaflet/LICENSE`).

@@ -146,6 +146,12 @@
   }
   var s = season(today);
 
+  // Seasonal home-page card (Advent and Christmas): shown only between its dates.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-show-from]'), function (el) {
+    var iso = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+    if (iso >= el.getAttribute('data-show-from') && iso <= el.getAttribute('data-show-to')) el.hidden = false;
+  });
+
   var dateEl = $('#today-date');
   if (dateEl) dateEl.textContent = today.toLocaleDateString(LOC, longDate);
   var seasonEl = $('#season');

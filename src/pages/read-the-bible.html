@@ -1,0 +1,46 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/bible">Bible &amp; Readings</a> &rsaquo; Read the Bible</p>
+    <h1>Read the Bible</h1>
+    <p class="lede">All 73 books of the Catholic Bible in the classic Douay-Rheims translation. Pick a book and chapter, or type a passage such as <em>John 3:16</em> or <em>Psalm 22</em>.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section">
+    <form class="card bible-nav" id="bible-nav">
+      <div class="bible-row">
+        <label>Book<select id="bible-book"></select></label>
+        <label>Chapter<select id="bible-chapter"></select></label>
+        <button class="btn small" type="submit">Read</button>
+      </div>
+      <div class="bible-row">
+        <label class="grow">Go to a passage<input class="search" id="bible-ref" type="search" placeholder="e.g. Luke 2:1-14" autocomplete="off" enterkeyhint="go"></label>
+        <button class="btn small secondary" type="button" id="bible-go">Go</button>
+      </div>
+      <p class="status-msg small" id="bible-msg" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <section class="section bible-text-wrap" aria-live="polite">
+    <h2 id="bible-title">Loading&hellip;</h2>
+    <p class="small muted" id="bible-douay"></p>
+    <div class="bible-text" id="bible-text"><noscript><p>The Bible reader needs JavaScript. You can also read the Douay-Rheims at <a href="https://www.drbo.org/">drbo.org</a>.</p></noscript></div>
+    <div class="btn-row bible-pager">
+      <button class="btn small secondary" type="button" id="bible-prev">&larr; Previous chapter</button>
+      <button class="btn small secondary" type="button" id="bible-next">Next chapter &rarr;</button>
+    </div>
+  </section>
+
+  <section class="section prose">
+    <h2>About this translation</h2>
+    <p>The <strong>Douay-Rheims Bible</strong> was translated from the Latin Vulgate by English Catholic scholars in exile at Douai and Reims (New Testament 1582, Old Testament 1609&ndash;1610). The text here is Bishop Richard Challoner&rsquo;s revision of 1749&ndash;1752, the form most English-speaking Catholics read for two centuries. It is in the public domain.</p>
+    <p>Because it follows the Latin and Greek tradition, a few things look different from modern Bibles:</p>
+    <ul>
+      <li><strong>Psalm numbers.</strong> From Psalm 10 to Psalm 147 the numbering is usually one lower than in modern Bibles. The psalm most people know as Psalm 23, &ldquo;The Lord is my shepherd,&rdquo; is Psalm 22 here.</li>
+      <li><strong>Some book names.</strong> 1 and 2 Samuel are called 1 and 2 Kings, 1 and 2 Kings are 3 and 4 Kings, Chronicles is Paralipomenon, and Revelation is the Apocalypse. We use the modern names in the menu and show the Douay name beside them.</li>
+      <li><strong>Older English.</strong> &ldquo;Thee,&rdquo; &ldquo;hath&rdquo; and &ldquo;saith&rdquo; are part of its beauty, and of its difficulty.</li>
+    </ul>
+    <p>The readings you hear at Mass in the U.S. come from a modern translation, the New American Bible. You can read today&rsquo;s on our <a href="/bible">Bible &amp; Readings</a> page.</p>
+  </section>
+</div>

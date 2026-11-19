@@ -896,3 +896,48 @@ dl.glossary .see { font: 600 .85rem var(--sans); margin-left: .2rem; }
 @media (max-width: 520px) { .st-dots button { width: 2rem; height: 2rem; font-size: .82rem; } .st-body h2 { font-size: 1.6rem; } }
 @media print { .st-dots, .st-nav, .st-hint { display: none !important; } .st-card[hidden] { display: grid !important; } .st-prayers { display: none; } }
 .an-steps li > a.an-pray + a { margin-left: 1rem; }
+
+/* ---------- Site search ---------- */
+.search-btn { color: var(--ink-soft); padding: .4rem; border-radius: 8px; display: inline-flex; flex: none; }
+.search-btn svg { width: 20px; height: 20px; }
+.search-btn:hover { color: var(--navy); }
+.site-search { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+.site-search .search { flex: 1 1 260px; }
+.search-results { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: .4rem; }
+.search-results li { padding: .8rem 0; border-bottom: 1px solid var(--line); }
+.search-results li > a { font: 600 1.12rem var(--sans); }
+.search-results .sr-page { font-size: .88rem; color: var(--ink-soft); }
+.search-results p { margin: .25rem 0 0; color: var(--ink-soft); font-size: .98rem; }
+.search-results mark { background: var(--gold-soft); color: inherit; border-radius: 3px; padding: 0 .1em; }
+
+/* ---------- Bible reader ---------- */
+.bible-nav { display: grid; gap: .8rem; }
+.bible-row { display: flex; flex-wrap: wrap; gap: .7rem; align-items: flex-end; }
+.bible-row label { display: grid; gap: .25rem; font: 600 .9rem var(--sans); color: var(--ink-soft); }
+.bible-row label.grow { flex: 1 1 240px; }
+.bible-row select { font: inherit; font-size: 1rem; min-height: 44px; padding: .4rem .6rem; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); max-width: 100%; }
+.bible-row #bible-book { min-width: min(100%, 15rem); }
+.bible-text { font-family: var(--serif, Georgia, serif); font-size: 1.14rem; line-height: 1.75; max-width: 68ch; }
+.bible-text p { margin: 0 0 .55rem; }
+.bible-text .vn { font: 700 .72rem var(--sans); color: var(--gold); vertical-align: super; text-decoration: none; margin-right: .15rem; }
+.bible-text p.hl { background: var(--gold-soft); border-radius: 6px; padding: .15rem .35rem; margin-left: -.35rem; }
+.bible-pager { justify-content: space-between; margin-top: 1.2rem; max-width: 68ch; }
+.bible-pager button[disabled] { visibility: hidden; }
+
+/* ---------- Seasons ---------- */
+.season-card { margin: 1.2rem 0 0; border-color: var(--gold); background: linear-gradient(160deg, var(--surface), var(--gold-soft)); }
+.season-dates td:first-child { white-space: nowrap; font-weight: 600; }
+.season-dates caption { text-align: left; font: 700 .82rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--gold); padding: .7rem .9rem 0; }
+@media (max-width: 520px) { .season-dates td:first-child { white-space: normal; } }
+
+/* ---------- Parish-provided details on the church map ---------- */
+.church .times.parish-provided { border-left: 3px solid var(--gold); }
+@media (max-width: 520px) { .search-btn { padding: .3rem; } }
+@media (max-width: 360px) {
+  .search-btn, .theme-btn { padding: .2rem; }
+  .brand-name { font-size: .94rem; }
+  .brand svg { width: 22px; height: 27px; }
+}
+@media (max-width: 430px) { .brand-name { font-size: 1.04rem; } .header-tools { gap: .1rem; } }
+@media (max-width: 360px) { .brand-name { font-size: .92rem; } .brand { gap: .3rem; } }
+@media (max-width: 310px) { .brand-name { font-size: .82rem; } }
