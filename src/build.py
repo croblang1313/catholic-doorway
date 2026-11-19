@@ -104,8 +104,8 @@ SUBNAV = {"beliefs": [("beliefs", "What Catholics believe"), ("questions", "Hone
                       ("liturgy-of-the-hours", "Liturgy of the Hours")],
           "bible": [("bible", "Today’s readings and the Bible"), ("calendar", "Holy Days Calendar")],
           "start-here": [("start-here", "Becoming Catholic (OCIA)"), ("first-mass", "Your First Mass"),
-                         ("how-to", "How-To Guides"), ("confession", "How to go to Confession"),
-                         ("examination-of-conscience", "Examination of conscience"), ("coming-back", "Coming back to the Church")],
+                         ("how-to", "How-To Guides"),
+                         ("examination-of-conscience", "Examination of conscience")],
           "saints": [("saints", "Meet the saints"), ("saints-directory", "Saints and causes directory")],
           "structure": [("structure", "How the Church is organized"), ("popes", "All 267 Popes"),
                         ("dioceses", "U.S. Dioceses"), ("find-a-church", "Find a Church")]}
@@ -267,7 +267,7 @@ PT_TEXT = dict(lang="pt", skip="Pular para o conteúdo", home="/pt/", home_label
                theme_label="Mudar para o modo claro ou escuro", menu_label="Menu", nav_label="Principal")
 EN_TO_PT = {en: pt for en, pt, *_ in PT_PAGES}
 PT_SUBNAV = {"comecar": [("comecar", "Tornar-se católico (OCIA)"), ("primeira-missa", "Sua primeira Missa"), ("guias", "Guias práticos"),
-                         ("confissao", "Como se confessar"), ("exame-de-consciencia", "Exame de consciência"), ("voltar", "Voltar para a Igreja")],
+                         ("exame-de-consciencia", "Exame de consciência")],
              "oracoes": [("oracoes", "Orações católicas"), ("rosario", "Reze o Rosário"), ("devocoes", "Devoções e lembretes"),
                          ("liturgia-das-horas", "Liturgia das Horas")],
              "biblia": [("biblia", "As leituras de hoje e a Bíblia"), ("calendario", "Calendário de dias santos")],
@@ -277,7 +277,7 @@ PT_SUBNAV = {"comecar": [("comecar", "Tornar-se católico (OCIA)"), ("primeira-m
              "estrutura": [("estrutura", "Como a Igreja é organizada"), ("papas", "Os 267 Papas"), ("dioceses", "As dioceses dos EUA"),
                            ("encontrar-igreja", "Encontrar uma igreja")]}
 # Portuguese pages reached from a hub page rather than the top menu
-PT_NAV_EXCLUDE = {"terco-da-misericordia", "via-sacra", "novenas", "angelus", "cadastrar-ocia", "sobre", "inscrever-se-paroquia", "batismo", "matrimonio", "uncao", "funeral", "certidao-de-batismo"}
+PT_NAV_EXCLUDE = {"confissao", "voltar", "terco-da-misericordia", "via-sacra", "novenas", "angelus", "cadastrar-ocia", "sobre", "inscrever-se-paroquia", "batismo", "matrimonio", "uncao", "funeral", "certidao-de-batismo"}
 
 # Filipino (Tagalog): en_slug, tl_slug, nav label, <title>, meta description
 TL_PAGES = [
@@ -356,7 +356,7 @@ TL_TEXT = dict(lang="tl", skip="Lumaktaw sa nilalaman", home="/tl/", home_label=
                theme_label="Lumipat sa maliwanag o madilim na anyo", menu_label="Menu", nav_label="Pangunahin")
 EN_TO_TL = {en: tl for en, tl, *_ in TL_PAGES}
 TL_SUBNAV = {"magsimula": [("magsimula", "Maging Katoliko (OCIA)"), ("unang-misa", "Ang iyong unang Misa"), ("mga-gabay", "Mga praktikal na gabay"),
-                           ("kumpisal", "Paano mangumpisal"), ("pagsusuri-ng-budhi", "Pagsusuri ng budhi"), ("pagbabalik", "Pagbabalik sa Simbahan")],
+                           ("pagsusuri-ng-budhi", "Pagsusuri ng budhi")],
              "mga-dasal": [("mga-dasal", "Mga dasal Katoliko"), ("rosaryo", "Magrosaryo"), ("mga-debosyon", "Mga debosyon at paalala"),
                            ("liturhiya-ng-mga-oras", "Liturhiya ng mga Oras")],
              "bibliya": [("bibliya", "Ang mga pagbasa ngayon at ang Bibliya"), ("kalendaryo", "Kalendaryo ng mga banal na araw")],
@@ -366,7 +366,7 @@ TL_SUBNAV = {"magsimula": [("magsimula", "Maging Katoliko (OCIA)"), ("unang-misa
              "istruktura": [("istruktura", "Paano nakaayos ang Simbahan"), ("mga-papa", "Ang 267 Papa"), ("mga-diyosesis", "Ang mga diyosesis sa Estados Unidos"),
                             ("hanapin-ang-simbahan", "Maghanap ng simbahan")]}
 # Filipino pages reached from a hub page rather than the top menu
-TL_NAV_EXCLUDE = {"koronilya-ng-banal-na-awa", "daan-ng-krus", "mga-nobena", "orasyon", "ilista-ang-ocia", "tungkol", "magpatala-sa-parokya", "binyag", "kasal", "pagpapahid-ng-langis", "libing", "katibayan-ng-binyag"}
+TL_NAV_EXCLUDE = {"kumpisal", "pagbabalik", "koronilya-ng-banal-na-awa", "daan-ng-krus", "mga-nobena", "orasyon", "ilista-ang-ocia", "tungkol", "magpatala-sa-parokya", "binyag", "kasal", "pagpapahid-ng-langis", "libing", "katibayan-ng-binyag"}
 
 LANGS = [("en", "English", "home page"), ("es", "Español", "página de inicio"), ("pt", "Português", "página inicial"), ("tl", "Filipino", "pangunahing pahina")]
 LANG_HOME = {"en": "/", "es": "/es/", "pt": "/pt/", "tl": "/tl/"}
@@ -1530,7 +1530,7 @@ def nav_html(current):
 
 
 ES_SUBNAV = {"comenzar": [("comenzar", "Hacerse católico (OCIA)"), ("primera-misa", "Tu primera Misa"), ("guias", "Guías prácticas"),
-                          ("confesion", "Cómo confesarse"), ("examen-de-conciencia", "Examen de conciencia"), ("volver", "Volver a la Iglesia")],
+                          ("examen-de-conciencia", "Examen de conciencia")],
              "oraciones": [("oraciones", "Oraciones católicas"), ("rosario", "Reza el Rosario"), ("devociones", "Devociones y recordatorios"),
                            ("liturgia-de-las-horas", "Liturgia de las Horas")],
              "biblia": [("biblia", "Las lecturas de hoy y la Biblia"), ("calendario", "Calendario de días santos")],
@@ -1541,7 +1541,7 @@ ES_SUBNAV = {"comenzar": [("comenzar", "Hacerse católico (OCIA)"), ("primera-mi
                             ("buscar-iglesia", "Buscar una iglesia")]}
 ES_SUB_CHILDREN = {c for subs in ES_SUBNAV.values() for c, _ in subs} - set(ES_SUBNAV)
 # Spanish pages reached from a hub page rather than the top menu
-ES_NAV_EXCLUDE = {"coronilla-de-la-divina-misericordia", "via-crucis", "novenas", "angelus", "registrar-ocia", "acerca", "inscribirse-parroquia", "bautismo", "matrimonio", "uncion", "funerales", "fe-de-bautismo"}
+ES_NAV_EXCLUDE = {"confesion", "volver", "coronilla-de-la-divina-misericordia", "via-crucis", "novenas", "angelus", "registrar-ocia", "acerca", "inscribirse-parroquia", "bautismo", "matrimonio", "uncion", "funerales", "fe-de-bautismo"}
 
 
 def lang_nav(code, pages, subnav, exclude, current):
