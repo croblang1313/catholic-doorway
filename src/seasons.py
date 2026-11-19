@@ -141,6 +141,9 @@ def banner(lang, y=None):
 def render(body, lang):
     if "{{ADVENT_DATES}}" in body:
         body = body.replace("{{ADVENT_DATES}}", dates_table(lang))
+    if "{{ADVENT_CALENDAR}}" in body:
+        import advent_calendar
+        body = advent_calendar.render(body, lang)
     if "{{SEASON_BANNER}}" in body:
         body = body.replace("{{SEASON_BANNER}}", banner(lang))
     return body

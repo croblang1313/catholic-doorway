@@ -775,6 +775,7 @@ EXTRA = {
     "liturgy-of-the-hours": PRAY_JS, "church-documents": PRAY_JS, "ocia-listing": PRAY_JS,
     "rosary": ("", '<script src="/assets/js/rosary.js" defer></script>'),
     "stations-of-the-cross": ("", '<script src="/assets/js/stations.js" defer></script>'),
+    "advent": ("", '<script src="/assets/js/advent.js" defer></script>'),
     "saints-directory": ("", '<script src="/assets/js/saints-dir.js" defer></script>'),
     "read-the-bible": ("", '<script src="/assets/js/bible.js" defer></script>'),
     "search": ("", '<script src="/assets/js/search.js" defer></script>'),
@@ -1611,7 +1612,7 @@ def version(rel):
 
 
 def bust(page):
-    for rel in ("/assets/css/style.css", "/assets/js/main.js", "/assets/js/map.js", "/assets/js/rosary.js", "/assets/js/saints-dir.js", "/assets/js/pray.js", "/assets/js/bible.js", "/assets/js/search.js"):
+    for rel in ("/assets/css/style.css", "/assets/js/main.js", "/assets/js/map.js", "/assets/js/rosary.js", "/assets/js/saints-dir.js", "/assets/js/pray.js", "/assets/js/bible.js", "/assets/js/search.js", "/assets/js/stations.js", "/assets/js/advent.js"):
         page = page.replace(f'"{rel}"', f'"{rel}?v={version(rel)}"')
     return page
 
