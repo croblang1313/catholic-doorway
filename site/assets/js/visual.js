@@ -79,6 +79,8 @@
       info.innerHTML = '';
       info.appendChild(s);
       info.appendChild(p);
+      var pray = $('.an-pray', li);
+      if (pray) { var pl = pray.cloneNode(true); pl.style.display = 'block'; pl.style.marginTop = '.4rem'; info.appendChild(pl); }
       if (!fromList && wide()) li.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     };
     hots.forEach(function (h) {
