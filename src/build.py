@@ -26,7 +26,7 @@ DOMAIN = "https://catholicdoorway.com"
 PAGES = [
     ("index", "Home", "CatholicDoorway: a free guide to the Catholic faith",
      "A free, simple guide to the Catholic faith: prayers, daily readings, how to become Catholic (OCIA), a church finder, saints, beliefs and a glossary."),
-    ("start-here", "Start Here", "Start Here: Becoming Catholic (OCIA) | CatholicDoorway",
+    ("start-here", "Begin Here", "Begin Here: Becoming Catholic (OCIA) | CatholicDoorway",
      "New to the Catholic Church? How OCIA works, the four stages, how long it takes, who to contact, and what to expect at your first Mass."),
     ("first-mass", "Your First Mass", "Your First Mass: A Step-by-Step Guide | CatholicDoorway",
      "Going to Mass for the first time? A step-by-step companion for your phone: when to stand, sit and kneel, what people say, and what to do at Communion."),
@@ -88,9 +88,9 @@ PAGES = [
      "Meet the saints, and learn the path to sainthood: Servant of God, Venerable, Blessed and Saint."),
     ("saints-directory", "Saints Directory", "Saints and Causes Directory: Saints, Blesseds, Venerables, Servants of God | CatholicDoorway",
      "Search thousands of Catholic Saints, Blesseds, Venerables and Servants of God by name, country, century and patronage. Updated weekly."),
-    ("glossary", "Glossary", "Catholic Glossary: Terms Explained Simply | CatholicDoorway",
+    ("glossary", "Catholic Terms", "Catholic Terms: Words Explained Simply | CatholicDoorway",
      "Plain-English definitions of Catholic words, from Advent to Vespers."),
-    ("popes", "Popes", "All 267 Popes in Succession, from St. Peter to Leo XIV | CatholicDoorway",
+    ("popes", "Succession of Popes", "Succession of Popes, from St. Peter to Leo XIV | CatholicDoorway",
      "Every Pope in order from St. Peter to Leo XIV: number in the line of succession, years as Pope, birth and death, and what each is remembered for."),
     ("about", "About", "About CatholicDoorway",
      "About CatholicDoorway.com: a free, ad-free guide to the Catholic faith. Sources, data and corrections."),
@@ -98,16 +98,16 @@ PAGES = [
 ]
 NAV_EXCLUDE = {"examination-of-conscience", "ocia-listing", "devotions", "divine-mercy-chaplet", "stations-of-the-cross", "novenas", "angelus", "liturgy-of-the-hours", "church-documents", "about", "404", "saints-directory", "how-to", "confession", "coming-back", "join-a-parish", "baptism", "marriage", "anointing", "funerals", "baptism-certificate", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary", "questions"}
 # Pages shown in a dropdown under a main menu item: parent slug -> [(slug, label)]
-SUBNAV = {"beliefs": [("beliefs", "What Catholics believe"), ("questions", "Honest questions, answered"),
-                      ("church-documents", "Catechism and Church documents")],
-          "prayers": [("prayers", "Catholic prayers"), ("rosary", "Pray the Rosary"), ("devotions", "Devotions and reminders"),
+SUBNAV = {"beliefs": [("beliefs", "What Catholics Believe"), ("questions", "Honest Questions, Answered"),
+                      ("church-documents", "Catechism and Church Documents")],
+          "prayers": [("prayers", "Catholic Prayers"), ("rosary", "Pray the Rosary"), ("devotions", "Devotions and Reminders"),
                       ("liturgy-of-the-hours", "Liturgy of the Hours")],
-          "bible": [("bible", "Today’s readings and the Bible"), ("calendar", "Holy Days Calendar")],
+          "bible": [("bible", "Today’s Readings and the Bible"), ("calendar", "Holy Days Calendar")],
           "start-here": [("start-here", "Becoming Catholic (OCIA)"), ("first-mass", "Your First Mass"),
                          ("how-to", "How-To Guides"),
-                         ("examination-of-conscience", "Examination of conscience")],
-          "saints": [("saints", "Meet the saints"), ("saints-directory", "Saints and causes directory")],
-          "structure": [("structure", "How the Church is organized"), ("popes", "All 267 Popes"),
+                         ("examination-of-conscience", "Examination of Conscience")],
+          "saints": [("saints", "Meet the Saints"), ("saints-directory", "Saints and Causes Directory")],
+          "structure": [("structure", "How the Church is Organized"), ("popes", "Succession of Popes"),
                         ("dioceses", "U.S. Dioceses"), ("find-a-church", "Find a Church")]}
 
 ES_PAGES = [
@@ -165,13 +165,13 @@ ES_PAGES = [
      "Un resumen sencillo de la fe y la práctica católica: el Credo, los siete sacramentos, la Escritura y la Tradición, María y los santos, y la vida moral."),
     ("questions", "preguntas", "Preguntas sinceras", "Preguntas sinceras sobre la Iglesia Católica, respondidas | CatholicDoorway",
      "Respuestas breves, amables y claras a lo que la gente pregunta sobre los católicos: María, los santos, la confesión, el Papa, el purgatorio y más."),
-    ("glossary", "glosario", "Glosario", "Glosario católico: palabras explicadas | CatholicDoorway",
+    ("glossary", "glosario", "Términos católicos", "Términos católicos: palabras explicadas | CatholicDoorway",
      "Definiciones sencillas de las palabras católicas, de Adviento a Vísperas."),
     ("structure", "estructura", "La Iglesia", "Cómo se organiza la Iglesia Católica | CatholicDoorway",
      "Cómo se organiza la Iglesia Católica: el Papa, los obispos, las diócesis, las parroquias, los sacerdotes y los diáconos, explicado con sencillez."),
     ("dioceses", "diocesis", "Diócesis", "Las diócesis católicas de Estados Unidos | CatholicDoorway",
      "Todas las diócesis, arquidiócesis y eparquías católicas de Estados Unidos: su obispo, su catedral, su sitio web y ayuda para empezar OCIA."),
-    ("popes", "papas", "Los Papas", "Los 267 Papas, de San Pedro a León XIV | CatholicDoorway",
+    ("popes", "papas", "La sucesión de los Papas", "La sucesión de los Papas, de San Pedro a León XIV | CatholicDoorway",
      "Todos los Papas en orden, de San Pedro a León XIV: su lugar en la sucesión, sus años de pontificado y por qué se les recuerda."),
     ("saints", "santos", "Santos", "Santos, Beatos y Venerables católicos | CatholicDoorway",
      "Conoce a los santos y el camino a la santidad: Siervo de Dios, Venerable, Beato y Santo."),
@@ -248,11 +248,11 @@ PT_PAGES = [
      "Os dias santos de guarda, os dias de jejum e as festas principais nos Estados Unidos, com um calendário gratuito em português para o seu iPhone, Google ou Outlook."),
     ("questions", "perguntas", "Perguntas sinceras", "Perguntas sinceras sobre a Igreja Católica, respondidas | CatholicDoorway",
      "Respostas breves, gentis e claras ao que as pessoas perguntam sobre os católicos: Maria, os santos, a confissão, o Papa, o purgatório e mais."),
-    ("glossary", "glossario", "Glossário", "Glossário católico: palavras explicadas | CatholicDoorway",
+    ("glossary", "glossario", "Termos católicos", "Termos católicos: palavras explicadas | CatholicDoorway",
      "Definições simples das palavras católicas, de Absolvição a Vaticano."),
     ("structure", "estrutura", "A Igreja", "Como a Igreja Católica é organizada | CatholicDoorway",
      "Como a Igreja Católica é organizada: o Papa, os bispos, as dioceses, as paróquias, os padres e os diáconos, explicado com simplicidade."),
-    ("popes", "papas", "Os Papas", "Os 267 Papas, de São Pedro a Leão XIV | CatholicDoorway",
+    ("popes", "papas", "A sucessão dos Papas", "A sucessão dos Papas, de São Pedro a Leão XIV | CatholicDoorway",
      "Todos os Papas em ordem, de São Pedro a Leão XIV: o lugar de cada um na sucessão, os anos de pontificado e o motivo pelo qual é lembrado."),
     ("dioceses", "dioceses", "Dioceses", "As dioceses católicas dos Estados Unidos | CatholicDoorway",
      "Todas as dioceses, arquidioceses e eparquias católicas dos Estados Unidos: o bispo, a catedral, o site e ajuda para começar a OCIA."),
@@ -271,10 +271,10 @@ PT_SUBNAV = {"comecar": [("comecar", "Tornar-se católico (OCIA)"), ("primeira-m
              "oracoes": [("oracoes", "Orações católicas"), ("rosario", "Reze o Rosário"), ("devocoes", "Devoções e lembretes"),
                          ("liturgia-das-horas", "Liturgia das Horas")],
              "biblia": [("biblia", "As leituras de hoje e a Bíblia"), ("calendario", "Calendário de dias santos")],
-             "crencas": [("crencas", "No que os católicos acreditam"), ("perguntas", "Perguntas sinceras"), ("glossario", "Glossário"),
+             "crencas": [("crencas", "No que os católicos acreditam"), ("perguntas", "Perguntas sinceras"), ("glossario", "Termos católicos"),
                          ("documentos-da-igreja", "O Catecismo e os documentos")],
              "santos": [("santos", "Conheça os santos"), ("diretorio-santos", "Diretório de santos e causas")],
-             "estrutura": [("estrutura", "Como a Igreja é organizada"), ("papas", "Os 267 Papas"), ("dioceses", "As dioceses dos EUA"),
+             "estrutura": [("estrutura", "Como a Igreja é organizada"), ("papas", "A sucessão dos Papas"), ("dioceses", "As dioceses dos EUA"),
                            ("encontrar-igreja", "Encontrar uma igreja")]}
 # Portuguese pages reached from a hub page rather than the top menu
 PT_NAV_EXCLUDE = {"confissao", "voltar", "terco-da-misericordia", "via-sacra", "novenas", "angelus", "cadastrar-ocia", "sobre", "inscrever-se-paroquia", "batismo", "matrimonio", "uncao", "funeral", "certidao-de-batismo"}
@@ -337,11 +337,11 @@ TL_PAGES = [
      "Ang mga araw na pangilin, mga araw ng pag-aayuno at ang mga pangunahing kapistahan sa Estados Unidos, may libreng kalendaryo sa Filipino para sa iyong iPhone, Google o Outlook."),
     ("questions", "mga-tanong", "Tapat na mga tanong", "Tapat na mga tanong tungkol sa Simbahang Katolika, sinagot | CatholicDoorway",
      "Maikli, magiliw at malinaw na sagot sa mga itinatanong tungkol sa mga Katoliko: si Maria, ang mga santo, ang kumpisal, ang Papa, ang purgatoryo at iba pa."),
-    ("glossary", "glosaryo", "Glosaryo", "Glosaryong Katoliko: mga salitang ipinaliwanag | CatholicDoorway",
+    ("glossary", "glosaryo", "Mga terminong Katoliko", "Mga terminong Katoliko: mga salitang ipinaliwanag | CatholicDoorway",
      "Simpleng kahulugan ng mga salitang Katoliko, mula Adbiyento hanggang Vaticano."),
     ("structure", "istruktura", "Ang Simbahan", "Paano nakaayos ang Simbahang Katolika | CatholicDoorway",
      "Paano nakaayos ang Simbahang Katolika: ang Papa, ang mga obispo, mga diyosesis, mga parokya, mga pari at mga diyakono, ipinaliwanag nang simple."),
-    ("popes", "mga-papa", "Ang mga Papa", "Ang 267 Papa, mula kay San Pedro hanggang kay Leo XIV | CatholicDoorway",
+    ("popes", "mga-papa", "Ang paghahalili ng mga Papa", "Ang paghahalili ng mga Papa, mula kay San Pedro hanggang kay Leo XIV | CatholicDoorway",
      "Lahat ng Papa ayon sa pagkakasunod, mula kay San Pedro hanggang kay Leo XIV: ang kanilang lugar sa paghahalili, mga taon ng pagiging Papa at kung bakit sila naaalala."),
     ("dioceses", "mga-diyosesis", "Mga diyosesis", "Ang mga diyosesis Katoliko sa Estados Unidos | CatholicDoorway",
      "Lahat ng diyosesis, arkidiyosesis at eparkiya Katoliko sa Estados Unidos: ang obispo, ang katedral, ang website at tulong para magsimula sa OCIA."),
@@ -360,10 +360,10 @@ TL_SUBNAV = {"magsimula": [("magsimula", "Maging Katoliko (OCIA)"), ("unang-misa
              "mga-dasal": [("mga-dasal", "Mga dasal Katoliko"), ("rosaryo", "Magrosaryo"), ("mga-debosyon", "Mga debosyon at paalala"),
                            ("liturhiya-ng-mga-oras", "Liturhiya ng mga Oras")],
              "bibliya": [("bibliya", "Ang mga pagbasa ngayon at ang Bibliya"), ("kalendaryo", "Kalendaryo ng mga banal na araw")],
-             "mga-paniniwala": [("mga-paniniwala", "Ang pinaniniwalaan ng mga Katoliko"), ("mga-tanong", "Tapat na mga tanong"), ("glosaryo", "Glosaryo"),
+             "mga-paniniwala": [("mga-paniniwala", "Ang pinaniniwalaan ng mga Katoliko"), ("mga-tanong", "Tapat na mga tanong"), ("glosaryo", "Mga terminong Katoliko"),
                                 ("katesismo-at-dokumento", "Ang Katesismo at mga dokumento")],
              "mga-santo": [("mga-santo", "Kilalanin ang mga santo"), ("direktoryo-ng-mga-santo", "Direktoryo ng mga santo at kausa")],
-             "istruktura": [("istruktura", "Paano nakaayos ang Simbahan"), ("mga-papa", "Ang 267 Papa"), ("mga-diyosesis", "Ang mga diyosesis sa Estados Unidos"),
+             "istruktura": [("istruktura", "Paano nakaayos ang Simbahan"), ("mga-papa", "Ang paghahalili ng mga Papa"), ("mga-diyosesis", "Ang mga diyosesis sa Estados Unidos"),
                             ("hanapin-ang-simbahan", "Maghanap ng simbahan")]}
 # Filipino pages reached from a hub page rather than the top menu
 TL_NAV_EXCLUDE = {"kumpisal", "pagbabalik", "koronilya-ng-banal-na-awa", "daan-ng-krus", "mga-nobena", "orasyon", "ilista-ang-ocia", "tungkol", "magpatala-sa-parokya", "binyag", "kasal", "pagpapahid-ng-langis", "libing", "katibayan-ng-binyag"}
@@ -642,7 +642,7 @@ FOOT = """</main>
           <li><a href="/beliefs">What Catholics Believe</a></li>
           <li><a href="/structure">How the Church Is Organized</a></li>
           <li><a href="/saints">Saints</a></li>
-          <li><a href="/glossary">Glossary</a></li>
+          <li><a href="/glossary">Catholic Terms</a></li>
         </ul>
       </div>
       <div>
@@ -967,7 +967,7 @@ def questions_html(lang="en"):
                 url = f"https://bible.usccb.org/bible/{target}"
             refs.append(f'<a href="{url}" target="_blank" rel="noopener">{html.escape(label)}</a>')
         if q.get("glossary"):
-            g = {"en": ("/glossary", "Glossary"), "es": ("/es/glosario", "Glosario"), "pt": ("/pt/glossario", "Glossário"), "tl": ("/tl/glosaryo", "Glosaryo")}[lang]
+            g = {"en": ("/glossary", "Catholic Terms"), "es": ("/es/glosario", "Términos católicos"), "pt": ("/pt/glossario", "Termos católicos"), "tl": ("/tl/glosaryo", "Mga terminong Katoliko")}[lang]
             refs.append(f'<a href="{g[0]}#{q["glossary"]}">{g[1]}</a>')
         body = "".join(f"<p>{para}</p>" for para in q["a"])
         summary = q["q"] if es else html.escape(q["q"])
@@ -1510,14 +1510,26 @@ def bust(page):
     return page
 
 
+def label_key(label):
+    """Alphabetical sort key for menu labels: ignores accents, case and punctuation."""
+    import unicodedata
+    plain = unicodedata.normalize("NFKD", label)
+    return "".join(c for c in plain if c.isalnum() or c == " ").casefold()
+
+
+def menu_order(items):
+    """Top menu: Home first, everything else alphabetical by its label."""
+    return sorted(items, key=lambda x: (x[0] != "index", label_key(x[1])))
+
+
 def nav_html(current):
     items = []
-    for slug, label, *_ in PAGES:
+    for slug, label, *_ in menu_order([(p[0], p[1]) for p in PAGES]):
         if slug in NAV_EXCLUDE:
             continue
         href = "/" if slug == "index" else f"/{slug}"
         cur = ' aria-current="page"' if slug == current else ""
-        subs = SUBNAV.get(slug)
+        subs = sorted(SUBNAV[slug], key=lambda x: label_key(x[1])) if slug in SUBNAV else None
         if subs:
             if current in [s for s, _ in subs]:
                 cur = ' class="in-section"'
@@ -1534,10 +1546,10 @@ ES_SUBNAV = {"comenzar": [("comenzar", "Hacerse católico (OCIA)"), ("primera-mi
              "oraciones": [("oraciones", "Oraciones católicas"), ("rosario", "Reza el Rosario"), ("devociones", "Devociones y recordatorios"),
                            ("liturgia-de-las-horas", "Liturgia de las Horas")],
              "biblia": [("biblia", "Las lecturas de hoy y la Biblia"), ("calendario", "Calendario de días santos")],
-             "creencias": [("creencias", "Lo que creen los católicos"), ("preguntas", "Preguntas sinceras"), ("glosario", "Glosario"),
+             "creencias": [("creencias", "Lo que creen los católicos"), ("preguntas", "Preguntas sinceras"), ("glosario", "Términos católicos"),
                            ("documentos-de-la-iglesia", "El Catecismo y los documentos")],
              "santos": [("santos", "Conoce a los santos"), ("directorio-santos", "Directorio de santos y causas")],
-             "estructura": [("estructura", "Cómo se organiza la Iglesia"), ("papas", "Los 267 Papas"), ("diocesis", "Las diócesis de EE. UU."),
+             "estructura": [("estructura", "Cómo se organiza la Iglesia"), ("papas", "La sucesión de los Papas"), ("diocesis", "Las diócesis de EE. UU."),
                             ("buscar-iglesia", "Buscar una iglesia")]}
 ES_SUB_CHILDREN = {c for subs in ES_SUBNAV.values() for c, _ in subs} - set(ES_SUBNAV)
 # Spanish pages reached from a hub page rather than the top menu
@@ -1547,12 +1559,12 @@ ES_NAV_EXCLUDE = {"confesion", "volver", "coronilla-de-la-divina-misericordia", 
 def lang_nav(code, pages, subnav, exclude, current):
     children = {c for subs in subnav.values() for c, _ in subs} - set(subnav)
     items = []
-    for _, sl, label, *_ in pages:
+    for sl, label in menu_order([(p[1], p[2]) for p in pages]):
         if sl in children or sl in exclude:
             continue
         href = f"/{code}/" if sl == "index" else f"/{code}/{sl}"
         cur = ' aria-current="page"' if sl == current else ""
-        subs = subnav.get(sl)
+        subs = sorted(subnav[sl], key=lambda x: label_key(x[1])) if sl in subnav else None
         if subs:
             if current in [c for c, _ in subs]:
                 cur = ' class="in-section"'
