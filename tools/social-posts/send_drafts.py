@@ -15,6 +15,11 @@ plan.json is a list of posts:
               "fixes": ["What would raise the score"],
               "alternates": [{"caption": "Another full version", "hook": "Question Hook", "score": 7.9}]}}]
 
+"video" is optional: extra fields for the TikTok video (make_post_video.js), e.g.
+    {"hook": "Big first line, *gold* words", "path": "/saints", "art": "window"|"none"}.
+When "tiktok" is in platforms, TikTok gets its own 11-second video draft (motion + original sound)
+and the photo draft goes to the other platforms. Set "video": false to send TikTok the photo instead.
+
 "coach" is optional. It holds the post-writer / post-grader / viral-hooks results and shows as
 "Coach notes" on the draft's page, where Christopher can swap in an alternate with one tap.
 Follow /mnt/project-files/social-posts/brand-brief.md; its House Rules win over the skills' defaults.
@@ -56,24 +61,37 @@ def main():
     tok = None if dry else token()
     for i, post in enumerate(plan, 1):
         cap = post["caption"].strip()
-        if len(cap) > 280 and "x" in post.get("platforms", []):
+        plats = post.get("platforms", ["facebook", "instagram", "x", "tiktok"])
+        if len(cap) > 280 and "x" in plats:
             print(f"warning: post {i} is {len(cap)} characters, over X's 280")
-        spec = os.path.join(out_dir, f"post{i}.json")
-        img = os.path.join(out_dir, f"{post['post_on']}-post{i}.jpg")
-        json.dump(post["image"], open(spec, "w"))
-        subprocess.run(["node", os.path.join(HERE, "make_post_image.js"), spec, img], check=True)
-        print("rendered", img)
-        if dry:
-            continue
-        media = call("/api/media", open(img, "rb").read(), "image/jpeg", tok, {"X-Width": "1080", "X-Height": "1350"})
-        draft = call("/api/drafts", json.dumps({
-            "kind": "photo", "platforms": post.get("platforms", ["facebook", "instagram", "x", "tiktok"]),
-            "media": [media["key"]], "caption": cap, "post_on": post["post_on"],
-            **({"coach": post["coach"]} if post.get("coach") else {})}).encode(), "application/json", tok)
-        print("draft", post["post_on"], draft.get("review_url"))
-        with open(sent, "a") as f:
-            f.write(f"{post['post_on']} {draft.get('review_url')}\n")
-
+        # TikTok gets its own video draft (motion + sound); the photo draft goes everywhere else.
+        video = "tiktok" in plats and post.get("video") is not False
+        photo_plats = [p for p in plats if not (video and p == "tiktok")]
+        extra = {"caption": cap, "post_on": post["post_on"], **({"coach": post["coach"]} if post.get("coach") else {})}
+        if photo_plats:
+            spec = os.path.join(out_dir, f"post{i}.json")
+            img = os.path.join(out_dir, f"{post['post_on']}-post{i}.jpg")
+            json.dump(post["image"], open(spec, "w"))
+            subprocess.run(["node", os.path.join(HERE, "make_post_image.js"), spec, img], check=True)
+            print("rendered", img)
+            if not dry:
+                media = call("/api/media", open(img, "rb").read(), "image/jpeg", tok, {"X-Width": "1080", "X-Height": "1350"})
+                draft = call("/api/drafts", json.dumps({"kind": "photo", "platforms": photo_plats, "media": [media["key"]], **extra}).encode(), "application/json", tok)
+                print("draft", post["post_on"], draft.get("review_url"))
+                with open(sent, "a") as f:
+                    f.write(f"{post['post_on']} photo {draft.get('review_url')}\n")
+        if video:
+            vspec = os.path.join(out_dir, f"video{i}.json")
+            mp4 = os.path.join(out_dir, f"{post['post_on']}-video{i}.mp4")
+            json.dump({**post["image"], **(post.get("video") or {})}, open(vspec, "w"))
+            subprocess.run(["node", os.path.join(HERE, "make_post_video.js"), vspec, mp4], check=True)
+            print("rendered", mp4)
+            if not dry:
+                media = call("/api/media", open(mp4, "rb").read(), "video/mp4", tok, {"X-Width": "1080", "X-Height": "1920", "X-Filename": os.path.basename(mp4)})
+                draft = call("/api/drafts", json.dumps({"kind": "video", "platforms": ["tiktok"], "media": [media["key"]], **extra}).encode(), "application/json", tok)
+                print("draft", post["post_on"], "tiktok video", draft.get("review_url"))
+                with open(sent, "a") as f:
+                    f.write(f"{post['post_on']} tiktok-video {draft.get('review_url')}\n")
 
 if __name__ == "__main__":
     main()

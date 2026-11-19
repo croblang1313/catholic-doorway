@@ -64,6 +64,11 @@
      "score": 6.4
     }
    ]
+  },
+  "video": {
+   "hook": "He dressed as a *beggar* to bring people the *sacraments.*",
+   "path": "/saints",
+   "art": "window"
   }
  },
  {
@@ -130,6 +135,11 @@
      "score": 5.9
     }
    ]
+  },
+  "video": {
+   "hook": "Who's saying *grace* on Thursday?",
+   "path": "/prayers",
+   "art": "window"
   }
  },
  {
@@ -197,6 +207,11 @@
      "score": 6.0
     }
    ]
+  },
+  "video": {
+   "hook": "The Church's new year doesn't start on *January 1.*",
+   "path": "/advent",
+   "art": "window"
   }
  }
 ]
