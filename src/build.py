@@ -586,6 +586,24 @@ HEAD = """<!doctype html>
 <main id="main">
 """
 
+VERSES = json.loads((ROOT / "src" / "data" / "verses.json").read_text(encoding="utf-8"))
+VERSE_VERSION = {"en": "RSV-CE"}
+VERSE_LABEL = {"en": "A verse for this page", "es": "Un versículo para esta página", "pt": "Um versículo para esta página", "tl": "Isang talata para sa pahinang ito"}
+
+
+def verse_band(slug, lang):
+    """Slim scripture banner under the header, in the homepage verse style."""
+    v = VERSES.get(slug, {}).get(lang)
+    if not v:
+        return ""
+    cite = html.escape(v["r"])
+    if VERSE_VERSION.get(lang):
+        cite += f" &middot; {VERSE_VERSION[lang]}"
+    return (f'<aside class="verse-band" aria-label="{VERSE_LABEL[lang]}"><div class="wrap">'
+            f'<p class="vb-text">&ldquo;{html.escape(v["t"], quote=False)}&rdquo;</p>'
+            f'<p class="vb-cite">{cite}</p></div></aside>\n')
+
+
 
 SOCIAL_LINKS = [
     ("facebook", "Facebook", "https://www.facebook.com/CatholicDoorway/",
@@ -1569,7 +1587,7 @@ def build_dioceses(data):
             if lang != "en":
                 page = page.replace('<meta property="og:site_name" content="CatholicDoorway">',
                                     f'<meta property="og:site_name" content="CatholicDoorway">\n<meta property="og:locale" content="{LOCALE[lang]}">')
-            page += diocese_body(d, data, lang) + foot.format(extra_foot="")
+            page += verse_band("dioceses", lang) + diocese_body(d, data, lang) + foot.format(extra_foot="")
             dio_ld = {"@type": "Organization", "name": d["name"], "description": desc}
             if d.get("website"):
                 dio_ld["url"] = d["website"]
@@ -1750,6 +1768,7 @@ def build_lang(code, pages, text, foot, subnav, exclude):
                            alternates=alternates_html(urls), lang_menu=lang_menu(code, urls), **text)
         page = page.replace('<meta property="og:site_name" content="CatholicDoorway">',
                             f'<meta property="og:site_name" content="CatholicDoorway">\n<meta property="og:locale" content="{LOCALE[code]}">')
+        page += verse_band(en, code)
         body = body.replace("{{DOOR}}", DOOR_SVG)
         body = features.render(body, code)
         body = seasons.render(body, code)
@@ -1803,6 +1822,7 @@ def main():
                            slug=slug, door=DOOR_SVG, menu=MENU_SVG, theme=THEME_SVG,
                            nav=nav_html(slug), extra_head=eh, alternates=alternates_html(urls),
                            lang_menu=lang_menu("en", urls), **EN_TEXT)
+        page += verse_band(slug, "en")
         body = body.replace("{{DOOR}}", DOOR_SVG)
         body = features.render(body, "en")
         body = seasons.render(body, "en")
