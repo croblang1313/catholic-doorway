@@ -1,0 +1,830 @@
+{
+ "start-here": {
+  "en": {
+   "t": "Come and see.",
+   "r": "John 1:39"
+  },
+  "es": {
+   "t": "Vengan y lo verán.",
+   "r": "Juan 1:39"
+  },
+  "pt": {
+   "t": "Vinde e vede.",
+   "r": "João 1,39"
+  },
+  "tl": {
+   "t": "Halikayo at tingnan ninyo.",
+   "r": "Juan 1:39"
+  }
+ },
+ "first-mass": {
+  "en": {
+   "t": "I was glad when they said to me, ‘Let us go to the house of the Lord!’",
+   "r": "Psalm 122:1"
+  },
+  "es": {
+   "t": "¡Qué alegría cuando me dijeron: «Vamos a la Casa del Señor»!",
+   "r": "Salmo 122:1"
+  },
+  "pt": {
+   "t": "Que alegria quando me vieram dizer: ‘Vamos subir à casa do Senhor…’",
+   "r": "Salmo 121,1"
+  },
+  "tl": {
+   "t": "Ako ay nagalak nang sabihin nila: ‘Pumunta na tayo sa bahay ni Yahweh.’",
+   "r": "Mga Awit 122:1"
+  }
+ },
+ "how-to": {
+  "en": {
+   "t": "Trust in the Lord with all your heart, and do not rely on your own insight.",
+   "r": "Proverbs 3:5"
+  },
+  "es": {
+   "t": "Confía en el Señor de todo corazón y no te apoyes en tu propia inteligencia.",
+   "r": "Proverbios 3:5"
+  },
+  "pt": {
+   "t": "Que teu coração deposite toda a sua confiança no Senhor! Não te firmes em tua própria sabedoria!",
+   "r": "Provérbios 3,5"
+  },
+  "tl": {
+   "t": "Kay Yahweh ka magtiwala, buong puso at lubusan, at huwag kang mananangan sa sariling karunungan.",
+   "r": "Mga Kawikaan 3:5"
+  }
+ },
+ "confession": {
+  "en": {
+   "t": "If we confess our sins, he is faithful and just, and will forgive our sins and cleanse us from all unrighteousness.",
+   "r": "1 John 1:9"
+  },
+  "es": {
+   "t": "Si confesamos nuestros pecados, él es fiel y justo para perdonarnos y purificarnos de toda maldad.",
+   "r": "1 Juan 1:9"
+  },
+  "pt": {
+   "t": "Se reconhecemos os nossos pecados, (Deus aí está) fiel e justo para nos perdoar os pecados e para nos purificar de toda iniquidade.",
+   "r": "1 João 1,9"
+  },
+  "tl": {
+   "t": "Kung ipinapahayag natin ang ating mga kasalanan, patatawarin tayo ng Diyos sa mga ito, at lilinisin tayo sa lahat ng ating kasalanan, sapagkat siya'y tapat at matuwid.",
+   "r": "1 Juan 1:9"
+  }
+ },
+ "coming-back": {
+  "en": {
+   "t": "While he was yet at a distance, his father saw him and had compassion, and ran and embraced him and kissed him.",
+   "r": "Luke 15:20"
+  },
+  "es": {
+   "t": "Cuando todavía estaba lejos, su padre lo vio y se conmovió profundamente, corrió a su encuentro, lo abrazó y lo besó.",
+   "r": "Lucas 15:20"
+  },
+  "pt": {
+   "t": "Estava ainda longe, quando seu pai o viu e, movido de compaixão, correu-lhe ao encontro, o abraçou e o beijou.",
+   "r": "Lucas 15,20"
+  },
+  "tl": {
+   "t": "Malayo pa'y natanaw na siya ng kanyang ama, at dahil sa matinding awa ay patakbo siyang sinalubong, niyakap, at hinalikan.",
+   "r": "Lucas 15:20"
+  }
+ },
+ "join-a-parish": {
+  "en": {
+   "t": "They devoted themselves to the apostles’ teaching and fellowship, to the breaking of bread and the prayers.",
+   "r": "Acts 2:42"
+  },
+  "es": {
+   "t": "Todos se reunían asiduamente para escuchar la enseñanza de los Apóstoles y participar en la vida común, en la fracción del pan y en las oraciones.",
+   "r": "Hechos 2:42"
+  },
+  "pt": {
+   "t": "Perseveravam eles na doutrina dos apóstolos, nas reuniões em comum, na fração do pão e nas orações.",
+   "r": "Atos 2,42"
+  },
+  "tl": {
+   "t": "Inilaan nila ang kanilang mga sarili upang matuto sa turo ng mga apostol, magsama-sama bilang magkakapatid, magsalu-salo sa pagkain ng tinapay, at manalangin.",
+   "r": "Mga Gawa 2:42"
+  }
+ },
+ "baptism": {
+  "en": {
+   "t": "Let the children come to me, do not hinder them; for to such belongs the kingdom of God.",
+   "r": "Mark 10:14"
+  },
+  "es": {
+   "t": "Dejen que los niños se acerquen a mí y no se lo impidan, porque el Reino de Dios pertenece a los que son como ellos.",
+   "r": "Marcos 10:14"
+  },
+  "pt": {
+   "t": "Deixai vir a mim os pequeninos e não os impeçais, porque o Reino de Deus é daqueles que se lhes assemelham.",
+   "r": "Marcos 10,14"
+  },
+  "tl": {
+   "t": "Hayaan ninyong lumapit sa akin ang mga bata, at huwag ninyo silang pagbawalan, sapagkat ang mga katulad nila ang mapapabilang sa kaharian ng Diyos.",
+   "r": "Marcos 10:14"
+  }
+ },
+ "marriage": {
+  "en": {
+   "t": "What therefore God has joined together, let not man put asunder.",
+   "r": "Mark 10:9"
+  },
+  "es": {
+   "t": "Que el hombre no separe lo que Dios ha unido.",
+   "r": "Marcos 10:9"
+  },
+  "pt": {
+   "t": "Não separe, pois, o homem o que Deus uniu.",
+   "r": "Marcos 10,9"
+  },
+  "tl": {
+   "t": "Ang pinagsama ng Diyos ay huwag paghiwalayin ng tao.",
+   "r": "Marcos 10:9"
+  }
+ },
+ "anointing": {
+  "en": {
+   "t": "Is any among you sick? Let him call for the elders of the church, and let them pray over him, anointing him with oil in the name of the Lord.",
+   "r": "James 5:14"
+  },
+  "es": {
+   "t": "Si está enfermo, que llame a los presbíteros de la Iglesia, para que oren por él y lo unjan con óleo en el nombre del Señor.",
+   "r": "Santiago 5:14"
+  },
+  "pt": {
+   "t": "Está alguém enfermo? Chame os sacerdotes da Igreja, e estes façam oração sobre ele, ungindo-o com óleo em nome do Senhor.",
+   "r": "Tiago 5,14"
+  },
+  "tl": {
+   "t": "May sakit ba ang sinuman sa inyo? Ipatawag ninyo ang matatandang pinuno ng iglesya upang ipanalangin siya at pahiran ng langis sa pangalan ng Panginoon.",
+   "r": "Santiago 5:14"
+  }
+ },
+ "funerals": {
+  "en": {
+   "t": "I am the resurrection and the life; he who believes in me, though he die, yet shall he live.",
+   "r": "John 11:25"
+  },
+  "es": {
+   "t": "Yo soy la Resurrección y la Vida. El que cree en mí, aunque muera, vivirá.",
+   "r": "Juan 11:25"
+  },
+  "pt": {
+   "t": "Eu sou a ressurreição e a vida. Aquele que crê em mim, ainda que esteja morto, viverá.",
+   "r": "João 11,25"
+  },
+  "tl": {
+   "t": "Ako ang muling pagkabuhay at ang buhay. Ang sinumang sumasampalataya sa akin, kahit mamatay ay muling mabubuhay.",
+   "r": "Juan 11:25"
+  }
+ },
+ "baptism-certificate": {
+  "en": {
+   "t": "Fear not, for I have redeemed you; I have called you by name, you are mine.",
+   "r": "Isaiah 43:1"
+  },
+  "es": {
+   "t": "No temas, porque yo te he redimido, te he llamado por tu nombre, tú me perteneces.",
+   "r": "Isaías 43:1"
+  },
+  "pt": {
+   "t": "Nada temas, pois eu te resgato, eu te chamo pelo nome, és meu.",
+   "r": "Isaías 43,1"
+  },
+  "tl": {
+   "t": "Huwag kang matatakot sapagkat ililigtas kita. Tinawag kita sa iyong pangalan, ikaw ay akin.",
+   "r": "Isaias 43:1"
+  }
+ },
+ "confirmation": {
+  "en": {
+   "t": "You shall receive power when the Holy Spirit has come upon you.",
+   "r": "Acts 1:8"
+  },
+  "es": {
+   "t": "Recibirán la fuerza del Espíritu Santo que descenderá sobre ustedes.",
+   "r": "Hechos 1:8"
+  },
+  "pt": {
+   "t": "Descerá sobre vós o Espírito Santo e vos dará força.",
+   "r": "Atos 1,8"
+  },
+  "tl": {
+   "t": "Tatanggap kayo ng kapangyarihan pagbaba sa inyo ng Espiritu Santo.",
+   "r": "Mga Gawa 1:8"
+  }
+ },
+ "first-communion": {
+  "en": {
+   "t": "I am the living bread which came down from heaven; if any one eats of this bread, he will live for ever.",
+   "r": "John 6:51"
+  },
+  "es": {
+   "t": "Yo soy el pan vivo bajado del cielo. El que coma de este pan vivirá eternamente.",
+   "r": "Juan 6:51"
+  },
+  "pt": {
+   "t": "Eu sou o pão vivo que desceu do céu. Quem comer deste pão viverá eternamente.",
+   "r": "João 6,51"
+  },
+  "tl": {
+   "t": "Ako nga ang tinapay na nagbibigay-buhay na bumabâ mula sa langit. Mabubuhay magpakailanman ang sinumang kumain ng tinapay na ito.",
+   "r": "Juan 6:51"
+  }
+ },
+ "holy-orders": {
+  "en": {
+   "t": "Here am I! Send me.",
+   "r": "Isaiah 6:8"
+  },
+  "es": {
+   "t": "¡Aquí estoy: envíame!",
+   "r": "Isaías 6:8"
+  },
+  "pt": {
+   "t": "Eis-me aqui… enviai-me.",
+   "r": "Isaías 6,8"
+  },
+  "tl": {
+   "t": "Narito po ako; ako ang inyong isugo!",
+   "r": "Isaias 6:8"
+  }
+ },
+ "examination-of-conscience": {
+  "en": {
+   "t": "Create in me a clean heart, O God, and put a new and right spirit within me.",
+   "r": "Psalm 51:10"
+  },
+  "es": {
+   "t": "Crea en mí, Dios mío, un corazón puro, y renueva la firmeza de mi espíritu.",
+   "r": "Salmo 51:12"
+  },
+  "pt": {
+   "t": "Ó meu Deus, criai em mim um coração puro, e renovai-me o espírito de firmeza.",
+   "r": "Salmo 50,12"
+  },
+  "tl": {
+   "t": "Isang pusong tapat sa aki'y likhain, bigyan mo, O Diyos, ng bagong damdamin.",
+   "r": "Mga Awit 51:10"
+  }
+ },
+ "ocia-listing": {
+  "en": {
+   "t": "The harvest is plentiful, but the laborers are few.",
+   "r": "Matthew 9:37"
+  },
+  "es": {
+   "t": "La cosecha es abundante, pero los trabajadores son pocos.",
+   "r": "Mateo 9:37"
+  },
+  "pt": {
+   "t": "A messe é grande, mas os operários são poucos.",
+   "r": "Mateus 9,37"
+  },
+  "tl": {
+   "t": "Napakaraming aanihin, ngunit kakaunti ang mag-aani.",
+   "r": "Mateo 9:37"
+  }
+ },
+ "find-a-church": {
+  "en": {
+   "t": "Where two or three are gathered in my name, there am I in the midst of them.",
+   "r": "Matthew 18:20"
+  },
+  "es": {
+   "t": "Donde hay dos o tres reunidos en mi Nombre, yo estoy presente en medio de ellos.",
+   "r": "Mateo 18:20"
+  },
+  "pt": {
+   "t": "Onde dois ou três estão reunidos em meu nome, aí estou eu no meio deles.",
+   "r": "Mateus 18,20"
+  },
+  "tl": {
+   "t": "Saanman may dalawa o tatlong nagkakatipon sa pangalan ko, naroon akong kasama nila.",
+   "r": "Mateo 18:20"
+  }
+ },
+ "prayers": {
+  "en": {
+   "t": "Lord, teach us to pray.",
+   "r": "Luke 11:1"
+  },
+  "es": {
+   "t": "Señor, enséñanos a orar.",
+   "r": "Lucas 11:1"
+  },
+  "pt": {
+   "t": "Senhor, ensina-nos a rezar.",
+   "r": "Lucas 11,1"
+  },
+  "tl": {
+   "t": "Panginoon, turuan po ninyo kaming manalangin.",
+   "r": "Lucas 11:1"
+  }
+ },
+ "rosary": {
+  "en": {
+   "t": "Hail, full of grace, the Lord is with you!",
+   "r": "Luke 1:28"
+  },
+  "es": {
+   "t": "¡Alégrate!, llena de gracia, el Señor está contigo.",
+   "r": "Lucas 1:28"
+  },
+  "pt": {
+   "t": "Ave, cheia de graça, o Senhor é contigo.",
+   "r": "Lucas 1,28"
+  },
+  "tl": {
+   "t": "Magalak ka! Ikaw ay lubos na kinalulugdan ng Diyos. Sumasaiyo ang Panginoon!",
+   "r": "Lucas 1:28"
+  }
+ },
+ "devotions": {
+  "en": {
+   "t": "Pray constantly.",
+   "r": "1 Thessalonians 5:17"
+  },
+  "es": {
+   "t": "Oren sin cesar.",
+   "r": "1 Tesalonicenses 5:17"
+  },
+  "pt": {
+   "t": "Orai sem cessar.",
+   "r": "1 Tessalonicenses 5,17"
+  },
+  "tl": {
+   "t": "Palagi kayong manalangin.",
+   "r": "1 Tesalonica 5:17"
+  }
+ },
+ "divine-mercy-chaplet": {
+  "en": {
+   "t": "Be merciful, even as your Father is merciful.",
+   "r": "Luke 6:36"
+  },
+  "es": {
+   "t": "Sean misericordiosos, como el Padre de ustedes es misericordioso.",
+   "r": "Lucas 6:36"
+  },
+  "pt": {
+   "t": "Sede misericordiosos, como também vosso Pai é misericordioso.",
+   "r": "Lucas 6,36"
+  },
+  "tl": {
+   "t": "Maging mahabagin kayo tulad ng inyong Ama na mahabagin.",
+   "r": "Lucas 6:36"
+  }
+ },
+ "stations-of-the-cross": {
+  "en": {
+   "t": "If any man would come after me, let him deny himself and take up his cross daily and follow me.",
+   "r": "Luke 9:23"
+  },
+  "es": {
+   "t": "El que quiera venir detrás de mí, que renuncie a sí mismo, que cargue con su cruz cada día y me siga.",
+   "r": "Lucas 9:23"
+  },
+  "pt": {
+   "t": "Se alguém quer vir após mim, renegue-se a si mesmo, tome cada dia a sua cruz e siga-me.",
+   "r": "Lucas 9,23"
+  },
+  "tl": {
+   "t": "Ang sinumang nagnanais sumunod sa akin ay kinakailangang itakwil ang kanyang sarili, pasanin araw-araw ang kanyang krus, at sumunod sa akin.",
+   "r": "Lucas 9:23"
+  }
+ },
+ "novenas": {
+  "en": {
+   "t": "All these with one accord devoted themselves to prayer, together with the women and Mary the mother of Jesus.",
+   "r": "Acts 1:14"
+  },
+  "es": {
+   "t": "Todos ellos, íntimamente unidos, se dedicaban a la oración, en compañía de algunas mujeres, de María, la madre de Jesús.",
+   "r": "Hechos 1:14"
+  },
+  "pt": {
+   "t": "Todos eles perseveravam unanimemente na oração, juntamente com as mulheres, entre elas Maria, mãe de Jesus.",
+   "r": "Atos 1,14"
+  },
+  "tl": {
+   "t": "Lagi silang nagsasama-sama upang manalangin kasama ang mga babae at si Maria na ina ni Jesus.",
+   "r": "Mga Gawa 1:14"
+  }
+ },
+ "angelus": {
+  "en": {
+   "t": "And the Word became flesh and dwelt among us.",
+   "r": "John 1:14"
+  },
+  "es": {
+   "t": "Y la Palabra se hizo carne y habitó entre nosotros.",
+   "r": "Juan 1:14"
+  },
+  "pt": {
+   "t": "E o Verbo se fez carne e habitou entre nós.",
+   "r": "João 1,14"
+  },
+  "tl": {
+   "t": "Naging tao ang Salita at nanirahan sa piling namin.",
+   "r": "Juan 1:14"
+  }
+ },
+ "liturgy-of-the-hours": {
+  "en": {
+   "t": "From the rising of the sun to its setting the name of the Lord is to be praised!",
+   "r": "Psalm 113:3"
+  },
+  "es": {
+   "t": "Desde la salida del sol hasta su ocaso, sea alabado el nombre del Señor.",
+   "r": "Salmo 113:3"
+  },
+  "pt": {
+   "t": "Desde o nascer ao pôr-do-sol, seja louvado o nome do Senhor.",
+   "r": "Salmo 112,3"
+  },
+  "tl": {
+   "t": "Buhat sa silangan, hanggang sa kanluran, ang ngalan ni Yahweh, dapat papurihan.",
+   "r": "Mga Awit 113:3"
+  }
+ },
+ "advent": {
+  "en": {
+   "t": "The people who walked in darkness have seen a great light.",
+   "r": "Isaiah 9:2"
+  },
+  "es": {
+   "t": "El pueblo que caminaba en las tinieblas ha visto una gran luz.",
+   "r": "Isaías 9:1"
+  },
+  "pt": {
+   "t": "O povo que andava nas trevas viu uma grande luz.",
+   "r": "Isaías 9,1"
+  },
+  "tl": {
+   "t": "Nakakita ng isang maningning na liwanag ang bayang matagal nang lumalakad sa kadiliman.",
+   "r": "Isaias 9:2"
+  }
+ },
+ "read-the-bible": {
+  "en": {
+   "t": "Thy word is a lamp to my feet and a light to my path.",
+   "r": "Psalm 119:105"
+  },
+  "es": {
+   "t": "Tu palabra es una lámpara para mis pasos, y una luz en mi camino.",
+   "r": "Salmo 119:105"
+  },
+  "pt": {
+   "t": "Vossa palavra é um facho que ilumina meus passos, uma luz em meu caminho.",
+   "r": "Salmo 118,105"
+  },
+  "tl": {
+   "t": "Salita mo'y isang tanglaw na sa akin ay patnubay, sa landas kong daraanan, liwanag na tumatanglaw.",
+   "r": "Mga Awit 119:105"
+  }
+ },
+ "search": {
+  "en": {
+   "t": "Seek, and you will find; knock, and it will be opened to you.",
+   "r": "Matthew 7:7"
+  },
+  "es": {
+   "t": "Busquen y encontrarán; llamen y se les abrirá.",
+   "r": "Mateo 7:7"
+  },
+  "pt": {
+   "t": "Buscai e achareis. Batei e vos será aberto.",
+   "r": "Mateus 7,7"
+  },
+  "tl": {
+   "t": "Humanap kayo at kayo'y makakatagpo; kumatok kayo at kayo'y pagbubuksan.",
+   "r": "Mateo 7:7"
+  }
+ },
+ "bible": {
+  "en": {
+   "t": "Man shall not live by bread alone, but by every word that proceeds from the mouth of God.",
+   "r": "Matthew 4:4"
+  },
+  "es": {
+   "t": "El hombre no vive solamente de pan, sino de toda palabra que sale de la boca de Dios.",
+   "r": "Mateo 4:4"
+  },
+  "pt": {
+   "t": "Não só de pão vive o homem, mas de toda palavra que procede da boca de Deus.",
+   "r": "Mateus 4,4"
+  },
+  "tl": {
+   "t": "Hindi lamang sa tinapay nabubuhay ang tao, kundi sa bawat salitang nagmumula sa bibig ng Diyos.",
+   "r": "Mateo 4:4"
+  }
+ },
+ "calendar": {
+  "en": {
+   "t": "This is the day which the Lord has made; let us rejoice and be glad in it.",
+   "r": "Psalm 118:24"
+  },
+  "es": {
+   "t": "Este es el día que hizo el Señor: alegrémonos y regocijémonos en él.",
+   "r": "Salmo 118:24"
+  },
+  "pt": {
+   "t": "Este é o dia que o Senhor fez: seja para nós dia de alegria e de felicidade.",
+   "r": "Salmo 117,24"
+  },
+  "tl": {
+   "t": "O kahanga-hangaang araw na itong si Yahweh ang nagbigay, tayo ay magalak, ating ipagdiwang!",
+   "r": "Mga Awit 118:24"
+  }
+ },
+ "beliefs": {
+  "en": {
+   "t": "I am the way, and the truth, and the life.",
+   "r": "John 14:6"
+  },
+  "es": {
+   "t": "Yo soy el Camino, la Verdad y la Vida.",
+   "r": "Juan 14:6"
+  },
+  "pt": {
+   "t": "Eu sou o caminho, a verdade e a vida.",
+   "r": "João 14,6"
+  },
+  "tl": {
+   "t": "Ako ang daan, ang katotohanan, at ang buhay.",
+   "r": "Juan 14:6"
+  }
+ },
+ "questions": {
+  "en": {
+   "t": "Always be prepared to make a defense to any one who calls you to account for the hope that is in you, yet do it with gentleness and reverence.",
+   "r": "1 Peter 3:15"
+  },
+  "es": {
+   "t": "Estén siempre dispuestos a defenderse delante de cualquiera que les pida razón de la esperanza que ustedes tienen.",
+   "r": "1 Pedro 3:15"
+  },
+  "pt": {
+   "t": "Estai sempre prontos a responder para vossa defesa a todo aquele que vos pedir a razão de vossa esperança, mas fazei-o com suavidade e respeito.",
+   "r": "1 Pedro 3,15"
+  },
+  "tl": {
+   "t": "Lagi kayong maging handang sumagot sa sinumang humihingi ng paliwanag sa inyo tungkol sa pag-asang nasa inyo.",
+   "r": "1 Pedro 3:15"
+  }
+ },
+ "church-documents": {
+  "en": {
+   "t": "The church of the living God, the pillar and bulwark of the truth.",
+   "r": "1 Timothy 3:15"
+  },
+  "es": {
+   "t": "La Iglesia del Dios viviente, columna y fundamento de la verdad.",
+   "r": "1 Timoteo 3:15"
+  },
+  "pt": {
+   "t": "A Igreja de Deus vivo, coluna e sustentáculo da verdade.",
+   "r": "1 Timóteo 3,15"
+  },
+  "tl": {
+   "t": "Sa sambahayan ng Diyos na buháy, sa iglesya na haligi at saligan ng katotohanan.",
+   "r": "1 Timoteo 3:15"
+  }
+ },
+ "structure": {
+  "en": {
+   "t": "Now you are the body of Christ and individually members of it.",
+   "r": "1 Corinthians 12:27"
+  },
+  "es": {
+   "t": "Ustedes son el Cuerpo de Cristo, y cada uno en particular, miembros de ese Cuerpo.",
+   "r": "1 Corintios 12:27"
+  },
+  "pt": {
+   "t": "Ora, vós sois o corpo de Cristo e cada um, de sua parte, é um dos seus membros.",
+   "r": "1 Coríntios 12,27"
+  },
+  "tl": {
+   "t": "Kayo ngang lahat ang iisang katawan ni Cristo, at bawat isa sa inyo ay bahagi nito.",
+   "r": "1 Corinto 12:27"
+  }
+ },
+ "dioceses": {
+  "en": {
+   "t": "I am the good shepherd; I know my own and my own know me.",
+   "r": "John 10:14"
+  },
+  "es": {
+   "t": "Yo soy el buen Pastor: conozco a mis ovejas, y mis ovejas me conocen a mí.",
+   "r": "Juan 10:14"
+  },
+  "pt": {
+   "t": "Eu sou o bom pastor. Conheço as minhas ovelhas e as minhas ovelhas conhecem a mim.",
+   "r": "João 10,14"
+  },
+  "tl": {
+   "t": "Ako nga ang mabuting pastol… kilala ko ang aking mga tupa at ako nama'y kilala nila.",
+   "r": "Juan 10:14-15"
+  }
+ },
+ "saints": {
+  "en": {
+   "t": "We are surrounded by so great a cloud of witnesses.",
+   "r": "Hebrews 12:1"
+  },
+  "es": {
+   "t": "Estamos rodeados de una verdadera nube de testigos.",
+   "r": "Hebreos 12:1"
+  },
+  "pt": {
+   "t": "Cercados como estamos de uma tal nuvem de testemunhas…",
+   "r": "Hebreus 12,1"
+  },
+  "tl": {
+   "t": "Napapaligiran tayo ng napakaraming saksi.",
+   "r": "Mga Hebreo 12:1"
+  }
+ },
+ "saints-directory": {
+  "en": {
+   "t": "Behold, a great multitude which no man could number, from every nation, from all tribes and peoples and tongues.",
+   "r": "Revelation 7:9"
+  },
+  "es": {
+   "t": "Vi una enorme muchedumbre, imposible de contar, formada por gente de todas las naciones, familias, pueblos y lenguas.",
+   "r": "Apocalipsis 7:9"
+  },
+  "pt": {
+   "t": "Vi uma grande multidão que ninguém podia contar, de toda nação, tribo, povo e língua.",
+   "r": "Apocalipse 7,9"
+  },
+  "tl": {
+   "t": "Nakita ko ang napakaraming tao na di kayang bilangin ninuman! Sila'y mula sa bawat bansa, lipi, bayan, at wika.",
+   "r": "Pahayag 7:9"
+  }
+ },
+ "glossary": {
+  "en": {
+   "t": "The unfolding of thy words gives light; it imparts understanding to the simple.",
+   "r": "Psalm 119:130"
+  },
+  "es": {
+   "t": "La explicación de tu palabra ilumina y da inteligencia al ignorante.",
+   "r": "Salmo 119:130"
+  },
+  "pt": {
+   "t": "Vossas palavras são uma verdadeira luz, que dá sabedoria aos simples.",
+   "r": "Salmo 118,130"
+  },
+  "tl": {
+   "t": "Ang liwanag ng turo mo'y nagsisilbing isang tanglaw, nagbibigay dunong ito sa wala pang karanasan.",
+   "r": "Mga Awit 119:130"
+  }
+ },
+ "church-anatomy": {
+  "en": {
+   "t": "How lovely is thy dwelling place, O Lord of hosts!",
+   "r": "Psalm 84:1"
+  },
+  "es": {
+   "t": "¡Qué amable es tu Morada, Señor del Universo!",
+   "r": "Salmo 84:2"
+  },
+  "pt": {
+   "t": "Como são amáveis as vossas moradas, Senhor dos exércitos!",
+   "r": "Salmo 83,2"
+  },
+  "tl": {
+   "t": "Mahal ko ang iyong templo, O Makapangyarihang Yahweh!",
+   "r": "Mga Awit 84:1"
+  }
+ },
+ "vestments": {
+  "en": {
+   "t": "Let thy priests be clothed with righteousness, and let thy saints shout for joy.",
+   "r": "Psalm 132:9"
+  },
+  "es": {
+   "t": "Que tus sacerdotes se revistan de justicia y tus fieles griten de alegría.",
+   "r": "Salmo 132:9"
+  },
+  "pt": {
+   "t": "Vistam-se de justiça os vossos sacerdotes, e jubilosos cantem de alegria vossos fiéis.",
+   "r": "Salmo 131,9"
+  },
+  "tl": {
+   "t": "Iyong mga pari, hayaang maghayag ng iyong pagliligtas, ang mga hinirang sumigaw sa galak!",
+   "r": "Mga Awit 132:9"
+  }
+ },
+ "inside-the-mass": {
+  "en": {
+   "t": "O come, let us worship and bow down, let us kneel before the Lord, our Maker!",
+   "r": "Psalm 95:6"
+  },
+  "es": {
+   "t": "¡Entren, inclinémonos para adorarlo! ¡Doblemos la rodilla ante el Señor que nos creó!",
+   "r": "Salmo 95:6"
+  },
+  "pt": {
+   "t": "Vinde, inclinemo-nos em adoração, de joelhos diante do Senhor que nos criou.",
+   "r": "Salmo 94,6"
+  },
+  "tl": {
+   "t": "Tayo na't lumapit, sa kanya'y sumamba at magbigay-galang, lumuhod sa harap ni Yahweh na siyang sa ati'y may lalang.",
+   "r": "Mga Awit 95:6"
+  }
+ },
+ "popes": {
+  "en": {
+   "t": "You are Peter, and on this rock I will build my church, and the powers of death shall not prevail against it.",
+   "r": "Matthew 16:18"
+  },
+  "es": {
+   "t": "Tú eres Pedro, y sobre esta piedra edificaré mi iglesia, y el poder de la Muerte no prevalecerá contra ella.",
+   "r": "Mateo 16:18"
+  },
+  "pt": {
+   "t": "Tu és Pedro, e sobre esta pedra edificarei a minha Igreja; as portas do inferno não prevalecerão contra ela.",
+   "r": "Mateus 16,18"
+  },
+  "tl": {
+   "t": "Ikaw ay Pedro, at sa ibabaw ng batong ito ay itatayo ko ang aking iglesya at ang kapangyarihan ng kamatayan ay hindi magtatagumpay laban sa kanya.",
+   "r": "Mateo 16:18"
+  }
+ },
+ "about": {
+  "en": {
+   "t": "Go into all the world and preach the gospel to the whole creation.",
+   "r": "Mark 16:15"
+  },
+  "es": {
+   "t": "Vayan por todo el mundo, anuncien la Buena Noticia a toda la creación.",
+   "r": "Marcos 16:15"
+  },
+  "pt": {
+   "t": "Ide por todo o mundo e pregai o Evangelho a toda criatura.",
+   "r": "Marcos 16,15"
+  },
+  "tl": {
+   "t": "Humayo kayo sa buong mundo at ipangaral ang Magandang Balita sa lahat ng tao.",
+   "r": "Marcos 16:15"
+  }
+ },
+ "privacy": {
+  "en": {
+   "t": "When you pray, go into your room and shut the door and pray to your Father who is in secret.",
+   "r": "Matthew 6:6"
+  },
+  "es": {
+   "t": "Cuando ores, retírate a tu habitación, cierra la puerta y ora a tu Padre que está en lo secreto.",
+   "r": "Mateo 6:6"
+  },
+  "pt": {
+   "t": "Quando orares, entra no teu quarto, fecha a porta e ora ao teu Pai em segredo.",
+   "r": "Mateus 6,6"
+  },
+  "tl": {
+   "t": "Kapag mananalangin ka, pumasok ka sa iyong silid at isara mo ang pinto.",
+   "r": "Mateo 6:6"
+  }
+ },
+ "terms": {
+  "en": {
+   "t": "Let what you say be simply ‘Yes’ or ‘No’.",
+   "r": "Matthew 5:37"
+  },
+  "es": {
+   "t": "Cuando ustedes digan «sí», que sea sí, y cuando digan «no», que sea no.",
+   "r": "Mateo 5:37"
+  },
+  "pt": {
+   "t": "Dizei somente: ‘Sim’, se é sim; ‘não’, se é não.",
+   "r": "Mateus 5,37"
+  },
+  "tl": {
+   "t": "Sabihin mo na lang na ‘Oo’ kung oo at ‘Hindi’ kung hindi.",
+   "r": "Mateo 5:37"
+  }
+ },
+ "404": {
+  "en": {
+   "t": "Rejoice with me, for I have found my sheep which was lost.",
+   "r": "Luke 15:6"
+  },
+  "es": {
+   "t": "Alégrense conmigo, porque encontré la oveja que se me había perdido.",
+   "r": "Lucas 15:6"
+  },
+  "pt": {
+   "t": "Regozijai-vos comigo, achei a minha ovelha que se havia perdido.",
+   "r": "Lucas 15,6"
+  },
+  "tl": {
+   "t": "Makipagsaya kayo sa akin dahil nakita ko na ang tupa kong nawawala!",
+   "r": "Lucas 15:6"
+  }
+ }
+}
