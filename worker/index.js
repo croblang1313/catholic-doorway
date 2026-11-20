@@ -5,13 +5,15 @@
 //   GET /api/devotions.ics prayer reminders (see devotions.js)
 //   GET /api/plans.ics reading plan reminders (see plans.js)
 //   /api/ocia-* parish OCIA self-listing form, public list and review page (see ocia.js)
+//   POST /api/stream-report a broken parish livestream link (see ocia.js)
+// A weekly cron (wrangler.jsonc) re-checks parish livestream links.
 // It returns the day's liturgical title and the list of reading citations
 // (e.g. "Luke 19:1-10") with links to the USCCB pages. It never copies the
 // Scripture text or audio itself, which belong to the USCCB.
 
 import { calendar } from "./calendar.js";
 import { devotions } from "./devotions.js";
-import { ocia } from "./ocia.js";
+import { ocia, checkStreams } from "./ocia.js";
 import { plans } from "./plans.js";
 
 const MONTHS = ["january", "february", "march", "april", "may", "june", "july",
@@ -96,7 +98,10 @@ export default {
     if (url.pathname === "/api/calendar.ics" || url.pathname === "/api/calendar.json") return calendar(url);
     if (url.pathname === "/api/devotions.ics") return devotions(url);
     if (url.pathname === "/api/plans.ics") return plans(request, url, env);
-    if (url.pathname.startsWith("/api/ocia-")) return ocia(request, url, env);
+    if (url.pathname.startsWith("/api/ocia-") || url.pathname === "/api/stream-report") return ocia(request, url, env);
     return env.ASSETS.fetch(request);
+  },
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(checkStreams(env));
   },
 };
