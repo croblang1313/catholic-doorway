@@ -8,6 +8,12 @@
   var TLX = {
     "The map could not load. Please check your connection and refresh.": "Hindi ma-load ang mapa. Pakitingnan ang iyong koneksiyon at i-refresh.",
     "Mass times:": "Oras ng Misa:",
+    "Watch Mass online": "Manood ng Misa online",
+    "Search for a place to see nearby churches.": "Maghanap ng lugar upang makita ang mga simbahang malapit.",
+    "link checked ": "sinuri ang link noong ",
+    "None of the churches here have added a Mass livestream yet. Try a wider area, or watch a daily Mass broadcast.": "Wala pang simbahan dito na nagdagdag ng livestream ng Misa. Subukan ang mas malawak na lugar, o manood ng araw-araw na Misa sa TV at online.",
+    "Daily Mass broadcasts": "Araw-araw na Misa sa TV at online",
+    "(Only churches that stream Mass.)": "(Mga simbahang may livestream ng Misa lang.)",
     "OCIA contact:": "Contact sa OCIA:",
     "OCIA meets:": "Nagkikita ang OCIA:",
     "Provided by the parish": "Mula sa parokya",
@@ -81,6 +87,10 @@
   };
   var T = function (en, es, pt) { return TL ? (TLX[en] !== undefined ? TLX[en] : en) : PT ? (pt !== undefined ? pt : (PTX[es] || en)) : ES ? es : en; };
   var OCIA = /[?&]ocia=1/.test(location.search);
+  var streamBox = document.getElementById('stream-only');
+  if (streamBox && /[?&]stream=1/.test(location.search)) streamBox.checked = true;
+  var WATCH_URL = TL ? '/tl/misa-online' : PT ? '/pt/missa-online' : ES ? '/es/misa-en-linea' : '/watch-mass';
+  var lastList = null;
   if (OCIA) document.documentElement.classList.add('ocia-mode');
   if (typeof L === 'undefined') {
     document.getElementById('map-status').textContent = T('The map could not load. Please check your connection and refresh.', 'No se pudo cargar el mapa. Revisa tu conexión y vuelve a cargar la página.');
@@ -242,6 +252,8 @@
   function listingBox(r) {
     var rows = [], how = [];
     if (r.masses) rows.push('<strong>' + T('Mass times:', 'Horarios de Misa:', 'Horários de Missa:') + '</strong> ' + esc(r.masses));
+    if (r.stream && /^https:\/\//.test(r.stream)) rows.push('<a href="' + esc(r.stream) + '" target="_blank" rel="noopener nofollow ugc"><strong>' + T('Watch Mass online', 'Ver la Misa en línea', 'Assistir à Missa on-line') + '</strong></a>' +
+      (r.stream_times ? ' &middot; ' + esc(r.stream_times) : '') + ' <span class="muted">(' + T('link checked ', 'enlace revisado el ', 'link conferido em ') + esc(r.checked || r.approved || '') + ')</span>');
     if (r.email) how.push('<a href="mailto:' + esc(r.email) + '">' + esc(r.email) + '</a>');
     if (r.phone) how.push('<a href="tel:' + esc(r.phone.replace(/[^\d+]/g, '')) + '">' + esc(r.phone) + '</a>');
     if (r.contact) rows.push('<strong>' + T('OCIA contact:', 'Contacto de OCIA:', 'Contato da OCIA:') + '</strong> ' + esc(r.contact + (r.role ? ', ' + r.role : '')) + (how.length ? ' &middot; ' + how.join(' &middot; ') : ''));
@@ -276,6 +288,9 @@
   }
 
   function render(list) {
+    lastList = list;
+    var streaming = streamBox && streamBox.checked;
+    if (streaming) list = list.filter(function (c) { var l = listingFor(c); return l && l.stream && /^https:\/\//.test(l.stream); });
     layer.clearLayers(); markers = {}; resultsEl.innerHTML = '';
     if (origin) list.forEach(function (c) { c.d = distKm(origin, [c.lat, c.lon]); });
     list.sort(function (a, b) { return (a.d || 0) - (b.d || 0); });
@@ -314,7 +329,10 @@
       });
       resultsEl.appendChild(card);
     });
-    if (!list.length) {
+    if (!list.length && streaming) {
+      setStatus(T('None of the churches here have added a Mass livestream yet. Try a wider area, or watch a daily Mass broadcast.', 'Ninguna iglesia de esta zona ha añadido todavía una transmisión de la Misa. Prueba una zona más amplia o mira una Misa diaria transmitida.', 'Nenhuma igreja desta região cadastrou ainda uma transmissão da Missa. Tente uma área maior ou assista a uma Missa diária transmitida.'));
+      resultsEl.innerHTML = '<p><a class="btn small" href="' + WATCH_URL + '#broadcasts">' + T('Daily Mass broadcasts', 'Misas diarias transmitidas', 'Missas diárias transmitidas') + '</a></p>';
+    } else if (!list.length) {
       setStatus(T('No Catholic churches found here on OpenStreetMap. Try zooming out or searching a nearby town.', 'No encontramos iglesias católicas aquí en OpenStreetMap. Aleja el mapa o busca un pueblo cercano.'));
     } else {
       setStatus(TL
@@ -324,8 +342,14 @@
         : ES
         ? 'Mostrando ' + shown.length + (list.length > shown.length ? ' de ' + list.length : '') + (shown.length === 1 ? ' iglesia católica' : ' iglesias católicas') + (origin ? ', de la más cercana a la más lejana.' : '.')
         : 'Showing ' + shown.length + (list.length > shown.length ? ' of ' + list.length : '') + ' Catholic ' + (shown.length === 1 ? 'church' : 'churches') + (origin ? ', nearest first.' : '.'));
+      if (streaming) setStatus(statusEl.textContent + ' ' + T('(Only churches that stream Mass.)', '(Solo iglesias que transmiten la Misa).', '(Só igrejas que transmitem a Missa).'));
     }
   }
+
+  if (streamBox) streamBox.addEventListener('change', function () {
+    if (lastList) render(lastList);
+    else setStatus(T('Search for a place to see nearby churches.', 'Busca un lugar para ver las iglesias cercanas.', 'Pesquise um lugar para ver as igrejas próximas.'));
+  });
 
   function highlight(id, scroll) {
     var els = resultsEl.querySelectorAll('.church.active');

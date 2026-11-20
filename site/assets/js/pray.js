@@ -7,6 +7,7 @@
   var LG = document.documentElement.lang, ES = LG === 'es', PT = LG === 'pt', TL = LG === 'tl', LOC = ES ? 'es-US' : PT ? 'pt-BR' : TL ? 'fil-PH' : 'en-US';
   // Filipino (Tagalog) strings, keyed by the English text.
   var TLX = {
+    "Watch Mass online": "Manood ng Misa online",
     "today is day ": "ngayon ang ika-",
     " of 9": " na araw sa 9",
     "begins ": "magsisimula sa ",
@@ -284,13 +285,14 @@
         if (r.schedule) lines.push(esc(r.schedule));
         if (r.start) lines.push(esc(r.start));
         if (r.masses) lines.push('<strong>' + T('Mass times:', 'Horarios de Misa:', 'Horários de Missa:') + '</strong> ' + esc(r.masses));
+        if (r.stream && /^https:\/\//.test(r.stream)) lines.push('<a href="' + esc(r.stream) + '" target="_blank" rel="noopener nofollow ugc">' + T('Watch Mass online', 'Ver la Misa en línea', 'Assistir à Missa on-line') + '</a>');
         if (r.langs && r.langs.length) lines.push(r.langs.map(function (l) { return LN[l] || l; }).join(', '));
         if (r.notes) lines.push('<span class="muted">' + esc(r.notes) + '</span>');
         return '<article class="card"><h3>' + esc(r.parish) + '</h3><p class="small muted">' + esc(r.city) + ', ' + esc(r.state) + (r.diocese ? ' &middot; ' + esc(r.diocese) : '') + '</p><p>' + lines.join('<br>') + '</p></article>';
       }).join('');
     };
     fetch('/api/ocia-listings.json').then(function (r) { return r.json(); }).then(function (d) {
-      rows = d.listings || [];
+      rows = (d.listings || []).filter(function (r) { return r.kind !== 'stream'; });
       var states = rows.map(function (r) { return r.state; }).filter(function (s, i, a) { return s && a.indexOf(s) === i; }).sort();
       states.forEach(function (s) { var o = document.createElement('option'); o.value = s; o.textContent = s; ost.appendChild(o); });
       ost.addEventListener('change', draw);
