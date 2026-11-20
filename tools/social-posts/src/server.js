@@ -12,7 +12,7 @@
  *   DRAFTS_TOKEN    secret: lets Claude or a script leave drafts (optional)
  *   SITE_NAME       text: shown on the page (optional)
  *
- * Version 1.3.0-cd (Catholic Doorway: Facebook, Instagram, X, TikTok only; optional post_on date on drafts). License: GPL-2.0-or-later.
+ * Version 1.4.0-cd (Catholic Doorway: Facebook, Instagram, X, TikTok only; optional post_on date on drafts). License: GPL-2.0-or-later.
  */
 
 const VERSION = '1.0.0';
@@ -158,7 +158,7 @@ async function route(request, env, ctx) {
 	}
 	if (path === '/api/disconnect' && method === 'POST') {
 		const s = await getSettings(env);
-		Object.assign(s, { meta_page_id: '', meta_page: '', meta_token: '', meta_ig_id: '', meta_ig_user: '', meta_at: 0 });
+		Object.assign(s, { meta_page_id: '', meta_page: '', meta_token: '', meta_ig_id: '', meta_ig_user: '', meta_at: 0, meta_expires: -1, meta_data_expires: 0 });
 		await env.SOCIAL.put('settings', JSON.stringify(s));
 		return json({ ok: true, settings: publicSettings(s, env) });
 	}
@@ -673,10 +673,11 @@ async function metaConnect(env, b) {
 	const s = await getSettings(env);
 	let token = String(b.user_token || '').trim();
 	if (!token) throw fail('Paste the access token from the Graph API Explorer.');
-	const appId = String(b.app_id || '').trim();
-	const secret = String(b.app_secret || '').trim();
+	const appId = String(b.app_id || env.META_APP_ID || '').trim();
+	const secret = String(b.app_secret || env.META_APP_SECRET || '').trim();
 	if (appId && secret) {
-		// Swap the short token for a long one. The secret is used once and not kept.
+		// Swap the short token for a long one. A Page token made from a long-lived user token never expires.
+		// The secret is used once and not kept.
 		const ex = await graph(s, 'GET', 'oauth/access_token', { grant_type: 'fb_exchange_token', client_id: appId, client_secret: secret, fb_exchange_token: token }, token);
 		token = ex.access_token;
 	}
@@ -689,6 +690,25 @@ async function metaConnect(env, b) {
 		ig_user: p.instagram_business_account ? p.instagram_business_account.username || '' : '',
 	}));
 	if (!list.length) throw fail('No Facebook Pages came back. In the Graph API Explorer, pick your Page when Facebook asks which Pages to allow, then try again.');
+	// Check how long each Page token lasts, and refuse one that expires soon, so posting doesn't break later.
+	const debugAs = appId && secret ? appId + '|' + secret : token;
+	for (const p of list) {
+		let info = null;
+		try {
+			info = (await graph(s, 'GET', 'debug_token', { input_token: p.token }, debugAs)).data || null;
+		} catch (e) {
+			info = null;
+		}
+		p.expires = info ? Number(info.expires_at || 0) * 1000 : -1;
+		p.data_expires = info ? Number(info.data_access_expires_at || 0) * 1000 : 0;
+		if (p.expires > 0 && p.expires - Date.now() < 30 * 86400000) {
+			throw fail(
+				'Facebook gave a short-lived token (it would stop working ' +
+					new Date(p.expires).toUTCString() +
+					'). Open "App ID and App Secret" below, enter the App Secret from your Meta app (App settings, Basic), and connect again. The secret is used once and not saved.'
+			);
+		}
+	}
 	await env.SOCIAL.put('pending_pages', JSON.stringify(list), { expirationTtl: 900 });
 	if (list.length === 1) return metaPick(env, { page_id: list[0].id });
 	return { ok: true, choose: list.map((p) => ({ id: p.id, name: p.name, ig_user: p.ig_user })) };
@@ -706,6 +726,8 @@ async function metaPick(env, b) {
 		meta_ig_id: pick.ig_id,
 		meta_ig_user: pick.ig_user,
 		meta_at: Date.now(),
+		meta_expires: pick.expires === undefined ? -1 : pick.expires,
+		meta_data_expires: pick.data_expires || 0,
 	});
 	await graph(s, 'GET', 'me', { fields: 'id' });
 	await env.SOCIAL.put('settings', JSON.stringify(s));
