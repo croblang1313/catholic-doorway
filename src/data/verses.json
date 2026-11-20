@@ -844,5 +844,113 @@
    "t": "Hindi lamang sa tinapay nabubuhay ang tao, kundi sa bawat salitang nagmumula sa bibig ng Diyos.",
    "r": "Mateo 4:4"
   }
+ },
+ "kids": {
+  "en": {
+   "t": "Let the children come to me, do not hinder them; for to such belongs the kingdom of God.",
+   "r": "Mark 10:14"
+  },
+  "es": {
+   "t": "Dejen que los niños se acerquen a mí y no se lo impidan, porque el Reino de Dios pertenece a los que son como ellos.",
+   "r": "Marcos 10:14"
+  },
+  "pt": {
+   "t": "Deixai vir a mim os pequeninos e não os impeçais, porque o Reino de Deus é daqueles que se lhes assemelham.",
+   "r": "Marcos 10,14"
+  },
+  "tl": {
+   "t": "Hayaan ninyong lumapit sa akin ang mga bata, at huwag ninyo silang pagbawalan, sapagkat ang mga katulad nila ang mapapabilang sa kaharian ng Diyos.",
+   "r": "Marcos 10:14"
+  }
+ },
+ "coloring-pages": {
+  "en": {
+   "t": "And God saw everything that he had made, and behold, it was very good.",
+   "r": "Genesis 1:31"
+  },
+  "es": {
+   "t": "Dios miró todo lo que había hecho, y vio que era muy bueno.",
+   "r": "Génesis 1:31"
+  },
+  "pt": {
+   "t": "Deus contemplou toda a sua obra, e viu que tudo era muito bom.",
+   "r": "Gênesis 1,31"
+  },
+  "tl": {
+   "t": "Pinagmasdan ng Diyos ang lahat niyang ginawa, at lubos siyang nasiyahan.",
+   "r": "Genesis 1:31"
+  }
+ },
+ "first-prayers": {
+  "en": {
+   "t": "Out of the mouth of babes and sucklings thou hast brought perfect praise.",
+   "r": "Matthew 21:16"
+  },
+  "es": {
+   "t": "De la boca de las criaturas y de los niños de pecho, has hecho brotar una alabanza.",
+   "r": "Mateo 21:16"
+  },
+  "pt": {
+   "t": "Da boca dos meninos e das crianças de peito tirastes o vosso louvor.",
+   "r": "Mateus 21,16"
+  },
+  "tl": {
+   "t": "Pinalabas mo sa bibig ng mga sanggol at ng mga pasusuhin ang wagas na papuri.",
+   "r": "Mateo 21:16"
+  }
+ },
+ "mass-for-kids": {
+  "en": {
+   "t": "This is my body which is given for you. Do this in remembrance of me.",
+   "r": "Luke 22:19"
+  },
+  "es": {
+   "t": "Esto es mi Cuerpo, que se entrega por ustedes. Hagan esto en memoria mía.",
+   "r": "Lucas 22:19"
+  },
+  "pt": {
+   "t": "Isto é o meu corpo, que é dado por vós; fazei isto em memória de mim.",
+   "r": "Lucas 22,19"
+  },
+  "tl": {
+   "t": "Ito ang aking katawan na inihahandog para sa inyo. Gawin ninyo ito bilang pag-alaala sa akin.",
+   "r": "Lucas 22:19"
+  }
+ },
+ "saint-stories": {
+  "en": {
+   "t": "Since we are surrounded by so great a cloud of witnesses, let us run with perseverance the race that is set before us.",
+   "r": "Hebrews 12:1"
+  },
+  "es": {
+   "t": "Ya que estamos rodeados de una verdadera nube de testigos, corramos resueltamente al combate que se nos presenta.",
+   "r": "Hebreos 12:1"
+  },
+  "pt": {
+   "t": "Cercados como estamos de uma tal nuvem de testemunhas, corramos com perseverança ao combate proposto.",
+   "r": "Hebreus 12,1"
+  },
+  "tl": {
+   "t": "Dahil napapaligiran tayo ng napakaraming saksi, buong tiyaga tayong tumakbo sa takbuhing nasa ating harapan.",
+   "r": "Mga Hebreo 12:1"
+  }
+ },
+ "family-corner": {
+  "en": {
+   "t": "As for me and my house, we will serve the LORD.",
+   "r": "Joshua 24:15"
+  },
+  "es": {
+   "t": "Yo y mi familia serviremos al Señor.",
+   "r": "Josué 24:15"
+  },
+  "pt": {
+   "t": "Quanto a mim, eu e minha casa serviremos o Senhor.",
+   "r": "Josué 24,15"
+  },
+  "tl": {
+   "t": "Para sa akin at sa aking sambahayan, kay Yahweh kami maglilingkod.",
+   "r": "Josue 24:15"
+  }
  }
 }

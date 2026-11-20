@@ -1127,3 +1127,110 @@ dl.glossary .see { font: 600 .85rem var(--sans); margin-left: .2rem; }
 .bible-text h3.bible-ch:first-child { margin-top: 0; }
 .bible-text h3.bible-ch a { color: inherit; text-decoration: none; }
 .card.tile.feature + .card.tile.feature { margin-top: 1rem; }
+
+/* ---------- Kids and Families ---------- */
+:root { --kid-bg: #f3ecdd; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --kid-bg: #2a2f3e; } }
+:root[data-theme="dark"] { --kid-bg: #2a2f3e; }
+.kicon { width: 72px; height: 72px; flex: none; }
+.kid-jump { font: 600 .95rem var(--sans); margin: 1.2rem 0 0; }
+.kid-hub { grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr)); }
+.kid-card { padding: 1rem 1rem 1.2rem; }
+.kid-thumb { background: #fff; border-radius: 10px; border: 1px solid var(--line); overflow: hidden; aspect-ratio: 400 / 300; display: flex; align-items: flex-start; justify-content: center; margin-bottom: .5rem; }
+.kid-thumb svg.cpage { width: 100%; height: auto; pointer-events: none; }
+.kid-thumb-icon { align-items: center; background: var(--kid-bg); }
+.kid-thumb-icon .kicon { width: 60%; height: auto; }
+.kid-tile { flex-direction: row; align-items: center; gap: .9rem; }
+.kid-tile h3 { font-size: 1.2rem; }
+.kid-tile p { font-size: .95rem; }
+.kid-tips li { margin-bottom: .45rem; }
+/* coloring pages */
+svg.cpage { display: block; width: 100%; height: auto; background: #fff; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+svg.cpage .r { fill: #fff; stroke: #222; stroke-width: 3.5; stroke-linejoin: round; }
+svg.cpage .l { fill: none; stroke: #222; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+svg.cpage .k { fill: #222; pointer-events: none; }
+.cpage-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); }
+.cpage-card { margin: 0; padding: .8rem; display: flex; flex-direction: column; gap: .6rem; }
+.cpage-card svg.cpage { border-radius: 8px; border: 1px solid var(--line); }
+.cpage-card figcaption { display: flex; flex-direction: column; gap: .3rem; flex: 1; }
+.cpage-card h3 { font-size: 1.15rem; margin: 0; }
+.cpage-card p { margin: 0; }
+.cpage-card .btn { margin-top: auto; align-self: flex-start; }
+.studio-wrap { display: grid; gap: 1.2rem; grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 820px) { .studio-wrap { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); } }
+.studio-art { background: #fff; border: 2px solid var(--gold); border-radius: var(--radius); overflow: hidden; max-width: 560px; width: 100%; margin: 0 auto; }
+.studio-art svg.cpage .r { cursor: pointer; }
+.studio-tools h2 { margin-top: 0; }
+.palette { display: grid; grid-template-columns: repeat(8, 1fr); gap: .45rem; margin: .8rem 0 1rem; max-width: 420px; }
+.swatch { aspect-ratio: 1; min-width: 34px; border-radius: 50%; border: 2px solid rgba(0,0,0,.25); background: var(--c); cursor: pointer; padding: 0; }
+.swatch[aria-pressed="true"] { outline: 3px solid var(--navy); outline-offset: 2px; transform: scale(1.08); }
+.studio-btns { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: .8rem; }
+@media (max-width: 819px) { .studio-tools { position: sticky; bottom: 0; background: var(--bg); padding: .6rem 0; z-index: 5; }
+  .studio-tools h2, .studio-tools > p.small { display: none; } .palette { margin: .2rem auto .6rem; } .studio-btns { justify-content: center; } }
+/* first prayers */
+.kid-prayers { display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); }
+.kid-prayer h2 { font-size: 1.6rem; margin: 0 0 .6rem; }
+.kp-text { font: 500 1.45rem/1.55 var(--sans); margin: 0 0 1rem; color: var(--ink); }
+.kp-line { display: block; border-radius: 6px; padding: 0 .25rem; margin: 0 -.25rem; transition: background .2s; }
+.kp-line.on { background: var(--gold-soft); }
+.kp-tools { margin-bottom: .6rem; }
+.kp-tip { font-size: 1rem; color: var(--ink-soft); background: var(--bg-alt); border-radius: 10px; padding: .6rem .8rem; margin: 0; }
+.kp-bar { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; padding: .7rem 1rem; margin: 0 0 1.2rem; font: 600 .95rem var(--sans); }
+/* Mass for kids */
+.kid-steps { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); }
+.kid-step { margin: 0; }
+.ks-top { display: flex; gap: .9rem; align-items: center; margin-bottom: .6rem; }
+.ks-top h3 { margin: 0 0 .3rem; font-size: 1.3rem; }
+.ks-n { font: 700 .8rem var(--sans); letter-spacing: .12em; color: var(--gold); margin: 0; }
+.ks-pose { display: inline-flex; align-items: center; gap: .35rem; font: 700 .82rem var(--sans); padding: .15rem .6rem .15rem .3rem; border-radius: 999px; margin: 0; }
+.ks-pose .pfig { width: 16px; height: 22px; }
+.kid-step .say { margin-top: .6rem; }
+.kid-step .say-row { grid-template-columns: 6.5rem 1fr; }
+.spy-list { list-style: none; padding: 0; margin: .6rem 0 0; display: grid; gap: .4rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.spy-list label { display: flex; gap: .6rem; align-items: flex-start; cursor: pointer; }
+.spy-list input { width: 1.3rem; height: 1.3rem; margin-top: .15rem; flex: none; accent-color: var(--lit-green); }
+.sheet { background: var(--surface); border: 2px dashed var(--gold-soft); border-radius: var(--radius); padding: 1.2rem 1.4rem; }
+.sheet h2 { margin-top: 0; }
+.btn-row-left { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; margin: .8rem 0 0; }
+/* saint stories */
+.kid-saints { align-items: start; }
+.kid-saint.is-next { border: 2px solid var(--gold); }
+.ks-flag { margin-left: .5rem; background: var(--gold); color: #fff; border-radius: 999px; padding: .05rem .5rem; letter-spacing: .06em; }
+#saint-feature h3 { font-size: 1.5rem; margin: .1rem 0; }
+/* family corner */
+.fam-now { font: 700 .75rem var(--sans); letter-spacing: .1em; text-transform: uppercase; background: var(--gold); color: #fff; border-radius: 999px; padding: .15rem .6rem; vertical-align: middle; }
+.fam-season-now { margin: 1rem 0 0; font-weight: 600; }
+.fam-idea h3 { font-size: 1.2rem; }
+.prep-grid { align-items: start; }
+.prep { padding: 1rem; }
+.fill { display: flex; gap: .5rem; align-items: flex-end; margin: .5rem 0; font-weight: 600; }
+.fill span:first-child { white-space: nowrap; }
+.fill-line { flex: 1; border-bottom: 1.5px solid var(--ink-soft); min-height: 1.3em; }
+.sheet h3 { font-size: 1.15rem; margin: 1rem 0 .2rem; }
+.prep .spy-list { grid-template-columns: 1fr; }
+.draw-box { border: 2px solid var(--line); border-radius: 10px; min-height: 220px; margin-top: 1rem; padding: .6rem .8rem; color: var(--ink-soft); font-size: .95rem; }
+/* printing one picture or one sheet */
+#print-area { display: none; }
+@media print {
+  html.printing body > *:not(#print-area) { display: none !important; }
+  html.printing #print-area { display: block; }
+  #print-area svg.cpage { width: 100%; max-height: 9.6in; height: auto; }
+  #print-area .sheet { border: 0; padding: 0; color: #000; background: #fff; }
+  #print-area .draw-box { min-height: 3in; }
+  .studio, .kp-tools, .kp-bar { display: none !important; }
+}
+.ks-pose .pfig { stroke: currentColor; }
+.ks-pose .pfig circle { fill: currentColor; }
+.ks-pose .pfig .seat { stroke: currentColor; opacity: .7; }
+/* Header: a little more room for the menu on desktop */
+@media (min-width: 1200px) { .site-header .wrap { max-width: 1320px; } }
+.kid-thumb { align-items: center; }
+.kid-thumb svg.cpage { width: auto; height: 100%; }
+@media (min-width: 1200px) and (max-width: 1339.98px) {
+  .site-nav a { font-size: .9rem; padding: .45rem .3rem; }
+  .site-nav .has-sub > a::after { margin-left: .3em; }
+  .brand-name { font-size: 1.15rem; }
+}
+.kid-prayers { align-items: start; }
+.kid-step .say-row { display: block; padding: .3rem 0; }
+.kid-step .say dt { padding: 0; }
