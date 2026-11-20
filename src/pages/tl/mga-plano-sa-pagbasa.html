@@ -1,0 +1,97 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/tl/bibliya">Bibliya</a> &rsaquo; Mga plano sa pagbasa</p>
+    <h1>Mga plano sa pagbasa ng Bibliya at Katesismo</h1>
+    <p class="lede">Basahin ang buong Bibliya o ang buong Katesismo sa isang taon, ilang minuto lang bawat araw, o magsimula sa mas maikli: ang mga Ebanghelyo sa 30 araw. Magsimula sa kahit anong araw ng taon. Nakatago ang iyong progreso sa device na ito, at walang kailangang sign-up.</p>
+  </div>
+</div>
+
+<div class="wrap" id="reading-plans">
+  <section class="section" id="today">
+    <h2>Ang pagbasa ngayon</h2>
+    <p class="muted" id="plan-none">Pumili ng plano sa ibaba para magsimula. Lalabas dito ang pagbasa ngayong araw tuwing babalik ka.</p>
+    <div class="grid two" id="plan-today"></div>
+    <noscript><p>Kailangan ng JavaScript ang mga plano sa pagbasa para malaman kung anong araw ka na at maitabi ang iyong progreso.</p></noscript>
+  </section>
+
+  <section class="section" id="plans">
+    <h2>Pumili ng plano</h2>
+    <div class="grid two">
+      <article class="card plan-card" id="plan-bible">
+        <p class="label">365 araw &middot; mga 20 minuto bawat araw</p>
+        <h3>Ang Bibliya sa isang taon</h3>
+        <p>Ang 73 aklat ng Bibliyang Katoliko. May tatlong pagbasa bawat araw: isang bahagi ng Lumang Tipan, isa ng Bagong Tipan, at isa mula sa Mga Awit o sa mga aklat ng karunungan (Mga Kawikaan, Mangangaral, Awit ng mga Awit, Karunungan at Sirac). Pinantay ang haba ng bawat bahagi, kaya walang araw na mas mahaba nang husto kaysa sa iba.</p>
+        <div class="plan-start"></div>
+      </article>
+      <article class="card plan-card" id="plan-catechism">
+        <p class="label">365 araw &middot; mga 10 minuto bawat araw</p>
+        <h3>Ang Katesismo sa isang taon</h3>
+        <p>Ang 2,865 talata ng <em>Katesismo ng Simbahang Katolika</em>, pito o walo bawat araw, nang sunod-sunod: ang Kredo, ang mga sakramento, ang buhay-moral at ang panalangin. Bawat araw ay may link sa opisyal na teksto sa website ng Vaticano (sa Ingles).</p>
+        <div class="plan-start"></div>
+      </article>
+      <article class="card plan-card" id="plan-gospels">
+        <p class="label">30 araw &middot; mga 15 minuto bawat araw</p>
+        <h3>Ang mga Ebanghelyo sa 30 araw</h3>
+        <p>Mateo, Marcos, Lucas at Juan, mga tatlong kabanata bawat araw. Ang pinakamainam na simula kung hindi mo pa nababasa ang Bibliya: isang buwan para makilala si Hesus sa mga salita ng apat na ebanghelista.</p>
+        <div class="plan-start"></div>
+      </article>
+      <article class="card plan-card" id="plan-ocia">
+        <p class="label">90 araw &middot; mga 20 minuto bawat araw</p>
+        <h3>OCIA sa 90 araw</h3>
+        <p>Para sa mga nasa OCIA o nag-iisip na maging Katoliko, at para sa mga ninong at ninang na sumasama sa kanila. Bawat araw ay may maikling bahagi ng mga Ebanghelyo ni Lucas at Juan o ng Mga Gawa ng mga Apostol, kasama ang isang bahagi ng Katesismo, paksa por paksa: ang Diyos, si Hesus, ang Espiritu Santo, ang Simbahan, ang pitong sakramento, ang buhay-moral at ang panalangin.</p>
+        <div class="plan-start"></div>
+      </article>
+    </div>
+    <div class="plan-schedule" id="plan-schedule" hidden></div>
+  </section>
+
+  <section class="section" id="reminders">
+    <div class="card subscribe">
+      <div>
+        <p class="label">Mga paalala</p>
+        <h2>Araw-araw na paalala sa iyong telepono</h2>
+        <p>Idagdag ang iyong plano sa iyong kalendaryo. Nakalista sa bawat araw ang mga pagbasa ng araw na iyon at may link pabalik dito, sa oras na pipiliin mo. Walang sign-up. Kung papalitan mo ang petsa ng simula, idagdag muli ang kalendaryo.</p>
+        <div class="rem-row">
+          <label>Plano
+            <select id="rem-plan">
+              <option value="bible">Ang Bibliya sa isang taon</option>
+              <option value="catechism">Ang Katesismo sa isang taon</option>
+              <option value="gospels">Ang mga Ebanghelyo sa 30 araw</option>
+              <option value="ocia">OCIA sa 90 araw</option>
+            </select>
+          </label>
+          <label>Oras
+            <select id="rem-time">
+              <option value="0600">6:00 n.u.</option>
+              <option value="0700" selected>7:00 n.u.</option>
+              <option value="0800">8:00 n.u.</option>
+              <option value="1200">12:00 ng tanghali</option>
+              <option value="1800">6:00 n.g.</option>
+              <option value="2000">8:00 n.g.</option>
+              <option value="2100">9:00 n.g.</option>
+            </select>
+          </label>
+        </div>
+        <p class="small muted" id="rem-note"></p>
+      </div>
+      <div class="btn-row sub-btns">
+        <a class="btn" id="rem-apple" href="webcal://catholicdoorway.com/api/plans.ics?plan=bible&amp;lang=tl">iPhone / Apple Calendar</a>
+        <a class="btn secondary" id="rem-google" href="#" target="_blank" rel="noopener">Google Calendar</a>
+        <a class="btn secondary" id="rem-outlook" href="#" target="_blank" rel="noopener">Outlook</a>
+      </div>
+      <p class="small muted" style="flex-basis:100%;margin:0">Sa Android, gamitin ang Google Calendar. Ibang app: <a id="rem-ics" href="/api/plans.ics?plan=bible&amp;lang=tl" download>i-download ang .ics file</a>. Kung walang lumalabas na alerto, buksan ang notifications ng kalendaryong ito sa iyong app.</p>
+    </div>
+  </section>
+
+  <section class="section prose" id="how-it-works">
+    <h2>Paano gumagana ang mga plano</h2>
+    <ul>
+      <li><strong>Magsimula kahit anong araw.</strong> Ang Araw 1 ay ang araw na pinindot mo ang Magsimula, kaya hindi ka mahuhuli kahit Marso ka nagsimula. May kasamang grupo? Pumili ng ibang petsa ng simula, o magsimula sa Enero 1 para sumabay sa taon ng kalendaryo.</li>
+      <li><strong>May araw na nalaktawan?</strong> Magpatuloy lang. Sasabihin ng pahina kung ilang araw ang hindi mo pa namamarkahan at dadalhin ka sa una. Marami ang nagbabasa ng dalawang araw nang sabay hanggang makahabol.</li>
+      <li><strong>Pribado ang iyong progreso.</strong> Ang minamarkahan mong nabasa ay nakatago lamang sa browser na ito, sa device na ito. Hindi namin ito nakikita, at walang account. Kung buburahin mo ang data ng browser o magpapalit ng telepono, magsisimula muli ang progreso (hindi nagbabago ang mga pagbasa).</li>
+      <li><strong>Ang teksto ng Bibliya.</strong> Bubukas ang mga pagbasa sa aming <a href="/read-the-bible">pambasa ng Bibliya</a>, na may buong Bibliyang Douay-Rheims sa Ingles. Kung gusto mong magbasa sa Filipino, gamitin ang sarili mong Bibliyang Katoliko, gaya ng Magandang Balita Biblia. Sa pambasa, sinusunod ng Mga Awit ang lumang bilang ng Griyego at Latin, kadalasang mas mababa ng isa mula Awit 10 hanggang 147, kaya inilalagay namin sa panaklong ang bilang sa mga makabagong Bibliya, halimbawa &ldquo;Mga Awit 22 (23)&rdquo;.</li>
+      <li><strong>Ang Katesismo.</strong> Pare-pareho ang bilang ng mga talata sa lahat ng wika at edisyon, kaya magagamit mo ang nakalimbag na kopya o ang <a href="https://www.vatican.va/archive/ENG0015/_INDEX.HTM" target="_blank" rel="noopener">Katesismo sa website ng Vaticano</a>. Alamin pa sa aming pahina na <a href="/tl/katesismo-at-dokumento">Ang Katesismo at mga dokumento</a>.</li>
+    </ul>
+    <p>Bago magbasa, makatutulong ang sandaling panalangin: <em>&ldquo;Magsalita ka, Panginoon, nakikinig ang iyong lingkod&rdquo;</em> (1 Samuel 3:9). Para sa mas mabagal at mapanalanging pagbasa ng maikling bahagi, tingnan ang <a href="/tl/glosaryo#lectio-divina">lectio divina</a>.</p>
+  </section>
+</div>

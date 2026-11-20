@@ -1075,3 +1075,55 @@ dl.glossary .see { font: 600 .85rem var(--sans); margin-left: .2rem; }
 }
 @media (prefers-reduced-motion: reduce) { .ac-dialog[open] { animation: none; } }
 @media print { .ac-side, .ac-dialog { display: none !important; } .ac .ac-days { display: grid !important; } }
+
+/* ---------- Reading plans ---------- */
+#reading-plans:not(.ready) .plan-start { min-height: 2.6rem; }
+.plan-today h3 { margin-bottom: .1rem; }
+.plan-readings { list-style: none; padding: 0; margin: .9rem 0; display: grid; gap: .45rem; }
+.plan-readings li { font: 600 1.08rem var(--sans); padding-left: 1.1rem; position: relative; }
+.plan-readings li::before { content: ""; position: absolute; left: 0; top: .55em; width: .45rem; height: .45rem; border-radius: 50%; background: var(--gold); }
+.plan-readings li a[target]::after { content: " ↗"; font-size: .8em; color: var(--ink-soft); }
+.plan-topic { display: block; font: 400 .9rem var(--sans); color: var(--ink-soft); }
+.plan-actions { justify-content: flex-start; margin: .2rem 0 .9rem; }
+.plan-actions .btn[aria-pressed="true"] { border-color: var(--lit-green); color: var(--lit-green); }
+.plan-meter { height: 8px; background: var(--line); border-radius: 8px; overflow: hidden; }
+.plan-meter span { display: block; height: 100%; background: var(--gold); border-radius: 8px; transition: width .25s; }
+.plan-progress p { margin: .35rem 0 0; }
+.plan-note { background: var(--gold-soft); border-radius: 10px; padding: .55rem .8rem; font-size: .98rem; }
+.plan-behind { margin: .8rem 0 0; }
+.plan-card { display: flex; flex-direction: column; }
+.plan-card .plan-start { margin-top: auto; padding-top: .4rem; display: grid; gap: .6rem; justify-items: start; }
+.plan-card .plan-start > p { margin: 0; }
+.plan-card .plan-start .plan-progress { width: 100%; }
+.plan-date summary { cursor: pointer; font: 600 .92rem var(--sans); color: var(--link); }
+.plan-date[open] { width: 100%; }
+.plan-date-row { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; margin: .6rem 0; }
+.plan-date-row input[type="date"], .rem-row select { font: inherit; font-size: 1rem; min-height: 44px; padding: .35rem .6rem; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); }
+.linkish { background: none; border: 0; padding: .25rem 0; font: 600 .92rem var(--sans); color: var(--link); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; text-align: left; display: block; min-height: 32px; }
+.linkish:hover { color: var(--link-hover); }
+.linkish.danger { color: var(--lit-red); }
+.plan-schedule { margin-top: 2rem; }
+.plan-schedule > h2 { margin-bottom: .6rem; }
+.plan-schedule > .plan-progress { max-width: 30rem; margin-bottom: 1rem; }
+.plan-block { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); margin: 0 0 .6rem; }
+.plan-block > summary { cursor: pointer; padding: .8rem 1.1rem; font: 700 1rem var(--sans); white-space: pre; }
+.plan-days { list-style: none; margin: 0; padding: 0 1.1rem .6rem; }
+.plan-days li { display: grid; grid-template-columns: minmax(9rem, 12rem) 1fr; gap: .2rem 1rem; padding: .6rem 0; border-top: 1px solid var(--line); scroll-margin-top: 6rem; }
+.plan-days li.is-today { background: var(--gold-soft); margin: 0 -1.1rem; padding: .6rem 1.1rem; }
+.plan-days .plan-readings { margin: 0; gap: .2rem; }
+.plan-days .plan-readings li { font-size: .98rem; display: block; padding: 0 0 0 1.1rem; border: 0; margin: 0; background: none; }
+.plan-check { display: flex; gap: .55rem; align-items: center; font: 600 .95rem var(--sans); cursor: pointer; }
+.plan-check input { width: 1.25rem; height: 1.25rem; accent-color: var(--gold); flex: none; }
+.rem-row { display: flex; flex-wrap: wrap; gap: .8rem; margin: .6rem 0; }
+.rem-row label { display: grid; gap: .25rem; font: 600 .9rem var(--sans); color: var(--ink-soft); }
+@media (max-width: 560px) {
+  .plan-days li { grid-template-columns: 1fr; }
+}
+.plan-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem 1rem; max-width: 68ch; margin: 0 0 1rem; padding: .8rem 1rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.plan-bar .label { margin: 0; }
+.plan-bar .btn-row { justify-content: flex-start; }
+.plan-bar:last-child { margin: 1.4rem 0 0; }
+.bible-text h3.bible-ch { font-size: 1.25rem; margin: 1.6rem 0 .5rem; }
+.bible-text h3.bible-ch:first-child { margin-top: 0; }
+.bible-text h3.bible-ch a { color: inherit; text-decoration: none; }
+.card.tile.feature + .card.tile.feature { margin-top: 1rem; }
