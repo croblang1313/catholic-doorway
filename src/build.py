@@ -16,6 +16,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import features  # noqa: E402
+import kids  # noqa: E402
 import plans  # noqa: E402
 import seasons  # noqa: E402
 import searchindex  # noqa: E402
@@ -85,6 +86,18 @@ PAGES = [
      "Read the complete Catholic Bible free online in the Douay-Rheims translation: all 73 books, chapter by chapter, with quick passage lookup such as John 3:16."),
     ("reading-plans", "Reading Plans", "Bible in a Year and Catechism in a Year: Free Catholic Reading Plans | CatholicDoorway",
      "Free Catholic reading plans: the Bible in a Year, the Catechism in a Year, the Gospels in 30 days and a 90-day OCIA plan. Start any day, track progress, no sign-up."),
+    ("kids", "Kids", "Catholic Kids and Families: Coloring Pages, Prayers and Saint Stories | CatholicDoorway",
+     "Free Catholic activities for kids and families: printable coloring pages, first prayers read aloud, the Mass for kids, saint stories and ideas for each season at home."),
+    ("coloring-pages", "Coloring Pages", "Free Catholic Coloring Pages: Saints, Bible Stories and the Mass | CatholicDoorway",
+     "Seventeen free, original Catholic coloring pages: saints, Bible stories, the Mass and the seasons. Print them or tap to color on a phone or tablet."),
+    ("first-prayers", "First Prayers", "First Prayers for Catholic Kids, Read Aloud | CatholicDoorway",
+     "The Sign of the Cross, Our Father, Hail Mary, Glory Be, Guardian Angel prayer, grace and bedtime prayers for children, in large type with read-aloud."),
+    ("mass-for-kids", "Mass for Kids", "The Mass for Kids: A Picture Guide | CatholicDoorway",
+     "A picture guide to the Catholic Mass for children: what happens, when to stand, sit and kneel, what we say, and an I-spy game for church."),
+    ("saint-stories", "Saint Stories for Kids", "Saint Stories for Kids | CatholicDoorway",
+     "Short, true stories of saints for children, from St. Francis and St. Thérèse to St. Carlo Acutis and St. Lorenzo Ruiz, with something to try for each."),
+    ("family-corner", "Family Corner", "Catholic Family Corner: Advent, Lent and Easter at Home | CatholicDoorway",
+     "Simple ways for Catholic families to live Advent, Christmas, Lent and Easter at home, plus printable First Communion and Confirmation prep sheets."),
     ("search", "Search", "Search CatholicDoorway",
      "Search CatholicDoorway's prayers, how-to guides, Catholic terms, saints, beliefs and diocese pages."),
     ("bible", "Bible & Readings", "The Bible and Today's Mass Readings | CatholicDoorway",
@@ -123,9 +136,11 @@ PAGES = [
      "Terms of use for CatholicDoorway.com: an independent guide, not an official Church resource. Mass times, parish OCIA listings and how you may share our content."),
     ("404", "Not found", "Page not found | CatholicDoorway", "This page could not be found."),
 ]
-NAV_EXCLUDE = {"privacy", "terms", "reading-plans", "confirmation", "first-communion", "holy-orders", "advent", "read-the-bible", "search", "examination-of-conscience", "ocia-listing", "devotions", "divine-mercy-chaplet", "stations-of-the-cross", "novenas", "angelus", "liturgy-of-the-hours", "church-documents", "about", "404", "saints-directory", "how-to", "confession", "coming-back", "join-a-parish", "baptism", "marriage", "anointing", "funerals", "baptism-certificate", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary", "questions", "church-anatomy", "vestments", "inside-the-mass"}
+NAV_EXCLUDE = {"coloring-pages", "first-prayers", "mass-for-kids", "saint-stories", "family-corner", "privacy", "terms", "reading-plans", "confirmation", "first-communion", "holy-orders", "advent", "read-the-bible", "search", "examination-of-conscience", "ocia-listing", "devotions", "divine-mercy-chaplet", "stations-of-the-cross", "novenas", "angelus", "liturgy-of-the-hours", "church-documents", "about", "404", "saints-directory", "how-to", "confession", "coming-back", "join-a-parish", "baptism", "marriage", "anointing", "funerals", "baptism-certificate", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary", "questions", "church-anatomy", "vestments", "inside-the-mass"}
 # Pages shown in a dropdown under a main menu item: parent slug -> [(slug, label)]
-SUBNAV = {"beliefs": [("beliefs", "What Catholics Believe"), ("questions", "Honest Questions, Answered"),
+SUBNAV = {"kids": [("kids", "Kids and Families"), ("coloring-pages", "Coloring Pages"), ("first-prayers", "First Prayers"),
+                    ("mass-for-kids", "Mass for Kids"), ("saint-stories", "Saint Stories for Kids"), ("family-corner", "Family Corner")],
+          "beliefs": [("beliefs", "What Catholics Believe"), ("questions", "Honest Questions, Answered"),
                       ("church-documents", "Catechism and Church Documents")],
           "prayers": [("prayers", "Catholic Prayers"), ("rosary", "Pray the Rosary"), ("devotions", "Devotions and Reminders"),
                       ("liturgy-of-the-hours", "Liturgy of the Hours"), ("stations-of-the-cross", "Stations of the Cross"),
@@ -199,6 +214,18 @@ ES_PAGES = [
      "Reza el Rosario paso a paso en tu teléfono: las cuentas se iluminan, cada misterio trae su pasaje bíblico y se guarda dónde vas."),
     ("bible", "biblia", "Biblia", "La Biblia y las lecturas de la Misa de hoy | CatholicDoorway",
      "Las lecturas de la Misa de hoy en español, cómo está organizada la Biblia católica y dónde leerla gratis en línea."),
+    ("kids", "ninos", "Niños", "Niños y familias católicas: dibujos para colorear, oraciones e historias de santos | CatholicDoorway",
+     "Actividades católicas gratis para niños y familias: dibujos para colorear, primeras oraciones en voz alta, la Misa para niños, historias de santos e ideas para cada tiempo litúrgico."),
+    ("coloring-pages", "dibujos-para-colorear", "Dibujos para colorear", "Dibujos católicos para colorear gratis: santos, la Biblia y la Misa | CatholicDoorway",
+     "Diecisiete dibujos católicos originales y gratis: santos, historias de la Biblia, la Misa y los tiempos litúrgicos. Imprímelos o coloréalos en el teléfono o la tableta."),
+    ("first-prayers", "primeras-oraciones", "Primeras oraciones", "Primeras oraciones para niños católicos, en voz alta | CatholicDoorway",
+     "La Señal de la Cruz, el Padre Nuestro, el Ave María, el Gloria, el Ángel de la Guarda y oraciones para comer y dormir, en letra grande y leídas en voz alta."),
+    ("mass-for-kids", "misa-para-ninos", "La Misa para niños", "La Misa para niños: una guía ilustrada | CatholicDoorway",
+     "Una guía ilustrada de la Misa para niños: qué pasa, cuándo ponerse de pie, sentarse y arrodillarse, qué decimos y un juego de «veo, veo» para la iglesia."),
+    ("saint-stories", "santos-para-ninos", "Historias de santos", "Historias de santos para niños | CatholicDoorway",
+     "Historias cortas y verdaderas de santos para niños, de San Francisco y Santa Teresita a San Carlo Acutis y San Lorenzo Ruiz, con algo para hacer en cada una."),
+    ("family-corner", "rincon-familiar", "Rincón familiar", "Rincón familiar católico: Adviento, Cuaresma y Pascua en casa | CatholicDoorway",
+     "Ideas sencillas para vivir en familia el Adviento, la Navidad, la Cuaresma y la Pascua, y hojas para imprimir para la Primera Comunión y la Confirmación."),
     ("reading-plans", "planes-de-lectura", "Planes de lectura", "La Biblia en un año y el Catecismo en un año: planes de lectura católicos | CatholicDoorway",
      "Planes de lectura católicos gratis: la Biblia en un año, el Catecismo en un año, los Evangelios en 30 días y un plan de 90 días para OCIA. Empieza cualquier día, sin registrarte."),
     ("calendar", "calendario", "Calendario", "Días de precepto y de ayuno: calendario católico | CatholicDoorway",
@@ -306,6 +333,18 @@ PT_PAGES = [
      "Como pedir a sua certidão de batismo com as anotações para um casamento ou para ser padrinho, mesmo se a paróquia fechou ou você foi batizado no Brasil ou em Portugal."),
     ("bible", "biblia", "Bíblia", "A Bíblia e as leituras da Missa de hoje | CatholicDoorway",
      "As leituras da Missa de hoje em português, como a Bíblia católica é organizada e por onde começar a ler."),
+    ("kids", "criancas", "Crianças", "Crianças e famílias católicas: desenhos para colorir, orações e histórias de santos | CatholicDoorway",
+     "Atividades católicas grátis para crianças e famílias: desenhos para colorir, primeiras orações em voz alta, a Missa para crianças, histórias de santos e ideias para cada tempo litúrgico."),
+    ("coloring-pages", "desenhos-para-colorir", "Desenhos para colorir", "Desenhos católicos para colorir grátis: santos, a Bíblia e a Missa | CatholicDoorway",
+     "Dezessete desenhos católicos originais e grátis: santos, histórias da Bíblia, a Missa e os tempos litúrgicos. Imprima ou pinte no celular ou no tablet."),
+    ("first-prayers", "primeiras-oracoes", "Primeiras orações", "Primeiras orações para crianças católicas, em voz alta | CatholicDoorway",
+     "O Sinal da Cruz, o Pai-Nosso, a Ave-Maria, o Glória, o Santo Anjo e orações para as refeições e para dormir, em letras grandes e lidas em voz alta."),
+    ("mass-for-kids", "missa-para-criancas", "A Missa para crianças", "A Missa para crianças: um guia ilustrado | CatholicDoorway",
+     "Um guia ilustrado da Missa para crianças: o que acontece, quando ficar de pé, sentar e ajoelhar, o que dizemos e um jogo de «eu vejo» para a igreja."),
+    ("saint-stories", "santos-para-criancas", "Histórias de santos", "Histórias de santos para crianças | CatholicDoorway",
+     "Histórias curtas e verdadeiras de santos para crianças, de São Francisco e Santa Teresinha a São Carlo Acutis e Santa Dulce dos Pobres, com algo para fazer em cada uma."),
+    ("family-corner", "cantinho-da-familia", "Cantinho da família", "Cantinho da família católica: Advento, Quaresma e Páscoa em casa | CatholicDoorway",
+     "Ideias simples para viver em família o Advento, o Natal, a Quaresma e a Páscoa, e folhas para imprimir para a Primeira Comunhão e a Crisma."),
     ("reading-plans", "planos-de-leitura", "Planos de leitura", "A Bíblia em um ano e o Catecismo em um ano: planos de leitura católicos | CatholicDoorway",
      "Planos de leitura católicos grátis: a Bíblia em um ano, o Catecismo em um ano, os Evangelhos em 30 dias e um plano de 90 dias para a OCIA. Comece em qualquer dia, sem cadastro."),
     ("calendar", "calendario", "Calendário", "Dias santos de guarda e de jejum: calendário católico | CatholicDoorway",
@@ -341,7 +380,8 @@ PT_TEXT = dict(lang="pt", skip="Pular para o conteúdo", home="/pt/", home_label
                theme_label="Mudar para o modo claro ou escuro", menu_label="Menu", nav_label="Principal",
                search_url="/pt/buscar", search_label="Buscar")
 EN_TO_PT = {en: pt for en, pt, *_ in PT_PAGES}
-PT_SUBNAV = {"comecar": [("comecar", "Tornar-se católico (OCIA)"), ("primeira-missa", "Sua primeira Missa"), ("guias", "Guias práticos"),
+PT_SUBNAV = {"criancas": [("criancas", "Crianças e famílias"), ("desenhos-para-colorir", "Desenhos para colorir"), ("primeiras-oracoes", "Primeiras orações"), ("missa-para-criancas", "A Missa para crianças"), ("santos-para-criancas", "Histórias de santos para crianças"), ("cantinho-da-familia", "Cantinho da família")],
+             "comecar": [("comecar", "Tornar-se católico (OCIA)"), ("primeira-missa", "Sua primeira Missa"), ("guias", "Guias práticos"),
                          ("exame-de-consciencia", "Exame de consciência")],
              "oracoes": [("oracoes", "Orações católicas"), ("rosario", "Reze o Rosário"), ("devocoes", "Devoções e lembretes"),
                          ("liturgia-das-horas", "Liturgia das Horas"), ("via-sacra", "Via-Sacra"),
@@ -421,6 +461,18 @@ TL_PAGES = [
      "Maghanap ng mga simbahang Katoliko sa Estados Unidos ayon sa lungsod o ZIP code: address, telepono, website at direksiyon."),
     ("bible", "bibliya", "Bibliya", "Ang Bibliya at ang mga pagbasa sa Misa ngayon | CatholicDoorway",
      "Ang mga pagbasa sa Misa ngayon, paano nakaayos ang Bibliyang Katoliko at kung saan ito mababasa nang libre."),
+    ("kids", "mga-bata", "Mga bata", "Mga batang Katoliko at pamilya: mga larawang kukulayan, dasal at kuwento ng santo | CatholicDoorway",
+     "Libreng gawaing Katoliko para sa mga bata at pamilya: mga larawang kukulayan, mga unang dasal na binabasa nang malakas, ang Misa para sa mga bata, mga kuwento ng santo at mga ideya sa bawat panahon."),
+    ("coloring-pages", "mga-pangkulay", "Mga larawang kukulayan", "Libreng mga larawang Katolikong kukulayan: mga santo, Bibliya at Misa | CatholicDoorway",
+     "Labimpitong libre at orihinal na larawang Katolikong kukulayan: mga santo, kuwento sa Bibliya, ang Misa at ang mga panahon. I-print o kulayan sa telepono o tablet."),
+    ("first-prayers", "mga-unang-dasal", "Mga unang dasal", "Mga unang dasal para sa mga batang Katoliko, binabasa nang malakas | CatholicDoorway",
+     "Ang Tanda ng Krus, Ama Namin, Aba Ginoong Maria, Luwalhati, dasal sa Anghel na Tagatanod, dasal bago kumain at bago matulog, sa malalaking letra at binabasa nang malakas."),
+    ("mass-for-kids", "misa-para-sa-mga-bata", "Ang Misa para sa mga bata", "Ang Misa para sa mga bata: gabay na may larawan | CatholicDoorway",
+     "Gabay na may larawan sa Misa para sa mga bata: ano ang nangyayari, kailan tatayo, uupo at luluhod, ano ang sinasabi natin at larong Hanapin mo sa simbahan."),
+    ("saint-stories", "mga-santo-para-sa-bata", "Mga kuwento ng santo", "Mga kuwento ng santo para sa mga bata | CatholicDoorway",
+     "Maiikli at totoong kuwento ng mga santo para sa mga bata, mula kina San Francisco at Santa Teresita hanggang kina San Lorenzo Ruiz at San Pedro Calungsod, may maaaring subukan sa bawat isa."),
+    ("family-corner", "sulok-ng-pamilya", "Sulok ng pamilya", "Sulok ng pamilyang Katoliko: Adbiyento, Kuwaresma at Pagkabuhay sa tahanan | CatholicDoorway",
+     "Mga simpleng paraan para isabuhay ng pamilya ang Adbiyento, Pasko, Kuwaresma at Pagkabuhay, at mga pahinang mapi-print para sa Unang Komunyon at Kumpil."),
     ("reading-plans", "mga-plano-sa-pagbasa", "Mga plano sa pagbasa", "Ang Bibliya sa isang taon at ang Katesismo sa isang taon: mga planong Katoliko sa pagbasa | CatholicDoorway",
      "Libreng mga planong Katoliko sa pagbasa: ang Bibliya sa isang taon, ang Katesismo sa isang taon, ang mga Ebanghelyo sa 30 araw at 90-araw na plano para sa OCIA. Magsimula kahit kailan, walang sign-up."),
     ("calendar", "kalendaryo", "Kalendaryo", "Mga araw na pangilin at araw ng pag-aayuno: kalendaryong Katoliko | CatholicDoorway",
@@ -456,7 +508,8 @@ TL_TEXT = dict(lang="tl", skip="Lumaktaw sa nilalaman", home="/tl/", home_label=
                theme_label="Lumipat sa maliwanag o madilim na anyo", menu_label="Menu", nav_label="Pangunahin",
                search_url="/tl/maghanap", search_label="Maghanap")
 EN_TO_TL = {en: tl for en, tl, *_ in TL_PAGES}
-TL_SUBNAV = {"magsimula": [("magsimula", "Maging Katoliko (OCIA)"), ("unang-misa", "Ang iyong unang Misa"), ("mga-gabay", "Mga praktikal na gabay"),
+TL_SUBNAV = {"mga-bata": [("mga-bata", "Mga bata at pamilya"), ("mga-pangkulay", "Mga larawang kukulayan"), ("mga-unang-dasal", "Mga unang dasal"), ("misa-para-sa-mga-bata", "Ang Misa para sa mga bata"), ("mga-santo-para-sa-bata", "Mga kuwento ng santo para sa mga bata"), ("sulok-ng-pamilya", "Sulok ng pamilya")],
+             "magsimula": [("magsimula", "Maging Katoliko (OCIA)"), ("unang-misa", "Ang iyong unang Misa"), ("mga-gabay", "Mga praktikal na gabay"),
                            ("pagsusuri-ng-budhi", "Pagsusuri ng budhi")],
              "mga-dasal": [("mga-dasal", "Mga dasal Katoliko"), ("rosaryo", "Magrosaryo"), ("mga-debosyon", "Mga debosyon at paalala"),
                            ("liturhiya-ng-mga-oras", "Liturhiya ng mga Oras"), ("daan-ng-krus", "Daan ng Krus"),
@@ -849,6 +902,7 @@ EXTRA = {
     "saints-directory": ("", '<script src="/assets/js/saints-dir.js" defer></script>'),
     "read-the-bible": ("", '<script src="/assets/js/bible.js" defer></script>'),
     "reading-plans": ("", '<script src="/assets/js/plans.js" defer></script>'),
+    **{k: ("", '<script src="/assets/js/kids.js" defer></script>') for k in kids.PARTS},
     "search": ("", '<script src="/assets/js/search.js" defer></script>'),
     "find-a-church": (
         '<link rel="stylesheet" href="/assets/vendor/leaflet/leaflet.css">',
@@ -1684,7 +1738,7 @@ def version(rel):
 
 
 def bust(page):
-    for rel in ("/assets/css/style.css", "/assets/js/main.js", "/assets/js/map.js", "/assets/js/rosary.js", "/assets/js/saints-dir.js", "/assets/js/pray.js", "/assets/js/bible.js", "/assets/js/plans.js", "/assets/js/search.js", "/assets/js/stations.js", "/assets/js/advent.js"):
+    for rel in ("/assets/css/style.css", "/assets/js/main.js", "/assets/js/map.js", "/assets/js/rosary.js", "/assets/js/saints-dir.js", "/assets/js/pray.js", "/assets/js/bible.js", "/assets/js/plans.js", "/assets/js/kids.js", "/assets/js/search.js", "/assets/js/stations.js", "/assets/js/advent.js"):
         page = page.replace(f'"{rel}"', f'"{rel}?v={version(rel)}"')
     return page
 
@@ -1720,7 +1774,8 @@ def nav_html(current):
     return "\n".join(items)
 
 
-ES_SUBNAV = {"comenzar": [("comenzar", "Hacerse católico (OCIA)"), ("primera-misa", "Tu primera Misa"), ("guias", "Guías prácticas"),
+ES_SUBNAV = {"ninos": [("ninos", "Niños y familias"), ("dibujos-para-colorear", "Dibujos para colorear"), ("primeras-oraciones", "Primeras oraciones"), ("misa-para-ninos", "La Misa para niños"), ("santos-para-ninos", "Historias de santos para niños"), ("rincon-familiar", "Rincón familiar")],
+             "comenzar": [("comenzar", "Hacerse católico (OCIA)"), ("primera-misa", "Tu primera Misa"), ("guias", "Guías prácticas"),
                           ("examen-de-conciencia", "Examen de conciencia")],
              "oraciones": [("oraciones", "Oraciones católicas"), ("rosario", "Reza el Rosario"), ("devociones", "Devociones y recordatorios"),
                            ("liturgia-de-las-horas", "Liturgia de las Horas"), ("via-crucis", "Vía Crucis"),
@@ -1781,6 +1836,7 @@ def build_lang(code, pages, text, foot, subnav, exclude):
         page += verse_band(en, code)
         body = body.replace("{{DOOR}}", DOOR_SVG)
         body = features.render(body, code)
+        body = kids.render(body, code, lambda s, c=code: lang_urls(s)[c])
         body = seasons.render(body, code)
         body = ocia_options(body, code)
         if "{{QUESTIONS}}" in body:
@@ -1835,6 +1891,7 @@ def main():
         page += verse_band(slug, "en")
         body = body.replace("{{DOOR}}", DOOR_SVG)
         body = features.render(body, "en")
+        body = kids.render(body, "en", lambda s: lang_urls(s)["en"])
         body = seasons.render(body, "en")
         body = ocia_options(body, "en")
         if "{{SAINTS}}" in body:
@@ -1883,6 +1940,7 @@ LLMS_GROUPS = [
                                                "baptism-certificate", "ocia-listing"]),
     ("Prayer, Scripture and the calendar", ["prayers", "rosary", "devotions", "divine-mercy-chaplet", "stations-of-the-cross", "novenas", "angelus",
                                             "liturgy-of-the-hours", "advent", "bible", "read-the-bible", "reading-plans", "calendar"]),
+    ("Kids and families", ["kids", "coloring-pages", "first-prayers", "mass-for-kids", "saint-stories", "family-corner"]),
     ("What Catholics believe", ["beliefs", "questions", "church-documents", "glossary", "church-anatomy", "inside-the-mass", "vestments"]),
     ("Saints, Popes and Church structure", ["saints", "saints-directory", "popes", "structure", "dioceses", "find-a-church"]),
     ("About", ["about", "privacy", "terms"]),
