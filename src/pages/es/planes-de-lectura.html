@@ -1,0 +1,97 @@
+<div class="page-head">
+  <div class="wrap">
+    <p class="kicker"><a href="/es/biblia">Biblia</a> &rsaquo; Planes de lectura</p>
+    <h1>Planes de lectura de la Biblia y el Catecismo</h1>
+    <p class="lede">Lee toda la Biblia o todo el Catecismo en un año, unos minutos al día, o empieza con algo más corto: los Evangelios en 30 días. Puedes empezar cualquier día del año. Tu avance se guarda en este dispositivo y no tienes que registrarte.</p>
+  </div>
+</div>
+
+<div class="wrap" id="reading-plans">
+  <section class="section" id="today">
+    <h2>La lectura de hoy</h2>
+    <p class="muted" id="plan-none">Elige un plan abajo para empezar. La lectura de hoy aparecerá aquí cada vez que vuelvas.</p>
+    <div class="grid two" id="plan-today"></div>
+    <noscript><p>Los planes de lectura necesitan JavaScript para saber en qué día vas y guardar tu avance.</p></noscript>
+  </section>
+
+  <section class="section" id="plans">
+    <h2>Elige un plan</h2>
+    <div class="grid two">
+      <article class="card plan-card" id="plan-bible">
+        <p class="label">365 días &middot; unos 20 minutos al día</p>
+        <h3>La Biblia en un año</h3>
+        <p>Los 73 libros de la Biblia católica. Cada día tiene tres lecturas: un pasaje del Antiguo Testamento, uno del Nuevo Testamento y uno de los Salmos o de los libros sapienciales (Proverbios, Eclesiastés, el Cantar de los Cantares, Sabiduría y Eclesiástico). Las porciones están equilibradas por extensión, así que ningún día es mucho más largo que otro.</p>
+        <div class="plan-start"></div>
+      </article>
+      <article class="card plan-card" id="plan-catechism">
+        <p class="label">365 días &middot; unos 10 minutos al día</p>
+        <h3>El Catecismo en un año</h3>
+        <p>Los 2.865 números del <em>Catecismo de la Iglesia Católica</em>, siete u ocho al día y en orden: el Credo, los sacramentos, la vida moral y la oración. Cada día enlaza con el texto oficial en español en el sitio web del Vaticano.</p>
+        <div class="plan-start"></div>
+      </article>
+      <article class="card plan-card" id="plan-gospels">
+        <p class="label">30 días &middot; unos 15 minutos al día</p>
+        <h3>Los Evangelios en 30 días</h3>
+        <p>Mateo, Marcos, Lucas y Juan, unos tres capítulos al día. El mejor lugar para empezar si nunca has leído la Biblia: un mes para encontrarte con Jesús en las palabras de los cuatro evangelistas.</p>
+        <div class="plan-start"></div>
+      </article>
+      <article class="card plan-card" id="plan-ocia">
+        <p class="label">90 días &middot; unos 20 minutos al día</p>
+        <h3>OCIA en 90 días</h3>
+        <p>Para quienes están en OCIA o piensan hacerse católicos, y para los padrinos que los acompañan. Cada día une un pasaje breve de los Evangelios de Lucas y Juan o de los Hechos de los Apóstoles con una sección del Catecismo, tema por tema: Dios, Jesús, el Espíritu Santo, la Iglesia, los siete sacramentos, la vida moral y la oración.</p>
+        <div class="plan-start"></div>
+      </article>
+    </div>
+    <div class="plan-schedule" id="plan-schedule" hidden></div>
+  </section>
+
+  <section class="section" id="reminders">
+    <div class="card subscribe">
+      <div>
+        <p class="label">Recordatorios</p>
+        <h2>Un recordatorio diario en tu teléfono</h2>
+        <p>Agrega tu plan a tu calendario. El evento de cada día muestra las lecturas de ese día y un enlace para volver aquí, a la hora que elijas. No tienes que registrarte. Si cambias la fecha de inicio, vuelve a agregar el calendario.</p>
+        <div class="rem-row">
+          <label>Plan
+            <select id="rem-plan">
+              <option value="bible">La Biblia en un año</option>
+              <option value="catechism">El Catecismo en un año</option>
+              <option value="gospels">Los Evangelios en 30 días</option>
+              <option value="ocia">OCIA en 90 días</option>
+            </select>
+          </label>
+          <label>Hora
+            <select id="rem-time">
+              <option value="0600">6:00 a. m.</option>
+              <option value="0700" selected>7:00 a. m.</option>
+              <option value="0800">8:00 a. m.</option>
+              <option value="1200">12:00 del mediodía</option>
+              <option value="1800">6:00 p. m.</option>
+              <option value="2000">8:00 p. m.</option>
+              <option value="2100">9:00 p. m.</option>
+            </select>
+          </label>
+        </div>
+        <p class="small muted" id="rem-note"></p>
+      </div>
+      <div class="btn-row sub-btns">
+        <a class="btn" id="rem-apple" href="webcal://catholicdoorway.com/api/plans.ics?plan=bible&amp;lang=es">iPhone / Calendario de Apple</a>
+        <a class="btn secondary" id="rem-google" href="#" target="_blank" rel="noopener">Google Calendar</a>
+        <a class="btn secondary" id="rem-outlook" href="#" target="_blank" rel="noopener">Outlook</a>
+      </div>
+      <p class="small muted" style="flex-basis:100%;margin:0">En Android, usa Google Calendar. Otras aplicaciones: <a id="rem-ics" href="/api/plans.ics?plan=bible&amp;lang=es" download>descarga el archivo .ics</a>. Si no aparece ninguna alerta, activa las notificaciones de este calendario en tu aplicación.</p>
+    </div>
+  </section>
+
+  <section class="section prose" id="how-it-works">
+    <h2>Cómo funcionan los planes</h2>
+    <ul>
+      <li><strong>Empieza cualquier día.</strong> El día 1 es el día en que tocas Empezar, así que empezar en marzo no te deja atrasado. ¿Lees en grupo? Elige otra fecha de inicio, o empieza el 1 de enero para seguir el año del calendario.</li>
+      <li><strong>¿Se te pasó un día?</strong> Sigue adelante. La página te dice cuántos días no has marcado y te lleva al primero. Mucha gente simplemente lee dos días juntos hasta ponerse al día.</li>
+      <li><strong>Tu avance es privado.</strong> Lo que marcas como leído se guarda solo en este navegador y en este dispositivo. Nosotros nunca lo vemos y no hay cuentas. Si borras los datos del navegador o cambias de teléfono, tu avance vuelve a empezar (las lecturas no cambian).</li>
+      <li><strong>El texto de la Biblia.</strong> Las lecturas se abren en nuestro <a href="/read-the-bible">lector de la Biblia</a>, que tiene la Biblia completa en la versión inglesa Douay-Rheims. Si prefieres leer en español, usa tu propia Biblia católica, por ejemplo <a href="https://www.vatican.va/archive/ESL0506/_INDEX.HTM" target="_blank" rel="noopener">El Libro del Pueblo de Dios</a> en el sitio del Vaticano. En el lector, los salmos siguen la numeración antigua griega y latina, normalmente un número menos del Salmo 10 al 147, así que mostramos entre paréntesis el número de las Biblias modernas, por ejemplo &ldquo;Salmo 22 (23)&rdquo;.</li>
+      <li><strong>El Catecismo.</strong> Los números del Catecismo son iguales en todos los idiomas y ediciones, así que puedes usar un ejemplar impreso o el <a href="https://www.vatican.va/archive/catechism_sp/index_sp.html" target="_blank" rel="noopener">Catecismo en el sitio del Vaticano</a>. Más información en nuestra página <a href="/es/documentos-de-la-iglesia">El Catecismo y los documentos</a>.</li>
+    </ul>
+    <p>Antes de leer, ayuda rezar un momento: <em>&ldquo;Habla, Señor, que tu servidor escucha&rdquo;</em> (1 Samuel 3,9). Para una manera más lenta y orante de leer un pasaje corto, mira la <a href="/es/glosario#lectio-divina">lectio divina</a>.</p>
+  </section>
+</div>

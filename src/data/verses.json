@@ -826,5 +826,23 @@
    "t": "Makipagsaya kayo sa akin dahil nakita ko na ang tupa kong nawawala!",
    "r": "Lucas 15:6"
   }
+ },
+ "reading-plans": {
+  "en": {
+   "t": "Man shall not live by bread alone, but by every word that proceeds from the mouth of God.",
+   "r": "Matthew 4:4"
+  },
+  "es": {
+   "t": "El hombre no vive solamente de pan, sino de toda palabra que sale de la boca de Dios.",
+   "r": "Mateo 4:4"
+  },
+  "pt": {
+   "t": "Não só de pão vive o homem, mas de toda palavra que procede da boca de Deus.",
+   "r": "Mateus 4,4"
+  },
+  "tl": {
+   "t": "Hindi lamang sa tinapay nabubuhay ang tao, kundi sa bawat salitang nagmumula sa bibig ng Diyos.",
+   "r": "Mateo 4:4"
+  }
  }
 }
