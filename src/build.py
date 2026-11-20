@@ -592,7 +592,7 @@ SOCIAL_LINKS = [
      '<path fill="currentColor" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.33-.04-1.56-.14-2.86-.14C11.93 2 10 3.66 10 6.7v2.8H7v4h3V22h4z"/>'),
     ("x", "X", "https://x.com/CatholicDoorway",
      '<path fill="currentColor" d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.21-6.82-5.97 6.82H1.68l7.73-8.84L1.25 2.25h6.83l4.71 6.23zm-1.16 17.52h1.83L7.08 4.13H5.12z"/>'),
-    ("instagram", "Instagram", "https://www.instagram.com/catholicdoorway/",
+    ("instagram", "Instagram", "https://www.instagram.com/catholic.doorway/",
      '<rect x="2.75" y="2.75" width="18.5" height="18.5" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.25" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.25" fill="currentColor"/>'),
     ("tiktok", "TikTok", "https://www.tiktok.com/@catholicdoorway",
      '<path fill="currentColor" d="M16 8.25v7.25a6.5 6.5 0 1 1-5-6.33v3.17a3.5 3.5 0 1 0 2 3.16V2h3a5 5 0 0 0 5 5v3a7.97 7.97 0 0 1-5-1.75z"/>'),
