@@ -53,3 +53,14 @@ Warm and personal, plain-spoken, reverent. "A friendly parishioner at the door h
 9. Image text (the 1080x1350 card) carries the hook or title; the caption carries the hook again plus the
    link. Keep image body under about 160 characters.
 10. Grade every draft with post-grader. Aim for 8/10 or better, but never break a House Rule to raise a score.
+
+## Weekly article (added 2026-11-21, Christopher approved)
+Every Monday run also writes ONE "This Week in the Church" article for the website, before the posts.
+1. Read /mnt/project-files/social-posts/articles/README.md and follow its writing rules exactly (seed/ has 3 examples).
+2. Save it as weeks/<monday-date>/article.json and check it with
+   `python3 /mnt/project-files/social-posts/articles/post_article.py article.json --dry-run`.
+3. Make one of the week's 3 posts (the one nearest the feast) about the article. Its caption links to
+   https://catholicdoorway.com/this-week/<slug>, and in plan.json it carries `"article": "article.json"`.
+   send_drafts.py then sends the article draft first and puts its review link in that post's coach notes.
+4. In the final summary, list the article title and its review link first. Christopher taps "Publish now"
+   there (or uses https://catholicdoorway.com/this-week/review) before approving the post.
