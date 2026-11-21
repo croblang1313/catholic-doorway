@@ -251,6 +251,7 @@
   })();
 
   /* ---- State ---- */
+  var audioFollow = null;
   var KEY = 'cd-rosary', at = 0, set = BY_DAY[new Date().getDay()], lock = null;
   try {
     var saved = JSON.parse(localStorage.getItem(KEY));
@@ -305,7 +306,7 @@
     $('#rs-bar').style.width = ((at + 1) / STEPS.length * 100) + '%';
     $('#rs-back').disabled = at === 0;
     $('#rs-next').innerHTML = at === STEPS.length - 1 ? T('Amen. Start over', 'Amén. Empezar de nuevo', 'Amém. Recomeçar') : T('Next', 'Siguiente', 'Próximo') + ' &rarr;';
-    save();
+    save();    if (audioFollow) audioFollow();
   }
 
   function bibleSlug(ref) {
@@ -339,7 +340,7 @@
   }
   svg.addEventListener('click', next);
   document.addEventListener('keydown', function (e) {
-    if (e.target.tagName === 'SELECT') return;
+    if (e.target.tagName === 'SELECT' || (e.target.closest && e.target.closest('.rs-audio'))) return;
     if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
     else if (e.key === 'ArrowLeft') back();
   });
@@ -350,6 +351,154 @@
     var dx = e.changedTouches[0].clientX - x0; x0 = null;
     if (Math.abs(dx) > 60) (dx < 0 ? next : back)();
   });
+
+  /* ---- Guided audio: a voice leads each prayer, in step with the beads ---- */
+  (function audioPlayer() {
+    var AL = ES ? 'es' : PT ? 'pt' : TL ? 'tl' : 'en';
+    var BASE = '/audio/rosary/' + AL + '/';
+    var X = {
+      'Listen and pray': ['Escucha y reza', 'Ouça e reze', 'Makinig at magdasal'],
+      'Pause': ['Pausa', 'Pausar', 'Ihinto muna'],
+      'Previous prayer': ['Oración anterior', 'Oração anterior', 'Naunang dasal'],
+      'Next prayer': ['Siguiente oración', 'Próxima oração', 'Susunod na dasal'],
+      'Guided audio': ['Audio guiado', 'Áudio guiado', 'May gabay na audio'],
+      'The voice prays it all': ['La voz reza todo', 'A voz reza tudo', 'Ang boses ang magdadasal ng lahat'],
+      'Take turns: I answer': ['Por turnos: yo respondo', 'Alternado: eu respondo', 'Salitan: ako ang sasagot'],
+      'How to pray': ['Cómo rezar', 'Como rezar', 'Paano magdasal'],
+      'Speed': ['Velocidad', 'Velocidade', 'Bilis'],
+      'Slower': ['Más lento', 'Mais devagar', 'Mas mabagal'],
+      'Normal': ['Normal', 'Normal', 'Karaniwan'],
+      'Faster': ['Más rápido', 'Mais rápido', 'Mas mabilis'],
+      'hint': ['Sigue sonando con la pantalla apagada. Usa los botones de tus audífonos o del auto para pausar o saltar.',
+        'Continua tocando com a tela desligada. Use os botões do fone ou do carro para pausar ou pular.',
+        'Tuloy ang tunog kahit nakapatay ang screen. Gamitin ang mga buton ng headphones o ng kotse para huminto o lumaktaw.'],
+      'hintEn': ['Keeps playing with your screen off. Use your headphone or car buttons to pause or skip.'],
+      'credit': ['Voz generada por computadora con Piper (voz “ald”, dominio público).',
+        'Voz gerada por computador com Piper (voz “faber”, CC0).',
+        'Boses na gawa ng computer gamit ang Meta MMS-TTS (CC BY-NC 4.0).'],
+      'creditEn': ['Computer-generated voice made with Piper (LJ Speech voice, public domain).'],
+      'latin': ['La voz reza en español; el latín se muestra en pantalla.', 'A voz reza em português; o latim aparece na tela.', 'Sa Tagalog nagdadasal ang boses; nasa screen ang Latin.'],
+      'latinEn': ['The voice prays in English; the Latin stays on screen.'],
+      'error': ['No se pudo cargar el audio. Revisa tu conexión e inténtalo de nuevo.', 'Não foi possível carregar o áudio. Verifique sua conexão e tente de novo.', 'Hindi ma-load ang audio. Suriin ang koneksiyon at subukang muli.'],
+      'errorEn': ['The audio couldn’t load. Check your connection and try again.']
+    };
+    function L(k) {
+      var i = ES ? 0 : PT ? 1 : TL ? 2 : -1;
+      if (i < 0) return X[k + 'En'] ? X[k + 'En'][0] : k;
+      return X[k][i];
+    }
+    var grid = $('.rosary-grid', root);
+    if (!grid || typeof Audio === 'undefined') return;
+    var box = document.createElement('div');
+    box.className = 'rs-audio';
+    box.innerHTML =
+      '<div class="rs-audio-main">' +
+        '<button type="button" class="rs-skip" id="rs-a-prev" aria-label="' + L('Previous prayer') + '" title="' + L('Previous prayer') + '"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>' +
+        '<button type="button" class="btn rs-play" id="rs-a-play" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" class="i-play"><path d="M7 4.5v15l13-7.5z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true" class="i-pause"><path d="M6 4h4.5v16H6zM13.5 4H18v16h-4.5z"/></svg><span>' + L('Listen and pray') + '</span></button>' +
+        '<button type="button" class="rs-skip" id="rs-a-next" aria-label="' + L('Next prayer') + '" title="' + L('Next prayer') + '"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></button>' +
+      '</div>' +
+      '<div class="rs-audio-opts">' +
+        '<label><span class="small muted">' + L('How to pray') + '</span><select id="rs-a-mode" class="search"><option value="all">' + L('The voice prays it all') + '</option><option value="turns">' + L('Take turns: I answer') + '</option></select></label>' +
+        '<label><span class="small muted">' + L('Speed') + '</span><select id="rs-a-speed" class="search"><option value="0.85">' + L('Slower') + '</option><option value="1">' + L('Normal') + '</option><option value="1.15">' + L('Faster') + '</option></select></label>' +
+      '</div>' +
+      '<p class="small muted rs-audio-hint" id="rs-a-hint">' + L('hint') + '</p>' +
+      '<p class="small rs-audio-err" id="rs-a-err" role="alert" hidden></p>' +
+      '<p class="small muted rs-audio-credit">' + L('credit') + '</p>';
+    grid.parentNode.insertBefore(box, grid);
+
+    var el = new Audio(), playing = false, queue = [], qi = 0, key = '', pre = new Audio();
+    el.preload = 'auto'; pre.preload = 'auto';
+    var playBtn = $('#rs-a-play'), modeSel = $('#rs-a-mode'), speedSel = $('#rs-a-speed'), err = $('#rs-a-err'), hint = $('#rs-a-hint');
+    var mode = 'all', speed = '1';
+    try { mode = localStorage.getItem('cd-rosary-voice-mode') || 'all'; speed = localStorage.getItem('cd-rosary-voice-speed') || '1'; } catch (e) {}
+    modeSel.value = mode; speedSel.value = speed;
+    if (!modeSel.value) modeSel.value = 'all';
+    if (!speedSel.value) speedSel.value = '1';
+
+    function clipsFor(i) {
+      var st = STEPS[i], c;
+      if (st.p === 'mystery') {
+        c = ['m_' + set + '_' + st.d];
+        if (st.d === 1) c.unshift('intro_' + set);
+      } else if (st.p === 'our' || st.p === 'hail' || st.p === 'glory') {
+        c = [st.p + '_a', (modeSel.value === 'turns' ? 'hush_' : '') + st.p + '_b'];
+      } else c = [st.p];
+      if (i === STEPS.length - 1) c.push('amen_end');
+      return c;
+    }
+    function rate() { var r = parseFloat(speedSel.value) || 1; el.defaultPlaybackRate = r; el.playbackRate = r; }
+    function load() {
+      el.src = BASE + queue[qi] + '.mp3';
+      rate();
+      var p = el.play();
+      if (p && p.catch) p.catch(function (e) { if (e && e.name !== 'AbortError') fail(); });
+      rate();
+      // Warm the cache for whatever comes next.
+      var nx = queue[qi + 1] || (at < STEPS.length - 1 ? clipsFor(at + 1)[0] : null);
+      if (nx) pre.src = BASE + nx + '.mp3';
+    }
+    function startStep() {
+      key = at + '|' + set + '|' + modeSel.value;
+      queue = clipsFor(at); qi = 0;
+      load(); meta();
+    }
+    function setUI() {
+      playBtn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+      playBtn.querySelector('span').textContent = playing ? L('Pause') : L('Listen and pray');
+      box.classList.toggle('is-playing', playing);
+      if ('mediaSession' in navigator) navigator.mediaSession.playbackState = playing ? 'playing' : 'paused';
+    }
+    function play() {
+      err.hidden = true; playing = true; setUI();
+      if (el.src && key === at + '|' + set + '|' + modeSel.value && qi < queue.length && el.currentTime > 0 && !el.ended) {
+        rate(); var p = el.play(); if (p && p.catch) p.catch(fail);
+      } else startStep();
+    }
+    function pause() { playing = false; el.pause(); setUI(); }
+    function fail() { pause(); err.textContent = L('error'); err.hidden = false; }
+    el.addEventListener('error', function () { if (playing) fail(); });
+    el.addEventListener('ended', function () {
+      if (!playing) return;
+      qi++;
+      if (qi < queue.length) { load(); return; }
+      if (at === STEPS.length - 1) { pause(); key = ''; return; }
+      show(at + 1); // the bead moves on and audioFollow() starts the next prayer
+    });
+    audioFollow = function () {
+      if (playing && key !== at + '|' + set + '|' + modeSel.value) startStep();
+      hint.textContent = latin ? L('latin') : L('hint');
+    };
+    playBtn.addEventListener('click', function () { playing ? pause() : play(); });
+    $('#rs-a-prev').addEventListener('click', function () { back(); if (!playing) play(); });
+    $('#rs-a-next').addEventListener('click', function () { if (at < STEPS.length - 1) show(at + 1); if (!playing) play(); });
+    modeSel.addEventListener('change', function () {
+      try { localStorage.setItem('cd-rosary-voice-mode', modeSel.value); } catch (e) {}
+      if (playing) startStep();
+    });
+    speedSel.addEventListener('change', function () {
+      try { localStorage.setItem('cd-rosary-voice-speed', speedSel.value); } catch (e) {}
+      rate();
+    });
+    function meta() {
+      if (!('mediaSession' in navigator) || typeof MediaMetadata === 'undefined') return;
+      var st = STEPS[at], title = st.p === 'mystery' ? SETS[set].m[st.d - 1][0] : P[st.p].t;
+      try {
+        navigator.mediaSession.metadata = new MediaMetadata({
+          title: title, artist: st.label, album: SETS[set].name + ' · CatholicDoorway',
+          artwork: [{ src: '/assets/img/og.png', sizes: '1200x630', type: 'image/png' }, { src: '/favicon.svg', sizes: 'any', type: 'image/svg+xml' }]
+        });
+      } catch (e) {}
+    }
+    if ('mediaSession' in navigator) {
+      var ms = navigator.mediaSession, h = {
+        play: play, pause: pause, stop: pause,
+        nexttrack: function () { if (at < STEPS.length - 1) show(at + 1); },
+        previoustrack: function () { back(); }
+      };
+      Object.keys(h).forEach(function (k) { try { ms.setActionHandler(k, h[k]); } catch (e) {} });
+    }
+    hint.textContent = latin ? L('latin') : L('hint');
+  })();
   root.hidden = false;
   var nojs = $('#rosary-nojs'); if (nojs) nojs.hidden = true;
   show(at);

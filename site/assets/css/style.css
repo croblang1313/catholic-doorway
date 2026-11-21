@@ -1369,3 +1369,29 @@ svg.cpage .k { fill: #222; pointer-events: none; }
 .pw-ask .form-grid label .small { display: block; font-weight: 400; margin-top: .3rem; }
 .pw-left { margin: .3rem 0 0; min-height: 1.2em; }
 .pw-rules h3 { margin-top: 0; }
+
+/* Guided audio Rosary */
+.rs-audio { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: .9rem 1rem .7rem; margin-bottom: 1rem; box-shadow: var(--shadow); }
+.rs-audio-main { display: flex; align-items: center; justify-content: center; gap: .8rem; }
+.rs-play { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 56px; flex: 1 1 auto; max-width: 18rem; font-size: 1.05rem; }
+.rs-play svg { width: 1.3rem; height: 1.3rem; fill: currentColor; flex: none; }
+.rs-play .i-pause, .rs-audio.is-playing .rs-play .i-play { display: none; }
+.rs-audio.is-playing .rs-play .i-pause { display: block; }
+.rs-skip { width: 48px; height: 48px; flex: none; border-radius: 50%; border: 1.5px solid var(--line); background: var(--bg); color: var(--navy); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+.rs-skip:hover { border-color: var(--gold); }
+.rs-skip svg { width: 1.2rem; height: 1.2rem; fill: currentColor; }
+.rs-audio-opts { display: flex; flex-wrap: wrap; gap: .6rem 1rem; margin-top: .8rem; }
+.rs-audio-opts label { display: flex; flex-direction: column; gap: .2rem; flex: 1 1 8rem; min-width: 0; font: .85rem var(--sans); }
+.rs-audio-opts select { width: 100%; flex: none; min-height: 44px; padding: .5rem .9rem; }
+.rs-audio-hint, .rs-audio-credit, .rs-audio-err { margin: .6rem 0 0; }
+@media (min-width: 860px) {
+  .rs-audio { display: grid; grid-template-columns: minmax(300px, 380px) 1fr; column-gap: 2rem; align-items: end; }
+  .rs-audio-main { justify-content: flex-start; }
+  .rs-audio-opts { margin-top: 0; }
+  .rs-audio > p { grid-column: 1 / -1; }
+}
+.rs-audio-credit { font-size: .78rem; }
+.rs-audio-err { color: var(--lit-red); }
+.rs-audio.is-playing { border-color: var(--gold); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .rs-skip { color: var(--ink); } }
+:root[data-theme="dark"] .rs-skip { color: var(--ink); }
