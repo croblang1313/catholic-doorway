@@ -1,4118 +1,4134 @@
 {
 "/": [
-"e4af633e4ebc192f",
-"2026-11-20"
+"29b2fc58272f5565",
+"2026-11-21"
 ],
 "/about": [
-"af30ac81673d940c",
-"2026-11-20"
+"f5d12cec288f046f",
+"2026-11-21"
 ],
 "/advent": [
-"5168e78040f1b8f1",
-"2026-11-20"
+"c323b4cf6d4cb364",
+"2026-11-21"
 ],
 "/angelus": [
-"d2097cf72251fd37",
-"2026-11-20"
+"5de180ce90a4497c",
+"2026-11-21"
 ],
 "/anointing": [
-"b9edfe8e0dc0959f",
-"2026-11-20"
+"529c9129c8c28fb3",
+"2026-11-21"
 ],
 "/baptism": [
-"2ce52b902a5a2cd5",
-"2026-11-20"
+"2d42db22f9a285a8",
+"2026-11-21"
 ],
 "/baptism-certificate": [
-"3b0d400ffeb15a70",
-"2026-11-20"
+"f686b12d4ef47712",
+"2026-11-21"
 ],
 "/beliefs": [
-"738224520a5e5e18",
-"2026-11-20"
+"ef26f0fecce48266",
+"2026-11-21"
 ],
 "/bible": [
-"cfee32faf63e063d",
-"2026-11-20"
+"28e9f16115d7d039",
+"2026-11-21"
 ],
 "/calendar": [
-"ef9507792bc57655",
-"2026-11-20"
+"5769ccaabfa41dfa",
+"2026-11-21"
 ],
 "/church-anatomy": [
-"26257cef00574b7f",
-"2026-11-20"
+"9d4d837865e81cb9",
+"2026-11-21"
 ],
 "/church-documents": [
-"c688e1ab89b71e72",
-"2026-11-20"
+"5345e2290b5bc769",
+"2026-11-21"
 ],
 "/coloring-pages": [
-"1f6f53bfa1bed592",
-"2026-11-20"
+"e5f5cb2845837f7e",
+"2026-11-21"
 ],
 "/coming-back": [
-"34477899599f19d9",
-"2026-11-20"
+"8f540383a97669d9",
+"2026-11-21"
 ],
 "/confession": [
-"03d6e91176abcc5c",
-"2026-11-20"
+"05a30f623947c2d2",
+"2026-11-21"
 ],
 "/confirmation": [
-"d35b4953ecd4e7d0",
-"2026-11-20"
+"246179c9d157c2aa",
+"2026-11-21"
 ],
 "/devotions": [
-"04470a20f4e0abd8",
-"2026-11-20"
+"2c51f6046f8c8a1d",
+"2026-11-21"
 ],
 "/dioceses": [
-"d1996b7d911e0660",
-"2026-11-20"
+"670054cfe5e07bd3",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-for-the-military-services": [
-"51cd5340eb523a9e",
-"2026-11-20"
+"441299649965c4b7",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-agana": [
-"834518dd17d7068a",
-"2026-11-20"
+"578d50fe54357e92",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-anchoragejuneau": [
-"e3ac88102ad136b7",
-"2026-11-20"
+"f33902f72977d370",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-atlanta": [
-"7939f82b6b7fa1ef",
-"2026-11-20"
+"0e0118e5347689dc",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-baltimore": [
-"1542c9e21346dbc7",
-"2026-11-20"
+"3b085a4ef7795a9a",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-boston": [
-"5e04bb54d7dcf852",
-"2026-11-20"
+"4b302a0071e1cda9",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-chicago": [
-"56bfda5c826d0057",
-"2026-11-20"
+"2379f409b52bc3ee",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-cincinnati": [
-"6171109345f16e2b",
-"2026-11-20"
+"08803da2ddc6928d",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-denver": [
-"2e624a68c2e50582",
-"2026-11-20"
+"5a4ad679a284b474",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-detroit": [
-"d5fa0cb467b6ca49",
-"2026-11-20"
+"2de2fbc07d808b4a",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-dubuque": [
-"edab76c1a7576e71",
-"2026-11-20"
+"1d591f46107521ad",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-galvestonhouston": [
-"fc7d0c396e3ae3a5",
-"2026-11-20"
+"9b003a24e01d9260",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-hartford": [
-"344c2200f5b5432e",
-"2026-11-20"
+"811e4044dcc81c6e",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-indianapolis": [
-"96246d9ff168651e",
-"2026-11-20"
+"a5d06de4c37551f5",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-kansas-city-in-kansas": [
-"7805d658ed9124c1",
-"2026-11-20"
+"6a9c4ec0e3bef613",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-las-vegas": [
-"c8792f4d15ebff9f",
-"2026-11-20"
+"33621f1c19dd6565",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-los-angeles": [
-"ac294898af813977",
-"2026-11-20"
+"c35eba8c06ee2185",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-louisville": [
-"24250f3bf019b7d2",
-"2026-11-20"
+"3e4ba75a19609a68",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-miami": [
-"f013d05a64035224",
-"2026-11-20"
+"539c2a99f1dde710",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-milwaukee": [
-"e70106929d3d70bb",
-"2026-11-20"
+"8145e41ddd60124a",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-mobile": [
-"ef0aad24a1bc6fd3",
-"2026-11-20"
+"20372ad4a8411305",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-new-orleans": [
-"5a51eb51abcaaf4d",
-"2026-11-20"
+"302a44e15285f578",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-new-york": [
-"a888c9c20e7243bd",
-"2026-11-20"
+"83147279cee55062",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-newark": [
-"9093a45a22a087cb",
-"2026-11-20"
+"5ba493ba26013e78",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-oklahoma-city": [
-"49ed1ef9b9047fd1",
-"2026-11-20"
+"4378fc6a33737d19",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-omaha": [
-"9011a26cf593b462",
-"2026-11-20"
+"c1e0da52e9b039b2",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-philadelphia": [
-"71c35973c734436e",
-"2026-11-20"
+"32e84f8533ab6061",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-portland-in-oregon": [
-"c7771b37b65e5b0d",
-"2026-11-20"
+"e20aa781557d759d",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-saint-paul-and-minneapolis": [
-"68f3ce4a5a11501f",
-"2026-11-20"
+"2fe76fd00912c46b",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-san-antonio": [
-"853394f17e3d6262",
-"2026-11-20"
+"fb1f70366194eaf1",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-san-francisco": [
-"8386d903e7e5172d",
-"2026-11-20"
+"56ab5e9a56a67f42",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-san-juan-de-puerto-rico": [
-"e083708505a0db1d",
-"2026-11-20"
+"7dc81d22a835402f",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-santa-fe": [
-"05e7da2b50ae2f11",
-"2026-11-20"
+"6e246d1a86ac7d57",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-seattle": [
-"47019aed6ccab108",
-"2026-11-20"
+"2aa9accafa33799c",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-st-louis": [
-"4aa8e61cab9d6256",
-"2026-11-20"
+"d2054e7099d138c1",
+"2026-11-21"
 ],
 "/dioceses/archdiocese-of-washington": [
-"069eca0167901502",
-"2026-11-20"
+"31cba28312ddff7d",
+"2026-11-21"
 ],
 "/dioceses/armenian-catholic-eparchy-of-our-lady-of-nareg-in-the-united-states-of-america-and-canada": [
-"f4826c2cbc9f5e3c",
-"2026-11-20"
+"d40e1087da66d928",
+"2026-11-21"
 ],
 "/dioceses/byzantine-catholic-archeparchy-of-pittsburgh": [
-"8ec7e6d3555b1acd",
-"2026-11-20"
+"22845125daa150fa",
+"2026-11-21"
 ],
 "/dioceses/byzantine-catholic-eparchy-of-parma": [
-"613bcf76a94208c5",
-"2026-11-20"
+"a1899a398223cb68",
+"2026-11-21"
 ],
 "/dioceses/byzantine-catholic-eparchy-of-passaic": [
-"832d173bd5dc90c6",
-"2026-11-20"
+"5dbab30a431c9852",
+"2026-11-21"
 ],
 "/dioceses/byzantine-catholic-eparchy-of-phoenix": [
-"d14d721a7d2de946",
-"2026-11-20"
+"1857f48c89902f35",
+"2026-11-21"
 ],
 "/dioceses/chaldean-catholic-eparchy-of-saint-peter-the-apostle": [
-"f879d4a5cf8c881b",
-"2026-11-20"
+"61f193b073617ade",
+"2026-11-21"
 ],
 "/dioceses/chaldean-catholic-eparchy-of-saint-thomas-the-apostle-of-detroit": [
-"24f7344afcfbad3b",
-"2026-11-20"
+"dc65c0506f8faa6f",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-albany": [
-"5d61bc6c6dfe5cbd",
-"2026-11-20"
+"5b696832a98a2a1f",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-alexandria-in-louisiana": [
-"034140ff240e656b",
-"2026-11-20"
+"36c6cdb530e33f9f",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-allentown": [
-"c0e3bc4f7bf42bb1",
-"2026-11-20"
+"c2496762af5f79f2",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-altoonajohnstown": [
-"3bc6f0da59d8bdb0",
-"2026-11-20"
+"9e63bdff64c87683",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-amarillo": [
-"8abb4d5119510b77",
-"2026-11-20"
+"9663c894efc9c847",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-arecibo": [
-"7bd3df1d326e059b",
-"2026-11-20"
+"f013e757106b8726",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-arlington": [
-"8eefff20d9a22a68",
-"2026-11-20"
+"17a1f56f003f75fd",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-austin": [
-"45a984cf50cc7794",
-"2026-11-20"
+"1866d45d1bcfc628",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-baker": [
-"25188f5616054f71",
-"2026-11-20"
+"f873b5f55069b124",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-baton-rouge": [
-"f34afa722b88426d",
-"2026-11-20"
+"b239e3672947966b",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-beaumont": [
-"30e582ca28295c8d",
-"2026-11-20"
+"6d2537c6cd42cdb1",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-belleville": [
-"91a98153dfb0d997",
-"2026-11-20"
+"9e6f05b506a6f662",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-biloxi": [
-"886844663159f00a",
-"2026-11-20"
+"55d0f77cb9b7a77d",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-birmingham-in-alabama": [
-"2473de75869c13f5",
-"2026-11-20"
+"afcd10b120e92eb6",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-bismarck": [
-"27436be1c9dff818",
-"2026-11-20"
+"120a63aa23251183",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-boise": [
-"fd18dce1ce9d7f5d",
-"2026-11-20"
+"efb08a11aa295582",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-bridgeport": [
-"a4a5f044a778aa56",
-"2026-11-20"
+"bb891c5b894a3aba",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-brooklyn": [
-"ced691ed348a0354",
-"2026-11-20"
+"5aa2e3676d4b5ee8",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-brownsville": [
-"56733d371fa10101",
-"2026-11-20"
+"8bed2d93b810e6ad",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-buffalo": [
-"9bb052a4b8b51025",
-"2026-11-20"
+"cae66657c1e4a353",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-burlington": [
-"d5c911c5a177275e",
-"2026-11-20"
+"ed4a661823f7ea3c",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-caguas": [
-"7e62415c8a2cd2f8",
-"2026-11-20"
+"8130cc78c6a4468b",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-camden": [
-"9c09a091f52b299b",
-"2026-11-20"
+"589afbd01a4bf96b",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-chalan-kanoa": [
-"5936b341748e59ed",
-"2026-11-20"
+"3d273587a7e9f32c",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-charleston": [
-"b78adb9a8d32245f",
-"2026-11-20"
+"6fddb9839d53e191",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-charlotte": [
-"8f009561d3342831",
-"2026-11-20"
+"9e6defc60faf813a",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-cheyenne": [
-"bc9afae10bc07747",
-"2026-11-20"
+"78253f24761ca79d",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-cleveland": [
-"fecbce64ef224528",
-"2026-11-20"
+"e8de318dbda881fb",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-colorado-springs": [
-"23fac7989beab16c",
-"2026-11-20"
+"4b2df59045d655dc",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-columbus": [
-"4e15df7a30afd3bb",
-"2026-11-20"
+"1328717bea3778f6",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-corpus-christi": [
-"62dfa15927586853",
-"2026-11-20"
+"814e241bee08056d",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-covington": [
-"1581c8642ca01f35",
-"2026-11-20"
+"0349c673e2191921",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-crookston": [
-"e9bd4e7706161708",
-"2026-11-20"
+"a71ed55c44dd01d9",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-dallas": [
-"b09cee6af59badd5",
-"2026-11-20"
+"e55660a0ed0a6d86",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-davenport": [
-"0c6be71b77d694b9",
-"2026-11-20"
+"afb9966da1af1247",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-des-moines": [
-"89b6dbcc380b1762",
-"2026-11-20"
+"c7f07d8542ad9d80",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-dodge-city": [
-"c2fdd1dff73f88e3",
-"2026-11-20"
+"8e3cd52e14b46ccb",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-duluth": [
-"da7734173f755a03",
-"2026-11-20"
+"c973d7993729561e",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-el-paso": [
-"b2ea36130b7a38a9",
-"2026-11-20"
+"d931c2fd7928d9db",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-erie": [
-"64f8920827b56d09",
-"2026-11-20"
+"c6cff636ba4180e5",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-evansville": [
-"7e0db9e376d7859c",
-"2026-11-20"
+"c7357a4d39b4029b",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-fairbanks": [
-"48633b4a02ad9f62",
-"2026-11-20"
+"4c678072cdbea1b6",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-fajardo-humacao": [
-"10fe46d432d76d33",
-"2026-11-20"
+"19ec873e1e5b3933",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-fall-river": [
-"b24427a8157451d6",
-"2026-11-20"
+"e953a0f34a85355d",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-fargo": [
-"c76c805cbab3669b",
-"2026-11-20"
+"45b212ed0c27019d",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-fort-waynesouth-bend": [
-"36516ed51aaadbed",
-"2026-11-20"
+"bc97ae7ff7fb50e3",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-fort-worth": [
-"fbd55fc5e7efdf1a",
-"2026-11-20"
+"93290fb8457249a6",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-fresno": [
-"87d924c07065ccc5",
-"2026-11-20"
+"bd2404ae2bb1eb57",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-gallup": [
-"e742ae02edd9b882",
-"2026-11-20"
+"525a972d735173b3",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-gary": [
-"451fef3e0c8de8eb",
-"2026-11-20"
+"c1979fd0b35d925f",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-gaylord": [
-"925a27ee48050cab",
-"2026-11-20"
+"639a88631a91699e",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-grand-island": [
-"fb83bc73809c5e2f",
-"2026-11-20"
+"0181e663113749b3",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-grand-rapids": [
-"c983e0204c3b7f6f",
-"2026-11-20"
+"d7b0b67742d868ab",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-great-fallsbillings": [
-"72ab68aa5af4d421",
-"2026-11-20"
+"1c9211165300ccc0",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-green-bay": [
-"d03ac1bda768ebd7",
-"2026-11-20"
+"296437eb2e25fe90",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-greensburg": [
-"631f31fc422ffc6e",
-"2026-11-20"
+"fd0b54fc4a7ec824",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-harrisburg": [
-"b00ddaba314de8ae",
-"2026-11-20"
+"09346c55d485e4a2",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-helena": [
-"d8d78f242ed6c278",
-"2026-11-20"
+"c1c21a62a1b6f3ca",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-honolulu": [
-"10adfd44dffb4d93",
-"2026-11-20"
+"1f922f3ee1a82e31",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-houmathibodaux": [
-"7dd4ba660e2111f5",
-"2026-11-20"
+"4645e7d94b7e5d94",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-jackson": [
-"813ef6491f0ab94d",
-"2026-11-20"
+"1452e7b801c4de0d",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-jefferson-city": [
-"d8469424a0416492",
-"2026-11-20"
+"385c294446635d83",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-joliet-in-illinois": [
-"48de934ef8197ac2",
-"2026-11-20"
+"81034b669c3bdf50",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-kalamazoo": [
-"8cfa15ffc126fe68",
-"2026-11-20"
+"bb85feba18c6655a",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-kansas-citysaint-joseph": [
-"3049dda59fc237a7",
-"2026-11-20"
+"349e6a8644cfd9c3",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-knoxville": [
-"1dba1410a2f7c930",
-"2026-11-20"
+"dd7da0d613649ef7",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-la-crosse": [
-"6652502e2a19f308",
-"2026-11-20"
+"63526570249eaed5",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-lafayette-in-indiana": [
-"035a791ffbba5b62",
-"2026-11-20"
+"d57d32d0988ab9c9",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-lafayette-in-louisiana": [
-"f2deb15b22803502",
-"2026-11-20"
+"a61643c594aff22c",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-lake-charles": [
-"8aeeeedd7abbd295",
-"2026-11-20"
+"9a7899d1c49dc1c7",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-lansing": [
-"06a663c791ebc0ef",
-"2026-11-20"
+"5870ea7a2d08a154",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-laredo": [
-"8248a2ef580509fa",
-"2026-11-20"
+"a2600d3912b98f04",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-las-cruces": [
-"febe6877d88e7432",
-"2026-11-20"
+"c80963de2c30b493",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-lexington": [
-"76d8e9da3443f68d",
-"2026-11-20"
+"db552cab1b2e511a",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-lincoln": [
-"bd0229a14a628fa2",
-"2026-11-20"
+"b90ffdf000af62d5",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-little-rock": [
-"a7d8cb21da566bd2",
-"2026-11-20"
+"f0ddd987ae8fa182",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-lubbock": [
-"c6662627417f7807",
-"2026-11-20"
+"086b01f94ee6ee97",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-madison": [
-"f939000c3f9d430d",
-"2026-11-20"
+"160a7816914c19f8",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-manchester": [
-"bb997dd44eeb5b3e",
-"2026-11-20"
+"5bee22c2ddb0ac70",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-marquette": [
-"2575ef7069199822",
-"2026-11-20"
+"719c42637ed34848",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-mayaguez": [
-"ff58d9529a01634b",
-"2026-11-20"
+"58e56112a64c811e",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-memphis": [
-"6c13fb723cb60b95",
-"2026-11-20"
+"725aabd7833d20f9",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-metuchen": [
-"5c5974fe12d8c0ae",
-"2026-11-20"
+"5c02779d0e7a5ecb",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-monterey-in-california": [
-"d5bf147f7f190dfc",
-"2026-11-20"
+"0026a2b8b4ae4fe5",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-nashville": [
-"e9587ab810b57f63",
-"2026-11-20"
+"4760d2079a130460",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-new-ulm": [
-"4da606696820bae8",
-"2026-11-20"
+"bfd9224f9d22f639",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-norwich": [
-"e78191377df101e2",
-"2026-11-20"
+"27b5bde8697d3e06",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-oakland": [
-"a18ebbf89c96cebc",
-"2026-11-20"
+"e0fb619c648311ea",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-ogdensburg": [
-"0cb84d45dc1f12be",
-"2026-11-20"
+"1d4b5ee8d9656234",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-orange-in-california": [
-"21739ccc6162544f",
-"2026-11-20"
+"924bdabd7569869d",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-orlando": [
-"84e17a75ec519fa8",
-"2026-11-20"
+"0275a8bd3a89e611",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-owensboro": [
-"5aa582f751be6084",
-"2026-11-20"
+"52dba8497e39f91e",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-palm-beach": [
-"6d88e905868d5021",
-"2026-11-20"
+"f1bb0bf398f38525",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-paterson": [
-"bb2074de78b5a06e",
-"2026-11-20"
+"8c3a192b7c29ab3d",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-pensacolatallahassee": [
-"7eaf9d7ab2b951c2",
-"2026-11-20"
+"0c92c8ec6035f6b0",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-peoria": [
-"f06d8105fa686262",
-"2026-11-20"
+"2479f113da8d9a9d",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-phoenix": [
-"74d382cfae7972b0",
-"2026-11-20"
+"b5fa2efeb021f18e",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-pittsburgh": [
-"3e779b9b95b43988",
-"2026-11-20"
+"98a7811f2121fd3c",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-ponce": [
-"8c18183612eff149",
-"2026-11-20"
+"2bb797a231db2ed9",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-portland": [
-"48ed3cfeeb0177cb",
-"2026-11-20"
+"66b315f016f83890",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-providence": [
-"db4d0df602181642",
-"2026-11-20"
+"769e49dc2d90dc68",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-pueblo": [
-"3980e3fc201a398e",
-"2026-11-20"
+"54e95ecbbeadf45e",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-raleigh": [
-"a311c432a6e1a601",
-"2026-11-20"
+"66e2a2acfdef4e91",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-rapid-city": [
-"ffd1444015915614",
-"2026-11-20"
+"c8d2ed4697f5da70",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-reno": [
-"8f729f0c674c9bd4",
-"2026-11-20"
+"bdc700233ed65d3f",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-richmond": [
-"417e06144e489efe",
-"2026-11-20"
+"e7eb564a98f1838b",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-rochester": [
-"7bb5c46a6376f06d",
-"2026-11-20"
+"4bb57f218ea14c39",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-rockford": [
-"53afb15cc8d012ae",
-"2026-11-20"
+"42f8dc0c28592535",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-rockville-centre": [
-"ccb0475d645a25ac",
-"2026-11-20"
+"3579ada37a06b302",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-sacramento": [
-"828c535233764a67",
-"2026-11-20"
+"15b36eb8adea71ef",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-saginaw": [
-"c12cfd52481a1d6f",
-"2026-11-20"
+"a06e5d793b57b955",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-saint-cloud": [
-"70ecc36a2db94ba7",
-"2026-11-20"
+"de2e93f0853e2bf7",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-saint-petersburg-in-florida": [
-"79bc49b9d216bf8e",
-"2026-11-20"
+"458a572e1d1aff84",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-saint-thomas-in-the-virgin-islands": [
-"6132315c38bcb8ac",
-"2026-11-20"
+"dd3e64fb1df72e96",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-salina": [
-"c17485fb50bed02c",
-"2026-11-20"
+"90a37ab08e336421",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-salt-lake-city": [
-"26d740512251165e",
-"2026-11-20"
+"a71709c7091acd93",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-samoa-pago-pago": [
-"3e07117a534f5fa6",
-"2026-11-20"
+"de97814036e7f4b8",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-san-angelo": [
-"ab61078da7c92a72",
-"2026-11-20"
+"d55d99538f8bec22",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-san-bernardino": [
-"af4d1ac9792b4027",
-"2026-11-20"
+"969ac28924e6ee8f",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-san-diego": [
-"5e9b18423ec2488c",
-"2026-11-20"
+"7e5c365b82f3215b",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-san-jose-in-california": [
-"83c3d47aa4134df5",
-"2026-11-20"
+"b59476f2ab798a83",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-santa-rosa-in-california": [
-"9743582408dc1f59",
-"2026-11-20"
+"94e2c5de00709337",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-savannah": [
-"053709b6e8e6839e",
-"2026-11-20"
+"6c9e9161a57c6089",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-scranton": [
-"ec7f278cf8363b8a",
-"2026-11-20"
+"65d18094c9e14f36",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-shreveport": [
-"60fe226364b5d3a9",
-"2026-11-20"
+"e5770a3133f0b02c",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-sioux-city": [
-"03ca57f9fe166776",
-"2026-11-20"
+"b887b73b8cbf42f9",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-sioux-falls": [
-"3ae25cfb9c5c3294",
-"2026-11-20"
+"7168229401446215",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-spokane": [
-"dbd05cedd15b4dd4",
-"2026-11-20"
+"2029f9aceb9abaa9",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-springfield-in-illinois": [
-"33716b322cf3344e",
-"2026-11-20"
+"22eb01445a2bb9c8",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-springfield-in-massachusetts": [
-"ddbcaa7fe5d63ac3",
-"2026-11-20"
+"77f2752a03613017",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-springfieldcape-girardeau": [
-"fefab77e270c2724",
-"2026-11-20"
+"d19122850748924e",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-st-augustine": [
-"94f153f0bd893410",
-"2026-11-20"
+"40834f55c6f92188",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-steubenville": [
-"a97b6916dfa0d309",
-"2026-11-20"
+"01a1aa580a35c689",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-stockton": [
-"77d2d921ca9cf17b",
-"2026-11-20"
+"3cbabe280975c2e0",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-superior": [
-"0245a1926fb3953c",
-"2026-11-20"
+"32f232cd634a5e27",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-syracuse": [
-"f9a918f9b4381c70",
-"2026-11-20"
+"e75b9b179ca3d77d",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-toledo-in-america": [
-"88be59d05527d785",
-"2026-11-20"
+"90fd0d8a18431b80",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-trenton": [
-"d3a01d2d17eb3c4b",
-"2026-11-20"
+"eb93aab7b0333c3b",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-tucson": [
-"60874f3b4e755980",
-"2026-11-20"
+"8463e442bde3a1a6",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-tulsa": [
-"bc22c83b3abc5a0d",
-"2026-11-20"
+"5ddb621e4239c6a9",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-tyler": [
-"8bec2f0a9e12d60f",
-"2026-11-20"
+"709cb11a3483e7fe",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-venice-in-florida": [
-"76a539e76bc1c743",
-"2026-11-20"
+"7940eba1c92fc953",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-victoria-in-texas": [
-"c365ddacf3f83684",
-"2026-11-20"
+"ca423c583b18005c",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-wheelingcharleston": [
-"8dcecabf6e815ba9",
-"2026-11-20"
+"9e41bff381fa481a",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-wichita": [
-"2681861ab7fe8164",
-"2026-11-20"
+"d02457dd1a27999c",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-wilmington": [
-"ab8fbba50f346a09",
-"2026-11-20"
+"62211f953180e9e8",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-winonarochester": [
-"69777ad10cc58cbb",
-"2026-11-20"
+"6697f9c8e1705898",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-worcester": [
-"d1a3fb3764a0664d",
-"2026-11-20"
+"f5d2e07dac42bcdb",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-yakima": [
-"c6f3a9e3771c142e",
-"2026-11-20"
+"539bd93406998014",
+"2026-11-21"
 ],
 "/dioceses/diocese-of-youngstown": [
-"ff4131fecba7057f",
-"2026-11-20"
+"a88007de20aafe57",
+"2026-11-21"
 ],
 "/dioceses/eparchy-of-st-maron-of-brooklyn": [
-"681c617f2841dbe5",
-"2026-11-20"
+"f2d7a487bc87f73e",
+"2026-11-21"
 ],
 "/dioceses/maronite-catholic-eparchy-of-our-lady-of-lebanon-of-los-angeles": [
-"2f7b952269180d5d",
-"2026-11-20"
+"c27fbaaa2b033d30",
+"2026-11-21"
 ],
 "/dioceses/melkite-greek-catholic-eparchy-of-newton": [
-"470b1c979b6c05c4",
-"2026-11-20"
+"9f56cbc5efee1d8d",
+"2026-11-21"
 ],
 "/dioceses/romanian-catholic-eparchy-of-st-georges-in-canton": [
-"f5a4adcd770cd9ee",
-"2026-11-20"
+"93f66d64fdb98ba0",
+"2026-11-21"
 ],
 "/dioceses/st-thomas-syro-malabar-catholic-eparchy-of-chicago": [
-"64333fbc13e7ec60",
-"2026-11-20"
+"c341c66d8c46ad91",
+"2026-11-21"
 ],
 "/dioceses/syriac-catholic-eparchy-of-our-lady-of-deliverance-in-the-united-states": [
-"bca6ef45829ea631",
-"2026-11-20"
+"b804f12e4d22ebf2",
+"2026-11-21"
 ],
 "/dioceses/syro-malankara-catholic-eparchy-of-st-mary-queen-of-peace-of-the-united-states-of-america-and-canada": [
-"a61dd45e30b3573a",
-"2026-11-20"
+"5d93ca0dcd8aa6fe",
+"2026-11-21"
 ],
 "/dioceses/ukrainian-catholic-archeparchy-of-philadelphia": [
-"42e81daf0e420242",
-"2026-11-20"
+"4e6128d76d60fb8b",
+"2026-11-21"
 ],
 "/dioceses/ukrainian-catholic-eparchy-of-chicago": [
-"365b7e63282d4f47",
-"2026-11-20"
+"2be5886dafa2008e",
+"2026-11-21"
 ],
 "/dioceses/ukrainian-catholic-eparchy-of-saint-josaphat-in-parma": [
-"55b041b7312fbff1",
-"2026-11-20"
+"2b6775657fdd8848",
+"2026-11-21"
 ],
 "/dioceses/ukrainian-catholic-eparchy-of-stamford": [
-"ed6e4ac214a9b525",
-"2026-11-20"
+"fd62565d0840a3fe",
+"2026-11-21"
 ],
 "/divine-mercy-chaplet": [
-"e29b7bfcb9fb7d74",
-"2026-11-20"
+"e5907f98381428a0",
+"2026-11-21"
 ],
 "/es/": [
-"589a8671c9622312",
-"2026-11-20"
+"652342880e90847e",
+"2026-11-21"
 ],
 "/es/acerca": [
-"ffdab90b92e8470c",
-"2026-11-20"
+"33457d43c63a8a70",
+"2026-11-21"
 ],
 "/es/adviento": [
-"09459bbceead2487",
-"2026-11-20"
+"f8be4311c0155af5",
+"2026-11-21"
 ],
 "/es/angelus": [
-"415afb4ce0a18f13",
-"2026-11-20"
+"d920fe3139eb8aad",
+"2026-11-21"
 ],
 "/es/bautismo": [
-"e6a69510cbe8216a",
-"2026-11-20"
+"7d827d44844ff466",
+"2026-11-21"
 ],
 "/es/biblia": [
-"7975ea57e60e5a6a",
-"2026-11-20"
+"149cb06b6f6ffbc9",
+"2026-11-21"
 ],
 "/es/buscar": [
-"c7024ac87ad69d56",
-"2026-11-20"
+"a96d9a3c404b5e72",
+"2026-11-21"
 ],
 "/es/buscar-iglesia": [
-"e99f880a842d47e9",
-"2026-11-20"
+"bdbc99a259be5fe3",
+"2026-11-21"
 ],
 "/es/calendario": [
-"7943b89036fe9733",
-"2026-11-20"
+"8229b36013a712c9",
+"2026-11-21"
 ],
 "/es/comenzar": [
-"068e60c8b1fa3083",
-"2026-11-20"
+"009e054b1a1199da",
+"2026-11-21"
 ],
 "/es/confesion": [
-"70fb67423d9c77b9",
-"2026-11-20"
+"c99689e2910367f7",
+"2026-11-21"
 ],
 "/es/confirmacion": [
-"d080d3036c401166",
-"2026-11-20"
+"bbe5ff479833ecbc",
+"2026-11-21"
 ],
 "/es/coronilla-de-la-divina-misericordia": [
-"545f7e48ca17dcbf",
-"2026-11-20"
+"93d7469a3c47bc50",
+"2026-11-21"
 ],
 "/es/creencias": [
-"fb3b718f3519c563",
-"2026-11-20"
+"8c3940d01727a43a",
+"2026-11-21"
 ],
 "/es/dentro-de-la-misa": [
-"1815d8de48a7abbe",
-"2026-11-20"
+"ca7bdfdc05a9521c",
+"2026-11-21"
 ],
 "/es/devociones": [
-"b82245962768ce29",
-"2026-11-20"
+"626b5493d050fb9a",
+"2026-11-21"
 ],
 "/es/dibujos-para-colorear": [
-"5eaa5ee73a0e1714",
-"2026-11-20"
+"4eb040850fdb67a8",
+"2026-11-21"
 ],
 "/es/diocesis": [
-"814ec4cfaca9f95d",
-"2026-11-20"
+"72ed45875a0d1224",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-for-the-military-services": [
-"c81147b9819bad21",
-"2026-11-20"
+"bd36eb89662ec1c3",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-agana": [
-"cf9de5fab200ce8f",
-"2026-11-20"
+"8eaa484bfc181db9",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-anchoragejuneau": [
-"e921b6f9c0eef940",
-"2026-11-20"
+"e71cc3a4d7106a5d",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-atlanta": [
-"1a64dd7d3f19f3a5",
-"2026-11-20"
+"411608604abb7c90",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-baltimore": [
-"51e6cfa540d6d753",
-"2026-11-20"
+"97ce38176122ef24",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-boston": [
-"cd9257bcacbf96b2",
-"2026-11-20"
+"df8e6b44a3485538",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-chicago": [
-"faad5fca470f4bda",
-"2026-11-20"
+"4fc3a06d2341e6c2",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-cincinnati": [
-"4d1bbe3eb055d935",
-"2026-11-20"
+"7a672cff8d8d2cf9",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-denver": [
-"b44db530c70bb80d",
-"2026-11-20"
+"87f75e005e3667c0",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-detroit": [
-"8f97df8ee4200abd",
-"2026-11-20"
+"74c8c3a6fb4f4f49",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-dubuque": [
-"0220f0179493b059",
-"2026-11-20"
+"abb8aba3c8e47f4e",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-galvestonhouston": [
-"0d1bdafc4ac41cc6",
-"2026-11-20"
+"b15ae993831cf393",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-hartford": [
-"df50153b600a570f",
-"2026-11-20"
+"6a579652e7c61dd9",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-indianapolis": [
-"7390e9545ba64231",
-"2026-11-20"
+"759f01460cebf63b",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-kansas-city-in-kansas": [
-"e12deab4a7bf9c6e",
-"2026-11-20"
+"9c62fb079eafd825",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-las-vegas": [
-"6981db3914352448",
-"2026-11-20"
+"15af6c97489176de",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-los-angeles": [
-"e48aa6fc10aff6c3",
-"2026-11-20"
+"4483f8581c288caf",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-louisville": [
-"96314da272010c88",
-"2026-11-20"
+"3dcc8e5519ad5a9d",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-miami": [
-"3cfd9b6475848a19",
-"2026-11-20"
+"01829559dc135f57",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-milwaukee": [
-"939d58007c39b607",
-"2026-11-20"
+"b6429245326a3af2",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-mobile": [
-"17932159ced3becb",
-"2026-11-20"
+"f76dff7de5741701",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-new-orleans": [
-"794d734cdfd72ae4",
-"2026-11-20"
+"24eeb8503ca40a4e",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-new-york": [
-"6013bb385d581346",
-"2026-11-20"
+"29aac0544ee2ab28",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-newark": [
-"3a188508d0b385c5",
-"2026-11-20"
+"b44596b36e05027f",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-oklahoma-city": [
-"a051fcc4afdc046b",
-"2026-11-20"
+"84bdffc7fadec54d",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-omaha": [
-"23150183061a1124",
-"2026-11-20"
+"8f3c49d642f8f018",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-philadelphia": [
-"bd03d53600aa6692",
-"2026-11-20"
+"2db90a9048dab7dd",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-portland-in-oregon": [
-"96fc9c7d8e79c778",
-"2026-11-20"
+"066ba49d5eb2beca",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-saint-paul-and-minneapolis": [
-"7257395d4e895f31",
-"2026-11-20"
+"83e4201472338791",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-san-antonio": [
-"274f1e5b9db1bc18",
-"2026-11-20"
+"1d46ce294dbe1dbd",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-san-francisco": [
-"4817ba8e931a9c98",
-"2026-11-20"
+"bf688fedbf93abee",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-san-juan-de-puerto-rico": [
-"0adbd9cb6c37ef76",
-"2026-11-20"
+"21695c2cb608fc5f",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-santa-fe": [
-"b766e62831494b65",
-"2026-11-20"
+"f5d7c9a12e8c3936",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-seattle": [
-"38337c3138a7fce5",
-"2026-11-20"
+"79e40ead7eaa24ce",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-st-louis": [
-"b1c13564c95e96e0",
-"2026-11-20"
+"0a078e6fb3ef7891",
+"2026-11-21"
 ],
 "/es/diocesis/archdiocese-of-washington": [
-"e86d9afc3598158d",
-"2026-11-20"
+"ed8f37c1ce5c5d1f",
+"2026-11-21"
 ],
 "/es/diocesis/armenian-catholic-eparchy-of-our-lady-of-nareg-in-the-united-states-of-america-and-canada": [
-"ded7079b845311c6",
-"2026-11-20"
+"5de802ea2d336262",
+"2026-11-21"
 ],
 "/es/diocesis/byzantine-catholic-archeparchy-of-pittsburgh": [
-"9e4ab37bfbb028e8",
-"2026-11-20"
+"ee2e12391b41714e",
+"2026-11-21"
 ],
 "/es/diocesis/byzantine-catholic-eparchy-of-parma": [
-"8a6a21a0719fae3d",
-"2026-11-20"
+"aeea802ccfd8c96a",
+"2026-11-21"
 ],
 "/es/diocesis/byzantine-catholic-eparchy-of-passaic": [
-"78e9aaa574e438d1",
-"2026-11-20"
+"a9502470849cbefc",
+"2026-11-21"
 ],
 "/es/diocesis/byzantine-catholic-eparchy-of-phoenix": [
-"06950b688dee2950",
-"2026-11-20"
+"f53ae32b523c08c1",
+"2026-11-21"
 ],
 "/es/diocesis/chaldean-catholic-eparchy-of-saint-peter-the-apostle": [
-"2ffc4d13af5203a5",
-"2026-11-20"
+"b115ecb3d81aafe0",
+"2026-11-21"
 ],
 "/es/diocesis/chaldean-catholic-eparchy-of-saint-thomas-the-apostle-of-detroit": [
-"8e7be4f18c2f8895",
-"2026-11-20"
+"c45ef654d58df65f",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-albany": [
-"63a7d0793ec0d9f1",
-"2026-11-20"
+"b0d1a8c74a86eb7c",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-alexandria-in-louisiana": [
-"8a3c6486c7908841",
-"2026-11-20"
+"1027465c453eeebd",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-allentown": [
-"4003dd9cf37b991d",
-"2026-11-20"
+"3b765834409291b8",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-altoonajohnstown": [
-"9edfe19b4d0c63f1",
-"2026-11-20"
+"fc9d176862476cdb",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-amarillo": [
-"8ab89137943d2bd5",
-"2026-11-20"
+"99a80e8445732e7e",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-arecibo": [
-"d1f4ce4686841966",
-"2026-11-20"
+"89508b312663b70d",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-arlington": [
-"15da63a2502b3bd9",
-"2026-11-20"
+"0a996a74347f05dc",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-austin": [
-"7258dccfd0d6f5e0",
-"2026-11-20"
+"1d68aa13c1c456d2",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-baker": [
-"227289edac3476e3",
-"2026-11-20"
+"057cf2f6f538ae5a",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-baton-rouge": [
-"4f8d07f717c167ed",
-"2026-11-20"
+"ce9bf05ea72be9b1",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-beaumont": [
-"d6c226150d831a9b",
-"2026-11-20"
+"947461eae35c5ddd",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-belleville": [
-"cc16a7d00c5995a1",
-"2026-11-20"
+"0e9d99ada4a39ef1",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-biloxi": [
-"85cfff61506ddc26",
-"2026-11-20"
+"68355d60734aad28",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-birmingham-in-alabama": [
-"daf29bbcc9f71512",
-"2026-11-20"
+"58c19aa88581f372",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-bismarck": [
-"3e7b02615196419a",
-"2026-11-20"
+"f4f87bb804d0b22b",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-boise": [
-"be691c0d78ddb199",
-"2026-11-20"
+"3b49ec18df16c983",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-bridgeport": [
-"207b53b5f8cd076a",
-"2026-11-20"
+"6308c43ded183754",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-brooklyn": [
-"5d6803879cbece7a",
-"2026-11-20"
+"bfc89c9ed5d06502",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-brownsville": [
-"9a35a249908030ba",
-"2026-11-20"
+"481088395612f0a8",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-buffalo": [
-"714d6cd091522db0",
-"2026-11-20"
+"07518e1d688c5b0e",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-burlington": [
-"57bf45ac70604ce9",
-"2026-11-20"
+"5b677702096d6a93",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-caguas": [
-"556d23b2638892ef",
-"2026-11-20"
+"4fe91b403b3df7df",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-camden": [
-"399456474ccbacbc",
-"2026-11-20"
+"b162cfa780d63b79",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-chalan-kanoa": [
-"8c531c98025bf6b2",
-"2026-11-20"
+"dd019c5dfe345e91",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-charleston": [
-"9835c13555039cb2",
-"2026-11-20"
+"c16a9b8cf34edc73",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-charlotte": [
-"89f761d29657196e",
-"2026-11-20"
+"d7a17d77a4935056",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-cheyenne": [
-"04ba1964e57c0b5b",
-"2026-11-20"
+"114a0741ac2ca2b1",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-cleveland": [
-"ca5b9ca8a4cdeb65",
-"2026-11-20"
+"eefc2ade42fd421b",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-colorado-springs": [
-"5926d0a4bbf24543",
-"2026-11-20"
+"fe3c04a561aabd73",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-columbus": [
-"c5f54f989be991e7",
-"2026-11-20"
+"897e8f1b9047e0cf",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-corpus-christi": [
-"b1494b8ae6d80be8",
-"2026-11-20"
+"7a826acd90eb58b2",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-covington": [
-"bd2624b3c99dc833",
-"2026-11-20"
+"96a114c9025a80b8",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-crookston": [
-"048a44a738e8678c",
-"2026-11-20"
+"ee2de0cb21241251",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-dallas": [
-"85f14add85b9086b",
-"2026-11-20"
+"a90e8374be26f6c4",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-davenport": [
-"87ee6950d4f5364f",
-"2026-11-20"
+"99de6581ea46c545",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-des-moines": [
-"ae69ba33d1c8b8e0",
-"2026-11-20"
+"38daf8f2d006c9bd",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-dodge-city": [
-"49224b6c94c16b39",
-"2026-11-20"
+"5a26c5af2f93b73f",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-duluth": [
-"d6bf0ce4e7375aae",
-"2026-11-20"
+"6b7880e6ae4c07b8",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-el-paso": [
-"6fdfdf8d6e0e19ca",
-"2026-11-20"
+"bd8527d259fe29db",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-erie": [
-"c950ca56930dfc02",
-"2026-11-20"
+"5a43ce76b1d135de",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-evansville": [
-"1722f2ff86c3ad1f",
-"2026-11-20"
+"200bb725ad17cc0f",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-fairbanks": [
-"db085626d2aded23",
-"2026-11-20"
+"d8011025454e0c38",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-fajardo-humacao": [
-"d85405f33ed2ce20",
-"2026-11-20"
+"6410209198e234d0",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-fall-river": [
-"718099451a4b0d5f",
-"2026-11-20"
+"77d4b4eaa4d89569",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-fargo": [
-"453bbe432cb2d806",
-"2026-11-20"
+"ad1ad65c95c09557",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-fort-waynesouth-bend": [
-"552de162dbc53eb1",
-"2026-11-20"
+"6771ec1ceb563faf",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-fort-worth": [
-"bc58226dd9c5dfef",
-"2026-11-20"
+"72022aebf67fcf5c",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-fresno": [
-"bab7fda896c87670",
-"2026-11-20"
+"a04e83135f8b433a",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-gallup": [
-"10eed07351ab5110",
-"2026-11-20"
+"ddc1127c207a60c6",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-gary": [
-"291c98d604cf5a36",
-"2026-11-20"
+"f9f1622adf9eeedd",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-gaylord": [
-"8061871f476d2b45",
-"2026-11-20"
+"42aa70b513f65a47",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-grand-island": [
-"ce52889bb2ed92b7",
-"2026-11-20"
+"eab7ab2e995f257e",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-grand-rapids": [
-"f96a2646f7554c94",
-"2026-11-20"
+"dd73daf318d37354",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-great-fallsbillings": [
-"9c8352a6f856fea6",
-"2026-11-20"
+"4030ecff34af362a",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-green-bay": [
-"522e788a4c79f170",
-"2026-11-20"
+"9128603f95570945",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-greensburg": [
-"cf887a0d71598095",
-"2026-11-20"
+"da4d2511bf9a50f6",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-harrisburg": [
-"98ff54679db97b46",
-"2026-11-20"
+"ce3a6343668c0a89",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-helena": [
-"3af75f58e9d0a610",
-"2026-11-20"
+"84ada2e87201207e",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-honolulu": [
-"6837ed3fffdc84fe",
-"2026-11-20"
+"f1269509689dec6d",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-houmathibodaux": [
-"1bd84663a1203f6a",
-"2026-11-20"
+"d12cee53f02c4cf9",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-jackson": [
-"05459e9ad663339c",
-"2026-11-20"
+"0ab706643e21b152",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-jefferson-city": [
-"8414a0a217e59ee7",
-"2026-11-20"
+"fa176988ec7615fd",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-joliet-in-illinois": [
-"906fec885e086e4d",
-"2026-11-20"
+"1a0ecc7fd29567f8",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-kalamazoo": [
-"ce1ed2b7313aef1e",
-"2026-11-20"
+"8b5eba18efefd092",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-kansas-citysaint-joseph": [
-"b6b463a389f0afce",
-"2026-11-20"
+"18736f996d9d0762",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-knoxville": [
-"aca2ed158d09bee9",
-"2026-11-20"
+"d46deaf4bf729561",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-la-crosse": [
-"94f18efff0b7b149",
-"2026-11-20"
+"b304b8bdb7eea3ab",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-lafayette-in-indiana": [
-"e10114865c7e5f64",
-"2026-11-20"
+"f8fbad87eac35f6d",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-lafayette-in-louisiana": [
-"abb3e85da7815c61",
-"2026-11-20"
+"d41f9f6945df6056",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-lake-charles": [
-"bc265bf4bfec7d1d",
-"2026-11-20"
+"c5b55652f532deeb",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-lansing": [
-"94d2001b2a991db0",
-"2026-11-20"
+"bc64b7e6e2375b11",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-laredo": [
-"9c6b36599ee2859b",
-"2026-11-20"
+"0aba4c35cee070e7",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-las-cruces": [
-"d165769f95ed0bba",
-"2026-11-20"
+"4ca3c6661290847d",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-lexington": [
-"4237c60e16dd1c69",
-"2026-11-20"
+"69b2e251082cefbb",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-lincoln": [
-"47594ff29dfaa44e",
-"2026-11-20"
+"04a469d646e87efe",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-little-rock": [
-"73f31da02f4ab967",
-"2026-11-20"
+"37f386f6a6269ed0",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-lubbock": [
-"157814fd2ac79527",
-"2026-11-20"
+"154671061d9db1f1",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-madison": [
-"5ba61cc7ac453a44",
-"2026-11-20"
+"1b3f5765a68455e6",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-manchester": [
-"e4aea7b1fd3d0309",
-"2026-11-20"
+"c50ba9b1c8aabd0f",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-marquette": [
-"e2c7d54349a0c643",
-"2026-11-20"
+"6c0a5b00f9e19c19",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-mayaguez": [
-"d24bdbd7adbc10f4",
-"2026-11-20"
+"16d4209d2032447b",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-memphis": [
-"3983909fa5792d52",
-"2026-11-20"
+"f586303f6da1a1d2",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-metuchen": [
-"308720d2f6affe94",
-"2026-11-20"
+"3872f5699baa85eb",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-monterey-in-california": [
-"3326eb03be7c8836",
-"2026-11-20"
+"e3e2ee5c01e832fe",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-nashville": [
-"143a33e296b70b3d",
-"2026-11-20"
+"2f28c57448565889",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-new-ulm": [
-"37f0b7118845ffa5",
-"2026-11-20"
+"81f6ab1edb28c02b",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-norwich": [
-"d1246ec2cffd4454",
-"2026-11-20"
+"328ac2868ae00d22",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-oakland": [
-"f0cbb19aa50e7a28",
-"2026-11-20"
+"59f99a0cade071a6",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-ogdensburg": [
-"d9a72cbc945512e7",
-"2026-11-20"
+"0339084496584e86",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-orange-in-california": [
-"7d1183732cd69156",
-"2026-11-20"
+"115f3506d93048b6",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-orlando": [
-"cff3d90125291f8e",
-"2026-11-20"
+"8210c6f9f799efbb",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-owensboro": [
-"c3066802fca26198",
-"2026-11-20"
+"44e5554ed9822f84",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-palm-beach": [
-"147b52aab113f114",
-"2026-11-20"
+"5b8e87d1d208449e",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-paterson": [
-"42cce417ddc3c272",
-"2026-11-20"
+"29244f06f8e9052e",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-pensacolatallahassee": [
-"544cff3bfe07bbc7",
-"2026-11-20"
+"de1933bc34138b3e",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-peoria": [
-"1ecc30a453ba1665",
-"2026-11-20"
+"c424c72e624ba38b",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-phoenix": [
-"076dc54d6331ab94",
-"2026-11-20"
+"424bf59cf4611536",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-pittsburgh": [
-"f5ac4b0fd3bbfc57",
-"2026-11-20"
+"d0bcb5bb928a8608",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-ponce": [
-"21d353f274aaefd8",
-"2026-11-20"
+"db2e6e80b75468a3",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-portland": [
-"d64869b629846d97",
-"2026-11-20"
+"c14e71018997a81f",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-providence": [
-"3bff6400720282d0",
-"2026-11-20"
+"148e0ffb8d03e3ae",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-pueblo": [
-"dd7245e8c88583c9",
-"2026-11-20"
+"47d2b56ae58484f0",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-raleigh": [
-"c83554c2f3dfad14",
-"2026-11-20"
+"46b3cc74b3bd0485",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-rapid-city": [
-"d939a04429a4f8ee",
-"2026-11-20"
+"26fcdfde80d3fd4b",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-reno": [
-"9fe1dfa23b78567c",
-"2026-11-20"
+"37716c36f959a933",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-richmond": [
-"309a0958c8a318fe",
-"2026-11-20"
+"196cf638605072f3",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-rochester": [
-"33b7067fc67421be",
-"2026-11-20"
+"110bae9563b0457f",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-rockford": [
-"115c552e97e7238e",
-"2026-11-20"
+"4c8d5447b1f2f6b9",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-rockville-centre": [
-"c51e315b85d54c1c",
-"2026-11-20"
+"c218920f0f3b0797",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-sacramento": [
-"015c669c6a9a2c7d",
-"2026-11-20"
+"cd517f68ebc24f7c",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-saginaw": [
-"bfd28fce8bcdb3fe",
-"2026-11-20"
+"0332997fde0d0d6c",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-saint-cloud": [
-"60324a29d095d9aa",
-"2026-11-20"
+"1d1b7c62005ca7f5",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-saint-petersburg-in-florida": [
-"0c56dd5deb90d9fc",
-"2026-11-20"
+"81edf16ec2a248b8",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-saint-thomas-in-the-virgin-islands": [
-"33f8bceddfcf7092",
-"2026-11-20"
+"90f9d40ea36f884d",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-salina": [
-"ad1bc1836a5ee429",
-"2026-11-20"
+"1f24f614b451b64b",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-salt-lake-city": [
-"8bacfa18087c3c87",
-"2026-11-20"
+"bdf391ebb3185141",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-samoa-pago-pago": [
-"17d22760e88e7382",
-"2026-11-20"
+"310247a9c1fb3dfb",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-san-angelo": [
-"e3c197b51f4942b0",
-"2026-11-20"
+"c1768475d68db293",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-san-bernardino": [
-"99090aa0630766c1",
-"2026-11-20"
+"03869c17d5a662bb",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-san-diego": [
-"0a2013d829923d61",
-"2026-11-20"
+"6c67953e1516c6b3",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-san-jose-in-california": [
-"5e6eb50f70bb893e",
-"2026-11-20"
+"8786979de3e8be49",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-santa-rosa-in-california": [
-"c6a30b544716186a",
-"2026-11-20"
+"9172f678d4f61d39",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-savannah": [
-"d221817eee016e01",
-"2026-11-20"
+"213ac398e0fe0883",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-scranton": [
-"da039765ba67c183",
-"2026-11-20"
+"8813ff1f1f4e5966",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-shreveport": [
-"e7d0776960fa69e5",
-"2026-11-20"
+"d364650d387a6ec9",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-sioux-city": [
-"5ae95368873f4751",
-"2026-11-20"
+"6c6be9291973f5df",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-sioux-falls": [
-"d0b48e2077750a71",
-"2026-11-20"
+"88c68448c02ef6dc",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-spokane": [
-"47d38529b179b378",
-"2026-11-20"
+"8fe5aa677b10122a",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-springfield-in-illinois": [
-"3182299b65d26e8d",
-"2026-11-20"
+"cb1651f21e7cf153",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-springfield-in-massachusetts": [
-"05feb064a1c7fa06",
-"2026-11-20"
+"9cf58a107478019b",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-springfieldcape-girardeau": [
-"81539ad75ce0860d",
-"2026-11-20"
+"15e3f1599162821d",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-st-augustine": [
-"9da9eb1802a906eb",
-"2026-11-20"
+"60a0463e36c39803",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-steubenville": [
-"bf00ae380533e245",
-"2026-11-20"
+"0dc49effcb4769d4",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-stockton": [
-"cd7041b8fcf07fe2",
-"2026-11-20"
+"936e27435a775ec6",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-superior": [
-"0ff4753399c0f047",
-"2026-11-20"
+"4c980e798b74c37e",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-syracuse": [
-"442bbec12d1d875e",
-"2026-11-20"
+"d5eaca7b1546fd97",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-toledo-in-america": [
-"9215df3e5559492e",
-"2026-11-20"
+"ab7586b04d36622d",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-trenton": [
-"c661fc8f90b92bca",
-"2026-11-20"
+"4db906515f2d5ea0",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-tucson": [
-"751e5d795aca5baf",
-"2026-11-20"
+"bc5d60cb8b5a2a13",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-tulsa": [
-"f2f813d7c34619db",
-"2026-11-20"
+"8fd3cefb257c042d",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-tyler": [
-"b9bfc3ff553246db",
-"2026-11-20"
+"e5770a6ce67312ae",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-venice-in-florida": [
-"a96dd541e52b4af7",
-"2026-11-20"
+"d09e0b43428bec94",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-victoria-in-texas": [
-"42ed406b4f4ff73c",
-"2026-11-20"
+"aa4fb655183a04d8",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-wheelingcharleston": [
-"179a030474a0b5ea",
-"2026-11-20"
+"14e3ba4bafd609d3",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-wichita": [
-"554b75c38d8af028",
-"2026-11-20"
+"c6a21258b6725ac1",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-wilmington": [
-"783161a98f1a318b",
-"2026-11-20"
+"f0151202b11c118f",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-winonarochester": [
-"c21e8d9ab2f5e939",
-"2026-11-20"
+"e23490c3f3621a5e",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-worcester": [
-"df8ae5282c7c10cf",
-"2026-11-20"
+"cf0a4ed47425c5af",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-yakima": [
-"1bebede817756e1d",
-"2026-11-20"
+"37fd124e3b76cd24",
+"2026-11-21"
 ],
 "/es/diocesis/diocese-of-youngstown": [
-"66639c5dd6e0b56f",
-"2026-11-20"
+"305f65715d6a306d",
+"2026-11-21"
 ],
 "/es/diocesis/eparchy-of-st-maron-of-brooklyn": [
-"c4794aede02c682a",
-"2026-11-20"
+"816e8d70274074ec",
+"2026-11-21"
 ],
 "/es/diocesis/maronite-catholic-eparchy-of-our-lady-of-lebanon-of-los-angeles": [
-"773dfc0a0825de61",
-"2026-11-20"
+"db1f5f6e03d05c86",
+"2026-11-21"
 ],
 "/es/diocesis/melkite-greek-catholic-eparchy-of-newton": [
-"cdf0ab6a1d934977",
-"2026-11-20"
+"795f49afdbd7ea0d",
+"2026-11-21"
 ],
 "/es/diocesis/romanian-catholic-eparchy-of-st-georges-in-canton": [
-"be9b4c247fc982d4",
-"2026-11-20"
+"f0ad686c6dc38df5",
+"2026-11-21"
 ],
 "/es/diocesis/st-thomas-syro-malabar-catholic-eparchy-of-chicago": [
-"1dcb760452366fc7",
-"2026-11-20"
+"1c0f2ee2ae96977e",
+"2026-11-21"
 ],
 "/es/diocesis/syriac-catholic-eparchy-of-our-lady-of-deliverance-in-the-united-states": [
-"8222e56b68fc2196",
-"2026-11-20"
+"6f463b2587d09d87",
+"2026-11-21"
 ],
 "/es/diocesis/syro-malankara-catholic-eparchy-of-st-mary-queen-of-peace-of-the-united-states-of-america-and-canada": [
-"12aaa49c235e1903",
-"2026-11-20"
+"cfe51c4be97c2543",
+"2026-11-21"
 ],
 "/es/diocesis/ukrainian-catholic-archeparchy-of-philadelphia": [
-"cb6e2e2edde0217f",
-"2026-11-20"
+"e27eea52c696d16b",
+"2026-11-21"
 ],
 "/es/diocesis/ukrainian-catholic-eparchy-of-chicago": [
-"5a6c672cf025f1d3",
-"2026-11-20"
+"f013689f9eb20023",
+"2026-11-21"
 ],
 "/es/diocesis/ukrainian-catholic-eparchy-of-saint-josaphat-in-parma": [
-"c9a35267d74b753f",
-"2026-11-20"
+"aa00eea6d43115d0",
+"2026-11-21"
 ],
 "/es/diocesis/ukrainian-catholic-eparchy-of-stamford": [
-"7495115a6ffabae2",
-"2026-11-20"
+"01b9b6889b5daf9e",
+"2026-11-21"
 ],
 "/es/directorio-santos": [
-"bcb510a4ea3407f7",
-"2026-11-20"
+"0210663f1d1b472c",
+"2026-11-21"
 ],
 "/es/documentos-de-la-iglesia": [
-"e16cda5091297740",
-"2026-11-20"
+"396c1997d7f9ee22",
+"2026-11-21"
 ],
 "/es/estructura": [
-"899e2d3338bba137",
-"2026-11-20"
+"9252c38e8f4fd51f",
+"2026-11-21"
 ],
 "/es/examen-de-conciencia": [
-"72fc79f0c5c53aae",
-"2026-11-20"
+"f8537f22331a880f",
+"2026-11-21"
 ],
 "/es/fe-de-bautismo": [
-"69b6df2eeb1c22d3",
-"2026-11-20"
+"8c420d8e7b8bd28b",
+"2026-11-21"
 ],
 "/es/funerales": [
-"980a5bfc29858e43",
-"2026-11-20"
+"ed04cf25a3217b81",
+"2026-11-21"
 ],
 "/es/glosario": [
-"7c211623340f9ca2",
-"2026-11-20"
+"3812efd5a500e98a",
+"2026-11-21"
 ],
 "/es/guias": [
-"355aeb88e36be716",
-"2026-11-20"
+"05fb634dc5a75fe9",
+"2026-11-21"
 ],
 "/es/inscribirse-parroquia": [
-"fa7b9e974ff7b733",
-"2026-11-20"
+"d222ad91d4fe5ef2",
+"2026-11-21"
 ],
 "/es/liturgia-de-las-horas": [
-"dc98399e50856044",
-"2026-11-20"
+"b59c07047143d49c",
+"2026-11-21"
 ],
 "/es/matrimonio": [
-"dad0c29b9f0a2e85",
-"2026-11-20"
+"bc21af21567d1950",
+"2026-11-21"
 ],
 "/es/misa-en-linea": [
-"29c0a2d090bb1cc6",
-"2026-11-20"
+"b7892351ed12d661",
+"2026-11-21"
 ],
 "/es/misa-para-ninos": [
-"d84dff1305a878de",
-"2026-11-20"
+"b32e2ef4d1d6a6c2",
+"2026-11-21"
+],
+"/es/muro-de-oracion": [
+"58bbe6d576d3f3fc",
+"2026-11-21"
 ],
 "/es/ninos": [
-"daba3ca9f655860b",
-"2026-11-20"
+"37d24af523e811c3",
+"2026-11-21"
 ],
 "/es/novenas": [
-"6fbf2428efb4363e",
-"2026-11-20"
+"106de0c0856b7780",
+"2026-11-21"
 ],
 "/es/oraciones": [
-"ebb7bdc9f9243a4b",
-"2026-11-20"
+"29b710c4cb504983",
+"2026-11-21"
 ],
 "/es/orden-sacerdotal": [
-"7d4be3e3398560e2",
-"2026-11-20"
+"40613ec5206a192e",
+"2026-11-21"
 ],
 "/es/papas": [
-"f6408dfeddb715cc",
-"2026-11-20"
+"265eefa70c2b06d5",
+"2026-11-21"
 ],
 "/es/partes-de-la-iglesia": [
-"464a6e25ac7b8aff",
-"2026-11-20"
+"f28c4bb64cf8cd7e",
+"2026-11-21"
 ],
 "/es/planes-de-lectura": [
-"e603b44ac5ceb13a",
-"2026-11-20"
+"08060ee039df12d8",
+"2026-11-21"
 ],
 "/es/preguntas": [
-"43e8e0adccf1b228",
-"2026-11-20"
+"fbb555319f32f5e4",
+"2026-11-21"
 ],
 "/es/primera-comunion": [
-"c18ff406b38beb43",
-"2026-11-20"
+"52b7743c7a789e3e",
+"2026-11-21"
 ],
 "/es/primera-misa": [
-"72c8866be12d7bf6",
-"2026-11-20"
+"f6807f22b508567a",
+"2026-11-21"
 ],
 "/es/primeras-oraciones": [
-"0b7d9b94775c4b31",
-"2026-11-20"
+"d142e6e97863f80a",
+"2026-11-21"
 ],
 "/es/privacidad": [
-"77cc1c272cef24a8",
-"2026-11-20"
+"c9a57cb57658a943",
+"2026-11-21"
 ],
 "/es/registrar-ocia": [
-"ca6b13caa0f0a35d",
-"2026-11-20"
+"85760fde88de2ac1",
+"2026-11-21"
 ],
 "/es/rincon-familiar": [
-"3fb0b9946f57e7b3",
-"2026-11-20"
+"3ae9636bb552f5c3",
+"2026-11-21"
 ],
 "/es/rosario": [
-"32ee3c988dbfe5ce",
-"2026-11-20"
+"443e8efa6a8a11b7",
+"2026-11-21"
 ],
 "/es/santos": [
-"87eab4a9ca1b4536",
-"2026-11-20"
+"d012ffb83649da03",
+"2026-11-21"
 ],
 "/es/santos-para-ninos": [
-"e8c312758afa820e",
-"2026-11-20"
+"7ace85a2f03bb1dc",
+"2026-11-21"
 ],
 "/es/terminos": [
-"f139c8bfe75f5a0e",
-"2026-11-20"
+"f48936eddeefc12a",
+"2026-11-21"
 ],
 "/es/uncion": [
-"724e90abe5fd7287",
-"2026-11-20"
+"50fcaaa6c3f67fe2",
+"2026-11-21"
 ],
 "/es/vestiduras": [
-"9f607127c24fcea2",
-"2026-11-20"
+"2a1ae0f30dda1796",
+"2026-11-21"
 ],
 "/es/via-crucis": [
-"99db3545fa0e4c97",
-"2026-11-20"
+"c953649d9039091d",
+"2026-11-21"
 ],
 "/es/volver": [
-"1b3dde64c62162c6",
-"2026-11-20"
+"f482709c3ab3bd88",
+"2026-11-21"
 ],
 "/examination-of-conscience": [
-"2aec84dc2fe0ffc4",
-"2026-11-20"
+"f6559acf3d632181",
+"2026-11-21"
 ],
 "/family-corner": [
-"603f2146e47f496b",
-"2026-11-20"
+"b06ebc5789e9bb73",
+"2026-11-21"
 ],
 "/find-a-church": [
-"e092421be3f46bab",
-"2026-11-20"
+"78ca2a63a4439f2a",
+"2026-11-21"
 ],
 "/first-communion": [
-"9111b7f0c647c65d",
-"2026-11-20"
+"9963463702c85b70",
+"2026-11-21"
 ],
 "/first-mass": [
-"f73c866cedc5ffd5",
-"2026-11-20"
+"bf7967300b3fbdcf",
+"2026-11-21"
 ],
 "/first-prayers": [
-"fd2ae4a034bf53d8",
-"2026-11-20"
+"cd4a68663ec5db4d",
+"2026-11-21"
 ],
 "/funerals": [
-"4c7697cda8341de4",
-"2026-11-20"
+"d4e16e46ba02010f",
+"2026-11-21"
 ],
 "/glossary": [
-"851d788de62d3b74",
-"2026-11-20"
+"9d9cb682699a8f5e",
+"2026-11-21"
 ],
 "/holy-orders": [
-"9eacc07c933d16cb",
-"2026-11-20"
+"efcf98d1a95816f0",
+"2026-11-21"
 ],
 "/how-to": [
-"69166cff0b9062ce",
-"2026-11-20"
+"037100a73a53be1d",
+"2026-11-21"
 ],
 "/inside-the-mass": [
-"626f71a1d6f80128",
-"2026-11-20"
+"eec83271be6e88bd",
+"2026-11-21"
 ],
 "/join-a-parish": [
-"8aeb64837834f495",
-"2026-11-20"
+"9e8b24e2c6d27534",
+"2026-11-21"
 ],
 "/kids": [
-"7db8f7e396ab2262",
-"2026-11-20"
+"78bb3fb4cb2af8fe",
+"2026-11-21"
 ],
 "/liturgy-of-the-hours": [
-"dbaf0fd705672d06",
-"2026-11-20"
+"daee650ae9e9a125",
+"2026-11-21"
 ],
 "/marriage": [
-"46058ac2a4f3b8c4",
-"2026-11-20"
+"53103098c5baae63",
+"2026-11-21"
 ],
 "/mass-for-kids": [
-"e11ae26b09b8a051",
-"2026-11-20"
+"273eb4b515b2eb65",
+"2026-11-21"
 ],
 "/novenas": [
-"1b4f19c9bee24534",
-"2026-11-20"
+"ea776bbf2a1227e1",
+"2026-11-21"
 ],
 "/ocia-listing": [
-"7b5ef90dc0254b30",
-"2026-11-20"
+"b8ba4c7f3deec7cf",
+"2026-11-21"
 ],
 "/popes": [
-"ba5da42630faba30",
-"2026-11-20"
+"6bf95cf19515160f",
+"2026-11-21"
+],
+"/prayer-wall": [
+"e00e9845985be1ae",
+"2026-11-21"
 ],
 "/prayers": [
-"964d9e72670d1943",
-"2026-11-20"
+"9c529fd504231be3",
+"2026-11-21"
 ],
 "/privacy": [
-"242f58144a1c1789",
-"2026-11-20"
+"8cbdc952c4e976de",
+"2026-11-21"
 ],
 "/pt/": [
-"2ec55df55573f029",
-"2026-11-20"
+"a09e796aaba7df96",
+"2026-11-21"
 ],
 "/pt/advento": [
-"b256e508f557a3fe",
-"2026-11-20"
+"43801bf8bc67ca41",
+"2026-11-21"
 ],
 "/pt/angelus": [
-"cf3ba7c8fd6d6484",
-"2026-11-20"
+"67333b5deb9bc588",
+"2026-11-21"
 ],
 "/pt/batismo": [
-"762930e9cb5910dd",
-"2026-11-20"
+"32378c8098fc33ea",
+"2026-11-21"
 ],
 "/pt/biblia": [
-"42686a94a2e8c54f",
-"2026-11-20"
+"0e0bab3479d06e13",
+"2026-11-21"
 ],
 "/pt/buscar": [
-"86d3e8f703911852",
-"2026-11-20"
+"1dcf890945066109",
+"2026-11-21"
 ],
 "/pt/cadastrar-ocia": [
-"f52ac04852942128",
-"2026-11-20"
+"5a54bb40cff4d428",
+"2026-11-21"
 ],
 "/pt/calendario": [
-"750d1e5a0345e998",
-"2026-11-20"
+"eccac6289811d751",
+"2026-11-21"
 ],
 "/pt/cantinho-da-familia": [
-"d93f5ba6ece40cd8",
-"2026-11-20"
+"2dd05887eacc53e4",
+"2026-11-21"
 ],
 "/pt/certidao-de-batismo": [
-"07bfe90408a8fab5",
-"2026-11-20"
+"ffaecea7dc406938",
+"2026-11-21"
 ],
 "/pt/comecar": [
-"a39df43337c8ebd9",
-"2026-11-20"
+"4307b66e1596dcdf",
+"2026-11-21"
 ],
 "/pt/confissao": [
-"5b0d9fb983b2f05a",
-"2026-11-20"
+"42a83e0a6955e27c",
+"2026-11-21"
 ],
 "/pt/crencas": [
-"99e0cc5edcd36c73",
-"2026-11-20"
+"9164bf68243b9003",
+"2026-11-21"
 ],
 "/pt/criancas": [
-"2663d0863fb3a67e",
-"2026-11-20"
+"718c3bef49e8070a",
+"2026-11-21"
 ],
 "/pt/crisma": [
-"92f7810fb53f261c",
-"2026-11-20"
+"5476910772034086",
+"2026-11-21"
 ],
 "/pt/desenhos-para-colorir": [
-"a257b5f48c30c81f",
-"2026-11-20"
+"23d3c4c8e93b62fd",
+"2026-11-21"
 ],
 "/pt/devocoes": [
-"c2aecde0b253cb44",
-"2026-11-20"
+"7341f73ff4d1b6ea",
+"2026-11-21"
 ],
 "/pt/dioceses": [
-"0a64125a70799018",
-"2026-11-20"
+"decacb137f7af2b8",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-for-the-military-services": [
-"9942e97834a1e934",
-"2026-11-20"
+"913b55c74c5626b8",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-agana": [
-"c937649f248885ac",
-"2026-11-20"
+"85492929884dd6d0",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-anchoragejuneau": [
-"f437e28a2d4789f3",
-"2026-11-20"
+"d3b88bfd9fb7d06c",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-atlanta": [
-"546a773f0bbe8ef8",
-"2026-11-20"
+"964f0029f93ac6ab",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-baltimore": [
-"d51b823107665636",
-"2026-11-20"
+"65895052e4dec0a3",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-boston": [
-"c0635d2e1c8508fd",
-"2026-11-20"
+"8ee48d1815bf2d73",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-chicago": [
-"cf97cadf212fd15b",
-"2026-11-20"
+"9b9de0bc269324c6",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-cincinnati": [
-"9fd9d713a71c026d",
-"2026-11-20"
+"607efc1af56f5656",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-denver": [
-"1a6a4b49dfd77756",
-"2026-11-20"
+"9b416c394ff8df90",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-detroit": [
-"c2a23cafd450540c",
-"2026-11-20"
+"eb8cbb700f60335f",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-dubuque": [
-"4091f6801143f08b",
-"2026-11-20"
+"c20da5c72cf6e175",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-galvestonhouston": [
-"f8427a056bc4000f",
-"2026-11-20"
+"861adb3438b98ba4",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-hartford": [
-"4c2c6b0913b3e1d0",
-"2026-11-20"
+"ca918b45a0c16baa",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-indianapolis": [
-"8079120f9b3e4a08",
-"2026-11-20"
+"780c427ac5250079",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-kansas-city-in-kansas": [
-"29dbb20a5702ef44",
-"2026-11-20"
+"b0617c335ad3dcc4",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-las-vegas": [
-"6b2cf29d097bd5d8",
-"2026-11-20"
+"b5f204d3b7630a72",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-los-angeles": [
-"03e2d37e2c969607",
-"2026-11-20"
+"7481123c1c9d1cf4",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-louisville": [
-"2cb248a4509c77e1",
-"2026-11-20"
+"56496020d2605e3c",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-miami": [
-"51a03bd925502a13",
-"2026-11-20"
+"c3cd170225c9b64c",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-milwaukee": [
-"25cac87924c018ca",
-"2026-11-20"
+"32de4ec6c2aba78c",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-mobile": [
-"4c2fd43fcbdd7367",
-"2026-11-20"
+"5099415b2ce6bb54",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-new-orleans": [
-"9a1ac0dac4dd8753",
-"2026-11-20"
+"f3b97dc0f370cd9b",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-new-york": [
-"16acf03b559969b5",
-"2026-11-20"
+"4b3299041a0655a9",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-newark": [
-"9bf2996ad31cd0cb",
-"2026-11-20"
+"4baef891bed48dd1",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-oklahoma-city": [
-"c234243076ff8ecb",
-"2026-11-20"
+"c7e857712136fb9c",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-omaha": [
-"1501d9c789abee59",
-"2026-11-20"
+"1ff65cb337bd3171",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-philadelphia": [
-"e8c482795aa698ee",
-"2026-11-20"
+"d067a3add2c89d1b",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-portland-in-oregon": [
-"b2a7fe47f19ff722",
-"2026-11-20"
+"1ed7a2c174a497a7",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-saint-paul-and-minneapolis": [
-"21c52ddd3ea91ca5",
-"2026-11-20"
+"37ac93401c5c8970",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-san-antonio": [
-"5fce9fe78ba197a9",
-"2026-11-20"
+"e3fafe59f006c938",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-san-francisco": [
-"4d5e7a87929d6fd5",
-"2026-11-20"
+"85b62cdfdb5198a8",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-san-juan-de-puerto-rico": [
-"d8decec30d562b06",
-"2026-11-20"
+"a6f31f4b4d490a51",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-santa-fe": [
-"2382048bc48c3459",
-"2026-11-20"
+"df7f7803e783bac0",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-seattle": [
-"88e3fc90b2286fcb",
-"2026-11-20"
+"96cbbb36b13ca19a",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-st-louis": [
-"eabbb6175e9670dd",
-"2026-11-20"
+"9ce4f0578c2237dd",
+"2026-11-21"
 ],
 "/pt/dioceses/archdiocese-of-washington": [
-"de790f1ce5c8d9b1",
-"2026-11-20"
+"114a77e404fc0718",
+"2026-11-21"
 ],
 "/pt/dioceses/armenian-catholic-eparchy-of-our-lady-of-nareg-in-the-united-states-of-america-and-canada": [
-"526588c3b847c2b2",
-"2026-11-20"
+"78915a66a9323aa6",
+"2026-11-21"
 ],
 "/pt/dioceses/byzantine-catholic-archeparchy-of-pittsburgh": [
-"2dbc902fb113868e",
-"2026-11-20"
+"03e3fd5d814d1695",
+"2026-11-21"
 ],
 "/pt/dioceses/byzantine-catholic-eparchy-of-parma": [
-"b8e6406837002b08",
-"2026-11-20"
+"0c3bd6c155088eee",
+"2026-11-21"
 ],
 "/pt/dioceses/byzantine-catholic-eparchy-of-passaic": [
-"2b742e17c7af2ae9",
-"2026-11-20"
+"f30c1e916f18f05a",
+"2026-11-21"
 ],
 "/pt/dioceses/byzantine-catholic-eparchy-of-phoenix": [
-"cb388a45ea512fe4",
-"2026-11-20"
+"995a06a9f74e10a2",
+"2026-11-21"
 ],
 "/pt/dioceses/chaldean-catholic-eparchy-of-saint-peter-the-apostle": [
-"3110d2fa3727f83d",
-"2026-11-20"
+"5cdbef3d2d7a069f",
+"2026-11-21"
 ],
 "/pt/dioceses/chaldean-catholic-eparchy-of-saint-thomas-the-apostle-of-detroit": [
-"77039a3ed74debc1",
-"2026-11-20"
+"bd15bd5c269212db",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-albany": [
-"4de9e83a1275e8c0",
-"2026-11-20"
+"d173b8076d32e2b2",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-alexandria-in-louisiana": [
-"3435cec147485b3e",
-"2026-11-20"
+"cdcf1b1ba6d07550",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-allentown": [
-"40e2951ff92995d8",
-"2026-11-20"
+"2e842533185e3501",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-altoonajohnstown": [
-"98654fb062c743ef",
-"2026-11-20"
+"387792a0234325db",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-amarillo": [
-"05d1fd79d8fdb6ca",
-"2026-11-20"
+"74dda5a151dfaf7a",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-arecibo": [
-"c570a83cce355232",
-"2026-11-20"
+"aea66e363036bb72",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-arlington": [
-"229592eca9283f9d",
-"2026-11-20"
+"fc2b004827c82c03",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-austin": [
-"4f979e851ea2a18d",
-"2026-11-20"
+"1defdf947086ee8e",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-baker": [
-"1f9f90999ebee64b",
-"2026-11-20"
+"e6c6e9e7bbe55486",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-baton-rouge": [
-"1e4118a710f393be",
-"2026-11-20"
+"fada08041e030fbd",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-beaumont": [
-"9c6dac01b43c32af",
-"2026-11-20"
+"062b12973b6cd2b9",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-belleville": [
-"13a1ca3dd6850dcd",
-"2026-11-20"
+"cd6e697f8d61a9f5",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-biloxi": [
-"275f18b8e3e3f899",
-"2026-11-20"
+"05823633e1846a7b",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-birmingham-in-alabama": [
-"2870cca584491c65",
-"2026-11-20"
+"d2f3145d51bb4524",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-bismarck": [
-"32cacafeccc2a83c",
-"2026-11-20"
+"2adc2e2a1d516e38",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-boise": [
-"15bcdd5f0f8bb6d6",
-"2026-11-20"
+"42fb8eb3e5a568d2",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-bridgeport": [
-"7fc735ec89226e62",
-"2026-11-20"
+"be452decfd1d616c",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-brooklyn": [
-"f79829a35c93799c",
-"2026-11-20"
+"40840c08f7d97dcc",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-brownsville": [
-"aaddbb607fc1f9ef",
-"2026-11-20"
+"0d24ba8859d40da2",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-buffalo": [
-"de7df817184f45e4",
-"2026-11-20"
+"a53d4407ad587cbb",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-burlington": [
-"ff06982610652246",
-"2026-11-20"
+"dfde76ec807e594f",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-caguas": [
-"d0d16fdc271006db",
-"2026-11-20"
+"a883f241ebd9b552",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-camden": [
-"26092d9269be4339",
-"2026-11-20"
+"035ed5ba1b32dbb3",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-chalan-kanoa": [
-"954c5201ab141c81",
-"2026-11-20"
+"0039d32eefed8948",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-charleston": [
-"bc78bbfd60f88d75",
-"2026-11-20"
+"f235beee782c9f8b",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-charlotte": [
-"340527870820dade",
-"2026-11-20"
+"b3166c8b1cebcce9",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-cheyenne": [
-"b4134b6e9c1d546c",
-"2026-11-20"
+"8928265d14ea96c5",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-cleveland": [
-"4c43e5b06bad1852",
-"2026-11-20"
+"8f58d32e9df24700",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-colorado-springs": [
-"aaf6fd8861130116",
-"2026-11-20"
+"759b97d927d19ca7",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-columbus": [
-"46dd67182437ccb8",
-"2026-11-20"
+"4d32f5021e2997cb",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-corpus-christi": [
-"9c3e829824fed332",
-"2026-11-20"
+"6263a87b88fe0cdd",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-covington": [
-"8a0eabd09c8c81b5",
-"2026-11-20"
+"7fde9a6155bc3b46",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-crookston": [
-"a84538635cd5cf22",
-"2026-11-20"
+"8c9e1141b1f84ece",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-dallas": [
-"e48b37dabe604b6d",
-"2026-11-20"
+"cc1f872419bd74e8",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-davenport": [
-"b6435d88d992053e",
-"2026-11-20"
+"96d173489149ffdc",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-des-moines": [
-"ab8aae6747202494",
-"2026-11-20"
+"93f22c925d88e259",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-dodge-city": [
-"e64ee3cd0c8f5ba5",
-"2026-11-20"
+"337a7a68ac3647d6",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-duluth": [
-"2893e43925c0e021",
-"2026-11-20"
+"73a4f966596df6bf",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-el-paso": [
-"a0704c8608087322",
-"2026-11-20"
+"792a744947c6ab6d",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-erie": [
-"76d79c123d4975ab",
-"2026-11-20"
+"7b5bdb2b8ea6ba3b",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-evansville": [
-"cd753a90ba87fe9a",
-"2026-11-20"
+"21910e48a89d2679",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-fairbanks": [
-"d5c743cbf2ecb6c1",
-"2026-11-20"
+"da57a4c16eee4584",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-fajardo-humacao": [
-"189a95b51ef86339",
-"2026-11-20"
+"90f66ce3008a83a2",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-fall-river": [
-"631a782c780d0952",
-"2026-11-20"
+"949c1b33b2953ed5",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-fargo": [
-"4b8f2064261cee72",
-"2026-11-20"
+"dd00b543d4e675a2",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-fort-waynesouth-bend": [
-"c1b6a452a7b8839c",
-"2026-11-20"
+"b94b06bafc79fb9f",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-fort-worth": [
-"141b0667ae629603",
-"2026-11-20"
+"2e2b87a9121a6eaa",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-fresno": [
-"41803ade0c7487f3",
-"2026-11-20"
+"cb160d44fd5d5880",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-gallup": [
-"aad4c8b717a1851f",
-"2026-11-20"
+"9b04e07ef72ffc4d",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-gary": [
-"915c1e04076eb759",
-"2026-11-20"
+"ca492c78a9f0e562",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-gaylord": [
-"288ba82f56d75ce9",
-"2026-11-20"
+"e351f7436b98f923",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-grand-island": [
-"e69d8cc8901b89f5",
-"2026-11-20"
+"b974bc9f891ec953",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-grand-rapids": [
-"16d2b831a15e744c",
-"2026-11-20"
+"2d0f65223653eae6",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-great-fallsbillings": [
-"4fe649c3d6e2db38",
-"2026-11-20"
+"02c31e055429cab9",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-green-bay": [
-"8abd65bbf63f051a",
-"2026-11-20"
+"b95aa7024033d407",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-greensburg": [
-"5f99387650bd910d",
-"2026-11-20"
+"6fb18c07d1a8d7d0",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-harrisburg": [
-"11b231329c308451",
-"2026-11-20"
+"b70a3510e6262363",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-helena": [
-"c6f97005dab195f4",
-"2026-11-20"
+"9a775ad650ccaba1",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-honolulu": [
-"197cee254dc42046",
-"2026-11-20"
+"a80057a6a6aaa651",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-houmathibodaux": [
-"bc5c308f6c9ba8fc",
-"2026-11-20"
+"06193de33f408eea",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-jackson": [
-"92444befb9380dc2",
-"2026-11-20"
+"b359ef672c7d45dd",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-jefferson-city": [
-"b5e9e6cb8e379092",
-"2026-11-20"
+"77ab6c5dbc3b9368",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-joliet-in-illinois": [
-"ae8015879cb8f7af",
-"2026-11-20"
+"b8ce4c163c673440",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-kalamazoo": [
-"a927f25117a27df5",
-"2026-11-20"
+"6b5513542552ed2c",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-kansas-citysaint-joseph": [
-"50be92900be22c21",
-"2026-11-20"
+"a41dc32a9eefa21e",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-knoxville": [
-"1bb3ceebee75009b",
-"2026-11-20"
+"ab9c998e9622d5e5",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-la-crosse": [
-"8f763d47cba3a010",
-"2026-11-20"
+"7457f8e4ecbc7398",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-lafayette-in-indiana": [
-"70e0e90827d504d8",
-"2026-11-20"
+"c2bd5652a69d134d",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-lafayette-in-louisiana": [
-"64dd20bd2da40aac",
-"2026-11-20"
+"bafdba7b42dc7254",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-lake-charles": [
-"02a94b5dc57d1d3a",
-"2026-11-20"
+"2971e98772d76a2d",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-lansing": [
-"f25986078af322a1",
-"2026-11-20"
+"f0b19c296fbf812a",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-laredo": [
-"bfe54f269c445255",
-"2026-11-20"
+"46171795272134ea",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-las-cruces": [
-"e811fd448bf6d5d5",
-"2026-11-20"
+"52c3ec6d5ad33753",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-lexington": [
-"fadb2fa5077f0af0",
-"2026-11-20"
+"61a125ca630cb99d",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-lincoln": [
-"c05e88ce1a759d81",
-"2026-11-20"
+"35965e0bee8b859f",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-little-rock": [
-"3a63775f0d3b1730",
-"2026-11-20"
+"2374c574591a1da9",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-lubbock": [
-"5e21c031bbf4d745",
-"2026-11-20"
+"9177751fa4c6af58",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-madison": [
-"b7ef1e25a6bdb897",
-"2026-11-20"
+"36daa4c60ff40deb",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-manchester": [
-"c275264fbd4af718",
-"2026-11-20"
+"e71ee531e2a79f38",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-marquette": [
-"60a78387cc6f5084",
-"2026-11-20"
+"0291f5b328ac2c0a",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-mayaguez": [
-"7294f7ec7bbf9a4d",
-"2026-11-20"
+"d26958197c6b970d",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-memphis": [
-"9bc98371b04aadb9",
-"2026-11-20"
+"7782d28adae93b52",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-metuchen": [
-"f6f7a670d8453a08",
-"2026-11-20"
+"ae8541ebbac40354",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-monterey-in-california": [
-"b9ffaf24a280737c",
-"2026-11-20"
+"252491f0943680f9",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-nashville": [
-"24e276d007974026",
-"2026-11-20"
+"669b4963535b8e73",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-new-ulm": [
-"0b98cdab69aee5b7",
-"2026-11-20"
+"3c5a926ffc554aa9",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-norwich": [
-"fca57f5e6e9dbb52",
-"2026-11-20"
+"4d506e8480c94505",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-oakland": [
-"c322354e87ad0662",
-"2026-11-20"
+"30de90b43c29aeeb",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-ogdensburg": [
-"d9b03ac8ba62dc82",
-"2026-11-20"
+"8b00f4aa6042d182",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-orange-in-california": [
-"e07a62bb36a8495a",
-"2026-11-20"
+"32530568873a0d24",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-orlando": [
-"15e473a953e2b084",
-"2026-11-20"
+"9ee7ee8a00c05918",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-owensboro": [
-"b139e35ebeb87135",
-"2026-11-20"
+"0cbc268b903b81ff",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-palm-beach": [
-"5f5fb93a06abe150",
-"2026-11-20"
+"20307f0a6b69f879",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-paterson": [
-"6bc1ececfb3b6319",
-"2026-11-20"
+"f1faa6e4630868db",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-pensacolatallahassee": [
-"e830d7e64be5a121",
-"2026-11-20"
+"6d3a8aaffe51d13d",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-peoria": [
-"ea5ff9bd255c76ad",
-"2026-11-20"
+"99a868f8963e72f9",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-phoenix": [
-"ade6c86985677713",
-"2026-11-20"
+"3bafbb99ab7da739",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-pittsburgh": [
-"58a26a50d37a5e9d",
-"2026-11-20"
+"7639bd4a3f4eee15",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-ponce": [
-"d9e94d6d2b6db518",
-"2026-11-20"
+"f7637aa5d7603d89",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-portland": [
-"6ada6704dd921342",
-"2026-11-20"
+"5790ea650b9696d6",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-providence": [
-"9500e6faddc721ee",
-"2026-11-20"
+"84ecb811ad03b015",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-pueblo": [
-"6ffe138c1d19b923",
-"2026-11-20"
+"d18a06f9906a9d00",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-raleigh": [
-"865eaf77fc10c24e",
-"2026-11-20"
+"2fb7fc6f05c0ffce",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-rapid-city": [
-"9f81f4074f59a18b",
-"2026-11-20"
+"01790b11004624ca",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-reno": [
-"00bed767ce919544",
-"2026-11-20"
+"bf484f492cd93237",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-richmond": [
-"cb8e2668642c6bde",
-"2026-11-20"
+"2a4e2b8e12dd5ba9",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-rochester": [
-"9733c3700bfd4a7e",
-"2026-11-20"
+"233c27f000b3bcf8",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-rockford": [
-"73e97d8ff8724e0e",
-"2026-11-20"
+"7e69f277bf9b1c41",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-rockville-centre": [
-"ef91f74347d598e8",
-"2026-11-20"
+"c31355966c590122",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-sacramento": [
-"f2c9f98b875dafb2",
-"2026-11-20"
+"bf8ea946f99fd2ed",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-saginaw": [
-"1d8e3a1a81f338c1",
-"2026-11-20"
+"1e6fe3a28d7591f1",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-saint-cloud": [
-"5d068a18ddf2e1bf",
-"2026-11-20"
+"854cc58eb4c19271",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-saint-petersburg-in-florida": [
-"52fca6fc3506f168",
-"2026-11-20"
+"0af94683697e4cfb",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-saint-thomas-in-the-virgin-islands": [
-"8f44afb7cf186f21",
-"2026-11-20"
+"15e4574e293d3759",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-salina": [
-"838b6fe1547a482d",
-"2026-11-20"
+"d3ba7e9017501417",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-salt-lake-city": [
-"fa8c1033182db870",
-"2026-11-20"
+"305b2b859e76a6b1",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-samoa-pago-pago": [
-"bfb642afc9e3b40d",
-"2026-11-20"
+"43b60b3f1c03e3aa",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-san-angelo": [
-"a6062abedef35bb5",
-"2026-11-20"
+"2f6ce8642b640dd0",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-san-bernardino": [
-"850525d3dc5b4196",
-"2026-11-20"
+"4485a14b15bbcaf2",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-san-diego": [
-"ca0fade2ef234c42",
-"2026-11-20"
+"a112ff45e261d04a",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-san-jose-in-california": [
-"2967f269a554071a",
-"2026-11-20"
+"e8930bba76f6aa35",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-santa-rosa-in-california": [
-"31a3b629d6700af6",
-"2026-11-20"
+"bb595d8ae83a9b2b",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-savannah": [
-"7d533541f6184f8e",
-"2026-11-20"
+"dfbc4dc929c29445",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-scranton": [
-"0bc5e62d2334bd5f",
-"2026-11-20"
+"1d2c942ba29caed8",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-shreveport": [
-"5213d365392976a4",
-"2026-11-20"
+"088826e3220ce266",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-sioux-city": [
-"b9c8e56ca58e8c54",
-"2026-11-20"
+"e291ba4b5481dd00",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-sioux-falls": [
-"8aafb9bab83380e8",
-"2026-11-20"
+"a0dee67fe47010a3",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-spokane": [
-"2815b0d90e77bb6b",
-"2026-11-20"
+"b46928c2eca4fa29",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-springfield-in-illinois": [
-"00aaf685d4c52871",
-"2026-11-20"
+"c1e7e9879fd83791",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-springfield-in-massachusetts": [
-"4819aec5bde3349a",
-"2026-11-20"
+"e16fc4e03d371b66",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-springfieldcape-girardeau": [
-"ab6aec67fcc2c782",
-"2026-11-20"
+"b8c5a35d823f7015",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-st-augustine": [
-"8ed7cfa26e4b1a9b",
-"2026-11-20"
+"3e87b12692443685",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-steubenville": [
-"3f1fc5cb2d72f52e",
-"2026-11-20"
+"d155748c80cb7654",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-stockton": [
-"62b00591af1eb14c",
-"2026-11-20"
+"db4c95265f5c5c65",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-superior": [
-"59175956cc0b26d4",
-"2026-11-20"
+"4cfdb3fdf3e706cc",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-syracuse": [
-"42a2699fb558a708",
-"2026-11-20"
+"5e4edc7872c45394",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-toledo-in-america": [
-"85370fbca7285691",
-"2026-11-20"
+"95981cdc2759f7df",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-trenton": [
-"8912912aba52d07c",
-"2026-11-20"
+"7bd4840b0c7d8785",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-tucson": [
-"30d6cf1562f48869",
-"2026-11-20"
+"f6a3b64c857f150d",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-tulsa": [
-"492f34c317be4940",
-"2026-11-20"
+"cb905ea6d896b74b",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-tyler": [
-"64cb62b3beeab4ec",
-"2026-11-20"
+"85cc21bffb2e4537",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-venice-in-florida": [
-"0df5c7536df476c8",
-"2026-11-20"
+"c5905f666374faeb",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-victoria-in-texas": [
-"79de322aa1a33066",
-"2026-11-20"
+"22692f647d9eb114",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-wheelingcharleston": [
-"217af8ca0c4270aa",
-"2026-11-20"
+"05928fb2a28d818c",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-wichita": [
-"506de4ae647617c4",
-"2026-11-20"
+"f6986473e92c45c0",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-wilmington": [
-"ebbf1cfcdc98ffb4",
-"2026-11-20"
+"718ad72101bd8b4f",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-winonarochester": [
-"eb51354fea9dc183",
-"2026-11-20"
+"c1a7c0f9dfabed12",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-worcester": [
-"9e49bceb6b656bcc",
-"2026-11-20"
+"4659f9136f05dc54",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-yakima": [
-"d1aef375c04bae4b",
-"2026-11-20"
+"7b10ecb715987b6b",
+"2026-11-21"
 ],
 "/pt/dioceses/diocese-of-youngstown": [
-"ae074cbe361fa71b",
-"2026-11-20"
+"a431a1f64f568756",
+"2026-11-21"
 ],
 "/pt/dioceses/eparchy-of-st-maron-of-brooklyn": [
-"b8a8f4352316f140",
-"2026-11-20"
+"125a6dd5ba848a72",
+"2026-11-21"
 ],
 "/pt/dioceses/maronite-catholic-eparchy-of-our-lady-of-lebanon-of-los-angeles": [
-"8e549a936d10f748",
-"2026-11-20"
+"b6533e6844f45351",
+"2026-11-21"
 ],
 "/pt/dioceses/melkite-greek-catholic-eparchy-of-newton": [
-"0488142e08613200",
-"2026-11-20"
+"99bd298fa6c2584b",
+"2026-11-21"
 ],
 "/pt/dioceses/romanian-catholic-eparchy-of-st-georges-in-canton": [
-"c879b9e8e9296505",
-"2026-11-20"
+"73da196b95ba0d23",
+"2026-11-21"
 ],
 "/pt/dioceses/st-thomas-syro-malabar-catholic-eparchy-of-chicago": [
-"82fd8aa879f7b8b2",
-"2026-11-20"
+"2d8d27c704fbecb0",
+"2026-11-21"
 ],
 "/pt/dioceses/syriac-catholic-eparchy-of-our-lady-of-deliverance-in-the-united-states": [
-"869828993b5c9161",
-"2026-11-20"
+"21f71d77ae14fe34",
+"2026-11-21"
 ],
 "/pt/dioceses/syro-malankara-catholic-eparchy-of-st-mary-queen-of-peace-of-the-united-states-of-america-and-canada": [
-"cc9f7b384ddc2cd3",
-"2026-11-20"
+"324a17b0381d3008",
+"2026-11-21"
 ],
 "/pt/dioceses/ukrainian-catholic-archeparchy-of-philadelphia": [
-"f42e4fbbe6f1ec93",
-"2026-11-20"
+"b2729d862b33cf0d",
+"2026-11-21"
 ],
 "/pt/dioceses/ukrainian-catholic-eparchy-of-chicago": [
-"15c7927d30f09cfe",
-"2026-11-20"
+"fe01097ff037385c",
+"2026-11-21"
 ],
 "/pt/dioceses/ukrainian-catholic-eparchy-of-saint-josaphat-in-parma": [
-"057830dbab4423c4",
-"2026-11-20"
+"61f56a6124bc7c02",
+"2026-11-21"
 ],
 "/pt/dioceses/ukrainian-catholic-eparchy-of-stamford": [
-"bd400b9564d07d79",
-"2026-11-20"
+"f5bdb6d3d473f0c7",
+"2026-11-21"
 ],
 "/pt/diretorio-santos": [
-"1eb34757fe0fe27a",
-"2026-11-20"
+"581c51642ccd11ba",
+"2026-11-21"
 ],
 "/pt/documentos-da-igreja": [
-"2b1d78acaf67fdcd",
-"2026-11-20"
+"6e5e0a011bc0bd55",
+"2026-11-21"
 ],
 "/pt/encontrar-igreja": [
-"8635b0106b0d38f0",
-"2026-11-20"
+"7c7e825aea76c874",
+"2026-11-21"
 ],
 "/pt/estrutura": [
-"7ca1d08ca56f7811",
-"2026-11-20"
+"4426a5841f0011d2",
+"2026-11-21"
 ],
 "/pt/exame-de-consciencia": [
-"3431310f24299f99",
-"2026-11-20"
+"9a4abdfe9916f13a",
+"2026-11-21"
 ],
 "/pt/funeral": [
-"ef280b40905c4162",
-"2026-11-20"
+"1fb5cb6041661ed1",
+"2026-11-21"
 ],
 "/pt/glossario": [
-"c1f0d1d155c94691",
-"2026-11-20"
+"14ec519db02cbbc2",
+"2026-11-21"
 ],
 "/pt/guias": [
-"faa5a40e93f3cac7",
-"2026-11-20"
+"04462166716dfeb7",
+"2026-11-21"
 ],
 "/pt/inscrever-se-paroquia": [
-"a0b1569dcd487350",
-"2026-11-20"
+"97f3a7e1d311edec",
+"2026-11-21"
 ],
 "/pt/liturgia-das-horas": [
-"5bbc1f5e37334c48",
-"2026-11-20"
+"4c8f12c02393d8b9",
+"2026-11-21"
 ],
 "/pt/matrimonio": [
-"15ea076d8c6aa590",
-"2026-11-20"
+"7b83f49d7273a317",
+"2026-11-21"
 ],
 "/pt/missa-online": [
-"e90a4add6db7ec38",
-"2026-11-20"
+"83791ae982bd4e11",
+"2026-11-21"
 ],
 "/pt/missa-para-criancas": [
-"e3f35c1ef05db425",
-"2026-11-20"
+"7a872f6a9f761246",
+"2026-11-21"
+],
+"/pt/mural-de-oracao": [
+"ec97930e3f0047f4",
+"2026-11-21"
 ],
 "/pt/novenas": [
-"07ba148c21a15fcf",
-"2026-11-20"
+"4e56a3bf7fbf5349",
+"2026-11-21"
 ],
 "/pt/oracoes": [
-"a571aee7edf9b0c2",
-"2026-11-20"
+"613323f0c11a1fef",
+"2026-11-21"
 ],
 "/pt/ordem": [
-"6a1e4ea5f378bf8b",
-"2026-11-20"
+"678a70fbfc3cc08a",
+"2026-11-21"
 ],
 "/pt/papas": [
-"45336f480959dbbb",
-"2026-11-20"
+"6ba83c707d38dce4",
+"2026-11-21"
 ],
 "/pt/partes-da-igreja": [
-"d94ef2a81fc8bb4f",
-"2026-11-20"
+"71c1dbf00f7d6a0d",
+"2026-11-21"
 ],
 "/pt/perguntas": [
-"32879de6e9f616e6",
-"2026-11-20"
+"ac4d4b0d94659b16",
+"2026-11-21"
 ],
 "/pt/planos-de-leitura": [
-"93cfe0c847e88149",
-"2026-11-20"
+"cfcb694056161e8c",
+"2026-11-21"
 ],
 "/pt/por-dentro-da-missa": [
-"3f444afe9945dcdd",
-"2026-11-20"
+"f9029a647eba4e5a",
+"2026-11-21"
 ],
 "/pt/primeira-comunhao": [
-"0277835733dfc9db",
-"2026-11-20"
+"552fb5d2585020d2",
+"2026-11-21"
 ],
 "/pt/primeira-missa": [
-"e755232f6886f450",
-"2026-11-20"
+"b760a3a0308282d7",
+"2026-11-21"
 ],
 "/pt/primeiras-oracoes": [
-"dff9cb9f911d7290",
-"2026-11-20"
+"441ccc8c8815070b",
+"2026-11-21"
 ],
 "/pt/privacidade": [
-"a666b0bdfb3dd9f4",
-"2026-11-20"
+"dffff12e3ca65726",
+"2026-11-21"
 ],
 "/pt/rosario": [
-"c7ecabdb9aed15d5",
-"2026-11-20"
+"06dbfb34e0bc5e68",
+"2026-11-21"
 ],
 "/pt/santos": [
-"a0d1b9722769c0c0",
-"2026-11-20"
+"e6b2a8bf3cdc570b",
+"2026-11-21"
 ],
 "/pt/santos-para-criancas": [
-"0dad7bafee718cf4",
-"2026-11-20"
+"135e2b37a809e052",
+"2026-11-21"
 ],
 "/pt/sobre": [
-"b654fc8c67715ee0",
-"2026-11-20"
+"402dc689d0b933ba",
+"2026-11-21"
 ],
 "/pt/terco-da-misericordia": [
-"fc7ee4d7a5fd565c",
-"2026-11-20"
+"d32932f6b3b9dd9b",
+"2026-11-21"
 ],
 "/pt/termos": [
-"2d6d9f988670b5c5",
-"2026-11-20"
+"23493f3f946e6a39",
+"2026-11-21"
 ],
 "/pt/uncao": [
-"1c627088054a64af",
-"2026-11-20"
+"ee04c5252dcdbc42",
+"2026-11-21"
 ],
 "/pt/vestes-liturgicas": [
-"eea579b246f863e1",
-"2026-11-20"
+"a545ccb1fe50344f",
+"2026-11-21"
 ],
 "/pt/via-sacra": [
-"153111c6ec69cd8a",
-"2026-11-20"
+"31f8510283836ee2",
+"2026-11-21"
 ],
 "/pt/voltar": [
-"1ff24d1ac7985b5e",
-"2026-11-20"
+"4de98dd75b571393",
+"2026-11-21"
 ],
 "/questions": [
-"4abc330ead24e238",
-"2026-11-20"
+"36f9bc7c55224d00",
+"2026-11-21"
 ],
 "/read-the-bible": [
-"038fe9b3868d4168",
-"2026-11-20"
+"a9095b3063c9e64c",
+"2026-11-21"
 ],
 "/reading-plans": [
-"102c161e634e5798",
-"2026-11-20"
+"481c41dfc3ef00da",
+"2026-11-21"
 ],
 "/rosary": [
-"3eea1faa0a32a888",
-"2026-11-20"
+"0b9cee4eef500967",
+"2026-11-21"
 ],
 "/saint-stories": [
-"03953fe9bb6eb1db",
-"2026-11-20"
+"7f8027ea9be1b1ad",
+"2026-11-21"
 ],
 "/saints": [
-"0f832036dc56429c",
-"2026-11-20"
+"3a66c03cf5d2f0f2",
+"2026-11-21"
 ],
 "/saints-directory": [
-"58128569de8a75a1",
-"2026-11-20"
+"9a0052663c860561",
+"2026-11-21"
 ],
 "/search": [
-"853cf0c50053c777",
-"2026-11-20"
+"e567d82b42ff9867",
+"2026-11-21"
 ],
 "/start-here": [
-"84da9d7e1dafa98f",
-"2026-11-20"
+"c37782210fd65a02",
+"2026-11-21"
 ],
 "/stations-of-the-cross": [
-"f76dfcec0c06d0fd",
-"2026-11-20"
+"572b4527519269dd",
+"2026-11-21"
 ],
 "/structure": [
-"bcc243082957ee8a",
-"2026-11-20"
+"9ea111ebb8b3175c",
+"2026-11-21"
 ],
 "/terms": [
-"18f9b92f8aed620f",
-"2026-11-20"
+"7b0df7567051f555",
+"2026-11-21"
 ],
 "/tl/": [
-"f0eef428dc0c5e73",
-"2026-11-20"
+"38081797377c85bf",
+"2026-11-21"
 ],
 "/tl/adbiyento": [
-"7095f04f14bb8bdb",
-"2026-11-20"
+"db380b6f9aac0daf",
+"2026-11-21"
 ],
 "/tl/banal-na-orden": [
-"f4f7fdd727a6da23",
-"2026-11-20"
+"1d66165e6c81014b",
+"2026-11-21"
 ],
 "/tl/bibliya": [
-"fad326b7b6c4dc4c",
-"2026-11-20"
+"06f8dc8c4bd9727a",
+"2026-11-21"
 ],
 "/tl/binyag": [
-"fc67fe49ecdd9e55",
-"2026-11-20"
+"d134009116ba175d",
+"2026-11-21"
 ],
 "/tl/daan-ng-krus": [
-"e7858032071e19e4",
-"2026-11-20"
+"145e581319a06910",
+"2026-11-21"
 ],
 "/tl/direktoryo-ng-mga-santo": [
-"d96fbfe42e352e52",
-"2026-11-20"
+"143e0c0fe95e26ad",
+"2026-11-21"
 ],
 "/tl/glosaryo": [
-"06b6cb6c3ade5a68",
-"2026-11-20"
+"f9de4a614198aa33",
+"2026-11-21"
 ],
 "/tl/hanapin-ang-simbahan": [
-"5a772f254c45932f",
-"2026-11-20"
+"76e1f893e289e1cb",
+"2026-11-21"
 ],
 "/tl/ilista-ang-ocia": [
-"ce61447331f9f703",
-"2026-11-20"
+"b6d2bcd77edf20ff",
+"2026-11-21"
 ],
 "/tl/istruktura": [
-"eca575f747f5695f",
-"2026-11-20"
+"b40fb120751f7af8",
+"2026-11-21"
 ],
 "/tl/kalendaryo": [
-"feea66d3a5c069f5",
-"2026-11-20"
+"55a67bae8f96a264",
+"2026-11-21"
 ],
 "/tl/kasal": [
-"e1a30d5af4f4b169",
-"2026-11-20"
+"5b2679ac8f9fe5ce",
+"2026-11-21"
 ],
 "/tl/kasuotan-ng-pari": [
-"d3cbf75572563ad4",
-"2026-11-20"
+"6716ee710764dbcf",
+"2026-11-21"
 ],
 "/tl/katesismo-at-dokumento": [
-"095bc54cdb04fbd6",
-"2026-11-20"
+"031d7cc75faa8838",
+"2026-11-21"
 ],
 "/tl/katibayan-ng-binyag": [
-"e6ba853e31c6be0d",
-"2026-11-20"
+"bd799caf3f4df78a",
+"2026-11-21"
 ],
 "/tl/koronilya-ng-banal-na-awa": [
-"63e7ad070a351af2",
-"2026-11-20"
+"87b1639f02936808",
+"2026-11-21"
 ],
 "/tl/kumpil": [
-"645ee009cb8f6ae6",
-"2026-11-20"
+"816784e1d03b9110",
+"2026-11-21"
 ],
 "/tl/kumpisal": [
-"4a469bc413b328d8",
-"2026-11-20"
+"3ebe6cc0dac6ee97",
+"2026-11-21"
 ],
 "/tl/libing": [
-"fef2a47c936ffe1d",
-"2026-11-20"
+"3f4e839a67e97c49",
+"2026-11-21"
 ],
 "/tl/liturhiya-ng-mga-oras": [
-"bc712f438ba97fdb",
-"2026-11-20"
+"10cff44b3fc03ee2",
+"2026-11-21"
 ],
 "/tl/maghanap": [
-"651c9741d28748dd",
-"2026-11-20"
+"2aa3a04559086666",
+"2026-11-21"
 ],
 "/tl/magpatala-sa-parokya": [
-"309943345a5816eb",
-"2026-11-20"
+"f1db5eaa92d97224",
+"2026-11-21"
 ],
 "/tl/magsimula": [
-"7c77bc1641301a2b",
-"2026-11-20"
+"58aed7f802bf0c74",
+"2026-11-21"
 ],
 "/tl/mga-bahagi-ng-simbahan": [
-"fd49d906258dc141",
-"2026-11-20"
+"7c658d04f25ca7f1",
+"2026-11-21"
 ],
 "/tl/mga-bata": [
-"4204fdce3f4c6aa3",
-"2026-11-20"
+"9650d4074d9f6b4f",
+"2026-11-21"
 ],
 "/tl/mga-dasal": [
-"715caf158d9d355e",
-"2026-11-20"
+"ec3926ca3cc46790",
+"2026-11-21"
 ],
 "/tl/mga-debosyon": [
-"72b41dea193833bb",
-"2026-11-20"
+"de8c7252daa39f95",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis": [
-"5271b650ccd982d1",
-"2026-11-20"
+"933b73494d70313f",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-for-the-military-services": [
-"8c0425a32c09ca39",
-"2026-11-20"
+"932447de67029d88",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-agana": [
-"f9971fade78170b6",
-"2026-11-20"
+"0fc49ffdff1172ac",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-anchoragejuneau": [
-"00aded345baa34d0",
-"2026-11-20"
+"a21ce19a4eee29f5",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-atlanta": [
-"8beb6c0bfcfc2de6",
-"2026-11-20"
+"b60ca2e8c4df0af7",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-baltimore": [
-"af44cf83cfa120f4",
-"2026-11-20"
+"39f1f95e5d1b82bf",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-boston": [
-"d53a35cd0aa964e9",
-"2026-11-20"
+"68defb8dbea7506d",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-chicago": [
-"822626116488277d",
-"2026-11-20"
+"a171de82ebc3662a",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-cincinnati": [
-"eeea0aaba227d8a0",
-"2026-11-20"
+"3b51c8b770fb1c63",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-denver": [
-"0e32cbcbd102a777",
-"2026-11-20"
+"10b5dbcda4d2fad6",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-detroit": [
-"964053555e92d676",
-"2026-11-20"
+"845b135175f5bae1",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-dubuque": [
-"db1b19b733c629e9",
-"2026-11-20"
+"34c65f0662f3232a",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-galvestonhouston": [
-"99527360da555ea5",
-"2026-11-20"
+"fbe6789af91a8227",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-hartford": [
-"3e302fa85116942f",
-"2026-11-20"
+"11cdfb49324b4347",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-indianapolis": [
-"780aa8357d75ada0",
-"2026-11-20"
+"886bf7a4b5985db8",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-kansas-city-in-kansas": [
-"0727cd1bee27379c",
-"2026-11-20"
+"97767009f6c957df",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-las-vegas": [
-"aae3f684b875ef92",
-"2026-11-20"
+"092f8f9429925535",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-los-angeles": [
-"b5e4d3b880b4bc3b",
-"2026-11-20"
+"c005f9b888f11775",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-louisville": [
-"1f4eeb45c9f0da33",
-"2026-11-20"
+"17c77aed0d75cdf3",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-miami": [
-"c2ab201f01e789b0",
-"2026-11-20"
+"af997502fef4996c",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-milwaukee": [
-"515ab61684155af9",
-"2026-11-20"
+"5308433513efceea",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-mobile": [
-"9174d6c4c439b375",
-"2026-11-20"
+"ec7af1546ec0514c",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-new-orleans": [
-"1e0ba06ee77f8ede",
-"2026-11-20"
+"74f3ca4587cefb33",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-new-york": [
-"278e82ad7609a44f",
-"2026-11-20"
+"971913ff02bf73bc",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-newark": [
-"70878726643258a1",
-"2026-11-20"
+"00280b29d7dd3c75",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-oklahoma-city": [
-"6f3d30eb5a9d90c5",
-"2026-11-20"
+"6ec21095bee98a3f",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-omaha": [
-"bc67de3766d80c53",
-"2026-11-20"
+"c8959ce29f826ab2",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-philadelphia": [
-"ae9609ec00960634",
-"2026-11-20"
+"913cd9f3f7ff0ecb",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-portland-in-oregon": [
-"5013dfcf93c43497",
-"2026-11-20"
+"e2acbdd6033fdcf1",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-saint-paul-and-minneapolis": [
-"9352ed279e621b53",
-"2026-11-20"
+"ccf1f518c933a8b4",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-san-antonio": [
-"50d4755fd65068bf",
-"2026-11-20"
+"82797346a967ed85",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-san-francisco": [
-"1329d3e80cecc764",
-"2026-11-20"
+"d1481e27795cc748",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-san-juan-de-puerto-rico": [
-"7db51c9847429345",
-"2026-11-20"
+"8a3fa4a9497d9b14",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-santa-fe": [
-"85e06f2235fbc296",
-"2026-11-20"
+"2e74eaea6e867242",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-seattle": [
-"915eef4e770f3570",
-"2026-11-20"
+"f850ff5a0ecdab32",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-st-louis": [
-"83161136af092885",
-"2026-11-20"
+"81e05c863fbb4204",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/archdiocese-of-washington": [
-"2e5e409df3bd32dc",
-"2026-11-20"
+"483c638905fb56e2",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/armenian-catholic-eparchy-of-our-lady-of-nareg-in-the-united-states-of-america-and-canada": [
-"a45b4b4fbe362085",
-"2026-11-20"
+"e1c48c5b1bcd4fb0",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/byzantine-catholic-archeparchy-of-pittsburgh": [
-"cd478bbb1088276e",
-"2026-11-20"
+"6cc7b97b956a6225",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/byzantine-catholic-eparchy-of-parma": [
-"a6dd52c9aa16bb4a",
-"2026-11-20"
+"d9645eed6e32abc9",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/byzantine-catholic-eparchy-of-passaic": [
-"f005d57db472c26d",
-"2026-11-20"
+"3a478758f1233a4c",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/byzantine-catholic-eparchy-of-phoenix": [
-"279f963ab813c3f5",
-"2026-11-20"
+"e56eeaa363b9cf9f",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/chaldean-catholic-eparchy-of-saint-peter-the-apostle": [
-"cd102e572e213c93",
-"2026-11-20"
+"899d46fcc581c98a",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/chaldean-catholic-eparchy-of-saint-thomas-the-apostle-of-detroit": [
-"d827757bde0b0dec",
-"2026-11-20"
+"febf0893cf8685d1",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-albany": [
-"7609d7c70d62755f",
-"2026-11-20"
+"db58497c91365bc0",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-alexandria-in-louisiana": [
-"2a5985091dd464a8",
-"2026-11-20"
+"5f05ef1bbfa251d2",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-allentown": [
-"e23518e972d78af9",
-"2026-11-20"
+"475c5e54e66b7bbe",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-altoonajohnstown": [
-"07402cef780060ac",
-"2026-11-20"
+"78a63ce645f9facd",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-amarillo": [
-"f4a25278986447bd",
-"2026-11-20"
+"266bc847aaf7ae4a",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-arecibo": [
-"aaec3f8d951c091b",
-"2026-11-20"
+"8ca43c156c299bed",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-arlington": [
-"8f950a2bf2eb2640",
-"2026-11-20"
+"0f6e232671554987",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-austin": [
-"6647634c31277360",
-"2026-11-20"
+"a038735294435422",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-baker": [
-"d4eee03118b416b3",
-"2026-11-20"
+"5709ecb4f3f74fa9",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-baton-rouge": [
-"7af3ff7855699434",
-"2026-11-20"
+"557f592e0fc174d4",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-beaumont": [
-"5d875e334ef8372b",
-"2026-11-20"
+"6de6bea6f90651f6",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-belleville": [
-"76b1ec97b242753f",
-"2026-11-20"
+"d8f314d549899c16",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-biloxi": [
-"56e6dd53ee75109c",
-"2026-11-20"
+"104f079b81b578e4",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-birmingham-in-alabama": [
-"f0f788f272871390",
-"2026-11-20"
+"1f28020beae494e2",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-bismarck": [
-"3cee9216521dba70",
-"2026-11-20"
+"7e845e0ba30561e1",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-boise": [
-"e9e2b48ee99d010c",
-"2026-11-20"
+"ad0180f62de04781",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-bridgeport": [
-"cfcbecdbf630b6d0",
-"2026-11-20"
+"2bc4eb25313da60e",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-brooklyn": [
-"0aa3706b50b2d3e0",
-"2026-11-20"
+"1beeba288bc674aa",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-brownsville": [
-"810d94663156b873",
-"2026-11-20"
+"c8fd6ccfc7b40781",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-buffalo": [
-"79b6d0db9806dc94",
-"2026-11-20"
+"062fc4ccb07e7dbc",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-burlington": [
-"1407bc65bb662325",
-"2026-11-20"
+"5202f5f11171487c",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-caguas": [
-"eeb0dd47b2ab0f85",
-"2026-11-20"
+"a61b46b02ff569a2",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-camden": [
-"7bdab24b1b9a3817",
-"2026-11-20"
+"686934b32f71d954",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-chalan-kanoa": [
-"b8307f8501bc6936",
-"2026-11-20"
+"02aeaab4bbd33b29",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-charleston": [
-"c56c799ac48fa913",
-"2026-11-20"
+"a9dd60e064eb3929",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-charlotte": [
-"d2eb4ab8ef3d46ac",
-"2026-11-20"
+"5f28285edb4eb0b5",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-cheyenne": [
-"b3a7650bcfb57747",
-"2026-11-20"
+"658e9d879fa7f09c",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-cleveland": [
-"53c6f2042c3ce049",
-"2026-11-20"
+"9cde6481c432cb2d",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-colorado-springs": [
-"a0e9c2be5575eb5d",
-"2026-11-20"
+"99a7ac3407adb575",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-columbus": [
-"91c9f5ba564af698",
-"2026-11-20"
+"ba8f07bcce6285d0",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-corpus-christi": [
-"511fa35e477c6fe8",
-"2026-11-20"
+"9c54adfcd3bc77fd",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-covington": [
-"6642494e84d2c626",
-"2026-11-20"
+"8d930f099e3d3346",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-crookston": [
-"880937a5475d7696",
-"2026-11-20"
+"4a3bd55b2c3022a5",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-dallas": [
-"5b7ba7f67d2c2fa1",
-"2026-11-20"
+"f9f8627e39b11b02",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-davenport": [
-"bf238c5c7a226f82",
-"2026-11-20"
+"430a2be2c0243ae0",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-des-moines": [
-"003de5901815b3d8",
-"2026-11-20"
+"4bcf2ccecc2cc30e",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-dodge-city": [
-"c83ded5e131d64b0",
-"2026-11-20"
+"8a2179a6eef17619",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-duluth": [
-"24fe6c6d77f62dd2",
-"2026-11-20"
+"3563e2c921dc1ffa",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-el-paso": [
-"27743a6c503330cf",
-"2026-11-20"
+"94372c9a84a163bd",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-erie": [
-"6007763751f0f282",
-"2026-11-20"
+"100bc5f4702446c3",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-evansville": [
-"f116935a44d33b86",
-"2026-11-20"
+"8ccf372caf2b469f",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-fairbanks": [
-"4bf9bb9f8d231862",
-"2026-11-20"
+"6154b4bc7e37ec56",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-fajardo-humacao": [
-"9c9dfc462c0592eb",
-"2026-11-20"
+"c3bc95a35321b8da",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-fall-river": [
-"6ac99091603312dc",
-"2026-11-20"
+"944bd616495a2a28",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-fargo": [
-"92594b4b1b6c4f39",
-"2026-11-20"
+"7e86366bc66fe125",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-fort-waynesouth-bend": [
-"bab49647d59159ba",
-"2026-11-20"
+"a41e85a1f0e8aeb9",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-fort-worth": [
-"29ac55aacd314e9f",
-"2026-11-20"
+"13381f452cfbe036",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-fresno": [
-"4ddf0b75e4eae594",
-"2026-11-20"
+"acaf58e011f33b08",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-gallup": [
-"de00355e194af75c",
-"2026-11-20"
+"8cd438f5e70ac66f",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-gary": [
-"5df2b41734cf3020",
-"2026-11-20"
+"de6f0ae206b04ae9",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-gaylord": [
-"9c2925fa6acc462b",
-"2026-11-20"
+"e3bd87fdbd173935",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-grand-island": [
-"44e857ef582b2999",
-"2026-11-20"
+"a9848bf3cca72d72",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-grand-rapids": [
-"1dfc0e0693d7ff9d",
-"2026-11-20"
+"1787d9322a57d8e0",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-great-fallsbillings": [
-"acb1419586569b0d",
-"2026-11-20"
+"6ff7fbf5ddd425ac",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-green-bay": [
-"204868fdbeba8c98",
-"2026-11-20"
+"cc68c55b7aae351a",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-greensburg": [
-"e5a63d90503b5747",
-"2026-11-20"
+"4a37796c9bf2e73a",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-harrisburg": [
-"fd20571dec739b57",
-"2026-11-20"
+"1e0d303255668d23",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-helena": [
-"efc5a121a1239a83",
-"2026-11-20"
+"065a372f9d9a43f0",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-honolulu": [
-"08f27637cb264a79",
-"2026-11-20"
+"16fedc1f2f2e0b2b",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-houmathibodaux": [
-"4356b699abe09c97",
-"2026-11-20"
+"6bf5c588e9056b73",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-jackson": [
-"c4e89002caff5586",
-"2026-11-20"
+"28b4b282ad2c1139",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-jefferson-city": [
-"209926751a094f2d",
-"2026-11-20"
+"c57b20e52bacfefe",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-joliet-in-illinois": [
-"1e52b187a7e71801",
-"2026-11-20"
+"a9a348ab50a79b2c",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-kalamazoo": [
-"e2a1405a16713d82",
-"2026-11-20"
+"ef225cf2f088201b",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-kansas-citysaint-joseph": [
-"468ec90e58b347c7",
-"2026-11-20"
+"97733ad4ed091b91",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-knoxville": [
-"d607a97591584898",
-"2026-11-20"
+"c54db3663d28403b",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-la-crosse": [
-"8cb5244797254687",
-"2026-11-20"
+"eccf0213b131c496",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-lafayette-in-indiana": [
-"f612361ea8ff6178",
-"2026-11-20"
+"ca899b380f8ec361",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-lafayette-in-louisiana": [
-"8bdf83b4de2e7a93",
-"2026-11-20"
+"a1378a731ad769fd",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-lake-charles": [
-"f0e18e05a5808c5a",
-"2026-11-20"
+"bb8d9910a45eab68",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-lansing": [
-"faa993319664e9d4",
-"2026-11-20"
+"4433331e3a4544ca",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-laredo": [
-"4cce0bb3b0ec1d3c",
-"2026-11-20"
+"d6bc2725ca03987f",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-las-cruces": [
-"d33ca9c04743483c",
-"2026-11-20"
+"be33cb4ffa56019b",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-lexington": [
-"afbe661e2a8fd172",
-"2026-11-20"
+"462b2130b5620dfd",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-lincoln": [
-"879bed970b7fc512",
-"2026-11-20"
+"5c48fef0f0ca5f93",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-little-rock": [
-"24d328127b7befe1",
-"2026-11-20"
+"9a4c2459f1f6881f",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-lubbock": [
-"d0891f1d3312a319",
-"2026-11-20"
+"fb604cfad5130182",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-madison": [
-"080646dae83a8986",
-"2026-11-20"
+"7442ef06143200ff",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-manchester": [
-"bc9ec78b32ae890e",
-"2026-11-20"
+"ba9b036f4875a43a",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-marquette": [
-"c6c948043eb32a94",
-"2026-11-20"
+"a27b1785b8770f59",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-mayaguez": [
-"19ecb43de51c9550",
-"2026-11-20"
+"d764678455616bfe",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-memphis": [
-"33a5e2c6d4cc65e3",
-"2026-11-20"
+"28628a2159068a91",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-metuchen": [
-"2f51dd7f5323bec8",
-"2026-11-20"
+"79d8de3b5f0429ac",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-monterey-in-california": [
-"35dce6dd5548dd8b",
-"2026-11-20"
+"a7ac25a08168b855",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-nashville": [
-"321a1387a80e14bf",
-"2026-11-20"
+"ecad381fd5119f95",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-new-ulm": [
-"79ca59309125bb81",
-"2026-11-20"
+"bff9cc0811772d33",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-norwich": [
-"b1ad3d08be65d998",
-"2026-11-20"
+"f605e6ba5719cf44",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-oakland": [
-"bcc2352bed79d36d",
-"2026-11-20"
+"32b45af4d5817c18",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-ogdensburg": [
-"dda7040fd2bc5f28",
-"2026-11-20"
+"8bdbeeee06416aed",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-orange-in-california": [
-"626b2a122628aecb",
-"2026-11-20"
+"64c3a9bd478eb9c6",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-orlando": [
-"d07cc4a94c20e35d",
-"2026-11-20"
+"a595162b5f6a4a4f",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-owensboro": [
-"402f41bcd3eb6dee",
-"2026-11-20"
+"d3a33f569b05fc8f",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-palm-beach": [
-"2a246fa1953976f1",
-"2026-11-20"
+"28ee24676fe8a6f5",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-paterson": [
-"8a03f53bfa902d1c",
-"2026-11-20"
+"2666d5a1a5459315",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-pensacolatallahassee": [
-"1b1bb882a3a4936a",
-"2026-11-20"
+"2dc37d2ec1b981be",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-peoria": [
-"414b0dd89778c3c3",
-"2026-11-20"
+"2ccf119b09f44f54",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-phoenix": [
-"186d4bfcfa92cebe",
-"2026-11-20"
+"be64819287652af5",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-pittsburgh": [
-"e9e9e0742d2d25b0",
-"2026-11-20"
+"864c21791620e1bd",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-ponce": [
-"8f0055eef3170fc6",
-"2026-11-20"
+"0fc40ed56f345171",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-portland": [
-"bc72124f311db28f",
-"2026-11-20"
+"68316e2fe1060f6e",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-providence": [
-"c584013a167aae47",
-"2026-11-20"
+"22dcc32e0e456ebf",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-pueblo": [
-"fcafee3beb9d8ae0",
-"2026-11-20"
+"52dbcdf34c9001f9",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-raleigh": [
-"faba49784ff11044",
-"2026-11-20"
+"802bd86dfa90ed8f",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-rapid-city": [
-"eae868040db14090",
-"2026-11-20"
+"0b79b28ad15bfbd2",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-reno": [
-"48cc00f4d50d8779",
-"2026-11-20"
+"3de966319ab64804",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-richmond": [
-"8e89fd933bf4fb2b",
-"2026-11-20"
+"ade282cf8abe3fc8",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-rochester": [
-"d4a550caad6361ce",
-"2026-11-20"
+"011b6d9b3e94a113",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-rockford": [
-"9b03dfab96dee173",
-"2026-11-20"
+"cd63f6a1948b2067",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-rockville-centre": [
-"00095c22f18f7503",
-"2026-11-20"
+"f9e665df8d04bfb0",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-sacramento": [
-"8cba23c045d673b2",
-"2026-11-20"
+"8176878db3e18343",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-saginaw": [
-"03da002122fffff1",
-"2026-11-20"
+"6dc9e3f5d6b03b82",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-saint-cloud": [
-"6f3e9748fa41ac80",
-"2026-11-20"
+"d06b077584af3602",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-saint-petersburg-in-florida": [
-"c34b9e9d9b4acbc7",
-"2026-11-20"
+"8570ae10fa1ef5e1",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-saint-thomas-in-the-virgin-islands": [
-"168935e3212e4014",
-"2026-11-20"
+"84371fe67d5ad677",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-salina": [
-"6303e4b6c58d6e57",
-"2026-11-20"
+"a091ef45c41a2025",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-salt-lake-city": [
-"f313b2d8b7c3d12a",
-"2026-11-20"
+"3cd1a9ab6d32bc8f",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-samoa-pago-pago": [
-"f40e8bbed5c0a8ba",
-"2026-11-20"
+"38668d4e47610802",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-san-angelo": [
-"2829a5edcf7eff60",
-"2026-11-20"
+"b59f6d0990ae7da6",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-san-bernardino": [
-"31ea449c7681058d",
-"2026-11-20"
+"06abd6b1dfbfdc47",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-san-diego": [
-"acfeb7cf0ba25e37",
-"2026-11-20"
+"c802de48cc64616e",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-san-jose-in-california": [
-"02705751cf0987d0",
-"2026-11-20"
+"2b758937be70cc93",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-santa-rosa-in-california": [
-"612efe4db184993d",
-"2026-11-20"
+"1007933c3a09e309",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-savannah": [
-"2fe321592130814a",
-"2026-11-20"
+"3421ad81ef94c787",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-scranton": [
-"ccafaf2e61c1da43",
-"2026-11-20"
+"9d8392be08159b24",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-shreveport": [
-"0c64d673d6611372",
-"2026-11-20"
+"45fc0ca06cf1f27e",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-sioux-city": [
-"ae4b28d5e3c160d2",
-"2026-11-20"
+"4f2c1cf35ef86f7a",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-sioux-falls": [
-"3f0e741bee9ec9f5",
-"2026-11-20"
+"e46f6476adfe086e",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-spokane": [
-"316ffceb0f3aa372",
-"2026-11-20"
+"5be418fe8d0f7f22",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-springfield-in-illinois": [
-"93a01c154b4e69d5",
-"2026-11-20"
+"0d52115d827ada95",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-springfield-in-massachusetts": [
-"1aa13946cb46d94d",
-"2026-11-20"
+"f327f56727c3104f",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-springfieldcape-girardeau": [
-"c87e852ab60f79c5",
-"2026-11-20"
+"53a189cd53fde331",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-st-augustine": [
-"1a02d23935c3b23c",
-"2026-11-20"
+"9ed847ef10db51b0",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-steubenville": [
-"db3c3315c1f3680c",
-"2026-11-20"
+"0eb07fa3a0468b8c",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-stockton": [
-"bc32ba2db78e3e42",
-"2026-11-20"
+"da75702e6a2fd628",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-superior": [
-"adceaa6f0866c491",
-"2026-11-20"
+"7c3bbab6e2f59fb6",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-syracuse": [
-"507d357ded21092f",
-"2026-11-20"
+"a3d1eaa63028c217",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-toledo-in-america": [
-"b64e8b5376e02f32",
-"2026-11-20"
+"fc66bb9b6bb038e3",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-trenton": [
-"6f8e24e0b4642ea1",
-"2026-11-20"
+"9459b005eee55bb3",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-tucson": [
-"d1c808c81ef4cffa",
-"2026-11-20"
+"310ccd6ff91177c0",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-tulsa": [
-"b4f06b0c2af1c530",
-"2026-11-20"
+"060740bf8938d246",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-tyler": [
-"f9f6dbac1220bcbc",
-"2026-11-20"
+"633ec95bd51998a6",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-venice-in-florida": [
-"0f4a7f11664a997a",
-"2026-11-20"
+"eee16b23676c735d",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-victoria-in-texas": [
-"ccb9ab3b3a3dd1b7",
-"2026-11-20"
+"78576b845c61cf5a",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-wheelingcharleston": [
-"10df60aa29151f73",
-"2026-11-20"
+"9c4a4acb7f25357b",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-wichita": [
-"f106501ed3e3425f",
-"2026-11-20"
+"2bdb98d5c6ab457f",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-wilmington": [
-"de369fe6300883bd",
-"2026-11-20"
+"8e0f05866bd3a16d",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-winonarochester": [
-"090225f578ffae1f",
-"2026-11-20"
+"cb167fd75e2250d6",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-worcester": [
-"e8df76d8bf33a947",
-"2026-11-20"
+"208542c34bc4c214",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-yakima": [
-"e72af1e341fcc4fd",
-"2026-11-20"
+"feb2ac417ca457a2",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/diocese-of-youngstown": [
-"bba036a70d39446a",
-"2026-11-20"
+"442cd4a1161fbabc",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/eparchy-of-st-maron-of-brooklyn": [
-"a34ca9b5f4d4efef",
-"2026-11-20"
+"3da4f94bc1736bdd",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/maronite-catholic-eparchy-of-our-lady-of-lebanon-of-los-angeles": [
-"56a3ad5a663e4ebb",
-"2026-11-20"
+"ff06d0e42ca232b2",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/melkite-greek-catholic-eparchy-of-newton": [
-"b9e4105d625fb914",
-"2026-11-20"
+"ba194246eba7f829",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/romanian-catholic-eparchy-of-st-georges-in-canton": [
-"37c3351cb65b6bd1",
-"2026-11-20"
+"3b6652a08430736f",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/st-thomas-syro-malabar-catholic-eparchy-of-chicago": [
-"994be6986c5c6bb0",
-"2026-11-20"
+"9631bbdff44821d5",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/syriac-catholic-eparchy-of-our-lady-of-deliverance-in-the-united-states": [
-"baeebfcb687cb0b4",
-"2026-11-20"
+"3fc85b1bbd3b55b8",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/syro-malankara-catholic-eparchy-of-st-mary-queen-of-peace-of-the-united-states-of-america-and-canada": [
-"9b74cb402e899808",
-"2026-11-20"
+"dfb82b933e69ba51",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/ukrainian-catholic-archeparchy-of-philadelphia": [
-"96ab68638c35efb8",
-"2026-11-20"
+"8dd2e3b992806d37",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/ukrainian-catholic-eparchy-of-chicago": [
-"21dad360dae53251",
-"2026-11-20"
+"8e7355562b876674",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/ukrainian-catholic-eparchy-of-saint-josaphat-in-parma": [
-"474eb42d9a5d28fb",
-"2026-11-20"
+"1b394caf6d932ddf",
+"2026-11-21"
 ],
 "/tl/mga-diyosesis/ukrainian-catholic-eparchy-of-stamford": [
-"5b23272a8a8edeb7",
-"2026-11-20"
+"743e06e77c3fd3a7",
+"2026-11-21"
 ],
 "/tl/mga-gabay": [
-"03f2dcde2b21f32f",
-"2026-11-20"
+"2f4e94a378121e89",
+"2026-11-21"
+],
+"/tl/mga-kahilingang-panalangin": [
+"1262ce14370e58f9",
+"2026-11-21"
 ],
 "/tl/mga-nobena": [
-"1a4963e156736180",
-"2026-11-20"
+"ba31afd67a7b6cd8",
+"2026-11-21"
 ],
 "/tl/mga-pangkulay": [
-"c7b885a8df9904a4",
-"2026-11-20"
+"0c96a04e1e2cc0f9",
+"2026-11-21"
 ],
 "/tl/mga-paniniwala": [
-"a751e607c253db61",
-"2026-11-20"
+"605018646543b0f5",
+"2026-11-21"
 ],
 "/tl/mga-papa": [
-"9f16e1c14ba3e509",
-"2026-11-20"
+"0e2c1546506afe18",
+"2026-11-21"
 ],
 "/tl/mga-plano-sa-pagbasa": [
-"576c114ec7bee6eb",
-"2026-11-20"
+"89dfcdcfbeca924f",
+"2026-11-21"
 ],
 "/tl/mga-santo": [
-"523f250b80ba89c5",
-"2026-11-20"
+"15d31099d2caca63",
+"2026-11-21"
 ],
 "/tl/mga-santo-para-sa-bata": [
-"f68f5d7f9d4a31db",
-"2026-11-20"
+"56613833faeb25cd",
+"2026-11-21"
 ],
 "/tl/mga-tanong": [
-"7f48b5c4ac2e31dd",
-"2026-11-20"
+"a808764042f3effd",
+"2026-11-21"
 ],
 "/tl/mga-tuntunin": [
-"fcb8d50e828dbfda",
-"2026-11-20"
+"75d201d0ac248a01",
+"2026-11-21"
 ],
 "/tl/mga-unang-dasal": [
-"cf2480bec2f305ac",
-"2026-11-20"
+"b53e4c0a83a4362c",
+"2026-11-21"
 ],
 "/tl/misa-online": [
-"8a74ec0b12dd8687",
-"2026-11-20"
+"22d13acb76bb7e4a",
+"2026-11-21"
 ],
 "/tl/misa-para-sa-mga-bata": [
-"bb0f93db0d13275c",
-"2026-11-20"
+"5056e33867761c3d",
+"2026-11-21"
 ],
 "/tl/orasyon": [
-"13428c1da1d91738",
-"2026-11-20"
+"68ec41a729f70c96",
+"2026-11-21"
 ],
 "/tl/pagbabalik": [
-"293fae054feaa6ae",
-"2026-11-20"
+"318a1805134fde5f",
+"2026-11-21"
 ],
 "/tl/pagpapahid-ng-langis": [
-"67bebf0d8d3c6018",
-"2026-11-20"
+"a5a59bc9d949e66e",
+"2026-11-21"
 ],
 "/tl/pagsusuri-ng-budhi": [
-"f3a1740dfe32e699",
-"2026-11-20"
+"61942ee2d999a606",
+"2026-11-21"
 ],
 "/tl/patakaran-sa-privacy": [
-"1ce7c1d2bfb8c8b1",
-"2026-11-20"
+"5754e5c05b4453cd",
+"2026-11-21"
 ],
 "/tl/rosaryo": [
-"c1e3e60460ac3fad",
-"2026-11-20"
+"b0edde028c4e56bb",
+"2026-11-21"
 ],
 "/tl/sa-loob-ng-misa": [
-"862f8c1924a7d2fd",
-"2026-11-20"
+"cf5549970ac78b55",
+"2026-11-21"
 ],
 "/tl/sulok-ng-pamilya": [
-"12930bbb9881da26",
-"2026-11-20"
+"f2b1d333c52ab615",
+"2026-11-21"
 ],
 "/tl/tungkol": [
-"12e5c606d8cef5cd",
-"2026-11-20"
+"c24dd0ad9a187e07",
+"2026-11-21"
 ],
 "/tl/unang-komunyon": [
-"a47282cfba3380fb",
-"2026-11-20"
+"dd64b395b263ac82",
+"2026-11-21"
 ],
 "/tl/unang-misa": [
-"51ee9512dfd4cf89",
-"2026-11-20"
+"1cf1e44ccb5c5fe5",
+"2026-11-21"
 ],
 "/vestments": [
-"080a20d6aa62f840",
-"2026-11-20"
+"c06382cac3c4fbb8",
+"2026-11-21"
 ],
 "/watch-mass": [
-"65124e52fe4cd9fa",
-"2026-11-20"
+"aec603fa1f3f667c",
+"2026-11-21"
 ]
 }

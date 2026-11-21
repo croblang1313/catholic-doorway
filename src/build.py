@@ -18,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import features  # noqa: E402
 import kids  # noqa: E402
 import watch  # noqa: E402
+import prayerwall  # noqa: E402
 import plans  # noqa: E402
 import seasons  # noqa: E402
 import searchindex  # noqa: E402
@@ -71,6 +72,8 @@ PAGES = [
      "An interactive Rosary: tap through each bead with the prayers, today's mysteries and their Scripture passages. Free, no app needed."),
     ("watch-mass", "Watch Mass Online", "Watch Mass Online: Daily Livestreams and Help for the Homebound | CatholicDoorway",
      "Watch Catholic Mass online: EWTN, CatholicTV, the National Shrine, Vatican News and Spanish, Portuguese and Filipino streams in your time zone, parish livestreams, and Communion at home."),
+    ("prayer-wall", "Prayer Wall", "Prayer Wall: Ask for Prayer and Pray for Others | CatholicDoorway",
+     "A free Catholic prayer wall: post a prayer request with your first name or anonymously, and tap I prayed for others. Reviewed before posting, no sign-up, crisis help any time."),
     ("devotions", "Devotions", "Catholic Devotions and Prayer Reminders | CatholicDoorway",
      "The best-loved Catholic devotions with the words to pray: the Rosary, Divine Mercy Chaplet, Stations of the Cross, novenas and the Angelus, with free calendar reminders."),
     ("divine-mercy-chaplet", "Divine Mercy Chaplet", "How to Pray the Divine Mercy Chaplet, Step by Step | CatholicDoorway",
@@ -139,13 +142,13 @@ PAGES = [
      "Terms of use for CatholicDoorway.com: an independent guide, not an official Church resource. Mass times, parish OCIA listings and how you may share our content."),
     ("404", "Not found", "Page not found | CatholicDoorway", "This page could not be found."),
 ]
-NAV_EXCLUDE = {"watch-mass", "coloring-pages", "first-prayers", "mass-for-kids", "saint-stories", "family-corner", "privacy", "terms", "reading-plans", "confirmation", "first-communion", "holy-orders", "advent", "read-the-bible", "search", "examination-of-conscience", "ocia-listing", "devotions", "divine-mercy-chaplet", "stations-of-the-cross", "novenas", "angelus", "liturgy-of-the-hours", "church-documents", "about", "404", "saints-directory", "how-to", "confession", "coming-back", "join-a-parish", "baptism", "marriage", "anointing", "funerals", "baptism-certificate", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary", "questions", "church-anatomy", "vestments", "inside-the-mass"}
+NAV_EXCLUDE = {"prayer-wall", "watch-mass", "coloring-pages", "first-prayers", "mass-for-kids", "saint-stories", "family-corner", "privacy", "terms", "reading-plans", "confirmation", "first-communion", "holy-orders", "advent", "read-the-bible", "search", "examination-of-conscience", "ocia-listing", "devotions", "divine-mercy-chaplet", "stations-of-the-cross", "novenas", "angelus", "liturgy-of-the-hours", "church-documents", "about", "404", "saints-directory", "how-to", "confession", "coming-back", "join-a-parish", "baptism", "marriage", "anointing", "funerals", "baptism-certificate", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary", "questions", "church-anatomy", "vestments", "inside-the-mass"}
 # Pages shown in a dropdown under a main menu item: parent slug -> [(slug, label)]
 SUBNAV = {"kids": [("kids", "Kids and Families"), ("coloring-pages", "Coloring Pages"), ("first-prayers", "First Prayers"),
                     ("mass-for-kids", "Mass for Kids"), ("saint-stories", "Saint Stories for Kids"), ("family-corner", "Family Corner")],
           "beliefs": [("beliefs", "What Catholics Believe"), ("questions", "Honest Questions, Answered"),
                       ("church-documents", "Catechism and Church Documents")],
-          "prayers": [("prayers", "Catholic Prayers"), ("rosary", "Pray the Rosary"), ("watch-mass", "Watch Mass Online"), ("devotions", "Devotions and Reminders"),
+          "prayers": [("prayers", "Catholic Prayers"), ("rosary", "Pray the Rosary"), ("watch-mass", "Watch Mass Online"), ("prayer-wall", "Prayer Wall"), ("devotions", "Devotions and Reminders"),
                       ("liturgy-of-the-hours", "Liturgy of the Hours"), ("stations-of-the-cross", "Stations of the Cross"),
                       ("advent", "Advent and Christmas")],
           "bible": [("bible", "Today’s Readings and the Bible"), ("read-the-bible", "Read the Bible"), ("reading-plans", "Bible and Catechism Reading Plans"), ("calendar", "Holy Days Calendar")],
@@ -197,6 +200,8 @@ ES_PAGES = [
      "Un examen de conciencia católico para antes de confesarse, en versiones para niños, adolescentes y adultos. Marca lo que aplique y haz una lista privada en tu teléfono."),
     ("watch-mass", "misa-en-linea", "Ver la Misa en línea", "Ver la Misa en línea: transmisiones diarias y ayuda para quienes no pueden salir | CatholicDoorway",
      "Ve la Misa católica en línea: EWTN Español, la Basílica de Guadalupe, Vatican News y más en tu zona horaria, transmisiones de parroquias y cómo recibir la Comunión en casa."),
+    ("prayer-wall", "muro-de-oracion", "Muro de oración", "Muro de oración: pide oración y reza por los demás | CatholicDoorway",
+     "Un muro de oración católico y gratuito: publica tu petición con tu nombre de pila o de forma anónima, y toca Recé por los demás. Revisado antes de publicarse, sin registro y con ayuda en crisis."),
     ("devotions", "devociones", "Devociones", "Devociones católicas y recordatorios de oración | CatholicDoorway",
      "Las devociones católicas más queridas con sus oraciones: el Rosario, la Coronilla de la Divina Misericordia, el Vía Crucis, las novenas y el Ángelus, con recordatorios gratis en tu calendario."),
     ("divine-mercy-chaplet", "coronilla-de-la-divina-misericordia", "Coronilla de la Divina Misericordia", "Cómo rezar la Coronilla de la Divina Misericordia, paso a paso | CatholicDoorway",
@@ -296,6 +301,8 @@ PT_PAGES = [
      "Um exame de consciência católico para antes da Confissão, em versões para crianças, adolescentes e adultos. Marque o que se aplica e faça uma lista privada no celular."),
     ("watch-mass", "missa-online", "Assistir à Missa on-line", "Assistir à Missa on-line: transmissões diárias e ajuda para quem não pode sair | CatholicDoorway",
      "Assista à Missa católica on-line: TV Aparecida, Canção Nova, Vatican News e mais no seu fuso horário, transmissões de paróquias e como receber a Comunhão em casa."),
+    ("prayer-wall", "mural-de-oracao", "Mural de oração", "Mural de oração: peça oração e reze pelos outros | CatholicDoorway",
+     "Um mural de oração católico e gratuito: publique o seu pedido com o primeiro nome ou de forma anônima, e toque em Rezei pelos outros. Revisado antes de publicar, sem cadastro e com ajuda em crises."),
     ("devotions", "devocoes", "Devoções", "Devoções católicas e lembretes de oração | CatholicDoorway",
      "As devoções católicas mais queridas com as suas orações: o Rosário, o Terço da Misericórdia, a Via-Sacra, as novenas e o Angelus, com lembretes gratuitos no seu calendário."),
     ("divine-mercy-chaplet", "terco-da-misericordia", "Terço da Misericórdia", "Como rezar o Terço da Misericórdia, passo a passo | CatholicDoorway",
@@ -390,7 +397,7 @@ EN_TO_PT = {en: pt for en, pt, *_ in PT_PAGES}
 PT_SUBNAV = {"criancas": [("criancas", "Crianças e famílias"), ("desenhos-para-colorir", "Desenhos para colorir"), ("primeiras-oracoes", "Primeiras orações"), ("missa-para-criancas", "A Missa para crianças"), ("santos-para-criancas", "Histórias de santos para crianças"), ("cantinho-da-familia", "Cantinho da família")],
              "comecar": [("comecar", "Tornar-se católico (OCIA)"), ("primeira-missa", "Sua primeira Missa"), ("guias", "Guias práticos"),
                          ("exame-de-consciencia", "Exame de consciência")],
-             "oracoes": [("oracoes", "Orações católicas"), ("rosario", "Reze o Rosário"), ("missa-online", "Assistir à Missa on-line"), ("devocoes", "Devoções e lembretes"),
+             "oracoes": [("oracoes", "Orações católicas"), ("rosario", "Reze o Rosário"), ("missa-online", "Assistir à Missa on-line"), ("mural-de-oracao", "Mural de oração"), ("devocoes", "Devoções e lembretes"),
                          ("liturgia-das-horas", "Liturgia das Horas"), ("via-sacra", "Via-Sacra"),
                          ("advento", "Advento e Natal")],
              "biblia": [("biblia", "As leituras de hoje e a Bíblia"), ("planos-de-leitura", "Planos de leitura da Bíblia e do Catecismo"), ("calendario", "Calendário de dias santos")],
@@ -444,6 +451,8 @@ TL_PAGES = [
      "Isang pagsusuri ng budhi bago mangumpisal, para sa mga bata, kabataan at nakatatanda. Markahan ang angkop at gumawa ng pribadong listahan sa iyong telepono."),
     ("watch-mass", "misa-online", "Manood ng Misa online", "Manood ng Misa online: araw-araw na livestream at tulong sa mga hindi makalabas | CatholicDoorway",
      "Manood ng Misang Katoliko online: TV Maria, EWTN, Vatican News at iba pa sa iyong oras, livestream ng mga parokya, at kung paano tumanggap ng Komunyon sa bahay."),
+    ("prayer-wall", "mga-kahilingang-panalangin", "Mga kahilingang panalangin", "Mga kahilingang panalangin: humiling ng dasal at ipanalangin ang iba | CatholicDoorway",
+     "Isang libreng pahina ng kahilingang panalangin: ipadala ang iyong kahilingan gamit ang unang pangalan o nang hindi nagpapakilala, at pindutin ang Nanalangin ako para sa iba. Sinusuri bago ilabas, walang pag-sign up."),
     ("devotions", "mga-debosyon", "Mga debosyon", "Mga debosyong Katoliko at mga paalala sa pagdarasal | CatholicDoorway",
      "Ang mga pinakamamahal na debosyong Katoliko at ang kanilang mga dasal: ang Rosaryo, ang Koronilya ng Banal na Awa, ang Daan ng Krus, mga nobena at ang Orasyon, may libreng paalala sa iyong kalendaryo."),
     ("divine-mercy-chaplet", "koronilya-ng-banal-na-awa", "Koronilya ng Banal na Awa", "Paano dasalin ang Koronilya ng Banal na Awa, hakbang-hakbang | CatholicDoorway",
@@ -520,7 +529,7 @@ EN_TO_TL = {en: tl for en, tl, *_ in TL_PAGES}
 TL_SUBNAV = {"mga-bata": [("mga-bata", "Mga bata at pamilya"), ("mga-pangkulay", "Mga larawang kukulayan"), ("mga-unang-dasal", "Mga unang dasal"), ("misa-para-sa-mga-bata", "Ang Misa para sa mga bata"), ("mga-santo-para-sa-bata", "Mga kuwento ng santo para sa mga bata"), ("sulok-ng-pamilya", "Sulok ng pamilya")],
              "magsimula": [("magsimula", "Maging Katoliko (OCIA)"), ("unang-misa", "Ang iyong unang Misa"), ("mga-gabay", "Mga praktikal na gabay"),
                            ("pagsusuri-ng-budhi", "Pagsusuri ng budhi")],
-             "mga-dasal": [("mga-dasal", "Mga dasal Katoliko"), ("rosaryo", "Magrosaryo"), ("misa-online", "Manood ng Misa online"), ("mga-debosyon", "Mga debosyon at paalala"),
+             "mga-dasal": [("mga-dasal", "Mga dasal Katoliko"), ("rosaryo", "Magrosaryo"), ("misa-online", "Manood ng Misa online"), ("mga-kahilingang-panalangin", "Mga kahilingang panalangin"), ("mga-debosyon", "Mga debosyon at paalala"),
                            ("liturhiya-ng-mga-oras", "Liturhiya ng mga Oras"), ("daan-ng-krus", "Daan ng Krus"),
                            ("adbiyento", "Adbiyento at Pasko")],
              "bibliya": [("bibliya", "Ang mga pagbasa ngayon at ang Bibliya"), ("mga-plano-sa-pagbasa", "Mga plano sa pagbasa ng Bibliya at Katesismo"), ("kalendaryo", "Kalendaryo ng mga banal na araw")],
@@ -914,6 +923,7 @@ EXTRA = {
     **{k: ("", '<script src="/assets/js/kids.js" defer></script>') for k in kids.PARTS},
     "search": ("", '<script src="/assets/js/search.js" defer></script>'),
     "watch-mass": ("", '<script src="/assets/js/watch.js" defer></script>'),
+    "prayer-wall": ("", '<script src="/assets/js/prayerwall.js" defer></script>'),
     "find-a-church": (
         '<link rel="stylesheet" href="/assets/vendor/leaflet/leaflet.css">',
         '<script src="/assets/vendor/leaflet/leaflet.js"></script>\n<script src="/assets/js/map.js" defer></script>',
@@ -1748,7 +1758,7 @@ def version(rel):
 
 
 def bust(page):
-    for rel in ("/assets/css/style.css", "/assets/js/main.js", "/assets/js/map.js", "/assets/js/rosary.js", "/assets/js/saints-dir.js", "/assets/js/pray.js", "/assets/js/bible.js", "/assets/js/plans.js", "/assets/js/kids.js", "/assets/js/search.js", "/assets/js/stations.js", "/assets/js/advent.js", "/assets/js/watch.js"):
+    for rel in ("/assets/css/style.css", "/assets/js/main.js", "/assets/js/map.js", "/assets/js/rosary.js", "/assets/js/saints-dir.js", "/assets/js/pray.js", "/assets/js/bible.js", "/assets/js/plans.js", "/assets/js/kids.js", "/assets/js/search.js", "/assets/js/stations.js", "/assets/js/advent.js", "/assets/js/watch.js", "/assets/js/prayerwall.js"):
         page = page.replace(f'"{rel}"', f'"{rel}?v={version(rel)}"')
     return page
 
@@ -1787,7 +1797,7 @@ def nav_html(current):
 ES_SUBNAV = {"ninos": [("ninos", "Niños y familias"), ("dibujos-para-colorear", "Dibujos para colorear"), ("primeras-oraciones", "Primeras oraciones"), ("misa-para-ninos", "La Misa para niños"), ("santos-para-ninos", "Historias de santos para niños"), ("rincon-familiar", "Rincón familiar")],
              "comenzar": [("comenzar", "Hacerse católico (OCIA)"), ("primera-misa", "Tu primera Misa"), ("guias", "Guías prácticas"),
                           ("examen-de-conciencia", "Examen de conciencia")],
-             "oraciones": [("oraciones", "Oraciones católicas"), ("rosario", "Reza el Rosario"), ("misa-en-linea", "Ver la Misa en línea"), ("devociones", "Devociones y recordatorios"),
+             "oraciones": [("oraciones", "Oraciones católicas"), ("rosario", "Reza el Rosario"), ("misa-en-linea", "Ver la Misa en línea"), ("muro-de-oracion", "Muro de oración"), ("devociones", "Devociones y recordatorios"),
                            ("liturgia-de-las-horas", "Liturgia de las Horas"), ("via-crucis", "Vía Crucis"),
                            ("adviento", "Adviento y Navidad")],
              "biblia": [("biblia", "Las lecturas de hoy y la Biblia"), ("planes-de-lectura", "Planes de lectura de la Biblia y el Catecismo"), ("calendario", "Calendario de días santos")],
@@ -1848,6 +1858,7 @@ def build_lang(code, pages, text, foot, subnav, exclude):
         body = features.render(body, code)
         body = kids.render(body, code, lambda s, c=code: lang_urls(s)[c])
         body = watch.render(body, code)
+        body = prayerwall.render(body, code)
         body = seasons.render(body, code)
         body = ocia_options(body, code)
         if "{{QUESTIONS}}" in body:
@@ -1904,6 +1915,7 @@ def main():
         body = features.render(body, "en")
         body = kids.render(body, "en", lambda s: lang_urls(s)["en"])
         body = watch.render(body, "en")
+        body = prayerwall.render(body, "en")
         body = seasons.render(body, "en")
         body = ocia_options(body, "en")
         if "{{SAINTS}}" in body:
@@ -1950,7 +1962,7 @@ LLMS_GROUPS = [
     ("Becoming Catholic and practical guides", ["start-here", "first-mass", "how-to", "confession", "examination-of-conscience", "coming-back",
                                                "join-a-parish", "baptism", "confirmation", "first-communion", "marriage", "holy-orders", "anointing", "funerals",
                                                "baptism-certificate", "ocia-listing"]),
-    ("Prayer, Scripture and the calendar", ["prayers", "rosary", "watch-mass", "devotions", "divine-mercy-chaplet", "stations-of-the-cross", "novenas", "angelus",
+    ("Prayer, Scripture and the calendar", ["prayers", "rosary", "watch-mass", "prayer-wall", "devotions", "divine-mercy-chaplet", "stations-of-the-cross", "novenas", "angelus",
                                             "liturgy-of-the-hours", "advent", "bible", "read-the-bible", "reading-plans", "calendar"]),
     ("Kids and families", ["kids", "coloring-pages", "first-prayers", "mass-for-kids", "saint-stories", "family-corner"]),
     ("What Catholics believe", ["beliefs", "questions", "church-documents", "glossary", "church-anatomy", "inside-the-mass", "vestments"]),

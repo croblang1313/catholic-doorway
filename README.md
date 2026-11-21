@@ -42,6 +42,15 @@ The OCIA listing form (`/ocia-listing`) saves submissions in Workers KV. Until t
 
 Approved listings also appear on the church map (`site/assets/js/map.js` matches them to churches by parish name and city), including any **Mass and Confession times** the parish sends in the `masses` field.
 
+### Prayer Wall
+
+`/prayer-wall` (es `/es/muro-de-oracion`, pt `/pt/mural-de-oracao`, tl `/tl/mga-kahilingang-panalangin`) lets visitors ask for prayer with a first name or anonymously, and tap **I prayed** on others' requests. The page comes from `src/prayerwall.py` and `site/assets/js/prayerwall.js`; the API is `worker/prayers.js`, stored in the same `LISTINGS` KV namespace.
+
+- Nothing is shown until it is approved at `/api/prayer-admin` (same `ADMIN_TOKEN` password). You can edit the name and text before publishing, to take out last names or private details. Requests that may mention self-harm are flagged at the top.
+- "Keep it private" requests are never published; they appear in their own list on the review page for the team to pray for.
+- Every request expires 30 days after it was sent (KV deletes it). Spam protection: hidden honeypot field, a 3-second minimum, 3 requests per IP per hour, and no links, emails or phone numbers.
+- "I prayed" counts once per visitor per request per day (two KV writes each; the free plan allows 1,000 writes a day).
+
 ### Site search, seasons and the Bible reader
 
 - `src/searchindex.py` builds `site/data/search-<lang>.json` from the finished pages on every build; `site/assets/js/search.js` runs the search at `/search` (es `/buscar`, pt `/buscar`, tl `/maghanap`). Any heading or card with an `id` becomes its own result.

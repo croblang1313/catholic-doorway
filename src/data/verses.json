@@ -970,5 +970,23 @@
    "t": "Tandaan ninyo, ako'y laging kasama ninyo hanggang sa katapusan ng panahon.",
    "r": "Mateo 28:20"
   }
+ },
+ "prayer-wall": {
+  "en": {
+   "t": "Pray for one another, that you may be healed. The prayer of a righteous man has great power in its effects.",
+   "r": "James 5:16"
+  },
+  "es": {
+   "t": "Oren los unos por los otros, para ser curados. La oración perseverante del justo es poderosa.",
+   "r": "Santiago 5:16"
+  },
+  "pt": {
+   "t": "Orai uns pelos outros para serdes curados. A oração do justo tem grande eficácia.",
+   "r": "Tiago 5,16"
+  },
+  "tl": {
+   "t": "Ipanalangin ninyo ang isa't isa, upang kayo'y gumaling. Malaki ang nagagawa ng panalangin ng taong matuwid.",
+   "r": "Santiago 5:16"
+  }
  }
 }
