@@ -90,6 +90,8 @@ PAGES = [
      "This year's Advent and Christmas dates, Advent wreath prayers for each week, the O Antiphons, Simbang Gabi and Las Posadas, Confession before Christmas and the Christmas Masses."),
     ("read-the-bible", "Read the Bible", "Read the Catholic Bible Online: Douay-Rheims, All 73 Books | CatholicDoorway",
      "Read the complete Catholic Bible free online in the Douay-Rheims translation: all 73 books, chapter by chapter, with quick passage lookup such as John 3:16."),
+    ("this-week", "This Week in the Church", "This Week in the Church: Catholic Feasts and Seasons Explained | CatholicDoorway",
+     "Short, plain-language articles on this week's Catholic feasts, saints and seasons: what they mean, where they come from and how to keep them."),
     ("reading-plans", "Reading Plans", "Bible in a Year and Catechism in a Year: Free Catholic Reading Plans | CatholicDoorway",
      "Free Catholic reading plans: the Bible in a Year, the Catechism in a Year, the Gospels in 30 days and a 90-day OCIA plan. Start any day, track progress, no sign-up."),
     ("kids", "Kids", "Catholic Kids and Families: Coloring Pages, Prayers and Saint Stories | CatholicDoorway",
@@ -142,7 +144,7 @@ PAGES = [
      "Terms of use for CatholicDoorway.com: an independent guide, not an official Church resource. Mass times, parish OCIA listings and how you may share our content."),
     ("404", "Not found", "Page not found | CatholicDoorway", "This page could not be found."),
 ]
-NAV_EXCLUDE = {"prayer-wall", "watch-mass", "coloring-pages", "first-prayers", "mass-for-kids", "saint-stories", "family-corner", "privacy", "terms", "reading-plans", "confirmation", "first-communion", "holy-orders", "advent", "read-the-bible", "search", "examination-of-conscience", "ocia-listing", "devotions", "divine-mercy-chaplet", "stations-of-the-cross", "novenas", "angelus", "liturgy-of-the-hours", "church-documents", "about", "404", "saints-directory", "how-to", "confession", "coming-back", "join-a-parish", "baptism", "marriage", "anointing", "funerals", "baptism-certificate", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary", "questions", "church-anatomy", "vestments", "inside-the-mass"}
+NAV_EXCLUDE = {"this-week", "prayer-wall", "watch-mass", "coloring-pages", "first-prayers", "mass-for-kids", "saint-stories", "family-corner", "privacy", "terms", "reading-plans", "confirmation", "first-communion", "holy-orders", "advent", "read-the-bible", "search", "examination-of-conscience", "ocia-listing", "devotions", "divine-mercy-chaplet", "stations-of-the-cross", "novenas", "angelus", "liturgy-of-the-hours", "church-documents", "about", "404", "saints-directory", "how-to", "confession", "coming-back", "join-a-parish", "baptism", "marriage", "anointing", "funerals", "baptism-certificate", "popes", "dioceses", "find-a-church", "first-mass", "calendar", "rosary", "questions", "church-anatomy", "vestments", "inside-the-mass"}
 # Pages shown in a dropdown under a main menu item: parent slug -> [(slug, label)]
 SUBNAV = {"kids": [("kids", "Kids and Families"), ("coloring-pages", "Coloring Pages"), ("first-prayers", "First Prayers"),
                     ("mass-for-kids", "Mass for Kids"), ("saint-stories", "Saint Stories for Kids"), ("family-corner", "Family Corner")],
@@ -151,7 +153,7 @@ SUBNAV = {"kids": [("kids", "Kids and Families"), ("coloring-pages", "Coloring P
           "prayers": [("prayers", "Catholic Prayers"), ("rosary", "Pray the Rosary"), ("watch-mass", "Watch Mass Online"), ("prayer-wall", "Prayer Wall"), ("devotions", "Devotions and Reminders"),
                       ("liturgy-of-the-hours", "Liturgy of the Hours"), ("stations-of-the-cross", "Stations of the Cross"),
                       ("advent", "Advent and Christmas")],
-          "bible": [("bible", "Today’s Readings and the Bible"), ("read-the-bible", "Read the Bible"), ("reading-plans", "Bible and Catechism Reading Plans"), ("calendar", "Holy Days Calendar")],
+          "bible": [("bible", "Today’s Readings and the Bible"), ("read-the-bible", "Read the Bible"), ("reading-plans", "Bible and Catechism Reading Plans"), ("calendar", "Holy Days Calendar"), ("this-week", "This Week in the Church")],
           "start-here": [("start-here", "Becoming Catholic (OCIA)"), ("first-mass", "Your First Mass"),
                          ("how-to", "How-To Guides"),
                          ("examination-of-conscience", "Examination of Conscience")],
@@ -1963,7 +1965,7 @@ LLMS_GROUPS = [
                                                "join-a-parish", "baptism", "confirmation", "first-communion", "marriage", "holy-orders", "anointing", "funerals",
                                                "baptism-certificate", "ocia-listing"]),
     ("Prayer, Scripture and the calendar", ["prayers", "rosary", "watch-mass", "prayer-wall", "devotions", "divine-mercy-chaplet", "stations-of-the-cross", "novenas", "angelus",
-                                            "liturgy-of-the-hours", "advent", "bible", "read-the-bible", "reading-plans", "calendar"]),
+                                            "liturgy-of-the-hours", "advent", "this-week", "bible", "read-the-bible", "reading-plans", "calendar"]),
     ("Kids and families", ["kids", "coloring-pages", "first-prayers", "mass-for-kids", "saint-stories", "family-corner"]),
     ("What Catholics believe", ["beliefs", "questions", "church-documents", "glossary", "church-anatomy", "inside-the-mass", "vestments"]),
     ("Saints, Popes and Church structure", ["saints", "saints-directory", "popes", "structure", "dioceses", "find-a-church"]),

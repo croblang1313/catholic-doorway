@@ -5,6 +5,7 @@
 //   GET /api/devotions.ics prayer reminders (see devotions.js)
 //   GET /api/plans.ics reading plan reminders (see plans.js)
 //   /api/ocia-* parish OCIA self-listing form, public list and review page (see ocia.js)
+//   /this-week, /this-week/*, /api/articles*, /sitemap-articles.xml weekly articles (see articles.js)
 //   POST /api/stream-report a broken parish livestream link (see ocia.js)
 //   /api/prayer-* and /api/prayers.json the Prayer Wall (see prayers.js)
 // A weekly cron (wrangler.jsonc) re-checks parish livestream links.
@@ -17,6 +18,7 @@ import { devotions } from "./devotions.js";
 import { ocia, checkStreams } from "./ocia.js";
 import { plans } from "./plans.js";
 import { prayers } from "./prayers.js";
+import { articles } from "./articles.js";
 
 const MONTHS = ["january", "february", "march", "april", "may", "june", "july",
   "august", "september", "october", "november", "december"];
@@ -102,6 +104,7 @@ export default {
     if (url.pathname === "/api/plans.ics") return plans(request, url, env);
     if (url.pathname.startsWith("/api/ocia-") || url.pathname === "/api/stream-report") return ocia(request, url, env);
     if (url.pathname.startsWith("/api/prayer-") || url.pathname === "/api/prayers.json") return prayers(request, url, env, ctx);
+    if (url.pathname.startsWith("/this-week") || url.pathname.startsWith("/api/articles") || url.pathname === "/sitemap-articles.xml") return articles(request, url, env);
     return env.ASSETS.fetch(request);
   },
   async scheduled(event, env, ctx) {

@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /api/ocia-admin
+Disallow: /this-week/review
 Sitemap: https://catholicdoorway.com/sitemap.xml
+Sitemap: https://catholicdoorway.com/sitemap-articles.xml
