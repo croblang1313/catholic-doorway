@@ -16,6 +16,44 @@
     });
   }
 
+  // Phones and tablets: each menu group opens and closes with its arrow button.
+  $$('.sub-toggle').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var li = b.parentNode, open = li.classList.toggle('open');
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  /* ---------- Home: "Where are you on the journey?" tabs ---------- */
+  $$('[data-paths]').forEach(function (box) {
+    var list = $('.path-tabs', box);
+    if (!list) return;
+    var tabs = $$('[role="tab"]', list), panels = $$('[role="tabpanel"]', box);
+    function pick(i, focus) {
+      tabs.forEach(function (t, j) {
+        t.setAttribute('aria-selected', i === j ? 'true' : 'false');
+        t.tabIndex = i === j ? 0 : -1;
+        panels[j].hidden = i !== j;
+      });
+      if (focus) tabs[i].focus();
+      try { localStorage.setItem('cd-path', tabs[i].id); } catch (e) {}
+    }
+    var start = 0;
+    try { var saved = localStorage.getItem('cd-path'); tabs.forEach(function (t, j) { if (t.id === saved) start = j; }); } catch (e) {}
+    list.hidden = false;
+    $$('.path-panel h3', box).forEach(function (h) { h.classList.add('sr-only'); });
+    pick(start, false);
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { pick(i, false); });
+      t.addEventListener('keydown', function (e) {
+        var n = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : null;
+        if (n === null) return;
+        e.preventDefault();
+        pick((n + tabs.length) % tabs.length, true);
+      });
+    });
+  });
+
   /* ---------- Theme toggle ---------- */
   var themeBtn = $('[data-theme-toggle]');
   if (themeBtn) {

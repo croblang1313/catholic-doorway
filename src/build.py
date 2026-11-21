@@ -17,6 +17,7 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import features  # noqa: E402
 import kids  # noqa: E402
+import journey  # noqa: E402
 import watch  # noqa: E402
 import prayerwall  # noqa: E402
 import plans  # noqa: E402
@@ -1778,22 +1779,7 @@ def menu_order(items):
 
 
 def nav_html(current):
-    items = []
-    for slug, label, *_ in menu_order([(p[0], p[1]) for p in PAGES]):
-        if slug in NAV_EXCLUDE:
-            continue
-        href = "/" if slug == "index" else f"/{slug}"
-        cur = ' aria-current="page"' if slug == current else ""
-        subs = sorted(SUBNAV[slug], key=lambda x: label_key(x[1])) if slug in SUBNAV else None
-        if subs:
-            if current in [s for s, _ in subs]:
-                cur = ' class="in-section"'
-            sub = "".join(
-                f'<li{" class=\"hub\"" if s == slug else ""}><a href="/{s}"{" aria-current=\"page\"" if s == current else ""}>{l}</a></li>' for s, l in subs)
-            items.append(f'        <li class="has-sub"><a href="{href}"{cur}>{label}</a><ul class="sub">{sub}</ul></li>')
-            continue
-        items.append(f'        <li><a href="{href}"{cur}>{label}</a></li>')
-    return "\n".join(items)
+    return menu_html("en", current)
 
 
 ES_SUBNAV = {"ninos": [("ninos", "Niños y familias"), ("dibujos-para-colorear", "Dibujos para colorear"), ("primeras-oraciones", "Primeras oraciones"), ("misa-para-ninos", "La Misa para niños"), ("santos-para-ninos", "Historias de santos para niños"), ("rincon-familiar", "Rincón familiar")],
@@ -1816,22 +1802,45 @@ ES_NAV_EXCLUDE = {"privacidad", "terminos", "confirmacion", "primera-comunion", 
 
 
 def lang_nav(code, pages, subnav, exclude, current):
-    children = {c for subs in subnav.values() for c, _ in subs} - set(subnav)
-    items = []
-    for sl, label in menu_order([(p[1], p[2]) for p in pages]):
-        if sl in children or sl in exclude:
-            continue
-        href = f"/{code}/" if sl == "index" else f"/{code}/{sl}"
-        cur = ' aria-current="page"' if sl == current else ""
-        subs = sorted(subnav[sl], key=lambda x: label_key(x[1])) if sl in subnav else None
-        if subs:
-            if current in [c for c, _ in subs]:
-                cur = ' class="in-section"'
-            sub = "".join(f'<li{" class=\"hub\"" if c == sl else ""}><a href="/{code}/{c}"{" aria-current=\"page\"" if c == current else ""}>{l}</a></li>' for c, l in subs)
-            items.append(f'        <li class="has-sub"><a href="{href}"{cur}>{label}</a><ul class="sub">{sub}</ul></li>')
-            continue
-        items.append(f'        <li><a href="{href}"{cur}>{label}</a></li>')
-    return "\n".join(items)
+    """current is this language's slug; the menu itself is journey.MENU, the same in every language."""
+    key = {sl: en for en, sl, *_ in pages}.get(current, current)
+    return menu_html(code, key)
+
+
+def _menu_labels(code):
+    """English key -> menu label in this language: journey overrides, then the old dropdown labels, then the page label."""
+    if code == "en":
+        out = {p[0]: p[1] for p in PAGES}
+        subs = SUBNAV
+        to_key = {p[0]: p[0] for p in PAGES}
+    else:
+        pages = {"es": ES_PAGES, "pt": PT_PAGES, "tl": TL_PAGES}[code]
+        out = {p[0]: p[2] for p in pages}
+        subs = {"es": ES_SUBNAV, "pt": PT_SUBNAV, "tl": TL_SUBNAV}[code]
+        to_key = {p[1]: p[0] for p in pages}
+    for items in subs.values():
+        for sl, label in items:
+            if sl in to_key:
+                out[to_key[sl]] = label
+    out.update(journey.LABELS.get(code, {}))
+    return out
+
+
+_LABEL_CACHE = {}
+
+
+def menu_label(code, key):
+    if code not in _LABEL_CACHE:
+        _LABEL_CACHE[code] = _menu_labels(code)
+    return _LABEL_CACHE[code].get(key, key)
+
+
+def menu_html(code, key):
+    return journey.nav(code, key, lambda k: lang_urls(k)[code], lambda k: menu_label(code, k), label_key)
+
+
+def next_html(code, key):
+    return journey.next_cards(key, code, lambda k: lang_urls(k)[code], lambda k: menu_label(code, k))
 
 
 def es_nav(current):
@@ -1861,7 +1870,8 @@ def build_lang(code, pages, text, foot, subnav, exclude):
         body = kids.render(body, code, lambda s, c=code: lang_urls(s)[c])
         body = watch.render(body, code)
         body = prayerwall.render(body, code)
-        body = seasons.render(body, code)
+        body = seasons.render(body, code, lambda k, c=code: lang_urls(k)[c])
+        body = journey.render(body, code, lambda k, c=code: lang_urls(k)[c])
         body = ocia_options(body, code)
         if "{{QUESTIONS}}" in body:
             body = body.replace("{{QUESTIONS}}", questions_html(code))
@@ -1882,7 +1892,7 @@ def build_lang(code, pages, text, foot, subnav, exclude):
         if "{{MASS}}" in body:
             ms, mn = mass_html(code)
             body = body.replace("{{MASS}}", ms).replace("{{MASS_COUNT}}", str(mn))
-        page += body + foot.format(extra_foot=ef)
+        page += body + next_html(code, en) + foot.format(extra_foot=ef)
         crumbs = None if sl == "index" else [(HOME_WORD[code], LANG_HOME[code]), (label, url)]
         page = seo(page, code, url, crumbs=crumbs, extra=[faq_ld(code)] if en == "questions" else None)
         (out_dir / f"{sl}.html").write_text(bust(page), encoding="utf-8")
@@ -1918,7 +1928,8 @@ def main():
         body = kids.render(body, "en", lambda s: lang_urls(s)["en"])
         body = watch.render(body, "en")
         body = prayerwall.render(body, "en")
-        body = seasons.render(body, "en")
+        body = seasons.render(body, "en", lambda k: lang_urls(k)["en"])
+        body = journey.render(body, "en", lambda k: lang_urls(k)["en"])
         body = ocia_options(body, "en")
         if "{{SAINTS}}" in body:
             body = body.replace("{{SAINTS}}", saints_html())
@@ -1938,7 +1949,7 @@ def main():
         if "{{POPES}}" in body:
             pl, pj = popes_html()
             body = body.replace("{{POPES}}", pl).replace("{{CENTURIES}}", pj)
-        page += body
+        page += body + next_html("en", slug)
         page += FOOT.format(extra_foot=ef)
         if slug != "404":
             url = "/" if slug == "index" else f"/{slug}"
