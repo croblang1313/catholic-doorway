@@ -180,15 +180,23 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
   .site-nav .nav-cta a:hover, .site-nav .nav-cta a[aria-current="page"] { background: var(--navy-deep); color: #e9cf8e; }
   .site-nav > ul { align-items: center; }
 }
-:root[data-theme="dark"] .site-nav .nav-cta a { background: #e9cf8e; color: #1a2140; }
+:root[data-theme="dark"] .site-nav > ul > .nav-cta > a { background: #e9cf8e; color: #1a2140; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .site-nav > ul > .nav-cta > a { background: #e9cf8e; color: #1a2140; } }
+/* Desktop menu spacing: 16px labels, roomier where the screen allows. Spanish and Filipino labels are
+   longest, so they keep a slightly smaller size on the narrowest desktops. */
 @media (min-width: 1200px) {
-  .site-nav > ul > li > a { padding: .45rem .4rem; font-size: .95rem; }
-  .site-nav > ul > .nav-cta > a { padding: .45rem .8rem; }
-  .header-row { gap: .6rem; }
-}
-@media (min-width: 1200px) and (max-width: 1679.98px) {
+  .site-nav > ul > li > a { padding: .45rem .42rem; font-size: 1rem; }
+  .site-nav > ul > .nav-cta > a { padding: .45rem .9rem; }
   .site-nav .has-sub > a::after { display: none; }
+  .header-row { gap: .6rem; }
   .brand-name { font-size: 1.3rem; }
+}
+@media (min-width: 1200px) and (max-width: 1279.98px) {
+  html:is([lang="es"], [lang="tl"]) .site-nav > ul > li > a { font-size: .95rem; padding-left: .38rem; padding-right: .38rem; }
+}
+@media (min-width: 1280px) {
+  .site-nav > ul > li > a { padding: .45rem .6rem; }
+  .site-nav > ul > .nav-cta { margin-left: .5rem; }
 }
 
 /* ---------- Home: journey paths ---------- */
@@ -199,6 +207,10 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .path-tabs button[aria-selected="true"] { background: var(--navy); border-color: var(--navy); color: #f4efe3; }
 :root[data-theme="dark"] .path-tabs button { color: var(--ink); }
 :root[data-theme="dark"] .path-tabs button[aria-selected="true"] { background: #e9cf8e; border-color: #e9cf8e; color: #1a2140; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .path-tabs button { color: var(--ink); }
+  :root:not([data-theme="light"]) .path-tabs button[aria-selected="true"] { background: #e9cf8e; border-color: #e9cf8e; color: #1a2140; }
+}
 .path-panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.3rem 1.4rem; margin-bottom: 1rem; }
 .path-panel[hidden] { display: none; }
 .path-panel h3 { margin: 0; font-size: 1.5rem; }
