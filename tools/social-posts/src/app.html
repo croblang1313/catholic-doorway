@@ -37,6 +37,7 @@ label.field{display:block;font-weight:600;margin:14px 0 6px}
 input[type=text],input[type=password],input[type=url],textarea,select{width:100%;padding:10px 12px;border:1px solid #c9ced6;border-radius:8px;background:var(--surface)}
 textarea{min-height:140px;resize:vertical}
 .hint{color:var(--muted);font-size:14px;margin:6px 0 0}
+.art{border-top:1px solid var(--line);padding:14px 0}.art:first-of-type{border-top:0}.art h3{margin:4px 0}.art p{margin:0 0 8px}
 .counts{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:4px}
 .counts .over{color:var(--bad);font-weight:700}
 .seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
@@ -227,7 +228,7 @@ document.getElementById('themebtn').onclick = function () {
 	function render() {
 		var h = location.hash.replace(/^#/, '') || 'new';
 		var todo = S.posts.filter(function (p) { return p.status !== 'sent'; }).length;
-		var tabs = [['new', 'New post'], ['todo', 'To do' + (todo ? ' (' + todo + ')' : '')], ['history', 'History'], ['settings', 'Settings']];
+		var tabs = [['new', 'New post'], ['todo', 'To do' + (todo ? ' (' + todo + ')' : '')], ['articles', 'Articles'], ['history', 'History'], ['settings', 'Settings']];
 		var top = '<h1>Social Posts</h1>' + takeFlash();
 		if (S.settings.test_mode) {
 			top += '<div class="banner test"><strong>Test mode is on.</strong> Nothing will be posted. Approving shows exactly what would have been sent. Turn it off under <a href="#settings">Settings</a> when you are ready.</div>';
@@ -237,6 +238,7 @@ document.getElementById('themebtn').onclick = function () {
 		if (h.indexOf('edit/') === 0) { return viewCompose(top, h.slice(5)); }
 		if (h === 'todo') { return viewList(top, 'todo'); }
 		if (h === 'history') { return viewList(top, 'history'); }
+		if (h === 'articles') { return viewArticles(top); }
 		if (h === 'settings') { return viewSettings(top); }
 		return viewCompose(top, '');
 	}
@@ -271,6 +273,39 @@ document.getElementById('themebtn').onclick = function () {
 			html += '</tbody></table>';
 		}
 		app.innerHTML = html + '</div>';
+	}
+
+	/* ---------------- Articles (This Week in the Church) ---------------- */
+	function viewArticles(top) {
+		app.innerHTML = top + '<div class="card"><h2>This Week in the Church</h2><p class="hint">Loading articles…</p></div>';
+		api('GET', '/api/articles').then(function (d) {
+			if (location.hash !== '#articles') { return; }
+			var rows = d.articles || [];
+			var drafts = rows.filter(function (a) { return a.status !== 'published'; }), live = rows.filter(function (a) { return a.status === 'published'; });
+			function item(a) {
+				var pub = a.status === 'published';
+				return '<div class="art"><div class="hint" style="margin:0">' + esc(a.kicker) + '</div><h3>' + esc(a.title) + '</h3><p>' + esc(a.description) + '</p>' +
+					'<div class="hint" style="margin:0 0 10px">' + (pub ? '<span class="pill sent">Live</span> since ' + esc(when(Date.parse(a.published))) : '<span class="pill draft">Waiting for approval</span>') + ' · ' + esc(a.minutes) + ' min read</div>' +
+					'<div class="row"><a class="btn ghost" href="' + esc(a.review_url) + '" target="_blank" rel="noopener">Read the preview</a>' +
+					(pub ? '<a class="btn ghost" href="' + esc(a.url) + '" target="_blank" rel="noopener">Open live page</a><button class="btn danger" type="button" data-act="unpublish" data-slug="' + esc(a.slug) + '">Unpublish</button>'
+						: '<button class="btn" type="button" data-act="publish" data-slug="' + esc(a.slug) + '">Publish on the website</button><button class="btn danger" type="button" data-act="delete" data-slug="' + esc(a.slug) + '">Delete draft</button>') + '</div></div>';
+			}
+			app.innerHTML = top + '<div class="card"><h2>Waiting on you (' + drafts.length + ')</h2><p class="hint" style="margin-bottom:12px">Read the preview, then publish. It goes live on catholicdoorway.com/this-week right away, and you can unpublish it any time. Publish the article before approving the social post that links to it.</p>' +
+				(drafts.map(item).join('') || '<p class="empty">Nothing waiting. A new article comes every Monday.</p>') + '</div>' +
+				'<div class="card"><h2>Published (' + live.length + ')</h2>' + (live.map(item).join('') || '<p class="empty">None yet.</p>') + '</div>';
+			Array.prototype.forEach.call(app.querySelectorAll('[data-act]'), function (b) {
+				b.onclick = function () {
+					var act = b.getAttribute('data-act');
+					if (act === 'delete' && !confirm('Delete this draft article?')) { return; }
+					if (act === 'unpublish' && !confirm('Take this article off the website? It goes back to the drafts.')) { return; }
+					b.disabled = true;
+					api('POST', '/api/articles/action', { slug: b.getAttribute('data-slug'), action: act }).then(function () {
+						flash('ok', act === 'publish' ? 'Published. It is live on the website now.' : act === 'unpublish' ? 'Unpublished.' : 'Deleted.');
+						render();
+					}).catch(function (e) { b.disabled = false; alert(e.message); });
+				};
+			});
+		}).catch(function (e) { app.innerHTML = top + '<div class="msg err">' + esc(e.message) + '</div>'; });
 	}
 
 	/* ---------------- Compose ---------------- */

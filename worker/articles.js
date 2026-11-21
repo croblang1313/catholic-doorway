@@ -16,9 +16,10 @@
 //
 // Pages are made from the built /this-week page (src/pages/this-week.html), so they share the
 // site's header, menu, footer and verse banner. The drafts token is the Social Posts DRAFTS_TOKEN;
-// only its SHA-256 is kept here (ARTICLE_DRAFTS_SHA256 in wrangler.jsonc). It can leave drafts,
-// never publish. Publishing takes the per-article review key (sent only to the private Social Posts
-// page) or the admin password.
+// only its SHA-256 is kept here (ARTICLE_DRAFTS_SHA256 in wrangler.jsonc). Christopher reviews and
+// publishes in the Articles tab of Social Posts, which calls GET /api/articles/all and
+// POST /api/articles/action with that token from its server. The weekly job is told never to
+// publish. The per-article review link and /this-week/review (ADMIN_TOKEN) also work.
 
 const DOMAIN = "https://catholicdoorway.com";
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+){0,12}$/;
@@ -191,6 +192,40 @@ async function publishByKey(request, env) {
   if (!a || !same(String(b.k || ""), a.key)) return json({ ok: false, error: "not_found" }, 404);
   if (a.status !== "published") await publish(env, a);
   return json({ ok: true, url: `${DOMAIN}/this-week/${a.slug}`, published: a.published });
+}
+
+// For the Articles tab in Social Posts (social.catholicdoorway.com). That Worker signs Christopher
+// in with its own password and calls these with its DRAFTS_TOKEN.
+async function bearerOk(request, env) {
+  return canDraft((request.headers.get("Authorization") || "").replace(/^Bearer\s+/i, "").trim(), env);
+}
+
+async function allForTool(request, env) {
+  if (!(await bearerOk(request, env))) return json({ ok: false, error: "unauthorized" }, 401);
+  const rows = (await listAll(env)).map((a) => ({ slug: a.slug, title: a.title, description: a.description, kicker: a.kicker, date: a.date,
+    status: a.status, published: a.published || "", minutes: minutes(a.body), url: `${DOMAIN}/this-week/${a.slug}`, review_url: reviewUrl(a) }));
+  return json({ ok: true, articles: rows });
+}
+
+async function actionForTool(request, env) {
+  if (!(await bearerOk(request, env))) return json({ ok: false, error: "unauthorized" }, 401);
+  let b;
+  try {
+    b = await request.json();
+  } catch (e) {
+    return json({ ok: false, error: "bad_request" }, 400);
+  }
+  const slug = clean(b.slug, 90), action = String(b.action || "");
+  const a = SLUG.test(slug) ? await env.LISTINGS.get("article:" + slug, "json") : null;
+  if (!a) return json({ ok: false, error: "not_found" }, 404);
+  if (action === "publish" && a.status !== "published") await publish(env, a);
+  else if (action === "unpublish" && a.status === "published") await unpublish(env, a);
+  else if (action === "delete") {
+    if (a.status === "published") return json({ ok: false, error: "Unpublish it first." }, 409);
+    await env.LISTINGS.delete("article:" + slug);
+    return json({ ok: true, deleted: true });
+  }
+  return json({ ok: true, status: a.status, url: `${DOMAIN}/this-week/${a.slug}` });
 }
 
 async function latest(env) {
@@ -458,6 +493,8 @@ export async function articles(request, url, env) {
   if (p === "/api/articles" && request.method === "POST") return createDraft(request, env);
   if (p === "/api/articles/publish" && request.method === "POST") return publishByKey(request, env);
   if (p === "/api/articles/latest.json") return latest(env);
+  if (p === "/api/articles/all" && request.method === "GET") return allForTool(request, env);
+  if (p === "/api/articles/action" && request.method === "POST") return actionForTool(request, env);
   if (p === "/this-week/review") return reviewList(request, env);
   let m = /^\/this-week\/review\/([^/]+)$/.exec(p);
   if (m) return reviewArticle(request, env, m[1], url);

@@ -24,9 +24,8 @@ When "tiktok" is in platforms, TikTok gets its own 11-second video draft (motion
 and the photo draft goes to the other platforms. Set "video": false to send TikTok the photo instead.
 
 "article" is optional: a path (relative to plan.json) to a "This Week in the Church" article JSON
-(see tools/articles/README.md). It is sent first as a draft on catholicdoorway.com, and its private
-review link is added to the post's coach notes, so Christopher publishes the article before approving
-the post. The caption should link to https://catholicdoorway.com/this-week/<slug>. Until the article
+(see tools/articles/README.md). It is sent first as a draft on catholicdoorway.com. It shows in the Articles
+tab of Social Posts, and the post's coach notes remind Christopher to publish it before approving the post. The caption should link to https://catholicdoorway.com/this-week/<slug>. Until the article
 is published, that address opens the This Week index, so the link never breaks.
 
 "coach" is optional. It holds the post-writer / post-grader / viral-hooks results and shows as
@@ -83,7 +82,7 @@ def main():
             art = post_article.send(os.path.join(week_dir, post["article"]), dry, tok)
             if art.get("review_url"):
                 coach = dict(post.get("coach") or {})
-                coach["why"] = ("ARTICLE: publish it first at " + art["review_url"] + " . " + coach.get("why", ""))[:400]
+                coach["why"] = ("ARTICLE: publish \"" + art.get("title", "the article") + "\" first in the Articles tab. " + coach.get("why", ""))[:400]
                 post["coach"] = coach
                 with open(sent, "a") as f:
                     f.write(f"{post['post_on']} article {art['review_url']}\n")

@@ -5,9 +5,8 @@ Usage: python3 post_article.py article.json [more.json ...] [--dry-run]
 
 Sends each file to POST https://catholicdoorway.com/api/articles with the Social Posts drafts token
 ($DRAFTS_TOKEN, or the file named by $DRAFTS_TOKEN_FILE). The token can only leave drafts. It prints
-the private review link; opening it shows the article exactly as it will look, with a Publish button.
-All drafts and published articles are also listed at https://catholicdoorway.com/this-week/review
-(admin password).
+the private review link. Christopher reads and publishes it in the Articles tab of Social Posts
+(https://social.catholicdoorway.com/#articles).
 
 Article JSON (see seed/ for full examples and README.md for the writing rules):
   {"slug": "what-is-advent", "title": "...", "description": "one or two sentences (meta description)",
@@ -55,7 +54,7 @@ def send(path, dry=False, tok=None):
         sys.exit(f"{path}: " + "; ".join(problems))
     if dry:
         print("ok (dry run)", a["slug"])
-        return {"slug": a["slug"], "url": f"{SITE}/this-week/{a['slug']}", "review_url": None}
+        return {"slug": a["slug"], "title": a["title"], "url": f"{SITE}/this-week/{a['slug']}", "review_url": None}
     req = urllib.request.Request(SITE + "/api/articles", data=json.dumps(a).encode(), method="POST",
                                  headers={"Authorization": "Bearer " + (tok or token()), "Content-Type": "application/json",
                                           "User-Agent": "CatholicDoorway drafts"})
@@ -68,6 +67,7 @@ def send(path, dry=False, tok=None):
             print("already published, left alone:", out.get("url"))
             return out
         sys.exit(f"{path}: {e.code} {out}")
+    out["title"] = a["title"]
     print("draft", out["url"], "\n  review:", out["review_url"])
     return out
 

@@ -10,15 +10,18 @@ Christopher reads it and publishes it with one tap. Nothing goes live without hi
   no rebuild. `worker/articles.js` serves the index, each article, RSS (`/this-week/feed.xml`) and a
   sitemap (`/sitemap-articles.xml`, listed in robots.txt). Pages reuse the built `/this-week` page for
   the header, menu, footer and verse banner, and carry Article structured data.
-- `post_article.py article.json` leaves a draft and prints a private review link. The link shows the
-  article exactly as it will look, with a **Publish now** button (and Unpublish afterwards).
-- Every article, draft or live, is listed at `https://catholicdoorway.com/this-week/review`
-  (same admin password as the OCIA listings review).
-- In a weekly social plan, a post with `"article": "article.json"` sends the article first and puts
-  its review link at the top of that post's coach notes in Social Posts.
+- `post_article.py article.json` leaves a draft. Christopher reviews it in the **Articles tab of
+  Social Posts** (https://social.catholicdoorway.com/#articles): Read the preview, Publish on the
+  website, Unpublish, Delete draft. That tab calls `GET /api/articles/all` and
+  `POST /api/articles/action` on the site with the Social Posts DRAFTS_TOKEN.
+- Backups: each draft's private review link (printed by the script) has a Publish button, and
+  `https://catholicdoorway.com/this-week/review` lists everything with the site's ADMIN_TOKEN.
+- In a weekly social plan, a post with `"article": "article.json"` sends the article first and its
+  coach notes remind Christopher to publish the article in the Articles tab before approving the post.
 - The drafts token is the Social Posts `DRAFTS_TOKEN`. The site keeps only its SHA-256
   (`ARTICLE_DRAFTS_SHA256` in wrangler.jsonc). It can leave drafts, never publish. A published article
-  can't be overwritten by a draft; unpublish it on the review page first.
+  can't be overwritten by a draft; unpublish it in the Articles tab first.
+- The weekly job never publishes. Only Christopher does.
 
 ## Writing rules (follow these every week)
 

@@ -12,7 +12,7 @@
  *   DRAFTS_TOKEN    secret: lets Claude or a script leave drafts (optional)
  *   SITE_NAME       text: shown on the page (optional)
  *
- * Version 1.4.0-cd (Catholic Doorway: Facebook, Instagram, X, TikTok only; optional post_on date on drafts). License: GPL-2.0-or-later.
+ * Version 1.5.0-cd (Catholic Doorway; Articles tab for This Week in the Church: Facebook, Instagram, X, TikTok only; optional post_on date on drafts). License: GPL-2.0-or-later.
  */
 
 const VERSION = '1.0.0';
@@ -147,6 +147,13 @@ async function route(request, env, ctx) {
 			return json(await phoneDone(env, id, String(b.platform || ''), b.undo === true));
 		}
 	}
+	if (path === '/api/articles' && method === 'GET') {
+		return json(await siteArticles(env, 'GET', '/api/articles/all'));
+	}
+	if (path === '/api/articles/action' && method === 'POST') {
+		const b = await readJson(request);
+		return json(await siteArticles(env, 'POST', '/api/articles/action', { slug: String(b.slug || ''), action: String(b.action || '') }));
+	}
 	if (path === '/api/settings' && method === 'POST') {
 		return json(await saveSettings(env, await readJson(request)));
 	}
@@ -163,6 +170,27 @@ async function route(request, env, ctx) {
 		return json({ ok: true, settings: publicSettings(s, env) });
 	}
 	return json({ error: 'Not found.' }, 404);
+}
+
+/* ------------------------------------------------------------------ */
+/* Articles tab: "This Week in the Church" on the website              */
+/* ------------------------------------------------------------------ */
+
+// The website keeps the articles; this page lists them and publishes them for a signed-in person,
+// calling the website with this Worker's DRAFTS_TOKEN. Set SITE_URL to point somewhere else.
+async function siteArticles(env, method, path, body) {
+	if (!env.DRAFTS_TOKEN) { throw fail('Add the DRAFTS_TOKEN secret to this Worker to use Articles.', 500); }
+	const base = env.SITE_URL || 'https://catholicdoorway.com';
+	let r;
+	try {
+		r = await fetch(base + path, { method, headers: { Authorization: 'Bearer ' + env.DRAFTS_TOKEN, 'Content-Type': 'application/json', 'User-Agent': 'CatholicDoorway Social Posts' }, body: body ? JSON.stringify(body) : undefined });
+	} catch (e) {
+		throw fail('Could not reach the website: ' + e.message, 502);
+	}
+	let d = {};
+	try { d = await r.json(); } catch (e) { /* not JSON */ }
+	if (!r.ok) { throw fail(d.error === 'unauthorized' ? 'The website did not accept this page\'s drafts token.' : (d.error || 'The website answered ' + r.status + '.'), r.status === 401 ? 502 : r.status); }
+	return d;
 }
 
 /* ------------------------------------------------------------------ */

@@ -62,5 +62,5 @@ Every Monday run also writes ONE "This Week in the Church" article for the websi
 3. Make one of the week's 3 posts (the one nearest the feast) about the article. Its caption links to
    https://catholicdoorway.com/this-week/<slug>, and in plan.json it carries `"article": "article.json"`.
    send_drafts.py then sends the article draft first and puts its review link in that post's coach notes.
-4. In the final summary, list the article title and its review link first. Christopher taps "Publish now"
-   there (or uses https://catholicdoorway.com/this-week/review) before approving the post.
+4. In the final summary, list the article title and that it is waiting in the Articles tab. Christopher publishes it
+   in the Articles tab of Social Posts before approving the post.
