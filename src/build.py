@@ -1789,7 +1789,7 @@ def nav_html(current):
             if current in [s for s, _ in subs]:
                 cur = ' class="in-section"'
             sub = "".join(
-                f'<li><a href="/{s}"{" aria-current=\"page\"" if s == current else ""}>{l}</a></li>' for s, l in subs)
+                f'<li{" class=\"hub\"" if s == slug else ""}><a href="/{s}"{" aria-current=\"page\"" if s == current else ""}>{l}</a></li>' for s, l in subs)
             items.append(f'        <li class="has-sub"><a href="{href}"{cur}>{label}</a><ul class="sub">{sub}</ul></li>')
             continue
         items.append(f'        <li><a href="{href}"{cur}>{label}</a></li>')
@@ -1827,7 +1827,7 @@ def lang_nav(code, pages, subnav, exclude, current):
         if subs:
             if current in [c for c, _ in subs]:
                 cur = ' class="in-section"'
-            sub = "".join(f'<li><a href="/{code}/{c}"{" aria-current=\"page\"" if c == current else ""}>{l}</a></li>' for c, l in subs)
+            sub = "".join(f'<li{" class=\"hub\"" if c == sl else ""}><a href="/{code}/{c}"{" aria-current=\"page\"" if c == current else ""}>{l}</a></li>' for c, l in subs)
             items.append(f'        <li class="has-sub"><a href="{href}"{cur}>{label}</a><ul class="sub">{sub}</ul></li>')
             continue
         items.append(f'        <li><a href="{href}"{cur}>{label}</a></li>')
