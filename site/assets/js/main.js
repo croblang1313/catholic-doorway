@@ -152,6 +152,20 @@
     if (iso >= el.getAttribute('data-show-from') && iso <= el.getAttribute('data-show-to')) el.hidden = false;
   });
 
+  // "This Week in the Church" card: the newest published article (worker/articles.js).
+  var weekCard = document.querySelector('[data-week-card]');
+  if (weekCard && window.fetch) {
+    fetch('/api/articles/latest.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      var a = d && d.article;
+      if (!a) return;
+      weekCard.href = '/this-week/' + a.slug;
+      weekCard.querySelector('.label').textContent = 'This Week in the Church \u00b7 ' + a.kicker;
+      weekCard.querySelector('.hw-title').textContent = a.title;
+      weekCard.querySelector('.hw-desc').textContent = a.description;
+      weekCard.hidden = false;
+    }).catch(function () {});
+  }
+
   var dateEl = $('#today-date');
   if (dateEl) dateEl.textContent = today.toLocaleDateString(LOC, longDate);
   var seasonEl = $('#season');

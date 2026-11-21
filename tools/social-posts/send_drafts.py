@@ -23,6 +23,12 @@ plan.json is a list of posts:
 When "tiktok" is in platforms, TikTok gets its own 11-second video draft (motion + original sound)
 and the photo draft goes to the other platforms. Set "video": false to send TikTok the photo instead.
 
+"article" is optional: a path (relative to plan.json) to a "This Week in the Church" article JSON
+(see tools/articles/README.md). It is sent first as a draft on catholicdoorway.com, and its private
+review link is added to the post's coach notes, so Christopher publishes the article before approving
+the post. The caption should link to https://catholicdoorway.com/this-week/<slug>. Until the article
+is published, that address opens the This Week index, so the link never breaks.
+
 "coach" is optional. It holds the post-writer / post-grader / viral-hooks results and shows as
 "Coach notes" on the draft's page, where Christopher can swap in an alternate with one tap.
 Follow /mnt/project-files/social-posts/brand-brief.md; its House Rules win over the skills' defaults.
@@ -31,6 +37,8 @@ The drafts token comes from $DRAFTS_TOKEN or the file named by $DRAFTS_TOKEN_FIL
 It can only upload media and create drafts; it cannot approve or post.
 """
 import json, os, subprocess, sys, urllib.request
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "articles"))
 
 BASE = os.environ.get("SOCIAL_URL", "https://social.catholicdoorway.com")
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -70,6 +78,15 @@ def main():
         # TikTok gets its own video draft (motion + sound); the photo draft goes everywhere else.
         video = "tiktok" in plats and post.get("video") is not False
         photo_plats = [p for p in plats if not (video and p == "tiktok")]
+        if post.get("article"):
+            import post_article
+            art = post_article.send(os.path.join(week_dir, post["article"]), dry, tok)
+            if art.get("review_url"):
+                coach = dict(post.get("coach") or {})
+                coach["why"] = ("ARTICLE: publish it first at " + art["review_url"] + " . " + coach.get("why", ""))[:400]
+                post["coach"] = coach
+                with open(sent, "a") as f:
+                    f.write(f"{post['post_on']} article {art['review_url']}\n")
         extra = {"caption": cap, "post_on": post["post_on"], **({"coach": post["coach"]} if post.get("coach") else {})}
         if photo_plats:
             spec = os.path.join(out_dir, f"post{i}.json")
