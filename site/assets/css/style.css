@@ -1253,3 +1253,18 @@ svg.cpage .k { fill: #222; pointer-events: none; }
 .map-filter label { display: inline-flex; gap: .45rem; align-items: center; font: 1rem var(--sans); cursor: pointer; min-height: 40px; }
 .map-filter input { width: 1.15rem; height: 1.15rem; accent-color: var(--navy); }
 #spiritual-communion h2 { margin-top: 0; }
+
+/* This Week in the Church (worker/articles.js) */
+.tw-article { font-size: 1.08rem; }
+.tw-article h2 { margin-top: 2rem; }
+.tw-article blockquote { margin: 1.2rem 0; padding: .6rem 1.1rem; border-left: 3px solid var(--gold); background: var(--bg-alt); border-radius: 0 10px 10px 0; }
+.tw-article blockquote p { margin: .3rem 0; }
+.tw-article blockquote cite { display: block; font-style: normal; font-size: .9rem; color: var(--ink-soft); margin-top: .3rem; }
+.tw-meta { margin-top: .7rem !important; }
+.tw-card .label { margin-bottom: .2rem; }
+.tw-lead h3 { font-size: 1.6rem; }
+.tw-foot { max-width: var(--read); border-top: 1px solid var(--line); padding-top: 1rem; margin: 1rem 0 2.5rem; }
+.tw-review { background: var(--gold-soft); border-bottom: 1px solid var(--gold); padding: .9rem 0; }
+.tw-review p { margin: 0 0 .6rem; }
+.home-week { margin: 1.2rem 0 0; }
+.home-week[hidden] { display: none; }

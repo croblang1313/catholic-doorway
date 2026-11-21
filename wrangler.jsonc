@@ -8,12 +8,15 @@
     "binding": "ASSETS",
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page",
-    "run_worker_first": ["/api/*"]
+    "run_worker_first": ["/api/*", "/this-week", "/this-week/*", "/sitemap-articles.xml"]
   },
   // Parish OCIA listings (worker/ocia.js). ADMIN_TOKEN is a secret set in the Cloudflare dashboard.
   // Weekly check of parish livestream links (Mondays 09:17 UTC), see checkStreams() in worker/ocia.js.
   "triggers": { "crons": ["17 9 * * 1"] },
   "kv_namespaces": [
     { "binding": "LISTINGS", "id": "620302b821b94992896465fb08f6aa43" }
-  ]
+  ],
+  // SHA-256 of the Social Posts DRAFTS_TOKEN: lets the weekly job leave article drafts (worker/articles.js). Not a secret.
+  "keep_vars": true,
+  "vars": { "ARTICLE_DRAFTS_SHA256": "35ef60aad1d324350694cf170ebd1e85cad3ff201de2f29c86154afce99575ec" }
 }
