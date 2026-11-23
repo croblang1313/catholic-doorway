@@ -22,6 +22,12 @@ Christopher reads it and publishes it with one tap. Nothing goes live without hi
   (`ARTICLE_DRAFTS_SHA256` in wrangler.jsonc). It can leave drafts, never publish. A published article
   can't be overwritten by a draft; unpublish it in the Articles tab first.
 - The weekly job never publishes. Only Christopher does.
+- **Share picture and PDF.** Every draft carries a 1200x630 share picture and a PDF copy, both made by
+  `post_article.py` (the PDF with `make_article_pdf.js`). The picture is the matching post's design at
+  link-preview size, so a shared article shows the same graphic as the social post; it is what
+  Facebook, X, WhatsApp and Pinterest show (og:image / twitter:image). The article page has share
+  buttons (Facebook, X, WhatsApp, Pinterest, Email, Copy link, and the phone's share sheet) and a
+  **Download PDF** button. To redo them on a live article: `post_article.py --attach article.json`.
 
 ## Writing rules (follow these every week)
 

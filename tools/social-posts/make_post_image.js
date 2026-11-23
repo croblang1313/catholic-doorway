@@ -1,5 +1,7 @@
 // Renders one Catholic Doorway social image (1080x1350 JPEG, Instagram 4:5) with Playwright.
-// Usage: node make_post_image.js spec.json out.jpg
+// Usage: node make_post_image.js spec.json out.jpg [--wide]
+// --wide renders the same design at 1200x630, the size Facebook, X and WhatsApp use for link
+// previews. send_drafts.py makes one for each "This Week in the Church" article (its share picture).
 // spec: {"kicker":"Monday · Saint of the Day","title":"St. Cecilia","body":"Short text...",
 //        "ref":"Nov 22 · Feast", "theme":"cream"|"navy"}
 const { chromium } = require('playwright');
@@ -12,33 +14,39 @@ const navy = spec.theme === 'navy';
 const ink = navy ? CREAM : NAVY, accent = navy ? LGOLD : GOLD, soft = navy ? '#cfc8b8' : '#4a5060';
 const bg = navy ? 'radial-gradient(circle at 50% 30%, #26386a 0%, #1d2b4f 55%, #131d38 100%)'
   : 'linear-gradient(180deg,#ecdfc4 0%,#f4ecdc 35%,#faf6ee 100%)';
+const wide = process.argv.includes('--wide');
+const W = wide ? 1200 : 1080, H = wide ? 630 : 1350;
 const title = esc(spec.title);
-const tsize = title.length > 40 ? 84 : title.length > 24 ? 100 : 118;
+const tsize = wide ? (title.length > 40 ? 64 : title.length > 24 ? 76 : 88) : (title.length > 40 ? 84 : title.length > 24 ? 100 : 118);
+// The body line only fits the wide card when it is short.
+const body = wide && String(spec.body || '').length > 130 ? '' : spec.body;
+const Z = wide ? { pad: '44px 90px 40px', k: 22, rule: '18px auto', b: 28, bm: 20, r: 28, rm: 14, mark: 54, markm: 18, wm: 34, url: 17, urlm: 6, mainpb: 10 }
+  : { pad: '90px 100px 100px', k: 30, rule: '34px auto', b: 40, bm: 44, r: 38, rm: 30, mark: 86, markm: 40, wm: 52, url: 26, urlm: 14, mainpb: 40 };
 const html = `<!doctype html><html><head>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@600;700&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" rel="stylesheet">
-<style>html,body{margin:0;width:1080px;height:1350px;overflow:hidden;background:${bg}}*{box-sizing:border-box}
-.wrap{position:absolute;inset:0;padding:90px 100px 100px;display:flex;flex-direction:column;align-items:center;text-align:center}
-.k{font-family:'Source Sans 3';font-weight:700;font-size:30px;letter-spacing:.16em;text-transform:uppercase;color:${accent}}
-.rule{width:120px;height:2px;background:${accent};opacity:.6;margin:34px auto}
+<style>html,body{margin:0;width:${W}px;height:${H}px;overflow:hidden;background:${bg}}*{box-sizing:border-box}
+.wrap{position:absolute;inset:0;padding:${Z.pad};display:flex;flex-direction:column;align-items:center;text-align:center}
+.k{font-family:'Source Sans 3';font-weight:700;font-size:${Z.k}px;letter-spacing:.16em;text-transform:uppercase;color:${accent}}
+.rule{width:120px;height:2px;background:${accent};opacity:.6;margin:${Z.rule}}
 .t{font-family:'Cormorant Garamond';font-weight:600;font-size:${tsize}px;line-height:1.05;color:${ink}}
-.b{font-family:'Source Serif 4';font-size:40px;line-height:1.45;color:${ink};margin-top:44px;opacity:.92}
-.r{font-family:'Cormorant Garamond';font-style:italic;font-size:38px;color:${accent};margin-top:30px}
-.main{flex:1;display:flex;flex-direction:column;justify-content:center;padding-bottom:40px}
+.b{font-family:'Source Serif 4';font-size:${Z.b}px;line-height:1.45;color:${ink};margin-top:${Z.bm}px;opacity:.92}
+.r{font-family:'Cormorant Garamond';font-style:italic;font-size:${Z.r}px;color:${accent};margin-top:${Z.rm}px}
+.main{flex:1;display:flex;flex-direction:column;justify-content:center;padding-bottom:${Z.mainpb}px}
 .foot{display:flex;align-items:center;gap:20px}
-.wm{font-family:'Cormorant Garamond';font-weight:600;font-size:52px;color:${ink}}
-.url{font-family:'Source Sans 3';font-weight:600;font-size:26px;letter-spacing:.12em;color:${soft};margin-top:14px}
+.wm{font-family:'Cormorant Garamond';font-weight:600;font-size:${Z.wm}px;color:${ink}}
+.url{font-family:'Source Sans 3';font-weight:600;font-size:${Z.url}px;letter-spacing:.12em;color:${soft};margin-top:${Z.urlm}px}
 </style></head><body><div class="wrap">
-<div class="main"><div style="width:${86 / 1.18}px;height:86px;margin:0 auto 40px">${mark(accent, accent, 0.14)}</div>
+<div class="main"><div style="width:${Z.mark / 1.18}px;height:${Z.mark}px;margin:0 auto ${Z.markm}px">${mark(accent, accent, 0.14)}</div>
 <div class="k">${esc(spec.kicker)}</div><div class="rule"></div>
 <div class="t">${title}</div>
-${spec.body ? `<div class="b">${esc(spec.body)}</div>` : ''}
+${body ? `<div class="b">${esc(body)}</div>` : ''}
 ${spec.ref ? `<div class="r">${esc(spec.ref)}</div>` : ''}</div>
 <div class="foot" style="flex-direction:column;gap:0"><div class="wm">Catholic<span style="color:${accent}">Doorway</span></div>
 <div class="url">CATHOLICDOORWAY.COM</div></div>
 </div></body></html>`;
 (async () => {
   const b = await chromium.launch();
-  const p = await b.newPage({ viewport: { width: 1080, height: 1350 } });
+  const p = await b.newPage({ viewport: { width: W, height: H } });
   await p.setContent(html, { waitUntil: 'networkidle' });
   await p.evaluate(() => document.fonts.ready);
   await p.screenshot({ path: process.argv[3], type: 'jpeg', quality: 90 });

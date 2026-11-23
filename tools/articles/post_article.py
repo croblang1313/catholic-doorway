@@ -2,6 +2,8 @@
 """Leave a "This Week in the Church" article on catholicdoorway.com as a draft for approval.
 
 Usage: python3 post_article.py article.json [more.json ...] [--dry-run]
+       python3 post_article.py --attach article.json [--image share.jpg]
+           (re-make and send only the PDF and share picture; works on a published article too)
 
 Sends each file to POST https://catholicdoorway.com/api/articles with the Social Posts drafts token
 ($DRAFTS_TOKEN, or the file named by $DRAFTS_TOKEN_FILE). The token can only leave drafts. It prints
@@ -15,11 +17,59 @@ Article JSON (see seed/ for full examples and README.md for the writing rules):
    "body": "<p>...</p><h2>...</h2>... (p, h2, h3, ul, ol, li, blockquote class=scripture|ccc, cite, a, strong, em)",
    "related": [{"href": "/advent", "label": "...", "note": "..."}],
    "sources": [{"label": "Catechism of the Catholic Church 524", "href": "https://..."}],
-   "social": "one-line idea for the matching social post"}
+   "social": "one-line idea for the matching social post",
+   "share_image": {"kicker": "...", "title": "...", "body": "...", "ref": "...", "theme": "cream|navy"}}
+
+Every draft also carries:
+  - a PDF copy, made here with make_article_pdf.js, for the article's "Download PDF" button;
+  - a 1200x630 share picture (what Facebook, X and WhatsApp show when the link is shared).
+    send_drafts.py passes the matching post's picture design; on its own this script renders
+    "share_image" (same fields as a post image), or uses "image": "file.jpg" next to the JSON.
 """
-import json, os, sys, urllib.error, urllib.request
+import base64, json, os, subprocess, sys, tempfile, urllib.error, urllib.request
 
 SITE = os.environ.get("SITE_URL", "https://catholicdoorway.com")
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+
+def _tool(*names):
+    for n in names:
+        p = os.path.normpath(os.path.join(HERE, n))
+        if os.path.exists(p):
+            return p
+    sys.exit("can't find " + names[0])
+
+
+def render_share_image(spec, out):
+    """The post-picture design at 1200x630."""
+    tool = _tool("../social-posts/make_post_image.js", "../tools/make_post_image.js")
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+        json.dump(spec, f)
+    subprocess.run(["node", tool, f.name, out, "--wide"], check=True)
+    os.unlink(f.name)
+    return out
+
+
+def render_pdf(article_path, out):
+    subprocess.run(["node", os.path.join(HERE, "make_article_pdf.js"), article_path, out], check=True)
+    return out
+
+
+def files_for(path, a, image=None):
+    """Make the PDF and find or make the share picture. Returns (pdf_path, image_path)."""
+    base = os.path.splitext(os.path.abspath(path))[0]
+    pdf = render_pdf(path, base + ".pdf")
+    if not image and isinstance(a.get("image"), str) and not a["image"].startswith("data:"):
+        image = os.path.join(os.path.dirname(os.path.abspath(path)), a["image"])
+    if not image:
+        spec = a.get("share_image") or {"kicker": "This Week in the Church", "title": a["title"], "ref": a.get("kicker", ""), "theme": "navy"}
+        image = render_share_image(spec, base + "-share.jpg")
+    print("pdf", pdf, "\n  share picture", image)
+    return pdf, image
+
+
+def b64(path, mime):
+    return f"data:{mime};base64," + base64.b64encode(open(path, "rb").read()).decode()
 
 
 def token():
@@ -47,11 +97,16 @@ def check(a):
     return problems
 
 
-def send(path, dry=False, tok=None):
+def send(path, dry=False, tok=None, image=None):
     a = json.load(open(path, encoding="utf-8"))
     problems = check(a)
     if problems:
         sys.exit(f"{path}: " + "; ".join(problems))
+    pdf, image = files_for(path, a, image)
+    a.pop("share_image", None)
+    a["pdf"] = b64(pdf, "application/pdf")
+    a["image"] = b64(image, "image/png" if image.lower().endswith(".png") else "image/jpeg")
+    a.setdefault("image_alt", a["title"] + ": This Week in the Church at CatholicDoorway")
     if dry:
         print("ok (dry run)", a["slug"])
         return {"slug": a["slug"], "title": a["title"], "url": f"{SITE}/this-week/{a['slug']}", "review_url": None}
@@ -72,7 +127,32 @@ def send(path, dry=False, tok=None):
     return out
 
 
+def attach(path, tok=None, image=None):
+    """Send only the PDF and share picture (for an article that is already published)."""
+    a = json.load(open(path, encoding="utf-8"))
+    pdf, image = files_for(path, a, image)
+    body = {"slug": a["slug"], "pdf": b64(pdf, "application/pdf"),
+            "image": b64(image, "image/png" if image.lower().endswith(".png") else "image/jpeg"),
+            "image_alt": a.get("image_alt") or a["title"] + ": This Week in the Church at CatholicDoorway"}
+    req = urllib.request.Request(SITE + "/api/articles/files", data=json.dumps(body).encode(), method="POST",
+                                 headers={"Authorization": "Bearer " + (tok or token()), "Content-Type": "application/json",
+                                          "User-Agent": "CatholicDoorway drafts"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:
+            out = json.load(r)
+    except urllib.error.HTTPError as e:
+        sys.exit(f"{path}: {e.code} {e.read()[:300]}")
+    print("attached", a["slug"], "\n  picture:", out.get("image_url"), "\n  pdf:", out.get("pdf_url"))
+    return out
+
+
 if __name__ == "__main__":
-    dry = "--dry-run" in sys.argv
-    for p in [x for x in sys.argv[1:] if not x.startswith("--")]:
-        send(p, dry)
+    args = sys.argv[1:]
+    dry = "--dry-run" in args
+    img = args[args.index("--image") + 1] if "--image" in args else None
+    paths = [x for i, x in enumerate(args) if not x.startswith("--") and not (i and args[i - 1] == "--image")]
+    for p in paths:
+        if "--attach" in args:
+            attach(p, image=img)
+        else:
+            send(p, dry, image=img)

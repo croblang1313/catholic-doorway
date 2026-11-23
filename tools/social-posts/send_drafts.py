@@ -25,7 +25,10 @@ and the photo draft goes to the other platforms. Set "video": false to send TikT
 
 "article" is optional: a path (relative to plan.json) to a "This Week in the Church" article JSON
 (see tools/articles/README.md). It is sent first as a draft on catholicdoorway.com. It shows in the Articles
-tab of Social Posts, and the post's coach notes remind Christopher to publish it before approving the post. The caption should link to https://catholicdoorway.com/this-week/<slug>. Until the article
+tab of Social Posts, and the post's coach notes remind Christopher to publish it before approving the post.
+The article also gets a PDF copy (its "Download PDF" button) and a share picture: the post's "image"
+design rendered at 1200x630, so a shared article link shows the same picture as the post. Give the post
+"article_image" (same fields as "image") to use a different design for the article. The caption should link to https://catholicdoorway.com/this-week/<slug>. Until the article
 is published, that address opens the This Week index, so the link never breaks.
 
 "coach" is optional. It holds the post-writer / post-grader / viral-hooks results and shows as
@@ -79,7 +82,9 @@ def main():
         photo_plats = [p for p in plats if not (video and p == "tiktok")]
         if post.get("article"):
             import post_article
-            art = post_article.send(os.path.join(week_dir, post["article"]), dry, tok)
+            share = os.path.join(out_dir, f"{post['post_on']}-article-share.jpg")
+            post_article.render_share_image(post.get("article_image") or post["image"], share)
+            art = post_article.send(os.path.join(week_dir, post["article"]), dry, tok, image=share)
             if art.get("review_url"):
                 coach = dict(post.get("coach") or {})
                 coach["why"] = ("ARTICLE: publish \"" + art.get("title", "the article") + "\" first in the Articles tab. " + coach.get("why", ""))[:400]

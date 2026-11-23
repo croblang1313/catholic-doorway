@@ -13,6 +13,18 @@
 //   GET  /this-week/review/<slug>?k= preview a draft exactly as it will look, with a Publish button
 //   GET  /this-week/feed.xml         RSS
 //   GET  /sitemap-articles.xml       sitemap of published articles
+//   GET  /this-week/<slug>/share.jpg the article's share picture (link previews; ?k= for a draft)
+//   GET  /this-week/<slug>/article.pdf  the article as a PDF to download (?k= for a draft)
+//   POST /api/articles/files         {slug, image?, image_alt?, pdf?}: add or replace an article's
+//                                    share picture and/or PDF (also at /api/articles/image)
+//
+// Share pictures: a draft may carry "image" (a base64 JPEG or PNG, ideally 1200x630) and
+// "image_alt". The bytes are kept under article-img:<slug>; the article keeps {v, w, h, type, alt}.
+// Article pages point og:image / twitter:image at it, so Facebook, X, WhatsApp and the rest show it
+// when the link is shared. Without one, the site's general picture (og.png) is used.
+// PDFs: a draft may carry "pdf" (base64, made by tools/articles/make_article_pdf.js). It is kept
+// under article-pdf:<slug>; the article keeps {v, size}. Without one, the article's Download PDF
+// button opens the browser's print dialog, where "Save as PDF" makes one from the print styles.
 //
 // Pages are made from the built /this-week page (src/pages/this-week.html), so they share the
 // site's header, menu, footer and verse banner. The drafts token is the Social Posts DRAFTS_TOKEN;
@@ -96,6 +108,147 @@ export function sanitize(input) {
   });
 }
 
+// ---- Share pictures ---------------------------------------------------------------------
+
+const IMG_MAX = 3000000;
+
+function u16(b, i) { return (b[i] << 8) | b[i + 1]; }
+
+function imageSize(b) {
+  if (b[0] === 0x89 && b[1] === 0x50 && b[2] === 0x4e && b[3] === 0x47) {
+    return { type: "png", w: (b[16] << 24 | b[17] << 16 | b[18] << 8 | b[19]) >>> 0, h: (b[20] << 24 | b[21] << 16 | b[22] << 8 | b[23]) >>> 0 };
+  }
+  if (b[0] === 0xff && b[1] === 0xd8) {
+    let i = 2;
+    while (i + 9 < b.length) {
+      if (b[i] !== 0xff) { i++; continue; }
+      const m = b[i + 1];
+      if (m === 0xd8 || m === 0x01 || (m >= 0xd0 && m <= 0xd7) || m === 0xff) { i += m === 0xff ? 1 : 2; continue; }
+      if ((m >= 0xc0 && m <= 0xc3) || (m >= 0xc5 && m <= 0xc7) || (m >= 0xc9 && m <= 0xcb) || (m >= 0xcd && m <= 0xcf)) {
+        return { type: "jpg", h: u16(b, i + 5), w: u16(b, i + 7) };
+      }
+      i += 2 + u16(b, i + 2);
+    }
+  }
+  return null;
+}
+
+// Returns {bytes, meta} for a valid picture, null when none was sent, or "bad".
+export async function readImage(v, alt) {
+  if (!v) return null;
+  let s = String(v).trim();
+  const m = /^data:image\/(?:jpeg|jpg|png);base64,/i.exec(s);
+  if (m) s = s.slice(m[0].length);
+  let bytes;
+  try {
+    const bin = atob(s.replace(/\s+/g, ""));
+    bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  } catch (e) {
+    return "bad";
+  }
+  if (bytes.length < 200 || bytes.length > IMG_MAX) return "bad";
+  const size = imageSize(bytes);
+  if (!size || !size.w || !size.h || size.w > 4000 || size.h > 4000) return "bad";
+  const d = new Uint8Array(await crypto.subtle.digest("SHA-256", bytes));
+  const v10 = [...d.slice(0, 5)].map((x) => x.toString(16).padStart(2, "0")).join("");
+  return { bytes, meta: { v: v10, w: size.w, h: size.h, type: size.type, alt: clean(alt, 200) } };
+}
+
+// Returns {bytes, meta} for a valid PDF, null when none was sent, or "bad".
+export async function readPdf(v) {
+  if (!v) return null;
+  let s = String(v).trim();
+  const m = /^data:application\/pdf;base64,/i.exec(s);
+  if (m) s = s.slice(m[0].length);
+  let bytes;
+  try {
+    const bin = atob(s.replace(/\s+/g, ""));
+    bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  } catch (e) {
+    return "bad";
+  }
+  if (bytes.length < 500 || bytes.length > 8000000) return "bad";
+  if (String.fromCharCode(...bytes.slice(0, 5)) !== "%PDF-") return "bad";
+  const d = new Uint8Array(await crypto.subtle.digest("SHA-256", bytes));
+  return { bytes, meta: { v: [...d.slice(0, 5)].map((x) => x.toString(16).padStart(2, "0")).join(""), size: bytes.length } };
+}
+
+export function pdfUrl(a, withKey) {
+  return a.pdf ? `/this-week/${a.slug}/article.pdf?v=${a.pdf.v}${withKey ? "&k=" + a.key : ""}` : "";
+}
+
+async function articlePdf(request, env, slug, url) {
+  const a = SLUG.test(slug) ? await env.LISTINGS.get("article:" + slug, "json") : null;
+  if (!a || !a.pdf) return Response.redirect(`${DOMAIN}/this-week/${SLUG.test(slug) ? slug : ""}`, 302);
+  const live = a.status === "published";
+  if (!live && !same(url.searchParams.get("k") || "", a.key)) return new Response("Not found", { status: 404 });
+  const bytes = await env.LISTINGS.get("article-pdf:" + slug, "arrayBuffer");
+  if (!bytes) return new Response("Not found", { status: 404 });
+  return new Response(bytes, { headers: {
+    "Content-Type": "application/pdf",
+    "Content-Disposition": `attachment; filename="catholicdoorway-${slug}.pdf"`,
+    "Cache-Control": !live ? "no-store" : url.searchParams.get("v") === a.pdf.v ? "public, max-age=31536000, immutable" : "public, max-age=3600",
+  } });
+}
+
+async function saveImage(env, slug, img) {
+  await env.LISTINGS.put("article-img:" + slug, img.bytes, { metadata: { type: img.meta.type } });
+}
+
+export function imageUrl(a, withKey) {
+  if (!a.image) return `${DOMAIN}/assets/img/og.png`;
+  return `${DOMAIN}/this-week/${a.slug}/share.${a.image.type}?v=${a.image.v}${withKey ? "&k=" + a.key : ""}`;
+}
+
+async function shareImage(request, env, slug, url) {
+  const a = SLUG.test(slug) ? await env.LISTINGS.get("article:" + slug, "json") : null;
+  if (!a || !a.image) return new Response("Not found", { status: 404 });
+  const live = a.status === "published";
+  if (!live && !same(url.searchParams.get("k") || "", a.key)) return new Response("Not found", { status: 404 });
+  const bytes = await env.LISTINGS.get("article-img:" + slug, "arrayBuffer");
+  if (!bytes) return new Response("Not found", { status: 404 });
+  const fixed = url.searchParams.get("v") === a.image.v;
+  return new Response(bytes, { headers: {
+    "Content-Type": a.image.type === "png" ? "image/png" : "image/jpeg",
+    "Cache-Control": !live ? "no-store" : fixed ? "public, max-age=31536000, immutable" : "public, max-age=3600",
+  } });
+}
+
+async function setFiles(request, env) {
+  if (!(await bearerOk(request, env))) return json({ ok: false, error: "unauthorized" }, 401);
+  let b;
+  try {
+    b = await request.json();
+  } catch (e) {
+    return json({ ok: false, error: "bad_request" }, 400);
+  }
+  const slug = clean(b.slug, 90);
+  const a = SLUG.test(slug) ? await env.LISTINGS.get("article:" + slug, "json") : null;
+  if (!a) return json({ ok: false, error: "not_found" }, 404);
+  const img = await readImage(b.image, b.image_alt || a.title), pdf = await readPdf(b.pdf);
+  const bad = [img === "bad" && "image", pdf === "bad" && "pdf"].filter(Boolean);
+  if (bad.length || (!img && !pdf)) return json({ ok: false, error: "invalid", fields: bad.length ? bad : ["image", "pdf"] }, 400);
+  if (img) {
+    await saveImage(env, slug, img);
+    a.image = img.meta;
+  }
+  if (pdf) {
+    await env.LISTINGS.put("article-pdf:" + slug, pdf.bytes);
+    a.pdf = pdf.meta;
+  }
+  await env.LISTINGS.put("article:" + slug, JSON.stringify(a));
+  const draft = a.status !== "published";
+  return json({ ok: true, slug, image_url: a.image ? imageUrl(a, draft) : "", pdf_url: a.pdf ? DOMAIN + pdfUrl(a, draft) : "" });
+}
+
+async function removeArticle(env, slug) {
+  await env.LISTINGS.delete("article:" + slug);
+  await env.LISTINGS.delete("article-img:" + slug);
+  await env.LISTINGS.delete("article-pdf:" + slug);
+}
+
 function minutes(body) {
   const words = String(body).replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(words / 220));
@@ -171,13 +324,19 @@ async function createDraft(request, env) {
   }
   const { a, errors } = validate(body);
   if (errors.length) return json({ ok: false, error: "invalid", fields: errors }, 400);
+  const img = await readImage(body.image, body.image_alt || a.title), pdf = await readPdf(body.pdf);
+  if (img === "bad" || pdf === "bad") return json({ ok: false, error: "invalid", fields: [img === "bad" && "image", pdf === "bad" && "pdf"].filter(Boolean) }, 400);
   const old = await env.LISTINGS.get("article:" + a.slug, "json");
   if (old && old.status === "published") return json({ ok: false, error: "already_published", url: `${DOMAIN}/this-week/${a.slug}` }, 409);
+  if (img) await saveImage(env, a.slug, img);
+  a.image = img ? img.meta : (old && old.image) || null;
+  if (pdf) await env.LISTINGS.put("article-pdf:" + a.slug, pdf.bytes);
+  a.pdf = pdf ? pdf.meta : (old && old.pdf) || null;
   a.status = "draft";
   a.created = (old && old.created) || new Date().toISOString();
   a.key = (old && old.key) || crypto.randomUUID().replace(/-/g, "");
   await env.LISTINGS.put("article:" + a.slug, JSON.stringify(a));
-  return json({ ok: true, slug: a.slug, url: `${DOMAIN}/this-week/${a.slug}`, review_url: reviewUrl(a) }, 201);
+  return json({ ok: true, slug: a.slug, url: `${DOMAIN}/this-week/${a.slug}`, review_url: reviewUrl(a), image_url: a.image ? imageUrl(a, true) : "", pdf_url: a.pdf ? DOMAIN + pdfUrl(a, true) : "" }, 201);
 }
 
 async function publishByKey(request, env) {
@@ -203,7 +362,8 @@ async function bearerOk(request, env) {
 async function allForTool(request, env) {
   if (!(await bearerOk(request, env))) return json({ ok: false, error: "unauthorized" }, 401);
   const rows = (await listAll(env)).map((a) => ({ slug: a.slug, title: a.title, description: a.description, kicker: a.kicker, date: a.date,
-    status: a.status, published: a.published || "", minutes: minutes(a.body), url: `${DOMAIN}/this-week/${a.slug}`, review_url: reviewUrl(a) }));
+    status: a.status, published: a.published || "", minutes: minutes(a.body), url: `${DOMAIN}/this-week/${a.slug}`, review_url: reviewUrl(a),
+    image_url: a.image ? imageUrl(a, a.status !== "published") : "", pdf_url: a.pdf ? DOMAIN + pdfUrl(a, a.status !== "published") : "" }));
   return json({ ok: true, articles: rows });
 }
 
@@ -222,7 +382,7 @@ async function actionForTool(request, env) {
   else if (action === "unpublish" && a.status === "published") await unpublish(env, a);
   else if (action === "delete") {
     if (a.status === "published") return json({ ok: false, error: "Unpublish it first." }, 409);
-    await env.LISTINGS.delete("article:" + slug);
+    await removeArticle(env, slug);
     return json({ ok: true, deleted: true });
   }
   return json({ ok: true, status: a.status, url: `${DOMAIN}/this-week/${a.slug}` });
@@ -240,7 +400,7 @@ async function shell(request, env) {
   return res.text();
 }
 
-function setMeta(html, { title, desc, url, type, ld, verse, main, noindex }) {
+function setMeta(html, { title, desc, url, type, ld, verse, main, noindex, image }) {
   const t = esc(title), d = esc(desc), u = esc(DOMAIN + url);
   html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${t}</title>`)
     .replace(/(<meta name="description" content=")[^"]*"/, `$1${d}"`)
@@ -251,6 +411,13 @@ function setMeta(html, { title, desc, url, type, ld, verse, main, noindex }) {
     .replace(/<link rel="alternate" hreflang="[^"]*" href="[^"]*">\n?/g, "");
   if (type) html = html.replace('<meta property="og:type" content="website">', `<meta property="og:type" content="${type}">`);
   if (noindex) html = html.replace("</head>", '<meta name="robots" content="noindex">\n</head>');
+  if (image) {
+    html = html.replace(/(<meta property="og:image" content=")[^"]*"/, `$1${esc(image.url)}"`)
+      .replace(/(<meta property="og:image:width" content=")[^"]*"/, `$1${image.w}"`)
+      .replace(/(<meta property="og:image:height" content=")[^"]*"/, `$1${image.h}"`)
+      .replace(/(<meta property="og:image:alt" content=")[^"]*"/, `$1${esc(image.alt)}"`)
+      .replace("</head>", `<meta name="twitter:image" content="${esc(image.url)}">\n<meta name="twitter:image:alt" content="${esc(image.alt)}">\n</head>`);
+  }
   if (ld) {
     html = html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/, (all, raw) => {
       let g;
@@ -275,6 +442,32 @@ function htmlResponse(html, cache = "public, max-age=300", status = 200) {
   return new Response(html, { status, headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": cache } });
 }
 
+function pdfButton(a, preview) {
+  return a.pdf
+    ? `<a class="share-btn pdf" href="${esc(pdfUrl(a, preview))}" download>Download PDF</a>`
+    : `<button type="button" class="share-btn pdf" data-print>Download PDF</button>`;
+}
+
+function shareBox(a, preview) {
+  const url = `${DOMAIN}/this-week/${a.slug}`, u = encodeURIComponent(url), t = encodeURIComponent(a.title);
+  const links = [
+    ["Facebook", `https://www.facebook.com/sharer/sharer.php?u=${u}`],
+    ["X", `https://twitter.com/intent/tweet?url=${u}&text=${t}`],
+    ["WhatsApp", `https://wa.me/?text=${encodeURIComponent(a.title + " " + url)}`],
+    ["Pinterest", `https://www.pinterest.com/pin/create/button/?url=${u}&media=${encodeURIComponent(imageUrl(a))}&description=${t}`],
+    ["Email", `mailto:?subject=${t}&body=${encodeURIComponent(a.description + "\n\n" + url)}`],
+  ];
+  return `<section class="share-box" id="share" aria-labelledby="share-h">
+    <h2 id="share-h">Share this article</h2>
+    <p class="small muted">Know someone who would like this? Send it their way, or keep a PDF copy to read later or print.</p>
+    <div class="share-row">${pdfButton(a, preview)}${links.map(([n, h]) =>
+      `<a class="share-btn" href="${esc(h)}"${n === "Email" ? "" : ' target="_blank" rel="noopener"'}>${n}</a>`).join("")}
+      <button type="button" class="share-btn" data-copy-link="${esc(url)}">Copy link</button>
+      <button type="button" class="share-btn" data-native-share data-title="${esc(a.title)}" data-url="${esc(url)}" hidden>More&hellip;</button>
+    </div>
+  </section>`;
+}
+
 function articleMain(a, preview) {
   const related = a.related.length
     ? `<section class="section tw-related"><h2>Keep going</h2><div class="grid">${a.related.map((r) =>
@@ -290,13 +483,14 @@ function articleMain(a, preview) {
     <p class="kicker"><a href="/this-week">This Week in the Church</a> &rsaquo; ${esc(a.kicker)}</p>
     <h1>${esc(a.title)}</h1>
     <p class="lede">${esc(a.description)}</p>
-    <p class="small muted tw-meta">${when} &middot; ${minutes(a.body)} min read</p>
+    <p class="small muted tw-meta">${when} &middot; ${minutes(a.body)} min read &middot; <a href="#share">Share</a> &middot; ${a.pdf ? `<a href="${esc(pdfUrl(a, preview))}" download>Download PDF</a>` : `<a href="#share" data-print>Download PDF</a>`}</p>
   </div>
 </div>
 <div class="wrap">
   <article class="section prose tw-article">
 ${a.body}
   </article>
+  ${shareBox(a, preview)}
   ${related}
   ${sources}
   <p class="small muted tw-foot">Written for CatholicDoorway and reviewed before publishing. Scripture quotations are from the Revised Standard Version, Catholic Edition. Spot a mistake? Write to <a href="mailto:hello@catholicdoorway.com">hello@catholicdoorway.com</a>. <a href="/this-week">More from This Week in the Church</a> &middot; <a href="/this-week/feed.xml">RSS</a></p>
@@ -315,11 +509,15 @@ function articleLd(a) {
         { "@type": "ListItem", position: 3, name: a.title, item: url }] } });
     out.push({ "@type": "Article", "@id": url + "#article", headline: a.title.slice(0, 110), description: a.description,
       datePublished: a.published, dateModified: a.updated || a.published, inLanguage: "en", isAccessibleForFree: true,
-      image: `${DOMAIN}/assets/img/og.png`, mainEntityOfPage: { "@id": url + "#webpage" },
+      image: imageUrl(a), mainEntityOfPage: { "@id": url + "#webpage" },
       author: { "@id": `${DOMAIN}/#org` }, publisher: { "@id": `${DOMAIN}/#org` },
       wordCount: String(a.body).replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length });
     return out;
   };
+}
+
+function shareMeta(a, withKey) {
+  return a.image ? { url: imageUrl(a, withKey), w: a.image.w, h: a.image.h, alt: a.image.alt || a.title } : null;
 }
 
 async function articlePage(request, env, slug) {
@@ -329,7 +527,7 @@ async function articlePage(request, env, slug) {
   if (a.status !== "published") return Response.redirect(`${DOMAIN}/this-week`, 302);
   const html = setMeta(await shell(request, env), {
     title: `${a.title} | CatholicDoorway`, desc: a.description, url: `/this-week/${a.slug}`, type: "article",
-    ld: articleLd(a), verse: a.verse, main: articleMain(a, false),
+    ld: articleLd(a), verse: a.verse, main: articleMain(a, false), image: shareMeta(a),
   });
   return htmlResponse(html);
 }
@@ -410,6 +608,9 @@ function reviewBar(a, msg) {
   const btn = (action, label, cls = "") => `<form method="post" style="display:inline"><input type="hidden" name="k" value="${esc(a.key)}"><input type="hidden" name="action" value="${action}"><button class="btn${cls}" type="submit">${label}</button></form>`;
   return `<div class="tw-review" role="region" aria-label="Review"><div class="wrap">
   <p><strong>${live ? "This article is live." : "Preview: not published yet."}</strong> ${msg || (live ? `It is at <a href="/this-week/${esc(a.slug)}">/this-week/${esc(a.slug)}</a>.` : "Read it through. When it looks right, publish it. You can unpublish it any time.")}</p>
+  ${a.image
+    ? `<div class="tw-share-preview"><img src="${esc(imageUrl(a, !live))}" alt="" width="300" height="${Math.round(300 * a.image.h / a.image.w)}"><p class="small">This picture shows when the link is shared on Facebook, X, WhatsApp and other apps.</p></div>`
+    : `<p class="small">No share picture yet, so a shared link shows the site&rsquo;s general picture.</p>`}
   <div class="btn-row">${live ? `<a class="btn secondary" href="/this-week/${esc(a.slug)}">Open the live page</a> ${btn("unpublish", "Unpublish", " secondary")}` : btn("publish", "Publish now")}</div>
 </div></div>`;
 }
@@ -435,7 +636,7 @@ async function reviewArticle(request, env, slug, url) {
   if (!a || !same(k, a.key)) return plain("<h1>Article not found</h1><p>This review link is not right or the article was removed. Sign in at <a href=\"/this-week/review\">/this-week/review</a> to see every article.</p>");
   let html = setMeta(await shell(request, env), {
     title: `Review: ${a.title}`, desc: a.description, url: `/this-week/${a.slug}`, noindex: true,
-    verse: a.verse, main: reviewBar(a, msg) + articleMain(a, a.status !== "published"),
+    verse: a.verse, main: reviewBar(a, msg) + articleMain(a, a.status !== "published"), image: shareMeta(a, a.status !== "published"),
   });
   return new Response(html, { headers: { "Content-Type": "text/html; charset=utf-8", ...PRIVATE } });
 }
@@ -466,7 +667,7 @@ async function reviewList(request, env) {
     const a = await env.LISTINGS.get("article:" + slug, "json");
     if (a && action === "publish" && a.status !== "published") await publish(env, a);
     if (a && action === "unpublish" && a.status === "published") await unpublish(env, a);
-    if (a && action === "delete" && a.status !== "published") await env.LISTINGS.delete("article:" + slug);
+    if (a && action === "delete" && a.status !== "published") await removeArticle(env, slug);
   }
   const all = await listAll(env);
   const btn = (a, action, label, cls = "") => `<form class="inline" method="post"><input type="hidden" name="token" value="${esc(token)}"><input type="hidden" name="slug" value="${esc(a.slug)}"><input type="hidden" name="action" value="${action}"><button class="${cls}">${label}</button></form>`;
@@ -495,9 +696,14 @@ export async function articles(request, url, env) {
   if (p === "/api/articles/latest.json") return latest(env);
   if (p === "/api/articles/all" && request.method === "GET") return allForTool(request, env);
   if (p === "/api/articles/action" && request.method === "POST") return actionForTool(request, env);
+  if ((p === "/api/articles/files" || p === "/api/articles/image") && request.method === "POST") return setFiles(request, env);
   if (p === "/this-week/review") return reviewList(request, env);
   let m = /^\/this-week\/review\/([^/]+)$/.exec(p);
   if (m) return reviewArticle(request, env, m[1], url);
+  m = /^\/this-week\/([^/]+)\/share\.(?:jpg|png)$/.exec(p);
+  if (m) return shareImage(request, env, m[1], url);
+  m = /^\/this-week\/([^/]+)\/article\.pdf$/.exec(p);
+  if (m) return articlePdf(request, env, m[1], url);
   m = /^\/this-week\/([^/]+)$/.exec(p);
   if (m) {
     if (url.pathname.endsWith("/")) return Response.redirect(`${DOMAIN}/this-week/${m[1]}`, 301);
