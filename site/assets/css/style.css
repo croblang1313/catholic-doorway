@@ -1410,3 +1410,32 @@ svg.cpage .k { fill: #222; pointer-events: none; }
 .rs-audio.is-playing { border-color: var(--gold); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .rs-skip { color: var(--ink); } }
 :root[data-theme="dark"] .rs-skip { color: var(--ink); }
+
+/* ---------- Window boxes: content boxes are slightly see-through ----------
+   Only inside <main>, so the header, footer and Follow banner stay as they are.
+   The background color is ~15% transparent; text stays fully solid. */
+main { --surface: rgba(255, 255, 255, .85); --bg-alt: rgba(243, 236, 221, .85); --box-line: rgba(0, 0, 0, .55); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) main { --surface: rgba(28, 33, 48, .85); --bg-alt: rgba(24, 28, 39, .85); --box-line: #000; }
+}
+:root[data-theme="dark"] main { --surface: rgba(28, 33, 48, .85); --bg-alt: rgba(24, 28, 39, .85); --box-line: #000; }
+/* Very thin black edge around the boxes */
+main .card, main .path-panel, main .table-wrap, main .ladder div, main .org .node, main .qa,
+main .exam-group, main .plan-wrap, main .an-steps li, main .st-prayers, main .ac-day, main .plan-block,
+main .rs-audio, main .share-box, main .stream-times { border: 1px solid var(--box-line); }
+main .tile:hover { border-color: var(--gold); }
+main .tile.feature { border-color: var(--box-line); }
+main .say, main .rs-mystery { border-top-color: var(--box-line); border-right-color: var(--box-line); border-bottom-color: var(--box-line); }
+main .note, main .tw-article blockquote, main .ocia-say { border: 1px solid var(--box-line); border-left: 4px solid var(--gold); }
+main .tw-article blockquote, main .ocia-say { border-left-width: 3px; }
+/* Keep these solid: sticky table headings and pop-up dialogs sit over other content */
+main th { background: #f3ecdd; }
+:root[data-theme="dark"] main th { background: #181c27; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) main th { background: #181c27; } }
+main .ac-dialog { background: #fff; }
+:root[data-theme="dark"] main .ac-dialog { background: #1c2130; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) main .ac-dialog { background: #1c2130; } }
+main .path-steps a { background: color-mix(in srgb, var(--bg) 85%, transparent); border-color: var(--box-line); }
+main .path-steps a:hover { border-color: var(--gold); }
+main .path-when { background: color-mix(in srgb, var(--gold-soft) 85%, transparent); }
+main .season-card { background: linear-gradient(160deg, var(--surface), color-mix(in srgb, var(--gold-soft) 85%, transparent)); }
