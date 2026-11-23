@@ -60,15 +60,53 @@ def fetch(url, dest=None):
     raise RuntimeError(f"{url}: {last}")
 
 
+US_PLACES = {
+    "alabama", "alaska", "arizona", "arkansas", "california", "colorado", "connecticut",
+    "delaware", "district of columbia", "florida", "georgia", "hawaii", "idaho", "illinois",
+    "indiana", "iowa", "kansas", "kentucky", "louisiana", "maine", "maryland",
+    "massachusetts", "michigan", "minnesota", "mississippi", "missouri", "montana",
+    "nebraska", "nevada", "new hampshire", "new jersey", "new mexico", "new york",
+    "north carolina", "north dakota", "ohio", "oklahoma", "oregon", "pennsylvania",
+    "rhode island", "south carolina", "south dakota", "tennessee", "texas", "utah",
+    "vermont", "virginia", "washington", "west virginia", "wisconsin", "wyoming",
+    "puerto rico", "guam", "american samoa", "northern mariana islands",
+    "united states virgin islands", "us virgin islands",
+}
+
+
 def us_extracts():
-    """Every Geofabrik extract directly under north-america/us/: the states, DC and territories."""
+    """The Geofabrik extracts for each U.S. state, DC and territory.
+
+    Found by walking the index's parent links down from the United States
+    entry and matching place names, so it keeps working when Geofabrik moves
+    the states into a new folder layout (as it did in November 2026, which
+    broke the old "/north-america/us/<state>" URL match).
+    """
     idx = json.loads(fetch(INDEX_URL))
-    state = re.compile(r"/north-america/us/[^/]+-latest\.osm\.pbf$")
-    out = sorted({(f["properties"]["id"], f["properties"]["urls"]["pbf"])
-                  for f in idx["features"] if state.search(f["properties"].get("urls", {}).get("pbf", ""))})
+    props = [f["properties"] for f in idx["features"]]
+    kids = {}
+    for p in props:
+        kids.setdefault(p.get("parent"), []).append(p)
+    roots = [p for p in props if p["id"] in ("us", "united-states", "united-states-of-america")
+             or p.get("name", "").lower() in ("united states", "united states of america")]
+    out, queue = {}, [r["id"] for r in roots]
+    while queue:
+        for p in kids.get(queue.pop(), []):
+            queue.append(p["id"])
+            name = re.sub(r"\s+", " ", p.get("name", "").lower().replace("-", " ")).strip()
+            slug = p["id"].rsplit("/", 1)[-1].replace("-", " ")
+            pbf = p.get("urls", {}).get("pbf")
+            key = name if name in US_PLACES else slug if slug in US_PLACES else None
+            if pbf and key and key not in out:
+                out[key] = (p["id"], pbf)
     if len(out) < 50:
+        sample = [(p["id"], p.get("parent"), p.get("urls", {}).get("pbf")) for p in props
+                  if "us" in (p.get("parent") or "") or "/us" in p.get("urls", {}).get("pbf", "")][:25]
+        print("U.S. roots found:", [r["id"] for r in roots], file=sys.stderr)
+        print("Sample of U.S.-looking entries:", *sample, sep="\n  ", file=sys.stderr)
         sys.exit(f"Geofabrik index lists only {len(out)} U.S. extracts; keeping old data.")
-    return sorted(out)
+    print(f"Found {len(out)} U.S. extracts.", flush=True)
+    return sorted(out.values())
 
 
 def is_catholic(t):
