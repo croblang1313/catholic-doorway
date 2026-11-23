@@ -3,17 +3,32 @@
 // --wide renders the same design at 1200x630, the size Facebook, X and WhatsApp use for link
 // previews. send_drafts.py makes one for each "This Week in the Church" article (its share picture).
 // spec: {"kicker":"Monday · Saint of the Day","title":"St. Cecilia","body":"Short text...",
-//        "ref":"Nov 22 · Feast", "theme":"cream"|"navy"}
+//        "ref":"Nov 22 · Feast", "theme":"cream"|"navy"|"burgundy"|"forest"|"purple"|"teal"|"rose"|"sage"|"sky"}
 const { chromium } = require('playwright');
 const fs = require('fs');
 const esc = (s) => String(s || '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const NAVY = '#1d2b4f', GOLD = '#a8802f', CREAM = '#faf6ee', LGOLD = '#e9cf8e';
 const mark = (line, gold, op) => `<svg viewBox="0 0 34 40" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block"><path d="M3 39V17C3 8.7 9.3 2 17 2s14 6.7 14 15v22" fill="none" stroke="${line}" stroke-width="2.4"/><path d="M8 39V18.5C8 13 12 8.5 17 8.5S26 13 26 18.5V39" fill="${line}" opacity="${op}"/><path d="M8 39V18.5C8 13 12 8.5 17 8.5S26 13 26 18.5V39" fill="none" stroke="${line}" stroke-width="1.6"/><path d="M17 12v9M13.6 15.2h6.8" stroke="${gold}" stroke-width="2" stroke-linecap="round"/><circle cx="22" cy="28" r="1.4" fill="${gold}"/><path d="M1 39h32" stroke="${line}" stroke-width="2.4" stroke-linecap="round"/></svg>`;
 const spec = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
-const navy = spec.theme === 'navy';
+// Backgrounds. Dark ones get cream text and light gold; light ones get navy text and gold.
+// Article share pictures rotate through ARTICLE_ROTATION (post_article.py) so each week looks different.
+const dark = (c1, c2, c3) => ({ dark: true, bg: `radial-gradient(circle at 50% 30%, ${c1} 0%, ${c2} 55%, ${c3} 100%)` });
+const light = (c1, c2, c3) => ({ dark: false, bg: `linear-gradient(180deg,${c1} 0%,${c2} 35%,${c3} 100%)` });
+const THEMES = {
+  navy: dark('#26386a', '#1d2b4f', '#131d38'),
+  cream: light('#ecdfc4', '#f4ecdc', '#faf6ee'),
+  burgundy: dark('#8a2c3a', '#6b1f2a', '#45121b'),
+  forest: dark('#2c6650', '#1f4a3a', '#123026'),
+  purple: dark('#64407f', '#4a2c63', '#2f1a42'),
+  teal: dark('#2a6878', '#1d4f5c', '#11343d'),
+  rose: light('#ecc9c3', '#f3dcd8', '#faf0ee'),
+  sage: light('#d3dcc3', '#e3e9d8', '#f4f6ef'),
+  sky: light('#c8d7e8', '#dce6f0', '#f1f5f9'),
+};
+const T = THEMES[spec.theme] || THEMES.cream;
+const navy = T.dark;
 const ink = navy ? CREAM : NAVY, accent = navy ? LGOLD : GOLD, soft = navy ? '#cfc8b8' : '#4a5060';
-const bg = navy ? 'radial-gradient(circle at 50% 30%, #26386a 0%, #1d2b4f 55%, #131d38 100%)'
-  : 'linear-gradient(180deg,#ecdfc4 0%,#f4ecdc 35%,#faf6ee 100%)';
+const bg = T.bg;
 const wide = process.argv.includes('--wide');
 const W = wide ? 1200 : 1080, H = wide ? 630 : 1350;
 const title = esc(spec.title);

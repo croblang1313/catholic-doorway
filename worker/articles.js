@@ -457,13 +457,20 @@ function shareBox(a, preview) {
     ["Pinterest", `https://www.pinterest.com/pin/create/button/?url=${u}&media=${encodeURIComponent(imageUrl(a))}&description=${t}`],
     ["Email", `mailto:?subject=${t}&body=${encodeURIComponent(a.description + "\n\n" + url)}`],
   ];
-  return `<section class="share-box" id="share" aria-labelledby="share-h">
-    <h2 id="share-h">Share this article</h2>
-    <p class="small muted">Know someone who would like this? Send it their way, or keep a PDF copy to read later or print.</p>
-    <div class="share-row">${pdfButton(a, preview)}${links.map(([n, h]) =>
+  return `<section class="share-box" id="share" aria-label="Download or share this article">
+    <div class="share-part share-pdf">
+      <h2>Keep a copy</h2>
+      <p class="small muted">Download this article as a PDF to read later, print or hand to a friend.</p>
+      <div class="share-row">${pdfButton(a, preview)}</div>
+    </div>
+    <div class="share-part share-social">
+      <h2>Share this article</h2>
+      <p class="small muted">Know someone who would like this? Send it their way.</p>
+      <div class="share-row">${links.map(([n, h]) =>
       `<a class="share-btn" href="${esc(h)}"${n === "Email" ? "" : ' target="_blank" rel="noopener"'}>${n}</a>`).join("")}
       <button type="button" class="share-btn" data-copy-link="${esc(url)}">Copy link</button>
       <button type="button" class="share-btn" data-native-share data-title="${esc(a.title)}" data-url="${esc(url)}" hidden>More&hellip;</button>
+      </div>
     </div>
   </section>`;
 }

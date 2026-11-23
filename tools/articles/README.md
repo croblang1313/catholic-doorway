@@ -24,7 +24,8 @@ Christopher reads it and publishes it with one tap. Nothing goes live without hi
 - The weekly job never publishes. Only Christopher does.
 - **Share picture and PDF.** Every draft carries a 1200x630 share picture and a PDF copy, both made by
   `post_article.py` (the PDF with `make_article_pdf.js`). The picture is the matching post's design at
-  link-preview size, so a shared article shows the same graphic as the social post; it is what
+  link-preview size, with a background color that rotates every week (navy, rose, forest, sky,
+  burgundy, sage, purple, cream, teal; never the same two weeks running); it is what
   Facebook, X, WhatsApp and Pinterest show (og:image / twitter:image). The article page has share
   buttons (Facebook, X, WhatsApp, Pinterest, Email, Copy link, and the phone's share sheet) and a
   **Download PDF** button. To redo them on a live article: `post_article.py --attach article.json`.

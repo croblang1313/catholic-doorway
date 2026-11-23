@@ -25,6 +25,7 @@ Every draft also carries:
   - a 1200x630 share picture (what Facebook, X and WhatsApp show when the link is shared).
     send_drafts.py passes the matching post's picture design; on its own this script renders
     "share_image" (same fields as a post image), or uses "image": "file.jpg" next to the JSON.
+    Its background color comes from week_theme(): a different color each week ("share_theme" overrides).
 """
 import base64, json, os, subprocess, sys, tempfile, urllib.error, urllib.request
 
@@ -38,6 +39,23 @@ def _tool(*names):
         if os.path.exists(p):
             return p
     sys.exit("can't find " + names[0])
+
+
+# Article share pictures change color every week so they don't look alike in a feed.
+# Dark and light alternate; consecutive weeks never repeat. "share_theme" in the article overrides.
+ARTICLE_ROTATION = ["navy", "rose", "forest", "sky", "burgundy", "sage", "purple", "cream", "teal"]
+
+
+def week_theme(a):
+    if a.get("share_theme"):
+        return a["share_theme"]
+    import datetime
+    try:
+        d = datetime.date.fromisoformat(str(a.get("date", ""))[:10])
+    except ValueError:
+        d = datetime.date.today()
+    weeks = (d - datetime.date(1970, 1, 4)).days // 7  # weeks run Sunday to Saturday
+    return ARTICLE_ROTATION[weeks % len(ARTICLE_ROTATION)]
 
 
 def render_share_image(spec, out):
@@ -62,8 +80,8 @@ def files_for(path, a, image=None):
     if not image and isinstance(a.get("image"), str) and not a["image"].startswith("data:"):
         image = os.path.join(os.path.dirname(os.path.abspath(path)), a["image"])
     if not image:
-        spec = a.get("share_image") or {"kicker": "This Week in the Church", "title": a["title"], "ref": a.get("kicker", ""), "theme": "navy"}
-        image = render_share_image(spec, base + "-share.jpg")
+        spec = a.get("share_image") or {"kicker": "This Week in the Church", "title": a["title"], "ref": a.get("kicker", "")}
+        image = render_share_image({**spec, "theme": week_theme(a)}, base + "-share.jpg")
     print("pdf", pdf, "\n  share picture", image)
     return pdf, image
 

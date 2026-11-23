@@ -27,7 +27,7 @@ and the photo draft goes to the other platforms. Set "video": false to send TikT
 (see tools/articles/README.md). It is sent first as a draft on catholicdoorway.com. It shows in the Articles
 tab of Social Posts, and the post's coach notes remind Christopher to publish it before approving the post.
 The article also gets a PDF copy (its "Download PDF" button) and a share picture: the post's "image"
-design rendered at 1200x630, so a shared article link shows the same picture as the post. Give the post
+design rendered at 1200x630, with a background color that changes every week (post_article.week_theme). Give the post
 "article_image" (same fields as "image") to use a different design for the article. The caption should link to https://catholicdoorway.com/this-week/<slug>. Until the article
 is published, that address opens the This Week index, so the link never breaks.
 
@@ -83,7 +83,9 @@ def main():
         if post.get("article"):
             import post_article
             share = os.path.join(out_dir, f"{post['post_on']}-article-share.jpg")
-            post_article.render_share_image(post.get("article_image") or post["image"], share)
+            art_json = json.load(open(os.path.join(week_dir, post["article"]), encoding="utf-8"))
+            spec = {**(post.get("article_image") or post["image"]), "theme": post_article.week_theme(art_json)}
+            post_article.render_share_image(spec, share)
             art = post_article.send(os.path.join(week_dir, post["article"]), dry, tok, image=share)
             if art.get("review_url"):
                 coach = dict(post.get("coach") or {})
