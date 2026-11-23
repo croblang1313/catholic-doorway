@@ -62,5 +62,12 @@ Every Monday run also writes ONE "This Week in the Church" article for the websi
 3. Make one of the week's 3 posts (the one nearest the feast) about the article. Its caption links to
    https://catholicdoorway.com/this-week/<slug>, and in plan.json it carries `"article": "article.json"`.
    send_drafts.py then sends the article draft first and its coach notes remind Christopher.
-4. In the final summary, list the article title and that it is waiting in the Articles tab. Christopher publishes it
-   in the Articles tab of Social Posts before approving the post.
+4. Christopher publishes the article in the Articles tab of Social Posts before approving the post.
+   (Don't list it in the Monday message; see "Monday message" below.)
+
+## Monday message (added 2026-11-23, Christopher's request; this overrides the job's "short summary" step)
+Christopher does NOT want a summary every Monday of the new article and posts. Do not list titles, captions,
+scores, video formats or review links. Send only a short reminder, one or two sentences, that this week's drafts
+(and the article, if one was made) are ready to review and approve at https://social.catholicdoorway.com.
+If drafts were already sent this week, the reminder is the same. Only add detail when something failed: then say
+plainly what failed.
