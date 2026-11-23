@@ -670,7 +670,7 @@ body.companion-open { overflow: hidden; }
    Light: nave of St. Paulus Cathedral, Münster (Dietmar Rabich, CC BY-SA 4.0).
    Dark: Holy Spirit window, St. Peter's Basilica (Wilfredor, CC0).
    Only the image for the active theme is downloaded. */
-:root { --veil: rgba(250, 246, 238, .87); --bg-photo: url("/assets/img/bg-nave.jpg"); }
+:root { --veil: rgba(250, 246, 238, .65); --bg-photo: url("/assets/img/bg-nave.jpg"); }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) { --veil: rgba(13, 16, 24, .84); --bg-photo: url("/assets/img/bg-window.jpg"); }
 }
