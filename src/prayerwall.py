@@ -30,7 +30,7 @@ T = {
         all_langs="All languages", loading="Loading prayer requests…",
         ask_h="Ask for prayer",
         ask_p="Tell us what you would like prayer for. Our team prays for every request we receive, including private ones.",
-        f_name="Your first name", f_name_hint="Optional. Leave it blank to post as &ldquo;Anonymous&rdquo;.",
+        f_req='Fields marked <span class="req">*</span> are required.', f_name="Your first name", f_name_hint="Optional. Leave it blank to post as &ldquo;Anonymous&rdquo;.",
         f_text="Your prayer request", f_text_ph="For example: Please pray for my mom, who starts chemotherapy this week, and for our family.",
         f_private="Keep it private: don&rsquo;t post it on the wall. Only our team will read it and pray for you.",
         f_send="Send my request",
@@ -63,7 +63,7 @@ T = {
         all_langs="Todos los idiomas", loading="Cargando peticiones…",
         ask_h="Pide oración",
         ask_p="Cuéntanos por qué quieres que recemos. Nuestro equipo reza por cada petición que recibe, también por las privadas.",
-        f_name="Tu nombre de pila", f_name_hint="Opcional. Déjalo en blanco para publicarla como «Anónimo».",
+        f_req='Los campos marcados con <span class="req">*</span> son obligatorios.', f_name="Tu nombre de pila", f_name_hint="Opcional. Déjalo en blanco para publicarla como «Anónimo».",
         f_text="Tu petición de oración", f_text_ph="Por ejemplo: Recen por mi mamá, que empieza la quimioterapia esta semana, y por nuestra familia.",
         f_private="Mantenerla privada: no publicarla en el muro. Solo nuestro equipo la leerá y rezará por ti.",
         f_send="Enviar mi petición",
@@ -96,7 +96,7 @@ T = {
         all_langs="Todos os idiomas", loading="Carregando pedidos…",
         ask_h="Peça oração",
         ask_p="Conte para nós pelo que você quer que rezemos. A nossa equipe reza por cada pedido que recebe, inclusive os particulares.",
-        f_name="Seu primeiro nome", f_name_hint="Opcional. Deixe em branco para aparecer como “Anônimo”.",
+        f_req='Os campos marcados com <span class="req">*</span> são obrigatórios.', f_name="Seu primeiro nome", f_name_hint="Opcional. Deixe em branco para aparecer como “Anônimo”.",
         f_text="Seu pedido de oração", f_text_ph="Por exemplo: Rezem pela minha mãe, que começa a quimioterapia esta semana, e pela nossa família.",
         f_private="Manter em particular: não mostrar no mural. Só a nossa equipe vai ler e rezar por você.",
         f_send="Enviar meu pedido",
@@ -129,7 +129,7 @@ T = {
         all_langs="Lahat ng wika", loading="Naglo-load ang mga kahilingan…",
         ask_h="Humiling ng panalangin",
         ask_p="Sabihin sa amin kung ano ang gusto mong ipanalangin. Ipinagdarasal ng aming grupo ang bawat kahilingang natatanggap namin, pati ang mga pribado.",
-        f_name="Iyong unang pangalan", f_name_hint="Hindi kailangan. Iwanang blangko para lumabas bilang “Hindi nagpakilala”.",
+        f_req='Kailangang punan ang mga field na may <span class="req">*</span>.', f_name="Iyong unang pangalan", f_name_hint="Hindi kailangan. Iwanang blangko para lumabas bilang “Hindi nagpakilala”.",
         f_text="Iyong kahilingang panalangin", f_text_ph="Halimbawa: Pakidasal po ang nanay ko na magsisimula ng chemotherapy ngayong linggo, at ang aming pamilya.",
         f_private="Gawing pribado: huwag ilabas sa pahina. Ang aming grupo lang ang babasa nito at magdarasal para sa iyo.",
         f_send="Ipadala ang aking kahilingan",
@@ -238,6 +238,7 @@ def page(lang):
     <p class="prose">{t["ask_p"]}</p>
     <div class="grid two pw-ask">
       <form class="card ocia-form" id="prayer-form" novalidate>
+        <p class="small muted form-req">{t["f_req"]}</p>
         <div class="form-grid">
           <label>{t["f_name"]}<input name="name" maxlength="40" autocomplete="given-name"><span class="small muted">{t["f_name_hint"]}</span></label>
         </div>

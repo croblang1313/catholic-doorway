@@ -25,6 +25,7 @@
   --lit-violet: #6a3f8a;
   --lit-white: #c9a64a;
   --lit-red: #a8322d;
+  --error: #a8322d; /* errors, required marks, crisis box; lighter in dark mode */
   --lit-rose: #c9798e;
   color-scheme: light;
 }
@@ -43,6 +44,7 @@
     --line: #2c3243;
     --link: #a9c1f0;
     --link-hover: #e2c37c;
+    --error: #f28b82;
     --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.25);
     color-scheme: dark;
   }
@@ -60,6 +62,7 @@
   --line: #2c3243;
   --link: #a9c1f0;
   --link-hover: #e2c37c;
+  --error: #f28b82; /* 6.7:1 on dark cards (the liturgical red was 2.4:1) */
   --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.25);
   color-scheme: dark;
 }
@@ -806,11 +809,15 @@ body::before {
 .lang-opts input { width: auto; min-height: 0; }
 .req { margin-left: .15rem; }
 .consent { font: 400 .95rem var(--sans); margin: 1rem 0; }
-.consent input { width: 1.1rem; height: 1.1rem; }
+.consent input { width: 1.25rem; height: 1.25rem; }
+/* Checkbox rows: 20px boxes and 44px-tall rows so they are easy to tap */
+.rem-opts input, .lang-opts input { width: 1.25rem; height: 1.25rem; margin-top: 0; }
+.rem-opts label, .lang-opts label { min-height: 44px; align-items: center; }
+.form-req { margin: 0 0 .9rem; }
 #ol-state { font: 1rem var(--sans); padding: .5rem .8rem; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); min-height: 44px; }
-.req { color: var(--lit-red); }
-[aria-invalid="true"] { border-color: var(--lit-red) !important; box-shadow: 0 0 0 1px var(--lit-red); }
-.status-msg.error { color: var(--lit-red); }
+.req { color: var(--error); }
+[aria-invalid="true"] { border-color: var(--error) !important; box-shadow: 0 0 0 1px var(--error); }
+.status-msg.error { color: var(--error); }
 .hp { position: absolute !important; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 #ol-list .church { margin: 0 0 .7rem; }
 
@@ -1192,7 +1199,7 @@ dl.glossary .see { font: 600 .85rem var(--sans); margin-left: .2rem; }
 .plan-date-row input[type="date"], .rem-row select { font: inherit; font-size: 1rem; min-height: 44px; padding: .35rem .6rem; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); }
 .linkish { background: none; border: 0; padding: .25rem 0; font: 600 .92rem var(--sans); color: var(--link); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; text-align: left; display: block; min-height: 32px; }
 .linkish:hover { color: var(--link-hover); }
-.linkish.danger { color: var(--lit-red); }
+.linkish.danger { color: var(--error); }
 .plan-schedule { margin-top: 2rem; }
 .plan-schedule > h2 { margin-bottom: .6rem; }
 .plan-schedule > .plan-progress { max-width: 30rem; margin-bottom: 1rem; }
@@ -1341,8 +1348,8 @@ svg.cpage .k { fill: #222; pointer-events: none; }
 .watch .actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .6rem; }
 .parish-stream h3 { margin-bottom: .2rem; }
 .map-filter { margin: .8rem 0 0; display: flex; flex-wrap: wrap; gap: .3rem .8rem; align-items: center; }
-.map-filter label { display: inline-flex; gap: .45rem; align-items: center; font: 1rem var(--sans); cursor: pointer; min-height: 40px; }
-.map-filter input { width: 1.15rem; height: 1.15rem; accent-color: var(--navy); }
+.map-filter label { display: inline-flex; gap: .45rem; align-items: center; font: 1rem var(--sans); cursor: pointer; min-height: 44px; }
+.map-filter input { width: 1.25rem; height: 1.25rem; accent-color: var(--navy); }
 #spiritual-communion h2 { margin-top: 0; }
 
 /* This Week in the Church (worker/articles.js) */
@@ -1377,8 +1384,8 @@ svg.cpage .k { fill: #222; pointer-events: none; }
 .home-week[hidden] { display: none; }
 
 /* ---------- Prayer Wall ---------- */
-.crisis-box { border: 2px solid var(--lit-red); background: var(--surface); border-radius: var(--radius); padding: 1.1rem 1.3rem; margin: 1.5rem 0; box-shadow: var(--shadow); }
-.crisis-box h2 { font-size: 1.3rem; margin: 0 0 .4rem; color: var(--lit-red); }
+.crisis-box { border: 2px solid var(--error); background: var(--surface); border-radius: var(--radius); padding: 1.1rem 1.3rem; margin: 1.5rem 0; box-shadow: var(--shadow); }
+.crisis-box h2 { font-size: 1.3rem; margin: 0 0 .4rem; color: var(--error); }
 :root[data-theme="dark"] .crisis-box h2 { color: #f08a84; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .crisis-box h2 { color: #f08a84; } }
 .crisis-box p { margin: .4rem 0; }
@@ -1419,7 +1426,7 @@ svg.cpage .k { fill: #222; pointer-events: none; }
   .rs-audio > p { grid-column: 1 / -1; }
 }
 .rs-audio-credit { font-size: .78rem; }
-.rs-audio-err { color: var(--lit-red); }
+.rs-audio-err { color: var(--error); }
 .rs-audio.is-playing { border-color: var(--gold); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .rs-skip { color: var(--ink); } }
 :root[data-theme="dark"] .rs-skip { color: var(--ink); }
@@ -1465,15 +1472,18 @@ main .season-card { background: linear-gradient(160deg, var(--surface), color-mi
    Darker text and lines, solid boxes and header, and the background photo mostly veiled.
    Light: ink 17:1, soft text 12:1, gold 6.8:1, lines 5.2:1. Dark: ink 14.5:1, soft text 10.8:1, lines 4.2:1. */
 @media (prefers-contrast: more) {
-  :root { --ink: #10131a; --ink-soft: #2c3140; --gold: #6e521a; --link: #1a3166; --link-hover: #5a3f0c; --line: #6f6758; --veil: rgba(250, 246, 238, .93); }
+  :root { --error: #7a1f19; --ink: #10131a; --ink-soft: #2c3140; --gold: #6e521a; --link: #1a3166; --link-hover: #5a3f0c; --line: #6f6758; --veil: rgba(250, 246, 238, .93); }
   main { --surface: #ffffff; --bg-alt: #f3ecdd; --box-line: #000; }
-  :root[data-theme="dark"] { --ink: #f7f3ea; --ink-soft: #d9d4c8; --navy: #e6d4a3; --gold: #e2c47f; --link: #c3d4f7; --link-hover: #f0d58f; --line: #7a8299; --veil: rgba(13, 16, 24, .95); }
+  :root[data-theme="dark"] { --error: #f6a39b; --ink: #f7f3ea; --ink-soft: #d9d4c8; --navy: #e6d4a3; --gold: #e2c47f; --link: #c3d4f7; --link-hover: #f0d58f; --line: #7a8299; --veil: rgba(13, 16, 24, .95); }
   :root[data-theme="dark"] main { --surface: #1c2130; --bg-alt: #181c27; --box-line: #7a8299; }
   .site-header { background: var(--bg); backdrop-filter: none; -webkit-backdrop-filter: none; }
   main .path-steps a { background: var(--bg); }
   main .path-when { background: var(--gold-soft); }
 }
 @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { --ink: #f7f3ea; --ink-soft: #d9d4c8; --navy: #e6d4a3; --gold: #e2c47f; --link: #c3d4f7; --link-hover: #f0d58f; --line: #7a8299; --veil: rgba(13, 16, 24, .95); }
+  :root:not([data-theme="light"]) { --error: #f6a39b; --ink: #f7f3ea; --ink-soft: #d9d4c8; --navy: #e6d4a3; --gold: #e2c47f; --link: #c3d4f7; --link-hover: #f0d58f; --line: #7a8299; --veil: rgba(13, 16, 24, .95); }
   :root:not([data-theme="light"]) main { --surface: #1c2130; --bg-alt: #181c27; --box-line: #7a8299; }
 }
+
+/* Map zoom buttons (Leaflet): 40px on touch screens, up from 30px */
+#map.leaflet-touch .leaflet-bar a, .leaflet-touch #map .leaflet-bar a { width: 40px; height: 40px; line-height: 40px; font-size: 22px; } /* beats leaflet.css, which loads after this file */
