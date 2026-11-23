@@ -110,6 +110,8 @@ def check(a):
             problems.append(f"missing {k}")
     if len(a.get("title", "")) > 70:
         problems.append("title over 70 characters")
+    if len(a.get("related") or []) != 3:
+        problems.append("related should have exactly 3 pages (the Keep going cards)")
     if not 70 <= len(a.get("description", "")) <= 300:
         problems.append("description should be 70 to 300 characters")
     return problems

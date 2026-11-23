@@ -490,8 +490,9 @@ function moreBox(a, list) {
 }
 
 function articleMain(a, preview, list) {
+  // Keep going shows 3 cards: one row on desktop, like What's next.
   const related = a.related.length
-    ? `<section class="section tw-related"><h2>Keep going</h2><div class="grid">${a.related.map((r) =>
+    ? `<section class="section tw-related"><h2>Keep going</h2><div class="grid">${a.related.slice(0, 3).map((r) =>
       `<a class="card tile" href="${esc(r.href)}"><h3>${esc(r.label)}</h3>${r.note ? `<p>${esc(r.note)}</p>` : ""}<span class="go">Open &rarr;</span></a>`).join("")}</div></section>`
     : "";
   const sources = a.sources.length
