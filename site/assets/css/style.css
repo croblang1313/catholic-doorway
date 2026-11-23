@@ -92,7 +92,7 @@ small, .small { font-size: .9rem; }
 .muted { color: var(--ink-soft); }
 hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 
-.skip-link { position: absolute; left: -999px; top: 0; background: var(--navy); color: #fff; padding: .6rem 1rem; z-index: 100; }
+.skip-link { position: absolute; left: -999px; top: 0; background: var(--navy); color: var(--bg); padding: .6rem 1rem; z-index: 100; }
 .skip-link:focus { left: 1rem; top: 1rem; }
 
 .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 16px; }
