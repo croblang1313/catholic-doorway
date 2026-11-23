@@ -120,6 +120,13 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
   padding: .45rem .9rem; cursor: pointer;
 }
 .nav-toggle svg { width: 18px; height: 18px; }
+/* Open menu: the three lines become an X so it's clear the same button closes it. */
+.nav-toggle[aria-expanded="true"] svg { display: none; }
+.nav-toggle[aria-expanded="true"]::before {
+  content: ""; width: 18px; height: 18px; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 6l12 12M18 6 6 18' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 6l12 12M18 6 6 18' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
 .site-nav { display: none; }
 .site-nav.open { display: block; }
 .site-nav ul { list-style: none; margin: 0; padding: 0; }
@@ -435,12 +442,14 @@ dl.glossary dt:target { background: var(--gold-soft); border-radius: 6px; paddin
 .footer-grid { display: grid; gap: 1.6rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
 .site-footer h4 { color: #f1e9d6; margin: 0 0 .6rem; font-size: 1.25rem; }
 .site-footer ul { list-style: none; padding: 0; margin: 0; }
-.site-footer li { margin-bottom: .35rem; }
+.site-footer li { margin-bottom: 0; }
+/* Footer links: at least 24px tall so they're easy to tap. */
+.site-footer li a, .footer-legal a { display: inline-block; padding: .2rem 0; }
 .footer-verse { font-family: var(--serif-display); font-style: italic; font-size: 1.3rem; color: #f1e9d6; }
 .footer-base { border-top: 1px solid rgba(255,255,255,.1); margin-top: 2rem; padding-top: 1.2rem; font-size: .88rem; color: #a59f92; }
 .footer-legal { margin: 1rem 0 0; text-align: center; }
 .footer-legal a { white-space: nowrap; }
-.site-footer a.footer-staff { display: inline-flex; vertical-align: middle; margin-left: .6rem; color: #f1e9d6; opacity: .18; transition: opacity .2s, color .2s; }
+.site-footer a.footer-staff { display: inline-flex; vertical-align: middle; margin-left: .35rem; padding: 4px; color: #f1e9d6; opacity: .18; transition: opacity .2s, color .2s; }
 .site-footer a.footer-staff:hover, .site-footer a.footer-staff:focus-visible { opacity: 1; color: #e9cf8e; }
 .legal h3 { margin-top: 1.4rem; }
 
@@ -1341,6 +1350,7 @@ svg.cpage .k { fill: #222; pointer-events: none; }
 .tw-article blockquote cite { display: block; font-style: normal; font-size: .9rem; color: var(--ink-soft); margin-top: .3rem; }
 .tw-meta { margin-top: .7rem !important; }
 .tw-card .label { margin-bottom: .2rem; }
+.hw-kicker { font: 600 .92rem var(--sans); color: var(--ink-soft); margin: 0 0 .35rem; }
 .tw-lead h3 { font-size: 1.6rem; }
 .tw-foot { max-width: var(--read); border-top: 1px solid var(--line); padding-top: 1rem; margin: 1rem 0 1.5rem; }
 .tw-more .btn-row { margin-top: 1rem; justify-content: flex-start; }

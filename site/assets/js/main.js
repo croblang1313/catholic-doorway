@@ -197,7 +197,16 @@
       var a = d && d.article;
       if (!a) return;
       weekCard.href = '/this-week/' + a.slug;
-      weekCard.querySelector('.label').textContent = 'This Week in the Church \u00b7 ' + a.kicker;
+      // Kicker ("Solemnity \u00b7 Tuesday, December 8") on its own quieter line, so the
+      // all-caps label stays one line on phones.
+      var lab = weekCard.querySelector('.label');
+      lab.textContent = 'This Week in the Church';
+      if (a.kicker) {
+        var kick = document.createElement('p');
+        kick.className = 'hw-kicker';
+        kick.textContent = a.kicker;
+        lab.parentNode.insertBefore(kick, lab.nextSibling);
+      }
       weekCard.querySelector('.hw-title').textContent = a.title;
       weekCard.querySelector('.hw-desc').textContent = a.description;
       weekCard.hidden = false;
