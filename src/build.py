@@ -893,10 +893,10 @@ FOOT = """</main>
       <div>
         <h4>About</h4>
         <ul>
-          <li><a href="/about">About this site</a></li>
-          <li><a href="/dioceses">Diocese directory</a></li>
-          <li><a href="/ocia-listing">List your parish&rsquo;s OCIA</a></li>
-          <li><a href="/about#corrections">Send a correction</a></li>
+          <li><a href="/about">About This Site</a></li>
+          <li><a href="/dioceses">Diocese Directory</a></li>
+          <li><a href="/ocia-listing">List Your Parish&rsquo;s OCIA</a></li>
+          <li><a href="/about#corrections">Send a Correction</a></li>
         </ul>
       </div>
     </div>

@@ -7,7 +7,7 @@
   --ink-soft: #4a5060;
   --navy: #1d2b4f;
   --navy-deep: #131d38;
-  --gold: #a8802f;
+  --gold: #876522; /* 4.98:1 on --bg, 4.56:1 on --bg-alt: small gold labels must pass 4.5:1 */
   --gold-soft: #e7d6ad;
   --line: #e2d8c3;
   --link: #24407a;
@@ -222,9 +222,9 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .path-panel[hidden] { display: none; }
 .path-panel h3 { margin: 0; font-size: 1.5rem; }
 .path-intro { color: var(--ink-soft); margin: .25rem 0 1rem; }
-.path-steps { list-style: none; counter-reset: step; margin: 0; padding: 0; display: grid; gap: .6rem; }
+.path-steps { list-style: none; counter-reset: step; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: .6rem; }
 .path-steps li { counter-increment: step; }
-.path-steps a { display: grid; grid-template-columns: 2.2rem 1fr; column-gap: .8rem; text-decoration: none; color: var(--ink); padding: .7rem .8rem; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); transition: border-color .15s ease; }
+.path-steps a { display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); column-gap: .8rem; text-decoration: none; color: var(--ink); padding: .7rem .8rem; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); transition: border-color .15s ease; }
 .path-steps a:hover { border-color: var(--gold); color: var(--ink); }
 .path-steps a::before { content: counter(step); grid-row: span 2; width: 2.2rem; height: 2.2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--gold-soft); color: var(--navy); font: 700 1rem var(--sans); }
 .path-steps strong { font-size: 1.08rem; color: var(--link); }
@@ -295,8 +295,8 @@ section { scroll-margin-top: 80px; }
 .section { padding: 2.5rem 0 0; }
 
 /* ---------- Today strip ---------- */
-.today { display: grid; gap: 1rem; grid-template-columns: 1fr; margin: -1.6rem auto 0; position: relative; }
-@media (min-width: 760px) { .today { grid-template-columns: 1.3fr 1fr 1fr; } }
+.today { display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr); margin: -1.6rem auto 0; position: relative; }
+@media (min-width: 760px) { .today { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr); } }
 .today .card { padding: 1.2rem 1.3rem; }
 .season-dot { display: inline-block; width: .8rem; height: .8rem; border-radius: 50%; margin-right: .45rem; vertical-align: middle; border: 1px solid rgba(0,0,0,.15); }
 .label { font: 700 .78rem var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin: 0 0 .3rem; }
@@ -312,6 +312,8 @@ section { scroll-margin-top: 80px; }
 .tile .icon { width: 40px; height: 40px; color: var(--gold); margin-bottom: .3rem; }
 .tile h3 { font-size: 1.45rem; margin: 0; }
 .tile p { color: var(--ink-soft); margin: 0; font-size: 1rem; }
+/* Keep card labels the same small gold style as other cards (.tile p would otherwise override .label). */
+.tile p.label { font-size: .78rem; color: var(--gold); margin: 0 0 .3rem; }
 .tile .go { font: 600 .9rem var(--sans); color: var(--link); margin-top: auto; padding-top: .5rem; }
 .tile.feature { background: linear-gradient(160deg, var(--navy), var(--navy-deep)); color: #f4efe3; border-color: transparent; }
 .tile.feature h3, .tile.feature .icon { color: #e9cf8e; }
@@ -479,15 +481,15 @@ dl.glossary dt:target { background: var(--gold-soft); border-radius: 6px; paddin
 /* Daily readings card */
 .readings-card .rd-title { margin: .1rem 0 .5rem; font-size: 1.35rem; }
 .rd-list { list-style: none; padding: 0; margin: 0 0 .9rem; font-size: 1rem; }
-.rd-list li { display: flex; justify-content: space-between; gap: .8rem; padding: .3rem 0; border-bottom: 1px dashed var(--line); margin: 0; }
+.rd-list li { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0 .8rem; padding: .1rem 0; border-bottom: 1px dashed var(--line); margin: 0; }
 .rd-list li:last-child { border-bottom: 0; }
 /* Hold room for the readings while they load so the page does not jump */
 .rd-list li.rd-loading { min-height: 7.6rem; align-items: flex-start; }
 .rd-name { font: 600 .82rem var(--sans); letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); padding-top: .15rem; white-space: nowrap; }
-.rd-list a { text-align: right; }
+.rd-list a { text-align: right; display: inline-block; padding: .3rem 0; } /* at least 28px tall to tap */
 .rd-actions { display: flex; flex-wrap: wrap; gap: .45rem; }
 .rd-credit { margin: .7rem 0 0; font-size: .82rem; }
-@media (min-width: 760px) { .today { grid-template-columns: 1fr 1.45fr 1fr; } }
+@media (min-width: 760px) { .today { grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr) minmax(0, 1fr); } }
 
 /* Popes in succession */
 .pope-cent { font-size: 1.6rem; margin: 2.6rem 0 .6rem; padding-bottom: .4rem; border-bottom: 1px solid var(--line); scroll-margin-top: 90px; }
@@ -734,9 +736,9 @@ body::before {
 #rs-latin[aria-pressed="true"] { background: var(--navy); color: var(--bg); border-color: var(--navy); }
 
 /* ---------- Saint of the day ---------- */
-@media (min-width: 760px) { .today.four { grid-template-columns: 1fr 1.45fr 1fr; } }
-@media (min-width: 1000px) { .today.four { grid-template-columns: 1fr 1.4fr 1fr 1fr; } }
-.saint-today .sod-name { font: 600 1.25rem var(--serif); margin: .1rem 0 .3rem; color: var(--ink); }
+@media (min-width: 760px) { .today.four { grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr) minmax(0, 1fr); } }
+@media (min-width: 1000px) { .today.four { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr); } }
+.saint-today .sod-name { font: 600 1.45rem/1.15 var(--serif-display); margin: .1rem 0 .3rem; color: var(--navy); }
 .saint-today .sod-sub { font-size: .95rem; color: var(--ink-soft); margin: 0; }
 .saint-today.wide { margin: 1.4rem 0; border-left: 3px solid var(--gold); }
 .saint-today .sod-more { display: inline-block; margin-top: .5rem; font: 600 .95rem var(--sans); }
