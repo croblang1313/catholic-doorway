@@ -1345,6 +1345,19 @@ svg.cpage .k { fill: #222; pointer-events: none; }
 .tw-foot { max-width: var(--read); border-top: 1px solid var(--line); padding-top: 1rem; margin: 1rem 0 2.5rem; }
 .tw-review { background: var(--gold-soft); border-bottom: 1px solid var(--gold); padding: .9rem 0; }
 .tw-review p { margin: 0 0 .6rem; }
+.share-box { max-width: var(--read); margin: 1.5rem 0 2rem; padding: 1.1rem 1.2rem 1.2rem; border: 1px solid var(--line); border-radius: 12px; background: var(--bg-alt); }
+.share-box h2 { margin: 0 0 .2rem; font-size: 1.35rem; }
+.share-box p { margin: 0 0 .8rem; }
+.share-row { display: flex; flex-wrap: wrap; gap: .5rem; }
+.share-btn { display: inline-flex; align-items: center; min-height: 44px; padding: .45rem 1rem; border: 1px solid var(--line); border-radius: 999px; background: var(--bg); color: var(--ink); font: inherit; font-size: .95rem; font-weight: 600; text-decoration: none; cursor: pointer; }
+.share-btn:hover, .share-btn:focus-visible { border-color: var(--gold); color: var(--ink); }
+.share-btn.pdf { background: #1d2b4f; color: #fff; border-color: #1d2b4f; }
+.share-btn.pdf:hover, .share-btn.pdf:focus-visible { color: #fff; border-color: var(--gold); }
+@media print { .share-box, .tw-review { display: none !important; } }
+.share-btn[hidden] { display: none; }
+.tw-share-preview { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem; margin: 0 0 .7rem; }
+.tw-share-preview img { width: 300px; max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); }
+.tw-share-preview p { flex: 1 1 200px; margin: 0; }
 .home-week { margin: 1.2rem 0 0; }
 .home-week[hidden] { display: none; }
 

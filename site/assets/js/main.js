@@ -524,6 +524,28 @@
     });
   }
 
+  // Share buttons on This Week articles: copy the link, and the phone's own share sheet where there is one.
+  $$('[data-copy-link]').forEach(function (b) {
+    if (!navigator.clipboard) { b.hidden = true; return; }
+    b.addEventListener('click', function () {
+      navigator.clipboard.writeText(b.getAttribute('data-copy-link')).then(function () {
+        var old = b.textContent; b.textContent = 'Link copied';
+        setTimeout(function () { b.textContent = old; }, 2000);
+      });
+    });
+  });
+  // Articles without a stored PDF: "Download PDF" opens the print dialog ("Save as PDF").
+  $$('[data-print]').forEach(function (b) {
+    b.addEventListener('click', function (e) { e.preventDefault(); window.print(); });
+  });
+  $$('[data-native-share]').forEach(function (b) {
+    if (!navigator.share) return;
+    b.hidden = false;
+    b.addEventListener('click', function () {
+      navigator.share({ title: b.getAttribute('data-title'), url: b.getAttribute('data-url') }).catch(function () {});
+    });
+  });
+
   var dq = $('#dio-search');
   if (dq) {
     var rows = $$('#dio-table tbody tr'), dEmpty = $('#dio-empty');
