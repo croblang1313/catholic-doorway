@@ -475,7 +475,21 @@ function shareBox(a, preview) {
   </section>`;
 }
 
-function articleMain(a, preview) {
+// "More from This Week in the Church": up to 3 other published articles and a link to them all.
+function moreBox(a, list) {
+  const others = (list || []).filter((x) => x.slug !== a.slug).slice(0, 3);
+  const cards = others.map((x) => `<a class="card tile tw-card" href="/this-week/${esc(x.slug)}">
+      <p class="label">${esc(x.kicker)}</p><h3>${esc(x.title)}</h3>
+      <p class="small muted">${esc(longDate(x.published))} &middot; ${x.minutes || 1} min read</p><span class="go">Read &rarr;</span></a>`).join("");
+  return `<section class="section tw-more" aria-labelledby="tw-more-h">
+    <h2 id="tw-more-h">More from This Week in the Church</h2>
+    <p class="muted">A short article every week on the Church&rsquo;s feasts, saints and seasons.</p>
+    ${cards ? `<div class="grid">${cards}</div>` : ""}
+    <p class="btn-row"><a class="btn" href="/this-week">See all articles</a> <a class="btn secondary" href="/this-week/feed.xml">Follow with RSS</a></p>
+  </section>`;
+}
+
+function articleMain(a, preview, list) {
   const related = a.related.length
     ? `<section class="section tw-related"><h2>Keep going</h2><div class="grid">${a.related.map((r) =>
       `<a class="card tile" href="${esc(r.href)}"><h3>${esc(r.label)}</h3>${r.note ? `<p>${esc(r.note)}</p>` : ""}<span class="go">Open &rarr;</span></a>`).join("")}</div></section>`
@@ -497,10 +511,11 @@ function articleMain(a, preview) {
   <article class="section prose tw-article">
 ${a.body}
   </article>
-  ${shareBox(a, preview)}
-  ${related}
   ${sources}
-  <p class="small muted tw-foot">Written for CatholicDoorway and reviewed before publishing. Scripture quotations are from the Revised Standard Version, Catholic Edition. Spot a mistake? Write to <a href="mailto:hello@catholicdoorway.com">hello@catholicdoorway.com</a>. <a href="/this-week">More from This Week in the Church</a> &middot; <a href="/this-week/feed.xml">RSS</a></p>
+  <p class="small muted tw-foot">Written for CatholicDoorway and reviewed before publishing. Scripture quotations are from the Revised Standard Version, Second Catholic Edition. Spot a mistake? Write to <a href="mailto:hello@catholicdoorway.com">hello@catholicdoorway.com</a>.</p>
+  ${shareBox(a, preview)}
+  ${moreBox(a, list)}
+  ${related}
 </div>`;
 }
 
@@ -534,7 +549,7 @@ async function articlePage(request, env, slug) {
   if (a.status !== "published") return Response.redirect(`${DOMAIN}/this-week`, 302);
   const html = setMeta(await shell(request, env), {
     title: `${a.title} | CatholicDoorway`, desc: a.description, url: `/this-week/${a.slug}`, type: "article",
-    ld: articleLd(a), verse: a.verse, main: articleMain(a, false), image: shareMeta(a),
+    ld: articleLd(a), verse: a.verse, main: articleMain(a, false, await getIndex(env)), image: shareMeta(a),
   });
   return htmlResponse(html);
 }
@@ -643,7 +658,7 @@ async function reviewArticle(request, env, slug, url) {
   if (!a || !same(k, a.key)) return plain("<h1>Article not found</h1><p>This review link is not right or the article was removed. Sign in at <a href=\"/this-week/review\">/this-week/review</a> to see every article.</p>");
   let html = setMeta(await shell(request, env), {
     title: `Review: ${a.title}`, desc: a.description, url: `/this-week/${a.slug}`, noindex: true,
-    verse: a.verse, main: reviewBar(a, msg) + articleMain(a, a.status !== "published"), image: shareMeta(a, a.status !== "published"),
+    verse: a.verse, main: reviewBar(a, msg) + articleMain(a, a.status !== "published", await getIndex(env)), image: shareMeta(a, a.status !== "published"),
   });
   return new Response(html, { headers: { "Content-Type": "text/html; charset=utf-8", ...PRIVATE } });
 }

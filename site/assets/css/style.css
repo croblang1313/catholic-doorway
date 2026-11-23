@@ -1342,7 +1342,8 @@ svg.cpage .k { fill: #222; pointer-events: none; }
 .tw-meta { margin-top: .7rem !important; }
 .tw-card .label { margin-bottom: .2rem; }
 .tw-lead h3 { font-size: 1.6rem; }
-.tw-foot { max-width: var(--read); border-top: 1px solid var(--line); padding-top: 1rem; margin: 1rem 0 2.5rem; }
+.tw-foot { max-width: var(--read); border-top: 1px solid var(--line); padding-top: 1rem; margin: 1rem 0 1.5rem; }
+.tw-more .btn-row { margin-top: 1rem; justify-content: flex-start; }
 .tw-review { background: var(--gold-soft); border-bottom: 1px solid var(--gold); padding: .9rem 0; }
 .tw-review p { margin: 0 0 .6rem; }
 .share-box { max-width: var(--read); margin: 1.5rem 0 2rem; padding: 1.1rem 1.2rem 1.2rem; border: 1px solid var(--line); border-radius: 12px; background: var(--bg-alt); }
