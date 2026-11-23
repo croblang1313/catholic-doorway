@@ -234,6 +234,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 /* ---------- Home: right now in the Church ---------- */
 .now-row { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); margin-top: 1.2rem; }
 .now-row .season-card, .now-row .home-week { margin: 0; }
+.journey + .now-row { margin-top: 2rem; } /* home: seasonal and article cards sit below the journey */
 .now-row:not(:has(> :not([hidden]))) { display: none; }
 
 /* ---------- What's next ---------- */
@@ -1451,3 +1452,28 @@ main .path-steps a { background: color-mix(in srgb, var(--bg) 85%, transparent);
 main .path-steps a:hover { border-color: var(--gold); }
 main .path-when { background: color-mix(in srgb, var(--gold-soft) 85%, transparent); }
 main .season-card { background: linear-gradient(160deg, var(--surface), color-mix(in srgb, var(--gold-soft) 85%, transparent)); }
+
+/* ---------- Header controls: 44px-tall tap areas ----------
+   The header is tight on phones, so the buttons keep their look and an invisible
+   layer makes each one 44px tall to tap (the header itself is taller than that). */
+.search-btn, .theme-btn, .nav-toggle, .lang-menu summary { position: relative; }
+.search-btn::after, .theme-btn::after, .nav-toggle::after, .lang-menu summary::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 44px; transform: translateY(-50%);
+}
+
+/* ---------- Increased contrast (system setting "Increase contrast") ----------
+   Darker text and lines, solid boxes and header, and the background photo mostly veiled.
+   Light: ink 17:1, soft text 12:1, gold 6.8:1, lines 5.2:1. Dark: ink 14.5:1, soft text 10.8:1, lines 4.2:1. */
+@media (prefers-contrast: more) {
+  :root { --ink: #10131a; --ink-soft: #2c3140; --gold: #6e521a; --link: #1a3166; --link-hover: #5a3f0c; --line: #6f6758; --veil: rgba(250, 246, 238, .93); }
+  main { --surface: #ffffff; --bg-alt: #f3ecdd; --box-line: #000; }
+  :root[data-theme="dark"] { --ink: #f7f3ea; --ink-soft: #d9d4c8; --navy: #e6d4a3; --gold: #e2c47f; --link: #c3d4f7; --link-hover: #f0d58f; --line: #7a8299; --veil: rgba(13, 16, 24, .95); }
+  :root[data-theme="dark"] main { --surface: #1c2130; --bg-alt: #181c27; --box-line: #7a8299; }
+  .site-header { background: var(--bg); backdrop-filter: none; -webkit-backdrop-filter: none; }
+  main .path-steps a { background: var(--bg); }
+  main .path-when { background: var(--gold-soft); }
+}
+@media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --ink: #f7f3ea; --ink-soft: #d9d4c8; --navy: #e6d4a3; --gold: #e2c47f; --link: #c3d4f7; --link-hover: #f0d58f; --line: #7a8299; --veil: rgba(13, 16, 24, .95); }
+  :root:not([data-theme="light"]) main { --surface: #1c2130; --bg-alt: #181c27; --box-line: #7a8299; }
+}
