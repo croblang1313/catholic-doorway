@@ -54,10 +54,11 @@ The House Rules in `/mnt/project-files/social-posts/brand-brief.md` apply here t
    Slug is short and evergreen (no year), e.g. `what-is-the-epiphany`. Check
    `https://catholicdoorway.com/this-week` so a slug or topic isn't repeated; next year's article on
    the same feast takes a new angle and a new slug.
-7. **Link 3 to 6 site pages** in the body and in `related` (only pages that exist: /advent,
+7. **Link 3 to 6 site pages** in the body, and give exactly **3** in `related` (the "Keep going" cards;
+   only the first 3 are shown). Only pages that exist: /advent,
    /calendar, /prayers, /rosary, /reading-plans, /confession, /first-mass, /start-here, /saints,
    /glossary, /beliefs, /questions, /find-a-church, /watch-mass, /devotions, /liturgy-of-the-hours,
-   /stations-of-the-cross, /examination-of-conscience, and so on).
+   /stations-of-the-cross, /examination-of-conscience, and so on.
 8. **Verse banner:** one short RSV-CE verse that fits the feast.
 9. **Sources:** the Catechism paragraphs, documents and readings used, with vatican.va or usccb.org
    links only when you are sure of the address (`https://www.vatican.va/archive/ENG0015/_INDEX.HTM`

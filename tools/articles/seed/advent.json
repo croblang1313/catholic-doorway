@@ -4,18 +4,41 @@
   "description": "Advent begins Sunday, November 29, 2026. Here is what the season means, why it looks two ways at once, and a few simple ways to keep it at home.",
   "kicker": "Season · Advent begins November 29, 2026",
   "date": "2026-11-29",
-  "verse": {"t": "To thee, O LORD, I lift up my soul.", "r": "Psalm 25:1"},
+  "verse": {
+    "t": "To thee, O LORD, I lift up my soul.",
+    "r": "Psalm 25:1"
+  },
   "body": "<p>For most stores, the Christmas season starts the day after Halloween. For the Church, it does not start until December 25. The weeks before are their own season, called Advent, and they are some of the most peaceful weeks of the year if you let them be.</p><p>In 2026, Advent begins on <strong>Sunday, November 29</strong> and runs until the evening of December 24. It also begins a new Church year. The year that ended last Sunday with Christ the King starts over again, the way a family story gets told again every Christmas.</p><h2>What the word means</h2><p>Advent comes from the Latin <em>adventus</em>, which means &ldquo;coming.&rdquo; The season prepares for the coming of Jesus. But which coming? The Church&rsquo;s answer is: both of them.</p><ul><li><strong>Looking back:</strong> Christians remember the long wait of God&rsquo;s people for the Messiah, and his birth at Bethlehem.</li><li><strong>Looking ahead:</strong> Christians get ready for Christ to come again in glory at the end of time.</li></ul><p>The Catechism puts it this way:</p><blockquote class=\"ccc\"><p>&ldquo;When the Church celebrates the liturgy of Advent each year, she makes present this ancient expectancy of the Messiah, for by sharing in the long preparation for the Savior&rsquo;s first coming, the faithful renew their ardent desire for his second coming.&rdquo;</p><cite>Catechism of the Catholic Church 524</cite></blockquote><p>That is why the first Sundays of Advent have Gospels about staying awake and watching for the Lord&rsquo;s return, and why December 17 to 24 turns toward the story of Mary, Joseph and the birth of Jesus.</p><h2>What you will notice at Mass</h2><ul><li><strong>Violet.</strong> The priest wears violet, a color of preparation and longing. On the third Sunday, December 13 this year, many parishes use rose instead. That Sunday is called <em>Gaudete</em>, Latin for &ldquo;Rejoice,&rdquo; because Christmas is close.</li><li><strong>No Gloria on Sundays.</strong> The Gloria, the hymn the angels sang at Bethlehem, is left out on Advent Sundays so it rings out again at Christmas.</li><li><strong>A new Gospel.</strong> Sunday readings follow a three-year cycle. This Advent begins Year B, so most Sunday Gospels for the coming year come from Saint Mark.</li><li><strong>The Advent wreath.</strong> Four candles, three violet and one rose, with one more lit each week.</li></ul><h2>Is Advent like Lent?</h2><p>Not quite. Both are seasons of preparation, and both use violet. But Advent is quieter and more hopeful, more like expecting a baby than doing penance. There is no required fasting in Advent. Many Catholics still choose a small sacrifice, more time in prayer, a good Confession before Christmas and extra generosity to people in need. The goal is to arrive at Christmas with a heart that has room in it.</p><h2>Days to mark this Advent</h2><ul><li><strong>Sunday, November 29:</strong> First Sunday of Advent. Light the first candle.</li><li><strong>Tuesday, December 8:</strong> the Immaculate Conception, patronal feast of the United States and a holy day of obligation. Plan to go to Mass that day or at the vigil the evening before.</li><li><strong>Saturday, December 12:</strong> Our Lady of Guadalupe, patroness of the Americas.</li><li><strong>Sunday, December 13:</strong> Gaudete Sunday. Light the rose candle.</li><li><strong>December 17 to 23:</strong> the &ldquo;O Antiphons,&rdquo; ancient titles of Christ sung before the Magnificat at Evening Prayer, the same titles you hear in &ldquo;O Come, O Come, Emmanuel.&rdquo;</li><li><strong>Thursday, December 24:</strong> Christmas Eve. Christmas Masses begin in the evening.</li></ul><h2>Simple ways to keep Advent at home</h2><ol><li><strong>Light a wreath at dinner.</strong> It takes two minutes. Light the candles, read a short prayer, then eat. The <a href=\"/advent\">Advent and Christmas</a> page has a prayer for each week.</li><li><strong>Open one door a day.</strong> Our free Advent calendar on the same page has a short Scripture verse and a small thing to do each day.</li><li><strong>Go to Confession.</strong> Parishes often hold extra Confession times in December. If it has been a while, our <a href=\"/confession\">guide to Confession</a> walks you through exactly what to say.</li><li><strong>Wait to decorate fully.</strong> Some families put up the tree early but add the ornaments, or the baby Jesus in the manger, a little at a time. Waiting is part of the joy.</li><li><strong>Start a reading plan.</strong> The Gospel of Mark is short enough to read in a few weeks. See the <a href=\"/reading-plans\">reading plans</a>.</li></ol><h2>If you are new to all this</h2><p>Advent is a good time to visit a Catholic church. The music is beautiful, the readings are full of hope, and nobody expects you to know what you are doing. You can <a href=\"/find-a-church\">find a church near you</a> and sit near the back. You are welcome.</p>",
   "related": [
-    {"href": "/advent", "label": "Advent and Christmas", "note": "This year's dates, wreath prayers and a free Advent calendar."},
-    {"href": "/confession", "label": "How to Go to Confession", "note": "A step-by-step guide, even if it has been years."},
-    {"href": "/reading-plans", "label": "Reading Plans", "note": "Read a Gospel this Advent, a little each day."},
-    {"href": "/calendar", "label": "Holy Days Calendar", "note": "Get December 8 and Christmas on your phone."}
+    {
+      "href": "/advent",
+      "label": "Advent and Christmas",
+      "note": "This year's dates, wreath prayers and a free Advent calendar."
+    },
+    {
+      "href": "/confession",
+      "label": "How to Go to Confession",
+      "note": "A step-by-step guide, even if it has been years."
+    },
+    {
+      "href": "/reading-plans",
+      "label": "Reading Plans",
+      "note": "Read a Gospel this Advent, a little each day."
+    }
   ],
   "sources": [
-    {"label": "Catechism of the Catholic Church 522 to 524 (the preparations for Christ's coming)", "href": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM"},
-    {"label": "General Norms for the Liturgical Year and the Calendar, 39 to 42 (Advent)", "href": ""},
-    {"label": "U.S. holy days of obligation, United States Conference of Catholic Bishops", "href": "https://www.usccb.org/prayer-and-worship/liturgical-year-and-calendar/holy-days-of-obligation"}
+    {
+      "label": "Catechism of the Catholic Church 522 to 524 (the preparations for Christ's coming)",
+      "href": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM"
+    },
+    {
+      "label": "General Norms for the Liturgical Year and the Calendar, 39 to 42 (Advent)",
+      "href": ""
+    },
+    {
+      "label": "U.S. holy days of obligation, United States Conference of Catholic Bishops",
+      "href": "https://www.usccb.org/prayer-and-worship/liturgical-year-and-calendar/holy-days-of-obligation"
+    }
   ],
   "social": "Advent starts Sunday, Nov 29. 4 weeks of waiting that look back to Bethlehem and ahead to Christ's return."
 }
