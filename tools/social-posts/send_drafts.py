@@ -20,6 +20,11 @@ plan.json is a list of posts:
      "path": "/saints", "art": "window"|"none", plus "lines" (kinetic), "items"/"list_title" (list),
      "quote" (scripture). See make_post_video.js. Use a different format for each post in a week and
     don't open a week with the format that closed the previous one.
+Each video also gets the day's look from video_looks.js (logo corner, where the words and picture go,
+photo motion, word entrance, highlight, scene change, lettering), picked from its post_on date. This
+script passes post_on and the previous video post's date (prev_on, looking back into last week's plan
+too) so the logo corner never matches the previous video. Don't set "look" in plan.json unless
+Christopher asks for a particular look; leave the variety to the dates.
 When "tiktok" is in platforms, TikTok gets its own 11-second video draft (motion + original sound)
 and the photo draft goes to the other platforms. Set "video": false to send TikTok the photo instead.
 
@@ -62,6 +67,24 @@ def call(path, data, ctype, tok, extra=None):
         return json.load(r)
 
 
+def prev_video_dates(plan, week_dir):
+    """Dates of this week's video posts, preceded by the last video post of the most recent earlier week."""
+    dates = sorted(p["post_on"] for p in plan if "tiktok" in p.get("platforms", ["tiktok"]) and p.get("video") is not False)
+    weeks = os.path.dirname(week_dir)
+    try:
+        for name in sorted(os.listdir(weeks), reverse=True):
+            f = os.path.join(weeks, name, "plan.json")
+            if name < os.path.basename(week_dir) and os.path.exists(f):
+                older = [p["post_on"] for p in json.load(open(f)) if "tiktok" in p.get("platforms", ["tiktok"]) and p.get("video") is not False]
+                older = [d for d in older if not dates or d < dates[0]]
+                if older:
+                    dates.insert(0, max(older))
+                break
+    except (OSError, ValueError, KeyError):
+        pass
+    return dates
+
+
 def main():
     plan = json.load(open(sys.argv[1]))
     dry = "--dry-run" in sys.argv
@@ -72,6 +95,7 @@ def main():
     out_dir = os.path.join(week_dir, "images")
     os.makedirs(out_dir, exist_ok=True)
     tok = None if dry else token()
+    vdates = prev_video_dates(plan, week_dir)
     for i, post in enumerate(plan, 1):
         cap = post["caption"].strip()
         plats = post.get("platforms", ["facebook", "instagram", "x", "tiktok"])
@@ -109,7 +133,9 @@ def main():
         if video:
             vspec = os.path.join(out_dir, f"video{i}.json")
             mp4 = os.path.join(out_dir, f"{post['post_on']}-video{i}.mp4")
-            json.dump({**post["image"], **(post.get("video") or {})}, open(vspec, "w"))
+            prev = [d for d in vdates if d < post["post_on"]]
+            json.dump({**post["image"], **(post.get("video") or {}), "post_on": post["post_on"],
+                       **({"prev_on": prev[-1]} if prev else {})}, open(vspec, "w"))
             subprocess.run(["node", os.path.join(HERE, "make_post_video.js"), vspec, mp4], check=True)
             print("rendered", mp4)
             if not dry:

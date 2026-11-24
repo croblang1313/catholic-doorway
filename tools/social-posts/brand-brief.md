@@ -71,3 +71,18 @@ scores, video formats or review links. Send only a short reminder, one or two se
 (and the article, if one was made) are ready to review and approve at https://social.catholicdoorway.com.
 If drafts were already sent this week, the reminder is the same. Only add detail when something failed: then say
 plainly what failed.
+
+## Video variety (added 2026-11-24, Christopher's request)
+Christopher found the TikTok videos monotonous: the logo, words and picture sat in the same places with the same motion
+every day. Every video must now look different from the day before and from last week.
+1. make_post_video.js applies the day's look from tools/video_looks.js automatically, picked from the post date:
+   logo corner (top-left, top-right, bottom-left, bottom-right; never the same as the previous video), where the
+   words and picture go (full photo, arched window, photo band, photo strip, words high/low/left/centered),
+   photo motion, word entrance, highlight style for *gold* words (gold, marker, underline, box, glow, serif),
+   scene change and hook lettering. No combination repeats within 90 days.
+2. send_drafts.py passes each post's date and the previous video's date, so just give every post its real
+   `post_on`. Do NOT set `"look"` in plan.json unless Christopher asks for a particular look.
+3. Keep using a different video `format` for each post in a week (reveal, kinetic, list, split, scripture) and
+   don't open a week with the format that closed the previous one. Mark one or two key words per hook with
+   *asterisks* so the day's highlight style shows.
+4. To see what a week will look like: `node tools/video_looks.js <monday-date> 7`.
