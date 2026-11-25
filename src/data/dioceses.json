@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18",
+ "updated": "2026-11-25",
  "source": "Wikidata (CC0)",
  "dioceses": [
   {
@@ -1838,8 +1838,8 @@
    "gc": "bost0",
    "bishop": "Seán Patrick O'Malley",
    "bishop_since": "2003-07-01",
-   "lon": -71.0697,
-   "lat": 42.3406,
+   "lon": -71.0696,
+   "lat": 42.3407,
    "members": 1946413,
    "founded": 1808,
    "short": "Archdiocese of Boston",
@@ -4715,6 +4715,130 @@
   }
  ],
  "holy_by_state": {
+  "Louisiana": [
+   {
+    "qid": "Q75940",
+    "name": "Francis Xavier Seelos",
+    "rank": 3,
+    "born": 1819,
+    "died": 1867
+   },
+   {
+    "qid": "Q5716083",
+    "name": "Henriette DeLille",
+    "rank": 2,
+    "born": 1813,
+    "died": 1862
+   }
+  ],
+  "Hawaii": [
+   {
+    "qid": "Q232785",
+    "name": "Father Damien",
+    "rank": 4,
+    "born": 1840,
+    "died": 1889
+   },
+   {
+    "qid": "Q76680",
+    "name": "Marianne Cope",
+    "rank": 4,
+    "born": 1838,
+    "died": 1918
+   }
+  ],
+  "Illinois": [
+   {
+    "qid": "Q238983",
+    "name": "Frances Xavier Cabrini",
+    "rank": 4,
+    "born": 1850,
+    "died": 1917
+   },
+   {
+    "qid": "Q954398",
+    "name": "Fulton J. Sheen",
+    "rank": 3,
+    "born": 1895,
+    "died": 1979
+   },
+   {
+    "qid": "Q2841266",
+    "name": "Augustine Tolton",
+    "rank": 2,
+    "born": 1854,
+    "died": 1897
+   },
+   {
+    "qid": "Q18031468",
+    "name": "Mary Theresa Dudzik",
+    "rank": 2,
+    "born": 1860,
+    "died": 1918
+   }
+  ],
+  "Maryland": [
+   {
+    "qid": "Q312348",
+    "name": "Thurgood Marshall",
+    "rank": 4,
+    "born": 1908,
+    "died": 1993
+   },
+   {
+    "qid": "Q6779421",
+    "name": "Mary Elizabeth Lange",
+    "rank": 2,
+    "born": 1784,
+    "died": 1882
+   }
+  ],
+  "Pennsylvania": [
+   {
+    "qid": "Q558256",
+    "name": "John Neumann",
+    "rank": 4,
+    "born": 1811,
+    "died": 1860
+   },
+   {
+    "qid": "Q254227",
+    "name": "Katharine Drexel",
+    "rank": 4,
+    "born": 1858,
+    "died": 1955
+   },
+   {
+    "qid": "Q5171155",
+    "name": "Cornelia Connelly",
+    "rank": 2,
+    "born": 1809,
+    "died": 1879
+   },
+   {
+    "qid": "Q704917",
+    "name": "Demetrius Augustine Gallitzin",
+    "rank": 1,
+    "born": 1770,
+    "died": 1840
+   },
+   {
+    "qid": "Q9283759",
+    "name": "John Hardon",
+    "rank": 1,
+    "born": 1914,
+    "died": 2000
+   }
+  ],
+  "Montana": [
+   {
+    "qid": "Q436655",
+    "name": "Black Elk",
+    "rank": 1,
+    "born": 1863,
+    "died": 1950
+   }
+  ],
   "New York": [
    {
     "qid": "Q588832",
@@ -4815,45 +4939,57 @@
     "died": 1888
    }
   ],
-  "Louisiana": [
+  "Missouri": [
    {
-    "qid": "Q75940",
-    "name": "Francis Xavier Seelos",
-    "rank": 3,
-    "born": 1819,
-    "died": 1867
+    "qid": "Q268064",
+    "name": "Rose Philippine Duchesne",
+    "rank": 4,
+    "born": 1769,
+    "died": 1852
    },
    {
-    "qid": "Q5716083",
-    "name": "Henriette DeLille",
+    "qid": "Q2841266",
+    "name": "Augustine Tolton",
     "rank": 2,
-    "born": 1813,
-    "died": 1862
-   }
-  ],
-  "Hawaii": [
-   {
-    "qid": "Q232785",
-    "name": "Father Damien",
-    "rank": 4,
-    "born": 1840,
-    "died": 1889
+    "born": 1854,
+    "died": 1897
    },
    {
-    "qid": "Q76680",
-    "name": "Marianne Cope",
-    "rank": 4,
-    "born": 1838,
+    "qid": "Q51664373",
+    "name": "Julia Greeley",
+    "rank": 2,
+    "born": 1833,
     "died": 1918
+   },
+   {
+    "qid": "Q139577779",
+    "name": "Theresia of the Holy Trinity",
+    "rank": 2,
+    "born": 1897,
+    "died": 1926
    }
   ],
-  "Montana": [
+  "California": [
    {
-    "qid": "Q436655",
-    "name": "Black Elk",
-    "rank": 1,
-    "born": 1863,
-    "died": 1950
+    "qid": "Q522107",
+    "name": "Junípero Serra",
+    "rank": 4,
+    "born": 1713,
+    "died": 1784
+   },
+   {
+    "qid": "Q4735362",
+    "name": "Alphonse Gallegos",
+    "rank": 2,
+    "born": 1931,
+    "died": 1991
+   },
+   {
+    "qid": "Q743262",
+    "name": "Patrick Peyton",
+    "rank": 2,
+    "born": 1909,
+    "died": 1992
    }
   ],
   "Michigan": [
@@ -4886,128 +5022,6 @@
     "died": 2000
    }
   ],
-  "Illinois": [
-   {
-    "qid": "Q238983",
-    "name": "Frances Xavier Cabrini",
-    "rank": 4,
-    "born": 1850,
-    "died": 1917
-   },
-   {
-    "qid": "Q954398",
-    "name": "Fulton J. Sheen",
-    "rank": 3,
-    "born": 1895,
-    "died": 1979
-   },
-   {
-    "qid": "Q2841266",
-    "name": "Augustine Tolton",
-    "rank": 2,
-    "born": 1854,
-    "died": 1897
-   },
-   {
-    "qid": "Q18031468",
-    "name": "Mary Theresa Dudzik",
-    "rank": 2,
-    "born": 1860,
-    "died": 1918
-   }
-  ],
-  "New Jersey": [
-   {
-    "qid": "Q7702128",
-    "name": "Teresa Demjanovich",
-    "rank": 3,
-    "born": 1901,
-    "died": 1927
-   },
-   {
-    "qid": "Q2638523",
-    "name": "Jan Cieplak",
-    "rank": 1,
-    "born": 1857,
-    "died": 1926
-   }
-  ],
-  "California": [
-   {
-    "qid": "Q522107",
-    "name": "Junípero Serra",
-    "rank": 4,
-    "born": 1713,
-    "died": 1784
-   },
-   {
-    "qid": "Q4735362",
-    "name": "Alphonse Gallegos",
-    "rank": 2,
-    "born": 1931,
-    "died": 1991
-   },
-   {
-    "qid": "Q743262",
-    "name": "Patrick Peyton",
-    "rank": 2,
-    "born": 1909,
-    "died": 1992
-   }
-  ],
-  "Maryland": [
-   {
-    "qid": "Q312348",
-    "name": "Thurgood Marshall",
-    "rank": 4,
-    "born": 1908,
-    "died": 1993
-   },
-   {
-    "qid": "Q6779421",
-    "name": "Mary Elizabeth Lange",
-    "rank": 2,
-    "born": 1784,
-    "died": 1882
-   }
-  ],
-  "Pennsylvania": [
-   {
-    "qid": "Q558256",
-    "name": "John Neumann",
-    "rank": 4,
-    "born": 1811,
-    "died": 1860
-   },
-   {
-    "qid": "Q254227",
-    "name": "Katharine Drexel",
-    "rank": 4,
-    "born": 1858,
-    "died": 1955
-   },
-   {
-    "qid": "Q5171155",
-    "name": "Cornelia Connelly",
-    "rank": 2,
-    "born": 1809,
-    "died": 1879
-   },
-   {
-    "qid": "Q704917",
-    "name": "Demetrius Augustine Gallitzin",
-    "rank": 1,
-    "born": 1770,
-    "died": 1840
-   },
-   {
-    "qid": "Q9283759",
-    "name": "John Hardon",
-    "rank": 1,
-    "born": 1914,
-    "died": 2000
-   }
-  ],
   "Indiana": [
    {
     "qid": "Q434579",
@@ -5024,54 +5038,6 @@
     "rank": 1,
     "born": 1863,
     "died": 1950
-   }
-  ],
-  "Missouri": [
-   {
-    "qid": "Q268064",
-    "name": "Rose Philippine Duchesne",
-    "rank": 4,
-    "born": 1769,
-    "died": 1852
-   },
-   {
-    "qid": "Q2841266",
-    "name": "Augustine Tolton",
-    "rank": 2,
-    "born": 1854,
-    "died": 1897
-   },
-   {
-    "qid": "Q51664373",
-    "name": "Julia Greeley",
-    "rank": 2,
-    "born": 1833,
-    "died": 1918
-   },
-   {
-    "qid": "Q139577779",
-    "name": "Theresia of the Holy Trinity",
-    "rank": 2,
-    "born": 1897,
-    "died": 1926
-   }
-  ],
-  "Connecticut": [
-   {
-    "qid": "Q2664799",
-    "name": "Michael J. McGivney",
-    "rank": 3,
-    "born": 1852,
-    "died": 1890
-   }
-  ],
-  "Oklahoma": [
-   {
-    "qid": "Q2377024",
-    "name": "Stanley Rother",
-    "rank": 3,
-    "born": 1935,
-    "died": 1981
    }
   ],
   "Ohio": [
@@ -5099,13 +5065,22 @@
     "died": 1951
    }
   ],
-  "Iowa": [
+  "Oklahoma": [
    {
-    "qid": "Q5408329",
-    "name": "Eugenio Sanz-Orozco Mortera",
+    "qid": "Q2377024",
+    "name": "Stanley Rother",
     "rank": 3,
-    "born": 1880,
-    "died": 1936
+    "born": 1935,
+    "died": 1981
+   }
+  ],
+  "Connecticut": [
+   {
+    "qid": "Q2664799",
+    "name": "Michael J. McGivney",
+    "rank": 3,
+    "born": 1852,
+    "died": 1890
    }
   ],
   "Wisconsin": [
@@ -5138,6 +5113,22 @@
     "died": 1896
    }
   ],
+  "New Jersey": [
+   {
+    "qid": "Q7702128",
+    "name": "Teresa Demjanovich",
+    "rank": 3,
+    "born": 1901,
+    "died": 1927
+   },
+   {
+    "qid": "Q2638523",
+    "name": "Jan Cieplak",
+    "rank": 1,
+    "born": 1857,
+    "died": 1926
+   }
+  ],
   "Massachusetts": [
    {
     "qid": "Q6917390",
@@ -5154,13 +5145,13 @@
     "died": 1983
    }
   ],
-  "District of Columbia": [
+  "Iowa": [
    {
-    "qid": "Q4734720",
-    "name": "Aloysius Schwartz",
-    "rank": 2,
-    "born": 1930,
-    "died": 1992
+    "qid": "Q5408329",
+    "name": "Eugenio Sanz-Orozco Mortera",
+    "rank": 3,
+    "born": 1880,
+    "died": 1936
    }
   ],
   "New Mexico": [
@@ -5177,6 +5168,15 @@
     "rank": 2,
     "born": 1931,
     "died": 1991
+   }
+  ],
+  "District of Columbia": [
+   {
+    "qid": "Q4734720",
+    "name": "Aloysius Schwartz",
+    "rank": 2,
+    "born": 1930,
+    "died": 1992
    }
   ],
   "Colorado": [
