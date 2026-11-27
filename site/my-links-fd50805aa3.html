@@ -15,10 +15,10 @@ main{max-width:640px;margin:0 auto;padding:28px 16px 48px}
 h1{font-size:26px;margin:0 0 20px}
 section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 14px}
 h2{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--gold);margin:0 0 8px}
-ul{list-style:none;margin:0;padding:0}
-li+li{border-top:1px solid var(--line)}
-a{display:block;padding:9px 0;color:var(--ink);text-decoration:none;word-break:break-all}
-a:hover,a:focus{color:var(--gold);text-decoration:underline}
+ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+a{display:block;padding:12px 16px;border-radius:10px;background:var(--ink);color:var(--bg);font-weight:600;text-decoration:none;text-align:center;word-break:break-all;box-shadow:0 1px 2px rgba(0,0,0,.15);transition:background .15s,transform .05s}
+a:hover,a:focus-visible{background:var(--gold);color:#1d2b4f;outline:none}
+a:active{transform:translateY(1px)}
 </style>
 </head>
 <body>
@@ -45,5 +45,8 @@ a:hover,a:focus{color:var(--gold);text-decoration:underline}
 <li><a href="https://social.catholicdoorway.com" target="_blank" rel="noopener noreferrer">social.catholicdoorway.com</a></li>
 </ul></section>
 </main>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest('a[href^="http"]');if(!a||e.ctrlKey||e.metaKey||e.shiftKey)return;e.preventDefault();window.open(a.href,'_blank','noopener,noreferrer,width='+Math.min(1400,screen.availWidth)+',height='+Math.min(950,screen.availHeight))});
+</script>
 </body>
 </html>
