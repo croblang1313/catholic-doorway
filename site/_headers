@@ -9,3 +9,7 @@
 
 /data/*
   Cache-Control: public, max-age=3600
+
+/my-links-fd50805aa3*
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: no-store
