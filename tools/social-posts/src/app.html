@@ -216,7 +216,7 @@ document.getElementById('themebtn').onclick = function () {
 				document.documentElement.style.setProperty('--accent', S.settings.accent || '#2563eb');
 				document.getElementById('brand').textContent = siteName();
 				document.title = 'Social Posts · ' + siteName();
-				document.getElementById('who').innerHTML = esc(S.who) + ' · <button type="button" id="so">Sign out</button>';
+				document.getElementById('who').innerHTML = '<a href="https://catholicdoorway.com/my-links-fd50805aa3" target="_blank" rel="noopener noreferrer" style="color:#fff">My sites</a> · ' + esc(S.who) + ' · <button type="button" id="so">Sign out</button>';
 				document.getElementById('so').onclick = function () { api('POST', '/api/logout', {}).then(function () { showLogin(); }); };
 				render();
 				return d;
