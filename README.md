@@ -66,3 +66,5 @@ Approved listings also appear on the church map (`site/assets/js/map.js` matches
 - Church locations come from OpenStreetMap (ODbL). `scripts/fetch_churches.py`, run weekly by `.github/workflows/churches.yml`, saves them to `site/data/churches/` so the map loads instantly; it falls back to the live Overpass API only if that copy is missing, with geocoding from Nominatim and map tiles from tile.openstreetmap.org. Nothing is scraped from MassTimes.org or other directories. If traffic grows, move tiles to a provider with a free tier (OSM's tile usage policy asks heavy users to do so).
 - Scripture quotations: RSV, Second Catholic Edition (used within the NCC's permission for short quotations). Daily readings link to the USCCB rather than copying the NABRE. The full Bible reader uses the public-domain Douay-Rheims.
 - Leaflet is bundled under its BSD-2 license (`site/assets/vendor/leaflet/LICENSE`).
+
+Note: the `catholic-doorway` Worker is deployed from this repo on every push to main. Never paste code into it in the Cloudflare editor; the Social Posts app lives in the separate `catholicdoorway-social` Worker.
